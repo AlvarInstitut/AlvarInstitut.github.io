@@ -38,7 +38,7 @@
 
 [Tema 1: Introducció](https://alvarinstitut.github.io/ApuntsBD/BD-T01_Introduccio/index.html)
 
-[Tema 2: Model E/R](https://alvarinstitut.github.io/ApuntsBD/BD-T0_Model_E-R/index.html)
+[Tema 2: Model E/R](https://alvarinstitut.github.io/ApuntsBD/BD-T2_Model_E-R/index.html)
 
 [Tema 3: Model Relacional](https://alvarinstitut.github.io/ApuntsBD/BD-T03_Model_Relacional/index.html)
 
