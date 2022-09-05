@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.1 RD-IntelliJ: Connexió des de Kotlin | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-52"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li class="current-page-parent"><a href="3__realtime_database_rd.html" class="current-page-parent daddy">3 - Realtime Database (RD)</a>
+   <ul>
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li class="current-page-parent"><a href="32_rd_utilitzaci_des_de_intellij.html" class="current-page-parent daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul>
+         <li id="active"><a href="321_rdintellij_connexi_des_de_kotlin.html" class="active no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__cloud_firestore_cf.html" class="daddy">4 - Cloud Firestore (CF)</a>
+   <ul class="other-section">
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li><a href="43_cf_utilitzaci_des_dandroid.html" class="daddy">4.3 CF: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32_rd_utilitzaci_des_de_intellij.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_rdintellij_accs_a_les_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.1 RD-IntelliJ: Connexió des de Kotlin</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id168">
+<div class="iDevice emphasis0">
+<div id="ta168_85" class="block iDevice_content">
+<p class="titolet">Drivers necessaris</p>
+<p>L'accés des de IntelliJ a Firebase no és senzill. És més complicat que accedir des d'Android, en contra del que cabria esperar.</p>
+<p>Concretament ens haurem de baixar molts <strong>.jar</strong>. En canvi en Android ho tindrem tot disponible, ja que els drivers estan incorporats.</p>
+<p>Són tants els drivers que ens construirem una llibreria per a poder incorporar-los després còmodament als nostres projectes. Ens els podem baixar des del següent enllaç: <a href="https://jar-download.com/artifacts/com.google.firebase">https://jar-download.com/artifacts/com.google.firebase</a></p>
+<p style="text-align: center;"><img src="T7_3_3_3_1.png" alt="" width="1159" height="858" /></p>
+<p>Una vegada baixat i descomprimit el contingut en una carpeta, construiu-vos una llibreria anomenada <strong>Firebase</strong> que incorpore tots els <strong>jar</strong>. El següent vídeo mostra com fer-ho:</p>
+<p style="text-align: center;"><iframe width="899" height="556" src="https://slides.com/alvarinstitut/ad-t7_llibreria_firebase/embed?style=light"></iframe></p>
+<p class="titolet">Configuració</p>
+<p>El primer que hem de fer és preparar el nostre projecte per a que puga accedir a l'aplicació que hem creat en Firebase. En l'entron de IntelliJ ens baixarem un fitxer json on estarà la clau per a accedir a la nostra aplicació. Hem d'anar a la configuració del projecte:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_1_1.png" alt="" width="1351" height="767" /></p>
+<p>I dins de la configuració anar a la pestanya <strong>Cuentas de servicio </strong>(<strong>Service Accounts</strong>). Ahí veurem uns exemples d'utilització (a nosaltres ens interessa <strong>Java</strong>), i baix de tot un botó per a <strong>Generar una nova clau privada</strong>:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_1_2.png" alt="" width="1346" height="952" /></p>
+<p>Ens baixarà un fitxer <strong>json</strong> que<strong> haurem de guardar</strong> a l'arrel del projecte. Després, com deia l'exemple, col·loquem el següent per a un accés correcte:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>FileInputStream serviceAccount =
+  new FileInputStream("path/to/serviceAccountKey.json");
+
+FirebaseOptions options = new FirebaseOptions.Builder()
+  .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+  .setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com")
+  .build();
+
+FirebaseApp.initializeApp(options);</code><code></code></pre>
+</div>
+</div>
+<p><strong>No us oblideu de substituir el nom del fitxer json</strong>. També heu de tenir en compte que <strong>la URL de la base de dades serà diferent per a cadascú de nosaltres</strong>.</p>
+<p>Ho tenim escrit en <strong>Java</strong>, i per tant haurem de fer la transformació a <strong>Kotlin</strong>. i quedarà així (ho he particularitzat al meu projecte, però recordeu que heu de canviar el nom del fitxer json i la URL pels vostres):</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>	val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
+
+	val options = FirebaseOptions.Builder()
+		.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+		.setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com").build()
+
+	FirebaseApp.initializeApp(options)</code></pre>
+</div>
+</div>
+<div id="ta162_85" class="block iDevice_content">
+<p class="titolet">Referència a la Base de Dades i a les dades concretes a les quals volem accedir</p>
+<p>Ens haurem de crear un objecte <strong>FirebaseDatabase</strong>, que serà una referència a tota la Base de Dades:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">val</span> database = FirebaseDatabase.<span style="font-style: italic;">getInstance</span>()</pre>
+<p>A partir d'ella podríem fer referència a una parella clau-valor que estiga a l'arrel, com quan havíem creat <strong>a1 </strong>( però recordeu que ara no existeix):</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">val </span>refA1 = database.getReference(<span style="color: #008000; font-weight: bold;">"a1"</span>)</pre>
+<p>També podríem fer referència a una parella clau-valor que no estiga en l'arrel de la Base de Dades. Senzillament posaríem la ruta des de l'arrel. Per exemple, per a accedir al nom del primer empleat de l'empresa que tenim guardat, ho faríem així:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">val </span>empleat1 = database.getReference(<span style="color: #008000; font-weight: bold;">"empresa/empleat/0/nom"</span>)</pre>
+<p>En els casos anteriors hem optat per agafar parelles clau-valor, bé a l'arrel o més cap a dins de l'estructura JSON. Però en definitiva és una parella clau-valor.</p>
+<p></p>
+<p>També podem optar per agafar l'estructura JSON i treballar amb ella, com vam fer en el Tema 3, quan vam treballar amb l'estructura JSON.</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">val </span>empresa = database.getReference(<span style="color: #008000; font-weight: bold;">"empresa"</span>)</pre>
+<p>D'aquesta manera, en la qual agafem tota l'estructura, tindrem dues maneres de treballar posteriorment per a accedir més avall en l'estructura:</p>
+<ul>
+<li>Passar-lo a objectes i arrays de JSON, i treballar com vam fer en el Tema 3. Molt còmode, sobretot quan es tracta d'operacions de lectura</li>
+<li>Treballar directament amb mètodes de Firebase que ens permeten accedir bé a tots els fills d'una estructura, bé a un fill en concret</li>
+</ul>
+<p>Ho mostrarem en els exemples posteriors.</p>
+<p></p>
+<div id="ta163_85" class="block iDevice_content">
+<div id="ta164_85" class="block iDevice_content">
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32_rd_utilitzaci_des_de_intellij.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_rdintellij_accs_a_les_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

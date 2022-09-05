@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2 - Estratègies d'emmagatzematge de XML | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 9: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li id="active"><a href="2__estratgies_demmagatzematge_de_xml.html" class="active no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul class="other-section">
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li><a href="33__funcions_que_produeixen_contingut_xml.html" class="no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li><a href="34__convertir_taules_senceres_a_xml.html" class="no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li><a href="36__utilitzaci_des_de_java.html" class="no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml_natives.html" class="no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul class="other-section">
+      <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
+      <ul class="other-section">
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li><a href="614__funcions.html" class="no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+         <li><a href="627__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">6.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+         <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1__introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2 - Estratègies d'emmagatzematge de XML</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id24">
+<div class="iDevice emphasis0">
+<div id="ta24_1" class="block iDevice_content">
+<p>L’<acronym title="Extensible Markup Language">XML</acronym> és un llenguatge que permet tenir informació estructurada, ja siga per a intercanvi entre plataformes o, simplement, per facilitar un ràpid accés a continguts. La seua àmplia acceptació ha dut la necessitat d’idear mecanismes per poder guardar, de manera fàcil i àgil, grans volums de documents <acronym title="Extensible Markup Language">XML</acronym>.</p>
+<p>Hi ha més d'una manera, més d'una estratègia per a guardar la informació XML, però abans de definir-les hem de fer una xicoteta reflexió sobre els tipus de documents <acronym title="Extensible Markup Language">XML</acronym> que ens podem trobar.</p>
+<p> </p>
+<p class="titolet">Document centrats en dades</p>
+<p>Anomenats en anglès <strong><em>data-centric</em></strong>, estan pensats per a l’intercanvi entre plataformes. Solen ser documents amb estructures regulars i ben definides. Les dades que transmeten són simples i ben definides (encara que pot ser que siguen molt extenses), i en moltes ocasions són actualitzables. Acostumen a tenir com a origen una Base de Dades i, en conseqüència, no és massa important la seua persistència com a document <acronym title="Extensible Markup Language">XML</acronym>. Aquest podria ser un exemple:</p>
+<div class="codi2">&lt;clients&gt;
+<div style="margin-left: 30px;">&lt;client&gt;</div>
+<div style="margin-left: 60px;">&lt;codi&gt;10&lt;/codi&gt;</div>
+<div style="margin-left: 60px;">&lt;raoSocial&gt;Components Informàtics&lt;/raoSocial&gt;</div>
+<div style="margin-left: 30px;">&lt;/client&gt;</div>
+<div style="margin-left: 30px;">&lt;client&gt;</div>
+<div style="margin-left: 60px;">&lt;codi&gt;20&lt;/codi&gt;</div>
+<div style="margin-left: 60px;">&lt;raoSocial&gt;Institut Obert de Catalunya&lt;/raoSocial&gt;</div>
+<div style="margin-left: 30px;">&lt;/client&gt;</div>
+&lt;/clients&gt;</div>
+<p>Es veu perfectament la seua estructura fortament jeràrquica, clara i concisa.</p>
+<p> </p>
+<p class="titolet">Document centrats en el document</p>
+<div>
+<p>Anomenats en anglès <strong><em>document-centric</em></strong>, amb una estructura irregular. L’origen i el destí acostuma a estar en les persones i solen estar fets a mà. Hi ha que poden arribar a tenir un cert format, però no és estricte ni definit i en tal cas parlem de dades semiestructurades. Exemples de documents centrats en el document són els llibres, els correus electrònics, els anuncis, etc.</p>
+<p>A continuació veiem un exemple de document <acronym title="Extensible Markup Language">XML</acronym> centrat en el document. Es tracta d’un document descriptiu d’un producte (torró) en el qual l’autor ha inserit diverses marques per facilitar-ne la consulta i la formatació en un navegador. Podeu comprovar-ho copiant el contingut en un fitxer amb extensió <b>.xml</b> (per exemple <strong>Torro.xml</strong>) i obrint-lo amb un navegador.</p>
+<div class="codi2">
+<div>&lt;Producte&gt;</div>
+<div> </div>
+<div>&lt;Descripcio&gt;</div>
+<div>El &lt;NomProducte&gt;Torró&lt;/NomProducte&gt; és un &lt;Sumari&gt;dolç que es fa generalment d'&lt;Ingredient&gt;ametla&lt;/Ingredient&gt;, <span>&lt;Ingredient&gt;</span>mel<span>&lt;/Ingredient&gt;</span> i <span>&lt;Ingredient&gt;</span>ou<span>&lt;/Ingredient&gt;</span>&lt;/Sumari&gt;, generalment cuit.</div>
+<div>&lt;/Descripcio&gt;</div>
+<div> </div>
+<div>&lt;Origen&gt;</div>
+<div> </div>
+<div>&lt;Paragraf&gt;L'origen del torró no és del tot clar, la teoria més plausible és que siga d'origen &lt;i&gt;àrab&lt;/i&gt;, com altres postres amb ametles, i des de les comarques del Sud del País Valencià, especialment de &lt;b&gt;Xixona&lt;/b&gt; i &lt;b&gt;Alacant&lt;/b&gt; estant es va popularitzar a altres zones peninsulars, el sud de França i altres parts del món&lt;/Paragraf&gt;</div>
+<div> </div>
+<div>&lt;Paragraf&gt;Potser el nogat occità i el &lt;i&gt;torrone&lt;/i&gt; o torró italià van néixer també directament dels àrabs, o no se sap si per influència del torró català, que ja existia a l'Edat Mitjana i que en aquell moment, i en concret al segle XV, la catalana era la cuina més prestigiosa d'Europa.&lt;/Paragraf&gt;</div>
+<div> </div>
+<div>&lt;/Origen&gt;</div>
+<div> </div>
+<div>&lt;Varietats&gt;Varietats </div>
+<div>&lt;List&gt;</div>
+<div>&lt;Item&gt;&lt;i&gt;Torró de Xixona&lt;/i&gt;&lt;/Item&gt;</div>
+<div>&lt;Item&gt;<span>&lt;i&gt;Torró d'Alacant&lt;/i&gt;</span>&lt;/Item&gt;</div>
+<div>&lt;Item&gt;<span>&lt;i&gt;Torró de Xerta&lt;/i&gt;</span>&lt;/Item&gt;</div>
+<div>&lt;Item&gt;&lt;i&gt;Torró de Xerta&lt;/i&gt;&lt;/Item&gt;</div>
+<div>&lt;Item&gt;&lt;i&gt;Torró de Xerta&lt;/i&gt;&lt;/Item&gt;</div>
+<div>&lt;/List&gt; </div>
+<div>&lt;/Varietats&gt;</div>
+<div> </div>
+<div>&lt;/Producte&gt;</div>
+</div>
+<p>Si li afegírem un full d'estil (stylesheet o css) de manera prou senzilla podríem donar-li un aspecte més agradable, tal i com es va veure en el mòdul de Llenguatge de Marques. I es veu clarament que està centrat en el propi document, sense estructurar les dades massa. Aquest podria ser un exemple de css (el podríem anomenar <strong>Torro.css</strong>):</p>
+<p class="codi2">Producte {<br />    background-color: #FFD7D7;<br />    font-size: medium;<br />    display: block;<br />    margin: 10px;<br />}<br /><br />NomProducte {<br />    font-size: large;<br />    color: red;<br />}<br /><br />Descripcio{<br />    display: block;<br />}<br /><br />Origen {<br />    display: block;<br />    margin-top: 20px;<br />    border-top: 1px;<br />}<br /><br />Paragraf {<br />    display: block;<br />}<br /><br />Varietats {<br />    display: block;<br />    font-size: x-large;<br />    color: green;<br />    margin-top: 20px;<br />}<br /><br />List {<br />}<br /><br />Item {<br />    display: list-item;<br />    margin-left: 20px;<br />    margin-top: 5px;<br />    font-size: large;<br />    color: black;<br />}<br /><br />i {<br />    font-style: italic;<br />    color: Blue;<br />}<br /><br />b {<br />    font-weight: bold;<br />}</p>
+<p>I si l'apliquem al document xml posant la següent línia al principi del document:</p>
+<p class="codi2">&lt;?xml-stylesheet type="text/css" href="Torro.css"?&gt;</p>
+<p>tindríem el següent aspecte:</p>
+<p><img src="T7_2_1.png" alt="Document centrat en document" style="display: block; margin-left: auto; margin-right: auto; border: 1px solid black;" height="349" width="1042" /></p>
+<p></p>
+<p>La classificació de documents en <strong><em>data-centric</em></strong> i <strong><em>document-centric </em></strong>no és sempre directa i clara i, en múltiples ocasions, el contingut estarà barrejat o serà difícil de catalogar en un o altre tipus. Així, podem tenir documents centrats en dades (com una comanda o una factura) on alguna de les dades tinga codificació lliure (per exemple, part de la descripció de les línies) i documents centrats en el document (com un manual d’usuari) amb una part regular amb format estricte i ben definit (com el nom de l’autor i la data de revisió). Malgrat això, la caracterització dels documents en <em>data-centric</em> i <em>document-centric </em>s’utilitza per ajudar a decidir quina és la millor estratègia d’emmagatzematge.</p>
+<p>Ens cal, doncs, conèixer les tècniques d’emmagatzematge existents per, una vegada conegudes, decidir quina tècnica és més adequada segons el tipus de documents que hem de guardar i la gestió que en pretenem.</p>
+<p></p>
+<p class="titolet">Estratègies d'emmagatzematge</p>
+<p>Tècnicament hi ha tres possibles estratègies per guardar els documents <acronym title="Extensible Markup Language">XML</acronym>:</p>
+<ol>
+<li class="level1">
+<div class="li">Guardar-los directament en el sistema d’<strong>arxius del sistema operatiu</strong>. Opció molt pobra, ja que les funcionalitats que permet fer sobre el document queden limitades i definides pel Sistema Operatiu. No permet efectuar operacions sobre el contingut i només es permet el moviment del document com a una unitat. Si es tracta d’una petita quantitat de dades guardades en uns pocs documents <acronym title="Extensible Markup Language">XML</acronym>, aquesta opció pot funcionar, però no és gens recomanable per a gestionar un volum elevat de documents <acronym title="Extensible Markup Language">XML</acronym>.</div>
+</li>
+<li class="level1">
+<div class="li">Guardar-los en un <strong>Sistema Gestor de Bases de Dades R</strong><strong>elacional </strong> o <strong>Orientat a Objectes</strong>. Aquesta opció obliga a una transformació del document <acronym title="Extensible Markup Language">XML</acronym> cap al model que corresponga (relacional o orientat a objectes), per a poder guardar-lo.</div>
+</li>
+<li class="level1">
+<div class="li">Guardar-los en una<strong> base de dades <acronym title="Extensible Markup Language">XML</acronym> nativa</strong>. Aquesta opció permet guardar directament el document <acronym title="Extensible Markup Language">XML</acronym> a la base de dades sense cap tipus de transformació. Les bases de dades <acronym title="Extensible Markup Language">XML</acronym> natives han estat dissenyades especialment per a l’emmagatzematge d’XML. L’abreviatura és <strong>BD-XML nativa</strong>. L’abreviatura anglesa és <strong>NXD</strong>.</div>
+</li>
+</ol>
+<p>Deixant de banda la primera opció, podríem dir com a <strong>regla general</strong> que els documents de tipus <strong><em>data-centric </em></strong>s’emmagatzemarien en una Base de Dades tradicional (relacional o orientada a objectes). Això es pot fer bé fent un mapatge de les dades, tenint la possibilitat de fer-lo l'usuari, per mitjà d’eines de tercers, o per les capacitats que el SGBD incorpora per a poder tractar XML. En aquest últim cas, es diu que la base de dades està <strong>habilitada per a XML</strong> (<em>XML-enabled</em>).</p>
+<p>En canvi, els documents de tipus <strong><em>document-centric </em></strong>es guardarien en una base de dades <strong>XML nativa</strong>. </p>
+<p>Aquestes regles no són absolutes. D’una banda, els documents <em>data-centric</em> (sobretot si es tracta de dades semiestructurades) es poden guardar en bases de dades natives. De l’altra, els documents <em>document-centric</em> poden ser guardats en bases de dades tradicionals en aquells casos en què es precisen poques funcionalitats específiques <acronym title="Extensible Markup Language">XML</acronym>.</p>
+<p>En el moment en què va aparèixer la necessitat de guardar documents <acronym title="Extensible Markup Language">XML</acronym>, l’emmagatzematge de dades estava centrat en els SGBD Relacionals o Orientats a Objectes i van sorgir dues tendències:</p>
+<ul>
+<li class="level1">
+<div class="li">D’una banda, els grans SGBD existents van començar a introduir funcionalitats XML, donant lloc a l’aparició dels SGBD-XML habilitats.</div>
+</li>
+<li class="level1">
+<div class="li">D'una altra banda, van començar a aparèixer els SGBD-XML natives.</div>
+</li>
+</ul>
+<p>Avui en dia, els límits entre els SGBD-<acronym title="Extensible Markup Language">XML</acronym> habilitades i els SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives s’estan desdibuixant, ja que les versions actuals de molts SGBD tradicionals (Relacionals i Orientats a Objectes) ja incorporen capacitats natives d’<acronym title="Extensible Markup Language">XML</acronym> i alguns SGBD-XML natives faciliten l’emmagatzematge de fragments de documents XML en bases de dades externes (usualment relacionals). </p>
+<p>En la pregunta següent ens centrarem en guardar en un SGBD relacional, primer fent un mapatge manual, i després utilitzant les eines que ens proporciona el SGBD per a manipular documents XML. Ho farem en PostgreSQL, que és un <strong>SGBD habilitat per a XML</strong>. </p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1__introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1 - Magatzems i fluxos de dades | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li id="active"><a href="1__magatzems_i_fluxos_de_dades.html" class="active no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li><a href="2__manipulaci_dels_fluxos_de_dades.html" class="daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul class="other-section">
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="4__simplificaci_en_kotlin.html" class="no-ch">4 - Simplificació en Kotlin</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2__manipulaci_dels_fluxos_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1 - Magatzems i fluxos de dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id0">
+<div class="iDevice emphasis0">
+<div id="ta0_1" class="block iDevice_content">
+<p style="text-align: justify;">En la major part de programes necessitem guardar informació de forma permanent, de manera que perduren, encara que finalitze l'execució del programa, o que servesquen de dades inicials. Els fitxers ens proporcionen la forma més senzilla de guardar informació.</p>
+<p style="text-align: justify;">En el tema anterior vam veure com poder accedir tant a un directori com a un fitxer, però no vam accedir al contingut d'aquestos. Dels fitxers només podíem veure les seues característiques externes: nom, tipus, permisos, grandària, ... Però en cap moment vam accedir al seu contingut. Serà el que veurem en aquest tema.</p>
+<p style="text-align: justify;">En un fitxer, com dèiem, quedarà guardada la informació de forma permanent. Serà una <strong>seqüència de bits</strong>, un darrere de l'altre que representaran les dades guardades, bé siguen caràcters d'un text, dades numériques, o els bytes d'una imatge, per exemple. Aquesta seqüència de bits ens aporta una visió estàtica de les dades, ja que queden guardades al llarg del temps.</p>
+<p style="text-align: justify;">Posant un exemple clàssic, els pantans i dipòsits on s'emmagatzema l'aigua serien comparables als fitxers. Però per a nosaltres aquestos pantans i dipòsits queden lluny. I quan parlem d'aigua corrent tenim més tendència a pensar en les canonades i aixetes que ens porten aquesta aigua emmagatzemada fins a nosaltres. Doncs de forma similar, des del punt de vista de l’aplicació, el que realment cobra importància és la transferència de dades, més que el magatzem, que arriben aquestes dades a l'aplicació o que l'aplicació les puga transferir fins al fitxer. L’eina que ens permet controlar aquestes transferències, de forma similar a les aixetes i canonades, l’anomenem <strong>flux de dades</strong>. És un concepte associat a la transmissió seqüencial d’una sèrie de dades des de l’aplicació al dispositiu d’emmagatzematge o a l’inrevés. Ens dóna una visió eminentment dinàmica de la informació.</p>
+<p style="text-align: justify;">Java utilitza els <strong>streams</strong> (fluxos de dades) per a poder accedir a la informació. Però els <em>streams </em>no limiten la transferència de dades d'un fitxer, sinó que es generalitza per a qualsevol font de dades: memòria, xarxa, fins i tot altres aplicacions. D'aquesta manera es generalitza l'accés a la informació des de qualsevol procedència: si connectem un stream a un fitxer, estarem accedint a un fitxer, però si connectem el stream a un altre programa estarem accedint a les dades proporcionades per un altre programa. Intentarem veure exemples d'accés a diferents fonts a través d'un stream, però ho aplicarem sobretot a l'accés a fitxers, clar.</p>
+<p class="titolet">Fluxos d'entrada i d'eixida</p>
+<p>La primera diferenciació que farem en els fluxos de dades és si són d'entrada o d'eixida:</p>
+<ul>
+<li><strong>Fluxos d'entrada</strong> són aquells que serviran per introduir dades des de l'exterior al programa, és a dir a la zona de memòria controlada pel programa (variables, ...)</li>
+<li><strong>Fluxos d'eixida</strong> són aquells que serviran per a guardar les dades des de les variables del programa fins a l'exterior, per exemple un fitxer, per a que es guarden de forma permanent.</li>
+</ul>
+<p> </p>
+<p class="titolet">Fluxos i tipus de dades</p>
+<p style="text-align: justify;">Per mig del stream aconseguirem que una dada es guarde en un fitxer, o millor dit una sèrie de dades. Quan guardem moltes dades, es compactaran unes al costat de les altres (el que havíem comentat com a seqüenciació de bits). Si intentem recuperar-les, haurem d'anar amb molt de compte amb la grandària de cadascuna de les dades i el seu tipus. Anem a posar un exemple:</p>
+<ul>
+<li>
+<p style="text-align: justify;">Suposem que volem guardar una dada numèrica en un enter (<strong>int</strong>). Els enters, en Java, es guarden en 32 bits. Si volem guardar el número <strong>1.213.156.417</strong>, ens quedarà en binari (els hem posat en grups de 8 bits, per facilitar la lectura):</p>
+<p class="codi2">01001000 01001111 01001100 01000001</p>
+</li>
+<li>
+<p style="text-align: justify;">Suposem ara que volem guardar dos números enters, però del tipus <strong>short</strong>, que només ocupa 16 bits. El número 18.511 es representa en binari com 01001000 01001111, i el número 19.521 es representa 01001100 01000001. Si posem una dada darrere de l'altra (com es guardarà en un fitxer), el resultat serà:</p>
+<p class="codi2">01001000 01001111 01001100 01000001</p>
+</li>
+<li>
+<p>Suposem ara que volem guardar la paraula HOLA. Si guardem el codi ASCII de cada lletra tindrem: <strong>H</strong> (01001000), <strong>O</strong> (01001111),<strong> L</strong> (01001100) i <strong>A</strong> (01000001)</p>
+<p class="codi2">01001000 01001111 01001100 01000001</p>
+</li>
+</ul>
+<p style="text-align: justify;">En resum, les 3 informacions (el número de 32 bits, els 2 números de 16 bits, i la paraula HOLA) es guarden de forma idèntica, com a seqüència de bits.</p>
+<p style="text-align: justify;">Per tant, l'única manera de poder recuperar la informació és saber de quin tipus és i la mida, a banda de l'ordre com està guardada, clar. Els fluxos de dades de Java transfereixen les dades de manera transparent al programador. No cal indicar la quantitat de bits que cal transferir, sinó que es dedueix a partir del tipus de dada que la variable representa. Però sempre haurem de tenir present el tipus de dades i l'ordre.</p>
+<p style="text-align: justify;">Hi ha, però, una excepció amb el tipus <em>char</em>. La multitud d’estàndards de codificació de caràcters existents en l’actualitat i la diversitat de formats utilitzats a l’hora d’implementar les codificacions, usant segons el cas 8, 16, 32 bits o fins i tot una longitud variable en funció del caràcter a representar, fan que siga molt difícil tractar aquest tipus de dades com una simple seqüència de bytes.</p>
+<p style="text-align: justify;">Internament, Java representa el tipus caràcter amb una codificació UNICODE de 16 bits (UTF-16) per tal de suportar múltiples alfabets a banda de l’occidental. Tot i així, és capaç de gestionar fonts de dades (fitxers entre d’altres) de diverses codificacions (<acronym title="American Standard Code for Information Interchange">ASCII</acronym>, <acronym title="International Organization for Standardization">ISO</acronym>-8859, UTF-8, UTF-16…). En funció de la codificació triada, el número de bits utilitzats en l’emmagatzematge variarà. Es fa necessari, doncs, un tractament especial a l’hora de manipular aquestes dades. Com veurem, Java disposa d’una jerarquia específica de classes orientades a fluxos de caràcters per tal de fer aquestos canvis i transformacions totalment transparents al programador.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2__manipulaci_dels_fluxos_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

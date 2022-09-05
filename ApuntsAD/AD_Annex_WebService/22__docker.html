@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2 - Docker | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Muntatge d'un WebService</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li class="current-page-parent"><a href="2_installaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="current-page-parent daddy">2.- Instal·lació del Servidor Web i el Servidor de Bases de Dades</a>
+   <ul>
+      <li><a href="21__xampp.html" class="no-ch">2.1 - XAMPP</a></li>
+      <li id="active"><a href="22__docker.html" class="active no-ch">2.2 - Docker</a></li>
+   </ul>
+   </li>
+   <li><a href="3_utilitzaci_de_xampp.html" class="daddy">3.- Utilització de XAMPP</a>
+   <ul class="other-section">
+      <li><a href="31__mysql.html" class="no-ch">3.1 - MySQL</a></li>
+      <li><a href="32__ftp.html" class="no-ch">3.2 - FTP</a></li>
+   </ul>
+   </li>
+   <li><a href="4_php_accs_a_les_dades.html" class="no-ch">4.- PHP: Accés a les dades</a></li>
+   <li><a href="5_json.html" class="no-ch">5.- JSON</a></li>
+   <li><a href="6_accs_des_de_kotlin.html" class="no-ch">6.- Accés des de Kotlin</a></li>
+   <li><a href="7_accs_des_dandroid.html" class="no-ch">7.- Accés des d'Android</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="21__xampp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_utilitzaci_de_xampp.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2 - Docker</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id23">
+<div class="iDevice emphasis0" >
+<div id="ta23_112_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Des de Docker encara se simplifica més, ja que podem utilitzar una imatge amb tot instal·lat: Apache, PHP, MySQL... Però evidentment hem de tenir instal·lat docker.</p>
+<p style="text-align: justify;">De fet podem trobar moltes imatges ja creades.</p>
+<p style="text-align: justify;">Per exemple podem utilitzar aquesta:</p>
+<p style="text-align: justify;"><a href="https://hub.docker.com/r/tomsik68/xampp/">https://hub.docker.com/r/tomsik68/xampp/</a></p>
+<p style="text-align: justify;">En la pàgina tenim les instruccions, però bàsicament serà açò fent-lo des d'una terminal:</p>
+<ul style="text-align: justify;">
+<li>Per a instal·lar-la</li>
+</ul>
+<div class="highlighted-code language-r" style="text-align: justify;">
+<div>
+<pre><code>docker pull tomsik68/xampp</code></pre>
+</div>
+</div>
+<ul style="text-align: justify;">
+<li>Per a executar-la</li>
+</ul>
+<div class="highlighted-code language-r" style="text-align: justify;">
+<div>
+<pre><code>docker run --name myXampp -p 41061:22 -p 41062:80 -d -v ~/www:/www tomsik68/xampp</code></pre>
+</div>
+</div>
+<p style="padding-left: 30px; text-align: justify;">El que estem fer és crear una instància anomenada myXampp, enllaçant el port 41061 al port 22 de la imatge (per a fer ssh), i el port 46062 al port 80 (per accedir al servidor web). Podríem haver triat uns altres ports, però aquestos poden anar bé per a no interferir (per exemple si ja s'estava utilitzant el port 80 en la màquina real). A més s'ha relacionat el directori www (que s'ha de crear en el home de la màquina real) al directori /www de la imatge que és on s'han de guardar les pàgines.</p>
+<p style="padding-left: 30px;">Una vegada en marxa, accedim al servidor web posant l'adreça i el port 41062. Si accedim des de la mateixa màquina serà per tant:</p>
+<p style="padding-left: 30px;"><a href="http://localhost:41062">http://localhost:41062</a></p>
+<p style="padding-left: 30px;"></p>
+<p style="padding-left: 30px;"><img src="Ann_WebService_2_2_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1086" height="662" /></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="21__xampp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_utilitzaci_de_xampp.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7 - Estructura dels fitxers de mapatge | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__connexi_a_hibernate.html" class="daddy">5 - Connexió a Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__hql_consultes_senzilles.html" class="no-ch">5.1 - HQL: consultes senzilles</a></li>
+      <li><a href="52__comenant_a_programar.html" class="no-ch">5.2 - Començant a programar</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li id="active"><a href="7__estructura_dels_fitxers_de_mapatge.html" class="active daddy">7 - Estructura dels fitxers de mapatge</a>
+   <ul>
+      <li><a href="71__anotacions_en_compte_de_fitxers_xml_de_mpatge.html" class="no-ch">7.1 - Anotacions en compte de fitxers xml de mpatge</a></li>
+   </ul>
+   </li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6__classes_generades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="71__anotacions_en_compte_de_fitxers_xml_de_mpatge.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7 - Estructura dels fitxers de mapatge</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id14">
+<div class="iDevice emphasis0">
+<div id="ta14_1" class="block iDevice_content">
+<p>En la pregunta 5.1 havíem vist les classes generades per Hibernate. Anem a veure-ho ara amb més detall, mirant totes les classes i fitxers generades en el procés de mapatge i com s'interrelacionen entre elles.</p>
+<p>Els fitxers que serveixen de mapatge, Hibernate els genera de tipus <strong>XML</strong>, i seran:</p>
+<ul>
+<li><strong>hibernate.cfg.xml</strong>, ja comentat anteriorment i que estableix les condicions bàsiques de la connexió amb la Base de Dades (Driver, URL, usuari, contrasenya, ...).</li>
+<li>Un fitxer <strong>.hbm.xml</strong> per cada taula (i classe). Així en el nostre exemple tindrem <strong>Comarques.hbm.xml</strong>, <strong>Poblacions.hbm.xml </strong>i <strong>Instituts.hbm.xml</strong> i són els encarregats de dir la correspondència entre els camps de la taula (p.e. COMARCA) i les propietats de l'objecte (p.e. Comarca.java).</li>
+</ul>
+<p>La següent imatge explica aquesta manera d'enllaçar. Les nostre classes són classes Kotlin, però totalment equivalents a les classes Java, per això es deixa aquest nom en la imatge:</p>
+<p style="text-align: center;"><img src="T5_7_1.png" style="border-width: 1px;" width="755" height="776" /></p>
+<p> </p>
+<p class="titolet">El fitxer hibernate.cfg.xml</p>
+<p> El fitxer <strong>hibernate.cfg.xml</strong> estableix les condicions de la connexió:</p>
+<div class="codi2">&lt;?xml version='1.0' encoding='utf-8'?&gt;<br />&lt;!DOCTYPE hibernate-configuration PUBLIC<br />"-//Hibernate/Hibernate Configuration DTD//EN"<br />"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"&gt;<br />&lt;hibernate-configuration&gt;<br />  &lt;session-factory&gt;<br />    &lt;property name="connection.url"&gt;jdbc:postgresql://89.36.214.106:5432/geo_ad&lt;/property&gt;<br />    &lt;property name="connection.driver_class"&gt;org.postgresql.Driver&lt;/property&gt;<br />    &lt;property name="connection.username"&gt;geo_ad&lt;/property&gt;<br />    &lt;property name="connection.password"&gt;geo_ad&lt;/property&gt;<br />    &lt;property name="hibernate.dialect"&gt;org.hibernate.dialect.PostgreSQL93Dialect&lt;/property&gt;<br />    &lt;mapping resource="Comarca.hbm.xml"/&gt;<br />    &lt;mapping resource="Institut.hbm.xml"/&gt;<br />    &lt;mapping resource="Poblacio.hbm.xml"/&gt;<br />  &lt;/session-factory&gt;<br />&lt;/hibernate-configuration&gt;</div>
+<p>Podem observar com s'especifica el driver JDBC, la URL, l'usuari que es connecta, la contrasenya i el dialecte (per a poder comunicar-se bé). També ha registrat els fitxers de mapatge.</p>
+<p> </p>
+<p class="titolet">Els fitxers .hbm.xml</p>
+<p>Els fitxers <strong>.hbm.xml</strong> estableixen la correspondència entre taula i classe, i dins d'elles entre camps de la taula i propietats de la classe. Mirem el contingut de <strong>Comarques.hbm.xml</strong>. Posem a un costat l'estructura de la taula, i a l'altre l'estructura de l'objecte:</p>
+<table width="1296" height="627" border="1" align="center">
+<tbody>
+<tr>
+<td style="text-align: center; width: 316.167px;"><strong>Taula COMARCA</strong></td>
+<td style="text-align: center; width: 441.233px;"><strong>Comarca.hbm.xml</strong></td>
+<td style="text-align: center; width: 517.267px;"><strong>Comarca.java</strong></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff; width: 316.167px;">
+<p><span style="font-family: courier new, courier, monospace; color: #808080;"><strong><span style="font-size: small;">TABLE COMARCA (</span></strong></span><br /><span style="font-family: courier new, courier, monospace; color: #808080;"><strong><span style="font-size: small;">    nom_c VARCHAR(50) PRIMARY KEY,</span></strong></span><br /><span style="font-family: courier new, courier, monospace; color: #808080;"><strong><span style="font-size: small;">    provincia VARCHAR(25)</span><span style="font-size: small;"></span></strong></span><br /><span style="font-family: courier new, courier, monospace; color: #808080;"><strong><span style="font-size: small;"> );</span></strong></span></p>
+</td>
+<td style="background-color: #ffffff; width: 441.233px;"><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">&lt;?xml version='1.0' encoding='utf-8'?&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">&lt;!DOCTYPE hibernate-mapping PUBLIC</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">"-//Hibernate/Hibernate Mapping DTD 3.0//EN"</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">&lt;hibernate-mapping&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">   &lt;class name="classes.Comarca" table="comarca" schema="public" catalog="geo_ad"&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">      &lt;id name="nomC" column="nom_c"/&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">      &lt;property name="provincia" column="provincia"/&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">      &lt;set name="poblacions" inverse="true" order-by="nom"&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">         &lt;key&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">            &lt;column name="nom_c" not-null="true"/&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">         &lt;/key&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">         &lt;one-to-many not-found="ignore" class="classes.Poblacio"/&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">      &lt;/set&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">   &lt;/class&gt;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">&lt;/hibernate-mapping&gt;</span></td>
+<td style="background-color: #ffffff; width: 517.267px;"><span style="font-size: small; font-family: courier new, courier, monospace; color: #808080;"><strong></strong></span>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">package classes;</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">import java.util.Collection;</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">public class Comarca {</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    private String nomC;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    private String provincia;</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    private Collection&lt;Poblacio&gt; poblacions;</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public String getNomC() { </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">return nomC; </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">}</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public void setNomC(String nomC) {</span> <span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">this.nomC = nomC; </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">}</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public String getProvincia() {</span> <span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">return provincia; </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">}</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public void setProvincia(String provincia) {</span> <span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">this.provincia = provincia; </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">}</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    @Override</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public boolean equals(Object o) {</span><br /><span style="font-family: courier new, courier, monospace; font-size: 8pt;">        ...</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    }</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    @Override</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public int hashCode() {</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">        ...</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    }</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public Collection&lt;Poblacio&gt; getPoblacions() { </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">return poblacions; </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">}</span></p>
+<p><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">    public void setPoblacions(Collection&lt;Poblacio&gt; poblacions) { </span><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">this.poblacions = poblacions;</span> <span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">}</span><br /><span style="font-family: courier new, courier, monospace; color: #000000; font-size: 8pt;">}</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Comentem un poc les coses:</p>
+<ul>
+<li><strong>&lt;hibernate-mapping&gt;</strong> és l'element arrel; tot el mapatge està contingut dins d'ell.</li>
+<li><strong>&lt;class&gt; </strong>Equival a tota la classe per una banda i tota la taula per una altra. Dins d'aquest element estaran totes les correspondències de camps i propietats.
+<ul>
+<li>L'atribut<strong> name</strong> conté el nom de la classe.</li>
+<li>L'atribut <strong>table</strong> conté el nom de la taula corresponent.</li>
+<li>Pot haver algun altre atribut, indicant el catàleg (depén del SGBD)</li>
+</ul>
+</li>
+<li><strong>&lt;id</strong><strong>&gt;</strong> especifica el camp que és clau principal. És diferent als camps normals.
+<ul>
+<li>L'atribut <strong>name</strong> indica el nom de la propietat</li>
+<li>L'atribut <strong></strong> <strong>column</strong> indica el camp de la taula</li>
+</ul>
+</li>
+<li><strong>&lt;property&gt;</strong> especifica un camp normal, que no és clau principal. Només s'ha d'especificar:<br />
+<ul>
+<li>L'atribut <strong>name</strong> indica el nom de la propietat</li>
+<li>L'atribut column indica el camp de la taula</li>
+</ul>
+</li>
+</ul>
+<p>I ens deixem per al final la manera d'enllaçar la clau externa. Recordem que la clau externa està definida en <strong>POBLACIO</strong> i que apunta a <strong>COMARCA</strong>. En el mapatge de <strong>Comarca</strong> tindrem una línia nova que és la que indica que la propietat <strong>poblacios</strong> ha de contenir les poblacions de la comarca. És per tant un conjunt (<strong>set</strong>) de moltes poblacions. Les coses més importants són les següents:</p>
+<ul>
+<li><strong>&lt;set&gt;</strong> que indica que serà un conjunt
+<ul>
+<li>L'atribut <strong>name</strong> serà el nom de la propietat</li>
+<li>L'element <strong>key</strong> especifica la clau externa, amb l'element <strong>column</strong> i atribut <strong>name</strong>, en aquest cas <strong>nom_c</strong>.</li>
+<li>L'element <strong>one-to-many</strong> indica que un departament pot tenir molts empleats (per això era un conjunt), i especifica de quina classe són amb l'atribut <strong>class</strong></li>
+</ul>
+</li>
+</ul>
+<p>En el cas de les poblacions, taula <strong>POBLACIO</strong> i classe <strong>Poblacio</strong>, les coses seran molt similars. La diferència més significativa és la manera de representar la clau externa. Ara serà una relació <strong>many-to-one</strong>, indicant que la població pot estar en una única comarca, és a dir farà referència a un unic objecte <strong>Comarca</strong>.</p>
+<table border="0">
+<tbody>
+<tr>
+<td>
+<div class="codi2"> &lt;many-to-one name="comarca" class="classes.Comarca"&gt; <br />     &lt;column name="nom_c" not-null="true"/&gt;<br /> &lt;/many-to-one&gt;</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>&lt;many-to-one</strong><strong>&gt;</strong> en la propietat que fa referència a l'altra classe <br />
+<ul>
+<li>L'atribut <strong>name</strong> indica el nom de la propietat.</li>
+<li>L'atribut <strong>class</strong> indica la classe a què fa referència, en aquest cas <strong>Comarca</strong>.</li>
+<li>L'element <strong>column</strong> és un element buit amb la propietat <strong>name</strong>, que contindrà el camp de la taula</li>
+</ul>
+</li>
+</ul>
+<p>En resum, dins de l'element <strong>class</strong> que equival a la classe (i la taula), tindrem els elements<strong>:</strong></p>
+<ul>
+<li><strong>id</strong> per a la clau principal</li>
+<li><strong>property</strong> per als camps normals</li>
+<li><strong>set</strong> per als que són apuntats per una clau externa, indicant el conjunt.</li>
+<li><strong>many-to-one</strong> per als que són clau externa<strong></strong></li>
+</ul>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6__classes_generades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="71__anotacions_en_compte_de_fitxers_xml_de_mpatge.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

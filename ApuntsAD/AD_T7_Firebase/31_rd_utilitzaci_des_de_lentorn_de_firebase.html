@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 RD: Utilització des de l'entorn de Firebase | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-44"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li class="current-page-parent"><a href="3__realtime_database_rd.html" class="current-page-parent daddy">3 - Realtime Database (RD)</a>
+   <ul>
+      <li id="active"><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="active no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="32_rd_utilitzaci_des_de_intellij.html" class="daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__cloud_firestore_cf.html" class="daddy">4 - Cloud Firestore (CF)</a>
+   <ul class="other-section">
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li><a href="43_cf_utilitzaci_des_dandroid.html" class="daddy">4.3 CF: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3__realtime_database_rd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_rd_utilitzaci_des_de_intellij.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 RD: Utilització des de l'entorn de Firebase</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id154">
+<div class="iDevice emphasis0">
+<div id="ta154_85" class="block iDevice_content">
+<p style="text-align: justify;">Farem especial menció al fet que el que guardem és un document JSON. Fins i tot ens el podrem baixar (exportar) o pujar un document nou (importar). Això sí, l'operació d'importació destrueix les dades anteriors, mostra de que només podem guardar un document JSON.</p>
+<p style="text-align: center;"><iframe width="1024" height="800" src="https://slides.com/alvarinstitut/t7_firebase_inserirdades/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: justify;">Aques és el contingut del fitxer <strong>Empleats.json</strong> que s'introdueix en el vídeo. Està formatat per a una fàcil lectura, però en realitat no importaria que estiguera tot seguit.</p>
+<p class="codi2">{<br />  "empresa": {<br />    "empleat": [<br />      {<br />        "num": 1,<br />        "nom": "Andreu",<br />        "departament": 10,<br />        "edat": 32,<br />        "sou": 1000<br />      },<br />      {<br />        "num": 2,<br />        "nom": "Bernat",<br />        "departament": 20,<br />        "edat": 28,<br />        "sou": 1200<br />      },<br />      {<br />        "num": 3,<br />        "nom": "Clàudia",<br />        "departament": 10,<br />        "edat": 26,<br />        "sou": 1100<br />      },<br />      {<br />        "num": 4,<br />        "nom": "Damià",<br />        "departament": 10,<br />        "edat": 40,<br />        "sou": 1500<br />      }<br />    ]<br />  }<br />}</p>
+<p style="text-align: justify;">Ja heu vist que en importar <strong>Empleats.json </strong>s'han perdut les altres dades. Poseu una altra vegada la parella clau-valor <strong>a1</strong> (per exemple amb el valor <strong>Hola</strong>) ja que per ser molt senzilla l'estructura la utilitzarem en alguns exemples. Així ens queda l'estructura per als posteriors exemples:</p>
+<p style="text-align: center;"><img src="T7_2_2_1.png" alt="" width="938" height="472" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3__realtime_database_rd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_rd_utilitzaci_des_de_intellij.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

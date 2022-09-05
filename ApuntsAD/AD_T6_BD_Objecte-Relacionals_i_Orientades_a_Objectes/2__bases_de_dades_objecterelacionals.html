@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2 - Bases de Dades Objecte-Relacionals | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li id="active"><a href="2__bases_de_dades_objecterelacionals.html" class="active daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul>
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21__caracterstiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2 - Bases de Dades Objecte-Relacionals</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p>Com s'ha comentat en el punt anterior, les <strong>Bases de Dades Objecte-Relacionals</strong> (SGBDOR, o ORDBMS en anglès) són Sistemes Gestors de Bases de Dades Relacionals que incorporen conceptes d'objectes per a poder donar servei a la programació orientada a objectes, que cada vegada s'està imposant més. D'aquesta manera podrem guardar objectes (o una cosa semblant) en les taules.</p>
+<p>Com hem comentat en temes anteriors, les Bases de Dades Relacionals continuen utilitzant-se de forma massiva, per la seua solvència i robustesa. No obstant això, les més avançades intenten incorporar els objectes en els tipus de dades, de manera que els programes fets en Programació Orientada a Objectes (POO) ho tenen més fàcil per continuar utilitzant-les. És el cas per exemple dels SGBD Oracle, Informix o PostgreSQL.</p>
+<p>En aquestos apunts utilitzarem <strong>PostgreSQL</strong>, per a poder donar continuïtat al SGBD utilitzat en el mòdul de Bases de Dades, de primer de DAM. Només volem connectar-nos com a clients, això sí, com a usuaris diferents, per a poder crear cadascú els seus objectes sense interferències d'uns als altres. D'aquesta manera se'ns plantegen dues possibilitats:</p>
+<ul>
+<li>Instal·lar el servidor PostgreSQL per a no interferir amb ningú,</li>
+<li>No instal·lar el servidor, i utilitzar un usuari i Bases de Dades diferent per a no interferir (el professor us en proporcionarà un). </li>
+</ul>
+<p>Tant en un cas com en l'altre, en principi tindríem prou com a clients amb la perspectiva <strong>Database Development</strong> d'Eclipse, connectant-nos a la Base e Dades i usuari propis. Podrem consultar les coses que hi ha i també executar sentències SQL. Tanmateix, per a més comoditat i control sobre la Base de Dades de PostgreSQL, utilitzarem el <strong>pgAdmin III</strong>, el client més utilitzat de PostgreSQL.</p>
+<p></p>
+<p><strong class="titolet2">Si voleu instal·lar-vos el servidor PostgreSQL:</strong></p>
+<p style="margin-left: 30px;">En cas que vulgueu instal·lar-vos el vostre propi servidor PostgreSQL en el vostre equip, per a no tenir interferències de ningú.</p>
+<p style="margin-left: 30px;">Com a guia d'instal·lació i utilització de <strong>PostgreSQL</strong>, teniu uns apunts en l'últim tema, el dels annexos. Concretament, els punts que més interessaran seran:</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><strong>2.2 Instal·lació automàtica en Windows</strong></li>
+<li><strong></strong><strong></strong><strong>3.2 PgAdmin III</strong>, que és el programa que utilitzarem per a crear usuaris, crear Bases de Dades i per a fer consultes.</li>
+<li><strong>6.1 Gestió de rols: utilització com a usuaris</strong>, per a poder crear usuaris</li>
+<li><strong>6.4 Autenticació d'usuaris</strong>, per a poder connectar des del client (des de Java, en el nostre cas)</li>
+<li><strong>7.1 Bases de Dades: Creació, Modificació i Eliminació</strong>, per  crear Bases de Dades</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 30px;">Si heu instal·lat PostgreSQL en una màquina virtual, per a connectar des de qualsevol client, haurem de saber <strong>l'adreça IP</strong> d'aquesta màquina virtual. En canvi si heu instal·lat PostgreSQL en la màquina real, els accessos des del client (pgAdmin III i des de Java) es faran al <strong>localhost</strong>.</p>
+<p style="margin-left: 30px;">L'objectiu final serà accedir des de Java, però per a poder fer proves ens faria falta algun programa per accedir directament a PostgreSQL, veure els usuaris, veure directament les taules, i provar sentències SQL. El més còmode serà <strong>PgAdmin III</strong> (com s'ha comentat més amunt). Per a veure com s'utilitza, podeu consultar els apunts abans esmentats (pregunta 3.2). Però recordeu que únicament l'utilitzarem per a accedir de forma còmoda i poder fer proves ràpidament.</p>
+<p style="margin-left: 30px;">Haureu de crear-vos una connexió com al superusuari <strong>postgres</strong> , amb la contrasenya proporcionada en el moment de la instal·lació</p>
+<p style="margin-left: 30px; text-align: center;"><strong><span style="color: #ff0000;"><img src="T6_2_1.png" style="border: 1px solid black;" width="709" height="675" /></span></strong></p>
+<p style="margin-left: 30px;">A continuació haureu de crear un usuari per a fer les pràctiques del tema. Li podeu posar el nom <strong>rxx</strong>, amb contrasenya <strong>rxx</strong>. Posteriorment haureu de crear la Base de Dades <strong>rxx</strong>, el propietari de la qual ha de ser <strong>rxx</strong>.</p>
+<p style="margin-left: 30px;">Per últim, us aniria bé una connexió com a usuari <strong>rxx</strong> a la BD <strong>rxx</strong>. Aquesta és la que hauríeu d'utilitzar per a fer les pràctiques del tema.</p>
+<p style="margin-left: 30px; text-align: center;"><span style="color: #ff0000;"><strong><img src="T6_2_2.png" style="border: 1px solid black;" width="709" height="675" /></strong></span></p>
+<p></p>
+<p><strong class="titolet2">Si NO voleu instal·lar-vos el servidor PostgreSQL:</strong></p>
+<p>Utilitzarem com a mínim el programa <strong>PgAdmin III</strong>, que ens permet connectar de forma còmoda amb el servidor. En els apunts penjats al final, en la secció d'annexos, teniu la manera d'instal·lar <strong>PgAdmin III</strong>, en la pregunta <strong>2.5</strong>, tant per a Windows comper a Ubuntu. Són versions endarrerides, però la manera de funcionar serà la mateixa.</p>
+<p>Posteriorment ens haurem de crear una connexió amb el servidor (adreça <strong>89.36.214.106</strong>) a la Base de Dades i usuari que us especificarà el professor. En la imatge teniu un exemple, però reordeu que heu de canviar <strong>rxx</strong> per l'usuari i BD que us dirà el professor</p>
+<p style="text-align: center;"><span style="color: #ff0000;"><strong><img src="T6_2_3.png" style="border: 1px solid black;" width="709" height="675" /></strong></span></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21__caracterstiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

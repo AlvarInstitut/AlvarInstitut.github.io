@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2 - DBeaver | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-23"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__tocar_les_dades.html" class="current-page-parent daddy">4 - "Tocar" les dades</a>
+   <ul>
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li id="active"><a href="42__dbeaver.html" class="active no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__establiment_de_la_connexi.html" class="no-ch">5.1 - Establiment de la connexió</a></li>
+      <li><a href="52__peticions_bsiques.html" class="no-ch">5.2 - Peticions bàsiques</a></li>
+      <li><a href="53__exemple.html" class="no-ch">5.3 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="6__jdbc_avanat.html" class="daddy">6 - JDBC avançat</a>
+   <ul class="other-section">
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="41__des_de_intellij.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__iniciaci_a_lapi_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2 - DBeaver</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id45">
+<div class="iDevice emphasis0" >
+<div id="ta45_110_2" class="block iDevice_content">
+<div class="exe-text"><p>Ja hem vist la utilitat d'inspeccionar les Bases de Dades que ens proporciona IntelliJ, i que ens permet accedir a les Bases de Dades per veure l'estructura i les dades de les taules, fins i tot, fer i executar sentències SQl. Però no és excessivament còmoda.</p>
+<p>Els Sistemes Gestors de Bases de Dades tenen clients específics per a poder treballar amb les seues Bases de Dades.</p>
+<p>Però hi ha un altre software, lliure, anomenat <strong>DBeaver </strong>que ens permet connectar a quasi totes les Bases de Dades Relacionals, i fins i tot a moltes BD NoSQL en la seua versió comercial (Enterprise Edition). Nosaltres utilitzarem la que sí que és de codi obert, la Community Edition.<strong></strong></p>
+<p>Ens ho podem baixar des de la seua pàgina de descàrregues, <a href="https://dbeaver.io/download">https://dbeaver.io/download</a>. En el moment de fer aquestos apunts van per la versió 21.2.2</p>
+<p><img src="T4_4_2_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1204" height="836" /></p>
+<p>La seua instal·lació no ofereix cap dificultat. En concret, per a Ubuntu, ens ofereix un paquet Debian, que senzillament hem d'instal·lar com a superusuari.</p>
+<p>Aquest és el seu aspecte:</p>
+<p><img src="T4_4_2_2.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1188" height="825" /></p>
+<p>Anem a crear una connexió a PostgeSQL, una altra a MySQL i una altra a SQLite.</p>
+<p>Quan creem una nova connexió ja podem veure que es pot fer a molts SGBD. En la primera pantalla ja tenim els 3 que volem nosaltres, però hi ha molts més</p>
+<p style="text-align: center;"><img src="T4_4_2_3.png" alt="" width="755" height="743" /></p>
+<p style="text-align: left;">Quan li faça falta un Driver (que per cert seran drivers JDBC) ens preguntarà de baixar-lo automàticament, per tant serà comodíssim.</p>
+<p class="titolet">PostgreSQL</p>
+<p>Aquestes són les dades de connexió que farem:</p>
+<ul>
+<li>Nom de la connexió: el que vulguem, per exemple <strong>geo_ad</strong></li>
+<li>Host: <strong>89.36.214.106</strong></li>
+<li>Port: <strong>5432</strong> (és el port per defecte)</li>
+<li>Database: <strong>geo_ad</strong></li>
+<li>Usuari: <strong>geo_ad</strong></li>
+<li>Contrasenya: <strong>geo_ad</strong></li>
+<li>I en la pestanya <strong>PostgreSQL</strong> cuidem de <strong>no tenir seleccionada l'opció Show all databases</strong>, ja que és inútil mostrar Bases de Dades a les quals no tindrem accés</li>
+</ul>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="T4_4_2_4.png" alt="" width="775" height="743" /></td>
+<td style="width: 50%;"><img src="T4_4_2_5.png" alt="" width="775" height="743" /></td>
+</tr>
+</tbody>
+</table>
+<p>Una vegada creada la connexió podrem navegar fins les taules, i en seleccionar una veurem en 3 pestanyes l'estructura, les dades, i fins i tot un esquema de l'estil del Model Entitat-Relació (encara que en realitat representa el Model Relacional) on intervé la taula, és a dir, ens mostra les seues claus externes.</p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 33.3333%;"><img src="T4_4_2_6.png" alt="" width="1119" height="788" /></td>
+<td style="width: 33.3333%;"><img src="T4_4_2_7.png" alt="" width="1119" height="788" /></td>
+<td style="width: 33.3333%;"><img src="T4_4_2_8.png" alt="" width="1119" height="788" /></td>
+</tr>
+</tbody>
+</table>
+<p>Finalment observem com també podem executar sentències SQL de forma molt còmode, i on ens dóna molta ajuda per escriure correctament les paraules reservades i també les taules i camps de la nostra BD</p>
+<p style="text-align: center;"><img src="T4_4_2_9.png" alt="" width="1119" height="788" /></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id51">
+<div class="iDevice emphasis0" >
+<div id="ta51_112_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">MySQL</p>
+<ul>
+<li>Nom de la connexió: el que vulgueu, per exemple <strong>Connexio MySQL factura</strong></li>
+<li>Servidor: <strong>89.36.214.106</strong></li>
+<li>Port: <strong>3306</strong></li>
+<li>Base de dades: <strong>factura</strong></li>
+<li>Usuari: <strong>factura</strong></li>
+<li>Contrasenya: <strong>factura</strong></li>
+</ul>
+<p style="text-align: center;"><img src="T4_4_2_10.png" alt="" width="775" height="743" /> </p>
+<p>La seua utilització és igual de fàcil que en l'anterior cas.</p>
+<p style="text-align: center;"><img src="T4_4_2_11.png" alt="" width="1119" height="788" /></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id52">
+<div class="iDevice emphasis0" >
+<div id="ta52_113_2" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id53">
+<div class="iDevice emphasis0" >
+<div id="ta53_114_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">SQLite</p>
+<p>La connexió a SQLite és més senzilla i per tant ens preguntarà menys coses:</p>
+<ul>
+<li>Nom de la connexió</li>
+<li>Ruta i nom del fitxer</li>
+</ul>
+<p style="text-align: center;"><img src="T4_4_2_12.png" alt="" width="775" height="743" /></p>
+<p>L'entorn serà totalment similar als dels casos anteriors. Però en aquesta Base de Dades de prova, proveta.sqlite no teníem cap taula:</p>
+<p style="text-align: center;"><img src="T4_4_2_13.png" alt="" width="1119" height="788" /></p>
+<p>Aprofitem per a crear una taula, per veure que és molt fàcil i còmode. Crearem una taula T1 amb 2 camps, c1 numèric, i c2 de text.</p>
+<p>Potser el menys intuïtiu és la manera de crear els camps de la taula. Serà apretant amb el botó de la dreta en la zona de les columnes.</p>
+<p style="text-align: center;"><img src="T4_4_2_14.png" alt="" width="1101" height="772" /></p>
+<p>En les següents imatges es veu com es creen 2 camps. La tercera és en el moment de guardar la taula, i podem comprovar que el que fa és generar una consulta SQL</p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 33.3333%;"><img src="T4_4_2_15.png" alt="" width="546" height="346" /></td>
+<td style="width: 33.3333%;"><img src="T4_4_2_16.png" alt="" width="546" height="346" /></td>
+<td style="width: 33.3333%;"><img src="T4_4_2_17.png" alt="" width="544" height="545" /></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="41__des_de_intellij.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__iniciaci_a_lapi_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4 - Simplificació en Kotlin | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-16"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li><a href="2__manipulaci_dels_fluxos_de_dades.html" class="daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul class="other-section">
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="4__simplificaci_en_kotlin.html" class="active no-ch">4 - Simplificació en Kotlin</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4 - Simplificació en Kotlin</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id22">
+<div class="iDevice emphasis0" >
+<div id="ta22_48_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Tots els programes anteriors funcionen en Kotlin perfectament, perquè estem utilitzant les classes de Java, i aquestes sense problemes funcionen en Kotlin, és una de les seues característiques.</p>
+<p style="text-align: justify;">Tanmateix, Kotlin proporcionarà funcionalitat extra en les classes, que ens permetrà simplificar prou els programes. Són molts els mètodes nous que ens proporcionarà. Ací tenim uns quants agrupats per temàtica.</p>
+<p class="titolet">Mètodes sobre bytes</p>
+<ul>
+<li><strong>readBytes()</strong> : torna un <strong>ByteArray </strong> amb tots els bytes del fitxer, és a dir, tot el seu contingut en forma de bytes</li>
+<li><strong>writeBytes(<em>array</em>: ByteArray)</strong> : escriu en el fitxer el contingut del ByteArray. Si el fitxer ja existia, el sobreescriura.</li>
+<li><strong>appendBytes</strong><strong>(<em>array</em>: ByteArray)</strong> : afegeix al final del fitxer els bytes del ByteArray.</li>
+</ul>
+<p style="text-align: justify;">Tornem a fer el primer exemple, Exemple_2_01.kt, utilitzant aquesta funcionalitat extra. Copieu el següent com <strong>Exemple_2_01_bis.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main(){
+	val f = File("f1.txt")
+	val tot = f.readBytes()
+	for (c in tot){
+		println(c.toChar())
+	}
+}</code></pre>
+</div>
+</div>
+<p>I com a exemple d'escriptura, podem fer Exemple_2_11.kt,on ho podem fer tot en una línia. Copieu el següent com <strong>Exemple_2_11_bis.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main() {
+	val text = "Contingut per al fitxer."
+	File("f3.txt").writeBytes(text.toByteArray())
+}</code></pre>
+</div>
+</div>
+<p>Recordeu que en els dos exemples anteriors per comoditat estem utilitzant caràcters com a dades, i no seria el més correcte utilitzar bytes ni de lectura ni d'escriptura. Ho hem fet únicament per comoditat.<br /><br /></p>
+<p class="titolet">Mètodes sobre caràcters</p>
+<ul>
+<li style="text-align: justify;"><strong>readText(<em>charset</em>: CharSet)</strong>: torna un String amb la tots els caràcters del fitxer. Opcionalment li podem dir el joc de caràcters (si no li ho diem utilitzarà UTF-8)</li>
+<li style="text-align: justify;"><strong>readLines(<em>charset</em>: CharSet)</strong>: torna un List de Strings amb totes les línies del fitxer</li>
+<li style="text-align: justify;"><strong>writeText(<em>text</em>: String, <em>charset</em>: CharSet)</strong>: escriu el string en el fitxer. Si el fitxer ja existia el sobreescriurà. Opcionalment podem posar el joc de caràcters que volem utilitzar. Si no el posem utilitzarà UTF-8. Observeu que ja disposàvem d'un mètode que escrivia tot un String anteriorment, per tant no és una gran millora, excepte pel fet de poder especificar el joc de caràcters. Açò sí que és de gran comoditat.</li>
+<li style="text-align: justify;"><strong>appendText(<em>text</em>: String, <em>charset</em>: CharSet)</strong>: el mateix que l'anterior, però afegint al final.</li>
+</ul>
+<p>Com a exemple anem a veure Exemple_2_21.kt. Copieu el següent com <strong>Exemple_2_21_bis.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main(){
+	val tot = File("f1.txt").readText()
+	for(c in tot){
+		println(c)
+	}
+}</code></pre>
+</div>
+</div>
+<p>I com a exemple d'escriptura, l'adaptació de Exemple_2_31.kt. Copieu el següent com <strong>Exemple_2_31_bis.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main() {
+	val text = "Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ..."
+	File("f5.txt").writeText(text)
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I com a exemple de copiar un fitxer en un altre, fins i tot canviant el joc de caràcters, farem una altra versió del Exemple_2_61.kt. Copieu el següent com <strong>Exemple_2_61_bis.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main() {
+	File("f5_2.txt").writeText(File("f5.txt").readText(), Charsets.ISO_8859_1)
+}</code></pre>
+</div>
+</div>
+<p class="titolet">Mètodes de conversió</p>
+<p style="text-align: justify;">En ocasions és possible que no tinguem un mètode directament en File que ens vinga bé. Un exemple són els mètodes print (print, println, printf). Aleshores, senzillament a partir del File la classe que ens convinga de la jerarquia de InputStream/OutputStream o Reader/Writer. Són mètodes que ens tornen la classe desitjada:</p>
+<ul>
+<li style="text-align: justify;"><strong>inputStream()</strong>: construeix in un InputStream que apunta al File, i el torna</li>
+<li style="text-align: justify;"><strong>inputStream()</strong>: el mateix amb un OutputStream</li>
+<li style="text-align: justify;"><strong>reader(<em>charset</em>: Charset)</strong>: el mateix amb un Reader, tenint la possibilitat d'especificar el joc de caràcters (si no s'especifica serà UTF-8)</li>
+<li style="text-align: justify;"><strong>writer(<em>charset</em>: Charset)</strong>: el mateix amb un Writer</li>
+<li style="text-align: justify;"><strong>bufferedReader(<em>charset</em>: Charset)</strong>: el mateix amb un BufferedReader</li>
+<li style="text-align: justify;"><strong>printWriter(<em>charset</em>: Charset)</strong>: el mateix amb un Writer</li>
+</ul>
+<p style="text-align: justify;">Per exemple, el que hem comentat més amunt: si volem els mètodes print, senzillament obtenim un <strong>PrintWriter</strong> a partir del File. D'aquesta manera, el Exemple_2_41.kt ens quedaria d'una altra manera per a obtenir el PrintWriter que volíem. Copieu el següent com <strong>Exemple_2_41_bis.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main() {
+	val f_out = File("f6.txt").printWriter()
+
+	val a = 5.25.toFloat()
+	val b = "Hola."
+	f_out.print(b)
+	f_out.println("Què tal?")
+	f_out.println(a + 3)
+	f_out.printf("El número %d en hexadecimal és %x", 27, 27)
+
+	f_out.close();
+}</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id23">
+<div class="iDevice emphasis0" >
+<div id="ta23_48_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Altres mètodes</p>
+<p>Hi ha altres mètodes que poden ser molt útils. Per exemple aquell que copia directament un fitxer, o tot un directori recursivament, o que esborra recursivament, ...</p>
+<ul>
+<li><strong>copyTo(<em>destí</em>: File, <em>sobre_escriure</em>: Boolean, <em>buffer</em>: Int)</strong>: copia en el fitxer de destí. Per defecte no sobreescriurà, a no ser que posem true en el segon paràmentre. El tercer paràmetre és per a marcar la grandària del buffer de dades per a fer la còpia.</li>
+<li><strong>copyRecursively(</strong><strong><em>destí</em>: File, <em>sobre_escriure</em>: Boolean)</strong>: copia recursivament el File i tots els seus descendents en el File de destí. Per defecte no sobreescriurà, a menys que posem true en el segon paràmentre. Opcionalment es pot posar un tercer paràmetre per al tractament dels possibles errors</li>
+<li><strong>deleteRecursively():</strong> esborra el file i tots els seus possibles descendents</li>
+</ul>
+<p>També hi ha altres mètodes, com per exemple per a comprovar si el nom del File té extensió, o si comença o finalitza igual que un altre, o per a normalitzar la ruta (llevar possibles redundàncies), i altre més.</p>
+<p>Es poden consultar totes les extensions que proporciona Kotline a la classe File en:</p>
+<p>https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/</p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

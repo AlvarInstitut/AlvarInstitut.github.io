@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.- Diàlegs | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li><a href="4_components.html" class="daddy">4.- Components</a>
+   <ul class="other-section">
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li id="active"><a href="6_dilegs.html" class="active daddy">6.- Diàlegs</a>
+   <ul>
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_designer_gui.html" class="no-ch">7.- Designer GUI</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5_mens.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_joptionpane.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.- Diàlegs</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id11">
+<div class="iDevice emphasis0">
+<div id="ta11_85" class="block iDevice_content">
+<p>Els diàlegs són unes finestres (normalment més menudes que la principal, el JFrame) que fins i tot poden ser no redimensionables, i que poden ser modals, cosa que significa que fins que no es tanca el diàleg, no podem fer res en la finestra principal.</p>
+<p>En crearem un d'exemple, però sobretot veurem dos components que són diàlegs i per tant suposaran obrir una finestra de diàleg de forma molt còmoda.</p>
+<p>Aquest d'exemple és molt senzill. Només posem un text i esperem a que es tanque la finestra (modal). Observeu com en la definició del <strong>JDialog</strong> <strong>Finestra_dialeg </strong>estem cridant a la classe superior passant-li 3 paràmetres:</p>
+<ul>
+<li>El primer fa referència a la finestra de la qual depén, és a dir a son pare.</li>
+<li>El segon és el títol de la finestra diàleg.</li>
+<li>El tercer és un booleà que indica si ha de ser modal o no.</li>
+</ul>
+<p>Des del JFrame principal <strong>Finestra </strong>invoquem al diàleg. En aquest exemple quan apretem un botó. I observeu com en el moment de construir el diàleg li passem la referència a l'actual finestra (<strong>this</strong>), per a que puga saber de qui depén. Si no haguérem volgut que fóra modal, hauria quedat tot molt més senzill, sense passar la finestra principal, i en el moment de definir la classe de la qual hereta <strong>Finestra_dialeg</strong>, que és <strong>JDialog</strong>, no caldria passar-li cap paràmetre.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Finestra_dialeg(f: Finestra) : JDialog(f,"Diàleg",true) {
+	init {
+		setSize(200, 100)
+		setLocationRelativeTo(null)
+		val panell = JPanel()
+		panell.add(JLabel("Hola, què tal?"))
+		add(panell)
+		setVisible(true)
+	}
+}
+
+class Finestra : JFrame() {
+	val boto1 = JButton("Botó 1")
+
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+		setTitle("Exemple de JDialog")
+		setSize(400, 300)
+		setLocationRelativeTo(null)
+		setLayout(GridLayout(2, 1))
+		val panell1 = JPanel(FlowLayout())
+		val panell2 = JPanel(FlowLayout())
+		add(panell1)
+		add(panell2)
+
+		panell1.add(JLabel("Programa principal. Per anar al diàleg apreta el botó"))
+		panell2.add(boto1)
+
+		boto1.addActionListener {
+			println("Obrint diàleg")
+			Finestra_dialeg(this)
+		}
+
+	}
+}
+</code></pre>
+</div>
+</div>
+<p style="text-align: center;"><img src="AnnexSwing_6_1.png" alt="" width="400" height="303" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5_mens.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_joptionpane.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

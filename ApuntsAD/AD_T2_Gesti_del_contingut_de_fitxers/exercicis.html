@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li><a href="2__manipulaci_dels_fluxos_de_dades.html" class="daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul class="other-section">
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="4__simplificaci_en_kotlin.html" class="no-ch">4 - Simplificació en Kotlin</a></li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4__simplificaci_en_kotlin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id17">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 2_1</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta17_41_2" class="block iDevice_content">
+<p>Aquest primer exercicis és per a tractament de bytes, ja que es tractarà de modificar una imatge. Per a poder provar-lo podeu utilitzar la imatge <strong>Penyagolosa.bmp</strong> que se us proporciona en l'aula virtual i l'heu de copiar al directori arrel del projecte <strong>Tema2</strong> per a un funcionament més còmode.</p>
+<p><strong>No es pretén construir un editor d'imatges. Tan sols pretenem agafar la informació del fitxer byte a byte, realitzar alguna transformació en els bytes i guardar-la en un altre fitxer.</strong></p>
+<p>El format d'un fitxer <strong>bmp</strong>, aproximadament és el següent:</p>
+<ul>
+<li>En els 54 primers bytes es guarda informació diversa, com la grandària de la imatge, paleta de colors, ...</li>
+<li>A partir d'ahí es guarda <strong>cada punt</strong> de la imatge com <strong>3 bytes</strong>, un per al roig (R), un per al verd (G) i i un per al blau (B), anant d'esquerra a dreta i de dalt a baix.</li>
+</ul>
+<p>Copia't i modifica la classe <strong>FitxerImatge</strong> en el paquet <strong>exercicis</strong>, creant els mètodes oportuns seguint aquestes pautes:</p>
+<ul>
+<li>El constructor <strong>FitxerImatge(File fEnt)</strong> ha d'inicialitzar la propietat <strong>f</strong> (<strong>File</strong>) <strong>si i només si</strong> existeix el fitxer i l'extensió del fitxer és <strong>.bmp</strong> (ho controlarem senzillament perquè el nom del fitxer acaba així). En cas contrari, traure els missatges d'error oportuns per l'eixida estàndar.</li>
+<li>Els mètodes de transformació (<strong>transformaNegatiu</strong>,<strong> transformaObscur</strong> i el voluntari <strong>transformaBlancNegre</strong>) han de crear un nou fitxer que contindrà la imatge transformada com veurem més avant. El nom del nou fitxer s'ha de formar a partir del nom del fitxer d'entrada, el que hem guardat en el constructor. Serà sempre posant abans del .bmp un guió baix i un identificatiu de la transformació realitzada: <strong>_n</strong> per al negatiu, <strong>_o</strong> per a l'obscur i <strong>_bn</strong> per al blanc i negre (part voluntària). És a dir, si el fitxer d'entrada fóra <strong>imatge1.bmp</strong>, el d'eixida haurà de ser:
+<ul>
+<li><strong>imatge1_n.bmp</strong> per al mètode <strong>transformaNegatiu</strong></li>
+<li><strong>imatge1_o.bmp</strong> per al mètode <strong>transformaObscur</strong></li>
+<li><strong>imatge1_bn.bmp</strong> per al mètode voluntari <strong>transformaBlancNegre</strong><strong></strong></li>
+</ul>
+</li>
+<li>En cada transformació, els primers 54 bytes s'han de copiar sense modificar: s'han d'escriure en el fitxer de destí  tal i com s'han llegit del fitxer d'entrada</li>
+<li>A partir del 54, cada vegada que es llegirà un byte, s'haurà de transformar abans d'escriure'l en el destí. La transformació és d'aquesta manera:
+<ul>
+<li>Per al <strong>negatiu</strong> (<strong>transformaNegatiu</strong>), cada byte de color (RGB) de cada punt, s'ha de transformar en el complementari. Com estem parlant de bytes però que en llegir els guardem en enters, senzillament serà calcular <strong>255 - b</strong> (si b és el byte llegit).</li>
+<li>Per a l'<strong>obscur</strong> (<strong>transformaObscur</strong>), cada byte de color (RGB) de cada punt, s'ha de baixar d'intensitat a la meitat. Senzillament serà calcular <strong>b / 2</strong> (si b és el byte llegit).</li>
+<li>Per al <strong>blanc i negre</strong> (<strong>transformaBlancNegre</strong>), que és el voluntari, hem de donar el mateix valor per al roig, el blau i el verd (RGB) de cada punt, i així aconseguirem un gris d'intensitat adequada. Una bona manera serà<strong> llegir els tres bytes</strong> de cada punt (no s'aconsella utilitzar una lectura amb un array de 3 posicions; millor fer tres lectures guardades en tres variables diferents), <strong>calcular la mitjana</strong> d'aquestos 3 valors, i <strong>escriure el resultat 3 vegades</strong> en el fitxer de destí.</li>
+</ul>
+</li>
+</ul>
+<p>A mode orientatiu del que es vol fer, us adjunte la classe <strong>fitxerImatge</strong> a la qual heu de modificar el constructor i els tres mètodes de transformació (l'últim és voluntari). Recordeu que ha d'anar al paquet <strong>exercicis </strong>i li podeu donar el nom <strong>Exercici_2_1.kt</strong>.<strong></strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exercicis
+
+import java.io.File
+
+class FitxerImatge(fEnt: File) {
+	var f: File = File("")
+
+	init {
+		// Constructor
+		// Control d'existència del fitxer i control de l'extensió .bmp (traure missatges d'error)
+        // En cas que tot siga correcte, inicialitzar f amb fEnt
+ 
+	}
+
+	fun transformaNegatiu() {
+		// Transformar a negatiiu i guardar en _n.bmp
+
+	}
+
+	fun transformaObscur() {
+		// Transformar a una imatge més fosca i guardar en _o.bmp
+
+	}
+	
+	/* Partvoluntària
+	fun transformaBlancNegre() {
+		// Transformar a una imatge en blanc i negre i guardar en _bn.bmp
+
+	}
+ */
+}</code></pre>
+</div>
+</div>
+<p>Aquest seria un exemple de programa principal, que podeu utilitzar si voleu. Recordeu que ha d'anar al paquet <strong>exercicis</strong>.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exercicis
+
+import java.io.File
+
+fun main(args: Array&lt;String&gt;){
+	val f = File("Penyagolosa.bmp")
+	
+	val fi = FitxerImatge(f)
+	fi.transformaNegatiu()
+	fi.transformaObscur()
+	//voluntari
+	//fi.transformaBlancNegre()
+}</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+<p>Per a la imatge que se us proporciona (i que està en la construcció del File del programa principal), que és la de l'esquerra, haurien d'eixir les de la dreta:</p>
+<table border="1" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Imatge inicial</strong></td>
+<td style="text-align: center;"><strong>negatiu</strong></td>
+<td style="text-align: center;"><strong>obscur</strong></td>
+<td style="text-align: center;"><strong>blanc i negre (voluntari)</strong></td>
+</tr>
+<tr>
+<td><img src="Penyagolosa.bmp" width="300" height="225" /></td>
+<td style="text-align: center;"><img src="Penyagolosa_n.bmp" width="300" height="225" /></td>
+<td style="text-align: center;"><img src="Penyagolosa_o.bmp" width="300" height="225" /></td>
+<td style="text-align: center;"><img src="Penyagolosa_bn.bmp" width="300" height="225" /></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Penyagolosa.bmp</strong></td>
+<td style="text-align: center;"><strong>Penyagolosa_n.bmp</strong></td>
+<td style="text-align: center;"><strong>Penyagolosa_o.bmp</strong></td>
+<td style="text-align: center;"><strong>Penyagolosa_bn.bmp</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id18">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 2_2</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta18_42_2" class="block iDevice_content">
+<p>Aquest programa serà el primer que utilitzarà components gràfics.</p>
+<p>Per a entendre els components gràfics de la llibreria <strong>Swing</strong> i els contenidors de la llibreria <strong>Awt</strong>, que són els que utilitzarem, us aconselle que us mireu l'annex <strong>Gràfics en Java: llibreries</strong> <strong>AWT i SWING </strong><strong></strong>que teniu en la secció d'annexos, al final del curs de Moodle. De tota manera, us proporcione "l'esquelet" del programa, i només us demane que feu les sentències de quan s'apreten els botons d'obrir i de guardar.</p>
+<p>Anem a fer un senzill editor de text amb el següent aspecte:</p>
+<p style="text-align: center;"><img src="T2_Ex2_2_1.png" /></p>
+<p style="text-align: justify;">En el JTextField de dalt posarem el nom (i ruta) del fitxer.</p>
+<ul>
+<li style="text-align: justify;">Quan apretem al botó <strong>Obrir</strong> ha de bolcar el contingut del fitxer al <strong>JTextArea </strong>(controlant prèviament que existeix el fitxer).</li>
+<li style="text-align: justify;">Quan apretem a <strong>Guardar</strong>, ha de bolcar el contingut del<strong> JTextArea</strong> en el fitxer (el nom del qual tenim en el <strong>JTextField</strong>).<strong></strong></li>
+</ul>
+<p style="text-align: justify;">L'esquelet del programa és el que trobareu a continuació. He utilitzat la filosofia de l'annex, que consisteix a tenir al final de tot el programa principal (el main) que invoca amb posterioritat <strong>(invokeLater</strong><strong> l'únic</strong>) una funció que crea l'objecte de la classe que hereta de <strong>JFrame</strong>, que és realment la finestra, i la fa visible.</p>
+<p style="text-align: justify;">Una vegada copiat en el paquet <strong>Exercicis</strong> del projecte <strong>Tema2 </strong>per exemple amb el nom <strong>Exercici_2_</strong><strong>2.kt</strong>, només heu de completar el que teniu al final de tot d'aquesta classe on estan els comentaris, és a dir els mètodes <strong>addActionListener</strong> dels boton <strong>obrir</strong> i <strong>guardar</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exercicis
+
+import javax.swing.*
+import java.awt.*
+
+class Exercici_2_2_Pantalla : JFrame() {
+	val et_f = JLabel("Fitxer:")
+	val fitxer = JTextField(25)
+	val obrir = JButton("Obrir")
+	val guardar = JButton("Guardar")
+	val et_a = JLabel("Contingut:")
+	val area = JTextArea(10, 50)
+	val scrollPane = JScrollPane(area)
+
+	// en iniciar posem un contenidor per als elements anteriors
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+
+		setLayout(GridLayout(2, 1))
+		setTitle("Editor de text")
+
+		val panell1 = JPanel(GridLayout(0, 1))
+		val panell1_1 = JPanel(FlowLayout())
+		panell1.add(panell1_1)
+		panell1_1.add(et_f)
+		panell1_1.add(fitxer)
+
+		val panell1_2 = JPanel(FlowLayout())
+		panell1.add(panell1_2)
+		panell1_2.add(obrir)
+		panell1_2.add(guardar)
+		val panell2 = JPanel(GridLayout(0, 1))
+		panell2.add(scrollPane)
+		area.setEditable(true)
+
+		add(panell1)
+		add(panell2)
+		pack()
+		
+		obrir.addActionListener {
+		// Instruccions per a bolcar el contingut del fitxer en el JTextArea
+			
+		}
+		
+		guardar.addActionListener {
+		// Instruccions per a guardar el contingut del JTextArea al fitxer.
+				
+		}
+	}
+}
+
+private fun crearMostrarFinestra() {
+
+	val frame = Exercici_2_2_Pantalla()
+	frame.isVisible = true
+}
+
+fun main(args: Array&lt;String&gt;) {
+	EventQueue.invokeLater(::crearMostrarFinestra)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id19">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 2_3. Voluntari</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta19_43_2" class="block iDevice_content">
+<p>Com a exercici voluntari us propose una altra versió del Editor de Text de l'anterior exercici.</p>
+<p>Ara serà únicament un JTextArea, i les opcions les tindrem en menú. Utilitzeu el component <strong>JFileChooser</strong>  per a buscar fitxers i per a guardar-los que ens proporciona <strong>Swing</strong>. Ja teniu implementada l'opció d'eixir.</p>
+<p style="text-align: center;"><img src="T2_Ex2_2_2.png" /></p>
+<p style="text-align: justify;">Si teniu temps i ganes, afegiu un component baix de tot per a triar la codificació entre <strong>UTF-8</strong> i <strong>ISO-8859-15</strong></p>
+<p style="text-align: justify;">Aquest seria l'esquelet del programa principal i la classe que implementa JFrame. El podeu guardar per exemple en <strong>Exercici_2_3.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exercicis
+
+import javax.swing.*
+import java.awt.*
+import java.io.File
+
+class Exercici_2_3 : JFrame() {
+	val area = JTextArea()
+	val scrollPane = JScrollPane(area)
+
+	val menu_p = JMenuBar()
+    
+    val menu_arxiu = JMenu("Arxiu")
+    val menu_ajuda = JMenu("Ajuda")
+    
+    val obrir = JMenuItem("Obrir")
+    val guardar = JMenuItem("Guardar")
+    val guardarCom = JMenuItem("Guardar com ...")
+    val eixir = JMenuItem("Eixir")
+
+    val quantA = JMenuItem("Quant a Editor")
+    
+    val fCh = JFileChooser()
+
+	// en iniciar posem un contenidor per als elements anteriors
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+
+		setLayout(BorderLayout())
+		setTitle("Editor de text més avançat")
+		add(scrollPane)
+		area.setEditable(true)
+
+		setSize(750, 400)
+        setJMenuBar(menu_p)
+
+        menu_p.add(menu_arxiu)
+        menu_p.add(menu_ajuda)
+        
+        menu_arxiu.add(obrir)
+        menu_arxiu.add(guardar)
+        menu_arxiu.add(guardarCom)
+        menu_arxiu.add(JSeparator())
+        menu_arxiu.add(eixir)
+        
+        menu_ajuda.add(quantA);
+
+		obrir.addActionListener { obrir() }
+
+		guardar.addActionListener { guardar() }
+
+		guardarCom.addActionListener { guardarCom() }
+
+		eixir.addActionListener { eixir() }
+
+		quantA.addActionListener { quantA() }
+	}
+
+	fun obrir() {
+		// Instruccions per a obrir un fitxer i posar el contingut en el JTextArea
+
+	}
+
+	fun guardar() {
+		// Instruccions per a guardar el contingut del JTextArea al fitxer.
+
+	}
+
+	fun guardarCom() {
+		// Instruccions per a guardar el contingut del JTextArea al fitxer, amb la possibilitat de canviar el nom
+
+	}
+
+	fun eixir() {
+		// Instruccions per a eixir
+		System.exit(0)
+	}
+
+	fun quantA() {
+		// Instruccions per a mostrar un diàleg amb la versió (Acerca de...)
+
+	}
+}
+
+
+fun main(args: Array&lt;String&gt;) {
+	EventQueue.invokeLater( { Exercici_2_3().isVisible = true })
+}</code><code><br /></code></pre>
+</div>
+</div>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4__simplificaci_en_kotlin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

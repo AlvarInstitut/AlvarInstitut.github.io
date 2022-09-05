@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.2 CF-IntelliJ: Accés a les dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-60"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li><a href="3__realtime_database_rd.html" class="daddy">3 - Realtime Database (RD)</a>
+   <ul class="other-section">
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="32_rd_utilitzaci_des_de_intellij.html" class="daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__cloud_firestore_cf.html" class="current-page-parent daddy">4 - Cloud Firestore (CF)</a>
+   <ul>
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li class="current-page-parent"><a href="42_cf_utilitzaci_des_de_intellij.html" class="current-page-parent daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul>
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li id="active"><a href="422_cfintellij_accs_a_les_dades.html" class="active no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li><a href="43_cf_utilitzaci_des_dandroid.html" class="daddy">4.3 CF: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="421_cfintellij_connexi_des_de_kotlin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="423_cfintellij_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.2 CF-IntelliJ: Accés a les dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id205">
+<div class="iDevice emphasis0">
+<div id="ta205_85" class="block iDevice_content">
+<p class="titolet">Guardar dades</p>
+<p style="text-align: justify;">Com acabem de comentar, accedim a tot un document dins d'una col·lecció.</p>
+<p style="text-align: justify;">Per a guardar dades, ens podem plantejar 3 operacions d'escriptura sobre el document:</p>
+<ul style="text-align: justify;">
+<li>Sobreescriure'l tot: ho farem amb el mètode <strong>set()</strong></li>
+<li>Esborrar-lo tot: amb el mètode <strong>delete()</strong></li>
+<li>Modificar-lo: amb el mètode <strong>update()</strong></li>
+</ul>
+<p style="text-align: justify;">Excepte per esborrar, per a les altres operacions ens fa falta saber l'estructura del document. Per això tant mètode <strong>set()</strong> com el mètode <strong>update()</strong> accepten com a paràmetre no una única dada, sinó una estructura que puga arribar a reflectir el document. Acceptaran com a paràmetre un <strong>Map&lt;String, Object&gt;</strong>, on podrem col·locar les claus i els valors de tots els membres del document. Cada valor pot ser dels tipus que vam practicar en el punt anterior: string, number, boolean, array, map, ...</p>
+<p style="text-align: justify;">La manera de col·locar un element en una estructura <strong>Map&lt;&gt;</strong> és amb el mètode <strong>put()</strong>, que acceptarà dos paràmetres: la clau i el valor.</p>
+<p style="text-align: justify;">En el següent exemple. quan s'apreta el botó d'enviar (baix a la dreta) es guardarà el contingut del quadre de text <strong>usuari</strong> que està dalt i el de <strong>missatge</strong> que està baix. Però observeu que estem utilitzant el mètode <strong>set()</strong> i per tant matxacaríem el que ja teníem construït (el nom del xat i potser també la subcol·lecció de missatges). <strong><span style="color: #ff0000;">Per tant US ACONSELLE QUE NO EXECUTEU EL QUE VE A CONTINUACIÓ</span><br /></strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>	// Exemple de guardar dades en Cloud Firestore
+	// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+	fun enviar() {
+		val database = FirestoreClient.getFirestore()
+		val docXatProva = database.collection("Xats").document("XatProva")
+
+		val dades = HashMap&lt;String, Any&gt;()
+		dades.put("ultimUsuari", usuari.getText())
+		dades.put("ultimMissatge", missatge.getText())
+
+		docXatProva.set(dades)
+	}</code></pre>
+</div>
+</div>
+<p>Aquest seria el resultat, creant-se el document amb les 2 clau-valor, i havent matxacat el que hi havia, que era el nom del xat. Afortunadament no s'ha carregat la col·lecció missatges, però no ens podem fiar</p>
+<p style="text-align: center;"><img src="T7_4_2_2_0.png" alt="" width="1039" height="634" /></p>
+<p style="text-align: justify;">En realitat els mètodes <strong>set()</strong>, <strong>delete()</strong> i <strong>update()</strong> tornen un valor, que és un <strong>ApiFuture&lt;WriteResult&gt;</strong>, que permet averiguar com ha anat l'actualització de les dades. D'aquest <strong>ApiFuture&lt;&gt; </strong> podem obtenir el moment en què s'ha confirmat l'actualització, i es podria aprofitar per a tractar-lo per si dóna algun error.</p>
+<p style="text-align: justify;">Ampliem l'exemple anterior en què utilitzàvem el <strong>set()</strong> per a comprovar el que comentem, senzillament mostrant el moment en què s'ha actualitzat, i poder comprovar que és un <strong>ApiFuture&lt;WriteResult&gt;</strong> . <strong><span style="color: #ff0000;">US ACONSELLE QUE NO EXECUTEU EL QUE VE A CONTINUACIÓ</span></strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>	// Exemple de guardar dades en Cloud Firestore
+	// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+	fun enviar() {
+		val database = FirestoreClient.getFirestore()
+		val docXatProva = database.collection("Xats").document("XatProva")
+
+		val dades = HashMap&lt;String, Any&gt;()
+		dades.put("ultimUsuari", usuari.getText())
+		dades.put("ultimMissatge", missatge.getText())
+
+		val result = docXatProva.set(dades)
+		println("Data d'actualització: " + result.get().getUpdateTime())
+	}
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Si veiem la consola d'eixida d'<strong>IntelliJ</strong> veurem després dels warnings de sempre, al final en negre com ha imprés el moment de la confirmació.</p>
+<p style="text-align: center;"><img src="T7_4_2_2_1.png" alt="" width="690" height="95" /></p>
+<p></p>
+<p style="text-align: justify;">En els exemples anterior, en cas d'haver-se executat hauran matxacat el document <strong>XatProva </strong> i això era per haver utilitzat el mètode <strong>set() </strong>.</p>
+<p style="text-align: justify;">Anem a canviar-lo pel mètode <strong>update()</strong>, en què senzillament afegirà (i si és necessari matxacarà) les dades que proporcionem, però mantindrà les altres. <strong>AQUEST EXEMPLE SÍ QUE EL PODEU FER</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>	// Exemple de guardar dades en Cloud Firestore
+	// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+	fun enviar() {
+		val database = FirestoreClient.getFirestore()
+		val docXatProva = database.collection("Xats").document("XatProva")
+
+		val dades = HashMap&lt;String, Any&gt;()
+		dades.put("ultimUsuari", usuari.getText())
+		dades.put("ultimMissatge", missatge.getText())
+
+		docXatProva.update(dades)
+	}</code><code></code></pre>
+</div>
+</div>
+<p>conservarem tant el camp <strong>nomXat</strong> com la col·lecció <strong>missatges</strong></p>
+<p></p>
+<pre class="" translate="no" dir="ltr" is-upgraded=""><span class="typ"></span><span class="pun"><br /></span></pre>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id192">
+<div class="iDevice emphasis0">
+<div id="ta192_85" class="block iDevice_content">
+<p class="titolet">Recuperar dades</p>
+<p style="text-align: justify;">Com en el cas del Realtime Database, ens plantegem dos casos:</p>
+<ul style="text-align: justify;">
+<li>Una única lectura</li>
+<li>Un listener que es quede escoltant per si hi ha canvis</li>
+</ul>
+<p style="text-align: justify;">Com comprovarem, queda més senzilla la lectura única en el cas de Cloud Firestore.</p>
+<h2 style="text-align: justify;">Lectura única</h2>
+<p style="text-align: justify;">Per a fer una lectura única utilitzarem el mètode <strong>get()</strong> sobre una referència al document que volem llegir. El resultat ens ve en un <strong>ApiFuture&lt;DocumentSnapshot&gt;</strong>, que com es veu és una còpia de les dades en una interface <strong>ApiFutute</strong>, indicant que la tindrem disponible en un futur. Sobre aquesta farem <strong>get()</strong> per a obtenir aquesta còpia (serà un objecte). I sobre ella podrem fer:</p>
+<ul style="text-align: justify;">
+<li><strong>getData()</strong> per a obtenir tot el document en un <strong>Map&lt;String,Object&gt;</strong></li>
+<li><strong>getId()</strong> per a obtenir el nom del document</li>
+<li><strong>get(<em>nomClau</em>) </strong>per a obtenir directament el valor d'una clau del document</li>
+<li><strong>getString(<em>nomClau</em>) </strong>per a obtenir el valor de la clau en forma de string</li>
+<li><strong>getDouble(<em>nomClau</em>) </strong>per a obtenir el valor de la clau en forma de double</li>
+<li><strong>getDate(<em>nomClau</em>)</strong> per a obtenir el valor de la clau en forma de date</li>
+<li>...</li>
+</ul>
+<p style="text-align: justify;">L'exemple d'única lectura el farem per a posar el títol de l'aplicació, com en l'exemple del Realtime Database. Prèviament, des de la consola de Firebase ja havíem creat la parella clau-valor: <strong>nomXat: Xat Cloud</strong> <strong>Firestore</strong>, dins del document <strong>XatProva</strong>. Si pels exemples anteriors (els que havia marcat en roig que no us aconsellava fer) heu perdut aquesta parella, és el moment de crear-la de nou:</p>
+<p style="text-align: center;"><img src="T7_2_3_2_2_1.1.png" alt="" width="1282" height="454" /></p>
+<p style="text-align: justify;">Ara sí que haurem d'anar amb compte en el moment de guardar les dades. Si utilitzem el mètode <strong>set()</strong> matxacarem el document anterior (amb el nom del xat). Per tant, a partir d'ara ens convindrà utilitzar el mètode <strong>update()</strong>. Ho tornarem a especificar en el moment de fer aquesta escriptura.</p>
+<p>I aquestes seran les sentències per a posar el títol de l'aplicació:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>		// Exemple de lectura única: senzillament sobre un ApiFuture i sobre ell get()
+		// Per a posar el títol. Sobre /Xats/XatProva/nomXat
+		val database = FirestoreClient.getFirestore()
+		val docRef = database.collection("Xats").document("XatProva")
+		val future = docRef.get()
+		val nomXat = future.get().getString("nomXat")
+		this.setTitle(nomXat)
+</code></pre>
+</div>
+</div>
+<p>I ací tenim el resultat, on es veu el títol agafat de Cloud Firestore:</p>
+<p style="text-align: center;"><img src="T7_2_3_2_2_2.png" alt="" width="450" height="400" /></p>
+<h2>Listener que es queda escoltant: addSnapshotListener()</h2>
+<p style="text-align: justify;">De forma paral·lela al Realtime Database, si volem rebre una notificació de quan hi haja un canvi en el document que ens interessa, sobre una referència a aquest document ens muntarem un listener, en aquest cas amb el mètode <strong>addSnapshotListener()</strong>. Al mètode <strong>onEvent()</strong> que s'ha de sobreescriure arribarà un paràmetre de tipus <strong>DocumentSnapshot</strong>, que serà una còpia del document. Com en el cas anterior podrem fer sobre ell un <strong>getData()</strong> per a obtenir tot el document, <strong>getString(<em>nomClau</em>) </strong>per a obtenir el valor de la clau com un string, etc.</p>
+<p style="text-align: justify;">En el nostre exemple, de moment l'utilitzem tant per a posar l'últim missatge com per a anar omplint l'àrea central amb el xat. Però com havíem comentat abans, hem de cuidar de no matxacar tot el document per a no perdre el títol del xat. Per tant, l'acció que farem en apretar el botó per a enviar el missatge no serà <strong>set()</strong> sinó <strong>update(). </strong>Per si de cas havíeu fet els exemples que us havia aconsellat que no féreu, ací teniu una altra vegada el codi correcte:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>	// Exemple de guardar dades en Cloud Firestore
+	// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+	fun enviar() {
+		val database = FirestoreClient.getFirestore()
+		val docXatProva = database.collection("Xats").document("XatProva")
+
+		val dades = HashMap&lt;String, Any&gt;()
+		dades.put("ultimUsuari", usuari.getText())
+		dades.put("ultimMissatge", missatge.getText())
+
+		docXatProva.update(dades)
+	}</code></pre>
+</div>
+</div>
+<p>I ara sí el <strong>addSnapshotListener()</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>		// Exemple de listener de lectura contínua addSnapshotListener()
+		// Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge DocumentSnapshot FirestoreException
+		docRef.addSnapshotListener { snapshot, e -&gt;
+			if (e != null) {
+				System.err.println("Listen failed: " + e)
+				return@addSnapshotListener
+			}
+
+			if (snapshot != null &amp;&amp; snapshot.exists()) {
+				ultimMissatge.setText(snapshot.getString("ultimMissatge"))
+				area.append(snapshot.getString("ultimUsuari") + ": " + snapshot.getString("ultimMissatge") + "\n")
+			} else {
+				println("Current data: null")
+			}
+		}</code></pre>
+</div>
+</div>
+<p>En aquest exemple tenim el tractament de possibles errors, com que no s'accedeix al document, o aquest és nul.</p>
+<p>Observeu com la primera lectura també la fa, del que hi haja guardat en un principi. En la imatge es mostra el moment d'afegir un segon missatge:</p>
+<p style="text-align: center;"><img src="T7_2_3_2_2_3.1.png" alt="" width="1279" height="664" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id193">
+<div class="iDevice emphasis0" >
+<div id="ta193_207_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Guardar documents</p>
+<p style="text-align: justify;">Ja havíem comentat en la pregunta 4.1 que per l'estructura de les dades a la qual ens convida <strong>Cloud Firestore</strong>, en compte de guardar els missatges (i l'usuari) en una llista, ho faríem en documents dins d'una subcol·lecció.</p>
+<p style="text-align: justify;">Per tant ens és necessària l'operació d'afegir un document a una col·lecció. Això en un principi ho aconseguiríem amb el mètode <strong>set()</strong> sobre un document nou de la col·lecció:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>database.collection("nomCol").document("nomDoc").set(dades)</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">però això ens obligaria a posar un nom a cada document. Ja havíem vist que Cloud Firestore era capaç de generar un nom de document que no es puga repetir. Des de Kotlin s'aconsegueix amb el mètode <strong>add()</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>database.collection("nomCol").add(dades)</code></pre>
+</div>
+</div>
+<p>però que en el nostre cas, per ser una subcol·lecció és un poc més llarg</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>database.collection("Xats").document("XatProva").collection("missatges").add(dades)</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">L'estructura de les dades la podem fer amb un <strong>Map&lt;String,Object&gt;</strong>, i posar-li en el nostre cas l'usuari i el missatge. D'aquesta manera ens quedaria ara el procediment en <strong>apretar el botó d'enviar el missatge</strong>, on a banda del que teníem abans per a modificar <strong>ultimMissatge</strong> i <strong>ultimUsuari</strong>, ara afegirem el document nou.<code></code></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>	// Exemple de guardar dades en Cloud Firestore
+	// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+	fun enviar() {
+		val database = FirestoreClient.getFirestore()
+		val docXatProva = database.collection("Xats").document("XatProva")
+
+		val dades = HashMap&lt;String, Any&gt;()
+		dades.put("ultimUsuari", usuari.getText())
+		dades.put("ultimMissatge", missatge.getText())
+
+		docXatProva.update(dades)
+
+		val dades2 = HashMap&lt;String, Any&gt;()
+		dades2.put("nom", usuari.getText())
+		dades2.put("contingut", missatge.getText())
+
+		database.collection("Xats").document("XatProva").collection("missatges").add(dades2)
+	}<br /></code></pre>
+</div>
+</div>
+<p>I aquest és el resultat</p>
+<p style="text-align: center;"><img src="T7_4_2_2_4.png" alt="" width="1365" height="711" /></p>
+<p style="text-align: justify;">Per cert, un detall que haurem de tenir en compte més avant: com que el número de document és aleoatori, no té per què ser l'últim. Ho haurem de tenir en compte quan vulguem traure els missatges per ordre cronològic.</p>
+<p>Però sí que podem veure com el contingut del nou document és el que volíem:</p>
+<p style="text-align: center;"><img src="T7_4_2_2_5.png" alt="" width="1366" height="720" /></p>
+<p></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id196">
+<div class="iDevice emphasis0" >
+<div id="ta196_207_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Recuperar documents modificats</p>
+<p style="text-align: justify;">Ja només ens queda detectar els canvis en els documents de la col·lecció, per a afegir a l'àrea central els documents afegits. També és un <strong>addSnapshotListener()</strong>, però ara l'apliquem a una col·lecció (no a un document). El resultat és que d'una forma molt còmoda podrem detectar els documents afegits, els modificats i fins i tot els esborrats.</p>
+<p style="text-align: justify;">En el nostre exemple només ens interessa el cas de <strong>document afegit</strong>, que serà un nou missatge en el xat, i el que farem serà afegir a <strong>area</strong> (el JTextArea on visualitzem tota a conversa). Per tant ens <strong>sobrarà</strong> la línia <strong>area.append(...) </strong>que estarà al voltant de la línia 106, en la qual afegíem a <strong>area</strong> depenent del canvi en <strong>ultimMissatge</strong></p>
+<p style="text-align: justify;">Ací tenim el fragment de programa que ens ho permetrà. Hem deixat els casos de <strong>document modificat</strong> i <strong>document esborrat</strong> per a una millor documentació, encara que en el nostre exemple no ho utilitzem.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>		// Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+		// Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+		database.collection("Xats").document("XatProva").collection("missatges").addSnapshotListener { snapshots, e -&gt;
+			if (e != null) {
+				System.err.println("Listen failed: " + e)
+				return@addSnapshotListener
+			}
+
+			for (dc in snapshots!!.getDocumentChanges()) {
+				when (dc.getType()) {
+					DocumentChange.Type.ADDED -&gt;
+						area.append(dc.getDocument().getString("nom") + ": " + dc.getDocument().getString("contingut") + "\n")
+
+					DocumentChange.Type.MODIFIED -&gt;
+						println("Missatge modificat: " + dc.getDocument().getData());
+
+					DocumentChange.Type.REMOVED -&gt;
+						println("Missatge esborrat: " + dc.getDocument().getData());
+				}
+			}
+		}</code></pre>
+</div>
+</div>
+<p><code><querysnapshot></querysnapshot></code></p>
+<p style="text-align: justify;">I en aquesta imatge es veu com en un principi es veuen els 3 documents que ja existien (2 creats en la pregunta 4.1, i 1 immediatament abans). També s'afegeix un altre missatge per veure que es visualitza perfectament</p>
+<p style="text-align: center;"><img src="T7_4_2_2_6.png" alt="" width="450" height="300" /></p>
+<p style="text-align: justify;">És de destacar que ara la còpia de les dades, el snapshot, és en realitat un <strong>QuerySnapshot</strong>. I és que nosaltres no hem fet cap consulta sobre els documents de la col·lecció, però és possible fer-la. Per exemple es podria seleccionar per mig d'una query tots els documents en què l'usuari és un determinat. Aleshores detectaríem els documents afegits, modificats o esborrats d'aquest usuari. Ho faríem en el moment de declarar el <strong>addSnapshotListener()</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>database.collection("Xats").document("XatProva").collection("missatges").whereEqualTo("usuari","Usuari2").addSnapshotListener {</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">O també podríem ordenar els documents per algun camp. <strong>Açò en realitat és necessari per a poder ordenar els missatges, ja que el nom del document auto-generat per Cloud Firestore no és consecutiu, sinó aleatori</strong>, i per tant com ja hem vist un document nou pot tenir un nom anterior a alguns dels existents. Ho arreglarem fàcilment posant un camp més amb la data i ordenant per aquest camp amb <strong>orderBy()</strong> (que aniria en el lloc del <strong>whereEqualTo()</strong> de la sentència anterior).</p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="421_cfintellij_connexi_des_de_kotlin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="423_cfintellij_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

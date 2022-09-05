@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.- Fitxers binaris amb formats específics | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li id="active"><a href="1_fitxers_binaris_amb_formats_especfics.html" class="active no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_accs_directe_a_fitxers.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.- Fitxers binaris amb formats específics</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id1">
+<div class="iDevice emphasis0">
+<div id="ta1_1" class="block iDevice_content">
+<p class="titolet">DataInputStream i DataOutputStream</p>
+<p style="text-align: justify;">Ja hem vist com utilitzar els fitxers de caràcters i també de bytes. Però en aquest últim cas sempre ha estat per a llegir o escriure byte a byte, fins al final de fitxer.</p>
+<p style="text-align: justify;">Ens plantegem ara com utilitzar els fitxer per a guardar dades estructurades de tipus bàsics <strong>diferents</strong>. De moment no seran complicades però enseguida veurem que ens fa falta alguna cosa per a poder treballar còmodament.</p>
+<p style="text-align: justify;">Suposem un exemple d'una empresa que vol guardar dades dels seus empleats. Concretament vol guardar el número d'empleat, el nom, el departament al qual pertany, l'edat i el sou.</p>
+<table border="1" align="center">
+<tbody>
+<tr>
+<td><strong>Número </strong></td>
+<td><strong>Nom </strong></td>
+<td><strong>Depart<br /></strong></td>
+<td><strong>Edat<br /></strong></td>
+<td><strong>Sou<br /></strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Andreu</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">32</td>
+<td>1000.00</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Bernat</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">28</td>
+<td>1200.00</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Claudia</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">26</td>
+<td>1100.00</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Damià</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">40</td>
+<td>1500.00</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Ja es veu que les dades són de difrents tipus. Si tot fóra de text no hi hauria problema. Però si considerem les dades com a numèriques enteres o reals no ens serveixen els Stream de caràcters (Reader i Writer). Per tant hem d'anar a InputStream i OutputStream, però seria molt dur treballar directament amb bytes. Hauríem de saber exactament quants bytes ocupa cada dada: <strong>int</strong> utilitza 4 bytes; <strong>short</strong> utilitza 2 bytes, <strong>byte</strong> utilitza 1 byte, i <strong>long</strong> utilitza 8 bytes; en el cas dels reals, <strong>float</strong> utilitza 4 bytes i <strong>double</strong> utilitza 8 bytes. Massa varietat i massa fiena recordar-los tots. Ens falta doncs una ajuda per a poder guardar i recuperar dades d'aquestos diferents tipus.</p>
+<p style="text-align: justify;">Aquesta funcionalitat ens la proporciona la parella <strong>DataInputStream</strong> i <strong>DataOutputStream</strong>, que són decoradors dels Stream i que disposen de mètodes per a guardar o recuperar dades de diferents tipus, sense haver de saber el format intern de cadascun ni quants bytes ocupen. En la següent taula tenim uns quants mètodes d'aquestos:</p>
+<table border="1" align="center">
+<tbody>
+<tr>
+<td><strong>DataInputStream</strong></td>
+<td>Explicació</td>
+<td><strong>DataOutputStream</strong></td>
+</tr>
+<tr>
+<td>byte <strong>readByte</strong>()</td>
+<td>Un byte</td>
+<td>void <strong>writeByte</strong>(int)</td>
+</tr>
+<tr>
+<td>short <strong>readShort</strong>()</td>
+<td>Un enter xicotet (2 bytes)</td>
+<td>void <strong>writeShort</strong>(short)</td>
+</tr>
+<tr>
+<td>int <strong>readInt</strong>()</td>
+<td>Un enter (4 bytes)</td>
+<td>void <strong>writeInt</strong>(int)</td>
+</tr>
+<tr>
+<td>long <strong>readLong</strong>()</td>
+<td>Un enter llarg (8 bytes)</td>
+<td>void <strong>writeLong</strong>(long)</td>
+</tr>
+<tr>
+<td>float <strong>readFloat</strong>()</td>
+<td>Un real en simple precisió</td>
+<td>void <strong>writeFloat</strong>(flaot)</td>
+</tr>
+<tr>
+<td>double <strong>readDouble</strong>()</td>
+<td>Un real en doble precisió</td>
+<td>void <strong>writeDouble</strong>(double)</td>
+</tr>
+<tr>
+<td>char <strong>readChar</strong>()</td>
+<td>Un caràcter Unicode (16 bits)</td>
+<td>void <strong>writeChar</strong>(int)</td>
+</tr>
+<tr>
+<td>String <strong>readUTF</strong>()</td>
+<td>Una cadena de caràcters UTF-8 i la converteix en String (16 bits)</td>
+<td>void <strong>writeUTF</strong>(String)</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Anem a veure l'exemple, en el qual guardarem en un fitxer anomenat <strong>Empleats.dat</strong> les dades dels 4 empleats. Per comoditat ens els definirem  en arrays de 4 elements: un array per als noms, un altre per als departaments, etc. Enganxeu el següent codi en un fitxer de Kotlin anomenat <strong>Exemple_3_1_1_CrearEmpleats.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.DataOutputStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f = DataOutputStream(FileOutputStream("Empleats.dat"))
+
+    val noms = arrayOf("Andreu", "Bernat", "Clàudia", "Damià")
+    val departaments = arrayOf( 10, 20, 10, 10 )
+    val edats = arrayOf( 32, 28, 26, 40 )
+    val sous = arrayOf( 1000.0, 1200.0, 1100.0, 1500.0 )
+
+    for (i in 0..3){
+        f.writeInt(i + 1)
+        f.writeUTF(noms[i])
+        f.writeInt(departaments[i])
+        f.writeInt(edats[i])
+        f.writeDouble(sous[i])
+    }
+    f.close()
+    println("Fitxer creat")
+}</code></pre>
+</div>
+</div>
+<p>I aquesta seria la recuperació de les dades. Enganxeu el següent codi en un fitxer de Kotlin anomenat <strong>Exemple_3_1_2_ConsultarEmpleats.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+import java.io.DataInputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f = DataInputStream(FileInputStream("Empleats.dat"))
+
+    while (f.available() &gt; 0) {
+        System.out.println("Número: " + f.readInt())
+        System.out.println("Nom: " + f.readUTF())
+        System.out.println("Depart: " + f.readInt())
+        System.out.println("Edat: " + f.readInt())
+        System.out.println("Sou: " + f.readDouble())
+        System.out.println()
+    }
+    f.close()
+}</code></pre>
+</div>
+</div>
+<p><br /> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_accs_directe_a_fitxers.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

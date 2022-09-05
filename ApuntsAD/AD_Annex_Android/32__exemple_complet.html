@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2 - Exemple complet | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__permanncia_en_fitxers.html" class="daddy">1 - Permanència en fitxers</a>
+   <ul class="other-section">
+      <li><a href="11__exemple.html" class="no-ch">1.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="2__permanncia_en_bd_relacionals.html" class="daddy">2 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__connexi_remota.html" class="no-ch">2.1 - Connexió remota</a></li>
+      <li><a href="22__connexi_local.html" class="daddy">2.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="221__exemple.html" class="no-ch">2.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__eina_orm_biblioteca_room.html" class="current-page-parent daddy">3 - Eina ORM: Biblioteca ROOM</a>
+   <ul>
+      <li><a href="31__implementar_relacions_1n.html" class="no-ch">3.1 - Implementar relacions 1:N</a></li>
+      <li id="active"><a href="32__exemple_complet.html" class="active no-ch">3.2 - Exemple complet</a></li>
+      <li><a href="33__implementaci_amb_les_claus_externes.html" class="no-ch">3.3 - Implementació amb les claus externes</a></li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+   <li><a href="5__permanncia_en_altres_bd_nosql.html" class="daddy">5 - Permanència en altres BD NoSQL</a>
+   <ul class="other-section">
+      <li><a href="51__redis.html" class="no-ch">5.1 - Redis</a></li>
+      <li><a href="52__mongodb.html" class="no-ch">5.2 - MongoDB</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31__implementar_relacions_1n.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__implementaci_amb_les_claus_externes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2 - Exemple complet</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id28">
+<div class="iDevice emphasis0" >
+<div id="ta28_109_2" class="block iDevice_content">
+<div class="exe-text"><p>Una vegada hem vist les classes que ens fan falta per a accedir per mig de ROOM, anem a fer les modificacions oportunes a l'exemple <strong>CoffeeShops_Fragments</strong>.</p>
+<p>Recordem que aquest exemple mostra en un primer fragment (<strong>FirstFragment</strong>) una sèrie de cafeteries (amb una imatge, nom, adreça i puntuació). En punxar en una cafeteria, anem un segon fragment (<strong>SecondFragment</strong>) on es veuen el comentaris que s'han fet a aquesta cafeteria. Haurem de modificar, per tant, aquestos fitxers, així com adaptar <strong>CoffeeAdapter</strong> i alguna cosa més.</p>
+<ul>
+<li>Copieu-vos el projecte <strong>CoffeeShops_Fragments</strong> en un altre projecte anomenat <strong>CoffeeShops_Fragments_ROOM</strong>, per a poder conservar l'original.</li>
+<li>Modifiqueu el nom del projecte, nom del paquet, nom de l'aplicació, ... Ho farem amb 2 accions:
+<ul>
+<li>Des del menú <strong>Edit -&gt; Find -&gt; Repalce in path... </strong>canvieu <strong>CoffeeShops_Fragments </strong> per <strong>CoffeeShops_Fragments_ROOM</strong>. Aneu amb compte vigilant que la diferenciació de majúscules i minúscules estiga activada (ha d'estar en blau). Es diu <strong>Match case</strong>, i és un simbolet així: <strong>Aa</strong></li>
+<li>Feu el mateix amb per a canviar <strong>coffesShops_fragments</strong> en <strong>coffesShops_fragments_room</strong> (en minúscules), cuidant que la diferenciació entre majúscules i minúscules continue activa.</li>
+<li>Sobre <strong>app -&gt; java -&gt; com.example.coffeeshops_fragments</strong> fer un <strong>Refactor -&gt; Rename</strong> a <strong>coffeeshops_fragments_room</strong> i triar després l'opció <strong>Rename package</strong>. Això hauria d'actualitzar el paquet en totes les classes definides, i també en el AndroidManifest.xml</li>
+</ul>
+</li>
+<li>Executeu-lo per veure que continua funcionant, ara ja amb el nou nom</li>
+<li>Modifiqueu el <strong>build.gradle</strong> de l'aplicació per a que continga la llibreria <strong>Room</strong>, afegint les línies següents i després sincronitzant:</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>...
+apply plugin: 'kotlin-kapt'
+...
+
+dependencies {
+...
+  def room_version = "2.2.5"
+
+  implementation "androidx.room:room-runtime:$room_version"
+  kapt "androidx.room:room-compiler:$room_version"
+}</code></pre>
+</div>
+</div>
+<ul>
+<li>Copieu les classes de l'apartat anterior: <strong>Coffee</strong>, <strong>Comment</strong>, <strong>CoffeeWithComments</strong>, <strong>CoffeeShopsDao</strong> i <strong>CoffeeShopsDatabase</strong>. Recordeu que <strong>Coffee</strong> i <strong>Comment</strong> substituiran a les anteriors</li>
+<li>Ara és el moment de modificar els programes fets en el mòdul de DI, pera a adaptar-lo a l'accés a la Base de Dades a través de Room. Anirem mirant cadascun d'ells<br />
+<ul style="list-style-type: circle;">
+<li>
+<p><strong>CoffeeAdapter</strong></p>
+<p>Igual que vam fer en el punt 2.2.1, ara no agafem les imatges del <strong>res</strong>, sinó que ens arriba la mateixa imatge. També aprofitem per a mostrar la puntuació de la Base de Dades. Posem tota la funció <strong>bindCards</strong>: </p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">fun </span>bindCards(t: Coffee, onClick: (View) -&gt; Unit) {<br />    <span style="color: #808080; font-style: italic;">//image.setImageResource(t.image)<br /></span><span style="color: #808080; font-style: italic;">    </span><span style="color: #000080; font-weight: bold;">val </span>img = t.<span style="color: #660e7a; font-weight: bold;">image<br /></span><span style="color: #660e7a; font-weight: bold;">    </span><span style="color: #000080; font-weight: bold;">if </span>(img != <span style="color: #000080; font-weight: bold;">null</span>) {<br />        <span style="color: #000080; font-weight: bold;">val </span>imgBmp = BitmapFactory.decodeByteArray(img, <span style="color: #0000ff;">0</span>, <span style="background-color: #dbffdb;">img</span>.<span style="color: #660e7a; font-weight: bold;">size</span>)<br />        <span style="color: #660e7a; font-weight: bold;">image</span>.setImageBitmap(imgBmp)<br />    }<br />    <span style="color: #660e7a; font-weight: bold;">text</span>.<span style="color: #660e7a; font-style: italic;">text </span>= t.<span style="color: #660e7a; font-weight: bold;">title<br /></span><span style="color: #660e7a; font-weight: bold;">    text1</span>.<span style="color: #660e7a; font-style: italic;">text </span>= t.<span style="color: #660e7a; font-weight: bold;">subtitle<br /></span><span style="color: #660e7a; font-weight: bold;">    </span><span style="color: #000080; font-weight: bold;">if </span>(t.<span style="color: #660e7a; font-weight: bold;">points</span>!=<span style="color: #000080; font-weight: bold;">null</span>)<br />        <span style="color: #660e7a; font-weight: bold;">barstars</span>.<span style="color: #660e7a; font-style: italic;">rating </span>= <span style="background-color: #dbffdb;">t.points</span>.toFloat()<br />    <span style="color: #660e7a; font-weight: bold;">barstars</span>.<span style="color: #660e7a; font-style: italic;">onRatingBarChangeListener </span>= RatingBar.OnRatingBarChangeListener <span style="font-weight: bold;">{ </span>ratingBar: RatingBar, fl: Float, b: Boolean <span style="font-weight: bold;">-&gt;<br /></span><span style="font-weight: bold;">            </span><span style="color: #660e7a; font-weight: bold;">points</span>.<span style="color: #660e7a; font-style: italic;">text </span>= fl.toString()<br />        <span style="font-weight: bold;">}<br /></span><span style="font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">itemView</span>.setOnClickListener<span style="font-weight: bold;">{ </span>onClick(<span style="color: #660e7a; font-weight: bold;">itemView</span>) <span style="font-weight: bold;">}<br /></span>}</pre>
+</li>
+<li>
+<p><strong>CommentsAdapter</strong></p>
+<p>No cal modificar res en aquest. Només en tot cas arreglar que la propietat de <strong>Comment</strong> es diu <strong>comm</strong>, no <strong>comm1</strong></p>
+</li>
+<li>
+<p><strong>FirstFragment</strong></p>
+<p>En aquest sí que tenim feina. Per una banda hem d'agafar les dades de la Base de Dades a través de Room. Per una altra banda hem de passar la informació correcta al SecondFragment<br />Per a la primera qüestió, recordeu que no podem accedir des del Thread principal, per tant ens muntem un altre per a fer tot l'accés a Room<br />Per a la segona qüestió, voldrem passar al SecondFragment no únicament el nom del cafè, sinó tots els comentaris també. Aleshores passarem un objecte CoffeWithComments, perquè ahí està tot. Per a poder passar-lo en el bundle, ha d'heretar de <strong>Serializable</strong>.<br />També aprofitarem per a inicialitzar la puntuació de les cafeteries, ja que tenim guardada en la Base de Daes aquesta puntuació.<br />Ací teniu tot el FirstFragment</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>android.os.Bundle<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.LayoutInflater<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.View<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.ViewGroup<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.core.os.bundleOf<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.fragment.app.Fragment<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.navigation.fragment.findNavController<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.LinearLayoutManager<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.RecyclerView<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.room.Room<br /><br /><span style="color: #808080; font-style: italic;">/**<br /></span><span style="color: #808080; font-style: italic;"> * A simple </span><span style="color: #3d3d3d; font-weight: bold; font-style: italic;">[Fragment]</span><span style="color: #808080; font-style: italic;"> subclass as the default destination in the navigation.<br /></span><span style="color: #808080; font-style: italic;"> */<br /></span><span style="color: #000080; font-weight: bold;">class </span>FirstFragment : Fragment() {<br /><br />    <span style="color: #000080; font-weight: bold;">private var </span><span style="color: #660e7a; font-weight: bold;">items</span>: ArrayList&lt;Coffee&gt; = ArrayList()<br />    <span style="color: #000080; font-weight: bold;">private var </span><span style="color: #660e7a; font-weight: bold;">itemsWithComments</span>: ArrayList&lt;CoffeeWithComments&gt; = ArrayList()<br /><br />    <span style="color: #000080; font-weight: bold;">private var </span><span style="color: #660e7a; font-weight: bold;">roomThread</span>: Thread = <span style="color: #000080; font-weight: bold;">object </span>: Thread() {<br />        <span style="color: #000080; font-weight: bold;">override fun </span>run() {<br />            <span style="color: #000080; font-weight: bold;">val </span>db = Room.databaseBuilder(<br />                    <span style="color: #660e7a; font-style: italic;">context</span>!!,<br />                    CoffeeShopsDatabase::<span style="color: #000080; font-weight: bold;">class</span>.<span style="color: #660e7a; font-style: italic;">java</span>, <span style="color: #008000; font-weight: bold;">"CoffeeShops_Com.sqlite"<br /></span><span style="color: #008000; font-weight: bold;">            </span>).createFromAsset(<span style="color: #008000; font-weight: bold;">"CoffeeShops_Com.sqlite"</span>).build()<br /><br />            <span style="color: #660e7a; font-weight: bold;">items </span>= ArrayList(db.coffeeshopsDao().getCoffees())<br />            <span style="color: #660e7a; font-weight: bold;">itemsWithComments </span>= ArrayList(db.coffeeshopsDao().getCoffeesWithComments())<br />        }<br />    }<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreateView(<br />        inflater: LayoutInflater, container: ViewGroup?,<br />        savedInstanceState: Bundle?<br />    ): View? {<br /><br />        <span style="color: #000080; font-weight: bold;">val </span>root = inflater.inflate(R.layout.<span style="color: #660e7a; font-style: italic;">fragment_first</span>, container, <span style="color: #000080; font-weight: bold;">false</span>)<br /><br />        <span style="color: #000080; font-weight: bold;">if </span>(<span style="color: #660e7a; font-weight: bold;">items</span>.<span style="color: #660e7a; font-weight: bold;">size</span>==<span style="color: #0000ff;">0</span>) {  <span style="color: #808080; font-style: italic;">// per a no executar-lo una altra vegada quan tornem del SecondFragment<br /></span><span style="color: #808080; font-style: italic;">            </span><span style="color: #660e7a; font-weight: bold;">roomThread</span>.start()<br />            <span style="color: #660e7a; font-weight: bold;">roomThread</span>.join()<br />        }<br /><br />        <span style="color: #000080; font-weight: bold;">val </span>recView: RecyclerView = root.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">recView</span>)<br />        recView.setHasFixedSize(<span style="color: #000080; font-weight: bold;">true</span>)<br />        <span style="color: #000080; font-weight: bold;">val </span>adaptador = CoffeeAdapter(<span style="color: #660e7a; font-weight: bold;">items</span>)<br /><br />        recView.<span style="color: #660e7a; font-style: italic;">adapter </span>= adaptador<br />        recView.<span style="color: #660e7a; font-style: italic;">layoutManager </span>= LinearLayoutManager(<span style="color: #660e7a; font-style: italic;">context</span>, LinearLayoutManager.<span style="color: #660e7a; font-style: italic;">VERTICAL</span>, <span style="color: #000080; font-weight: bold;">false</span>)<br /><br />        adaptador.<span style="color: #660e7a; font-weight: bold;">onClick </span>= <span style="font-weight: bold;">{<br /></span><span style="font-weight: bold;">            </span><span style="color: #000080; font-weight: bold;">val </span>c = <span style="color: #660e7a; font-weight: bold;">itemsWithComments</span>[recView.getChildAdapterPosition(<span style="font-weight: bold;">it</span>)]<br />            <span style="color: #000080; font-weight: bold;">val </span>bundle = <span style="font-style: italic;">bundleOf</span>(<span style="color: #008000; font-weight: bold;">"coffee" </span><span style="font-style: italic;">to </span>c)<br />            <span style="font-style: italic;">findNavController</span>().navigate(R.id.<span style="color: #660e7a; font-style: italic;">action_FirstFragment_to_SecondFragment</span>, bundle)<br />        <span style="font-weight: bold;">}<br /></span><span style="font-weight: bold;">        </span><span style="color: #000080; font-weight: bold;">return </span>root<br />    }<br /><br />    <span style="color: #808080;">override </span><span style="color: #808080; font-weight: bold;">fun </span>onViewCreated(view: View, savedInstanceState: Bundle?) {<br />        <span style="color: #000080; font-weight: bold;">super</span>.onViewCreated(view, savedInstanceState)<br /><br />        }<br />}</pre>
+<p><strong></strong></p>
+</li>
+<li>
+<p><strong>SecondFragment</strong></p>
+<p>Només haurem d'agafar la informació que ens arriba del bundle, tenint en compte que és un objecte <strong>CoffeeWithComments</strong>. Ara ja no inicialitzem els comentaris de forma directa sinó que els agafem de l'anterior.<br />Ací teniu tot el SecondFragment</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>android.os.Bundle<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.LayoutInflater<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.View<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.ViewGroup<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.Button<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.TextView<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.Toast<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.fragment.app.Fragment<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.navigation.fragment.findNavController<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.GridLayoutManager<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.LinearLayoutManager<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.RecyclerView<br /><br /><span style="color: #808080; font-style: italic;">/**<br /></span><span style="color: #808080; font-style: italic;"> * A simple </span><span style="color: #3d3d3d; font-weight: bold; font-style: italic;">[Fragment]</span><span style="color: #808080; font-style: italic;"> subclass as the second destination in the navigation.<br /></span><span style="color: #808080; font-style: italic;"> */<br /></span><span style="color: #000080; font-weight: bold;">class </span>SecondFragment : Fragment() {<br /><br />    <span style="color: #000080; font-weight: bold;">private lateinit var </span><span style="color: #660e7a; font-weight: bold;">Comments</span>: ArrayList&lt;Comment&gt;<br /><br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreateView(<br />        inflater: LayoutInflater, container: ViewGroup?,<br />        savedInstanceState: Bundle?<br />    ): View? {<br />        <span style="color: #808080; font-style: italic;">// Inflate the layout for this fragment<br /></span><span style="color: #808080; font-style: italic;">        </span><span style="color: #000080; font-weight: bold;">val </span>root = inflater.inflate(R.layout.<span style="color: #660e7a; font-style: italic;">fragment_second</span>, container, <span style="color: #000080; font-weight: bold;">false</span>)<br />        <span style="color: #000080; font-weight: bold;">val </span>texto: TextView =  root.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">textview_second</span>)<br /><br />        <span style="color: #000080; font-weight: bold;">val </span>coffee = <span style="color: #660e7a; font-style: italic;">arguments</span>?.get(<span style="color: #008000; font-weight: bold;">"coffee"</span>) <span style="color: #000080; font-weight: bold;">as </span>CoffeeWithComments<br />        texto.<span style="color: #660e7a; font-style: italic;">text </span>= coffee.<span style="color: #660e7a; font-weight: bold;">coffee</span>.<span style="color: #660e7a; font-weight: bold;">title<br /></span><span style="color: #660e7a; font-weight: bold;">        Comments</span>=ArrayList(coffee.<span style="color: #660e7a; font-weight: bold;">coms</span>)<br /><br />        <span style="color: #000080; font-weight: bold;">val </span>recView: RecyclerView = root.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">recyclerview_coment</span>)<br />        recView.setHasFixedSize(<span style="color: #000080; font-weight: bold;">true</span>)<br />        <span style="color: #000080; font-weight: bold;">val </span>adaptador = CommentsAdapter(<span style="color: #660e7a; font-weight: bold;">Comments</span>)<br /><br />        recView.<span style="color: #660e7a; font-style: italic;">adapter </span>= adaptador<br />        recView.<span style="color: #660e7a; font-style: italic;">layoutManager </span>= GridLayoutManager(<span style="color: #660e7a; font-style: italic;">context</span>, <span style="color: #0000ff;">2</span>)<br /><br />        <span style="color: #000080; font-weight: bold;">return </span>root<br />    }<br /><br />    <span style="color: #808080;">override </span><span style="color: #808080; font-weight: bold;">fun </span>onViewCreated(view: View, savedInstanceState: Bundle?) {<br />        <span style="color: #000080; font-weight: bold;">super</span>.onViewCreated(view, savedInstanceState)<br /><br />      <span style="color: #808080; font-style: italic;">/*  view.findViewById&lt;Button&gt;(R.id.button_second).setOnClickListener {<br /></span><span style="color: #808080; font-style: italic;">           findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)<br /></span><span style="color: #808080; font-style: italic;">        }*/<br /></span><span style="color: #808080; font-style: italic;">    </span>}<br />}</pre>
+</li>
+<li>Creeu-vos la carpeta de <strong>assets</strong> des del menú: <strong>File -&gt; New -&gt; Folder -&gt; Assets Folder</strong>, i copieu en ella la Base de Dades <strong>CoffeeShops.sqlite</strong></li>
+</ul>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31__implementar_relacions_1n.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__implementaci_amb_les_claus_externes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

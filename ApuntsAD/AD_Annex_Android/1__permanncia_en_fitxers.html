@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1 - Permanència en fitxers | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li id="active"><a href="1__permanncia_en_fitxers.html" class="active daddy">1 - Permanència en fitxers</a>
+   <ul>
+      <li><a href="11__exemple.html" class="no-ch">1.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="2__permanncia_en_bd_relacionals.html" class="daddy">2 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__connexi_remota.html" class="no-ch">2.1 - Connexió remota</a></li>
+      <li><a href="22__connexi_local.html" class="daddy">2.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="221__exemple.html" class="no-ch">2.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__eina_orm_biblioteca_room.html" class="daddy">3 - Eina ORM: Biblioteca ROOM</a>
+   <ul class="other-section">
+      <li><a href="31__implementar_relacions_1n.html" class="no-ch">3.1 - Implementar relacions 1:N</a></li>
+      <li><a href="32__exemple_complet.html" class="no-ch">3.2 - Exemple complet</a></li>
+      <li><a href="33__implementaci_amb_les_claus_externes.html" class="no-ch">3.3 - Implementació amb les claus externes</a></li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+   <li><a href="5__permanncia_en_altres_bd_nosql.html" class="daddy">5 - Permanència en altres BD NoSQL</a>
+   <ul class="other-section">
+      <li><a href="51__redis.html" class="no-ch">5.1 - Redis</a></li>
+      <li><a href="52__mongodb.html" class="no-ch">5.2 - MongoDB</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11__exemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1 - Permanència en fitxers</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_1" class="block iDevice_content">
+<p>En el cas dels fitxers, el comportament en Android és similar que en Java i Kotlin. Per tant ho tenim fàcil.</p>
+<p>Insistirem en algun detall i mencionarem alguna utilitat.</p>
+<p>Per a practicar, ho farem sobre un exemple, en el qual senzillament col·locarem en un <strong>EditText</strong> el contingut d'un fitxer de text. Encara que només anem a mostrar el contingut del fitxer, ho fem sobre un <strong>EditText</strong> i no un <strong>TextView</strong> per a poder després reutilitzar-lo en un exemple un poc més complex.</p>
+<p>Crearem un projecte nou, anomenat <strong>EditorText</strong>. amb la plantilla <strong>Empty</strong> Activity.Per a poder copiar sense problemes els programes posteriors, posarem el domini <strong>example.com </strong>, així el paquet es dirà <strong>com.example.editortext</strong></p>
+<p>En l'<strong>activity_main.xml</strong>, només posem el <strong>EditText</strong>, que ocuparà tota la pantalla, i el text no estarà centrat, sinó cap amunt.</p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"&gt;
+    &lt;EditText
+            android:text=""
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:gravity="top" /&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre>
+</div>
+</div>
+<p>El programa principal de moment no té res, així que el seu esquelet és el següent.</p>
+<p></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package com.example.editortext
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}</code></pre>
+</div>
+</div>
+<p>On únicament fem referència a l'<strong>EditText</strong> per a poder utilitzar-lo posteriorment.</p>
+<p>Executar-lo per veure el seu aspecte.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_85" class="block iDevice_content">
+<p class="titolet">Classes de Flux de dades</p>
+<p>Podem utilitzar qualsevol de les classes de flux de dades que hem vist en els temes 2 i 3 per a accedir al fitxer, però en aquelles en les quals posem el nom del fitxer, és molt convenient posar tota la ruta, i evidentment que es tinguen permisos en el directori. Una bona idea, si no s'han de compartir, és posar el fitxer en la zona reservada per a l'aplicació que està en:</p>
+<p class="codi2">/data/data/<em>paquet_de_la_aplicació</em></p>
+<p>I dins d'aquesta ruta és una costum utilitzar un altre directori per als fitxers anomenat <strong>files</strong>.</p>
+<p>Així per exemple, si la nostra aplicació s'ha creat en un paquet anomenat <strong>com.example</strong>.<strong>editortext</strong> i volem accedir al fitxer <strong>notes.txt</strong>, la ruta recomanada del fitxer seria:</p>
+<p class="codi2">/data/data/<strong>com.example.</strong>editortext/files/notes.txt</p>
+<p>És a dir, que si per exemple volem accedir a un fitxer de text (per tant ens convé <em><strong>Reader</strong></em>), i després volem decorar-lo amb <em><strong>BufferedReader</strong></em> per legir línia a línia, posaríem:</p>
+<p class="codi">val f = BufferedReader(FileReader("/data/data/<strong>com.example.</strong>editortext/files/notes.txt"))</p>
+<p>I si el que volem és escriure en ell (<em><strong>FileWriter</strong></em>), però afegint al final i línia a línia (<em><strong>PrintWriter</strong></em>):</p>
+<p class="codi">val f = PrintWriter(FileWriter(<span>"/data/data/</span><span><strong>com.example.</strong>editortext/files/notes.txt"</span>,true))</p>
+<p> </p>
+<p>Si en canvi volem accedir a un fitxer binari (<em><strong>InputStream</strong></em>), i llegir diferents tipus de dades (<em><strong>DataInputStream</strong></em>):</p>
+<p class="codi">val f = DataInputStream(FileInputStream("/data/data/<span><span><strong>com.example.</strong>editortext</span></span>/files/fitxer.dat"))</p>
+<p> I per a escriure en ell diferents tipus de dades:</p>
+<p class="codi">val f = DataOututStream(FileOutputStream("/data/data/<strong>com.example.</strong>editortext/files/fitxer.dat"))</p>
+<p> </p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>Per a més comoditat hem utilitzat en aquestos apunts una versió anterior d'Android, concretament la 5.1 (API 22). A partir de la API 23 és necessari donar expressament el permís d'accedir en el <strong>AndroidManifest.xml</strong></p>
+<p><strong class="codi">&lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /&gt;</strong></p>
+</div>
+<p>En l'exemple inicial, per poder veure que accedim a un fitxer, podríem col·locar-lo a mà prèviament d'aquesta manera:</p>
+<ul>
+<li>Editem el fitxer <strong>notes.txt</strong> des de qualsevol editor de textos (per exemple Gedit o Notepad) posant el contingut que vulgueu.</li>
+<li>Posteriorment des de Android Studio anem a <strong>View -&gt; Tool Windows -&gt; Device File Explorer</strong>. Ha d'estar el simulador en marxa.</li>
+<li>A la dreta ens apareixerà una finestra per explorar pel dispositiu. Ens situem en <strong>/data/data/</strong><strong>com.example.</strong><strong>editortext</strong> (o el nom del paquet que hem posat).<strong></strong></li>
+<li>Si ja havíem executat el projecte, existirà el directori anterior, i el seu contingut serà únicament els subdirectoris <strong>cache</strong> i <strong>code_cache</strong>, segurament. Potser existesca el directori <strong>files</strong>, o potser no.</li>
+<li>Si no existeix el directori <strong>files</strong>, el creem dins de <strong>/data/data</strong><strong>/com.example.</strong><strong>editortext</strong> , amb el botó de la dreta <strong>New --&gt; Directory </strong>, situats en el directori anterior.</li>
+<li>Estant situats en <strong>files</strong>, pugem el fitxer <strong>notes.txt</strong> amb el botó de la dreta i opció <strong>Upload</strong><strong></strong>.</li>
+</ul>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>En versions anteriors de Android Studio es feia des de <strong>Tools -&gt; Andoid -&gt; Andoid Device Monitor</strong>.</p>
+</div>
+<p>Ara modifiquem el programeta inicial, fent que carregue el contingut del fitxer al EditText. Ho fem utilitzant un <strong>BufferedReader</strong> per a llegir línia a línia i anar acumulant abans d'escriure en el EditText. Ja veurem més avant que ho podrem simplificar molt.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package com.example.editortext
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import java.io.BufferedReader
+import java.io.FileReader
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val f = BufferedReader(FileReader("/data/data/com.example.editortext/files/notes.txt"))
+        var cont = ""
+        var linia = f.readLine()
+        while (linia != null) {
+            cont += linia + "\n"
+            linia = f.readLine()
+        }
+        text.setText(cont)
+        f.close()
+    }
+}</code></pre>
+</div>
+</div>
+<div class="nota_blau">
+<p><strong><u>Nota</u></strong></p>
+<p>Per a no haver de registrar en el programa principal tots els components del layout, hem posat la línia</p>
+<p><strong>import kotlinx.android.synthetic.main.activity_main.*</strong></p>
+<p>Si us dóna error és perquè no teniu les <strong>kotlin-android-extensions</strong> en el gradle.build de la aplicació. Aleshores obriu el <strong>gradle.build</strong> de la aplicació i afegiu la línia corresponent a les kotlin-android-extensions en els plugins, de manera que quede així:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}</code></pre>
+</div>
+</div>
+</div>
+<p><strong> </strong></p>
+<p>Aquest podria ser el resultat:</p>
+<p style="text-align: center;"><img src="Annex_Android_2_1.png" style="border: 1px solid black;" width="367" height="609" /></p>
+<p style="text-align: justify;">El següent vídeo mostra tot el procés, incloent la pujada del fitxer notes.txt al dispositiu.</p>
+<p style="text-align: center;"><iframe width="1000" height="700" src="https://slides.com/alvarinstitut/annexandroid_androiddeviceexplorer/embed" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_85" class="block iDevice_content">
+<p class="titolet">Mètodes propis: openFileInput() i openFileOutput()</p>
+<p>Android ens proporciona uns mètodes que ens poden fer un poc més còmode l'accés al fitxer. Sobretot ho mencionem perquè la seua utilització està molt estesa.</p>
+<p>Es tracta de  <strong>openFileIntput</strong><strong> i openFileOutput</strong>, ambdós estan en <strong>android.content.ContextWrapper</strong>. La seua sintaxi és:</p>
+<p class="code" style="margin-left: 30px;"><span style="font-size: large;">public FileInputStream <strong>openFileInput </strong>(String <em>nom</em>)</span></p>
+<p class="code" style="margin-left: 30px;"><span style="font-size: large;"><span>public FileOutputStream <strong>openFileOutput </strong>(String <em>nom</em>, int <em>mode</em>)</span></span></p>
+<p>Com veieu, en el primer cas accepta en un string el nom d'un fitxer i torna un <strong>FileInputStream</strong>. Amb aquest <strong>InputStream</strong> ja podem fer el que ens convinga: decorar-lo amb un <strong><em>ObjectInputStream</em></strong> o <strong><em>DataInputStream</em></strong>, o convertir-lo a <em>Reader</em> amb <em><strong>InputStreamReader</strong>.</em></p>
+<p>En el segon cas torna un <strong>FileOutputStream</strong> i accepta un segon paràmetre, a banda del nom del fitxer també posarem el mode d'obertura. Els diferents modes són:</p>
+<ul>
+<li><strong>MODE_PRIVATE</strong> (0): és el mode per defecte, i si ja existeix el fitxer, matxacarà el seu contingut</li>
+<li><strong>MODE_APPEND</strong>: si ja existeix, no matxacarà el contingut, sinó que introduirà després.</li>
+<li><strong>MODE_WORLD_READABLE</strong> i <strong>MODE_WORLD_WRITABLE</strong> serveixen per a controlar els permisos. En principi no els utilitzarem.</li>
+</ul>
+<p>Es pot comprovar que senzillament és un pas previ abans de tenir el InputStream o OutputStream. <strong>Per defecte</strong>, si no posem la ruta del fitxer, aquest estarà en l'entorn del paquet de l'aplicació més concretament en el directori <strong>files</strong>:</p>
+<p class="codi2">/data/data/<em>paquet_de_la_aplicació</em>/files</p>
+<p>Com ja és per defecte, si el volem ahí (que serà el més habitual), només haurem de posar el nom del fitxer. En el mateix exemple anterior, en què volíem al final un <em>BufferedReader</em>, haurem de convertir el <em>InputStream</em> que ens dóna <em>openFileInput</em> en un <em>Reader</em>, amb <em>InputStreamReader</em>:</p>
+<p class="codi">val f = BufferedReader(InputStreamReader(openFileInput("fitxer.txt")));</p>
+<p>I per a escriure, també com en l'exemple anterior:</p>
+<p class="codi">val f = PrintWriter(OutputStreamWriter(openFileOutput("fitxer.txt",MODE_APPEND)));</p>
+<p> </p>
+<p>I els exemples d'accés a fitxers binaris, en cas de lectura:</p>
+<p class="codi">val f = DataInputStream(openFileInput("fitxer.dat"));</p>
+<p>i en cas d'escriptura (en aquest cas matxacant el possible contingut anterior):</p>
+<p class="codi">val f = DataOutputStream(openFileOutput("fitxer.dat",MODE_PRIVATE));</p>
+<p> </p>
+<p>En el cas de l'exemple que estem utilitzant, podríem haver substituït la línia:</p>
+<p class="codi">val f = BufferedReader(FileReader("/data/data/com.example.editortext/files/notes.txt"));</p>
+<p>Per aquesta altra:</p>
+<p class="codi">val f = BufferedReader(InputStreamReader(openFileInput("notes.txt")));</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id17">
+<div class="iDevice emphasis0" >
+<div id="ta17_51_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">KOTLIN</p>
+<p>Tot l'anterior serviria per a Java també (amb les di), i funcionen en Kotlin perquè ja sabem que és una extensió de Java, és a dir tot el de Java funciona en Kotlin. Però Kotlin ens ofereix més coses de manera que tot queda molt més senzill i còmode. Encara que utilitzem les mateixes classes que en Java, aquestes tindran uns iteradors que faran les coses molt senzilles. També té mètodes per a poder llegir el fitxer sencer.</p>
+<h3>Alguns mètodes de File:</h3>
+<ul>
+<li><strong>appendBytes</strong>: afegeix un array de bytes al final del fitxer</li>
+<li><strong>appendText</strong>: afegeix un string al final del fitxer, podent especificar fins i tot la codificació</li>
+<li><strong>inputStream, bufferedReader, bufferedWriter, ...</strong>: torna directament la classe especificada (sense haver de passar per un FileReader en el cas de BufferedReader)<strong></strong></li>
+<li><strong>copyTo</strong>: copia el fitxer en un altre</li>
+<li><strong>copyRecursively</strong>: copia el File i tots els seus possibles descendents</li>
+<li><strong>forEachLine</strong>: agafa cada línia del fitxer</li>
+<li><strong>readBytes</strong>: llig de cop tot el fitxer i ho guarda en un array de bytes</li>
+<li><strong>readLines:</strong> llig totes les línies del fitxer i les guarda en un List<string></string></li>
+<li><strong>readText</strong>: llig de cop tot el fitxer i ho guarda en un string</li>
+<li><strong>writeBytes</strong>: escriu tot l'array de bytes</li>
+<li><strong>writeText</strong>: escriu el string, fins i tot especificant la codificació</li>
+</ul>
+<p>Alguns dels mètodes són d'extremada utilitat, fent que la lectura i tractament del fitxer ens ocupe una única línia.</p>
+<p>Així per exemple, en l'exemple anterior, podem substituir les següents sentències:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">val </span>f = BufferedReader(FileReader(<span style="color: #008000; font-weight: bold;">"/data/data/com.example.editortext/files/notes.txt"</span>))<br /><span style="color: #000080; font-weight: bold;">var </span>cont = <span style="color: #008000; font-weight: bold;">""<br /></span><span style="color: #000080; font-weight: bold;">var </span>linia = f.readLine()<br /><span style="color: #000080; font-weight: bold;">while </span>(linia != <span style="color: #000080; font-weight: bold;">null</span>) {<br />    cont += linia + <span style="color: #008000; font-weight: bold;">"</span><span style="color: #000080; font-weight: bold;">\n</span><span style="color: #008000; font-weight: bold;">"<br /></span><span style="color: #008000; font-weight: bold;">    </span>linia = f.readLine()<br />}<br />text.setText(cont)<br />f.close()</pre>
+<p>Per aquestes:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">var </span>cont = <span style="color: #008000; font-weight: bold;">""<br /></span>File(<span style="color: #008000; font-weight: bold;">"/data/data/com.example.editortext/files/notes.txt"</span>).<span style="font-style: italic;">forEachLine</span><span style="color: #808080;">()</span><span style="font-weight: bold;">{ </span>cont += <span style="font-weight: bold;">it</span>+<span style="color: #008000; font-weight: bold;">"</span><span style="color: #000080; font-weight: bold;">\n</span><span style="color: #008000; font-weight: bold;">"</span><span style="font-weight: bold;">}<br /></span>text.setText(cont)</pre>
+<p>on hem agafat línia a línia, i per cadascuna traem el seu contingut més la baixada de línia.</p>
+<p>I encara més curt i còmode si llegim de cop tot el fitxer:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;">text.setText(File(<span style="color: #008000; font-weight: bold;">"/data/data/com.example.editortext/files/notes.txt"</span>).<span style="font-style: italic;">readText</span>())</pre>
+<p>De manera que el programa quedaria així. Com veieu molt més còmode:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">package </span>com.example.editortext<br /><br /><span style="color: #000080; font-weight: bold;">import </span>androidx.appcompat.app.AppCompatActivity<br /><span style="color: #000080; font-weight: bold;">import </span>android.os.Bundle<br /><span style="color: #000080; font-weight: bold;">import </span>kotlinx.android.synthetic.main.activity_main.*<br /><br /><span style="color: #000080; font-weight: bold;">import </span>java.io.File<br /><br /><br /><span style="color: #000080; font-weight: bold;">class </span>MainActivity : AppCompatActivity() {<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreate(savedInstanceState: Bundle?) {<br />        <span style="color: #000080; font-weight: bold;">super</span>.onCreate(savedInstanceState)<br />        setContentView(R.layout.<span style="color: #660e7a; font-style: italic;">activity_main</span>)<br />        text.setText(File(<span style="color: #008000; font-weight: bold;">"/data/data/com.example.editortext/files/notes.txt"</span>).<span style="font-style: italic;">readText</span>())<br />    }<br />}</pre></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11__exemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

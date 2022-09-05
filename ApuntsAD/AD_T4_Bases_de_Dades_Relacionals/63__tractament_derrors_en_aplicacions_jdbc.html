@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.3 - Tractament d'errors en aplicacions JDBC | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__establiment_de_la_connexi.html" class="no-ch">5.1 - Establiment de la connexió</a></li>
+      <li><a href="52__peticions_bsiques.html" class="no-ch">5.2 - Peticions bàsiques</a></li>
+      <li><a href="53__exemple.html" class="no-ch">5.3 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6__jdbc_avanat.html" class="current-page-parent daddy">6 - JDBC avançat</a>
+   <ul>
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li id="active"><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="active no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="64__transaccions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.3 - Tractament d'errors en aplicacions JDBC</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_1" class="block iDevice_content">
+<p style="text-align: justify;">L’execució de sentències <acronym title="Structured Query Language">SQL</acronym> està sotmesa a molts de factors que poden provocar algun error. Pot passar que la connexió falle, que el controlador no siga l’adequat, que les sentències tinguen errades, que el SGBD no suporte la sentència, i un llarg etcètera de possibilitats.</p>
+<p style="margin-left: 30px;"><span style="text-decoration: underline;"><strong>Nota</strong></span><br />Podeu trobar informació referida als codis de <strong>SQLSTATE</strong> en la wikipedia, en <a href="https://en.wikipedia.org/wiki/SQLSTATE">aquest enllaç</a>. El codi SQLSTATE està format per cinc caràcters. Els dos primers indiquen la tipologia de l’error i els tres últims el concreten. </p>
+<p style="text-align: justify;">Els errors <acronym title="Structured Query Language">SQL</acronym> es troben molt ben definits a l’especificació estàndard, la qual descriu el valor de la variable anomenada <b>SQLSTATE</b>, que identifica l’estat d’una sentència <acronym title="Structured Query Language">SQL</acronym> immediatament després de la seua execució. Quan JDBC detecta que després d’una execució el valor d’aquesta variable es correspon a un error, dispara una excepció de tipus <strong>SQLException</strong> la qual, a més de contenir un missatge clarificador, incorpora el valor del <strong>SQLSATE</strong>. Podem recuperar aquest valor amb el mètode <b>getSQLState()</b>.</p>
+<p style="text-align: justify;">L’ús de <strong><em>try-catch</em></strong> ens permetrà capturar específicament excepcions <strong>SQLException</strong> o derivades. Una vegada capturades, utilitzarem el codi SQLSTATE per decidir com cal actuar.</p>
+<p style="text-align: justify;">Un altre mètode molt útil és <strong>getMessage()</strong> que torna una cadena amb l'error produït. Pot servir perfectament per a la resta d'errors no tractats, ja que amb aquest missatge sempre donarem una pista, encara que no personalitzada com abans. </p>
+<p style="text-align: justify;">Imaginem, per exemple, que en intentar connectar amb un SGBD capturem una excepció <acronym title="Structured Query Language">SQL</acronym> amb el valor <strong>SQLState</strong> igual a <em>28000</em>. Si consulteu aquest codi a la pàgina que us indiquem en la nota de dalt veureu que el valor <em>28000</em> correspon a un error en l’autenticació. En canvi, si el codi rebut haguera estat <em>08001</em> significaria que JDBC està trobant problemes de xarxa a l’hora de connectar, ja siguen deguts a una desconnexió física, o simplement a un <em>host</em> o adreça IP desconegut.</p>
+<p style="margin-left: 30px; text-align: justify;"><span style="text-decoration: underline;"><strong>Nota</strong></span><br />PostgreSQL defineix millor l'error d'autenticació. En el cas de PostgreSQL és el 28P01. Per tant hauríem de substituir per aquest valor en el programa posterior si volem connectar a ell. La taula d'errors de PostgreSQL la podeu trobar en aquest <a href="https://www.postgresql.org/docs/current/static/errcodes-appendix.html">enllaç</a>.</p>
+<p style="text-align: justify;">No cal informar detalladament l’usuari de tots i cadascun dels possibles errors, però sí que cal decidir quins errors requeriran un tractament específic i quins no. Segurament no seria mala idea, si detectem un <strong>SQLState</strong> de valor <em>08001</em>, aconsellar l’usuari que abans de trucar al servei tècnic revise les connexions de xarxa o s’assegure que el SGBD es troba en marxa.</p>
+<p style="text-align: justify;">D’altra banda, la detecció precisa del <strong>SQLState</strong> ens pot també permetre realitzar accions per reconduir l’error. Imaginem, per exemple, que per raons de seguretat l’administrador del SGBD va canviant de contrasenya. L’administrador tria una contrasenya a l’atzar d’entre un conjunt de tres o quatre prefixades. Per tal de no haver d’estar contínuament configurant la nostra aplicació cada vegada que canvie la contrasenya, podem implementar una utilitat que accepte un conjunt de tres o quatre contrasenyes de manera que puga anar provant d’una en una quan reba un error d’autenticació.</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Per a la resta d'errors, podem avisar a l'usuari de l'error que s'ha produït, o podem utilitzar una altra tècnica, que és utilitzar enregistradors. Els enregistradors (<em>loggers</em>) van guardant automàticament en un fitxer les coses que van succeint.</p>
+<p style="text-align: justify;">Vegem un possible exemple on posem en pràctica totes les consideracions que acabem de comentar. Està fet sobre <strong>MySQL</strong>, ja que com hem comentat abans, PostgreSQL utilitza ara un altre codi d'error per a la contrasenya invàlida. Tindrem 3 contrasenyes possibles per a la connexió. Si qualsevol de les 3 és bona, es connectarà. Sinó indicarà que hi ha un error en la contrasenya.</p>
+<p>Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple_4_51_TractamentErrors.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.sql.Connection
+import java.sql.DriverManager
+import java.sql.SQLException
+
+fun main(args: Array&lt;String&gt;) {
+
+    var connectat = false
+    var con: Connection? = null
+    println("tractamentErrorConnexio()")
+
+    try {
+
+        val url = "jdbc:postgresql://89.36.214.106:5432/geo_ad"
+
+        val usuari = "geo_ad"
+        val contrasenyes = arrayOf("geo0", "geo1", "geo_ad")
+
+        for (i in 0 until contrasenyes.size) {
+            try {
+                con = DriverManager.getConnection(url, usuari, contrasenyes[i])
+                connectat = true
+                break
+            } catch (ex: SQLException) {
+                if (!ex.getSQLState().equals("28P01")) {
+                    // NO és un error d'autenticació
+                    throw ex
+                }
+            }
+        }
+        if (connectat)
+            println("Connexió efectuada correctament")
+        else
+            println("Error en la contrasenya")
+    } catch (ex: SQLException) {
+        if (ex.getSQLState().equals("08001")) {
+            println(
+                "S'ha detectat un problema de connexió. Reviseu els cables de xarxa i assegureu-vos que el SGBD està operatiu."
+                        + " Si continua sense connectar, aviseu el servei tècnic"
+            )
+
+        } else {
+            println(
+                "S'ha produït un error inesperat. Truqueu al servei tècnic indicant el següent codi d'error SQL:"
+                        + ex.getSQLState()
+            )
+        }
+    } catch (ex: ClassNotFoundException) {
+        println("No s'ha trobat el controlador JDBC (" + ex.message + "). Truqueu al servei tècnic")
+    } finally {
+        try {
+            if (con != null &amp;&amp; !con.isClosed()) {
+                con.close()
+            }
+        } catch (ex: SQLException) {
+            throw ex
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="64__transaccions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

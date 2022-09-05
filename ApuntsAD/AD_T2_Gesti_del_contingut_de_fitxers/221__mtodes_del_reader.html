@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.1 - Mètodes del Reader | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li class="current-page-parent"><a href="2__manipulaci_dels_fluxos_de_dades.html" class="current-page-parent daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul>
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="22__fluxos_orientats_a_carcters.html" class="current-page-parent daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul>
+         <li id="active"><a href="221__mtodes_del_reader.html" class="active no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="4__simplificaci_en_kotlin.html" class="no-ch">4 - Simplificació en Kotlin</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="22__fluxos_orientats_a_carcters.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="222__mtodes_del_writer.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.1 - Mètodes del Reader</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_1" class="block iDevice_content">
+<p style="text-align: justify;">Els mètodes del <strong>Reader</strong> són absolutament similars als del <strong>InputStream</strong> . La diferència és que ara llegirà sempre un caràcter. I no ens haurem de preocupar pel format en què està guardat, i de i ocupa un o dos bytes. Sempre el llegirà bé, siga quina siga la codificació utilitzada, com ja havíem comentat abans:</p>
+<ul style="text-align: justify;">
+<li>int <strong>read()</strong>: llig el següent caràcter del flux d'entrada i el retorna com un enter. Si no hi ha cap caràcter disponible perquè s’ha assolit el final de la seqüència, es retornarà -1. Si no es pot llegir el següent caràcter per alguna causa (per exemple si després d'arribar al final intentem llegir un altre caràcter, o perquè es produeix un error en llegir l'entrada) es llançarà una excepció del tipus <strong><em>IOException</em></strong>. Es tracta d’un mètode abstracte, que les classes especifiques sobreescriuran adaptant-lo a una font de dades concreta (un fitxer, un array de caràcters, ...).</li>
+</ul>
+<p style="text-align: justify;">Abans de veure altres mètodes, mirem un exemple que és idèntic al primer exemple del InputStream, però canviant FileInputStream per FileReader. Llegirà el mateix fitxer anomenat <strong>f1.txt</strong>, utilitzat en aquell moment, però ara segurament llegirà tots els caràcters bé. El que farà és traure per pantalla caràcter a caràcter (en línies diferents). Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_21.kt </strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;){
+	val f_in = FileReader("f1.txt")
+	var c = f_in.read()
+	while (c!=-1){
+		println(c.toChar())
+		c = f_in.read()
+	}
+	f_in.close()
+}</code></pre>
+</div>
+</div>
+<p>Ara segurament sí que haurà llegit bé tots els caràcters, incloent ñ, ç, vocals accentuades, etc. Si encara tenim el mateix contingut en <strong>f1.txt</strong>, el resultat serà ara:</p>
+<p class="codi2">H<br />o<br />l<br />a<br />,<br /> <br />q<br />u<br />è<br /> <br />t<br />a<br />l<br />?<br /><br /></p>
+<p style="text-align: justify;">El més normal és que en crear el fitxer <strong>f1.txt</strong> amb algun editor, el guardem amb la codificació per defecte, que en cas de Windows és  ASCII (o ISO-8859) i en el cas de Linux és UTF-8. I després des de Java, el <strong>FileReader</strong> utilitzarà la codificació per defecte del Sistema Operatiu. És a dir que en Linux el fitxer ha d'estar guardat en UTF-8 per a que el puga llegir bé, i en Windows en ASCII.</p>
+<p style="text-align: justify;">Mirem també l'exemple equivalent al segon. Allà utilitzàvem un <strong>ByteArrayInputStream</strong> com a entrada. Ara podríem utilitzar un <strong>CharArrayReader</strong>, però ho farem amb un <strong>StringReader</strong>, i quedarà més curt. A banda de que l'hem d'inicialitzar diferent, podem observar com el tractament posterior és idèntic. Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_22.kt </strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.CharArrayReader
+
+fun main(args: Array&lt;String&gt;) {
+	val ent_1 = "Aquest és un byte array"
+	val f_in = CharArrayReader(ent_1.toCharArray())
+	var c = f_in.read()
+	while (c != -1) {
+		println(c.toChar())
+		c = f_in.read()
+	}
+	f_in.close()
+}</code></pre>
+</div>
+</div>
+<p>Altres mètodes del <strong>Reader</strong> són:</p>
+<ul>
+<li>int <strong>read(char[ ] <em>buffer</em>)</strong>: llig un número determinat de caràcters de l'entrada, guardant-los en el paràmetre (que actuarà com un buffer). El número de caràcters llegits serà com a màxim la grandària del buffer, encara que podria ser menor (si no hi ha prou caràcters, per exemple). El mètode tornarà el número de caràcters que realment s'han llegit com un enter. Si no hi haguera cap caràcter disponible, es retornaria -1.</li>
+<li>int <strong>available()</strong>: indica quants caràcters hi ha disponibles per a la lectura. Sobretot serviria com a condició de final de bucle: si hi ha 0 caràcters disponibles, és que ja hem acabat. Tot i això, hi ha altres maneres de fer la condició de final de bucle.</li>
+<li>long <strong>skip(long <em>despl</em>)</strong>: salta, despreciant-los, tants caràcters com indica el paràmetre. Podria ser que no puguera saltar el número de caràcters especificat per diferents raons. Torna el número de caràcters realment saltats.</li>
+<li>int <strong>close()</strong>: tanca el flux de dades.</li>
+</ul>
+<p>Mirem un altre exemple, utilitzant ara el buffer com a paràmetre del <strong>read</strong>. És idèntic al de l'apartat del InputStream. La diferència és que ara s'haurien de llegir bé tots els caràcters. Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_23.kt </strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;) {
+	val f_in = FileReader("f2.txt")
+	var buffer = CharArray(30)
+	var n = f_in.read(buffer)
+	while (n != -1) {
+		for (i in 0..n - 1)
+			print(buffer[i].toChar())
+		println("")
+		n = f_in.read(buffer)
+	}
+	f_in.close();
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Es llegiran els caràcters de 30 en 30, ja que el buffer és d'aquesta grandària. Com que ara es guarda en un buffer de caràcters, haurem de recórrer aquest buffer (fins el número de caràcters llegits, que és <strong>n</strong>) . Hem suposat que en el fitxer <strong>f2.txt</strong> tenim un text prou llarg com per a veure el funcionament.</p>
+<p>Aquesta seria l'eixida:</p>
+<p class="codi2">Hola. Aquest és un text més ll<br />arg, per veure com gestiona el<br />s bytes amb un buffer de 30 ca<br />ràcters.<br />Com que ho llegim des<br /> d'un InputStream, els caràcte<br />rs especials potser no isquen <br />bé.</p>
+<p> Efectivament, s'han llegit tots els caràcters perfectament.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="22__fluxos_orientats_a_carcters.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="222__mtodes_del_writer.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.3 RD-IntelliJ: Tot l'exemple | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-53"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li class="current-page-parent"><a href="3__realtime_database_rd.html" class="current-page-parent daddy">3 - Realtime Database (RD)</a>
+   <ul>
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li class="current-page-parent"><a href="32_rd_utilitzaci_des_de_intellij.html" class="current-page-parent daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul>
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li id="active"><a href="323_rdintellij_tot_lexemple.html" class="active no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__cloud_firestore_cf.html" class="daddy">4 - Cloud Firestore (CF)</a>
+   <ul class="other-section">
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li><a href="43_cf_utilitzaci_des_dandroid.html" class="daddy">4.3 CF: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="322_rdintellij_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_rd_utilitzaci_des_dandroid.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.3 RD-IntelliJ: Tot l'exemple</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id169">
+<div class="iDevice emphasis0">
+<div id="ta169_85" class="block iDevice_content">
+<p class="titolet">Tot l'exemple</p>
+<p>Anem a posar tot l'exemple que arreplega tot l'anterior.</p>
+<p>Primer la classe <strong>Missatge.java</strong>:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>class Missatge(var nom: String, var contingut: String)</code></pre>
+</div>
+</div>
+<p><br /><code></code></p>
+<p>Ara el programa, que havíem quedat de guardar-lo en el fitxer <strong>Exemple_7_3_2_2_FirebaseRD_CrearXat.kt</strong>:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>import java.awt.EventQueue
+import javax.swing.JFrame
+import javax.swing.JLabel
+import javax.swing.JTextArea
+import javax.swing.JButton
+import javax.swing.JTextField
+import java.awt.BorderLayout
+import javax.swing.JPanel
+import java.awt.FlowLayout
+import java.awt.Color
+import javax.swing.JScrollPane
+import java.io.FileInputStream
+
+import com.google.firebase.FirebaseOptions
+import com.google.auth.oauth2.GoogleCredentials
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.*
+
+class CrearXat : JFrame() {
+
+    val etUltimMissatge= JLabel("Últim missatge: ")
+    val ultimMissatge= JLabel()
+
+    val etiqueta = JLabel("Missatges:")
+    val area = JTextArea()
+
+    val etIntroduccioMissatge = JLabel("Introdueix missatge:")
+    val enviar = JButton("Enviar")
+    val missatge = JTextField(15)
+
+    // en iniciar posem un contenidor per als elements anteriors
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        setBounds(100, 100, 450, 300)
+        setLayout(BorderLayout())
+
+        // contenidor per als elements
+        //Hi haurà títol. Panell de dalt: últim missatge. Panell de baix: per a introduir missatge. Panell central: tot el xat
+
+        val panell1 = JPanel(FlowLayout())
+        panell1.add(etUltimMissatge)
+        panell1.add(ultimMissatge)
+        getContentPane().add(panell1, BorderLayout.NORTH)
+
+        val panell2 = JPanel(BorderLayout())
+        panell2.add(etiqueta, BorderLayout.NORTH)
+        area.setForeground(Color.blue)
+        area.setEnabled(false)
+        val scroll = JScrollPane(area)
+        panell2.add(scroll, BorderLayout.CENTER)
+        getContentPane().add(panell2, BorderLayout.CENTER)
+
+        val panell3 = JPanel(FlowLayout())
+        panell3.add(etIntroduccioMissatge)
+        panell3.add(missatge)
+        panell3.add(enviar)
+        getContentPane().add(panell3, BorderLayout.SOUTH)
+
+        setVisible(true)
+        enviar.addActionListener{enviar()}
+
+        val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
+
+        val options = FirebaseOptions.builder()
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com").build()
+
+        FirebaseApp.initializeApp(options)
+
+        // Exemple de listener de lectura única addListenerForSingleValue()
+        // Per a posar el títol. Sobre nomXat
+        val nomXat = FirebaseDatabase.getInstance().getReference("nomXat")
+
+        nomXat.addListenerForSingleValueEvent(object : ValueEventListener {
+            override
+            fun onDataChange(dataSnapshot: DataSnapshot) {
+                setTitle(dataSnapshot.getValue().toString())
+            }
+
+            override
+            fun onCancelled(error: DatabaseError) {
+            }
+        })
+
+        // Exemple de listener de lectura contínua addValueEventListener()
+        // Per a posar l'últim missatge registrat. Sobre a1
+        val ultim = FirebaseDatabase.getInstance().getReference("a1")
+
+        ultim.addValueEventListener(object : ValueEventListener {
+            override
+            fun onDataChange(dataSnapshot: DataSnapshot) {
+                ultimMissatge.setText(dataSnapshot.getValue().toString())
+            }
+
+            override
+            fun onCancelled(error: DatabaseError ) {
+            }
+        })
+
+        // Exemple de listener d'una llista addChildEventListener()
+        // Per a posar tota la llista de missatges. Sobre xat
+        val xat = FirebaseDatabase.getInstance().getReference("xat")
+
+        xat.addChildEventListener(object : ChildEventListener {
+            override
+            fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
+                area.append(dataSnapshot.child("nom").getValue().toString() + ": "
+                        + dataSnapshot.child("contingut").getValue().toString() + "\n"
+                )
+            }
+
+            override
+            fun onChildChanged(dataSnapshot: DataSnapshot, s: String?) {
+            }
+
+            override
+            fun onChildRemoved(dataSnapshot: DataSnapshot) {
+            }
+
+            override
+            fun onChildMoved(dataSnapshot: DataSnapshot, s: String?) {
+            }
+
+            override
+            fun onCancelled(databaseError: DatabaseError) {
+            }
+        }
+        )
+    }
+
+    // Exemple de guardar dades sense haver d'esperar per ser una aplicació gràfica
+    // Per a guardar dades. Sobre a1, i despŕes sobre la llista xat
+    fun enviar() {
+        val refA1 = FirebaseDatabase.getInstance().getReference("a1")
+        refA1.setValue(missatge.getText(), null)
+        val xat = FirebaseDatabase.getInstance().getReference("xat")
+        val m = Missatge("Usuari1", missatge.getText())
+        xat.push().setValue(m, null)
+    }
+}
+
+fun main(args: Array&lt;String&gt;) {
+    EventQueue.invokeLater {
+        CrearXat().isVisible = true
+    }
+}</code></pre>
+</div>
+</div>
+<p><br /><code></code><code></code></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id260">
+<div class="iDevice emphasis0" >
+<div id="ta260_260_2" class="block iDevice_content">
+<div class="exe-text"><p>Xat compartit</p>
+<p>Per a fer-lo més divertit, podríem connectar-nos tots a la mateixa Base de Dades de Realtime Database. Tenim un usuari per a poder fer proves.</p>
+<p>Si voleu connectar-vos des de la consola, aquestes són les dades</p>
+<ul>
+<li>Compte de Google: <a href="mailto:ieselcaminas.ad@gmail.com">ieselcaminas.ad@gmail.com</a></li>
+<li>Contrasenya: ad_ieselcaminas</li>
+<li>Aplicació: xat-ad</li>
+</ul>
+<p>En l'aplicació l'únic que haureu de fer és incorporar el fitxer json on està la configuració i la clau privada de la connexió. El fitxer s'anomena <strong>xat-ad-firebase-adminsdk-my2d0-8c69944b34.json</strong>, i el teniu com un recurs en l'aula virtual. La URL d'accés a aquesta Base de Dades és: <strong><a href="https://xat-ad.firebaseio.com/">https://xat-ad.firebaseio.com/</a></strong></p>
+<p>Únicament canviant aquestes 2 coses de la connexió, veureu que estem compartint tots el mateix xat.</p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="322_rdintellij_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_rd_utilitzaci_des_dandroid.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

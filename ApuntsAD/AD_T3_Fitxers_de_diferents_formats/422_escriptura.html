@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.2 Escriptura | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li class="current-page-parent"><a href="4_documents_xml.html" class="current-page-parent daddy">4.- Documents XML</a>
+   <ul>
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li class="current-page-parent"><a href="42__lestructura_dom.html" class="current-page-parent daddy">4.2 - L'estructura DOM</a>
+      <ul>
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li id="active"><a href="422_escriptura.html" class="active no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="421_lectura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="43__binding.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.2 Escriptura</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id31">
+<div class="iDevice emphasis0">
+<div id="ta31_85" class="block iDevice_content">
+<p>Anem ara a crear un nou document XML i a guardar-lo en un fitxer. Utilitzarem com a exemple <strong>Empleats</strong>. Al final de tot convertirem el fitxer <strong>Empleats.obj</strong>, generat en la pregunta 3, en el fitxer <strong>Empleats.xml</strong>.</p>
+<p>La primera consideració a fer és que partirem d'un document buit. Anirem construint els elements i posant els atributs, i quan tinguem un element creat del tot, l'afegirem a l'estructura, és a dir farem que siga el fill d'un que ja està en l'estructura. Podríem fer-ho també al revés, és a dir, primer penjar-lo de l'estructura i després anar omplint-lo.</p>
+<p>Els principals mètodes per anar construint l'estructura són:</p>
+<p><strong>Mètodes de DOCUMENT</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>Element</td>
+<td><strong>createElement(</strong>String nom<strong>)</strong></td>
+<td>crea un nou element amb el nom indicat (s'haurà de penjar en l'estructura)</td>
+</tr>
+<tr>
+<td>Text</td>
+<td><strong>createTextNode(</strong>String dades<strong>)</strong></td>
+<td>crea un nou element de text (amb contingut)</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>appendChild(</strong>Node nou<strong>)</strong></td>
+<td>afegeix el node nou, que serà l'arrel</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mètodes de NODE</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>appendChild(</strong>Node nou<strong>)</strong></td>
+<td>afegeix el node nou com a l'últim fill fins el moment</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong>removeChild(</strong>Node vell<strong>)</strong></td>
+<td>lleva el node vell com a fill</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mètodes de ELEMENT</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong>setAttribute(</strong>String nom,String valor<strong>)</strong></td>
+<td>afegeix un nou atribut a l'element, amb el nom i valor indicats</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong>removeAttribute(</strong>String nom<strong>)</strong></td>
+<td>lleva l'atribut de l'element</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong>setTextContent(</strong>String dades<strong>)</strong></td>
+<td>afegeix un fill que serà de text, amb el contingut passat com a paràmetre</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>Anem a fer directament ja l'exemple dels empleats. Totes les dades seran elements, excepte el número d'empleat, que farem que siga un atribut d'empleat per a practicar. A l'element arrel li direm <strong>empleats. </strong>El resultat ha de ser el fitxer <strong>Empleats.xml</strong>. Copieu el següent codi en el fitxer Kotlin <strong>Exemple_3_4_4_XMLCrearEmpleats.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.io.ObjectInputStream
+import java.io.FileInputStream
+import javax.xml.parsers.DocumentBuilderFactory
+import java.io.EOFException
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
+import javax.xml.transform.OutputKeys
+
+fun main(args: Array&lt;String&gt;) {
+	val f = ObjectInputStream(FileInputStream ("Empleats.obj"))
+
+	val doc = DocumentBuilderFactory.newInstance ().newDocumentBuilder().newDocument()
+	val arrel = doc.createElement ("empleats")
+	doc.appendChild(arrel)
+
+	try {
+		while (true) {
+			val e = f.readObject () as Empleat
+			val emp = doc.createElement ("empleat")
+			emp.setAttribute("numero", Integer.toString(e.num))
+
+			val nom = doc.createElement ("nom")
+			nom.appendChild(doc.createTextNode(e.nom)) // forma llarga: afegim un fill que és un node de text
+			emp.appendChild(nom)
+
+			val dep = doc.createElement("departament")
+			dep.setTextContent(e.departament.toString()) // forma curta: amb setTextContent() li posem contingut
+			emp.appendChild(dep)
+
+			val edat = doc.createElement("edat")
+			edat.setTextContent(e.edat.toString())
+			emp.appendChild(edat)
+
+			val sou = doc.createElement("sou");
+			sou.setTextContent(e.sou.toString())
+			emp.appendChild(sou)
+
+			arrel.appendChild(emp)
+		}
+
+	} catch (eof: EOFException) {
+		f.close();
+	}
+	val trans = TransformerFactory.newInstance().newTransformer()
+
+	trans.transform(DOMSource(doc), StreamResult("Empleats.xml"))
+}</code></pre>
+</div>
+</div>
+<p>En el fitxer XML generat, observareu que no hi ha retorns de carro, tot està en una mateixa línia. Si voleu veure'l bé, el podeu obrir per exemple amb un navegador web, que interpreta bé el format XML.</p>
+<p>Però també podem crear el fitxer donant-li un aspecte agradable incorporant aquestes dues línies immediatament abans de crear el fitxer, és a dir, immediatament abans de la línia 49:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    trans.setOutputProperty(OutputKeys.INDENT, "yes")
+    trans.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2")
+</code></pre>
+</div>
+</div>
+<p>I el fitxer quedarà així:</p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;empleats&gt;
+  &lt;empleat numero="1"&gt;
+    &lt;nom&gt;Andreu&lt;/nom&gt;
+    &lt;departament&gt;10&lt;/departament&gt;
+    &lt;edat&gt;32&lt;/edat&gt;
+    &lt;sou&gt;1000.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+  &lt;empleat numero="2"&gt;
+    &lt;nom&gt;Bernat&lt;/nom&gt;
+    &lt;departament&gt;20&lt;/departament&gt;
+    &lt;edat&gt;28&lt;/edat&gt;
+    &lt;sou&gt;1200.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+  &lt;empleat numero="3"&gt;
+    &lt;nom&gt;Clàudia&lt;/nom&gt;
+    &lt;departament&gt;10&lt;/departament&gt;
+    &lt;edat&gt;26&lt;/edat&gt;
+    &lt;sou&gt;1100.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+  &lt;empleat numero="4"&gt;
+    &lt;nom&gt;Damià&lt;/nom&gt;
+    &lt;departament&gt;10&lt;/departament&gt;
+    &lt;edat&gt;40&lt;/edat&gt;
+    &lt;sou&gt;1500.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+&lt;/empleats&gt;</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="421_lectura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="43__binding.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

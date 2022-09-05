@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.3 CF-IntelliJ: Tot l'exemple | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-71"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li><a href="3__realtime_database_rd.html" class="daddy">3 - Realtime Database (RD)</a>
+   <ul class="other-section">
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="32_rd_utilitzaci_des_de_intellij.html" class="daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__cloud_firestore_cf.html" class="current-page-parent daddy">4 - Cloud Firestore (CF)</a>
+   <ul>
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li class="current-page-parent"><a href="42_cf_utilitzaci_des_de_intellij.html" class="current-page-parent daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul>
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li id="active"><a href="423_cfintellij_tot_lexemple.html" class="active no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li><a href="43_cf_utilitzaci_des_dandroid.html" class="daddy">4.3 CF: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="422_cfintellij_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="424_cfintellij_exemple_ampliat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.3 CF-IntelliJ: Tot l'exemple</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id228">
+<div class="iDevice emphasis0" >
+<div id="ta228_228_2" class="block iDevice_content">
+<div class="exe-text"><p>Aquest és el programa, que recordeu que li havíem posat el nom de <strong>Exemple_7_4_2_FirebaseCF_CrearXatCloud.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.awt.EventQueue
+import javax.swing.JFrame
+import javax.swing.JLabel
+import javax.swing.JTextArea
+import javax.swing.JButton
+import javax.swing.JTextField
+import javax.swing.JPanel
+import java.awt.BorderLayout
+import java.awt.FlowLayout
+import java.awt.GridLayout
+import java.awt.Color
+import javax.swing.JScrollPane
+import java.io.FileInputStream
+
+import com.google.api.core.ApiFuture
+import com.google.auth.oauth2.GoogleCredentials
+import com.google.cloud.firestore.DocumentChange
+import com.google.cloud.firestore.DocumentReference
+import com.google.cloud.firestore.DocumentSnapshot
+import com.google.cloud.firestore.EventListener
+import com.google.cloud.firestore.Firestore
+import com.google.cloud.firestore.FirestoreException
+import com.google.firebase.FirebaseApp
+import com.google.firebase.FirebaseOptions
+import com.google.firebase.cloud.FirestoreClient
+
+class CrearXatCloud : JFrame() {
+
+	val etUsuari = JLabel("Nom Usuari:")
+	val usuari = JTextField(25)
+
+	val etUltimMissatge = JLabel("Últim missatge: ")
+	val ultimMissatge = JLabel()
+
+	val etiqueta = JLabel("Missatges:")
+	val area = JTextArea()
+
+	val etIntroduccioMissatge = JLabel("Introdueix missatge:")
+	val enviar = JButton("Enviar")
+	val missatge = JTextField(15)
+
+	// en iniciar posem un contenidor per als elements anteriors
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+		setBounds(100, 100, 450, 300)
+		setLayout(BorderLayout())
+		// contenidor per als elements
+		//Hi haurà títol. Panell de dalt: últim missatge. Panell de baix: per a introduir missatge. Panell central: tot el xat
+
+		val panell11 = JPanel(FlowLayout())
+		panell11.add(etUsuari)
+		panell11.add(usuari)
+		val panell12 = JPanel(FlowLayout())
+		panell12.add(etUltimMissatge)
+		panell12.add(ultimMissatge)
+		val panell1 = JPanel(GridLayout(2, 1))
+		panell1.add(panell11)
+		panell1.add(panell12)
+		getContentPane().add(panell1, BorderLayout.NORTH)
+
+		val panell2 = JPanel(BorderLayout())
+		panell2.add(etiqueta, BorderLayout.NORTH)
+		area.setForeground(Color.blue)
+		area.setEditable(false)
+		val scroll = JScrollPane(area)
+		panell2.add(scroll, BorderLayout.CENTER)
+		getContentPane().add(panell2, BorderLayout.CENTER)
+
+		val panell3 = JPanel(FlowLayout())
+		panell3.add(etIntroduccioMissatge)
+		panell3.add(missatge)
+		panell3.add(enviar)
+		getContentPane().add(panell3, BorderLayout.SOUTH)
+
+		setVisible(true)
+		enviar.addActionListener { enviar() }
+
+		val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
+
+		val options = FirebaseOptions.Builder()
+			.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+			.build()
+
+		FirebaseApp.initializeApp(options)
+
+		// Exemple de lectura única: senzillament sobre un ApiFuture i sobre ell get()
+		// Per a posar el títol. Sobre /Xats/XatProva/nomXat
+		val database = FirestoreClient.getFirestore()
+		val docRef = database.collection("Xats").document("XatProva")
+		val future = docRef.get()
+		val nomXat = future.get().getString("nomXat")
+		this.setTitle(nomXat)
+
+		// Exemple de listener de lectura contínua addSnapshotListener()
+		// Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge DocumentSnapshot FirestoreException
+		docRef.addSnapshotListener { snapshot, e -&gt;
+			if (e != null) {
+				System.err.println("Listen failed: " + e)
+				return@addSnapshotListener
+			}
+
+			if (snapshot != null &amp;&amp; snapshot.exists()) {
+				ultimMissatge.setText(snapshot.getString("ultimMissatge"))
+				//area.append(snapshot.getString("ultimUsuari") + ": " + snapshot.getString("ultimMissatge") + "\n")
+			} else {
+				println("Current data: null")
+			}
+		}
+		
+		// Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+		// Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+		database.collection("Xats").document("XatProva").collection("missatges").addSnapshotListener { snapshots, e -&gt;
+			if (e != null) {
+				System.err.println("Listen failed: " + e)
+				return@addSnapshotListener
+			}
+
+			for (dc in snapshots!!.getDocumentChanges()) {
+				when (dc.getType()) {
+					DocumentChange.Type.ADDED -&gt;
+						area.append(dc.getDocument().getString("nom") + ": " + dc.getDocument().getString("contingut") + "\n")
+
+					DocumentChange.Type.MODIFIED -&gt;
+						println("Missatge modificat: " + dc.getDocument().getData());
+
+					DocumentChange.Type.REMOVED -&gt;
+						println("Missatge esborrat: " + dc.getDocument().getData());
+				}
+			}
+		}
+	}
+
+
+	// Exemple de guardar dades en Cloud Firestore
+	// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+	fun enviar() {
+		val database = FirestoreClient.getFirestore()
+		val docXatProva = database.collection("Xats").document("XatProva")
+
+		val dades = HashMap&lt;String, Any&gt;()
+		dades.put("ultimUsuari", usuari.getText())
+		dades.put("ultimMissatge", missatge.getText())
+
+		docXatProva.update(dades)
+
+		val dades2 = HashMap&lt;String, Any&gt;()
+		dades2.put("nom", usuari.getText())
+		dades2.put("contingut", missatge.getText())
+
+		database.collection("Xats").document("XatProva").collection("missatges").add(dades2)
+	}
+}
+
+fun main(args: Array&lt;String&gt;) {
+	EventQueue.invokeLater {
+		CrearXatCloud().isVisible = true
+	}
+}</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="422_cfintellij_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="424_cfintellij_exemple_ampliat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

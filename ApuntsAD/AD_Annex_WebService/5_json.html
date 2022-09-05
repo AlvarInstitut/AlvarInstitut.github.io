@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.- JSON | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Muntatge d'un WebService</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_installaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="daddy">2.- Instal·lació del Servidor Web i el Servidor de Bases de Dades</a>
+   <ul class="other-section">
+      <li><a href="21__xampp.html" class="no-ch">2.1 - XAMPP</a></li>
+      <li><a href="22__docker.html" class="no-ch">2.2 - Docker</a></li>
+   </ul>
+   </li>
+   <li><a href="3_utilitzaci_de_xampp.html" class="daddy">3.- Utilització de XAMPP</a>
+   <ul class="other-section">
+      <li><a href="31__mysql.html" class="no-ch">3.1 - MySQL</a></li>
+      <li><a href="32__ftp.html" class="no-ch">3.2 - FTP</a></li>
+   </ul>
+   </li>
+   <li><a href="4_php_accs_a_les_dades.html" class="no-ch">4.- PHP: Accés a les dades</a></li>
+   <li id="active"><a href="5_json.html" class="active no-ch">5.- JSON</a></li>
+   <li><a href="6_accs_des_de_kotlin.html" class="no-ch">6.- Accés des de Kotlin</a></li>
+   <li><a href="7_accs_des_dandroid.html" class="no-ch">7.- Accés des d'Android</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_php_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_accs_des_de_kotlin.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.- JSON</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_85" class="block iDevice_content">
+<p><strong>JSON</strong> (<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation) és un format per a la representació d'estructures de dades en forma de text que son fácils de llegir i escriure. És molt similar al XML, però més compacte, ja que no utilitza les etiquetes (que s'han d'obrir i tancar).</p>
+<p>JSON té 2 tipus d'estructures:</p>
+<ul>
+<li><strong>Objectes</strong>, que són conjunts de parelles clau-valor. El conjunt va entre claus (<strong> { }</strong> ), i els elements van separats per comes. Cada parella clau-valor es representa per la clau entre cometes, dos punts, i el valor.</li>
+<li><strong>Arrays</strong>, que són conjunts ordenats de valors. Van entre claudàtors ( <strong>[ ]</strong> ) i els valors van separats per comes.</li>
+</ul>
+<p>Com veiem, tant en els objectes com en els arrays poden anar valors. Aquestos valors poden ser una cadena de caràcters (anirà entre cometes), un número, o un altre objecte o array.</p>
+<p>Analitzem el reultat que ens venia del <strong>rutes_2.php</strong>. Està en més d'una línia i identat per a una millor lectura:</p>
+<p class="codi2">[<br />    {   "0":"1",<br />        "num_r":"1",<br />        "1":"Pujada a Penyagolosa",<br />        "nom_r":"Pujada a Penyagolosa",<br />        "2":"530",<br />        "desn":"530",<br />        "3":"530",<br />        "desn_acum":"530"<br />    },<br />    {<br />        "0":"2",<br />        "num_r":"2",<br />        "1":"La Magdalena",<br />        "nom_r":"La Magdalena",<br />        "2":"51",<br />        "desn":"51",<br />        "3":"84",<br />        "desn_acum":"84"<br />    },<br />    {<br />        "0":"3",<br />        "num_r":"3",<br />        "1":"Pelegrins de Les Useres",<br />        "nom_r":"Pelegrins de Les Useres",<br />        "2":"896",<br />        "desn":"896",<br />        "3":"1738",<br />        "desn_acum":"1738"<br />    }<br />]</p>
+<p>Com veiem l'estructura que ens arriba és un array amb 3 objectes. Cada objecte té la mateixa estructura i té la curiositat de "doblar" la informació, posant coma clau un número d'ordre (començant per 0) i també el nom del camp. Això és així per permetre posteriorment un tractament més còmode, ja que obtindrem la informació tant per l'índex com pel nom del camp.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_php_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_accs_des_de_kotlin.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

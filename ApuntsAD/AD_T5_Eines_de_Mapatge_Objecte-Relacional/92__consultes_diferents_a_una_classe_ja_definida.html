@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.2 - Consultes diferents a una classe ja definida | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__connexi_a_hibernate.html" class="daddy">5 - Connexió a Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__hql_consultes_senzilles.html" class="no-ch">5.1 - HQL: consultes senzilles</a></li>
+      <li><a href="52__comenant_a_programar.html" class="no-ch">5.2 - Començant a programar</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="daddy">7 - Estructura dels fitxers de mapatge</a>
+   <ul class="other-section">
+      <li><a href="71__anotacions_en_compte_de_fitxers_xml_de_mpatge.html" class="no-ch">7.1 - Anotacions en compte de fitxers xml de mpatge</a></li>
+   </ul>
+   </li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="9__consultes.html" class="current-page-parent daddy">9 - Consultes</a>
+   <ul>
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li id="active"><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="active no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="91__parmetres_en_les_consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="10__consultes_dactualitzaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">9.2 - Consultes diferents a una classe ja definida</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id28">
+<div class="iDevice emphasis0">
+<div id="ta28_1" class="block iDevice_content">
+<p>De moment en les consultes sempre hem tornat una fila o més però sempre<strong> d'una única taula</strong>, o millor dit, <strong>una classe</strong> equivalent a una taula.</p>
+<p>Però hi haurà moltes ocasions en què voldrem fer una consulta diferent, on intervinga més d'una taula (o classe),  que torne funcions de grup (SUM, AVG, ...), en definitiva que no siga una sentència equivalent a <strong>SELECT * FROM ...</strong></p>
+<p>Per tant ara no tornarà un objecte o una col·lecció d'objectes dels que ja tenim definits. Podem tenir més d'un cas, i a continuació els intentarem tractar:</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id29">
+<div class="iDevice emphasis0">
+<div id="ta29_1" class="block iDevice_content">
+<p class="titolet">Consultes que tornen més d'un objecte dels definits</p>
+<p>Són consultes en les quals hi haurà una reunió de taules (millor dit, de les classes equivalents), i es tornen tots els camps (totes les propietats).</p>
+<p>Podríem definir-nos una classe que englobara totes les propietats de tots els objectes, però hi ha una solució més ràpida. Els resultats s'obtenen en un <strong>array d'objectes</strong>, on el primer objecte serà l'equivalent de la primera taula, el segon l'equivalent de la segona, etc. Aquest exemple, on traurem el nomde la comarca i la província, és només il·lustratiu. Està clar que es pot fer molt més curt i senzill agafant únicament les Poblacions i a partir d'elles traure la comarca. Copieu el següent codi al fitxer <strong>Exemple_41_ConsultaComplexa1.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import classes.Poblacio
+import classes.Comarca
+import org.hibernate.cfg.Configuration
+import java.util.logging.Level
+import java.util.logging.LogManager
+
+fun main(args: Array&lt;String&gt;) {
+    LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
+    val sessio = Configuration().configure().buildSessionFactory().openSession()
+
+    val q = sessio.createQuery("from Poblacio p, Comarca c where p.comarca.nomC=c.nomC order by p.nom")
+
+    for(tot in q.list()) {
+        tot as Array&lt;Object&gt;
+        val p = tot[0] as Poblacio
+        val c = tot[1] as Comarca
+        println(p.nom + " (" + c.nomC + ". " + c.provincia + ")")
+    }
+
+    sessio.close()
+}</code></pre>
+</div>
+</div>
+<p> Com veiem, un poc "rotllo"...</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id30">
+<div class="iDevice emphasis0">
+<div id="ta30_1" class="block iDevice_content">
+<p class="titolet">Consultes que tornen un únic valor</p>
+<p>Aquest és el cas més senzill, ja que el valor tornat el podem agafar del tipus bàsic del valor tornat. Normalment és després d'utilitzar una funció de grup. Recordem que ha de tornar un únic valor (una única fila i una única columna, per dir-lo així). Haurem d'utilitzar el mètode <strong>uniqueResult()</strong> ja comentat amb anterioritat. L'exemple serà per a calcular l'altura mitjana de totes les poblacions. Copieu el següent codi al fitxer Kotlin <strong>Exemple_42_ConsultaComplexa2.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import org.hibernate.cfg.Configuration
+import java.util.logging.Level
+import java.util.logging.LogManager
+
+fun main(args: Array&lt;String&gt;) {
+    LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
+    val sessio = Configuration().configure().buildSessionFactory().openSession()
+
+    val q = sessio.createQuery("select avg(altura) from Poblacio")
+
+    val mitjana = q.uniqueResult ()
+
+    println("Altura mitjana: " + mitjana)
+
+    sessio.close()
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id31">
+<div class="iDevice emphasis0">
+<div id="ta31_1" class="block iDevice_content">
+<p class="titolet">Consultes amb qualsevol resultat</p>
+<p>Una de les solucions seria crear una classe amb totes les propietats que torna la consulta. No veurem aquesta solució per tediosa.</p>
+<p>Farem com en el primer apartat d'aquesta pregunta, gestionant l'<strong>array d'objectes</strong> que s'obtenen, però en aquesta ocasió cada objecte de l'array serà un tipus simple. Copieu el següent codi al fitxer <strong>Exemple_43_ConsultaComplexa3.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import org.hibernate.cfg.Configuration
+import java.util.logging.Level
+import java.util.logging.LogManager
+
+fun main(args: Array&lt;String&gt;) {
+    LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
+    val sessio = Configuration().configure().buildSessionFactory().openSession()
+
+    val q = sessio.createQuery("select c.nomC,count(p.codM),avg(p.altura) "
+            + "from Comarca c , Poblacio p "
+            + "where c.nomC=p.comarca.nomC "
+            + "group by c.nomC "
+            + "order by c.nomC");
+    for (tot in q.list()){
+        tot as Array&lt;Object&gt;
+        println("Comarca: " + tot[0] + ". Núm. pobles: " + tot[1] + ". Altura mitjana: " + tot[2]);
+    }
+    sessio.close()
+}</code></pre>
+</div>
+</div>
+<p>Només hem d'anar amb compte amb el tipus <strong>Array&lt;Object&gt;</strong>.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="91__parmetres_en_les_consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="10__consultes_dactualitzaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2 Driver org.json | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-26"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_documents_json.html" class="current-page-parent daddy">5.- Documents JSON</a>
+   <ul>
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li id="active"><a href="52_driver_orgjson.html" class="active daddy">5.2 Driver org.json</a>
+      <ul>
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="51__estructura_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="521__lectura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2 Driver org.json</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id36">
+<div class="iDevice emphasis0" >
+<div id="ta36_112_2" class="block iDevice_content">
+<div class="exe-text"><p>Hi ha més d'una llibreria per a poder accedir i analitzar els documents json.</p>
+<p>Per exemple, es comenten prou per Internet són <strong>GSON</strong> (de Google) i <strong>Jackson</strong>.</p>
+<p>Però nosaltres anem a utilitzar dues altres llibreries</p>
+<ul>
+<li>Una, la del grup <strong>org.json</strong> que en principi serà la mateixa que s'utilitzarà en Android</li>
+<li>Una altra, la de <strong>Moshi</strong>, que ens permetrà elaborar més el resultat ja que podrem fer una conversió entre Json i objectes de Java o de Kotlin</li>
+</ul>
+<p style="text-align: justify;">Pel que fa a la primera, en el moment de fer aquestos apunts l'última versió estable és la <strong>20210307</strong>, és a dir, de juliol de 2018. En aquest enllaç teniu d'on us la podeu baixar: <a href="https://jar-download.com/artifacts/org.json/json/20210307">https://jar-download.com/artifacts/org.json/json/20210307</a>. Una vegada baixada l'haurem d'incorporar al nostre projecte (sobre el projecte <strong>F4 --&gt; Modules --&gt; pestanya dependencies --&gt; +</strong>)</p>
+<p> En ella trobem el més bàsic:</p>
+<ul>
+<li><strong>JSONObject</strong>: equivaldrà a un objecte</li>
+<li><strong>JSONArray</strong>: equivaldrà a un array</li>
+<li><strong>JSONTokener</strong>:ens permetrà analitzar el document Json, i tornarà l'objecte arrel. El mètode que utilitzarem serà sempre <strong>nextValue()</strong>.</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="51__estructura_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="521__lectura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

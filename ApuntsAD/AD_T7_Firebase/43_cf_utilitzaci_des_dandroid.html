@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3 CF: Utilització des d'Android | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-62"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li><a href="3__realtime_database_rd.html" class="daddy">3 - Realtime Database (RD)</a>
+   <ul class="other-section">
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="32_rd_utilitzaci_des_de_intellij.html" class="daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__cloud_firestore_cf.html" class="current-page-parent daddy">4 - Cloud Firestore (CF)</a>
+   <ul>
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="43_cf_utilitzaci_des_dandroid.html" class="active daddy">4.3 CF: Utilització des d'Android</a>
+      <ul>
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="424_cfintellij_exemple_ampliat.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="431_cfandroid_connexi.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3 CF: Utilització des d'Android</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id199">
+<div class="iDevice emphasis0" >
+<div id="ta199_207_2" class="block iDevice_content">
+<div class="exe-text"><p>De forma absolutament paral·lela a com quan vam veure el Realtime Database per a Android, ara toca el torn d'accedir al <strong>Cloud Firestore </strong>de Firebase des d'Android. Com veurem, per a fer la connexió ens deixarem ajudar també per l'assistent.</p>
+<p>El projecte s'anomenarà  <strong>Tema7_FirebaseCF</strong>.</p>
+<div class="nota_blau">
+<p><strong><u>Nota important</u></strong></p>
+<p>Per a accedir a <strong>Cloud Firestore</strong> i que no ens falle el programa, haurem de posar en el <strong>build.gradle</strong> de l'<strong>aplicació</strong>, dins de <strong>android</strong> i dins de <strong>defaultConfig</strong> el següent:<strong></strong></p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono', monospace; padding-left: 30px;"><span style="color: #067d17;"> <strong>multiDexEnabled true</strong></span></pre>
+<p>Si no ho fem així ens pot donar el següent error:</p>
+<p><span style="color: #ff0000;"><strong>Cannot fit requested classes in a single dex file (# methods: 80444 &gt; 65536)</strong></span></p>
+<p><span style="color: #ff0000;"><span style="color: #000000;">I com sempre, per a que reconega els elements que tenim en els layout, haurem de posar al principi:</span></span></p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono', monospace; padding-left: 30px;">id <span style="color: #067d17;">'kotlin-android-extensions'</span></pre>
+</div>
+<p>El activity_main.xml serà:<span style="font-style: italic;"><!--?</span--><span style="color: #0000ff; font-weight: bold;"></span></span></p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;"><!--?</span--><span style="color: #0000ff; font-weight: bold;"></span></span></pre>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;"><!--?</span--><span style="color: #0000ff; font-weight: bold;"></span></span></pre>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;"><!--?</span--><span style="color: #0000ff; font-weight: bold;"></span></span></pre>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;"><!--?</span--><span style="color: #0000ff; font-weight: bold;"></span></span></pre>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #174ad4;">xml version</span><span style="color: #067d17;">="1.0" </span><span style="color: #174ad4;">encoding</span><span style="color: #067d17;">="utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #0033b3;">androidx.constraintlayout.widget.ConstraintLayout </span><span style="color: #174ad4;">xmlns:</span><span style="color: #871094;">android</span><span style="color: #067d17;">="http://schemas.android.com/apk/res/android"<br /></span><span style="color: #067d17;">    </span><span style="color: #174ad4;">xmlns:</span><span style="color: #871094;">app</span><span style="color: #067d17;">="http://schemas.android.com/apk/res-auto"<br /></span><span style="color: #067d17;">    </span><span style="color: #174ad4;">xmlns:</span><span style="color: #871094;">tools</span><span style="color: #067d17;">="http://schemas.android.com/tools"<br /></span><span style="color: #067d17;">    </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="match_parent"<br /></span><span style="color: #067d17;">    </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="match_parent"<br /></span><span style="color: #067d17;">    </span><span style="color: #871094;">tools</span><span style="color: #174ad4;">:context</span><span style="color: #067d17;">=".MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #0033b3;">Spinner<br /></span><span style="color: #0033b3;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:id</span><span style="color: #067d17;">="@+id/comboXats"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="0dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="wrap_content"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintEnd_toEndOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintStart_toStartOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintTop_toTopOf</span><span style="color: #067d17;">="parent" </span>/&gt;<br /><br />    &lt;<span style="color: #0033b3;">EditText<br /></span><span style="color: #0033b3;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:id</span><span style="color: #067d17;">="@+id/usuari"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="0dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="wrap_content"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:text</span><span style="color: #067d17;">=""<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintEnd_toEndOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintStart_toStartOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintTop_toBottomOf</span><span style="color: #067d17;">="@+id/comboXats"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:background</span><span style="color: #067d17;">="#dddddd"</span>/&gt;<br /><br /><br />    &lt;<span style="color: #0033b3;">TextView<br /></span><span style="color: #0033b3;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:id</span><span style="color: #067d17;">="@+id/ultim"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="0dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="wrap_content"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:text</span><span style="color: #067d17;">=""<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintEnd_toEndOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintHorizontal_bias</span><span style="color: #067d17;">="0.0"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintStart_toStartOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintTop_toBottomOf</span><span style="color: #067d17;">="@+id/usuari"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:background</span><span style="color: #067d17;">="#aaaaaa"</span>/&gt;<br /><br />    &lt;<span style="color: #0033b3;">EditText<br /></span><span style="color: #0033b3;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:id</span><span style="color: #067d17;">="@+id/text"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="317dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="44dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:ems</span><span style="color: #067d17;">="10"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:text</span><span style="color: #067d17;">=""<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintBottom_toBottomOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintStart_toStartOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:background</span><span style="color: #067d17;">="#dddddd"</span>/&gt;<br /><br />    &lt;<span style="color: #0033b3;">Button<br /></span><span style="color: #0033b3;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:id</span><span style="color: #067d17;">="@+id/boto"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="wrap_content"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="44dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:text</span><span style="color: #067d17;">="Button"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintBottom_toBottomOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintEnd_toEndOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintStart_toEndOf</span><span style="color: #067d17;">="@+id/text"<br /></span><span style="color: #067d17;">        </span>/&gt;<br /><br />    &lt;<span style="color: #0033b3;">TextView<br /></span><span style="color: #0033b3;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:id</span><span style="color: #067d17;">="@+id/area"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="0dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="0dp"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:text</span><span style="color: #067d17;">=""<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintBottom_toTopOf</span><span style="color: #067d17;">="@+id/text"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintEnd_toEndOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintStart_toStartOf</span><span style="color: #067d17;">="parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">app</span><span style="color: #174ad4;">:layout_constraintTop_toBottomOf</span><span style="color: #067d17;">="@+id/ultim" </span>/&gt;<br /><br />&lt;/<span style="color: #0033b3;">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</pre>
+<p>Els components que hem col·locat són:</p>
+<ul>
+<li>Un <strong>EditText</strong> per al nom d'<strong>usuari</strong> (amb fons gris claret)<strong></strong></li>
+<li>Un <strong>TextView</strong>, anomenat <strong>ultim</strong>, per a visualitzar l'últim missatge, que es coordinarà amb <strong>/Xats/XatProva/ultimMissatge </strong>(amb fons gris més fosc)</li>
+<li>Un <strong>EditText</strong> anomenat <strong>text</strong>, on posarem els missatges que volem enviar (amb fons gris claret, baix de tot)</li>
+<li>Un <strong>Button</strong>, anomenat <strong>boto</strong>, que quan l'apretem és quan s'enviarà el missatge.</li>
+<li>Un <strong>TextView</strong>, anomenat <strong>area</strong>, on anirà tot el xat (amb fons blanc)</li>
+<li>Un <strong>Spinner</strong>, per a poder seleccionar el xat entre uns quants xats (dalt de tot)</li>
+</ul>
+<p></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id222">
+<div class="iDevice emphasis0" >
+<div id="ta222_222_2" class="block iDevice_content">
+<div class="exe-text"><p>I aquest seria l' "esquelet" del programa:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.*
+import java.text.SimpleDateFormat
+import java.util.*
+
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        boto.text = "Enviar"
+        val pantPrincipal = this
+
+        // Referències a la Base de Dades i als documents
+
+        // Exemple de llegir tots els documents d'una col·lecció
+        // Per a triar el xat
+
+        // Exemple de lectura única: AddOnSuccessListener()
+        // Per a posar el títol. Sobre /Xats/XatProva/nomXat
+
+        // Exemple de listener de lectura contínua addSnapshotListener() sobre un document
+        // Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimMissatge
+
+        // Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+        // Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+
+        // Per a guardar dades
+        // Primer sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
+        // Després també com a documents en la col·lecció /Xats/XatProva/missatges
+    }
+}</code></pre>
+</div>
+</div>
+<p><code></code></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="424_cfintellij_exemple_ampliat.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="431_cfandroid_connexi.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

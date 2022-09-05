@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3.3 CF-Android: Tot l'exemple | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-66"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li><a href="3__realtime_database_rd.html" class="daddy">3 - Realtime Database (RD)</a>
+   <ul class="other-section">
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="32_rd_utilitzaci_des_de_intellij.html" class="daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__cloud_firestore_cf.html" class="current-page-parent daddy">4 - Cloud Firestore (CF)</a>
+   <ul>
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="43_cf_utilitzaci_des_dandroid.html" class="current-page-parent daddy">4.3 CF: Utilització des d'Android</a>
+      <ul>
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li id="active"><a href="433_cfandroid_tot_lexemple.html" class="active no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="432_cfandroid_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__cloud_storage.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3.3 CF-Android: Tot l'exemple</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id218">
+<div class="iDevice emphasis0" >
+<div id="ta218_218_2" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id219">
+<div class="iDevice emphasis0" >
+<div id="ta219_219_2" class="block iDevice_content">
+<div class="exe-text"><p>Anem a posar tot l'exemple del xat complet, això sí, amb algunes modificacions i millores:</p>
+<ul>
+<li>Tindrem la classe <strong>Missatge</strong> amb les propietat <strong>nom</strong> i <strong>contingut</strong>. Posarem també la <strong>data</strong> (com un <strong>Date</strong>, aprofitant que també tenim aquest tipus en Cloud Firestore) per a poder ordenar els missatges cronològicament</li>
+<li>Llevem les coses que no s'utilitzen estrictament en aquest exemple</li>
+<li>El <strong>Spinner</strong> anomenat <strong>comboXats </strong>ara ja funcionarà. Per a no modificar les coses ja fetes, posarem la creació dels listeners en un mètode anomenat <strong>inicialitzar() </strong>que per a tocar el menys possible estarà dins del listener de detectar els canvis en el Spinner, ja que ara els altres listeners dependran del xat triat. I haurem d'anar amb compte també de parar els listeners, ja creats. És a dir, si primer triem un xat, tindrem els listeners que apunten a ell. Si després triem un altre xat i creem els listeners una altra vegada per a que apunten al lloc correcte, els tindrem per duplicat. Hauríem de parar els primers listeners</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id220">
+<div class="iDevice emphasis0" >
+<div id="ta220_220_2" class="block iDevice_content">
+<div class="exe-text"><p>Classe Missatge</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">class </span><span style="color: #000000;">Missatge</span>(<span style="color: #0033b3;">val </span><span style="color: #871094;">nom</span>: <span style="color: #000000;">String</span>, <span style="color: #0033b3;">val </span><span style="color: #871094;">data</span>: <span style="color: #000000;">Date</span>, <span style="color: #0033b3;">val </span><span style="color: #871094;">contingut</span>: <span style="color: #000000;">String</span>)</pre>
+<p><br /><code></code></p>
+<p>I el programa (hem incorporat la classe <strong>Missatge</strong> per més comoditat):</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.*
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.core.View
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
+
+import kotlinx.android.synthetic.main.activity_main.*
+
+class Missatge(val nom: String, val data: Date, val contingut: String)
+
+class MainActivity : AppCompatActivity() {
+
+    var listenerUltimMissatge: ListenerRegistration? = null
+    var listenerMissatges: ListenerRegistration? = null
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        boto.text = "Enviar"
+        val pantPrincipal = this
+
+        // Referències a la Base de Dades i als documents
+        val db = Firebase.firestore
+        var docRef = db.collection("Xats").document("XatProva")
+
+        // Exemple de llegir tots els documents d'una col·lecció
+        // Per a triar el xat
+        db.collection("Xats").get().addOnCompleteListener { task -&gt;
+            if (task.isSuccessful) {
+                val opcions = ArrayList&lt;String&gt;()
+                for (document in task.result!!) {
+                    opcions.add(document.id)
+                }
+                val adaptador = ArrayAdapter(pantPrincipal, android.R.layout.simple_spinner_item, opcions)
+                adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                comboXats.adapter = adaptador
+            }
+        }
+
+        comboXats.onItemSelectedListener = object:AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView&lt;*&gt;?, view: android.view.View?, position: Int, id: Long) {
+
+                // TODO Auto-generated method stub
+                docRef = db.collection("Xats").document(comboXats.selectedItem.toString())
+                area.text = ""
+                inicialitzar()
+            }
+
+            private fun inicialitzar() {
+
+                // Exemple de lectura única: AddOnSuccessListener()
+                // Per a posar el títol. Sobre /Xats/XatProva/nomXat
+                docRef.get().addOnSuccessListener { documentSnapshot -&gt;
+                    setTitle(documentSnapshot.getString("nomXat"))
+                }
+
+                // Exemple de listener de lectura contínua addSnapshotListener() sobre un document
+                // Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimMissatge
+                // Si estava en marxa, el parem abans de tornar-lo a llançar
+                if (listenerUltimMissatge != null)
+                    listenerUltimMissatge!!.remove()
+
+                listenerUltimMissatge = docRef.addSnapshotListener { documentSnapshot, e -&gt;
+                    ultim.text = documentSnapshot!!.getString("ultimMissatge")
+                }
+
+                // Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+                // Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+                // Si estava en marxa, el parem abans de tornar-lo a llançar
+                if (listenerMissatges != null)
+                    listenerMissatges!!.remove()
+
+                listenerMissatges = docRef.collection("missatges").orderBy("data").addSnapshotListener { snapshots, e -&gt;
+                    for (dc in snapshots!!.documentChanges) {
+                        when (dc.type) {
+                            DocumentChange.Type.ADDED -&gt; {
+                                val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm")
+                                val dataFormatejada = sdf.format(dc.document.getDate("data"))
+                                area.append(dc.document.getString("nom") + " (" + dataFormatejada + "): " + dc.document.getString("contingut") + "\n")
+                            }
+                        }
+                    }
+                }
+                // Per a guardar dades
+                // Primer sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
+                // Després també com a documents en la col·lecció /Xats/XatProva/missatges
+                boto.setOnClickListener {
+                    val dades = HashMap&lt;String, Any&gt;()
+                    dades["ultimUsuari"] = usuari.text.toString()
+                    dades["ultimMissatge"] = text.text.toString()
+                    docRef.update(dades)
+
+                    val m = Missatge(usuari.text.toString(), Date(), text.text.toString())
+                    docRef.collection("missatges").add(m)
+
+                    text.setText("")
+                }
+            }
+
+
+            override fun onNothingSelected(parent:AdapterView&lt;*&gt;) {
+                // TODO Auto-generated method stub
+
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<p><br /><code><string></string></code><span style="color: #0033b3;"></span></p>
+<p><code></code></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id221">
+<div class="iDevice emphasis0" >
+<div id="ta221_221_2" class="block iDevice_content">
+<div class="exe-text"><p>No apareixeran el missatges sense data.</p>
+<p>I el resultat és el de la imatge, en la qual es veu el contingut del xat <strong>Xat1</strong>, amb uns quant misstges ja</p>
+<p style="text-align: center;"><img src="T7_2_3_3_3_1.1.png" alt="" width="403" height="720" /></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="432_cfandroid_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__cloud_storage.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

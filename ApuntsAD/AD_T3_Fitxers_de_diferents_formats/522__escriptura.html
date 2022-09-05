@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2.2 - Escriptura | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-25"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_documents_json.html" class="current-page-parent daddy">5.- Documents JSON</a>
+   <ul>
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li class="current-page-parent"><a href="52_driver_orgjson.html" class="current-page-parent daddy">5.2 Driver org.json</a>
+      <ul>
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li id="active"><a href="522__escriptura.html" class="active no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="521__lectura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53_driver_moshi.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2.2 - Escriptura</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id110">
+<div class="iDevice emphasis0">
+<div id="ta110_85" class="block iDevice_content">
+<p>Ens falta veure com escriure un document JSON. És molt fàcil anar creant l'estructura JSON. Només hem de recordar la manera d'afegir al <strong>JSONObject</strong> i al <strong>JSONArray</strong>.</p>
+<ul>
+<li><strong>put("nom", element)</strong> per afegir un nou membre a un <strong>JSONObject</strong></li>
+<li><strong>put(element) </strong>per afegir un nou element a un <strong>JSONArray</strong></li>
+</ul>
+<div class="nota_blau">
+<p><u><strong>Nota</strong></u></p>
+<p>La major part de drivers utilitzen <strong>add(element) </strong>per a afegir un element a un JSONArray, en compte de <strong>put</strong><strong></strong></p>
+</div>
+<p>Una vegada tinguem l'estructura, podrem passar-la a un <strong>string</strong> amb el mètode <strong>toString</strong>, i la podrem guardar directament en un fitxer, per exemple.</p>
+<p>Farem més d'un exemple, per poder practicar.</p>
+<p>En el primer exemple generarem un JSON a partir de dades definides en el mateix programa, per mig de vectors. Intentarem generar aquest fitxer JSON:</p>
+<p class="codi2" style="margin-left: 60px;">{ "empresa": <br />   { "empleat": <br />     [  {<br />           "num": "1",<br />           "nom": "Andreu",<br />           "departament": "10",<br />           "edat": "32",<br />           "sou": "1000.0"<br />        },<br />        {<br />           "num": "2",<br />           "nom": "Bernat",<br />           "departament": "20",<br />           "edat": "28",<br />           "sou": "1200.0"<br />        },<br />        {<br />           "num": "3",<br />           "nom": "Clàudia",<br />           "departament": "10",<br />           "edat": "26",<br />           "sou": "1100.0"<br />        },<br />        {<br />           "num": "4",<br />           "nom": "Damià",<br />           "departament": "10",<br />           "edat": "40",<br />           "sou": "1500.0"<br />        }<br />     ]<br />   }<br />}</p>
+<p>Analitzem l'estructura. Tenim un objecte arrel, que consta d'un únic membre, empresa, que és un objecte. Aquest objecte té un únic membre que és un array. Cada element de l'array és un objecte, i els seus membres ja són clau-valor.</p>
+<p>Copieu el següent codi en el fitxer kotlin <strong>Exemple_3_5_17_JSONEscriureEmpleats.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import org.json.JSONObject
+import org.json.JSONArray
+import java.io.FileWriter
+
+fun main(args: Array&lt;String&gt;) {
+	val noms = arrayOf("Andreu", "Bernat", "Clàudia", "Damià")
+	val departaments = arrayOf( 10, 20, 10, 10 )
+	val edats = arrayOf( 32, 28, 26, 40 )
+	val sous = arrayOf( 1000.0, 1200.0, 1100.0, 1500.0)
+
+	val arrel = JSONObject()
+	val empresa = JSONObject()
+	arrel.put("empresa", empresa)
+	val empleats = JSONArray()
+	empresa.put("empleat", empleats)
+
+	for (i in 0..3){
+		val emp = JSONObject()
+		emp.put("num", i + 1)
+		emp.put("nom", noms[i])
+		emp.put("departament", departaments[i])
+		emp.put("edat", edats[i])
+		emp.put("sou", sous[i])
+		empleats.put(emp)
+	}
+
+	val f = FileWriter("Empleats.json")
+	f.write(arrel.toString(4))
+	f.close()
+}</code></pre>
+</div>
+</div>
+<p>Hem posat en el moment de passar el JSONObject a String el paràmetre 4, per a que idente en diferents linies a 4 espais. Com veureu el resultat és quasi perfecte</p>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>{"empresa": {"empleat": [
+    {
+        "num": 1,
+        "sou": 1000,
+        "nom": "Andreu",
+        "edat": 32,
+        "departament": 10
+    },
+    {
+        "num": 2,
+        "sou": 1200,
+        "nom": "Bernat",
+        "edat": 28,
+        "departament": 20
+    },
+    {
+        "num": 3,
+        "sou": 1100,
+        "nom": "Clàudia",
+        "edat": 26,
+        "departament": 10
+    },
+    {
+        "num": 4,
+        "sou": 1500,
+        "nom": "Damià",
+        "edat": 40,
+        "departament": 10
+    }
+]}}</code></pre>
+</div>
+</div>
+<p>Tenim el problema aparent que els membres de cada empleat estan <strong>desordenats</strong>. No és que haja eixit malament, perquè hem de recordar que un objecte JSON és un conjunt no ordenat de membres.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id35">
+<div class="iDevice emphasis0" >
+<div id="ta35_111_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Exemple BICICAS</p>
+<p>Un altre exemple, el de <strong>Bicicas</strong>, i el que farem per a practicar tant la lectura com l'escriptura, serà donar-li una altra estructura. Per tant llegirem l'original, i anirem construint la següent estructura en què està la informació més resumida:</p>
+<p class="codi2" style="margin-left: 60px;">{ "bicicas":<br />    [ {"num":"01","nom":"UJI - FCHS","llocs":28,"ocupats":11,"lliures":17},<br />      {"num":"02","nom":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","llocs":28,"ocupats":8,"lliures":20},<br />      {"num":"03","nom":"PLAZA DE PESCADERÍA","llocs":28,"ocupats":13,"lliures":15},<br />      ...<br />    ]<br />}</p>
+<p>Tindrem per una banda les estacions d'origen, i per una altra les de destí .</p>
+<p>Copieu el següent codi en el fitxer Kotlin <strong>Exemple_3_5_18_JSONEscriureBicicas.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import org.json.JSONTokener
+import org.json.JSONObject
+import org.json.JSONArray
+import java.io.FileReader
+import java.io.FileWriter
+
+fun main(args: Array&lt;String&gt;) {
+
+	val r_json = FileReader("Bicicas.json")
+	val arrel = JSONTokener(r_json).nextValue() as JSONArray
+	val estacions = arrel.getJSONObject(0).getJSONArray("ocupacion")
+
+	val destEstacions = JSONArray()	
+
+	for (e in estacions){
+		e as JSONObject
+		val destE = JSONObject();
+		destE.put("num", e.get("id"));
+		destE.put("nom", e.get("punto"));
+		destE.put("llocs", e.get("puestos"));
+		destE.put("ocupats", e.get("ocupados"));
+		val lliures = e.get("puestos") as Int - e.get("ocupados") as Int
+		destE.put("lliures", lliures)
+		destEstacions.put(destE)
+	}
+
+	val bicicas = JSONObject()
+	bicicas.put("bicicas", destEstacions)
+
+	val w_json = FileWriter("Bicicas2.json");
+	w_json.write(bicicas.toString(4));
+	w_json.close();
+}</code></pre>
+</div>
+</div>
+<p>El resultat seria aquest (observeu que havíem posat una tabulació de 4):</p>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>{"bicicas": [
+    {
+        "num": "01",
+        "ocupats": 23,
+        "llocs": 28,
+        "nom": "UJI - FCHS",
+        "lliures": 5
+    },
+    {
+        "num": "02",
+        "ocupats": 0,
+        "llocs": 28,
+        "nom": "ESTACIÃ³N DE FERROCARRIL Y AUTOBUSES",
+        "lliures": 28
+    },
+...
+]}</code></pre>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="521__lectura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53_driver_moshi.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

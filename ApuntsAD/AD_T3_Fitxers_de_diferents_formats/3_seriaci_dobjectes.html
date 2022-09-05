@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.- Seriació d'objectes | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li id="active"><a href="3_seriaci_dobjectes.html" class="active no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_accs_directe_a_fitxers.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_documents_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.- Seriació d'objectes</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_1" class="block iDevice_content">
+<p class="titolet">Seriació d'objectes</p>
+<p style="text-align: justify;">La tècnica de la <strong>seriació </strong>és segurament la més senzilla de totes, però també a la vegada la més problemàtica. Java, i per tant també Kotlin, disposa d’un sistema genèric de seriació de qualsevol objecte, un sistema <strong>recursiu</strong> que es repeteix per cada objecte contingut a la instància que s’està seriant. Aquest procés para en arribar als tipus primitius, els quals es guarden com una sèrie de bytes. A banda dels tipus primitius, Java serialitza també molta informació addicional o metadades específiques de cada classe (el nom de les classe, els noms dels atributs i molta més informació addicional). Gràcies a les metadades es fa possible automatitzar la seriació de forma genèrica <strong>amb garanties de recuperar un objecte tal com es va guardar</strong>.</p>
+<p style="text-align: justify;">Lamentablement, <strong>aquest és un procediment específic de Java</strong>. És a dir, no és possible recuperar els objectes seriats des de Java utilitzant un altre llenguatge. D’altra banda, el fet de guardar metadades pot arribar a comportar també problemes, encara que utilitzem sempre el llenguatge Java. La modificació d’una classe pot fer variar les seues metadades. Aquestes variacions poden donar problemes de recuperació d’instàncies que hagen estat guardades amb algunes versions anteriors a la modificació, impedint que l’objecte puga ser recuperat.</p>
+<p style="text-align: justify;">Aquestes consideracions fa que no siga pràctica aquesta tècnica per guardar objectes de forma més o menys permanent. En canvi, la seua senzillesa la fa una perfecta candidata per a l’emmagatzematge temporal, per exemple dins de la mateixa sessió.</p>
+<p style="text-align: justify;">Per a que un objecte puga ser seriat cal que la seua classe i tot el seu contingut implementen la interfície <strong>Serializable</strong>. Es tracta d’una interfície sense mètodes, perquè l’únic objectiu de la interfície és actuar de marcador per indicar a la màquina virtual quines classes es poden seriar i quines no.</p>
+<p style="text-align: justify;">Totes les classes equivalents als tipus bàsics ja implementen Serializable. També implementen aquesta interfície la classe String i tots els contenidors i els objectes Array. La seriació de col·leccions depèn en últim terme dels elements continguts. Si aquestos són seriables, la col·lecció també ho serà.</p>
+<p style="text-align: justify;">En cas que la classe de l’objecte que s’intente seriar, o les d’algun dels objectes que continga, no implementaren la interfície Serializable, es llançaria una excepció de tipus <strong>NotSerializableException</strong>, impedint l’emmagatzematge.</p>
+<p style="text-align: justify;">Els Streams <strong>ObjectInputStream </strong>i <strong>ObjectOutputStream </strong>són decoradors que afegeixen a qualsevol altre Stream la capacitat de seriar qualsevol objecte Serializable. El stream d'eixida disposarà del mètode <strong>writeObject</strong>. i el stream d’entrada, el mètode de lectura <strong>readObject</strong>.</p>
+<p style="text-align: justify;">El mètode readObject només permet recuperar instàncies que siguen de la mateixa classe que la que es va guardar. En cas contrari, es llançaria una excepció de tipus <strong>ClassCastExeception</strong>. A més, cal que l’aplicació dispose del codi compilat de la classe; si no fóra així, l’excepció llançada seria <strong>ClassNotFoundException</strong>.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+<p class="titolet">Exemple</p>
+<p style="text-align: justify;">Ens recolzarem en un exemple utilitzat en els anteriors punts, en els empleats. Ara anem a suposar que els empleats són objectes, i intentarem guardar aquestos objectes en un fitxer amb una seriació.</p>
+<p style="text-align: justify;">El primer pas serà construir la classe <strong>Empleat</strong>, que contindrà la mateixa informació que en els altres apartats: número d'empleat, nom, departament, edat i sou.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.Serializable
+
+class Empleat (var num: Int, var nom: String, var departament: Int, var edat: Int, var sou: Double): Serializable</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Anem a intentar construir el fitxer de dades amb els objectes guardats. El flux de dades serà un <strong>ObjectOutputStream</strong> per a poder escriure (<strong>writeObject</strong>). I observeu com s'ha de recolzar en un OutputStream, que en aquest cas serà d'un fitxer, és a dir un <strong>FileOutputStream</strong>. A cada iteració del bucle senzillament construirem un objecte de la classe <strong>Empleat</strong> i l'escriurem al fitxer. Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple_3_3_1_GuardarObjectes.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.io.ObjectOutputStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+	val f = ObjectOutputStream(FileOutputStream("Empleats.obj"))
+
+	val noms = arrayOf("Andreu", "Bernat", "Clàudia", "Damià")
+	val departaments = arrayOf(10, 20, 10, 10)
+	val edats = arrayOf(32, 28, 26, 40)
+	val sous = arrayOf(1000.0, 1200.0, 1100.0, 1500.0)
+
+	for (i in 0..3){
+		val e = Empleat (i + 1, noms[i], departaments[i], edats[i], sous[i])
+		f.writeObject(e)
+	}
+
+	f.close();
+}</code></pre>
+</div>
+</div>
+<div></div>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>El fitxer creat, <strong>Empleats.obj</strong>, evidentment no és de text. Tanmateix si l'obrim amb un editor de text podrem veure alguna cosa.</p>
+<p><img src="T3_3_1.png" alt="" width="966" height="202" /></p>
+<ul>
+<li>La primera qüestió és que es guarda el nom de la classe amb el nom del paquet davant. <strong>exemples.Empleat</strong> és realment el nom de la classe creada.</li>
+<li>Es guarden també els noms dels camps. Tot això són les metadades que havíem comentat, i que permeten la recuperació posterior dels objectes guardats</li>
+<li>I després ja podem veure la informació guardada, on identifiquem els noms dels empleats</li>
+</ul>
+</div>
+<p></p>
+<p style="text-align: justify;">Per a llegir el fitxer creat, <strong>Empleats.obj</strong>, utilitzarem el <strong>ObjectInputStream</strong> per a poder fer <strong>readObject</strong>. S'ha de basar en un InputStream, que en aquest cas serà un <strong>FileInputStream</strong>.</p>
+<p style="text-align: justify;">Lamentablement el mètode <strong>available() </strong>no funcionarà correctament, i no ens dirà realment els bytes que queden per llegir.</p>
+<p style="text-align: justify;">El tractament de final de fitxer el farem capturant l'excepció (l'error) d'haver arribat al final i intentat llegir encara: <strong> EOFException</strong>. La raó és que <strong>readObject </strong>no torna null, a no ser que s'haja introduït aquest valor. Per tant muntem un bucle infinit, però capturant amb <strong>try ... catch</strong> l'error, que és quan tancarem el Stream. Copieu el següent codi a un fitxer Kotlin anomenat <strong>Exemple_3_3_2_LlegirObjectes.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.ObjectInputStream
+import java.io.FileInputStream
+import java.io.EOFException
+
+fun main(args: Array&lt;String&gt;) {
+    val f = ObjectInputStream(FileInputStream("Empleats.obj"))
+
+    try {
+        while (true) {
+            val e = f.readObject() as Empleat
+            println("Número: " + e.num)
+            println("Nom: " + e.nom)
+            println("Departament: " + e.departament)
+            println("Edat: " + e.edat)
+            println("Sou: " + e.sou)
+            println();
+        }
+    } catch (eof: EOFException) {
+        f.close()
+    }
+}</code></pre>
+</div>
+</div>
+<div class="nota_blau">
+<p><strong><u>Nota</u></strong></p>
+<p>En realitat, en el fitxer es guarda, a més del nom del paquet i el nom de la classe, l'identificador de la classe: el <strong>serialVersionUID</strong>, per a poder identificar unívocament la classe. Això ens pot donar problemes si intentem compartir la informació entre nosaltres, ja que perfectament ens pot generar UID diferents. Per a evitar-lo podríem definir nosaltres aquest <strong>serialVersionUID</strong>, i aleshores no hi haurà problemes per a compartir. Fins i tot serviria per a poder compartir el fitxer d'objectes entre <strong>Kotlin</strong> i <strong>Java</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.Serializable
+
+class Empleat (var num: Int,var nom: String,var departament: Int,var edat: Int,var sou: Double): Serializable {
+    companion object {
+        private const val serialVersionUID: Long = 1
+    }
+}</code></pre>
+</div>
+</div>
+<p>Si fem aquest canvi en la classe Empleat haurem de tornar a generar el fitxer (<strong>Exemple_3_3_1_GuardarObjectes.kt</strong>) abans de poder consultar-lo (<strong>Exemple_3_3_2_LlegirObjectes.kt</strong>), perquè a tots els efectes seria una classe nova.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_accs_directe_a_fitxers.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_documents_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

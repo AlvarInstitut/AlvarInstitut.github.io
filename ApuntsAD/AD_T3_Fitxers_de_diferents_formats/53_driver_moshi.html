@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.3 Driver Moshi | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-27"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_documents_json.html" class="current-page-parent daddy">5.- Documents JSON</a>
+   <ul>
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="53_driver_moshi.html" class="active daddy">5.3 Driver Moshi</a>
+      <ul>
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="522__escriptura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="531_lectura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.3 Driver Moshi</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id37">
+<div class="iDevice emphasis0" >
+<div id="ta37_111_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">El driver anterior tenia un funcionament molt senzill, però que obliga a seguir en tot moment l'estructura que té el fitxer Json, buscar entre els objectes i arrays cada vegada que es fa un accés.</p>
+<p style="text-align: justify;">Si són relativament pocs els accessos, és molt còmode, però si s'ha de fer un accés continuat pot resultar més pesat.</p>
+<p style="text-align: justify;">Existeix una altra llibreria, que ens permet passar d'un fitxer Json a objectes de Java o Kotlin, la qual cosa ens anirà bé quan siguen molts els accessos, perquè en definitiva tindrem les dades en l'entorn natural del nostre llenguatge: els objectes.</p>
+<p style="text-align: justify;">Es tracta de la llibreria <strong>MOSHI</strong>, i aquest és el lloc on poder trobar-la:</p>
+<p style="text-align: justify;"><a href="https://github.com/square/moshi">https://github.com/square/moshi</a></p>
+<p style="text-align: justify;">En el moment de fer aquestos apunts, va per la versió 1.12.0.</p>
+<p style="text-align: justify;">Però a nosaltres, més que tota la llibreria, ens convé un .jar que ho continga tot o quasi tot. Ens conformarem amb la versió 1.2.0:</p>
+<p style="text-align: justify;"><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.2.0/source-code">https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.2.0/source-code</a></p>
+<p style="text-align: justify;"><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.9.2"></a>També ens farà falta un altre driver en el qual es basa Moshi: <a href="https://jar-download.com/artifacts/com.squareup.okio/okio/2.4.0/source-code">okio</a></p>
+<p style="text-align: justify;">Recordeu que la manera d'incorporar els drivers al nostre projecte IntelliJ és amb:</p>
+<p style="text-align: justify;"><strong>Sobre el projecte F4 --&gt; Modules --&gt; pestanya dependencies --&gt; +</strong></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="522__escriptura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="531_lectura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

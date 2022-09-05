@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.- Documents XML | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li id="active"><a href="4_documents_xml.html" class="active daddy">4.- Documents XML</a>
+   <ul>
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_seriaci_dobjectes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41__parser_o_analitzador_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.- Documents XML</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id103">
+<div class="iDevice emphasis0">
+<div id="ta103_1" class="block iDevice_content">
+<p style="text-align: justify;">Hem vist que la manera més còmoda de guardar objectes és amb la seriació, per mig del <strong>ObjectInputStream </strong>i <strong>ObjectOutputStream</strong>, però que <strong>fora</strong> de Java o de Kotlin <strong>no és possible</strong> l'accés a aquestes dades. I com havíem comentat en l'última nota de la pregunta anterior, també dins de Kotlin podem tenir problemes, perquè el nom de la classe amb el nom del paquet es guarda en el fitxer com a metades, i en un altre programa haurem de tenir la classe creada en un paquet amb el mateix nom, sinó no es podran recuperar les dades. I fins i tot dient-se exactament igual, poden haver problemes si el <strong>serialVersionUID</strong> de la classe no és el mateix.</p>
+<p style="text-align: justify;">També hem vist que per a guardar dades individuals de diferents tipus ens van molt bé les classes <strong>DataInputStream</strong> i <strong>DataOutputStream</strong>, però haurem de saber molt bé l'ordre i tipus de dades que estan guardades, sinó, no les podrem recuperar.</p>
+<p style="text-align: justify;">I no entrem ja en la possibilitat que diferents Sistemes Operatius representen la informació de forma diferent (per exemple, hi ha Sistemes Operatius que representen els números amb BCD i altres que utilitzen complement a 2).</p>
+<p style="text-align: justify;">Per tant, quan vulguem guardar dades que puguen ser llegides per aplicacions fetes en diferents llenguatges i/o executades en diferents plataformes, ens farà falta un format estàndar que tots el puguen entendre i reconéixer, i millor si és autoexplicatiu com és el cas dels<strong> llenguatges de marques</strong>.</p>
+<p style="text-align: justify;">El llenguatge de marques més conegut i més utilitzat és el <strong>XML</strong> (<em><strong>eXtensible Markup Language</strong></em>)</p>
+<p style="text-align: justify;">Els documents <acronym title="Extensible Markup Language">XML</acronym> aconsegueixen estructurar la informació intercalant unes marques anomenades etiquetes, cada etiqueta amb un principi i un final, i que poden anar unes dins d'unes altres, i també contenir informació de text. D’aquesta manera, es podrà subdividir la informació estructurant-la de forma que puga ser fàcilment interpretada.</p>
+<p style="text-align: justify;">Tota la informació serà de text, i per tant no hi haurà el problema mencionat abans de representar les dades de diferent manera. Qualsevol dada, ja siga numèrica, booleana o com siga, es posarà en mode text, i per tant sempre es podrà llegir i interpretar correctament tota la informació continguda en un fitxer <acronym title="Extensible Markup Language">XML</acronym>.</p>
+<p style="text-align: justify;">És cert que els caràcters es poden escriure utilitzant diferents sistemes de codificació, però <acronym title="Extensible Markup Language">XML</acronym> ofereix diverses tècniques per evitar que això siga un problema, com per exemple, incloent a la capçalera del fitxer quina codificació s’ha fet servir en el moment de guardar-lo.</p>
+<p style="text-align: justify;">Amb les etiquetes, <acronym title="Extensible Markup Language">XML</acronym> aconsegueix estructurar qualsevol tipus d’informació jeràrquica. Es pot establir certa similitud entre la forma com la informació es guarda en els objectes d’una aplicació i la forma com es guardaria en un document <acronym title="Extensible Markup Language">XML</acronym>. La informació, en les aplicacions orientades a objectes, s’estructura, agrupa i jerarquitza en classes, i en els documents <acronym title="Extensible Markup Language">XML</acronym> s’estructura, organitza i jerarquitza en etiquetes contingudes unes dins les altres i atributs de les etiquetes.</p>
+<p style="text-align: center;"><img src="u1_import_image_14.png" width="590" height="773" /></p>
+<p> </p>
+<div>Imaginem que volem representar les dades dels empleats com els de l’aparat anterior utilitzant un format <acronym title="Extensible Markup Language">XML</acronym>. No existeix una única solució, però és obligatori que totes respecten la jerarquia del model. Un possible format podria ser el següent: </div>
+<div> </div>
+<div class="codi">&lt;empresa&gt;<br />
+<blockquote>&lt;empleat&gt;<br />
+<blockquote>&lt;num&gt;1&lt;/num&gt;</blockquote>
+<blockquote>&lt;nom&gt;Andreu&lt;/nom&gt;<br />&lt;departament&gt;10&lt;/departament&gt;<br />&lt;edat&gt;32&lt;/edat&gt;<br />&lt;sou&gt;1000.0&lt;/sou&gt;</blockquote>
+&lt;/empleat&gt;</blockquote>
+<blockquote><br />&lt;empleat&gt;<br />
+<blockquote>&lt;num&gt;2&lt;/num&gt;</blockquote>
+<blockquote>&lt;nom&gt;Bernat&lt;/nom&gt;<br />&lt;departament&gt;20&lt;/departament&gt;<br />&lt;edat&gt;28&lt;/edat&gt;<br />&lt;sou&gt;1200.0&lt;/sou&gt;</blockquote>
+&lt;/empleat&gt;</blockquote>
+<blockquote><br />&lt;empleat&gt;<br />
+<blockquote>&lt;num&gt;3&lt;/num&gt;</blockquote>
+<blockquote>&lt;nom&gt;Clàudia&lt;/nom&gt;<br />&lt;departament&gt;10&lt;/departament&gt;<br />&lt;edat&gt;26&lt;/edat&gt;<br />&lt;sou&gt;1100.0&lt;/sou&gt;</blockquote>
+&lt;/empleat&gt;</blockquote>
+<blockquote><br />&lt;empleat&gt;<br />
+<blockquote>&lt;num&gt;4&lt;/num&gt;</blockquote>
+<blockquote>&lt;nom&gt;Damià&lt;/nom&gt;<br />&lt;departament&gt;10&lt;/departament&gt;<br />&lt;edat&gt;40&lt;/edat&gt;<br />&lt;sou&gt;1500.0&lt;/sou&gt;</blockquote>
+&lt;/empleat&gt;</blockquote>
+&lt;/empresa&gt;</div>
+<div> </div>
+<div>Però aquesta també podria ser una manera de representar-lo:</div>
+<div> </div>
+<div>
+<div class="codi">&lt;empresa&gt;<br />
+<blockquote>&lt;empleat num='1' nom='Andreu' departament='10' edat='32' sou='1000.0'/&gt;</blockquote>
+<blockquote><span>&lt;empleat num='2' nom='Bernat' departament='20' edat='28' sou='1200.0'/&gt;</span></blockquote>
+<blockquote><span><span>&lt;empleat num='3' nom='Clàudia' departament='10' edat='26' sou='1100.0'/&gt;</span></span></blockquote>
+<blockquote><span>&lt;empleat num='4' nom='Damià' departament='10' edat='40' sou='1500.0'/&gt;</span></blockquote>
+&lt;/empresa&gt;</div>
+<p> I podem imaginar moltes altres solucions, combinant considerant com atributs o subetiquetes les diferents característiques dels empleats que volem guardar. Aquest seria el problema principal del XML, les múltiples solucions. Però també és veritat que totes elles són fàcils d'entendre.</p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_seriaci_dobjectes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41__parser_o_analitzador_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

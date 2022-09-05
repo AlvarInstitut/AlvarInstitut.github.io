@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3 - Binding | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li class="current-page-parent"><a href="4_documents_xml.html" class="current-page-parent daddy">4.- Documents XML</a>
+   <ul>
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="43__binding.html" class="active no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="422_escriptura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_documents_json.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3 - Binding</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id102">
+<div class="iDevice emphasis0">
+<div id="ta102_1" class="block iDevice_content">
+<div>
+<h1 style="text-align: center;"><span style="color: #ff0000;">VOLUNTARI</span></h1>
+<p>El <strong><em>Binding</em></strong> és una tècnica que consisteix en generar (i vincular) <strong>automàticament</strong> classes de Java amb formats específics d’emmagatzematge, que en el cas que ens interessa seran documents XML.</p>
+<p>D'aquesta manera, cada etiqueta o atribut de XML es correspondrà amb una propietat d'una determinada classe. Això s'anomena <em><strong>mapar</strong></em>, perquè és fer una espècie de mapa per a indicar que una etiqueta (o atribut) es correspon a una propietat de la classe. Per a poder fer la aquesta correspondència o <em><strong>mapatge</strong></em> de forma correcta entre les classes de Java i el document XML, farà falta una miqueta d'ajuda o aclaracions, perquè com ja hem vist la mateixa informació es pot guardar de més d'una manera en XML (utilitzant o no atributs, ...).</p>
+<p>En Java existeixen diverses biblioteques per gestionar el <em>binding</em>, com per exemple <em>JAXB</em>, <em>JiBX</em>, <em>XMLBinding</em>, etc. Des de la versió 6.0 s’ha incorporat en el <acronym title="Java Development Kit">JDK</acronym> estàndard <strong>JAXB</strong> (<em><strong>Java Architecture for XML Binding</strong></em>), una potent biblioteca. </p>
+<div>
+<p><strong>JAXB</strong> utilitza <strong><em>Anotacions</em></strong> per aconseguir la informació extra necessària per <em>mapar</em> el <em>binding</em>. Les <em>Anotacions</em> són unes classes de Java molt especials. Serveixen per associar informació i funcionalitat als objectes sense interferir en l’estructura del model de dades. Abans d'aparéixer les <em>Anotacions </em>era necessari fer servir l’herència per poder afegir funcionalitat a una classe sense haver de codificar-la, però ho complicava molt.</p>
+<p>Si, per contra, fem servir <em>Anotacions</em>, els objectes disposaran d’informació o de funcionalitat extra sense que el model de dades quede modificat, ja que les <em>Anotacions</em> no són visibles des dels objectes. Les <em>Anotacions</em> poden associar-se a un paquet, a una classe, a un atribut o fins i tot a un paràmetre. Aquestes classes especials es declaren en el codi de l’aplicació posant el símbol <strong>@</strong> davant del nom de l’<em>Anotació</em>. Quan el compilador de Java detecta una <em>Anotació </em>crea una instància i la injecta dins l’element afectat (paquet, classe, mètode, atribut, etc.). Això fa que aquestes no apareguen com a atributs o mètodes propis de l’objecte, i per això diem que no interacciona amb el model de dades, però les aplicacions que ho necessiten poden obtenir la instància injectada i fer-la servir. </p>
+</div>
+<p>Nosaltres en aquest curs, únicament aspirarem a veure com realment a partir d'un <strong>esquema XML</strong> que valida una sèrie de documents XML, podem generar còmodament les classes en Java, que permetrien guardar objectes d'aquestes classes. Una vegada construïdes les classes es podria utilitzar JAXB per a transferir informació dels fitxers XML (vàlids per a l'esquema) cap als objectes o a l'inrevès.</p>
+</div>
+<p>La generació de les classes és extremadament senzilla a partir d'una determinada versió d'Eclipse. Com hem comentat la llibreria JAXB està present des de la versió 6.0 del JDK SE (Standard Edition). Però per a la generació còmoda ens fan falta eines (tools) proporcionades en la JDK EE 7.0 (Enterprise Edition). Si tenim aquesta plataforma podrem utilitzar la versió 2.2 de JAXB. </p>
+<div class="nota_blau">
+<p><b><u>Nota</u></b></p>
+<p>Lamentablement, a partir de la versió de Java JDK EE 8.0 comença a estar en desús el JAXB (<em>deprecated</em>), i a la versió 11 ja no està implementat. Per tant, per a poder provar el que va a continuació <strong>és preferible que utilitzeu una versió antiga de Java </strong> (Java 7 o Java 8). Si no la teniu instal·lada, no valdrà la pena que feu aquest exemple. <strong>Per això aquesta pregunta és voluntària</strong>.</p>
+<p>Evidentment, es pot aconseguir que funcione en Java 11, a pesar que no està implementat JAXB, però és a costa d'assenyalar que agafe configuracions anteriors, o important tots els jar necessaris, baixant-los prèviament. No valdrà la pena, perquè no l'utilitzarem</p>
+</div>
+<p></p>
+<p>Ens recolzarem en un exemple utilitzat l'any passat. El següent esquema (.xsd) valida documents com el de l'oferta de vehicles, vist en apartats anteriors. Podeu guardar-lo amb el nom <strong>cotxes.xsd</strong></p>
+<div class="codi2">
+<div>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+ 
+&lt;xs:simpleType name="Combust"&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:enumeration value="gasolina"/&gt;
+      &lt;xs:enumeration value="diesel"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+ 
+&lt;xs:simpleType name="Matr"&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:pattern value="[0-9]{4}[A-Z]{3}"/&gt;  
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+ 
+&lt;xs:element name="oferta"&gt;
+  &lt;xs:complexType&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="vehiculo" maxOccurs="unbounded" &gt;
+            &lt;xs:complexType&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="marca" type="xs:string"/&gt;
+                    &lt;xs:element name="modelo" &gt;
+                        &lt;xs:complexType&gt;
+                            &lt;xs:simpleContent&gt;
+                                &lt;xs:extension base="xs:string"&gt;
+                                    &lt;xs:attribute name="color" type="xs:string" /&gt;
+                                &lt;/xs:extension&gt;
+                            &lt;/xs:simpleContent&gt;
+                        &lt;/xs:complexType&gt;  
+                    &lt;/xs:element&gt;  
+                    &lt;xs:element name="motor" &gt;
+                        &lt;xs:complexType&gt;
+                            &lt;xs:simpleContent&gt;
+                                &lt;xs:extension base="xs:string"&gt;
+                                    &lt;xs:attribute name="combustible" type="Combust" /&gt;
+                                &lt;/xs:extension&gt;
+                            &lt;/xs:simpleContent&gt;
+                        &lt;/xs:complexType&gt;   
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="matricula" type="Matr"/&gt;
+                    &lt;xs:element name="kilometros" type="xs:integer"/&gt;
+                    &lt;xs:element name="precio_inicial"  type="xs:integer"/&gt;
+                    &lt;xs:element name="precio_oferta" type="xs:integer"/&gt;
+                    &lt;xs:element name="extra" maxOccurs="unbounded" &gt;
+                        &lt;xs:complexType&gt;
+                            &lt;xs:simpleContent&gt;
+                                &lt;xs:extension base="xs:string"&gt;
+                                    &lt;xs:attribute name="valor" type="xs:integer" /&gt;
+                                &lt;/xs:extension&gt;
+                            &lt;/xs:simpleContent&gt;
+                        &lt;/xs:complexType&gt;  
+                    &lt;/xs:element&gt;   
+                    &lt;xs:element name="foto" maxOccurs="unbounded" type="xs:string"/&gt;     
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;        
+    &lt;/xs:sequence&gt;    
+  &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+ 
+&lt;/xs:schema&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Per exemple, el següent document XML <strong>cotxes.xml</strong> (el vist en els apartats anteriors)  és vàlid segons l'anterior esquema.</p>
+<div class="codi2">
+<div>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;oferta&gt;
+  &lt;vehiculo&gt;
+    &lt;marca&gt;ford&lt;/marca&gt;
+    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;
+    &lt;motor combustible="gasolina"&gt;duratorc 1.4&lt;/motor&gt;
+    &lt;matricula&gt;1234AAA&lt;/matricula&gt;
+    &lt;kilometros&gt;12500&lt;/kilometros&gt;
+    &lt;precio_inicial&gt;12000&lt;/precio_inicial&gt;
+    &lt;precio_oferta&gt;10000&lt;/precio_oferta&gt;
+    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;
+    &lt;extra valor="300"&gt;llantas&lt;/extra&gt;
+    &lt;foto&gt;11325.jpg&lt;/foto&gt;
+    &lt;foto&gt;11326.jpg&lt;/foto&gt;
+  &lt;/vehiculo&gt;
+  &lt;vehiculo&gt;
+    &lt;marca&gt;ford&lt;/marca&gt;
+    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;
+    &lt;motor combustible="diesel"&gt;duratorc 2.0&lt;/motor&gt;
+    &lt;matricula&gt;1235AAA&lt;/matricula&gt;
+    &lt;kilometros&gt;125000&lt;/kilometros&gt;
+    &lt;precio_inicial&gt;10000&lt;/precio_inicial&gt;
+    &lt;precio_oferta&gt;9000&lt;/precio_oferta&gt;
+    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;
+    &lt;extra valor="200"&gt;spoiler trasero&lt;/extra&gt;
+    &lt;extra valor="500"&gt;climatizador&lt;/extra&gt;
+    &lt;foto&gt;11327.jpg&lt;/foto&gt;
+    &lt;foto&gt;11328.jpg&lt;/foto&gt;
+  &lt;/vehiculo&gt;
+&lt;/oferta&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Però per a generar les classes el que ens fa falta és el de l'esquema, <strong>cotxes.xsd</strong>.</p>
+<p>En el següent vídeo es veu com generar les classes a partir de l'esquema.<strong> No cal que ho feu si no voleu, perquè es mostra a nivell únicament il·lustratiu de com es generen les classes, però no ho utilitzarem després</strong></p>
+<p style="text-align: center;"><iframe width="929" height="538" src="https://slides.com/alvarinstitut/ad-t3-jaxb/embed" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p>I aquest és el programa per provar que es pot accedir que es comenta en el vídeo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package classesJAXB
+
+import java.io.File
+import javax.xml.bind.JAXBContext
+import javax.xml.bind.JAXBException
+
+fun main() {
+    try {
+        val file = File("cotxes.xml")
+        val jaxbContext = JAXBContext.newInstance(Oferta::class.java)
+        val jaxbUnmarshaller = jaxbContext.createUnmarshaller()
+        val oferta = jaxbUnmarshaller.unmarshal(file) as Oferta
+        for (v in oferta.getVehiculo())
+            println(v.getMatricula() + " (" + v.getMarca() + ")")
+    } catch (e: JAXBException) {
+        e.printStackTrace()
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="422_escriptura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_documents_json.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

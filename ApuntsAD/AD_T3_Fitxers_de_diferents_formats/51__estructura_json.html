@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.1 - Estructura JSON | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_documents_json.html" class="current-page-parent daddy">5.- Documents JSON</a>
+   <ul>
+      <li id="active"><a href="51__estructura_json.html" class="active no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5_documents_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52_driver_orgjson.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.1 - Estructura JSON</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id24">
+<div class="iDevice emphasis0">
+<div id="ta24_85" class="block iDevice_content">
+<p>Amb JSON podrem representar:</p>
+<ul>
+<li><strong>Valors</strong>, de tipus <strong>caràcter</strong> (entre cometes dobles), <strong>numèric</strong> (sense cometes) , <strong>booleà</strong> (true o false) o <strong>null</strong>.</li>
+<li><strong>Parelles clau valor</strong>, és a dir un nom simbòlic acompanyat d'un valor associat.. Es representen així: <strong>"nom" : valor</strong></li>
+<li><strong>Objectes</strong>, que és una col·lecció de membres, cadascú dels quals pot ser una parella clau valor, o altres objectes (fins i tot arrays): es representen entre claus, i amb els elements separats per comes: <strong>{ "nom1" : "valor1" , "nom2": valor2 , valor 3 , ... }</strong></li>
+<li><strong>Arrays</strong>, que són llistes d'elements. Els elements no tenen per què tenir la mateixa estructura, però nosaltres intentarem que sí que la tinguen per coherència. Cada element pot ser un valor , una parella clau valor, un objecte o un array.</li>
+</ul>
+<p>Veja'm algun exemples:</p>
+<p class="codi2">{ "p1" : 2 , "p2" : 4 , "p3" : 6 , "p4" : 8 , "p5" : 10 }</p>
+<p style="margin-left: 60px;">en aquest cas tenim un objecte, l'arrel, que té 5 membres, tots ells parelles clau-valor.</p>
+<p class="codi2">{<br />  "num": 1 ,<br />  "nom": "Andreu" ,<br />  "departament": 10 ,<br />  "edat": 32 ,<br />  "sou": 1000.0 <br />}</p>
+<p style="margin-left: 60px;">ara un objecte, l'arrel, també amb 5 membres que són parelles clau-valor. Observeu com la clau sempre la posem entre cometes, i el valor quan és un string també, però quan és numèric, no.</p>
+<p class="codi2">{ "empleat" :<br />  { "num": 1 ,<br />    "nom": "Andreu" ,<br />    "departament": 10 ,<br />    "edat": 32 ,<br />    "sou": 1000.0 <br />  }<br />}</p>
+<p style="margin-left: 60px;">en aquest cas tenim un objecte, l'arrel que consta d'un únic objecte, <strong>empleat</strong>, el qual consta de 5 membres clau-valor.</p>
+<p style="margin-left: 60px;">Mirem ara un exemple amb un array:</p>
+<p class="codi2">{ "notes" :<br />  [ 5 , 7 , 8 , 7 ]<br />}</p>
+<p style="margin-left: 60px;">on tenim l'element arrel que consta d'un únic membre, notes, que és un array.</p>
+<p style="margin-left: 60px;">També seria correcte d'aquesta manera, per veure que l'element arrel no té perquè ser un objecte, sinó també un array</p>
+<p class="codi2">[ 5 , 7 , 8 , 7 ]</p>
+<p style="margin-left: 60px;">I ara un més complet amb la mateixa estructura que el fitxer XML que havíem vist en la pregunta 4. Tindrem un objecte arrel, amb només un objecte, <strong>empresa</strong>, que té un únic element <strong>empleat</strong> que és un array amb 4 elements, cadascun dels empleats:</p>
+<p class="codi2" style="margin-left: 60px;">{ "empresa": <br />   { "empleat": <br />     [  {<br />           "num": "1",<br />           "nom": "Andreu",<br />           "departament": "10",<br />           "edat": "32",<br />           "sou": "1000.0"<br />        },<br />        {<br />           "num": "2",<br />           "nom": "Bernat",<br />           "departament": "20",<br />           "edat": "28",<br />           "sou": "1200.0"<br />        },<br />        {<br />           "num": "3",<br />           "nom": "Clàudia",<br />           "departament": "10",<br />           "edat": "26",<br />           "sou": "1100.0"<br />        },<br />        {<br />           "num": "4",<br />           "nom": "Damià",<br />           "departament": "10",<br />           "edat": "40",<br />           "sou": "1500.0"<br />        }<br />     ]<br />   }<br />}</p>
+<p style="margin-left: 60px;"></p>
+<p>Anem a veure un parell de casos més reals. Aquesta és la contestació que fa el WebService de <strong>Bicicas</strong> en sol·licitar l'estat actual de bicicletes en els diferents punts (en el moment de fer els apunts es consulta en l'adreça <a href="http://gestiona.bicicas.es/apps/apps.php" target="_blank" rel="noopener noreferrer">http://gestiona.bicicas.es/apps/apps.php</a>):</p>
+<p class="codi2" style="margin-left: 60px;">[<br />  {"ocupacion":<br />    [<br />      {"id":"01","punto":"UJI - FCHS","puestos":27,"ocupados":12,"latitud":"39.99533","longitud":"-0.06999", "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},<br />      {"id":"02","punto":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","puestos":24,"ocupados":7,"latitud":"39.98765","longitud":"-0.05281", "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},<br />      {"id":"03","punto":"PLAZA DE PESCADERÍA","puestos":28,"ocupados":4,"latitud":"39.98580","longitud":"-0.03798", "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},<br />      ...<br />    ]<br />  }<br />]</p>
+<p style="margin-left: 60px;">Com podeu comprovar, l'arrel no és un objecte, sinó un <strong>Array</strong>. En l'array només ens interessa el primer element que és un objecte amb un únic membre, <strong>ocupacion </strong>(en l'exemple no hi ha més elements, però en poden haver més en un moment determinat, quan volen fer avisos). I <strong>ocupacion és un array</strong>, amb <strong>un objecte per cada estació de bicicas</strong>, amb les parelles clau valor <strong>id</strong>, <strong>punto</strong>, <strong>puestos</strong> (les bicicletes que caben), <strong>ocupados</strong> (quantes bicicletes hi ha col·locades en aquest moment), <strong>latitud</strong> i <strong>longitud</strong> (les coordenades), ...</p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>En realitat ens apareixerà tota la informació molt més apegada, perquè realment està en una única línia.</p>
+<p>Per a poder observar millor l'estructura podem utilitzar un <strong>visor</strong> de json. Normalment el navegador Firefox els visualitza bé, encara que també depén de la versió. Si tenim instal·lada una versió que admet la visualització de JSON, ho intentarà interpretar, encara que segurament la millor manera de veure el format JSON és,tiar les opcions <strong>Dades sense processar --&gt; Format d'impressió</strong>, que és la que veiem a la dreta:</p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="T3_5_1_0_1.png" alt="" width="675" height="734" /></td>
+<td style="width: 50%; text-align: center;"><img src="T3_5_1_0_2.png" alt="" width="675" height="734" /></td>
+</tr>
+</tbody>
+</table>
+<p>Si la versió nostra de Firefox no visualitza el format JSON, podem buscar un visor dels molts que hi ha per internet. En la figura n'hem utilitzat un, i es pot observar com facilita molt la lectura.</p>
+<p style="text-align: center;"><img src="T3_5_1_1.png" /></p>
+</div>
+<p>Un altre exemple. Un WebService de GeoNames (una Base de Dade geogràfica gratuïta i accessible a través d'Internet) ens proporciona informació dels llocs que troba dins d'un rectangle delimitat per un latitud al nord i al sud, i una longitud a l'esti a l'oest  (en l'exemple: nord 40.01, sud 39.9, est 0.1 i oest -0.1). Per exemple, <a href="https://maps.googleapis.com/maps/api/geocode/json?latlng=40,0">http://api.geonames.org/citiesJSON?north=40.01&amp;south=39.99&amp;east=0.01&amp;west=-0.01&amp;lang=ES&amp;username=demo</a> torna el següent:</p>
+<div class="codi2">
+<pre>{
+  "geonames": [
+    {
+      "lng": -0.04935,
+      "geonameId": 2519752,
+      "countrycode": "ES",
+      "name": "Castelló de la Plana",
+      "fclName": "city, village,...",
+      "toponymName": "Castelló de la Plana",
+      "fcodeName": "seat of a second-order administrative division",
+      "wikipedia": "en.wikipedia.org/wiki/Castell%C3%B3n_de_la_Plana",
+      "lat": 39.98567,
+      "fcl": "P",
+      "population": 180005,
+      "fcode": "PPLA2"
+    },
+    {
+      "lng": -0.06313,
+      "geonameId": 2521909,
+      "countrycode": "ES",
+      "name": "Almazora",
+      "fclName": "city, village,...",
+      "toponymName": "Almassora",
+      "fcodeName": "populated place",
+      "wikipedia": "en.wikipedia.org/wiki/Almassora",
+      "lat": 39.94729,
+      "fcl": "P",
+      "population": 24963,
+      "fcode": "PPL"
+    },
+    ...
+    ]
+}</pre>
+</div>
+<p style="margin-left: 30px;">A partir de l'arrel (que ara sí que és un objecte), tenim un membre: <strong>geonames</strong><strong></strong>, que és un array (un element per cada "lloc" trobat), on cada element té informació diversa, com el nom del lloc, les coordenades, la població, ...</p>
+<div class="nota_blau">
+<p style="margin-left: 30px;"><strong><u>Nota</u></strong></p>
+<p style="margin-left: 30px;">De fa uns mesos que Google limita el servei anterior, i ha de ser amb un usuari validat. No valdrà la pena, per al poc profit que li trauríem. Mostrem en què consisteix el servei únicament a nivell il·lustratiu</p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5_documents_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52_driver_orgjson.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

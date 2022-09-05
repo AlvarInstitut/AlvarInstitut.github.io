@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.3 - Hash | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_clauvalor.html" class="current-page-parent daddy">2 - Bases de Dades Clau-Valor</a>
+   <ul>
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li class="current-page-parent"><a href="22__utilitzaci_de_redis.html" class="current-page-parent daddy">2.2 - Utilització de Redis</a>
+      <ul>
+         <li><a href="221__strings.html" class="no-ch">2.2.1 - Strings</a></li>
+         <li><a href="222__keys.html" class="no-ch">2.2.2 - Keys</a></li>
+         <li id="active"><a href="223__hash.html" class="active no-ch">2.2.3 - Hash</a></li>
+         <li><a href="224__list.html" class="no-ch">2.2.4 - List</a></li>
+         <li><a href="225__set.html" class="no-ch">2.2.5 - Set</a></li>
+         <li><a href="226__set_ordenat.html" class="no-ch">2.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="23__connexi_des_de_kotlin.html" class="no-ch">2.3 - Connexió des de Kotlin</a></li>
+   </ul>
+   </li>
+   <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="34__connexi_des_de_kotlin.html" class="no-ch">3.4 - Connexió des de Kotlin</a></li>
+      <li><a href="35__connexi_des_de_kotlin_al_servidor_de_linstitut.html" class="no-ch">3.5 - Connexió des de Kotlin al servidor de l'Institut</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="222__keys.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="224__list.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.3 - Hash</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id34">
+<div class="iDevice emphasis0">
+<div id="ta34_85" class="block iDevice_content">
+<p>Ja havíem comentat que el tipus <strong>Hash</strong> és una espècie de registre, amb subcamps (en realitat hauríem de dir sub-claus). Pot tenir qualsevol número de subcamps que són de tipus String.</p>
+<p><strong>Redis</strong> és molt eficient en quant a l'espai que ocupen els <strong>Hash</strong>, i sobretot en el temps de recuperació de les dades.</p>
+<p>Els comandos que vam veure per al <strong>String</strong> no es poden aplicar al <strong>Hash</strong>. Tanmateix els comandos del <strong>Hash</strong> són molt similars a aquells, començant sempre per <strong>H</strong>.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id35">
+<div class="iDevice emphasis0">
+<div id="ta35_85" class="block iDevice_content">
+<p class="titolet">HSET</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">hset clau camp valor</p>
+<p>Assigna al camp especificat de la clau especificada el valor especificat. Si el valor consta de més d'una paraula, haurà d'anar entre cometes dobles.</p>
+<p>Si la clau no existia, la crearà, i si ja existia, senzillament afegirà el camp. I si d'aquesta clau  ja existia el camp, modificarà el seu valor.</p>
+<p>Evidentment, en claus diferents poden haver camps amb els mateixos noms.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; hset empleat_1 nom Andreu<br />(integer) 1<br />127.0.0.1:6379&gt; hset empleat_1 departament 10<br />(integer) 1<br />127.0.0.1:6379&gt; hset empleat_1 sou 1000.0<br />(integer) 1</p>
+<p class="codi2">127.0.0.1:6379&gt; hset empleat_2 nom Berta<br />(integer) 1<br />127.0.0.1:6379&gt; hset empleat_2 sou 1500.0<br />(integer) 1</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id36">
+<div class="iDevice emphasis0">
+<div id="ta36_85" class="block iDevice_content">
+<p class="titolet">HGET</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">hget clau camp</p>
+<p>Torna el valor del camp de la clau. Si no existia (el camp o la clau) torna <strong>nil</strong>. Només podem especificar un camp.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; hget empleat_1 nom<br />"Andreu"<br />127.0.0.1:6379&gt; hget empleat_1 departament<br />"10"<br />127.0.0.1:6379&gt; hget empleat_2 nom<br />"Berta"<br />127.0.0.1:6379&gt; hget empleat_2 departament<br />(nil)</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id37">
+<div class="iDevice emphasis0">
+<div id="ta37_85" class="block iDevice_content">
+<p class="titolet">HGETALL</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">hgetall clau</p>
+<p>Torna una llista amb tots els camps i els seus valors de la clau. La seqüència és: camp1 valor1 camp2 valor2 ... Però no ens podem fiar que l'ordre siga el mateix ordre que quan el vam definir.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; hgetall empleat_1<br />1) "nom"<br />2) "Andreu"<br />3) "departament"<br />4) "10"<br />5) "sou"<br />6) "1000.0"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id39">
+<div class="iDevice emphasis0">
+<div id="ta39_85" class="block iDevice_content">
+<p class="titolet">HDEL</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">hdel clau camp1 camp2 campN</p>
+<p>Elimina el o els camps especificats. Si no existeixen algun d'ells, senzillament l'ignora i si que elimina els altres.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; hdel empleat_1 departament<br />(integer) 1<br />127.0.0.1:6379&gt; hgetall empleat_1<br />1) "nom"<br />2) "Andreu"<br />3) "sou"<br />4) "1000.0"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id40">
+<div class="iDevice emphasis0">
+<div id="ta40_85" class="block iDevice_content">
+<div id="ta37_85" class="block iDevice_content">
+<p class="titolet">HKEYS</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">hkeys clau</p>
+<p>Torna una llista amb els camps de la clau. Si la clau no existia, torna una llista buida</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; hkeys empleat_1<br />1) "nom"<br />2) "sou"</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id41">
+<div class="iDevice emphasis0">
+<div id="ta41_85" class="block iDevice_content">
+<p class="titolet">HVALS</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">hvals clau</p>
+<p>Torna una llista amb els valors (únicament els valors) de tots els camps de la clau. Si la clau no existia, torna una llista buida</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; hvals empleat_1<br />1) "Andreu"<br />2) "1000.0"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id42">
+<div class="iDevice emphasis0">
+<div id="ta42_85" class="block iDevice_content">
+<p class="titolet">Altres Comandos</p>
+<p>També existeixen altres comandos, de funcionament com cabria esperar (els hem vist tots en el cas de <strong>String</strong>):</p>
+<ul>
+<li><strong>hmget</strong>: Torna més d'un camp de la clau</li>
+<li><strong> hmset</strong>: assigna més d'un camp a una clau</li>
+<li><strong> hexists</strong>: indica si existeix el subcamp de la clau</li>
+<li><strong> hsetnx</strong>: assigna únicament en cas de que no existisca el camp.</li>
+<li><strong> hincrby</strong>: incrementa el camp de la clau</li>
+</ul>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="222__keys.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="224__list.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

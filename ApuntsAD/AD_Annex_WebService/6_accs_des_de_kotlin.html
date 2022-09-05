@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.- Accés des de Kotlin | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Muntatge d'un WebService</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_installaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="daddy">2.- Instal·lació del Servidor Web i el Servidor de Bases de Dades</a>
+   <ul class="other-section">
+      <li><a href="21__xampp.html" class="no-ch">2.1 - XAMPP</a></li>
+      <li><a href="22__docker.html" class="no-ch">2.2 - Docker</a></li>
+   </ul>
+   </li>
+   <li><a href="3_utilitzaci_de_xampp.html" class="daddy">3.- Utilització de XAMPP</a>
+   <ul class="other-section">
+      <li><a href="31__mysql.html" class="no-ch">3.1 - MySQL</a></li>
+      <li><a href="32__ftp.html" class="no-ch">3.2 - FTP</a></li>
+   </ul>
+   </li>
+   <li><a href="4_php_accs_a_les_dades.html" class="no-ch">4.- PHP: Accés a les dades</a></li>
+   <li><a href="5_json.html" class="no-ch">5.- JSON</a></li>
+   <li id="active"><a href="6_accs_des_de_kotlin.html" class="active no-ch">6.- Accés des de Kotlin</a></li>
+   <li><a href="7_accs_des_dandroid.html" class="no-ch">7.- Accés des d'Android</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_accs_des_dandroid.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.- Accés des de Kotlin</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_85" class="block iDevice_content">
+<div id="ta16_85" class="block iDevice_content">
+<p>Utilitzarem les mateixes llibreries que en el tema 3:</p>
+<ul>
+<li>Si és un accés senzill, utilitzem la llibreria <strong>org.json</strong></li>
+<li>Si l'accés és més complicat potser ens convinga utilitzar la llibreria <strong>Moshi</strong> per a mapejar jason a objectes <strong></strong></li>
+</ul>
+</div>
+<p>En el següent exemple utilitzem el primer driver, no ens valdrà la pena construir les classes per a mapejar amb Moshi.</p>
+<p>Observeu com ara estem accedint directament a la pàgina del Web Service, en compte d'analitzar un fitxer.</p>
+<p>Ho farem en un projecte nou d'IntelliJ anomenat <strong>AnnexWebService</strong>,</p>
+<p>Ací tenim un exemple d'utilització. Cuideu de canviar l'adreça per la del vostre servidor, si no és <strong>localhost</strong>. Guardeu-lo amb el nom <strong>Exemple1_ Rutes.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import org.json.JSONArray
+import org.json.JSONObject
+import org.json.JSONTokener
+import java.net.URL
+
+fun main(args: Array&lt;String&gt;) {
+
+    val adr = URL("http://localhost:41062/www/rutes_2.php");
+    val rutes = JSONTokener(adr.openConnection().getInputStream()).nextValue() as JSONArray
+
+    for (r in rutes){
+        r as JSONObject
+        println("Ruta " + r.get("num_r").toString() + ": " + r.get("nom_r")
+                .toString() + ". Desnivell: " + r.get("desn")
+                .toString() + ". Desnivell Acumulat: " + r.get("desn_acum") )
+    }
+}</code></pre>
+</div>
+</div>
+<p>Ens donarà aquest resultat:</p>
+<p style="text-align: center;"><img src="Ann_WebService_6_1.png" alt="" width="647" height="82" /></p>
+<p>I aquest seria l'exemple en el qual a partir de les rutes obtenim els seus punts. L'hem fet molt senzill, de manera que després de mostrar les rutes existents, demana per teclat un número, i mostra els punts de la ruta triada, fins que s'introdueix un 0. I recordeu que si el vostre servidor no està en <strong>localhost</strong>, l'haureu de substituir, i observeu que ara està en dos llocs. Guardeu-lo amb el nom <strong>Exemple2_RutesPunts.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import org.json.JSONArray
+import org.json.JSONObject
+import org.json.JSONTokener
+import java.net.URL
+import java.util.*
+
+fun main(args: Array&lt;String&gt;) {
+
+    val url1 = URL("http://localhost:41062/www/rutes_2.php");
+    val rutes = JSONTokener(url1.openConnection().getInputStream()).nextValue() as JSONArray
+
+    val sc = Scanner(System.`in`)
+
+    for (r in rutes){
+        r as JSONObject
+        println("Ruta " + r.get("num_r").toString() + ": " + r.get("nom_r") )
+    }
+    println("Tria una ruta (0 per a acabar)")
+    var opcio = sc.nextInt()
+    while (opcio != 0){
+        if (opcio&gt;0 &amp;&amp; opcio&lt;=rutes.length()){
+            val url2 = URL("http://localhost:41062/www/punts.php?num_r="+opcio);
+            val punts = JSONTokener(url2.openConnection().getInputStream()).nextValue() as JSONArray
+            for (p in punts){
+                p as JSONObject
+                println("Punt " + p.get("num_p") + ": " + p.get("nom_p") + " (" + p.get("latitud") + "," + p.get("longitud") + ")")
+            }
+            println()
+        }
+        println("Tria una ruta (0 per a acabar)")
+        opcio = sc.nextInt()
+    }
+}</code></pre>
+</div>
+</div>
+<p>I aquest seria un exemple d'utilització:</p>
+<p><img src="Ann_WebService_6_2.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="416" height="323" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_accs_des_dandroid.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

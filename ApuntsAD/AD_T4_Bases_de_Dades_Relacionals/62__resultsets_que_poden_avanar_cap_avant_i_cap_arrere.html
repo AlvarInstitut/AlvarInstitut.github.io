@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.2 - ResultSets que poden avançar cap avant i cap arrere | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-20"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__establiment_de_la_connexi.html" class="no-ch">5.1 - Establiment de la connexió</a></li>
+      <li><a href="52__peticions_bsiques.html" class="no-ch">5.2 - Peticions bàsiques</a></li>
+      <li><a href="53__exemple.html" class="no-ch">5.3 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6__jdbc_avanat.html" class="current-page-parent daddy">6 - JDBC avançat</a>
+   <ul>
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li id="active"><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="active no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="61__accs_a_les_meta_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.2 - ResultSets que poden avançar cap avant i cap arrere</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id40">
+<div class="iDevice emphasis0">
+<div id="ta40_85" class="block iDevice_content">
+<p style="text-align: justify;">Fins el moment, tots els <strong>ResultSet</strong> que hem creat podien avançar únicament cap avant, fent un recorregut seqüencial de les dades.</p>
+<ul style="text-align: justify;">
+<li>Inicialment el punter que apunta a l'estructura està situat abans de la primera fila</li>
+<li>En fer <strong>next()</strong> se situa a la següent fila (la primera vegada se situa en la primera fila)</li>
+<li>Quan estiguem situats en l'última fima, si fem next() se situara després de l'última, i ho indicarà tornant <strong>false</strong></li>
+</ul>
+<p style="text-align: justify;">Però aquesta manera de funcionar, que es diu <strong>TYPE_FORWARD_ONLY</strong> i que és l'opció per defecte per a obrir un ResultSet, no és l'única. Aquestos són els tipus de ResultSet que hi ha:<strong></strong></p>
+<ul style="text-align: justify;">
+<li><strong>TYPE_FORWARD_ONLY</strong>: és el tipus utilitzat fins el moment, i és el tipus per defecte. El ResultSet només pot avançar cap avant.</li>
+<li><strong>TYPE_SCROLL_INSENSITIVE</strong>: El ResultSet pot avançar cap avant i cap arrere, fins i tot pot anar a una posició absoluta (directament, sense passar per les anteriors). El ResultSet no és sensible als canvis fets en les dades que han proporcionat aquest resultat, és a dir, ens mostra les dades que hi havia en el moment d'executar la consulta, sense poder mostrar possibles canvis posteriors.</li>
+<li><strong>TYPE_SCROLL_SENSITIVE</strong>: Igual que l'anterior en quant al moviment. Però ara sí que és capaç de mostrar possibles canvies fets en les dades originals posteriors al moment de l'execució de la consulta, mentre el ResultSet estiga obert.</li>
+</ul>
+<p style="text-align: justify;">I per una altra banda el <strong>ResultSet</strong> pot tenir la possibilitat d'<strong>actualitzar</strong> les dades originals. Des d'aquest punt de vista hi ha 2 possibles tipus:</p>
+<ul style="text-align: justify;">
+<li><strong>CONCUR_READ_ONLY</strong>: El ResultSet només és de lectura i no es pot actualitzar</li>
+<li><strong>CONCUR_UPDATABLE</strong>: El ResultSet es pot actualitzar (i els canvis es reflectiran en les dades originals) utilitzant el mateix ResultSet</li>
+</ul>
+<p style="text-align: justify;">L'opció per defecte és <strong>CONCUR_READ_ONLY</strong></p>
+<p style="text-align: justify;">Realment on declararem els tipus és en la creació del <strong>STATEMENT</strong> a partir del qual crearem la sentència que omplirà el <strong>ResultSet</strong>. És lògic, ja que aquestes maneres de funcionar s'han de preparar abans d'executar la sentència. Fins ara no havíem posat paràmetres en la creació del <strong>Statement</strong>, cosa que fa que es cree amb les opcions per defecte. Si volem altres opcions:</p>
+<p class="codi">val st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY)</p>
+<p class="codi">val st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE)</p>
+<p style="text-align: justify;">La primera qüestió que hem de comentar és que el SGBD ha de ser capaç de suportar els tipus que no són per defecte, i no sempre és així. Mentre que <strong>PostgreSQL</strong>, <strong>Oracle</strong> i <strong>MySQL</strong> sí que són capaços de suportar tots els tipus anteriors, <strong>SQLite</strong> no ho pot fer i tan sols suporta <strong>TYPE_FORWARD_ONLY</strong> i <strong>CONCUR_READ_ONLY</strong>, com era d'esperar.</p>
+<p style="text-align: justify;">Deixant de banda la possibilitat de reflectir els possibles canvis de les dades originals (<strong>SENSITIVE</strong>), i de poder actualitzar-les (<strong>CONCUR_UPDATABLE</strong>), anem a estudiar els possibles moviments dins del <strong>ResultSet</strong>.</p>
+<ul style="text-align: justify;">
+<li><strong>next</strong>: Avança una fila cap avant. Torna <em>true</em> si s'ha pogut posicionar, i <em>false</em> si no s'ha pogut posicionar, per estar després de l'última fila.</li>
+<li><strong>previous</strong>: Avança una fila cap arrere. Torna <em>true</em> si s'ha pogut posicionar, i <em>false</em> si no s'ha pogut posicionar, per estar abans de la primera fila.</li>
+<li><strong>first</strong>: Se situa en la primera fila. Torna <em>true</em> si s'ha pogut posicionar, i <em>false</em> si no s'ha pogut posicionar, per no contenir el ResultSet cap fila.</li>
+<li><strong>last:</strong>: Se situa en l'última fila. Torna <em>true</em> si s'ha pogut posicionar, i <em>false</em> si no s'ha pogut posicionar, per no contenir el ResultSet cap fila.</li>
+<li><strong>beforeFirst</strong>: Se situa al principi del RecordSet, abans de la primera fila. Si no hi havia cap fila, no fa res.</li>
+<li><strong>afterLast</strong>: Se situa al final del RecordSet, després de l'última fila. Si no hi havia cap fila, no fa res.</li>
+<li><strong>relative(int <em>files</em>)</strong>: Meneja el cursor respecte de la posició actual, tantes files com s'indica en el paràmetre (si el paràmetre és negatiu, anirà cap arrere).</li>
+<li><strong>absolute(int <em>fila</em>)</strong>: Situa el cursor en la fila especificada en el paràmetre (1 és la primera)</li>
+</ul>
+<p style="text-align: justify;">El següent exemple es practica anar a la primera, a l'anterior, a la següent i a l'última fila.</p>
+<p style="text-align: justify;">Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple_4_41_Scroll.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import javax.swing.JFrame
+import javax.swing.JLabel
+import javax.swing.JTextField
+import javax.swing.JButton
+import javax.swing.JPanel
+import java.awt.FlowLayout
+import java.awt.GridLayout
+import java.awt.BorderLayout
+import java.awt.EventQueue
+import java.sql.DriverManager
+import java.sql.ResultSet
+
+class Exemple_4_41_Scroll : JFrame() {
+
+    val nomComarca = JTextField()
+    val nomProvincia = JTextField()
+
+    val primer = JButton("&lt;&lt;")
+    val anterior = JButton("&lt;")
+    val seguent = JButton("&gt;")
+    val ultim = JButton("&gt;&gt;")
+    val tancar = JButton("Tancar")
+
+
+    val pDalt = JPanel(FlowLayout())
+    val pCentre = JPanel(GridLayout(8, 0))
+    val pDades = JPanel(GridLayout(2, 2))
+    val pBotonsMov = JPanel(FlowLayout())
+    val pTancar = JPanel(FlowLayout())
+
+    val con = DriverManager.getConnection("jdbc:postgresql://89.36.214.106:5432/geo_ad", "geo_ad", "geo_ad")
+    val st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+    val rs = st.executeQuery("SELECT * FROM COMARCA ORDER BY 1")
+
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+
+        setBounds(100, 100, 350, 400)
+        setLayout(BorderLayout())
+
+        getContentPane().add(pCentre, BorderLayout.CENTER)
+        getContentPane().add(JPanel(FlowLayout()), BorderLayout.WEST)
+        getContentPane().add(JPanel(FlowLayout()), BorderLayout.EAST)
+        getContentPane().add(pTancar, BorderLayout.SOUTH)
+
+        pDalt.add(JLabel("Manteniment de COMARQUES"))
+        pCentre.add(pDalt)
+
+        pDades.add(JLabel("Nom comarca"))
+        pDades.add(nomComarca)
+        pDades.add(JLabel("Nom província"))
+        pDades.add(nomProvincia)
+        pCentre.add(pDades)
+
+        nomComarca.setEditable(false)
+        nomProvincia.setEditable(false)
+
+        pCentre.add(JPanel(FlowLayout()))
+
+        pBotonsMov.add(primer)
+        pBotonsMov.add(anterior)
+        pBotonsMov.add(seguent)
+        pBotonsMov.add(ultim)
+        pCentre.add(pBotonsMov)
+
+        pTancar.add(tancar)
+
+        rs.first()
+        visComarca()
+
+        primer.addActionListener {
+            rs.first()
+            visComarca()
+        }
+
+        anterior.addActionListener {
+            if (!rs.isFirst())
+                rs.previous()
+            visComarca()
+        }
+
+        seguent.addActionListener {
+            if (!rs.isLast())
+                rs.next()
+            visComarca()
+        }
+
+        ultim.addActionListener {
+            rs.last()
+            visComarca()
+        }
+
+        tancar.addActionListener{
+            rs.close()
+            st.close()
+            con.close()
+            System.exit(0)
+        }
+    }
+
+    fun visComarca() {
+        nomComarca.setText(rs.getString(1))
+        nomProvincia.setText(rs.getString(2))
+    }
+}
+
+fun main(args: Array&lt;String&gt;) {
+    EventQueue.invokeLater({ Exemple_4_41_Scroll().isVisible = true })
+}</code></pre>
+</div>
+</div>
+<p>Aquest és el resultat:</p>
+<p><img src="T4_6_2_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="350" height="400" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="61__accs_a_les_meta_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

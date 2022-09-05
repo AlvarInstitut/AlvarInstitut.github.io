@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3.- JTextField | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li class="current-page-parent"><a href="4_components.html" class="current-page-parent daddy">4.- Components</a>
+   <ul>
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li id="active"><a href="43_jtextfield.html" class="active no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li><a href="6_dilegs.html" class="daddy">6.- Diàlegs</a>
+   <ul class="other-section">
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_designer_gui.html" class="no-ch">7.- Designer GUI</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="42_jbutton.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="44_jlabel.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3.- JTextField</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_85" class="block iDevice_content">
+<p>Es el component corresponent a un quadre de text. Les seues propietats i mètodes bàsics són:</p>
+<ul>
+<li>Constructor: en el moment de construir li podem dir opcionalment la grandària (en caràcters)</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>val c1 = JTextField(25)</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>getText()</strong>: torna el contingut del JTextField</li>
+<li><strong>setText(String)</strong>: modifica el contingut del JTextField.</li>
+<li><strong>setEditable(Boolean)</strong>: marcarà si el es pot conviar el seu contingut o no.</li>
+</ul>
+<p>El següent exemple trasllada el contingut del primer JTextField al segon quan s'apreta el botó. A més, el segon JTextField no es pot editar, per tant l'única manera de posar-li contingut és a través del primer JTextField apretant el botó :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Finestra : JFrame() {
+	val t1 = JTextField(15)
+	val t2 = JTextField(15)
+	val boto1 = JButton("&gt;&gt;")
+	val eixir = JButton("Eixir")
+
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+		setTitle("Exemple de JTextField")
+		setSize(500, 110)
+		setLayout(GridLayout(2, 1))
+		val panell1 = JPanel(FlowLayout())
+		val panell2 = JPanel(FlowLayout())
+
+		add(panell1)
+		panell1.add(t1)
+		panell1.add(boto1)
+		panell1.add(t2)
+		t2.setEditable(false)
+
+		add(panell2)
+		panell2.add(eixir)
+
+		boto1.addActionListener { t2.setText(t1.getText()) }
+		eixir.addActionListener { System.exit(0) }
+	}
+}</code></pre>
+</div>
+</div>
+<p style="text-align: center;"><img src="AnnexSwing_4_3_1.png" alt="" width="500" height="110" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="42_jbutton.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="44_jlabel.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

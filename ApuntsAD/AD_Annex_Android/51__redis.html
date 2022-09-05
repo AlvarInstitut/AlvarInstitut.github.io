@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.1 - Redis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-16"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__permanncia_en_fitxers.html" class="daddy">1 - Permanència en fitxers</a>
+   <ul class="other-section">
+      <li><a href="11__exemple.html" class="no-ch">1.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="2__permanncia_en_bd_relacionals.html" class="daddy">2 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__connexi_remota.html" class="no-ch">2.1 - Connexió remota</a></li>
+      <li><a href="22__connexi_local.html" class="daddy">2.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="221__exemple.html" class="no-ch">2.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__eina_orm_biblioteca_room.html" class="daddy">3 - Eina ORM: Biblioteca ROOM</a>
+   <ul class="other-section">
+      <li><a href="31__implementar_relacions_1n.html" class="no-ch">3.1 - Implementar relacions 1:N</a></li>
+      <li><a href="32__exemple_complet.html" class="no-ch">3.2 - Exemple complet</a></li>
+      <li><a href="33__implementaci_amb_les_claus_externes.html" class="no-ch">3.3 - Implementació amb les claus externes</a></li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+   <li class="current-page-parent"><a href="5__permanncia_en_altres_bd_nosql.html" class="current-page-parent daddy">5 - Permanència en altres BD NoSQL</a>
+   <ul>
+      <li id="active"><a href="51__redis.html" class="active no-ch">5.1 - Redis</a></li>
+      <li><a href="52__mongodb.html" class="no-ch">5.2 - MongoDB</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5__permanncia_en_altres_bd_nosql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52__mongodb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.1 - Redis</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id31">
+<div class="iDevice emphasis0" >
+<div id="ta31_108_2" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id32">
+<div class="iDevice emphasis0" >
+<div id="ta32_109_2" class="block iDevice_content">
+<div class="exe-text"><p>Guardar dades en un servidor extern <strong>Redis</strong> no ofereix cap dificultat.</p>
+<p>Evidentment no ens podem plantejar el fet d'instal·lar el servidor en el dispositiu mòbil, per les restriccions d'espai. Per tant la connexió serà externa a un servidor. Però si tenim permisos, amb una contrasenya per a poder autenticar no hi haurà problema.</p>
+<p>Podrem instal·lar el mateix driver que hem utilitzar en Eclipse: <strong>Jedis</strong>. Només haurem d'incorporar-lo al projecte com una llibreria.</p>
+<p>Tindrem el mateix inconvenient que en ocasions anteriors: com que anem a accedir al servidor extern a través d'Internet, no podrem fer aquest accés des del thread principal. La solució més elegant seria utilitzar corutines, però nosaltres anem a simplificar per a poder posar l'accent sobre el que ens interessa, que és accedir a les dades. Ho muntarem com en altres ocasions de la manera més senzilla: accedint a la Base de Dades des d'un altre thread, i unint al principal quan s'haja accedit.</p>
+<p>Anem a fer el mateix exercici que en Eclipse, el de mostrar totes les claus en un Spinner, i després en seleccionar una clau del Spinner, mostrar el seu contingut, adaptant-lo per als diferents tipus de claus que tenim en Redis.</p>
+<ul>
+<li>Creeu un nou projecte d'Android, que el podeu anomenar per exemple <strong>Redis_Accedir</strong><strong></strong></li>
+<li>Incorporeu el driver de redis <strong>jedis-3.5.0.jar</strong>. El millor seria incorporar-lo en la vista de <strong>Project</strong> en <strong>app -&gt; libs</strong>, i després apratar damunt amb el botó de la dreta i triar <strong>Add as library</strong></li>
+<li>Doneu el permís d'accedir a Internet. En el <strong>AndroidManifest.xml</strong>, afegiu la següent línia, dins de <strong>manifest</strong> però fora de <strong>application</strong>:</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li>Creeu el següent <strong>activity_main.xml</strong>, on tindrem un Spinner i un TextView</li>
+</ul>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono', monospace; padding-left: 60px;"><span style="font-style: italic;">&lt;?</span><span style="color: #0000ff; font-weight: bold;">xml version</span><span style="color: #008000; font-weight: bold;">="1.0" </span><span style="color: #0000ff; font-weight: bold;">encoding</span><span style="color: #008000; font-weight: bold;">="utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res/android"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res-auto"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/tools"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">:context</span><span style="color: #008000; font-weight: bold;">=".MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">Spinner<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/spinner"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintTop_toTopOf</span><span style="color: #008000; font-weight: bold;">="parent" </span>/&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/area"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="382dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="622dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text</span><span style="color: #008000; font-weight: bold;">="TextView"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintBottom_toBottomOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintEnd_toEndOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintTop_toBottomOf</span><span style="color: #008000; font-weight: bold;">="@+id/spinner" </span>/&gt;<br />&lt;/<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</pre>
+<ul>
+<li>Creeu el següent programa principal:</li>
+</ul>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>androidx.appcompat.app.AppCompatActivity<br /><span style="color: #000080; font-weight: bold;">import </span>android.os.Bundle<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.View<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.AdapterView<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.ArrayAdapter<br /><span style="color: #000080; font-weight: bold;">import </span>kotlinx.android.synthetic.main.activity_main.*<br /><span style="color: #000080; font-weight: bold;">import </span>redis.clients.jedis.Jedis<br /><br /><span style="color: #000080; font-weight: bold;">class </span>MainActivity : AppCompatActivity() {<br /><br />    <span style="color: #000080; font-weight: bold;">internal var </span><span style="color: #660e7a; font-weight: bold;">claus</span>: List&lt;String&gt;? = <span style="color: #000080; font-weight: bold;">null<br /></span><span style="color: #000080; font-weight: bold;">    val </span><span style="color: #660e7a; font-weight: bold;">con </span>= Jedis(<span style="color: #008000; font-weight: bold;">"89.36.214.106"</span>)<br /><br /><br />    <span style="color: #000080; font-weight: bold;">private var </span><span style="color: #660e7a; font-weight: bold;">sqlThread</span>: Thread = <span style="color: #000080; font-weight: bold;">object </span>: Thread() {<br />        <span style="color: #000080; font-weight: bold;">override fun </span>run() {<br /><br />            <span style="color: #660e7a; font-weight: bold;">con</span>.connect()<br />            <span style="color: #660e7a; font-weight: bold;">con</span>.auth(<span style="color: #008000; font-weight: bold;">"ieselcaminas.ad"</span>)<br /><br />            <span style="color: #660e7a; font-weight: bold;">claus </span>= <span style="color: #660e7a; font-weight: bold;">con</span>.keys(<span style="color: #008000; font-weight: bold;">"*"</span>).<span style="font-style: italic;">sorted</span>()<br />            <span style="color: #808080; font-style: italic;">//con.close()<br /></span><span style="color: #808080; font-style: italic;"><br /></span><span style="color: #808080; font-style: italic;">        </span>}<br />    }<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreate(savedInstanceState: Bundle?) {<br />        <span style="color: #000080; font-weight: bold;">super</span>.onCreate(savedInstanceState)<br />        setContentView(R.layout.<span style="color: #660e7a; font-style: italic;">activity_main</span>)<br /><br />        <span style="color: #808080; font-style: italic;">// Des de la versió 3 d'Android, no es permet obrir una connexió des del thread principal.<br /></span><span style="color: #808080; font-style: italic;">        // Per tant s'ha de crear un nou.<br /></span><span style="color: #808080; font-style: italic;">        </span><span style="color: #660e7a; font-weight: bold;">sqlThread</span>.start()<br /><br />        <span style="color: #808080; font-style: italic;">// i ara esperem a que finalitze el thread fill unint-lo (join)<br /></span><span style="color: #808080; font-style: italic;">        </span><span style="color: #000080; font-weight: bold;">try </span>{<br />            <span style="color: #660e7a; font-weight: bold;">sqlThread</span>.join()<br />        } <span style="color: #000080; font-weight: bold;">catch </span>(e: InterruptedException) {<br />            e.printStackTrace()<br />        }<br /><br />        <span style="color: #000080; font-weight: bold;">val </span>adapter = ArrayAdapter(<span style="color: #000080; font-weight: bold;">this</span>, android.R.layout.<span style="color: #660e7a; font-style: italic;">simple_spinner_item</span>, <span style="color: #660e7a; font-weight: bold;">claus</span>!!)<br />        spinner.<span style="color: #660e7a; font-style: italic;">adapter </span>= adapter<br /><br />        spinner.<span style="color: #660e7a; font-style: italic;">onItemSelectedListener </span>= <span style="color: #000080; font-weight: bold;">object </span>: AdapterView.OnItemSelectedListener {<br />            <span style="color: #000080; font-weight: bold;">override fun </span>onNothingSelected(parent: AdapterView&lt;*&gt;?) {<br />                <span style="font-style: italic;">TODO</span>(<span style="color: #008000; font-weight: bold;">"Not yet implemented"</span>)<br />            }<br /><br />            <span style="color: #000080; font-weight: bold;">override fun </span>onItemSelected(parent: AdapterView&lt;*&gt;?, view: View?, position: Int, id: Long) {<br />                <span style="color: #000080; font-weight: bold;">var </span>altreThread: Thread = <span style="color: #000080; font-weight: bold;">object </span>: Thread() {<br />                    <span style="color: #000080; font-weight: bold;">override fun </span>run() {<br />                        area.setText(<span style="color: #008000; font-weight: bold;">""</span>)<br />                        <span style="color: #000080; font-weight: bold;">val </span>clau = <span style="color: #660e7a; font-weight: bold;">claus</span>?.get(position)<br />                        <span style="color: #000080; font-weight: bold;">val </span>tip = <span style="color: #660e7a; font-weight: bold;">con</span>.type(clau)<br />                        <span style="color: #000080; font-weight: bold;">when </span>(tip){<br />                            <span style="color: #008000; font-weight: bold;">"string" </span>-&gt; area.setText(<span style="color: #660e7a; font-weight: bold;">con</span>.get(clau))<br />                            <span style="color: #008000; font-weight: bold;">"hash" </span>-&gt; {<br />                                <span style="color: #000080; font-weight: bold;">for </span>(camp <span style="color: #000080; font-weight: bold;">in </span><span style="color: #660e7a; font-weight: bold;">con</span>.hkeys(clau))<br />                                    area.append(camp + <span style="color: #008000; font-weight: bold;">" -&gt; " </span>+ <span style="color: #660e7a; font-weight: bold;">con</span>.hget(clau,camp) + <span style="color: #008000; font-weight: bold;">"</span><span style="color: #000080; font-weight: bold;">\n</span><span style="color: #008000; font-weight: bold;">"</span>)<br />                            }<br />                            <span style="color: #008000; font-weight: bold;">"list" </span>-&gt; {<br />                                <span style="color: #000080; font-weight: bold;">for </span>(e <span style="color: #000080; font-weight: bold;">in </span><span style="color: #660e7a; font-weight: bold;">con</span>.lrange(clau,<span style="color: #0000ff;">0</span>,-<span style="color: #0000ff;">1</span>))<br />                                    area.append(e + <span style="color: #008000; font-weight: bold;">"</span><span style="color: #000080; font-weight: bold;">\n</span><span style="color: #008000; font-weight: bold;">"</span>)<br />                            }<br />                            <span style="color: #008000; font-weight: bold;">"set" </span>-&gt; {<br />                                <span style="color: #000080; font-weight: bold;">for </span>(e <span style="color: #000080; font-weight: bold;">in </span><span style="color: #660e7a; font-weight: bold;">con</span>.smembers(clau))<br />                                    area.append(e + <span style="color: #008000; font-weight: bold;">"</span><span style="color: #000080; font-weight: bold;">\n</span><span style="color: #008000; font-weight: bold;">"</span>)<br />                            }<br />                            <span style="color: #008000; font-weight: bold;">"zset" </span>-&gt; {<br />                                <span style="color: #000080; font-weight: bold;">for </span>(e <span style="color: #000080; font-weight: bold;">in </span><span style="color: #660e7a; font-weight: bold;">con</span>.zrevrangeWithScores(clau,<span style="color: #0000ff;">0</span>,-<span style="color: #0000ff;">1</span>))<br />                                    area.append(e.<span style="color: #660e7a; font-style: italic;">element </span>+ <span style="color: #008000; font-weight: bold;">" -&gt; " </span>+ e.<span style="color: #660e7a; font-style: italic;">score </span>+ <span style="color: #008000; font-weight: bold;">"</span><span style="color: #000080; font-weight: bold;">\n</span><span style="color: #008000; font-weight: bold;">"</span>)<br />                            }<br />                        }<br /><br />                    }<br />                }<br />                altreThread.start()<br />                altreThread.join()  <span style="color: #808080; font-style: italic;">//per senzillesa, no tractem l'excepció<br /></span><span style="color: #808080; font-style: italic;">            </span>}<br />        }<br /><br />    }<br />}</pre>
+<p>Observeu com tant en el moment d'agafar totes les claus, com en el moment d'agafar el contingut de la clau triada, hem muntat un thread, per a no fer-lo des del principal.</p>
+<p>Aquest seria el resultat:</p>
+<p style="text-align: center;"><img src="AnnexAndroid_5_1_1.png" alt="" width="399" height="862" /></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5__permanncia_en_altres_bd_nosql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52__mongodb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

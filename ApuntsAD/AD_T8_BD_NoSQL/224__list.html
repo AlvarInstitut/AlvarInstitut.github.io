@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.4 - List | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_clauvalor.html" class="current-page-parent daddy">2 - Bases de Dades Clau-Valor</a>
+   <ul>
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li class="current-page-parent"><a href="22__utilitzaci_de_redis.html" class="current-page-parent daddy">2.2 - Utilització de Redis</a>
+      <ul>
+         <li><a href="221__strings.html" class="no-ch">2.2.1 - Strings</a></li>
+         <li><a href="222__keys.html" class="no-ch">2.2.2 - Keys</a></li>
+         <li><a href="223__hash.html" class="no-ch">2.2.3 - Hash</a></li>
+         <li id="active"><a href="224__list.html" class="active no-ch">2.2.4 - List</a></li>
+         <li><a href="225__set.html" class="no-ch">2.2.5 - Set</a></li>
+         <li><a href="226__set_ordenat.html" class="no-ch">2.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="23__connexi_des_de_kotlin.html" class="no-ch">2.3 - Connexió des de Kotlin</a></li>
+   </ul>
+   </li>
+   <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="34__connexi_des_de_kotlin.html" class="no-ch">3.4 - Connexió des de Kotlin</a></li>
+      <li><a href="35__connexi_des_de_kotlin_al_servidor_de_linstitut.html" class="no-ch">3.5 - Connexió des de Kotlin al servidor de l'Institut</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="223__hash.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="225__set.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.4 - List</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id43">
+<div class="iDevice emphasis0">
+<div id="ta43_85" class="block iDevice_content">
+<p>Les <strong>Llistes</strong> en <strong>Redis</strong> són llistes de Strings ordenades, on cada element està associat a un índex de la llista. Es poden recuperar els elements tant de forma ordenada (per l'índex) com accedint directament a una posició.</p>
+<p>Els elements es poden afegir al principi, al final o també en una posició determinada.</p>
+<p>La llista es crea en el moment en què s'insereix el primer element, i desapareix quan llevem l'últim element que quede.</p>
+<p>Estan molt ben optimitzades per a la inserció i per a la consulta.</p>
+<p>Els comandos que afecten a les llistes comencen quasi tots per <strong>L</strong>, excepte alguns que comencen per <strong>R</strong> indicant que fan l'operació per la dreta.</p>
+<p>Per cert, els valors dels elements es poden repetir.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id44">
+<div class="iDevice emphasis0">
+<div id="ta44_85" class="block iDevice_content">
+<p class="titolet">LPUSH</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">lpush clau valor1 valor2 valorN</p>
+<p>Introdueix els valors a la llista (creant la clau si és necessari). Les insereix en la primera posició, o també podríem dir que per l'esquerra (<strong>Left PUSH</strong>), imaginant que els elements estan ordenats d'esquerra a dreta. Si posem més d'un valor, s'aniran introduint sempre en la primera posició. El comando tornarà el número d'elements (strings) de la llista després de la inserció.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; lpush llista1 primera segona tercera<br />(integer) 3<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "tercera"<br />2) "segona"<br />3) "primera"<br />127.0.0.1:6379&gt; lpush llista1 quarta cinquena<br />(integer) 5<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "cinquena"<br />2) "quarta"<br />3) "tercera"<br />4) "segona"<br />5) "primera"<br /><br /></p>
+<p style="margin-left: 30px;"><span style="text-decoration: underline;"><strong>Nota</strong> </span></p>
+<p style="margin-left: 30px;">Per a veure el contingut de la llista utilitzarem el comando <strong>lrange llista 0 -1</strong>, que torna la llista sencera. Veurem de forma més completa aquest comando amb posterioritat.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id45">
+<div class="iDevice emphasis0">
+<div id="ta45_85" class="block iDevice_content">
+<p class="titolet">RPUSH</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">rpush clau valor1 valor2 valorN</p>
+<p>Introdueix els valors a la llista (creant la clau si és necessari). Les insereix en l'última posició, o també podríem dir que per la dreta (<strong>Right PUSH</strong>), imaginant que els elements estan ordenats d'esquerra a dreta.  El comando tornarà el número d'elements (strings) de la llista després de la inserció.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; rpush llista1 sisena setena<br />(integer) 7<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "cinquena"<br />2) "quarta"<br />3) "tercera"<br />4) "segona"<br />5) "primera"<br />6) "sisena"<br />7) "setena"<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id46">
+<div class="iDevice emphasis0">
+<div id="ta46_85" class="block iDevice_content">
+<p class="titolet">LPOP</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">lpop clau</p>
+<p>Torna i elimina el primer element (el de més a l'esquerra).</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; lpop llista1<br />"cinquena"<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "segona"<br />4) "primera"<br />5) "sisena"<br />6) "setena"<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id47">
+<div class="iDevice emphasis0">
+<div id="ta47_85" class="block iDevice_content">
+<div id="ta46_85" class="block iDevice_content">
+<p class="titolet">RPOP</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">rpop clau</p>
+<p>Torna i elimina l'últim element (el de més a la dreta).</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; rpop llista1<br />"setena"<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "segona"<br />4) "primera"<br />5) "sisena"<br /><br /></p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id48">
+<div class="iDevice emphasis0">
+<div id="ta48_85" class="block iDevice_content">
+<p class="titolet">LSET</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">lset clau index valor</p>
+<p>Substitueix el valor de la posició indicada per l'índex. Tant la clau com l'element de la posició indicada han d'existir, sinó donarà error. Ara la <strong>L</strong> no significa <strong>Left</strong> sinó <strong>List</strong>.</p>
+<p>La primera posició és la 0. I també es poden posar números negatius: -1 és l'últim, -2 el penúltim, ...</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; lset llista1 2 quarta<br />OK<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "quarta"<br />4) "primera"<br />5) "sisena"<br />127.0.0.1:6379&gt; lset llista1 -1 cinquena<br />OK<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "quarta"<br />4) "primera"<br />5) "cinquena"<br /><br /></p>
+<p>Observeu com es poden repetir els valors</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id49">
+<div class="iDevice emphasis0">
+<div id="ta49_85" class="block iDevice_content">
+<p class="titolet">LINDEX</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">lindex clau index</p>
+<p>Torna l'element situat en la posició indicada per l'índex, <strong>però sense eliminar-lo de la llista</strong>.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "quarta"<br />4) "primera"<br />5) "cinquena"<br />127.0.0.1:6379&gt; lindex llista1 0<br />"quarta"<br />127.0.0.1:6379&gt; lindex llista1 3<br />"primera"<br />127.0.0.1:6379&gt; lindex llista1 -1<br />"cinquena"<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "quarta"<br />4) "primera"<br />5) "cinquena"<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id50">
+<div class="iDevice emphasis0">
+<div id="ta50_85" class="block iDevice_content">
+<p class="titolet">LINSERT</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">linsert clau BEFORE | AFTER valor1 valor2</p>
+<p>Insereix el valor2 abans o després (segons el que triem) de la primera vegada que troba el valor1. No substitueix, sinó que insereix en una determinada posició. Els elements que van després de l'element introduït veuran actualitzat el seu índex.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "quarta"<br />4) "primera"<br />5) "cinquena"<br />127.0.0.1:6379&gt; linsert llista1 AFTER quarta segona<br />(integer) 6<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "segona"<br />3) "tercera"<br />4) "quarta"<br />5) "primera"<br />6) "cinquena"<br />127.0.0.1:6379&gt; linsert llista1 BEFORE cinquena sisena<br />(integer) 7<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "segona"<br />3) "tercera"<br />4) "quarta"<br />5) "primera"<br />6) "sisena"<br />7) "cinquena"<br /><br /></p>
+<p>Si intentem inserir abans o després un element que no existeix, tornarà -1 indicant que no l'ha trobat i no farà la inserció.</p>
+<p class="codi2">127.0.0.1:6379&gt; linsert llista1 BEFORE desena setena<br />(integer) -1<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "segona"<br />3) "tercera"<br />4) "quarta"<br />5) "primera"<br />6) "sisena"<br />7) "cinquena"<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id51">
+<div class="iDevice emphasis0">
+<div id="ta51_85" class="block iDevice_content">
+<p class="titolet">LRANGE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">lrange clau inici final</p>
+<p>Torna els elements de la llista inclosos entre els index inici i final, ambdós inclosos. El primer element és el 0. Es poden posar valors negatius, sent -1 l'últim, -2 el penúltim, ...</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "segona"<br />3) "tercera"<br />4) "quarta"<br />5) "primera"<br />6) "sisena"<br />7) "cinquena"<br />127.0.0.1:6379&gt; lrange llista1 2 4<br />1) "tercera"<br />2) "quarta"<br />3) "primera"<br />127.0.0.1:6379&gt; lrange llista1 1 -2<br />1) "segona"<br />2) "tercera"<br />3) "quarta"<br />4) "primera"<br />5) "sisena"<br />127.0.0.1:6379&gt; lrange llista1 4 4<br />1) "primera"<br /><br /></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id52">
+<div class="iDevice emphasis0">
+<div id="ta52_85" class="block iDevice_content">
+<p class="titolet">LLEN</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">llen clau</p>
+<p>Torna el número d'elements de la llista</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; llen llista1<br />(integer) 7<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id53">
+<div class="iDevice emphasis0">
+<div id="ta53_85" class="block iDevice_content">
+<p class="titolet">LREM</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">lrem clau número valor</p>
+<p>Elimina elements de la llista que coincidisquen amb el valor proporcionat. Ja sabem que els valors es poden repetir. Amb el número indiquem quants elements volem que s'esborrencomençant per l'esquerra: si posem 1 s'esborrarà el primer element amb aquest valor, si posem 2 s'esborraran els dos primers elements (els de més a l'esquerra) que tingen aquest valor. Si posem 0 s'esborraran tots els elements amb aquest valor</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; rpush llista1 segona<br />(integer) 8<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "segona"<br />3) "tercera"<br />4) "quarta"<br />5) "primera"<br />6) "sisena"<br />7) "cinquena"<br />8) "segona"<br />127.0.0.1:6379&gt; lrem llista1 1 segona<br />(integer) 1<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "quarta"<br />2) "tercera"<br />3) "quarta"<br />4) "primera"<br />5) "sisena"<br />6) "cinquena"<br />7) "segona"<br />127.0.0.1:6379&gt; lrem llista1 0 quarta<br />(integer) 2<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "tercera"<br />2) "primera"<br />3) "sisena"<br />4) "cinquena"<br />5) "segona"<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id54">
+<div class="iDevice emphasis0">
+<div id="ta54_85" class="block iDevice_content">
+<p class="titolet">LTRIM</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">ltrim clau inici final</p>
+<p>Elimina els elements que queden fora dels índex inici i final, és a dir elimina els que estiguen a l'esquerra d'inici, i els que estiguen a la dreta de final.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; ltrim llista1 1 -2<br />OK<br />127.0.0.1:6379&gt; lrange llista1 0 -1<br />1) "primera"<br />2) "sisena"<br />3) "cinquena"<br /><br /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="223__hash.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="225__set.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

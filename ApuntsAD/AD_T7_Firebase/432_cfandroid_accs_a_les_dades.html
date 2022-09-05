@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3.2 CF-Android: Accés a les dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-65"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li><a href="3__realtime_database_rd.html" class="daddy">3 - Realtime Database (RD)</a>
+   <ul class="other-section">
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="32_rd_utilitzaci_des_de_intellij.html" class="daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__cloud_firestore_cf.html" class="current-page-parent daddy">4 - Cloud Firestore (CF)</a>
+   <ul>
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="43_cf_utilitzaci_des_dandroid.html" class="current-page-parent daddy">4.3 CF: Utilització des d'Android</a>
+      <ul>
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li id="active"><a href="432_cfandroid_accs_a_les_dades.html" class="active no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="431_cfandroid_connexi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="433_cfandroid_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3.2 CF-Android: Accés a les dades</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id213">
+<div class="iDevice emphasis0" >
+<div id="ta213_220_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Referència a la Base de Dades i a les dades concretes a les quals volem accedir</p>
+<p>La referència a la Base de Dades l'havíem completada en el punt anterior, però la tornem a posar ací per més comoditat.</p>
+<p>Podrem fer referència a cada <strong>col·lecció</strong> i/o a cada <strong>document</strong> de cada col·lecció</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Referències a la Base de Dades i als documents
+        val db = Firebase.firestore
+        val docRef = db.collection("Xats").document("XatProva")</code></pre>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id214">
+<div class="iDevice emphasis0" >
+<div id="ta214_221_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Guardar dades</p>
+<p>Per a guardar dades, ens podem plantejar 3 operacions d'escriptura sobre el document:</p>
+<ul>
+<li>Sobreescriure'l tot: ho farem amb el mètode <strong>set()</strong></li>
+<li>Esborrar-lo tot: amb el mètode <strong>delete()</strong></li>
+<li>Modificar-lo: amb el mètode <strong>update()</strong></li>
+</ul>
+<p>Excepte per esborrar, per a les altres operacions ens fa falta saber l'estructura del document. Per això tant mètode <strong>set()</strong> com el mètode <strong>update()</strong> accepten com a paràmetre no una única dada, sinó una estructura que puga arribar a reflectir el document. Acceptaran com a paràmetre un <strong>Map&lt;String, Object&gt;</strong>, on podrem col·locar les claus i els valors de tots els membres del document. Cada valor pot ser dels tipus que vam practicar en el punt anterior: string, number, boolean, array, map, ...</p>
+<p>La manera de col·locar un element en una estructura <strong>Map&lt;&gt;</strong> és amb el mètode <strong>put()</strong>, que acceptarà dos paràmetres: la clau i el valor.</p>
+<p>En el nostre exemple guardarem en el moment d'apretar el botó. Inicialment ho farem sobre <strong>/Xats/XatProva/ultimUsuari </strong> i <strong>/Xats/XatProva/ultimMissatge</strong>, encara que després ho canviarem. I com vam comentar en l'apartat d'<strong>IntelliJ</strong>, ens convé el mètode <strong>update</strong>, per a no esborrar la resta del document (per exemple el camp <strong>nomXat</strong>)</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Per a guardar dades
+        // Primer sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
+        // Després també com a documents en la col·lecció /Xats/XatProva/missatges
+        boto.setOnClickListener {
+            val dades = HashMap&lt;String, Any&gt;()
+            dades["ultimUsuari"] = usuari.text.toString()
+            dades["ultimMissatge"] = text.text.toString()
+            docRef.update(dades)
+
+            text.setText("")
+        }
+</code></pre>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id215">
+<div class="iDevice emphasis0" >
+<div id="ta215_222_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Recuperar dades</p>
+<p>També ens plantejarem els dos casos que ja ens vam plantejar en Realtime Database:</p>
+<ul>
+<li>Una única lectura</li>
+<li>Un listener que es quede escoltant per si hi ha canvis</li>
+</ul>
+<p></p>
+<h2>Listener de lectura única: addOnSuccessListener()</h2>
+<p>Ara des de Android, per a fer la lectura única també ens plantejarem un listener, que quedarà més sòlid i així poder actuar quan estiguem segurs que la dada ha arribat.</p>
+<p>En realitat tenim més d'un listener per a comprovar com ha anat una lectura:</p>
+<ul>
+<li><strong>addOnSuccessListener() </strong>s'activarà quan la tasca de lectura finalitza de forma exitosa</li>
+<li><strong>addOnFailureListener() </strong>s'activarà quan la tasca de lectura NO ha finalitzat bé</li>
+<li><strong>addOnCompleteListener()</strong> s'activarà quan la tasca de lectura ha finalitzat, de forma exitosa o no. El més normal serà comprovar dins d'ell si ha anat bé</li>
+</ul>
+<p>Per simplificar, en aquest moment només tractarem el primer dels 3, ja que ens assegura que la lectura ha anat bé. Quan això haja passat, ens arribarà al paràmetre (de tipus <strong>DocumentSnapshot</strong>) una còpia de les dades i sobre ell podrem utilitzar:</p>
+<ul>
+<li><strong>getData()</strong> per a obtenir tot el document en un <strong>Map&lt;String,Object&gt;</strong></li>
+<li><strong>getId()</strong> per a obtenir el nom del document</li>
+<li><strong>get(<em>nomClau</em>) </strong>per a obtenir directament el valor d'una clau del document</li>
+<li><strong>getString(<em>nomClau</em>) </strong>per a obtenir el valor de la clau en forma de string</li>
+<li><strong>getDouble(<em>nomClau</em>) </strong>per a obtenir el valor de la clau en forma de double</li>
+<li>...</li>
+</ul>
+<p>L'exemple d'única lectura el farem per a posar el títol de l'aplicació, com en l'exemple del Realtime Database.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de lectura única: AddOnSuccessListener()
+        // Per a posar el títol. Sobre /Xats/XatProva/nomXat
+        docRef.get().addOnSuccessListener { documentSnapshot -&gt;
+            setTitle(documentSnapshot.getString("nomXat"))
+        }
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"></p>
+<h2>Listener que es queda escoltant: addSnapshotListener()</h2>
+<p>De forma paral·lela al Realtime Database, si volem rebre una notificació de quan hi haja un canvi en el document que ens interessa, sobre una referència a aquest document ens muntarem un listener, en aquest cas amb el mètode <strong>addSnapshotListener()</strong>. Al mètode <strong>onEvent()</strong> que s'ha de sobreescriure arribarà un paràmetre de tipus <strong>DocumentSnapshot</strong>, que serà una còpia del document. Com en el cas anterior podrem fer sobre ell un <strong>getData()</strong> per a obtenir tot el document, <strong>getString(<em>nomClau</em>) </strong>per a obtenir el valor de la clau com un string, etc.</p>
+<p>En el nostre exemple, de moment l'utilitzem tant per a posar l'últim missatge com per a anar omplit l'àrea central amb el xat.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de listener de lectura contínua addSnapshotListener() sobre un document
+        // Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimMissatge
+         docRef.addSnapshotListener { documentSnapshot, e -&gt;
+             ultim.text = documentSnapshot!!.getString("ultimMissatge")
+             area.append(<documentsnapshot>documentSnapshot!!.getString("ultimUsuari") + ": " + </documentsnapshot>documentSnapshot!!.getString("ultimMissatge") + "\n")
+         }
+</code></pre>
+</div>
+</div>
+<p>El més desitjable seria tractar els errors, cosa que no hem fet en aquest moment per simplicitat.</p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id216">
+<div class="iDevice emphasis0" >
+<div id="ta216_223_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Guardar documents</p>
+<p>Ja sabem que l'estructura és de col·leccions i documents, i que dins d'un document puc guardar col·leccions, en les quals hi haurà documents, ... amb una estructura que pot ser recursiva, convida a organitzar d'aquesta manera la informació: en compte d'utilitzar llistes (que també es pot però no són tan pràctiques), millor organitzar-ho en forma de subcol·leccions i documents. Anem a repetir el ja fet en el moment d'<strong>IntelliJ</strong>, acoplant-lo a Android.</p>
+<p>Per tant ens és necessària l'operació d'afegir un document a una col·lecció. Això en un principi ho aconseguiríem amb el mètode <strong>set()</strong> sobre un document nou de la col·lecció:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>database.collection("nomCol").document("nomDoc").set(dades)</code></pre>
+</div>
+</div>
+<p>però això ens obligaria a posar un nom a cada document. Ja havíem vist que Cloud Firestore era capaç de generar un nom de document que no es puga repetir. Des de Java s'aconsegueix amb el mètode <strong>add()</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>db.collection("nomCol").add(dades)</code></pre>
+</div>
+</div>
+<p>però que en el nostre cas, per ser una subcol·lecció és un poc més llarg</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>db.collection("Xats").document("XatProva").collection("missatges").add(dades)</code></pre>
+</div>
+</div>
+<p>L'estructura de les dades la podem fer amb un <strong>Map&lt;string,Any&gt;</strong>, i posar-li en el nostre cas l'usuari i el missatge. D'aquesta manera ens quedaria ara el procediment en apretar el botó d'enviar el missatge, on a banda del que teníem abans per a modificar <strong>ultimMissatge</strong> i <strong>ultimUsuari</strong>, ara afegirem el document nou. Ens haurem de definir la classe <strong>Missatge</strong>, que de moment només té les propietats <strong>nom</strong> i <strong>contingut</strong>:</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">class </span><span style="color: #000000;">Missatge</span>(<span style="color: #0033b3;">var </span><span style="color: #871094;">nom</span>: <span style="color: #000000;">String</span>, <span style="color: #0033b3;">var </span><span style="color: #871094;">contingut</span>: <span style="color: #000000;">String</span>)</pre>
+<p>I el codi quan apretem el botó de moment quedarà així:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Per a guardar dades
+        // Primer sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
+        // Després també com a documents en la col·lecció /Xats/XatProva/missatges
+        boto.setOnClickListener {
+            val dades = HashMap&lt;String, Any&gt;()
+            dades["ultimUsuari"] = usuari.text.toString()
+            dades["ultimMissatge"] = text.text.toString()
+            docRef.update(dades)
+
+            val m = Missatge(usuari.text.toString(), text.text.toString())
+            db.collection("Xats").document("XatProva").collection("missatges").add(m)
+            text.setText("")
+        }
+</code></pre>
+</div>
+</div>
+<p></p>
+<p style="text-align: center;"></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id217">
+<div class="iDevice emphasis0" >
+<div id="ta217_224_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Recuperar documents modificats</p>
+<p>Ja només ens queda detectar els canvis en els documents de la col·lecció, per a afegir a l'àrea central els documents afegits. També és un <strong>addSnapshotListener()</strong>, però ara l'apliquem a una col·lecció (no a un document). El resultat és que d'una forma molt còmoda podrem detectar els documents afegits, els modificats i fins i tot els esborrats.</p>
+<p>Ací tenim el fragment de programa que ens ho permetrà. En aquest exemple només hem deixat el cas de <strong>document afegit</strong>, i no hem posat els casos de <strong>document modificat</strong> i <strong>document esborrat</strong>, ja que en aquest exemple no ho utilitzem. Haurem d'importar si <strong>DocumentChange</strong> no el teníem importat encara.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+        // Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+        db.collection("Xats").document("XatProva").collection("missatges").addSnapshotListener { snapshots, e -&gt;
+                for (dc in snapshots!!.documentChanges) {
+                    when (dc.type) {
+                        DocumentChange.Type.ADDED -&gt; {
+                            area.append( dc.document.getString("nom") + ": " + dc.document.getString("contingut") + "\n")
+                        }
+                    }
+                }
+         }</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I recordeu que ara hem d'eliminar o comentar l'altre moment que què actualitzàvem <strong>area</strong> amb el contingut de <strong>ultimUsuari </strong>i <strong>ultimMissatge</strong> (jo el tenia en la línia 42)</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono', monospace; padding-left: 30px;"><span style="color: #8c8c8c; font-style: italic;">//area.append(documentSnapshot!!.getString("ultimUsuari") + ": " + documentSnapshot!!.getString("ultimMissatge") + "\n")<br /></span></pre>
+<p style="text-align: justify;">És de destacar que ara la còpia de les dades, el snapshot, és en realitat un <strong>QuerySnapshot</strong>. I és que nosaltres no hem fet cap consulta sobre els documents de la col·lecció, però és possible fer-la. Per exemple es podria seleccionar per mig d'una query tots els documents en què l'usuari és un determinat. Aleshores detectaríem els documents afegits, modificats o esborrats d'aquest usuari. Ho faríem en el moment de declarar el <strong>addSnapshotListener()</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>db.collection("Xats").document("XatProva").collection("missatges").whereEqualTo("nom", "Usuari3").addSnapshotListener<querysnapshot> {
+</querysnapshot></code></pre>
+</div>
+</div>
+<p style="text-align: justify;">O també podríem ordenar els documents per algun camp. Açò en realitat seria necessari per a poder ordenar els missatges, ja que el nom del document auto-generat per Cloud Firestore no és consecutiu, sinó aleatori, i per tant perfectament un document nou tinga un nom anterior a alguns dels existents. Ho arreglaríem fàcilment posant un camp més amb la data i ordenant per aquest camp amb <strong>orderBy()</strong> (que aniria en el lloc del <strong>whereEqualTo()</strong> de la sentència anterior). Ho farem en l'exemple complet de la següent pregunta.</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Un altre exemple. Anem a fer una lectura única de tots els documents de la col·lecció principal <strong>Xats</strong>. Fins el moment hem treballat sempre sobre el document <strong>XatProva</strong>, però ho anem a generalitzar per a accedir a més d'un xat.</p>
+<p style="text-align: justify;">De moment ens conformarem amb fer una lectura única de tots els documents del xat per a mostrar-los en un Spinner. Posteriorment, en l'exemple complet de la següent pregunta intentarem triar un xat o un altre per a que ens mostre els missatge de l'un o de l'altre.</p>
+<p style="text-align: justify;">Per a fer aquesta lectura única, ara utilitzarem un <strong>addOnCompletedListener()</strong> en compte del <strong>addOnSuccessLitener()</strong> de l'altra ocasió, i així veurem un poc la diferència de plantejament.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de llegir tots els documents d'una col·lecció
+        // Per a triar el xat
+        db.collection("Xats").get().addOnCompleteListener { task -&gt;
+            if (task.isSuccessful) {
+                val opcions = ArrayList&lt;String&gt;<string>()
+                for (document in task.result!!) {
+                    opcions.add(document.id)
+                }
+                val adaptador = ArrayAdapter(pantPrincipal, android.R.layout.simple_spinner_item, opcions)
+                adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                comboXats.adapter = adaptador
+            } else {
+            }
+        }
+</string></code></pre>
+</div>
+</div>
+<p>Observeu que ara mirem si s'ha completat satisfactòriament la tasca amb <strong>task.isSuccessful()</strong>. Per simplicitat ara no fem res si no ha tingut èxit la lectura. Únicament tractem quan sí que ha tingut èxit, que aprofitem per a omplir el <strong>Spinner</strong> <strong>comboXats</strong> a partir d'un <strong>ArrayAdapter</strong>.<br /><br /></p>
+<p>En aquesta imatge es veu el resultat, on s'intenta explicar cadascuna de les coses:</p>
+<p style="text-align: center;"><img src="T7_4_3_2_1(mod).png" alt="" width="740" height="740" /></p>
+<p style="text-align: justify;">De moment el Spinner no fa res quan seleccionem una opció.</p>
+<p style="text-align: justify;">Ho intentarem en l'exemple complet de la següent pregunta.</p>
+<p style="text-align: justify;">De moment el codi ha quedat així:<span style="color: #0033b3;"></span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.*
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
+
+import kotlinx.android.synthetic.main.activity_main.*
+
+class Missatge(var nom: String, var contingut: String)
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        boto.text = "Enviar"
+        val pantPrincipal = this
+
+        // Referències a la Base de Dades i als documents
+        val db = Firebase.firestore
+        val docRef = db.collection("Xats").document("XatProva")
+
+        // Exemple de llegir tots els documents d'una col·lecció
+        // Per a triar el xat
+        db.collection("Xats").get().addOnCompleteListener { task -&gt;
+            if (task.isSuccessful) {
+                val opcions = ArrayList&lt;String&gt;()
+                for (document in task.result!!) {
+                    opcions.add(document.id)
+                }
+                val adaptador = ArrayAdapter(pantPrincipal, android.R.layout.simple_spinner_item, opcions)
+                adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                comboXats.adapter = adaptador
+            } else {
+            }
+        }
+
+        // Exemple de lectura única: AddOnSuccessListener()
+        // Per a posar el títol. Sobre /Xats/XatProva/nomXat
+        docRef.get().addOnSuccessListener { documentSnapshot -&gt;
+            setTitle(documentSnapshot.getString("nomXat"))
+        }
+
+        // Exemple de listener de lectura contínua addSnapshotListener() sobre un document
+        // Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimMissatge
+        docRef.addSnapshotListener { documentSnapshot, e -&gt;
+            ultim.text = documentSnapshot!!.getString("ultimMissatge")
+            //area.append(documentSnapshot!!.getString("ultimUsuari") + ": " + documentSnapshot!!.getString("ultimMissatge") + "\n")
+        }
+
+        // Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+        // Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+        db.collection("Xats").document("XatProva").collection("missatges").addSnapshotListener { snapshots, e -&gt;
+            for (dc in snapshots!!.documentChanges) {
+                when (dc.type) {
+                    DocumentChange.Type.ADDED -&gt; {
+                        area.append( dc.document.getString("nom") + ": " + dc.document.getString("contingut") + "\n")
+                    }
+                }
+            }
+        }
+        // Per a guardar dades
+        // Primer sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
+        // Després també com a documents en la col·lecció /Xats/XatProva/missatges
+        boto.setOnClickListener {
+            val dades = HashMap&lt;String, Any&gt;()
+            dades["ultimUsuari"] = usuari.text.toString()
+            dades["ultimMissatge"] = text.text.toString()
+            docRef.update(dades)
+
+            val m = Missatge(usuari.text.toString(), text.text.toString())
+            db.collection("Xats").document("XatProva").collection("missatges").add(m)
+            text.setText("")
+        }
+
+    }
+}
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="431_cfandroid_connexi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="433_cfandroid_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1 - Parser o analitzador XML | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li class="current-page-parent"><a href="4_documents_xml.html" class="current-page-parent daddy">4.- Documents XML</a>
+   <ul>
+      <li id="active"><a href="41__parser_o_analitzador_xml.html" class="active no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_documents_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42__lestructura_dom.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.1 - Parser o analitzador XML</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_1" class="block iDevice_content">
+<p style="text-align: justify;">Un <strong><em>Parser</em> XML</strong> és una classe que ens permet analitzar i classificar el contingut d’un arxiu XML extraient la informació continguda en cada una de les etiquetes, i relacionar-la d’acord amb la seua posició dins la jerarquia.</p>
+<p>Hi ha dos tipus d'analitzadors depenent de la manera de funcionar.</p>
+<p> </p>
+<p class="titolet">Analitzadors seqüencials</p>
+<p style="text-align: justify;">Els <strong>analitzadors seqüencials</strong> permeten extreure el contingut a mida que es van descobrint les etiquetes d’obertura i tancament. També s’anomenen <strong>analitzadors sintàctics</strong>. Són analitzadors molt ràpids, però presenten el problema que cada vegada que es necessita accedir a una part del contingut, s'ha de rellegir tot el document de dalt a baix.</p>
+<p style="text-align: justify;">En Java, l’analitzador sintàctic més popular s’anomena <strong>SAX</strong>, que vol dir <strong>Simple <acronym title="Application Programming Interface">API</acronym> for XML</strong>. És una analitzador molt utilitzat en diverses biblioteques de tractament de dades XML, però no sol utilitzar-se en aplicacions finals, pel problema abans comentat d'haver de llegir-se tot el document XML a cada consulta. Per aquesta raó no els veurem en aquest curs.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id100">
+<div class="iDevice emphasis0">
+<div id="ta100_1" class="block iDevice_content">
+<p class="titolet">Analitzadors jeràrquics</p>
+<div>
+<p>Generalment, les aplicacions finals que han de treballar amb dades <acronym title="Extensible Markup Language">XML</acronym> solen utilitzar analitzadors jeràrquics.</p>
+<p style="text-align: justify;">Els <strong>analitzadors jeràrquics</strong> guarden totes les dades del document <acronym title="Extensible Markup Language">XML</acronym> en memòria dins una estructura jeràrquica, a mida que van analitzant el seu contingut. I per això són ideals per a aplicacions que requereixen una consulta contínua de les dades.</p>
+<p style="text-align: justify;">El<strong> format de l’estructura</strong> on es guarda la informació en memòria ha estat especificat per l’organisme internacional <acronym title="World Wide Web Consortium">W3C</acronym> (World Wide Web Consortium) i es coneix com a <strong><acronym title="Document Object Model">DOM</acronym></strong> (<em><strong>Document Object Model</strong></em>). És una estructura que <acronym title="HyperText Markup Language">HTML</acronym> i javascript han popularitzat molt i es tracta d’una especificació que Java materialitza en forma d’interfícies. La principal s’anomena <strong><em>Document </em></strong>i representa tot un document <acronym title="Extensible Markup Language">XML</acronym>. En tractar-se d’una interfície, pot ser implementada per diverses classes.</p>
+<p style="text-align: justify;">L’estàndard <acronym title="World Wide Web Consortium">W3C</acronym> defineix la classe <strong>DocumentBuilder</strong> (constructor de documents) per a poder crear estructures <acronym title="Document Object Model">DOM</acronym> a partir d’un <acronym title="Extensible Markup Language">XML</acronym>. Aquesta classe <strong>DocumentBuilder</strong> és una classe abstracta, i per tal que es puga adaptar a les diferents plataformes, pot necessitar fonts de dades o requeriments diversos. Recordeu que les classes abstractes no es poden instanciar de forma directa. Per aquest motiu, el consorci W3 especifica també la classe <strong>DocumentBuilderFactory</strong>, és a dir, el <em>fabricador </em>de <em>DocumentBuilder</em>.</p>
+<p>Les llibreries des d'on importarem les classes comentades són:</p>
+<ul>
+<li><strong>DocumentBuilderFactory</strong> i <strong>DocumentBuilder</strong> les importarem de la llibreria <strong>javax.xml.parsers.*</strong></li>
+<li><strong>Document</strong> l'importarem de <strong>org.w3c.dom.*</strong></li>
+</ul>
+<p>Hem de cuidar sobretot aquesta última importació, perquè per defecte Java ens ofereix moltes llibreries des d'on importar <strong>Document</strong>. I si no la importem de la llibreria correcta, evidentment després tindrem errors.</p>
+<p>Les instruccions necessàries per llegir un fitxer <acronym title="Extensible Markup Language">XML</acronym> i crear un objecte <strong>Document</strong> serien les següents:  </p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.io.FileInputStream
+
+import javax.xml.parsers.DocumentBuilder
+import javax.xml.parsers.DocumentBuilderFactory
+
+import org.w3c.dom.Document
+
+...
+
+    val dbFactory = DocumentBuilderFactory.newInstance()
+
+    val dBuilder = dbFactory.newDocumentBuilder()
+
+    val doc = dBuilder.parse(File(“fitxer.xml”))</code></pre>
+</div>
+</div>
+</div>
+<p>Tornem a insistir en la necessitat d'importar <strong>Document</strong> de la llibreria <strong>org.w3c.dom.*</strong></p>
+<p>Anem a basar-nos en un exemple per poder veure a poc a poc la manera d'utilitzar el parser. És un exemple que possiblement es va veure en primer, en el mòdul de Llenguatge de Marques. Suposarem que està en el fitxer <strong>cotxes.xml</strong>, i que està en el directori del projecte on farem les proves.</p>
+<div class="codi2">
+<div>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div>
+<div>&lt;oferta&gt;</div>
+<div>  &lt;vehiculo&gt;</div>
+<div>    &lt;marca&gt;ford&lt;/marca&gt;</div>
+<div>    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;</div>
+<div>    &lt;motor combustible="gasolina"&gt;duratorc 1.4&lt;/motor&gt;</div>
+<div>    &lt;matricula&gt;1234AAA&lt;/matricula&gt;</div>
+<div>    &lt;kilometros&gt;12500&lt;/kilometros&gt;</div>
+<div>    &lt;precio_inicial&gt;12000&lt;/precio_inicial&gt;</div>
+<div>    &lt;precio_oferta&gt;10000&lt;/precio_oferta&gt;</div>
+<div>    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;</div>
+<div>    &lt;extra valor="300"&gt;llantas&lt;/extra&gt;</div>
+<div>    &lt;foto&gt;11325.jpg&lt;/foto&gt;</div>
+<div>    &lt;foto&gt;11326.jpg&lt;/foto&gt;</div>
+<div>  &lt;/vehiculo&gt;</div>
+<div>  &lt;vehiculo&gt;</div>
+<div>    &lt;marca&gt;ford&lt;/marca&gt;</div>
+<div>    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;</div>
+<div>    &lt;motor combustible="diesel"&gt;duratorc 2.0&lt;/motor&gt;</div>
+<div>    &lt;matricula&gt;1235AAA&lt;/matricula&gt;</div>
+<div>    &lt;kilometros&gt;125000&lt;/kilometros&gt;</div>
+<div>    &lt;precio_inicial&gt;10000&lt;/precio_inicial&gt;</div>
+<div>    &lt;precio_oferta&gt;9000&lt;/precio_oferta&gt;</div>
+<div>    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;</div>
+<div>    &lt;extra valor="200"&gt;spoiler trasero&lt;/extra&gt;</div>
+<div>    &lt;extra valor="500"&gt;climatizador&lt;/extra&gt;</div>
+<div>    &lt;foto&gt;11327.jpg&lt;/foto&gt;</div>
+<div>    &lt;foto&gt;11328.jpg&lt;/foto&gt;</div>
+<div>  &lt;/vehiculo&gt;</div>
+<div>&lt;/oferta&gt;</div>
+</div>
+<p>El primer que farem serà intentar connectar amb aquest fitxer, però d'una forma un poc més reduïda que abans, sense definir objectes del <strong>DocumentBuilderFactory</strong> ni <strong>DocumentBuilder</strong>. Tampoc ens caldrà definir-nos el <strong>File</strong> (<strong>FileInputStream</strong>) ja que el mètode <strong>parse</strong> també agafa un <strong>String </strong>com a paràmetre:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javax.xml.parsers.DocumentBuilderFactory
+
+import org.w3c.dom.Document
+
+...
+
+    val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml")</code></pre>
+</div>
+</div>
+<p>Però, i si el procés que necessitem és l'invers? És a dir, i si el que volem és guardar una estructura DOM en un fitxer XML?</p>
+<p>En aquest cas el que haurem de fer serà construir un <strong>document buit</strong>, anar posant els elements i atributs (amb els seus valors) d'alguna manera, i posteriorment guardar-lo en un fitxer. Deixem per a un poc més avant com anar construint els nodes del document i centrem-nos en el fet de crear el document buit i guardar-lo en un fitxer. Podem construir un document nou a partir del <strong>DocumentBuilder</strong>, utilitzant el mètode <strong>newDocument()</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javax.xml.parsers.DocumentBuilderFactory
+
+import org.w3c.dom.Document
+
+...
+
+    val doc1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument()</code></pre>
+</div>
+</div>
+<p>Per a escriure la informació continguda al <acronym title="Document Object Model">DOM</acronym> a un fitxer, es pot fer utilitzant una altra utilitat de Java anomenada <strong><em>Transformer</em></strong>. Es tracta d’una utilitat que permet realitzar fàcilment conversions entre diferents representacions d’informació jeràrquica. És capaç, per exemple, de passar la informació continguda en un objecte <strong>Document a un fitxer de text en format <acronym title="Extensible Markup Language">XML</acronym></strong>. També seria capaç de fer l’operació inversa, però no val la pena perquè el mateix <em>DocumentBuilder</em> ja s’encarrega d’això.</p>
+<p><strong><em>Transformer </em></strong>és també una classe abstracta i requereix d’una <em>factory</em> per poder ser instanciada. La <span>classe</span> <strong>Transformer</strong> pot treballar amb multitud de contenidors d’informació perquè en realitat treballa amb un parell de tipus adaptadors (classes que fan compatibles jerarquies diferents) que s’anomenen <strong>Source</strong> i <strong>Result</strong>. Les classes que implementen aquestes interfícies s’encarregaran de fer compatible un tipus de contenidor específic al requeriment de la classe <strong>Transformer</strong>. Així, disposem de les classes <strong>DOMSource</strong>, <strong>SAXSource</strong> o <strong>StreamSource</strong> com a adaptadors del contenidor de la font d’informació (<acronym title="Document Object Model">DOM</acronym>, SAX o Stream respectivament). <strong>DOMResult</strong>, <strong>SAXResult</strong> o <strong>StreamResult</strong> són els adaptadors equivalents del contenidor destí. A nosaltres ara, com que volem passar un document DOM a un fitxer, ens convindrà un <strong>DOMSource</strong> i un <strong>StreamResult</strong> </p>
+<p>El codi bàsic per realitzar una transformació de <acronym title="Document Object Model">DOM</acronym> a fitxer de text <acronym title="Extensible Markup Language">XML</acronym> seria el següent:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>val trans = TransformerFactory.newInstance().newTransformer()
+
+val source = DOMSource(doc)
+val result = StreamResult(file)
+
+trans.transform(source, result)</code></pre>
+</div>
+</div>
+<p>De tota manera, veurem més avant un exemple on ens guardarem una estructura DOM en un fitxer XML. </p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_documents_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42__lestructura_dom.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

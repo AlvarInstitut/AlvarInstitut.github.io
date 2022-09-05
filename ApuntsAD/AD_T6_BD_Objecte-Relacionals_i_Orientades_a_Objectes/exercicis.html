@@ -1,0 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2__bases_de_dades_objecterelacionals.html" class="daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33__consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id19">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.1 (BDOR) (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta19_90_2" class="block iDevice_content">
+<p>Des de la perspectiva <strong>Database Development</strong> d'Eclipse, o des de <strong>PgAdmin </strong>si el tens instal·lat, entrant com a usuari <strong>rxx</strong> en la Base de Dades <strong>rxx</strong>:</p>
+<ul>
+<li>Crea un tipus de dades anomenat <strong>coordenades</strong>, amb dos camps: <strong>lat</strong> (numèric) i <strong>lon</strong> (numèric).</li>
+<li>Crea un tipus de dades anomenat <strong>punt</strong>, amb tres camps; <strong>num_p</strong> (enter), <strong>nom_p</strong> (text) i <strong>coord</strong> (de tipus coordenades)</li>
+<li>Crea un <strong>taula</strong> anomenada <strong>ruta</strong> amb la seguent estructura: <strong>num_r</strong> (enter, clau principal), <strong>nom_r</strong> (text), <strong>desn</strong> (enter), <strong>desn_acum</strong> (enter), <strong>llista_punts</strong> (array de <strong>punt</strong>)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id20">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.2 (BDOR) (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta20_91_2" class="block iDevice_content">
+<p>Crea un nou paquet anomenat <strong>Exercicis</strong> en el projecte <strong>Tema6_1</strong>.<strong> </strong> Inclou en el projecte les llibreries de JDBC per a PostgreSQL i per a SQLite, si no ho estan encara.</p>
+<ul>
+<li>Copia el paquet <strong>util.bd</strong> al projecte. Aquest paquet el vam fer en l'exercici <strong>Ex 4.4</strong> i inclou les classes <strong>Coordenades.java</strong>, <strong>PuntGeo.java</strong> i <strong>Ruta.java</strong>. També inclou la classe <strong>GestionarRutesBD.java</strong>, que ens permetia gestionar la BD <strong>Rutes.sqlite</strong></li>
+<li>Copia també la BD <strong>Rutes.sqlite</strong>, creada en exercicis anteriors, però que l'última actualització és del mateix exercici.</li>
+</ul>
+<p>A partir d'aci comença realment l'exercici, que consistirà en passar les dades des de <strong>Rutes.sqlite</strong> fins la Base de Dades de <strong>PostgreSQL</strong> <strong>rxx</strong>, creada en l'exercici anterior, i posteriorment visualitzar-les, però de forma còmoda</p>
+<ul>
+<li>Crea la classe <strong>PassarRutaSqlitePostgresql.java</strong>, amb <strong>main()</strong> (és a dir, executable).
+<ul>
+<li>Heu d'agafar totes les rutes de Rutes.sqlite i deixar-les en un ArrayList de Ruta amb el mètode ja creat de <strong>GestionarRutesBD.java</strong> anomenat <strong>llistat()</strong>.</li>
+<li>Utilitzeu el mètode <strong>cadenaRuta</strong><strong>(ruta</strong><strong>)</strong> que us passarà el professor que torna una cadena de text amb totes les dades de la ruta, que es pot utilitzar en un <strong>INSERT</strong> (per exemple el podeu col·locar en la mateixa classe PassarRutaSQLitePostgresql). Us recomane vivament que primer tragueu per pantalla la sentència INSERT abans d'executar-la. Observeu que cadenaRuta() no torna el número de la ruta.</li>
+<li>Inseriu totes les rutes en la BD de PostgreSQL <strong>rxx</strong>.</li>
+</ul>
+</li>
+<li>Crea la classe <strong>VisRutaPostgreSQL</strong>, amb <strong>main()</strong> (és a dir, executable) que visualitze les rutes amb el següent format. Observa que sí que agafem element a element de la llista de punts, però després no intentem separar el contingut ni dels elements de tipus <strong>punt</strong>, ni molt menys dels de tipus <strong>coordenades.</strong></li>
+</ul>
+<p class="codi2">Ruta número 1: Pujada a Penyagolosa<br />Punts:<br />    (1,"Sant Joan","(40.251036,-0.354223)")<br />    (2,Encreuament,"(40.25156,-0.352507)")<br />    (3,"Barranc de la Pegunta","(40.247318,-0.351713)")<br />    (4,"El Corralico","(40.231708,-0.348859)")<br />    (5,Penyagolosa,"(40.222632,-0.350339)")<br /><strong></strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id18">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.3 (BDOO)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta18_89_2" class="block iDevice_content">
+<p>Crea un nou paquet anomenat <strong>exercicis </strong>en el projecte <strong>Tema6</strong>. Incorpora en el projecte el driver per a <strong>DB4O</strong> , sino el tenies incorporat.</p>
+<ul>
+<li>Copia el paquet <strong>util.bd</strong> al projecte. Aquest paquet el vam fer en l'exercici <strong>T4Ex4</strong> i inclou les classes <strong>Coordenades.kt</strong>, <strong>PuntGeo.kt</strong> i <strong>Ruta.kt</strong>. També inclou la classe <strong>GestionarRutesBD.java</strong>, que ens permetia gestionar la BD <strong>Rutes.sqlite</strong></li>
+<li>Copia també la BD <strong>Rutes.sqlite</strong>, creada en exercicis anteriors, però que l'última actualització és del mateix exercici.</li>
+<li>Incorpora el driver de SQLite</li>
+<li>Hem de canviar la definició de les propietats de la classe <strong>Ruta</strong>, ja que ara hem de permetre valors nuls per a poder fer consultes pel mètode <strong>queryByExample()</strong>. La manera més senzilla segurament serà:</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Ruta (var nom: String?, var desnivell: Int?, var desnivellAcumulat: Int?, var llistaDePunts: MutableList&lt;PuntGeo&gt; = mutableListOf&lt;PuntGeo&gt;()): Serializable </code></pre>
+</div>
+</div>
+<ul>
+<li>D'aquesta manera, per a crar un objecte <strong>Ruta</strong> que estiga totalment buit, ho faríem així: <strong>Ruta(null,null,null)</strong></li>
+<li>Podria ser que aquest canvi en la definició de les propietat de <strong>Ruta</strong> provoque algun error en <strong>GestionarRutesBD</strong>. Si és així corregeix-los</li>
+</ul>
+<p>A partir d'aci comença realment l'exercici, que consistirà en passar les dades des de <strong>Rutes.sqlite</strong> fins la Base de Dades de <strong>DB4O</strong> <strong>Rutes.db4o</strong>.</p>
+<ul>
+<li>Crea't el programa <strong>Ex3_PassarRutaSqliteDB4O.kt</strong>.
+<ul>
+<li>Has d'agafar totes les rutes de Rutes.sqlite i deixar-les en un ArrayList de Ruta amb el mètode ja creat de <strong>GestionarRutesBD.java</strong> anomenat <strong>llistat()</strong>.</li>
+<li>Insereix totes les rutes en la BD <strong>Rutes.db4o</strong>.</li>
+<li>Tanca la connexió.</li>
+</ul>
+</li>
+<li>Crea la classe <strong>Ex3_VisRutaDB4O.kt</strong>, que ha de connectar a la Base de Dades <strong>Rutes.db4o</strong> , ha de llegir totes les rutes (ves amb compte, perquè només has de llegir rutes; s'han guardat més objectes: punts i coordenades) i ha de traure per pantalla el nom de la ruta i el número de punts.</li>
+</ul>
+<p style="text-align: center;"><img src="T6_Ex_3_1.png" style="border: 1px solid black;" width="284" height="60" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id21">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.4 (BDOO)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta21_89_2" class="block iDevice_content">
+<p>En el mateix projecte i paquet anem a fer una aplicació amb interfície gràfica, com en un exercici voluntari del Tema 4, però ara atancant a DB4O.</p>
+<p>El programa mostrarà una ruta, i hi haurà també uns botons per anar a la primera, anterior, següent i última ruta. Hi ha també el botó de Tancar, que tancarà la connexió amb la Base de Dades i eixirà del programa.</p>
+<p>Per a omplir el JTable amb els punts, teniu un mètode que ho fa automàticament: <strong>plenarTaula()</strong>. Observeu quin és el seu paràmetre.</p>
+<p>De moment tindrà aquest aspecte:</p>
+<p style="text-align: center;"><img src="T6_4_1.png" alt="Exercici4_1" /></p>
+<p>en el qual, a banda de les etiquetes (<strong>JLabel</strong>) i quadres de text (<strong>JTextField</strong>) tenim una taula (<strong>JTable</strong>) on col·locarem tots els punts de la ruta (nom, latitud i longitud). Tots els controls són no editables, per a no poder introduir cap informació.</p>
+<p>Aquest seria l'esquelet del programa.</p>
+<p>Copieu-lo en un fitxer Kotlin anomenat <strong>Ex4_VisRutes_DB4O.kt</strong> , i poseu les sentències necessàries després dels comentaris:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.awt.EventQueue
+import java.awt.GridLayout
+import java.awt.FlowLayout
+import javax.swing.JFrame
+import javax.swing.JPanel
+import javax.swing.BoxLayout
+import javax.swing.JComboBox
+import javax.swing.JButton
+import javax.swing.JTextArea
+import javax.swing.JLabel
+import javax.swing.JTextField
+import javax.swing.JTable
+import javax.swing.JScrollPane
+
+import util.bd.Ruta
+import util.bd.PuntGeo
+import com.db4o.Db4oEmbedded
+
+class FinestraComplet : JFrame() {
+	var llista = arrayListOf&lt;Ruta&gt;()
+	var numActual = 0
+
+	// Declaració de la Base de Dades
+
+	val qNom = JTextField(15)
+	val qDesn = JTextField(5)
+	val qDesnAcum = JTextField(5)
+	val punts = JTable(1, 3)
+	val primer = JButton(" &lt;&lt; ")
+	val anterior = JButton(" &lt; ")
+	val seguent = JButton(" &gt; ")
+	val ultim = JButton(" &gt;&gt; ")
+	val tancar = JButton("Tancar")
+
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+		setTitle("JDBC: Visualitzar Rutes Complet")
+		setLayout(GridLayout(0, 1))
+
+		val p_prin = JPanel()
+		p_prin.setLayout(BoxLayout(p_prin, BoxLayout.Y_AXIS))
+		val panell1 = JPanel(GridLayout(0, 2))
+		panell1.add(JLabel("Ruta:"))
+		qNom.setEditable(false)
+		panell1.add(qNom)
+		panell1.add(JLabel("Desnivell:"))
+		qDesn.setEditable(false)
+		panell1.add(qDesn)
+		panell1.add(JLabel("Desnivell acumulat:"))
+		qDesnAcum.setEditable(false)
+		panell1.add(qDesnAcum)
+		panell1.add(JLabel("Punts:"))
+
+		val panell2 = JPanel(GridLayout(0, 1))
+		punts.setEnabled(false)
+		val scroll = JScrollPane(punts)
+		panell2.add(scroll, null)
+
+		val panell5 = JPanel(FlowLayout())
+		panell5.add(primer)
+		panell5.add(anterior)
+		panell5.add(seguent)
+		panell5.add(ultim)
+
+		val panell6 = JPanel(FlowLayout())
+		panell6.add(tancar)
+
+		add(p_prin)
+		p_prin.add(panell1)
+		p_prin.add(panell2)
+		p_prin.add(panell5)
+		p_prin.add(panell6)
+		pack()
+
+		primer.addActionListener {
+			// instruccions per a situar-se en la primera ruta, i visualitzar-la
+
+		}
+		anterior.addActionListener {
+			// instruccions per a situar-se en la ruta anterior, i visualitzar-la
+			
+		}
+		seguent.addActionListener {
+			// instruccions per a situar-se en la ruta següent, i visualitzar-la
+			
+		}
+		ultim.addActionListener {
+			// instruccions per a situar-se en l'últim ruta, i visualitzar-la
+			
+		}
+		tancar.addActionListener {
+			// instruccions per a tancar la BD i el programa
+			
+		}
+
+		inicialitzar()
+		VisRuta()
+	}
+
+	fun plenarTaula(ll_punts: MutableList&lt;PuntGeo&gt;) {
+		var ll = Array(ll_punts.size) { arrayOfNulls&lt;String&gt;(3) }
+		for (i in 0 until ll_punts.size) {
+			ll[i][0] = ll_punts.get(i).nom
+			ll[i][1] = ll_punts.get(i).coord.latitud.toString()
+			ll[i][2] = ll_punts.get(i).coord.longitud.toString()
+		}
+		val caps = arrayOf("Nom punt", "Latitud", "Longitud")
+		punts.setModel(javax.swing.table.DefaultTableModel(ll, caps))
+	}
+
+	fun inicialitzar() {
+		// instruccions per a inicialitzar llista i numActual
+
+	}
+
+	fun VisRuta() {
+		// instruccions per a visualitzar la ruta actual (l'índex el tenim en numActual
+
+		ActivarBotons()
+	}
+
+	fun ActivarBotons() {
+		// instruccions per a activar o desactivar els botons de moviment ( setEnabled(Boolean) )
+
+	}
+
+}
+
+fun main(args: Array&lt;String&gt;) {
+	EventQueue.invokeLater {
+		FinestraComplet().isVisible = true
+	}
+}</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id22">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.5 (BDOO)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta22_89_2" class="block iDevice_content">
+<p>Modificar la classe anterior per a incorporar també la <strong>distància total de la ruta</strong>. Per a poder calcular-la ens ajudarem de la següent funció que calcula la distància en quilòmetres entre dos punts, donant les coordenades (latitud i longitud) dels dos punts: <strong>Dist(lat1,long1,lat2,long2)</strong>. Observeu que per a calcular la distància de forma correcta hem de tenir en compte tots els punts (si només tenim en compte el primer punt i l'últim, la distància d'una ruta circular seria 0).</p>
+<p>Podeu incorporar-la a la classe on esteu fent l'exercici (<strong>Ex4_VisRutes_DB4O.kt</strong>).</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>fun Dist(lat1: Double, lon1: Double, lat2: Double, lon2: Double): Double {
+
+	val R = 6378.137 // Radi de la Tierra en km
+	val dLat = rad(lat2 - lat1)
+	val dLong = rad(lon2 - lon1)
+
+	val a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(dLong / 2)
+	val c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+	val d = R * c
+	return Math.round(d*100.0)/100.0
+}
+
+fun rad(x: Double): Double {
+	return x * Math.PI / 180
+}</code></pre>
+</div>
+</div>
+<p>Aquest seria un exemple:</p>
+<p style="text-align: center;"><img src="T6_Ex_5_1.png" style="border: 1px solid black;" width="453" height="580" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id23">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.6 (ampliació - voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta23_89_2" class="block iDevice_content">
+<p>Modifica l'aplicació anterior per a que es puguen modificar, esborrar i inserir les rutes.</p>
+<p style="text-align: center;"><img src="T6_Ex_6_1.png" style="border: 1px solid black;" /></p>
+<ul>
+<li>S'haurien de posar més botons: <strong>Editar</strong>, <strong>Eliminar</strong> i <strong>Nova Ruta</strong>.</li>
+<li>Estaria bé que en entrar a qualsevol de les opcions anteriors es desactivaren els botons de navegació, que desaparegueren els d'Editar, Eliminar i Nova Ruta, i que aparegueren els d'<strong>Acceptar</strong> i <strong>Cancel·lar</strong>.</li>
+<li>En tots els casos, si es cancel·la no es fa cap acció, però s'ha de tornar a l'estat anterior (primera imatge)</li>
+<li><strong>EDITAR</strong>:
+<ul>
+<li>S'han d'"activar" els controls per a poder modificar les dades.</li>
+<li>En cas d'acceptar s'ha de fer la modificació a partir del contingut de tots els controls (no cal detectar quins s'han modificat)</li>
+<li style="text-align: left;">En cas de cancel·lar, no es fa la modificació, i senzillament s'ha de tornar a visualitzar la ruta actual (com no s'ha fet cap canvi, apareixeran les dades anteriors)</li>
+<li style="text-align: left;">Per a afegir nous punts, es podria posar un botó per a afegir una nova línia al JTable, i un altre per a llevar una línia</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: left;"><img src="T6_Ex_6_2.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" width="588" height="615" /></p>
+<ul>
+<li><strong>ELIMINAR</strong>:
+<ul>
+<li>Si s'accepta, s'haurà d'esborrar la ruta, sinó tornar a visualitzar-la</li>
+</ul>
+</li>
+</ul>
+<p><img src="T6_Ex_6_3.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" /></p>
+<ul>
+<li><strong>INSERIR</strong>:
+<ul>
+<li>Haurà de mostrar tots els camps en blanc, i evidentment activats, per a poder introduir dades.</li>
+<li>En cas d'acceptar s'ha d'introduir la nova ruta.</li>
+<li>En cas de cancel·lar, estaria bé tornar a la que s'estava mostrant abans d'apretar el botó de nova ruta.</li>
+<li style="text-align: left;">Per a introduir nous punts, es podria posar un botó per a afegir una nova línia al JTable, i un altre per a llevar una línia</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><img src="T6_Ex_6_4.png" style="border: 1px solid black;" /></p>
+<p style="text-align: left;"><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p style="text-align: left;">EL JTable de vegades és engorrós. Si s'està editant una casella, la informació no s'ha introduït encara, fins que no s'aprete enter, tab o amb el ratolí no s'aprete a algun altre lloc.Per a acabar la introducció de la informació que s'està editant, es podria executar el següent (per exemple quan s'ha apretat <strong>Acceptar</strong>):</p>
+<p style="text-align: left;" class="codi">            if (punts.isEditing())<br />                punts.getCellEditor().stopCellEditing()</p>
+<p style="text-align: left;">on <strong>punts</strong> seria al JTable.</p>
+<p style="text-align: left;">A continuació teniu l'esquelet del programa. Hi ha uns quants mètodes per a fer més sezilla la implementació, però ho podeu fer a la vostra manera. Copieu el següent codi a un fitxer anomenat <strong>Ex6_6_VisRutes_DB4O_Avancat.kt</strong>: </p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.awt.EventQueue
+import java.awt.GridLayout
+import java.awt.FlowLayout
+import javax.swing.JFrame
+import javax.swing.JPanel
+import javax.swing.BoxLayout
+import javax.swing.JComboBox
+import javax.swing.JButton
+import javax.swing.JTextArea
+import javax.swing.JLabel
+import javax.swing.JTextField
+import javax.swing.JTable
+import javax.swing.JScrollPane
+import javax.swing.table.DefaultTableModel
+
+import utilBd.Ruta
+import utilBd.PuntGeo
+import utilBd.Coordenades
+import com.db4o.Db4oEmbedded
+import com.db4o.EmbeddedObjectContainer
+
+class FinestraAvancat : JFrame() {
+	var llista = arrayListOf&lt;Ruta&gt;()
+	var numActual = 0
+
+	// Declaració de la Base de Dades amb lateinit, per a inicialitzar després
+
+	var actualitzant = false
+	var modificacio = ""
+
+	val qNom = JTextField(15)
+	val qDesn = JTextField(5)
+	val qDesnAcum = JTextField(5)
+	val qDistancia = JTextField(5)
+	val punts = JTable(1, 3)
+	val primer = JButton(" &lt;&lt; ")
+	val anterior = JButton(" &lt; ")
+	val seguent = JButton(" &gt; ")
+	val ultim = JButton(" &gt;&gt; ")
+	val tancar = JButton("Tancar")
+
+	val editar = JButton("Editar")
+	val eliminar = JButton("Eliminar")
+	val nova = JButton("Nova Ruta")
+
+	val acceptar = JButton("Acceptar")
+	val cancelar = JButton("Cancel·lar")
+	val mesP = JButton("+p")
+	val menysP = JButton("-p")
+
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+		setTitle("JDBC: Visualitzar Rutes Complet")
+		setLayout(GridLayout(0, 1))
+
+		// Inicialització de la BD, amb opcions de modificar i esborrar en cascada
+
+
+		val p_prin = JPanel()
+		p_prin.setLayout(BoxLayout(p_prin, BoxLayout.Y_AXIS))
+		val panell1 = JPanel(GridLayout(0, 2))
+		panell1.add(JLabel("Ruta:"))
+		qNom.setEditable(false)
+		panell1.add(qNom)
+		panell1.add(JLabel("Desnivell:"))
+		qDesn.setEditable(false)
+		panell1.add(qDesn)
+		panell1.add(JLabel("Desnivell acumulat:"))
+		qDesnAcum.setEditable(false)
+		panell1.add(qDesnAcum)
+		panell1.add(JLabel("Distància:"))
+		qDistancia.setEditable(false)
+		panell1.add(qDistancia)
+		panell1.add(JLabel("Punts:"))
+
+		val panell2 = JPanel(GridLayout(0, 1))
+		punts.setEnabled(false)
+		val scroll = JScrollPane(punts)
+		panell2.add(scroll, null)
+
+		val panell5 = JPanel(FlowLayout())
+		panell5.add(primer)
+		panell5.add(anterior)
+		panell5.add(seguent)
+		panell5.add(ultim)
+		panell5.add(editar)
+		panell5.add(eliminar)
+		panell5.add(nova)
+
+		acceptar.setVisible(false)
+		panell5.add(acceptar)
+		cancelar.setVisible(false)
+		panell5.add(cancelar)
+		mesP.setVisible(false)
+		panell5.add(mesP)
+		menysP.setVisible(false)
+		panell5.add(menysP)
+
+		val panell6 = JPanel(FlowLayout())
+		panell6.add(tancar)
+
+		add(p_prin)
+		p_prin.add(panell1)
+		p_prin.add(panell2)
+		p_prin.add(panell5)
+		p_prin.add(panell6)
+		ActivarAltres(true)
+		pack()
+		ActivarAltres(false)
+
+		primer.addActionListener {
+			// instruccions per a situar-se en la primera ruta, i visualitzar-la
+
+		}
+		anterior.addActionListener {
+			// instruccions per a situar-se en la ruta anterior, i visualitzar-la
+
+		}
+		seguent.addActionListener {
+			// instruccions per a situar-se en la ruta següent, i visualitzar-la
+
+		}
+		ultim.addActionListener {
+			// instruccions per a situar-se en l'últim ruta, i visualitzar-la
+
+		}
+		tancar.addActionListener {
+			// instruccions per tancar la BD i eixir del programa
+			
+		}
+
+		editar.addActionListener {
+			// instruccions per a editar la ruta que s'està veient en aquest moment
+			// s'han d'activar els quadres de text, i el JTable
+
+		}
+
+		eliminar.addActionListener {
+			// instruccions per a eliminar la ruta que s'està veient en aquest moment
+
+		}
+
+		nova.addActionListener {
+			// instruccions per a posar en blanc els quadres de texti el JTable, per a inserir una nova ruta
+			// s'han d'activar els quadres de text, i el JTable			
+
+		}
+
+		acceptar.addActionListener {
+			// instruccions per a acceptar l'acció que s'està fent (nova ruta, edició o eliminació)
+
+		}
+
+		cancelar.addActionListener {
+			// instruccions per a cancel·lar l'acció que s'estava fent
+
+		}
+
+		mesP.addActionListener {
+			// instruccions per a afegir una línia en el JTable
+
+		}
+
+		menysP.addActionListener {
+			// instruccions per a llevar una línia del JTable
+
+		}
+
+		inicialitzar()
+		VisRuta()
+	}
+
+	fun plenarTaula(ll_punts: MutableList&lt;PuntGeo&gt;) {
+		var ll = Array(ll_punts.size) { arrayOfNulls&lt;String&gt;(3) }
+		for (i in 0 until ll_punts.size) {
+			ll[i][0] = ll_punts.get(i).nom
+			ll[i][1] = ll_punts.get(i).coord.latitud.toString()
+			ll[i][2] = ll_punts.get(i).coord.longitud.toString()
+		}
+		val caps = arrayOf("Nom punt", "Latitud", "Longitud")
+		punts.setModel(javax.swing.table.DefaultTableModel(ll, caps))
+	}
+
+	fun inicialitzar() {
+		// instruccions per a inicialitzar llistat i numActual
+
+	}
+
+	fun VisRuta() {
+		// instruccions per a visualitzar la ruta actual (l'índex el tenim en numActual)
+
+		ActivarBotons()
+	}
+
+	fun ActivarBotons() {
+		// instruccions per a activar o desactivar els botons de moviment ( setEnabled(Boolean) )
+
+	}
+
+	fun ActivarAltres(b: Boolean) {
+		// instruccions per a mostrar els botons acceptar, cancelar, mesP, menysP,
+		// ocultar editar, eliminar, nova. O al revés
+		// i descativar els de moviment
+
+	}
+
+	fun ActivarQuadres(b: Boolean) {
+		// instruccions per activar (o desactivar) els quadres de text i el JTable
+
+	}
+
+	fun PosarQuadresBlanc() {
+		//instruccions per a posar en blanc els quadres de text i el JTable quan anem a una nova ruta
+
+	}
+
+	fun AssignaRuta(r: Ruta) {
+		// instruccions per a guardar en el paràmetre r el valor dels quadres de text i JTable
+
+	}
+
+	fun agafarRutes(): ArrayList&lt;Ruta&gt; {
+		// instruccions per a tornar totes les rutes de la Base de Dades
+
+	}
+
+	fun Dist(lat1: Double, lon1: Double, lat2: Double, lon2: Double): Double {
+		val R = 6378.137 // Radi de la Tierra en km
+		val dLat = rad(lat2 - lat1)
+		val dLong = rad(lon2 - lon1)
+
+		val a =
+			Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(
+				dLong / 2
+			)
+		val c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+		val d = R * c
+		return Math.round(d * 100.0) / 100.0
+	}
+
+	fun rad(x: Double): Double {
+		return x * Math.PI / 180
+	}
+}
+
+fun main(args: Array&lt;String&gt;) {
+	EventQueue.invokeLater {
+		FinestraAvancat().isVisible = true
+	}
+}</code></pre>
+</div>
+</div>
+<p style="text-align: left;"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33__consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

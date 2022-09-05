@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2 - Funcionalitat bàsica | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-16"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2__bases_de_dades_objecterelacionals.html" class="daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__bases_de_dades_orientades_a_objectes.html" class="current-page-parent daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul>
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li id="active"><a href="32__funcionalitat_bsica.html" class="active no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31__installaci_de_db4o.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__consultes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2 - Funcionalitat bàsica</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_1" class="block iDevice_content">
+<p>Treballarem sobre un exemple anterior, el dels empleats, però incorporant més dades, com els telèfons, els correus electrònics, etc, per veure que podem guardar una classe un poc més complicada en la BD Orientada a Objectes.</p>
+<p>En un projecte nou, anomenat <strong>Tema6</strong>, anem a incorporar el driver de <strong>DB4O</strong></p>
+<p style="margin-left: 30px;"><strong>db4o-8.0.249.16098-all-java5.jar</strong></p>
+<p style="text-align: center;"></p>
+<p>Per organitzar-lo millor creem un paquet anomenat<strong> classesEmpleat</strong> , que ens servirà per a fer tots els exemples. Ens crearem la classe <strong>Empleat</strong>, i les classes <strong>Adreca</strong> i <strong>Telefon</strong> que utilitzarà aquella. Construïm les classes amb <strong>constructor</strong> i mètodes <strong>get</strong> i <strong>set</strong>.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Adreca (var carrer: String?, var codipostal: String?, var poblacio: String?)</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Telefon( var mobil : Boolean , var numero: String)</code></pre>
+</div>
+</div>
+<p></p>
+<p>Ara ja va <strong>Empleat</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Empleat (
+	var nif: String? , var nom: String? , var departament: Int? , var edat: Int? = 0 , var sou: Double? = 0.0 ,
+	var foto: Array&lt;Byte&gt;? ,
+	var curriculum: Array&lt;Char&gt;? ,
+	var adreca: Adreca? ,
+	var correus_e: Array&lt;String&gt;? ,
+	var telefons : Array&lt;Telefon&gt;?
+) {
+	constructor(nif: String) : this(nif,null,null,null,null,null,null,null,null,null) 
+}</code></pre>
+</div>
+</div>
+<p>Com comentàvem anteriorment, hi ha una versió servidor, però que nosaltres ens conformarem amb la versió integrada (<em>embedded</em>). En el cas de la versió servidor utilitzaríem la classe <strong>Db4o</strong> per a fer la connexió. Com que nosaltres farem servir la versió integrada, utilitzarem la classe <strong>Db4oEmbedded</strong>.</p>
+<p>Des de l’aplicació indicarem el nom del fitxer on es guardaran les dades cridant el mètode estàtic de Db4oEmbedded <strong>openFile</strong>. A partir d’aquest moment, es mantindrà oberta una transacció que continuarà activa fins que tanquem amb el mètode <strong>close</strong>.</p>
+<p>Les proves que farem a continuació les podem posar en un paquet anomenat <strong>Exemples</strong></p>
+<p class="titolet">Inserció</p>
+<p>Per a guardar un objecte utilitzem el mètode <strong>store(objecte)</strong></p>
+<p>Provem a introduir un empleat. Guardeu el següent programa en <strong>Exemple1_InserirEmpleat.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.db4o.Db4oEmbedded
+
+import classesEmpleat.Empleat
+import classesEmpleat.Adreca
+import classesEmpleat.Telefon
+
+fun main() {
+	val bd = Db4oEmbedded.openFile("Empleats.db4o")
+
+	var e = Empleat("11111111a","Albert",10,45,1000.0,null,null,null,null,null)
+
+	// les dades més complicades les introduïm de forma especial
+	e.adreca = Adreca("C/ Major, 7", "12001", "Castelló")
+	e.correus_e = arrayOf("alu11111111a@ieselcaminas.org")
+	e.telefons = arrayOf(Telefon(true, "666777888"), Telefon(false, "964112233"))
+
+	bd.store(e);
+
+	bd.close();
+}</code></pre>
+</div>
+</div>
+<p>Sí que ha guardat l'objecte. Mirem-lo des de la finestra de DB4O:</p>
+<p style="text-align: center;"><img src="T6_3_2_1.1.png" alt="" width="1304" height="737" /></p>
+<p>On hem obert la BD apretant el botó <strong>Open</strong> (de vegades no mostra les dades dient que <em><strong>This view is not available until indexes are built </strong></em>. Ho podem solucionar reiniciant IntelliJ i així obligant a reconstruir els índex. I hem apretat el botó <strong>Get Objects</strong> tenint seleccionada la classe <strong>Empleats</strong>. </p>
+<p>En finalitzar d'observar les dades des de la finestra DB4O és convenient <strong>tancar la connexió</strong>. Si no la tanquem, quan anem a executar qulsevol programa que accedisca, ens donarà error, avisant que la Base de Dades està bloquejada (<em><strong>com.db4o.ext.DatabaseFileLockedException</strong></em>).</p>
+<p>Per tant, haurem de tenir especial atenció a tancar la connexió a la Base de Dades. Podria passar que ens donara un error el programa, i la connexió s'haja quedat oberta. Segurament el més oportú serà intentar tancar el programa, o tancar IntelliJ, i d'aquesta manera desbloquejarem la Base de Dades.</p>
+<p>El mètode <strong>commit</strong> obliga a guardar les dades cap al contenidor i activa de nou una transacció per a les properes operacions, per tant és convenient anar utilitzant-lo després d'una sèrie d'actualitzacions.</p>
+<p>Anem a posar algunes dades més, per a tenir un poc més de joc. Concretament seran dues empleades més. Copieu el següent codi al fitxer <strong>Exemple1_1_InserirMesEmpleats.kt</strong></p>
+<p></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import classesEmpleat.Adreca
+import classesEmpleat.Empleat
+import classesEmpleat.Telefon
+import com.db4o.Db4oEmbedded
+
+fun main() {
+	val bd = Db4oEmbedded.openFile ("Empleats.db4o")
+	val e = Empleat("22222222b", "Berta", 10, 35, 1700.0, null, null, null, null, null)
+	val f = Empleat("33333333c", "Clàudia", 20, 37, 1500.0, null, null, null, null, null)
+
+	//les dades més complicades les introduïm de forma especial
+	e.adreca = Adreca ("C/ Enmig, 7", "12001", "Castelló")
+	val corr = arrayOf( "alu22222222b@ieselcaminas.org", "berta@gmail.com" )
+	e.correus_e = corr
+	val tels = arrayOf(Telefon(true,"666555444"), Telefon(false,"964223344"))
+	e.telefons = tels
+
+	f.adreca = Adreca ("C/ de Dalt, 7", null, "Borriana")
+	val corr2 = arrayOf("alu33333333c@ieselcaminas.org")
+	f.correus_e = corr2
+
+	bd.store(e)
+	bd.store(f)
+
+	bd.close()
+}</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id39">
+<div class="iDevice emphasis0">
+<div id="ta39_85" class="block iDevice_content">
+<p class="titolet">Consulta bàsica</p>
+<p>En la següent pregunta, veurem les maneres de fer una consulta, però ara anem a veure la forma més senzilla, que és la realitzada a través del mètode anomenat <strong>queryByExample</strong>. Aquest mètode rep per paràmetre un objecte del tipus a cercar, que farà d’exemple o patró per trobar totes aquelles instàncies emmagatzemades coincidents amb les dades del patró. El patró que es passe per paràmetre no haurà de tenir totes les dades complimentades, sinó només aquelles de les quals se’n desitge la coincidència. Així, per exemple, si passem un objecte d'Empleat amb un únic atribut introduït (el <em>nif</em>), <b>queryByExample</b> retornarà totes aquelles instàncies que tinguen per <em>nif </em>el valor entrat. El retorn es fa en un objecte de tipus <strong>ObjectSet</strong>, una classe que implementa la interfície <strong>List</strong> de Java i també la interfície <strong>Iterable</strong>, de manera que siga possible recórrer el contingut utilitzant els mètodes <strong>next</strong> i <strong>hasNext</strong>. També podem utilitzar el bucle <strong>for</strong> (el del <strong>foreach</strong>).</p>
+<p>En el següent exemple es veu com una vegada obtingut l'objecte, es pot accedir  molt fàcilment a tota la informació. Copieu-lo al fitxer Kotlin <strong>Exemple2_ConsultaUnEmpleat.kt</strong></p>
+<p></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.db4o.Db4oEmbedded
+import com.db4o.ObjectSet
+import classesEmpleat.Empleat
+
+fun main() {
+	val bd = Db4oEmbedded.openFile("Empleats.db4o")
+	val patro = Empleat("11111111a")
+	val llista = bd.queryByExample&lt;Empleat&gt;(patro)
+
+	if (llista.hasNext()) {
+		val e = llista.next() as Empleat
+		println(
+			"Nif: " + e.nif + ". Nom: " + e.nom + ". Població: " + e.adreca?.poblacio
+		)
+		if (e.correus_e != null)
+			print("Primer correu: " + e.correus_e?.get(0) + ".")
+		
+		if (e.telefons != null)
+			print("Primer telèfon: " + e.telefons!![0].numero + ".")
+		println()
+	}
+	bd.close();
+}</code></pre>
+</div>
+</div>
+<p>Observeu com no hem utilitzat un bucle per a recórrer la llista, sinó un if. Això és perquè en aquest cas concret sabem a priori que en cas de trobar alguna instància, només serà una. Aquest seria el resultat:</p>
+<p class="codi2">Nif: 11111111a. Nom: Albert. Població: Castelló<br />Primer correu: alu11111111a@ieselcaminas.org. Primer telèfon: 666777888.</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id28">
+<div class="iDevice emphasis0">
+<div id="ta28_85" class="block iDevice_content">
+<p class="titolet">Esborrat</p>
+<p>Per a poder fer una actualització o esborrat d'algun objecte de la Base de Dades, aquest s'ha de correspondre amb algun objecte del programa Java o Kotlin, és a dir, l'objecte ha de ser persistent. Aquesta correspondència pot ser perquè un objecte nou l'hem guardat amb <strong>store()</strong> (i continua "viu"), o perquè l'hem llegit de la BD (millor dit, hem llegit una llista i després hem fet l'assignació a un objecte).</p>
+<p>L’eliminació dels objectes s’aconsegueix amb el mètode <strong>delete</strong>. Per defecte, DB4O elimina només l'objecte que es passa com a paràmetre, però no els objectes que aquest puga contenir. Si un objecte conté un altre objecte, com succeeix amb les instàncies <strong>Empleat</strong> i <strong>Adreca</strong> i <strong>Telefon</strong>, això pot convertir-se en un gran problema, ja que són objectes que normalment no es manipularan per separat i, en cas que no s’esborren amb el seu propietari, continuaran indefinidament en la Base de Dades.  Per evitar-lo hauríem de configurar per a que <strong>esborre en cascada</strong>.</p>
+<p>Mirem un exemple en el qual esborrem un empleat. En el comentari teniu el moment en que encara no es corresponen, i per tant no es pot esborrar. Recordeu que després d'aquest exemple, quedarà inconsistent la informació. Si no voleu fer-lo, poder saltar-vos-el. De tota manera, si el feu i queda inconsistent la informació sempre podem esborrar la Base de Dades i tornar a executar <strong>Exemple1_InserirEmpleat.kt</strong> i <strong>Exemple1_1_InserirMesEmpleats.kt</strong>. Si teniu ganes de fer-lo, guardeu-lo en el fitxer <strong>Exemple3_EsborratDefectuos.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.db4o.Db4oEmbedded
+import com.db4o.ObjectContainer
+import com.db4o.ObjectSet
+
+import classesEmpleat.Empleat
+
+fun main() {
+
+	val bd = Db4oEmbedded.openFile ("Empleats.db4o")
+	val patro = Empleat("22222222b")
+
+	// Si posàrem ací db.delete(patro) no tindría efecte, perquè e no es
+	// correspon amb cap instància de la BD
+
+	val llista = bd.queryByExample&lt;Empleat&gt;(patro) 
+	if (llista.hasNext()) {
+		val e = llista.next()
+		bd.delete(e)
+	}
+	bd.close()
+}</code></pre>
+</div>
+</div>
+<p>Com que <strong>no hem esborrat en cascada</strong>, si després mirem des de la perspectiva OME, comprovarem que encara existeixen els objectes adreça i telèfon, i que ara no correspondran a cap empleat. Hauríem d'aprofitar el moment per a esborrar des de la perspectiva OME les instàncies de Adreca i Telefon que corresponien a l'empleat que hem esborrat, per deixar-lo consistent. En les següents imatges es mostra aquest fet:</p>
+<p><img src="T6_3_2_1.png" style="border: 1px solid black;" width="1022" height="97" /></p>
+<p>Ja no existeix l'objete Empleat corresponent a Berta, però:</p>
+<table border="0">
+<tbody>
+<tr>
+<td><img src="T6_3_2_2.png" style="border: 1px solid black;" width="618" height="119" /></td>
+<td><img src="T6_3_2_3.png" style="border: 1px solid black;" width="623" height="137" /></td>
+</tr>
+</tbody>
+</table>
+<p>encara existeix la seua adreça (C/Enmig, 7 de Castelló) i els seua telèfons (666555444 i 964223344)</p>
+<p>Per a poder <strong>esborrar en cascada</strong>, en el moment d’obrir el fitxer contenidor haurem d'especificar-lo posant-li una configuració com veurem a continuació. No és possible modificar la configuració de forma dinàmica. A més, malauradament, la configuració no es guarda amb el fitxer contenidor, sinó que cada vegada que obrim, haurem d'especificar-li la configuració desitjada. En aquesta configuració li direm que la classe <strong>Empleat</strong> esborra en cascada, és a dir, que quan esborrem un objecte, els objectes "subordinats" (de les classes <strong>Adreca</strong> i <strong>Telefon</strong>) també s'esborraran. Copieu el segúent codi en un fitxer anomenat <strong>Exemple4_EsborratCorrecte.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.db4o.Db4oEmbedded
+import com.db4o.ObjectContainer
+import com.db4o.ObjectSet
+
+import classesEmpleat.Empleat
+
+fun main() {
+	val conf = Db4oEmbedded.newConfiguration()
+	conf.common().objectClass("classesEmpleat.Empleat").cascadeOnDelete(true)
+
+	val bd = Db4oEmbedded.openFile(conf,"Empleats.db4o")
+	val patro = Empleat("33333333c")
+
+	// Si posàrem ací db.delete(patro) no tindría efecte, perquè e no es
+	// correspon amb cap instància de la BD
+
+	val llista = bd.queryByExample&lt;Empleat&gt;(patro)
+	if (llista.hasNext()) {
+		val e = llista.next()
+		bd.delete(e)
+	}
+	bd.close()
+}</code></pre>
+</div>
+</div>
+<p>En les següents imatges es mostra com ara sí que ha esborrat en cascada:</p>
+<p><img src="T6_3_2_4.png" style="border: 1px solid black;" /></p>
+<p>Hem esborrat a Clàudia</p>
+<table border="0">
+<tbody>
+<tr>
+<td><img src="T6_3_2_5.png" style="border: 1px solid black;" width="659" height="98" /></td>
+<td><img src="T6_3_2_6.png" style="border: 1px solid black;" width="655" height="139" /></td>
+</tr>
+</tbody>
+</table>
+<p>I també ha desaparegut la seua adreça (C/ de Dalt de Borriana). Com que no tenia telèfons, continuen els mateixos d'abans</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id27">
+<div class="iDevice emphasis0">
+<div id="ta27_85" class="block iDevice_content">
+<p class="titolet">Modificació</p>
+<p>Per a modificar un objecte de la Base de Dades primer haurem de tenir un objecte de Java que es corresponga amb ell (igual que en l'esborrat). Després de modificar-lo, només l'haurem de guardar amb <strong>store()</strong>. Hem de parar atenció a que si el que volem modificar és d'una subclasse, haurem de <strong>modificar en cascada</strong>, sinó no tindrà efecte. Ho farem indicant <strong>cascadeOnUpdate(true)</strong> a la configuració amb què obrirem el fitxer. Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple5_ModificarCascada.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.db4o.Db4oEmbedded
+import com.db4o.ObjectContainer
+import com.db4o.ObjectSet
+import com.db4o.config.EmbeddedConfiguration
+
+import classesEmpleat.Adreca
+import classesEmpleat.Empleat
+
+fun main() {
+	val conf = Db4oEmbedded.newConfiguration()
+	conf.common().objectClass("classesEmpleat.Empleat").cascadeOnUpdate(true)
+
+	val bd = Db4oEmbedded.openFile(conf, "Empleats.db4o")
+
+	val patro = Empleat("11111111a")
+	val llista = bd.queryByExample&lt;Empleat&gt;(patro)
+	if (llista.hasNext()) {
+		var e = llista.next()
+		if (e.sou != null) {
+			e.sou = e.sou.toString().toDouble() + 200.0
+		}
+		val adr = e.adreca
+		adr?.carrer = "Pl. Rei en Jaume, 15"
+		adr?.codipostal = "12002"
+		e.adreca = adr
+		bd.store(e)
+	}
+	bd.close()
+}</code></pre>
+</div>
+</div>
+<p>En la imatge es veu que en fer l'actualització en cascada sí que s'han guardat els canvis, i la primera adreça (que és la corresponent a Albert) s'ha modificat.</p>
+<p style="text-align: center;"><img src="T6_3_2_7.png" style="border: 1px solid black;" width="673" height="90" /></p>
+<p></p>
+<p>La restricció que hem comentat abans de que hem de tenir un objecte de Java que es corresponga amb ell (que ocupa els casos d'esborrat i modificació), l'hem de tenir molt present. I hem d'anar amb compte, perquè quan es tanca la BD es perd tota correspondència.</p>
+<p>El següent exemple és idèntic a l'anterior, però es tanca i es torna a obrir la BD després d'haver assignat a <strong>e</strong> l'objecte, i abans de guardar-lo; per tant L'OBJECTE ESTÀ SEPARAT (ja no està associat a un objecte de la Base de Dades). En principi el que voldríem és modificar les dades de l'empleat existent, <strong>però en realitat ham introduït un nou empleat</strong> (amb el mateix nif, nom, ...), i per tant <strong>molt perillós</strong> perquè estam duplicant la informació. Observeu que, com que només es vol modificar el sou, no cal actualitzar en cascada. Si voleu provar l'exemple, gaurdeu el següent codi en el fitxer Kotlin <strong>Exemple6_ModificacióIncorrecta.kt</strong>. I recordeu que la Base de Dades haurà quedat malament, i per tant el millor seia esborrar-la i tornar a executar els exemples <strong>Exemple1_InserirEmpleat.kt</strong> i <strong>Exemple1_1_InserirMesEmpleats.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.db4o.Db4oEmbedded
+import com.db4o.ObjectContainer
+import com.db4o.ObjectSet
+
+import classesEmpleat.Empleat
+
+fun main() {
+	var bd = Db4oEmbedded.openFile ("Empleats.db4o")
+
+	val patro =  Empleat("11111111a")
+	val llista = bd.queryByExample&lt;Empleat&gt;(patro)
+	if (llista.hasNext()) {
+		var e = llista.next()
+		if (e.sou != null) {
+			e.sou = e.sou.toString().toDouble() + 200.0
+		}
+
+		bd.close() // Tanquem i tornem a obrir la BD, per veure que hem
+		// perdut la correspondència de e amb l'objecte de la BD
+		
+		bd = Db4oEmbedded.openFile("Empleats.db4o")
+
+		bd.store(e)
+	}
+	bd.close()
+}</code></pre>
+</div>
+</div>
+<p>Ara el contingut de la Base de Dades és aquest:</p>
+<p style="text-align: center;"><img src="T6_3_2_8.png" style="border: 1px solid black;" width="1099" height="96" /></p>
+<p>On es veu que hem creat un nou objecte, en compte de modificar el que ja existia. I el mateix amb l'adreça i els telèfons</p>
+<table border="0">
+<tbody>
+<tr>
+<td><img src="T6_3_2_9.png" style="border: 1px solid black;" width="729" height="119" /></td>
+<td><img src="T6_3_2_10.png" style="border: 1px solid black;" width="727" height="182" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p>En cas que tanquem la BD i vulguem modificar o esborrar un objecte haurem de tornar a connectar amb ell.</p>
+<p>I en el cas de la inserció, abans d'inserir, podríem comprovar que no existeix (per exemple que no existeix cap empleat amb aquest nif).</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31__installaci_de_db4o.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__consultes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3 - Implementació amb les claus externes | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__permanncia_en_fitxers.html" class="daddy">1 - Permanència en fitxers</a>
+   <ul class="other-section">
+      <li><a href="11__exemple.html" class="no-ch">1.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="2__permanncia_en_bd_relacionals.html" class="daddy">2 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__connexi_remota.html" class="no-ch">2.1 - Connexió remota</a></li>
+      <li><a href="22__connexi_local.html" class="daddy">2.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="221__exemple.html" class="no-ch">2.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__eina_orm_biblioteca_room.html" class="current-page-parent daddy">3 - Eina ORM: Biblioteca ROOM</a>
+   <ul>
+      <li><a href="31__implementar_relacions_1n.html" class="no-ch">3.1 - Implementar relacions 1:N</a></li>
+      <li><a href="32__exemple_complet.html" class="no-ch">3.2 - Exemple complet</a></li>
+      <li id="active"><a href="33__implementaci_amb_les_claus_externes.html" class="active no-ch">3.3 - Implementació amb les claus externes</a></li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+   <li><a href="5__permanncia_en_altres_bd_nosql.html" class="daddy">5 - Permanència en altres BD NoSQL</a>
+   <ul class="other-section">
+      <li><a href="51__redis.html" class="no-ch">5.1 - Redis</a></li>
+      <li><a href="52__mongodb.html" class="no-ch">5.2 - MongoDB</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32__exemple_complet.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3 - Implementació amb les claus externes</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id30">
+<div class="iDevice emphasis0" >
+<div id="ta30_108_2" class="block iDevice_content">
+<div class="exe-text"><p>Per senzillesa, havíem deixat de banda la implementació de les claus externes.</p>
+<p>En cas que tinguem definida alguna clau externa, ens canviarà la definició de la classe associada a la taula on està la clau externa.</p>
+<p>Anem a mostrar-ho sobre la mateixa Base de Dades de l'exemple anterior, <strong>CoffeeShop.sqlite</strong>, que de moment estava així:</p>
+<p class="codi2">LOCAL (<span style="text-decoration: underline;">num</span>: Integer, nom: Text, adreca: Text, punts: Integer, imatge: Blob)</p>
+<p class="codi2">COMENTARI (<u>id_com</u>: Integer, num_local: Integer, comentari: Text)</p>
+<p>No teníem definida la clau externa que va de <strong>num_local</strong> en <strong>COMENTARI</strong> a <strong>num</strong> en <strong>LOCAL</strong>, com mostra aquesta imatge de l'estructura en SQLIte Studio en què no hi ha res en l'apartat de <strong>Foreign Key</strong> del camp <strong>num_local</strong>:</p>
+<p>:</p>
+<p style="text-align: center;"><img src="Annex_Android_3_3_1.png" alt="" width="764" height="348" /></p>
+<p> on es pot comprovar que no tenim res en l'apartat <strong>Foreign Key</strong> del camp <strong>num_local</strong>.</p>
+<p>Anem a aprofitar i fer algunes modificacions més, a banda de la clau externa. Anem a declarar alguns camps com a no nuls, per a veure l'efecte sobre les classes associades.</p>
+<p>Us aconselle que si voleu provar els canvis següents, ho feu en una Base de Dades nova, copiada de <strong>CoffeeShops_Com.sqlite</strong>, amb el nom per exemple de <strong>CoffeeShops_Com_CE.sqlite</strong>, per a que l'exemple finalitzat en la pregunta 3.2 continue funcionant.</p>
+<p></p>
+<p class="titolet">LOCAL</p>
+<p><span style="font-size: 14pt;"><strong>NO NUL</strong></span></p>
+<p>Declararem els camps <strong>num</strong> i <strong>nom</strong> com a <strong>no nuls</strong>. En el cas del primer, es pot interpretar com una redundància, perquè la clau principal no pot ser nula. Però declarar-la expressament com a no nul ens permetrà definir la classe associada com un camp no nul</p>
+<p><img src="Annex_Android_3_3_1_5.png" style="display: block; margin-left: auto; margin-right: auto;" width="765" height="319" /></p>
+<p>es pot comprovar com hem declarat aquestos dos camps com a no nuls.</p>
+<p>La declaració de la classe associada que és <strong>Coffee </strong>quedarà d'aquesta manera:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>androidx.room.<span style="color: #808000;">ColumnInfo<br /></span><span style="color: #000080; font-weight: bold;">import </span>androidx.room.<span style="color: #808000;">Entity<br /></span><span style="color: #000080; font-weight: bold;">import </span>androidx.room.<span style="color: #808000;">PrimaryKey<br /></span><span style="color: #808000;"><br /></span><span style="color: #808000;">@Entity</span>(tableName=<span style="color: #008000; font-weight: bold;">"Local"</span>)<br /><span style="color: #000080; font-weight: bold;">data class </span>Coffee (<br />    <span style="color: #808000;">@PrimaryKey </span><span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">num</span>: Int,<br />    <span style="color: #808000;">@ColumnInfo</span>(name = <span style="color: #008000; font-weight: bold;">"nom"</span>) <span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">title</span>: String,<br />    <span style="color: #808000;">@ColumnInfo</span>(name = <span style="color: #008000; font-weight: bold;">"adreca"</span>) <span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">subtitle</span>: String?,<br />    <span style="color: #808000;">@ColumnInfo</span>(name = <span style="color: #008000; font-weight: bold;">"punts"</span>) <span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">points</span>: Int?,<br />    <span style="color: #808000;">@ColumnInfo</span>(name = <span style="color: #008000; font-weight: bold;">"imatge"</span>) <span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">image</span>: ByteArray?<br />)</pre>
+<p>Observeu com no tenim la interrogant als final de les propietats <strong>num </strong>i <strong>title</strong></p>
+<p></p>
+<p class="titolet">COMENTARI</p>
+<p><span style="font-size: 14pt;"><strong>NO NUL</strong></span></p>
+<p>Definirem tots els camps com a no nuls, ja que la clau principa no pot ser nula, el número de local tampoc hauria de ser nul (sinó tindríem un comentari que no es refereix a cap local) i el comentari millor que no siga nul (sinó no tenim comentari)</p>
+<p style="text-align: center;"><img src="Annex_Android_3_3_2.png" width="768" height="258" /></p>
+<p><span style="font-size: 14pt;"><strong>CLAU EXTERNA</strong></span></p>
+<p>Per a definir la clau externa, haurem d'especificar la taula i comp on apunta, i el comportament: en aquest cas hem triat ON DELETE CASCADE i ON UPDATE CASCADE, que vol dir que si s'actualitza o s'esborrar la fila de la taula principal (el Local) que s'actualitzen o s'esborren els comentaris associats. En les següents pantalles es veu com s'especifica:</p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="Annex_Android_3_3_3.png" style="display: block; margin-left: auto; margin-right: auto;" width="424" height="436" /></td>
+<td style="width: 50%;"><img src="Annex_Android_3_3_4.png" style="display: block; margin-left: auto; margin-right: auto;" width="400" height="505" /></td>
+</tr>
+</tbody>
+</table>
+<p>I així ja es veu com està definida la clau externa i els camps no nuls:</p>
+<p><img src="Annex_Android_3_3_6.png" style="display: block; margin-left: auto; margin-right: auto;" width="756" height="272" /></p>
+<p>Amb aquestos condicionants hem de modificar les anotacions de la classe <strong>Comment</strong>:</p>
+<ul>
+<li>Per a reflectir que els 3 camps són no nuls, llevarem la interrogant després del tipus de la propietat</li>
+<li>La clau externa la definim entre parèntesis després de <strong>@Entity</strong>. Serà dins un array on s'especifiquen les possibles claus externes (nosaltres només en tenim una) i hem de dir l'entitat principal, camp de la taula principal on apuntarà la clau externa (num), camp que és clau externa (num_local) i comportament</li>
+</ul>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">ColumnInfo<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Entity<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">ForeignKey<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">PrimaryKey<br /></span><span style="color: #9e880d;"><br /></span><span style="color: #9e880d;">@Entity</span>(<span style="color: #4a86e8;">tableName=</span><span style="color: #067d17;">"Comentaris"</span>,<br />        <span style="color: #4a86e8;">foreignKeys = </span><span style="color: #00627a; font-style: italic;">arrayOf</span>(<br />          ForeignKey(<span style="color: #4a86e8;">entity = </span><span style="color: #000000;">Coffee</span>::<span style="color: #0033b3;">class</span>,<br />            <span style="color: #4a86e8;">parentColumns = </span><span style="color: #00627a; font-style: italic;">arrayOf</span>(<span style="color: #067d17;">"num"</span>),<br />            <span style="color: #4a86e8;">childColumns = </span><span style="color: #00627a; font-style: italic;">arrayOf</span>(<span style="color: #067d17;">"num_local"</span>),<br />            <span style="color: #4a86e8;">onDelete = </span><span style="color: #9e880d;">ForeignKey</span>.<span style="color: #871094; font-style: italic;">CASCADE</span>,<br />            <span style="color: #4a86e8;">onUpdate = </span><span style="color: #9e880d;">ForeignKey</span>.<span style="color: #871094; font-style: italic;">CASCADE</span>)))<br /><span style="color: #0033b3;">data class </span><span style="color: #000000;">Comment </span>(<br />    <span style="color: #9e880d;">@PrimaryKey @ColumnInfo</span>(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"id_com"</span>) <span style="color: #0033b3;">val </span><span style="color: #871094;">idCom</span>: <span style="color: #000000;">Int</span>,<br />    <span style="color: #9e880d;">@ColumnInfo</span>(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"num_local"</span>) <span style="color: #0033b3;">val </span><span style="color: #871094;">numCoffee</span>: <span style="color: #000000;">Int</span>,<br />    <span style="color: #9e880d;">@ColumnInfo</span>(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"comentari"</span>)<span style="color: #0033b3;">val </span><span style="color: #871094;">comm</span>: <span style="color: #000000;">String<br /></span>)</pre>
+<p>Si voleu fer la comprovació que funciona no us oblideu de:</p>
+<ul>
+<li>Copiar la Base de Dades <strong>CoffeeShops_Com_CE.sqlite</strong> a l'apartat de <strong>Assets</strong></li>
+<li>Modificar les línies 26 i 27 de <strong>FirstFragment.kt</strong>, que és on es defineix la Base de Dades pel nom actual: <strong>CoffeeShops_Com_CE.sqlite</strong></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32__exemple_complet.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

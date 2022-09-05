@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1.2 - Mètodes del OutputStream | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li class="current-page-parent"><a href="2__manipulaci_dels_fluxos_de_dades.html" class="current-page-parent daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul>
+      <li class="current-page-parent"><a href="21__fluxos_orientats_a_bytes.html" class="current-page-parent daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul>
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li id="active"><a href="212__mtodes_del_outputstream.html" class="active no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="4__simplificaci_en_kotlin.html" class="no-ch">4 - Simplificació en Kotlin</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="211__mtodes_del_inputstream.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22__fluxos_orientats_a_carcters.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.1.2 - Mètodes del OutputStream</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_1" class="block iDevice_content">
+<p style="text-align: justify;">Comencem també pel més senzill i primordial, el mètode que escriu un byte (recordeu que estem en fluxos orientats a bytes).</p>
+<ul>
+<li style="text-align: justify;">void <strong>write(<em>byte</em>: Int) </strong>: escriu el byte passat com a paràmetre en el flux d'eixida. Encara que el paràmetre és de tipus int, només s'escriurà un byte. Si no es poguera fer l'escriptura per qualsevol motiu (per exemple, disc ple), es llançarà una excepció de tipus <strong>IOException</strong>.</li>
+</ul>
+<p style="text-align: justify;">Igual que en l'apartat anterior, anem a veure un exemple senzill d'utilització, en què guardarem en un fitxer el contingut d'una cadena (encara que ja sabem que no és el més apropiat utilitzar fluxos orientats a bytes per a informació de caràcters).</p>
+<p style="text-align: justify;"> En aquest primer exemple del <strong>OutputStream</strong> treballarem sobre un fitxer inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb el contingut. Hem de fer constar que si no es tanca el fitxer (millor dit el flux d'eixida) podria ser que no es guardara res en el fitxer. Per tant <strong>tancar és una operació ben important que no hem d'oblidar</strong>.</p>
+<p style="text-align: justify;">Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_11.kt </strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+	val text = "Contingut per al fitxer."
+	val f_out = FileOutputStream("f3.txt")
+	for (c in text) 
+		f_out.write(c.toInt())
+	f_out.close()
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Observeu com hem convertit cada caràcter a <strong>Int</strong> per a que puga funcionar, ja que el mètode <strong>write()</strong> accepta un enter.</p>
+<p style="text-align: justify;">En el constructor del OutputStream no hem indicat el segon paràmetre, aquell que indicava si era per a afegir o no, i per tant si no existia el fitxer el crearà, però si ja existia el fitxer, destruirà el seu contingut i el substituirà pel nou contingut. Per això si tornem a executar el programa, tindrem el mateix resultat.</p>
+<p class="codi2">Contingut per al fitxer.</p>
+<p style="text-align: justify;">La codificació del fitxer haurà segut la que tinga per defecte el Sistema Operatiu, que en el cas d'Ubuntu és UTF-8, i en el cas de Windows és <acronym title="International Organization for Standardization">ISO</acronym>-8859.</p>
+<p style="text-align: justify;">Anem a provar a substituir el constructor, posant ara<span class="codi"></span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>val f_out = FileOutputStream("f3.txt",true)</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Si l'executem una altra vegada, veurem que afegirà al final, sense destruir el que ja hi havia.</p>
+<p class="codi2">Contingut per al fitxer.Contingut per al fitxer.</p>
+<p> </p>
+<p>Altres mètodes del OutputStream són:</p>
+<ul>
+<li style="text-align: justify;">void <strong>write(<em>buffer</em>: ByteArray)</strong> : escriu el contingut de l'array de bytes al fitxer. Cal que buffer no siga nul, o provocarem un error.</li>
+<li style="text-align: justify;">void <strong>write(<em>buffer</em>: ByteArray, <em>pos</em>: Int, <em>llarg</em>: Int)</strong> : escriu al fitxer el contingut de l'array que està a partir de la posició <strong>pos</strong> i tants bytes com assenyale <strong>llarg</strong>.</li>
+<li style="text-align: justify;">void <strong>flush()</strong> : Guardar les dades en un fitxer és una operació relativament lenta, ja que és accedir a un dispositiu lent (millor dit, no tan ràpid com la memòria). És habitual que s'utilitze una memòria intermèdia per a que les coses no vagen tan lentes (com si fóra una caché). Però potser que les dades no estiguen guardades encara en el fitxer, sinó que encara estiguen en aquesta caché. El mètode <strong>flush</strong> obliga a escriure els bytes que queden encara a la caché físicament al fitxer d'eixida.</li>
+<li style="text-align: justify;">void <strong>close()</strong> : tanca el flux d'eixida, alliberant els recursos. Si quedava alguna cosa en la caché, es guardarà al fitxer i es tancarà el flux.</li>
+</ul>
+<p style="text-align: justify;">En aquest exemple es copia el contingut del fitxer <strong>f2.txt</strong> en el fitxer <strong>f4.txt</strong>, però en compte d'anar byte a byte, anirem de 30 en 30, amb un buffer de 30 posicions. Podríem cometre l'error de la línia 13 del següent programa, la del comentari, d'escriure sempre els 30 caràcters. Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_12.kt </strong>:</p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+	val f_in = FileInputStream("f2.txt")
+	val f_out = FileOutputStream("f4.txt")
+
+	var buffer = ByteArray(30)
+	var num = f_in.read(buffer)
+	while (num != -1) {
+		f_out.write(buffer)    // açò és un error
+		num = f_in.read(buffer)
+	}
+	f_in.close();
+	f_out.close();
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">D'aquesta manera, l'última vegada que és llig és molt possible que no hi hagen exactament 30 caràcters. Si hi ha menys de 30 caràcters, només es llegiran els que queden al principi del buffer, i en la resta del buffer hi ha la informació anterior, la de la penúltima lectura. En definitiva, tenim "basura", i si no ho controlem el resultat no serà el correcte. Aquest ser`el contingut de <strong>f4.txt</strong>:</p>
+<p class="codi2">Hola. Aquest és un text més llarg, per veure com gestiona els bytes amb un buffer de 30 caràcters.<br />Com que ho llegim des d'un InputStream, els caràcters especials potser no isquen bé.<br />pecials potser no isq</p>
+<p style="text-align: justify;">Ha eixit d'aquesta manera perquè l'última vegada només s'han llegit 9 bytes. Els 21 restants tenen la informació encara de la penúltima lectura.</p>
+<p style="text-align: justify;">Per a fer-lo de forma correcta, ens aprofitem de que <strong>read(buffer)</strong> torna el número de bytes realment llegits, per escriure exactament aquest número. Per tant substituirem la línia 13, la del comentari, per aquesta altra:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>f_out.write(buffer,0,num)     // ara sí que funcionarà bé</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Ara el contingut de<strong> f4.txt</strong> serà idèntic al de<strong> f2.txt</strong></p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota important</strong></span></p>
+<p style="text-align: justify;">Per a assegurar-nos que realment escrivim en el fitxer i no es queda res en la memòria intermèdia, <strong>hem de tancar sempre els fluxos d'eixida</strong>. Si ens oblidem de tancar-los, és molt fàcil que no s'acabe d'escriure físicament en el fitxer.</p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="211__mtodes_del_inputstream.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22__fluxos_orientats_a_carcters.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5 - Connexió a Hibernate | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li id="active"><a href="5__connexi_a_hibernate.html" class="active daddy">5 - Connexió a Hibernate</a>
+   <ul>
+      <li><a href="51__hql_consultes_senzilles.html" class="no-ch">5.1 - HQL: consultes senzilles</a></li>
+      <li><a href="52__comenant_a_programar.html" class="no-ch">5.2 - Començant a programar</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="daddy">7 - Estructura dels fitxers de mapatge</a>
+   <ul class="other-section">
+      <li><a href="71__anotacions_en_compte_de_fitxers_xml_de_mpatge.html" class="no-ch">7.1 - Anotacions en compte de fitxers xml de mpatge</a></li>
+   </ul>
+   </li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4__arquitectura_hibernate.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51__hql_consultes_senzilles.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5 - Connexió a Hibernate</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_1" class="block iDevice_content">
+<p style="text-align: justify;">Des d'<strong>IntelliJ Idea</strong> no cal cap tipus d'instal·lació. Això sí, haurem d'utilitzar la versió <strong>ULTIMATE</strong> per a poder fer projectes que connecten a Hibernate.</p>
+<p style="text-align: justify;">Concretament seran projectes de tipus <strong>Java Enterprise</strong>, que com dèiem només estan disponibles en la versió <strong>Ultimate</strong>.</p>
+<p style="text-align: justify;">Durant aquest tema, cada connexió a una Base de Dades la farem en un projecte diferent, al contrari que en temes anteriors, on ho vam col·locar tot en el mateix projecte.</p>
+<p style="text-align: justify;">Aquestos projectes seran a més de tipus <strong>Maven</strong>, que es caracteritzen per no haver d'incorporar les dependències (Drivers) a mà, sinó que es reflecteixen automàticament en un fixter <strong>pom.xml</strong>, i ell s'encarrega de baixar tots els drivers necessaris.</p>
+<p style="text-align: justify;">Els passos a seguir en cada projecte seran sempre els mateixos:</p>
+<ul style="text-align: justify;">
+<li>Crear un projecte de tipus <strong>Java Enterprise</strong>, amb la implementació de <strong>JPA</strong> per <strong>Hibernate</strong></li>
+<li>Crear la connexió a la Base de Dades</li>
+<li>Afegir la configuració de persistència d'Hibernate, per a generar el fitxer <strong>hiernate.cfg.xml</strong></li>
+<li>Mapejar les taules a classes</li>
+<li>Incorporar el Driver del SGBD a utilitzar (PostgreSQL en l'exemple)</li>
+<li>Acabar de configurar el fitxer <strong>hibernate.cfg.xml</strong></li>
+</ul>
+<p style="text-align: justify;">El següent vídeo explica tot el procés de creació del projecte.</p>
+<p style="text-align: center;"><iframe width="1000" height="643" src="https://slides.com/alvarinstitut/ad-t5-connexiohibernate/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: justify;">Les línies que hem afegit al fitxer <strong>hibernate.cfg.xml</strong> són:</p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>    &lt;property name="connection.username"&gt;geo_ad&lt;/property&gt;
+    &lt;property name="connection.password"&gt;geo_ad&lt;/property&gt;
+    &lt;property name="hibernate.dialect"&gt;org.hibernate.dialect.PostgreSQL93Dialect&lt;/property&gt;
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I observeu que en aquest exemple hem optat per incorporar el Driver directament, ja que el teníem des del tema passat. Podríem haver optat també per incorporar-lo a l'estil Maven, que seria senzillament incorporar en el fitxer <strong>pom.xml </strong>en l'apartat de <strong>&lt;dependencies&gt;</strong> la següent. Atenció: si ja heu incorporat el Driver de PostgreSQL al projecte, no cal que fey el que va a continuació</p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+            &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+            &lt;version&gt;42.2.24&lt;/version&gt;
+        &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I aquestes són les dades de connexió a la Base de  Dades <strong>geo_ad </strong> de <strong>PostgreSQL</strong>:</p>
+<p style="text-align: center;"><img src="T5_5_1.png" alt="" width="707" height="659" /></p>
+<p style="text-align: justify;">Si la connexió fóra a <strong>MySQL </strong>la BD <strong>factura</strong>, recordem que les dades de connexió serien:</p>
+<p style="text-align: center;"><img src="T5_5_2.1.png" alt="" width="733" height="696" /></p>
+<p style="text-align: justify;">I fins i tot podem mapejar les taules d'una Base de Dades <strong>SQLite</strong>, amb una connexió com aquesta:</p>
+<p style="text-align: center;"><img src="T5_5_3.1.png" alt="" width="820" height="659" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4__arquitectura_hibernate.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51__hql_consultes_senzilles.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

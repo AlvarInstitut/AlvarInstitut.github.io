@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.3.1 CS-Android: Connexió | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-77"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li><a href="3__realtime_database_rd.html" class="daddy">3 - Realtime Database (RD)</a>
+   <ul class="other-section">
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="32_rd_utilitzaci_des_de_intellij.html" class="daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="322_rdintellij_accs_a_les_dades.html" class="no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__cloud_firestore_cf.html" class="daddy">4 - Cloud Firestore (CF)</a>
+   <ul class="other-section">
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li><a href="43_cf_utilitzaci_des_dandroid.html" class="daddy">4.3 CF: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__cloud_storage.html" class="current-page-parent daddy">5 - Cloud Storage</a>
+   <ul>
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="53_cs_utilitzaci_des_dandroid.html" class="current-page-parent daddy">5.3 CS: Utilització des d'Android</a>
+      <ul>
+         <li id="active"><a href="531_csandroid_connexi.html" class="active no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="53_cs_utilitzaci_des_dandroid.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="532_csandroid_accs_als_fitxers.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.3.1 CS-Android: Connexió</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id237">
+<div class="iDevice emphasis0" >
+<div id="ta237_238_2" class="block iDevice_content">
+<div class="exe-text"><p>L'accés és extraordinàriament fàcil gràcies als assistents que ens proporciona el propi Android Studio.</p>
+<p style="text-align: justify;">Al final de tot teniu un vídeo que repassa tots els passos per a poder connectar des de la nostra aplicació d'Android. A continuació els repassem i expliquem un a un. Són els que ens marca l'assistent, que haurem d'invocar sobre el nostre projecte ja creat, i que es crida des de  <strong>Tools --&gt; Firebase --&gt; Cloud Storage for Firebase<br /></strong></p>
+<p style="text-align: center;"><img src="T7_5_3_1_1.png" alt="" width="1151" height="676" /></p>
+<p></p>
+<p class="titolet">Connectar l'aplicació a Firebase Cloud Firestore</p>
+<p style="text-align: center;"><img src="T7_5_3_1_2.png" alt="" width="1151" height="676" /></p>
+<div class="nota_blau">
+<p><b><u>NOTA IMPORTANT</u></b></p>
+<p>Podria donar-se el cas, depenent de la versió d'Android Studio (i altres coses, com que el projecte tinga errors i/o avisos) que done un error en apretar el botó de Connect to Firebase. I és que sembla que és molt delicat aquest assistent, i si hi ha qualsevol warning o error no deixa continuar:</p>
+<p><img src="T7_3_3_1_1_5.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="828" height="161" /></p>
+<p>Per a solucionar-lo, a banda de revisar si tenim algun error o avís, senzillament afegim al final del fitxer <strong>gradle.properties:</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>android.suppressUnsupportedCompileSdk=32</code></pre>
+</div>
+</div>
+</div>
+<p>En apretar el botó de<strong> Connect to Firebase</strong>, si no estàvem connectats amb el compte de Google al Firebase se'ns obrirà finestra d'un navegador per a connectar. Podria donar-se el cas que ens diguera que Android Studio vol accedir a les dades de la Base de Dades. Òbviament ho haurem de permetre:</p>
+<p style="text-align: center;"><img src="T7_2_2_3_1_2.png" alt="" width="402" height="725" /></p>
+<p>Una vegada autenticats en Firebase, des de l'entorn d'Android Studio ens ofereix la possibilitat de crear una aplicació nova (una Base de Dades nova) o utilitzar alguna de les que ja tenim. Utilitzarem la que ens ha servit de prova fins el moment:</p>
+<p style="text-align: center;"><img src="T7_5_3_1_3.png" alt="" width="1355" height="509" /></p>
+<p>Quan haja connectat substituirà el botó <strong>Connect to Firebase</strong>, per una etiqueta que dirà <strong>connected</strong>, en verd.</p>
+<p class="titolet">Afegir els drivers a la nostra aplicació</p>
+<p>En aquest segon pas, quan apretem el botó <strong>Add the Cloud Storage SDK to your app</strong>, ens dirà els canvis que farà per a incorporar les coses necessàries per a poder connectar.</p>
+<p style="text-align: center;"><img src="T7_5_3_1_3.1.png" alt="" width="720" height="438" /></p>
+<p>Com veieu es tracta d'incorporar les llibreries necessàries de Firebase.</p>
+<p>Igual que abans, substituirà el botó <strong>Add the Cloud Storage SDK to your app</strong>, per una etiqueta que dirà <strong>Dependencies set up correctly</strong>, en verd. És una bona guia per saber en quin punt estem.</p>
+<p class="titolet">Permetre l'accés als usuaris, si es precís canviant les regles d'accés a la Base de Dades</p>
+<p>Encara que ja havíem arreglat les regles per a permetre l'accés durant un temps determinat, és convenient pegar-li una miradeta. Recordeu que és des de la<strong> consola de Firebase</strong>, entrant al <strong>Storage</strong>, i anant a la pestanya <strong>Rules</strong></p>
+<p style="text-align: center;"><img src="T7_2_3_3_1_4.png" alt="" width="1071" height="539" /></p>
+<p style="text-align: justify;">Observeu que en aquest exemple he posat que es pot connectar qualsevol fins al 30-12-2020. Inicialment dóna un mes, però si no voleu tenir problemes, ho podeu allargar canviant la data.</p>
+<p class="titolet">Inicialitzar Storage</p>
+<p>És només una sentència per a inicialitzar la referència a Cloud Storage, i és de tipus <strong>StorageReference</strong>.</p>
+<p>Encara que tinguem un projecte en Kotlin, la sentència d'exemple estarà en Java, però que en copiar-la la traduirà a Kotlin,i en definitiva quedarà així:</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">val </span><span style="color: #000000;">mStorageRef </span>= <span style="color: #000000;">FirebaseStorage</span>.getInstance().reference</pre>
+<p style="text-align: center;"></p>
+<p class="titolet">Copiar les sentències per a baixar la imatge</p>
+<p>També ens dóna dos exemples, de pujar i de baixar una imatge. Nosaltres anem a aplicar en el nostre exemple la baixada d'imatges.</p>
+<p>Ho veurem tot en el proper punt</p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="53_cs_utilitzaci_des_dandroid.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="532_csandroid_accs_als_fitxers.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

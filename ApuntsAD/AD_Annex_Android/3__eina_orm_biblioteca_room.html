@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3 - Eina ORM: Biblioteca ROOM | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__permanncia_en_fitxers.html" class="daddy">1 - Permanència en fitxers</a>
+   <ul class="other-section">
+      <li><a href="11__exemple.html" class="no-ch">1.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="2__permanncia_en_bd_relacionals.html" class="daddy">2 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__connexi_remota.html" class="no-ch">2.1 - Connexió remota</a></li>
+      <li><a href="22__connexi_local.html" class="daddy">2.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="221__exemple.html" class="no-ch">2.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="3__eina_orm_biblioteca_room.html" class="active daddy">3 - Eina ORM: Biblioteca ROOM</a>
+   <ul>
+      <li><a href="31__implementar_relacions_1n.html" class="no-ch">3.1 - Implementar relacions 1:N</a></li>
+      <li><a href="32__exemple_complet.html" class="no-ch">3.2 - Exemple complet</a></li>
+      <li><a href="33__implementaci_amb_les_claus_externes.html" class="no-ch">3.3 - Implementació amb les claus externes</a></li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+   <li><a href="5__permanncia_en_altres_bd_nosql.html" class="daddy">5 - Permanència en altres BD NoSQL</a>
+   <ul class="other-section">
+      <li><a href="51__redis.html" class="no-ch">5.1 - Redis</a></li>
+      <li><a href="52__mongodb.html" class="no-ch">5.2 - MongoDB</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="221__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__implementar_relacions_1n.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3 - Eina ORM: Biblioteca ROOM</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id18">
+<div class="iDevice emphasis0" >
+<div id="ta18_108_2" class="block iDevice_content">
+<div class="exe-text"><p>En el Tema 5 hem vist una eina ORM molt potent, Hibernate. Però no podem utilitzar-la en Android.</p>
+<p>Hi ha unes quantes ORM que es poden utilitzar en Android, com per exemple GreenDAO o SugarORM. Tanmateix, anem a utilitzar una altra, la<strong> llibreria ROOM</strong>, que potser no és tan potent com les anteriors, però és la que s'està utilitzant més actualment per a mapejar Bases de Dades de <strong>SQLite</strong>.</p>
+<p>Ho practicarem tot sobre un projecte nou anomenat <strong>Empleat_ROOM </strong>cosa que suposarà segurament que  s'utilitze el paquet <strong>com.example.empleat_room</strong>. Per a fer-lo el més senzill possible, en ell únicament col·loquem un <strong>EditText</strong> per a mostrar en ell les dades dels empleats. Aquest seria el<strong> activity_main.xml</strong>:</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #174ad4;">xml version</span><span style="color: #067d17;">="1.0" </span><span style="color: #174ad4;">encoding</span><span style="color: #067d17;">="utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #0033b3;">RelativeLayout </span><span style="color: #174ad4;">xmlns:</span><span style="color: #871094;">android</span><span style="color: #067d17;">="http://schemas.android.com/apk/res/android"<br /></span><span style="color: #067d17;">    </span><span style="color: #174ad4;">xmlns:</span><span style="color: #871094;">tools</span><span style="color: #067d17;">="http://schemas.android.com/tools"<br /></span><span style="color: #067d17;">    </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="match_parent"<br /></span><span style="color: #067d17;">    </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="match_parent"<br /></span><span style="color: #067d17;">    </span><span style="color: #871094;">tools</span><span style="color: #174ad4;">:context</span><span style="color: #067d17;">=".MainActivity" </span>&gt;<br /><br />    &lt;<span style="color: #0033b3;">EditText<br /></span><span style="color: #0033b3;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:text</span><span style="color: #067d17;">=""<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:id</span><span style="color: #067d17;">="@+id/text"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_width</span><span style="color: #067d17;">="match_parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:layout_height</span><span style="color: #067d17;">="match_parent"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:inputType</span><span style="color: #067d17;">="textMultiLine"<br /></span><span style="color: #067d17;">        </span><span style="color: #871094;">android</span><span style="color: #174ad4;">:gravity</span><span style="color: #067d17;">="top" </span>/&gt;<br />&lt;/<span style="color: #0033b3;">RelativeLayout</span>&gt;</pre>
+<p class="titolet">Dependències</p>
+<p>Per a utilitzar ROOM hem d'incorporar en el <strong>build.gradle</strong> de l'aplicació la següent dependència:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>plugins {
+    ...
+    id 'kotlin-android-extensions'   // Per a accedir als components del layout
+    id 'kotlin-kapt'
+}
+...
+
+dependencies {
+...
+  def room_version = "2.2.5"
+
+  implementation "androidx.room:room-runtime:$room_version"
+  kapt "androidx.room:room-compiler:$room_version"
+}
+</code></pre>
+</div>
+</div>
+<p>On hem posat punts suspensius per indicar que hem d'afegir aquestes línies, la primera al principi, i les altres dins del bloc de dependencies.</p>
+<p class="titolet">Components de ROOM</p>
+<p>Els 3 component principals de ROOM són:</p>
+<ul>
+<li><strong>Entity:</strong> representa una taula de la Base de Dades, i serà una classe a la qual es convertirà la taula. Utilitzarem l'anotació <strong>@Entity</strong>, i per a fer correspondre cada propietat amb un camp de la taula, utilitzarem les anotacions<strong> @PrimaryKey</strong> i <strong>@ColumnInfo</strong>. També podrem representar les claus externes amb <strong>@ForeignKey</strong>, però no les utilitzarem en aquestos apunts per a no saturar</li>
+<li><strong>DAO:</strong> serà una interfície que contindrà els mètodes utilizats per a accedir a la Base de Dades.</li>
+<li><strong>RoomDatabase:</strong> representarà la connexió a la Base de Dades</li>
+</ul>
+<p>Anem a comentar cadascun d'aquestos components, i per a això ens basarem en l'exemple dels Empleats. Utilitzarem la Base de Dades <strong>Empleats.sqlite</strong>, que teniu en l'aula virtual, on de moment només tenim una taula EMPLEAT amb aquesta estructura:</p>
+<p class="codi2">EMPLEAT(<u>num</u>: Integer, nom: Text, depart Integer, edat: Integer, sou: Real)</p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id19">
+<div class="iDevice emphasis0" >
+<div id="ta19_109_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Entity</p>
+<p>Per a cada taula que vulguem mapejar, haurem de crear una classe amb l'anotació <strong>@Entity</strong>. Com que aquesta classe és per a contenir dades, millor declarar-la com classe de dades <strong>(data</strong> <strong>class</strong>). Si la taula tinguera en la Base de Dades un nom diferent al de la classe, ho hauríem d'especificar entre parèntesis amb <strong>tableName</strong></p>
+<ul>
+<li>El camp que siga clau principal el marcarem amb l'anotació <strong>@PrimaryKey</strong></li>
+<li>Aquelles propietats que tinguen un nom diferent al nom del camp corresponent, els marcarem amb l'anotació <strong>@ColumnInfo</strong> seguida del nom del camp de la taula entre parèntesis</li>
+<li>També es poden definir claus externes amb <strong>ForeignKey</strong>, encara que és un poc més complicat</li>
+</ul>
+<p>En el nostre exemple, la classe <strong>Empleat.kt</strong> ens quedaria així:</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">ColumnInfo<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Entity<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">PrimaryKey<br /></span><span style="color: #9e880d;"><br /></span><span style="color: #9e880d;">@Entity<br /></span><span style="color: #0033b3;">data class </span><span style="color: #000000;">Empleat </span>(<br />    <span style="color: #9e880d;">@PrimaryKey </span><span style="color: #0033b3;">val </span><span style="color: #871094;">num</span>: <span style="color: #000000;">Int?</span>,<br />    <span style="color: #0033b3;">val </span><span style="color: #871094;">nom</span>: <span style="color: #000000;">String</span>?,<br />    <span style="color: #9e880d;">@ColumnInfo</span>(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"depart"</span>) <span style="color: #0033b3;">val </span><span style="color: #871094;">departament</span>: <span style="color: #000000;">Int</span>?,<br />    <span style="color: #0033b3;">val </span><span style="color: #871094;">edat</span>: <span style="color: #000000;">Int</span>?,<br />    <span style="color: #0033b3;">val </span><span style="color: #871094;">sou</span>: <span style="color: #000000;">Float</span>?<br />)</pre>
+<p>Observeu com:</p>
+<ul>
+<li>Al costat de <strong>@Entity</strong> no ha calgut posar el nom de la taula, perquè la classe i la taula es diran igual</li>
+<li>De les 5 propietats definides, només ha calgut posar l'anotació <strong>@ColumnInfo</strong> en la tercera per al departament, perquè és l'única en què la propietat no es diu igual que el camp de la taula</li>
+<li>Hem posat ? darrere de totes les propietats fins i tot en la que en la taula és clau principal, ja que no estan definides com a NOT NULL en la taula (tampoc la clau principal, encara que evidentment no pot ser nula)</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id20">
+<div class="iDevice emphasis0" >
+<div id="ta20_108_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">DAO</p>
+<p>Com ja hem comentat més amunt, el DAO serà una interfície que contindrà tots els mètodes per a accedir a la Base de Dades.</p>
+<ul>
+<li>Començarà amb l'anotació <strong>@DAO</strong>, i serà una interfície (<strong>interface</strong>)</li>
+<li>Els mètodes d'actualització, que són inserció, esborrat i actualització, començaran per l'anotacio <strong>@insert</strong>, <strong>@delete</strong> i <strong>@update </strong> respectivament, i són molt senzills perquè només hem de definir la funció, com veurem després en l'exemple. Hem de fer constar que posarem aquestos mètodes únicament pera il·lustrar-los, ja que en el nostre exemple no els utilitzarem.</li>
+<li>Els mètodes de consulta comencen amb l'anotació <strong>@Query</strong> seguida per la sentència SQL. En la definició de la funció haurem de dir el tipus tornat, normalment un <strong>List</strong> de la classe corresponent a la taula on fem la consulta. La consulta pot ser complicada, i fins i tot utilitzar paràmetres. En aquest exemple inicial, només farem la consulta completa de tota la taula <strong>EMPLEAT</strong></li>
+</ul>
+<p>El DAO del nostre exemple, que anomenarem <strong>EmpleatsDAO</strong> podria quedar de la següent manera:</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.*<br /><br /><span style="color: #9e880d;">@Dao<br /></span><span style="color: #0033b3;">interface </span><span style="color: #000000;">EmpleatsDAO </span>{<br />    <span style="color: #9e880d;">@Insert<br /></span><span style="color: #9e880d;">    </span><span style="color: #0033b3;">fun </span><span style="color: #00627a;">insert</span>(e: <span style="color: #000000;">Empleat</span>)<br /><br />    <span style="color: #9e880d;">@Delete<br /></span><span style="color: #9e880d;">    </span><span style="color: #0033b3;">fun </span><span style="color: #00627a;">delete</span>(e: <span style="color: #000000;">Empleat</span>)<br /><br />    <span style="color: #9e880d;">@Update<br /></span><span style="color: #9e880d;">    </span><span style="color: #0033b3;">fun </span><span style="color: #00627a;">update</span>(e: <span style="color: #000000;">Empleat</span>)<br /><br />    <span style="color: #9e880d;">@Query</span>(<span style="color: #067d17;">"SELECT * FROM EMPLEAT"</span>)<br />    <span style="color: #0033b3;">fun </span><span style="color: #00627a;">getEmpleats</span>() : <span style="color: #000000;">List</span>&lt;<span style="color: #000000;">Empleat</span>&gt;<br />}</pre>
+<p>On recordem que els mètodes d'inserció, esborrat i modificació estan únicament amb motiu il·lustratiu. Com que no els utilitzarem, perfectament els podríem suprimir. L'únic mètode que utilitzarem serà <strong>getEmpleats()</strong></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id21">
+<div class="iDevice emphasis0" >
+<div id="ta21_109_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">RoomDatabase</p>
+<p>Representarà la connexió a la Base de Dades i serà una classe abstracta que heretarà de <strong>RoomDatabase</strong>. En ella:</p>
+<ul>
+<li>Utilitzarem l'anotació <strong>@Database</strong></li>
+<li>Com a paràmetre de l'anterior anotació especificarem totes les entitats que volem mapejar (en el nostre exemple només és la classe Empleat). Com pot ser més d'una, s'ha de definir dins d'un Array.</li>
+<li>En ella definirem una funció que tornarà el DAO. També serà una funció abstracta</li>
+</ul>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Database<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #000000;">RoomDatabase<br /></span><span style="color: #000000;"><br /></span><span style="color: #9e880d;">@Database</span>(<span style="color: #4a86e8;">entities = </span><span style="color: #00627a; font-style: italic;">arrayOf</span>(<span style="color: #000000;">Empleat</span>::<span style="color: #0033b3;">class</span>), <span style="color: #4a86e8;">version = </span><span style="color: #1750eb;">1</span>)<br /><span style="color: #0033b3;">abstract class </span><span style="color: #000000;">EmpleatsDatabase</span>:RoomDatabase() {<br />    <span style="color: #0033b3;">abstract fun </span><span style="color: #00627a;">empleatsDao</span>(): <span style="color: #000000;">EmpleatsDAO<br /></span>}</pre>
+<p></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id22">
+<div class="iDevice emphasis0" >
+<div id="ta22_110_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Utilització des del programa principal</p>
+<p>La manera de construir la connexió a la RoomDatabase és d'aquesta manera:</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">val </span><span style="color: #000000;">db </span>= <span style="color: #000000;">Room</span>.databaseBuilder(<br />    <span style="color: #871094; font-style: italic;">applicationContext</span>,<br />    <span style="color: #000000;">EmpleatsDatabase</span>::<span style="color: #0033b3;">class</span>.<span style="color: #871094; font-style: italic;">java</span>, <span style="color: #067d17;">"Empleats.sqlite"<br /></span>).build()</pre>
+<p>Posteriorment veurem més possibilitats d'aquesta construcció. Per fer-lo de forma correcta, hauríem de tenir en compte que aquesta connexió és "costosa", i per tant hauríem d'utilitzar la tècnica del Singleton per assegurar-nos que només en creem una instància, encara que la puguem utilitzar més d'una vegada. Per senzillesa no ho farem en aquest exemple.</p>
+<p>El que sí que tindrem en compte ara és que no es poden executar els accessos a la Base de Dades des del thread principal. La millor manera de solucionar açò és per mig de les corutines. Per senzillesa també, en aquest exemple ho farem de manera similar al punt 2, és a dir muntant un thread on es fan els accessos. En ell senzillament iniciem la RoomDatabase, inserim una nova empleada, i llistem tots els empleats, col·locant-los en un String. Des del programa principal, llancem el thread fill, i esperem a que finalitze (<strong>join</strong>). En aquest moment posem en el EditText la informació.</p>
+<p>A continuació teniu tot el <strong>MainActivity.kt</strong><span style="color: #0033b3;"></span></p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.appcompat.app.<span style="color: #000000;">AppCompatActivity<br /></span><span style="color: #0033b3;">import </span>android.os.<span style="color: #000000;">Bundle<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #000000;">Room<br /></span><span style="color: #0033b3;">import </span>kotlinx.android.synthetic.main.activity_main.*<br /><br /><span style="color: #0033b3;">class </span><span style="color: #000000;">MainActivity </span>: AppCompatActivity() {<br />    <span style="color: #0033b3;">var </span><span style="color: #871094;">cont</span>: <span style="color: #000000;">String </span>= <span style="color: #067d17;">""<br /></span><span style="color: #067d17;"><br /></span><span style="color: #067d17;">    </span><span style="color: #0033b3;">private var </span><span style="color: #871094;">sqlThread</span>: <span style="color: #000000;">Thread </span>= <span style="color: #0033b3;">object </span>: Thread() {<br />        <span style="color: #0033b3;">override fun </span><span style="color: #00627a;">run</span>() {<br />            <span style="color: #0033b3;">val </span><span style="color: #000000;">db </span>= <span style="color: #000000;">Room</span>.databaseBuilder(<br />                    <span style="color: #871094; font-style: italic;">applicationContext</span>,<br />                    <span style="color: #000000;">EmpleatsDatabase</span>::<span style="color: #0033b3;">class</span>.<span style="color: #871094; font-style: italic;">java</span>, <span style="color: #067d17;">"Empleats.sqlite"<br /></span><span style="color: #067d17;">            </span>)<br />              .createFromAsset(<span style="color: #067d17;">"Empleats.sqlite"</span>)<br />              .build()<br /><br />            <span style="color: #0033b3;">val </span><span style="color: #000000;">e1 </span>= Empleat(<span style="color: #1750eb;">5</span>,<span style="color: #067d17;">"Elena"</span>,<span style="color: #1750eb;">10</span>,<span style="color: #1750eb;">25</span>, <span style="color: #1750eb;">2500.0</span>.toFloat())<br />            <span style="color: #000000;">db</span>.empleatsDao().insert(<span style="color: #000000;">e1</span>)<br /><br />            <span style="color: #0033b3;">var </span><span style="color: #000000;">emps </span>= <span style="color: #000000;">db</span>.empleatsDao().getEmpleats()<br /><br />            <span style="color: #0033b3;">for </span>(<span style="color: #000000;">e </span><span style="color: #0033b3;">in </span><span style="color: #000000;">emps</span>)<br />                <span style="color: #871094;">cont</span>+=<span style="color: #000000;">e</span>.<span style="color: #871094;">nom </span>+ <span style="color: #067d17;">" (" </span>+ <span style="color: #000000;">e</span>.<span style="color: #871094;">sou </span>+ <span style="color: #067d17;">")</span><span style="color: #0037a6;">\n</span><span style="color: #067d17;">"<br /></span><span style="color: #067d17;"><br /></span><span style="color: #067d17;">        </span>}<br />    }<br /><br />    <span style="color: #0033b3;">override fun </span><span style="color: #00627a;">onCreate</span>(savedInstanceState: <span style="color: #000000;">Bundle</span>?) {<br />        <span style="color: #0033b3;">super</span>.onCreate(savedInstanceState)<br />        setContentView(<span style="color: #000000;">R</span>.<span style="color: #000000;">layout</span>.<span style="color: #871094; font-style: italic;">activity_main</span>)<br /><br />        <span style="color: #871094;">sqlThread</span>.start()<br />        <span style="color: #8c8c8c; font-style: italic;">// i ara esperem a que finalitze el thread fill unint-lo (join)<br /></span><span style="color: #8c8c8c; font-style: italic;">        </span><span style="color: #871094;">sqlThread</span>.join()<br /><br />        text.setText(<span style="color: #871094;">cont</span>)<br />    }<br />}</pre>
+<p>on en la construcció del RoomDatabase hem afegit la línia immediatament abans de construir-lo (.build() )</p>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;">.createFromAsset(<span style="color: #067d17;">"Empleats.sqlite"</span>)</pre>
+<p>per a no haver de pujar la Base de Dades <strong>Emplats.sqlite </strong>a mà des del Device File Explorer. Açò el que farà és que si no existeix la Base de Dades perquè és la primera vegada que s'executa, el carregarà des de la zona de <strong>assets</strong>. Per tant abans d'executar-lo:</p>
+<ul>
+<li>Creeu la zona de assets. Ho podeu fer fàcilment des del menú <strong>File -&gt; New -&gt; Folder -&gt; Assets Folder</strong>, i quan us pregunte digueu-li que en el <strong>main</strong></li>
+<li>Aneu a la vista <strong>Project</strong> i arrastreu el fitxer <strong>Empleats.sqlite</strong> a <strong>Empleat_ROOM -&gt; app -&gt; src -&gt; main -&gt; assets</strong></li>
+</ul>
+<p>Quan l'executem per primera vegada crearà el directori <strong>databases</strong> i dins d'ell copiarà <strong>Empleats.sqlite</strong> automàticament.</p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="221__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__implementar_relacions_1n.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

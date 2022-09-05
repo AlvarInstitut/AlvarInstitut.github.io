@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.3.2 Escriptura | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-31"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_documents_json.html" class="current-page-parent daddy">5.- Documents JSON</a>
+   <ul>
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="53_driver_moshi.html" class="current-page-parent daddy">5.3 Driver Moshi</a>
+      <ul>
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li id="active"><a href="532_escriptura.html" class="active no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="531_lectura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.3.2 Escriptura</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id40">
+<div class="iDevice emphasis0" >
+<div id="ta40_113_2" class="block iDevice_content">
+<div class="exe-text"><p>També farem 2 exemples d'escriptura, el d'Empleats i el de Bicicas, els mateixos que en la pregunta 5.2.2</p>
+<p class="titolet">Cas 1: Empleats</p>
+<p>Per a <strong>Empleats.json</strong> aquest és l'estructura que volem aconseguir:</p>
+<p class="codi2" style="margin-left: 60px;">{ "empresa": <br />   { "empleat": <br />     [  {<br />           "num": "1",<br />           "nom": "Andreu",<br />           "departament": "10",<br />           "edat": "32",<br />           "sou": "1000.0"<br />        },<br />        {<br />           "num": "2",<br />           "nom": "Bernat",<br />           "departament": "20",<br />           "edat": "28",<br />           "sou": "1200.0"<br />        },<br />        {<br />           "num": "3",<br />           "nom": "Clàudia",<br />           "departament": "10",<br />           "edat": "26",<br />           "sou": "1100.0"<br />        },<br />        {<br />           "num": "4",<br />           "nom": "Damià",<br />           "departament": "10",<br />           "edat": "40",<br />           "sou": "1500.0"<br />        }<br />     ]<br />   }<br />}</p>
+<p>L'estructura de les classes serà la mateixa que en el cas de la lectura, però ara les dades estaran definides en 4 arrays. A partir dels arrays inicialitzarem els objectes Kotlin, i quan ho tinguem tot ple passarem a JSON.</p>
+<p>NO HEM DE DEFINIR LES CLASSES, ja que les tenim definides des punt 5.3.1. Les posem ací únicament per a il·lustrar:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre class="  language-java"><code class="  language-java"><span class="token keyword">class</span> <span class="token class-name">Empleat</span> <span class="token punctuation">(</span>var num<span class="token operator">:</span> Int<span class="token punctuation">,</span> var nom<span class="token operator">:</span> String<span class="token punctuation">,</span> var departament<span class="token operator">:</span> Int<span class="token punctuation">,</span> var edat<span class="token operator">:</span> Int<span class="token punctuation">,</span> var sou<span class="token operator">:</span> Double<span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<div class="highlighted-code language-java">
+<div>
+<pre class="  language-java"><code class="  language-java"><span class="token keyword">class</span> <span class="token class-name">Empleats</span><span class="token punctuation">(</span>val empleats<span class="token operator">:</span> List<span class="token operator">&lt;</span>Empleat<span class="token operator">&gt;</span> <span class="token operator">=</span> listOf<span class="token operator">&lt;</span>Empleat<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<div class="highlighted-code language-java">
+<div>
+<pre class="  language-java"><code class="  language-java"><span class="token keyword">class</span> <span class="token class-name">Empresa</span><span class="token punctuation">(</span>val empresa<span class="token operator">:</span> Empleats<span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<p>Aleshores, inicialitzem els objectes a partir de les dades que tenim en els 4 arrays, i després <strong>guardem </strong>en JSON. Mireu que la definició de les classes de <strong>Moshi</strong> és la mateixa, però ara utilitzem el mètode <strong>toJson()</strong> per a passar d'objectes Kotlin a JSON. Obtenim un String que és la cadena JSON, i senzillament l'escrivim en un fitxer.</p>
+<p>Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple_3_5_23_MOSHIEscriureEmpleats.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+fun main (args: Array&lt;String&gt;){
+    val noms = arrayOf("Andreu", "Bernat", "Clàudia", "Damià")
+    val departaments = arrayOf(10, 20, 10, 10)
+    val edats = arrayOf(32, 28, 26, 40)
+    val sous = arrayOf(1000.0, 1200.0, 1100.0, 1500.0)
+
+    val empleats = arrayListOf&lt;Empleat&gt;()
+    for (i in 0..3)
+        empleats.add(Empleat((i+1),noms[i],departaments[i],edats[i],sous[i]))
+
+    val empresa = Empresa(Empleats(empleats))
+
+    val moshi = Moshi.Builder().build()
+    val adapter = moshi.adapter(Empresa::class.java)
+    val json = adapter.toJson(empresa)
+
+    File("Empleats2.json").writeText(json)
+
+}</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id43">
+<div class="iDevice emphasis0" >
+<div id="ta43_112_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Cas 2: Bicicas</p>
+<p>Farem el mateix exercici que en l'apartat 5.2.2, però ara utilitzant la llibreria <strong>Moshi</strong>.</p>
+<p>Voldrem aconseguir aquesta estructura i guardar-la en el fitxer</p>
+<p class="codi2" style="margin-left: 60px;">{ "bicicas":<br />    [ {"num":"01","nom":"UJI - FCHS","llocs":28,"ocupats":11,"lliures":17},<br />      {"num":"02","nom":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","llocs":28,"ocupats":8,"lliures":20},<br />      {"num":"03","nom":"PLAZA DE PESCADERÍA","llocs":28,"ocupats":13,"lliures":15},<br />      ...<br />    ]<br />}</p>
+<p>Tindrem per una banda l'estructura d'origen, per a la qual utilitzem les classes ja definides en l'apartat 5.3.1, és a dir, per a llegir el fitxer Bicicas.json original fem el mateix que l'altra vegada, per tant serà copiar les primeres sentències del programa <strong>Exemple_3_5_22_MOSHIAnalitzarBicicas.kt</strong> .</p>
+<p>A partir dels objectes inicialitzats amb la lectura de Bicicas.json, construirem els objectes que ens serviran per a l'escriptura. L'estructura d'aquestes classes que ens serviran per a l'escriptura seran:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class EstDesti (val num: Int, val nom: String, val llocs: Int, val ocupats: Int, val lliures: Int)
+
+class Bicicas2 (val bicicas: List&lt;EstDesti&gt;)</code></pre>
+</div>
+</div>
+<p>Per comoditat, com que només anem a utilitzar-les en aquesta ocasió, les definirem en el mateix fitxer del programa.</p>
+<p>Observeu com senzillament llegim passant a les classes d'entrada, convertim a les classes d'eixida, i utilitzem aquestes últimes per escriure el fitxer.</p>
+<p>Copieu el següent codi en el fitxer Kotlin anomenat <strong>Exemple_3_5_24_MOSHIEscriureBicicas.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+class EstDesti (val num: Int, val nom: String, val llocs: Int, val ocupats: Int, val lliures: Int)
+
+class Bicicas2 (val bicicas: List&lt;EstDesti&gt;)
+
+fun main(args: Array&lt;String&gt;) {
+    val json = File("Bicicas.json").readText()
+
+    val moshi = Moshi.Builder().build()
+    val llistaTipus = Types.newParameterizedType(List::class.java, Estacions::class.java)
+    val adapter: JsonAdapter&lt;List&lt;Estacions&gt;&gt; = moshi.adapter(llistaTipus)
+    val estacions = adapter.fromJson(json).get(0).ocupacion
+
+    val llistaEstDesti = arrayListOf&lt;EstDesti&gt;()
+    val bicicas2 = Bicicas2(llistaEstDesti)
+    for (e in estacions)
+        llistaEstDesti.add(EstDesti(e.id.toInt(),e.punto,e.puestos,e.ocupados,e.puestos-e.ocupados))
+
+    val adapter2 = moshi.adapter(Bicicas2::class.java)
+    val json2 = adapter2.toJson(bicicas2)
+
+    File("Bicicas2.json").writeText(json2)
+}</code></pre>
+</div>
+</div>
+<p>Segurament aquesta estructura és la més coherent. Amb la finalitat únicament d'escriure un JSON que té com a arrel un array i no un objecte, anem a ferun altre exemple en el qual guardarem en un fitxer aquesta estructura:</p>
+<p class="codi2" style="margin-left: 60px;">[<br />    {"num":"01","nom":"UJI - FCHS","llocs":28,"ocupats":11,"lliures":17},<br />    {"num":"02","nom":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","llocs":28,"ocupats":8,"lliures":20},<br />    {"num":"03","nom":"PLAZA DE PESCADERÍA","llocs":28,"ocupats":13,"lliures":15},<br />      ...<br />]</p>
+<p>En aquesta ocasió tenim només un array d'objectes.</p>
+<p>L'única estructura d'eixida que ens cal és la classe <strong>EstDesti</strong>, ja definida en l'exercici anterior, i per tant ara no caldrà definir-la. Només hem d'anar amb compte amb l'estructura d'eixida, que ara no serà una classe sinó una combinació de <strong>List</strong> i <strong>EstDesti</strong>.</p>
+<p>Copieu el següent codi en el fitxer Kotlin <strong>Exemple_3_5_25_MOSHIEscriureBicicas3.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+fun main(args: Array&lt;String&gt;) {
+    val json = File("Bicicas.json").readText()
+
+    val moshi = Moshi.Builder().build()
+    val llistaTipus = Types.newParameterizedType(List::class.java, Estacions::class.java)
+    val adapter: JsonAdapter&lt;List&lt;Estacions&gt;&gt; = moshi.adapter(llistaTipus)
+    val estacions = adapter.fromJson(json).get(0).ocupacion
+
+    val llistaEstDesti = arrayListOf&lt;EstDesti&gt;()
+    for (e in estacions)
+        llistaEstDesti.add(EstDesti(e.id.toInt(),e.punto,e.puestos,e.ocupados,e.puestos-e.ocupados))
+
+    val llistaTipusDesti = Types.newParameterizedType(List::class.java, EstDesti::class.java)
+    val adapter2: JsonAdapter&lt;List&lt;EstDesti&gt;&gt; = moshi.adapter(llistaTipusDesti)
+    val json2 = adapter2.toJson(llistaEstDesti)
+
+    File("Bicicas3.json").writeText(json2)
+}</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="531_lectura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

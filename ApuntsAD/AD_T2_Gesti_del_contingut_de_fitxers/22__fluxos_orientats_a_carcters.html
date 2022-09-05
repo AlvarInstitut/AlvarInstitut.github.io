@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2 - Fluxos orientats a caràcters | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li class="current-page-parent"><a href="2__manipulaci_dels_fluxos_de_dades.html" class="current-page-parent daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul>
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="22__fluxos_orientats_a_carcters.html" class="active daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul>
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="4__simplificaci_en_kotlin.html" class="no-ch">4 - Simplificació en Kotlin</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="212__mtodes_del_outputstream.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221__mtodes_del_reader.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2 - Fluxos orientats a caràcters</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+<p style="text-align: justify;">Treballar amb caràcters implica una dificultat apreciable, a causa sobretot de la diversitat de codificacions existents.</p>
+<p style="text-align: justify;">Per poder solucionar-ho, Java disposa de dues jerarquies, una d'entrada i una d'eixida, diferents de les que ja hem vist per a bytes (que eren InputStream i OutputStream). Aquestes jerarquies per a caràcters seran molt semblants a les de bytes, però sempre orientades a caràcters. Kotlin, per heretar de Java, també les tindrà, encara que com veurem en l'última pregunta, podrem simplificar les coses.</p>
+<p style="text-align: justify;">Igual que en els casos anteriors, tindrem unes classes abstractes, <strong>Reader</strong> i <strong>Writer</strong>, que no es poden instanciar directament (no podrem crear un objecte d'aquestes classes). Serviran per a homogeneïtzar tots els fluxos d'entrada i d'exida orientats a caràcter.</p>
+<p style="text-align: justify;">La super-classe <strong>Reader</strong> servirà per a fer l'entrada des de qualsevol dispositiu: fitxer, array de caràcters, una canonada ("tuberia", per a dur dades des d'una altra aplicació). Totes les classes d'entrada heretaran d'ella, i serviran per especificar exactament d'on (per exemple un fitxer: <strong>FileReader</strong>) o per a donar alguna altra funcionalitat, com anirem veient a poc a poc. D'aquesta manera, els mètodes que es defineixen s'hauran d'implementar per les classes que hereten d'ella i assegura una uniformitat, siga quina siga la font.</p>
+<p>Fem una ullada ràpida a la jerarquia de classes en la següent imatge:</p>
+<p style="text-align: center;"><img src="T2__2_2.png" alt="Jerarquia Reader-Writer" width="800" height="961" /></p>
+<p>De moment mirem únicament les que estan en color <strong>taronja</strong>, que especificaran quina serà la font de dades:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FileReader</strong></td>
+<td>Per a llegir caràcters d'un fitxer</td>
+</tr>
+<tr>
+<td><strong><strong>PipedReader</strong></strong></td>
+<td>Per a llegir des d'una tuberia (és a dir informació que ve d'un altre programa) </td>
+</tr>
+<tr>
+<td><strong>CharArray<strong>Reader</strong></strong></td>
+<td>L'entrada serà un array de caràcters</td>
+</tr>
+<tr>
+<td><strong>StringReader</strong></td>
+<td>L'entrada serà un string</td>
+</tr>
+</tbody>
+</table>
+<p>Evidentment ens centrarem en la primera, que és la que més ens interessa per a la permanència de les dades.</p>
+<p>Els fluxos d'eixida són molt molt pareguts, tots ells heretaran de <strong>Writer</strong>:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FileWriter</strong></td>
+<td>Per a guardar caràcters en un fitxer</td>
+</tr>
+<tr>
+<td><strong>Piped<strong>Writer</strong></strong></td>
+<td>Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa) </td>
+</tr>
+<tr>
+<td><strong>CharArray<strong>Writer</strong></strong></td>
+<td>L'eixida serà un array de caràcters</td>
+</tr>
+<tr>
+<td><strong>StringWriter</strong></td>
+<td>L'eixida serà un string </td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p style="text-align: justify;">Hem de fer constar que les classes d’emmagatzematge intern (utilitzem Java o Kotlin), com ara <strong>CharArrayReader</strong>, <strong>CharArrayWriter</strong>, <strong>StringReader</strong>, <strong>StringWriter</strong>, <strong>PipedReader</strong>, <strong>PipedWriter</strong> utilitzen sempre la codificació pròpia de Java (unicode de 16 bits: <strong>UTF-16</strong>), ja que guarden les dades a la memòria basant-se en els tipus dades de tractament de caràcters de Java o Kotlin (C<em>har</em> i <em>String</em>).</p>
+<p style="text-align: justify;">En canvi les classes <strong>FileReader</strong> o <strong>FileWriter </strong>agafen la codificació <strong>per defecte del sistema operatiu amfitrió</strong>. L’usuari no pot seleccionar diferents sistemes de codificació en crear les instàncies. Així, una màquina virtual Java sobre Windows utilitzarà, per defecte, la codificació <acronym title="International Organization for Standardization">ISO</acronym>-8859-1, però si corre sobre Linux, la codificació serà UTF-8. De tota manera veurem que sí que podrem arribar a especificar quin és el joc de caràcters que volem utilitzar en la pregunta 3.3. Intentarem veure exemples de tot.</p>
+<p> </p>
+<p class="titolet">Constructors de FileReader</p>
+<p style="text-align: justify;">De forma totalment paral·lela als fluxos orientats a byte, el <strong>FileReader</strong> té dos constructors, acceptant com a paràmetre un File o un String (amb el nom del fitxer). La diferència ara és que la unitat de transferència serà el caràcter (en compte d'un byte):</p>
+<ul>
+<li><strong>FileReader (<em>f</em>: File)</strong>: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.</li>
+<li><strong>FileReader (<em>nom_f</em>: String)</strong>: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.</li>
+</ul>
+<p> </p>
+<p class="titolet">Constructors del FileWriter</p>
+<p style="text-align: justify;">També totalment paral·lel al FileOutputStream. Canviaran lleugerament respecte als d'entrada, ja que a més de fer referència al fitxer, opcionalment podrem d'especificar la manera d'escriure en el fitxer en cas que aquest ja existesca: bé afegint al final, o bé destruint la informació anterior. Aquestos són els constructors:</p>
+<ul>
+<li><strong>FileWriter (<em>f</em>: File)</strong>: en el paràmetre se li passa un File. Si no existia, el crearà; si ja existia esborrarà el contingut. En ambdós casos l'obrirà en mode escriptura.</li>
+<li><strong>FileWriter (<em>nom_f</em>: String)</strong>: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+<li><strong>File<strong>Writer</strong> <em>(f: File</em>, </strong><em><strong>afegir</strong></em><strong>: Boolean)</strong>: és com el primer, però si en el segon paràmetre se li passa <strong>true</strong> en compte de substituir el que ja hi havia, la informació s'afegirà al final. Si en aquest paràmetre se li passa <strong>false</strong> s'esborrarà el contingut anterior (com en el primer cas).</li>
+<li><strong>File<strong>Writer</strong> <em>(nom_f: String</em><strong>, </strong><em><em><strong>afegir</strong></em></em><strong></strong>: Boolean)</strong>: igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+</ul>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="212__mtodes_del_outputstream.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221__mtodes_del_reader.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

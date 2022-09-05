@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>11 - Resum del llenguatge HQL | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-21"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__connexi_a_hibernate.html" class="daddy">5 - Connexió a Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__hql_consultes_senzilles.html" class="no-ch">5.1 - HQL: consultes senzilles</a></li>
+      <li><a href="52__comenant_a_programar.html" class="no-ch">5.2 - Començant a programar</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="daddy">7 - Estructura dels fitxers de mapatge</a>
+   <ul class="other-section">
+      <li><a href="71__anotacions_en_compte_de_fitxers_xml_de_mpatge.html" class="no-ch">7.1 - Anotacions en compte de fitxers xml de mpatge</a></li>
+   </ul>
+   </li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li id="active"><a href="11__resum_del_llenguatge_hql.html" class="active no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="10__consultes_dactualitzaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">11 - Resum del llenguatge HQL</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id35">
+<div class="iDevice emphasis0">
+<div id="ta35_1" class="block iDevice_content">
+<p>Veurem d'una manera molt ràpida el llenguatge HQL. Sobretot insistirem en les diferències amb SQL, al qual se sembla molt.</p>
+<ul>
+<li>La clàusula <strong>SELECT</strong> és opcional. Si no la posem equival a agafar totes les propietats (és a dir, equivalent a SELECT * de SQL). És una operació molt habitual, ja que d'aquesta manera la llista d'objectes tornats és de la classe marcada en el from.</li>
+<li>Es poden utilitzar àlies de les classes, posant <strong>AS </strong>després de la classe i abans de l'àlies. També podem prescindir del AS. Si utilitzem àlies, per a fer referència a la classe haurem d'utilitzar sempre l'àlies. Per exemple <strong>FROM Comarques AS c</strong>, o senzillament <strong>FROM Comarques c</strong>.</li>
+<li>La clàusula <strong>WHERE</strong> és opcional. Si no la posem equival a agafar de totes les instàncies de la classe associada (és a dir, de totes les files de la taula).</li>
+<li>S'admeten les clàusules <strong>GROUP BY </strong> , <strong>HAVING</strong> i <strong>ORDER BY</strong>, que funcionen igual que en SQL.</li>
+<li>S'admeten <strong>subconsultes</strong>, si és que el SGBD les admet, clar.</li>
+</ul>
+<p>Ací teniu uns quants exemples:</p>
+<p class="codi2">from Comarca</p>
+<p style="margin-left: 60px;">Torna totes les instàncies de Comarques</p>
+<p class="codi2">from Comarca order by nomC</p>
+<p style="margin-left: 60px;">Torna totes les instàncies de Comarques ordenades per nom de comarca</p>
+<p class="codi2">from Comarca where provincia='Castelló'</p>
+<p style="margin-left: 60px;">Torna totes les comarques de la província de Castelló</p>
+<p class="codi2">from Comarca where provincia in ('Castelló','Alacant')</p>
+<p style="margin-left: 60px;">Torna totes les comarques de les províncies de Castelló i Alacant</p>
+<p class="codi2">from Poblacio where altura between 700 and 750</p>
+<p style="margin-left: 60px;">Torna totes les poblacions amb una altura entre 700 i 750 m,</p>
+<p class="codi2">from Institut where codpostal is null</p>
+<p style="margin-left: 60px;">Torna els instituts que no tenen codi postal (no hi ha ningun)</p>
+<p class="codi2">from Comarca where nomC like 'A%'</p>
+<p style="margin-left: 60px;">Torna les comarques el nom de les quals comença per A</p>
+<p class="codi2">select provincia, count(*) from Comarca group by provincia</p>
+<p style="margin-left: 60px;">Torna les províncies i el número de comarques en cadascuna</p>
+<p class="codi2"><span>select poblacio.nom , count(*) from Institut group by poblacio.nom</span></p>
+<p style="margin-left: 60px;">Torna el nom de la població i el número d'instituts que té (només d'aquelles que tenen algun institut)</p>
+<p class="codi2">select comarca.nomC , avg(altura) from Poblacio group by comarca.nomC having avg(altura) &gt; 700</p>
+<p style="margin-left: 60px;">Torna el nom de la comarca i l'altura mitjana d'aquelles comarques que tenen una altura mitjana més gran que 700</p>
+<p class="codi2">from Poblacio where altura &gt; (select avg(altura) from Poblacio)</p>
+<p style="margin-left: 60px;">Torna les poblacions que tenen una altura major que la mitjana</p>
+<p class="codi2">from Poblacio p1 where p1.altura &gt; (select avg(altura) from Poblacio p2 where p2.comarca=p1.comarca)</p>
+<p style="margin-left: 60px;">Torna les poblacions que tenen una altura major que la mitjana de la seua comarca</p>
+<p></p>
+<p> </p>
+<p>HQL també admet reunions en les classes. Per a fer una reunió normal, podem posar la condició en el where i ja està, però si volem fer una reunió externa (un <strong>left join</strong> per exemple) no ens valdrà aquesta opció, i haurem de fer la reunió.</p>
+<p>La sintaxi de la reunió és diferent en HQL.</p>
+<p>En <strong>SQL</strong> posàvem la condició en l'apartat <strong>ON</strong>, després d'haver posat les taules, i posàvem una condició d'igualtat entre els camps d'una i altra taula</p>
+<div class="codi2">SELECT ... FROM POBLACIO LEFT JOIN INSTITUT ON POBLACIO.cod_m=INSTITUT.cod_m</div>
+<p>En canvi en <strong>HQL</strong> després de les taules no posem <strong>ON</strong> , sinó que posarem l'enllaç entre les dues taules. Aquest enllaç coincideix amb el nom de la col·lecció d'elements de l'altre taula. En el cas de l'exemple que estem veient és <strong>institutses</strong>. Per tant una reunió entre <strong>Poblacions</strong> i <strong>Instituts</strong> es definiria així </p>
+<div class="codi2">from Poblacio p left join p.instituts</div>
+<p>Vejam un exemple un poc més elaborat, on traurem el nom de la població amb el número d'instituts que té, fins i tot d'aquells que no tenen institut</p>
+<div class="codi2">select p.nom, count(i.codi) from Poblacio p left join p.instituts i group by p.nom order by p.nom</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="10__consultes_dactualitzaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

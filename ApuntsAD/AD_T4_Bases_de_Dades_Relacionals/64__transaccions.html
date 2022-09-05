@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.4 - Transaccions | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__establiment_de_la_connexi.html" class="no-ch">5.1 - Establiment de la connexió</a></li>
+      <li><a href="52__peticions_bsiques.html" class="no-ch">5.2 - Peticions bàsiques</a></li>
+      <li><a href="53__exemple.html" class="no-ch">5.3 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6__jdbc_avanat.html" class="current-page-parent daddy">6 - JDBC avançat</a>
+   <ul>
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li id="active"><a href="64__transaccions.html" class="active no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="65__millora_de_rendiment.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.4 - Transaccions</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id20">
+<div class="iDevice emphasis0">
+<div id="ta20_1" class="block iDevice_content">
+<p>Una transacció és un conjunt de sentències SQL d'actualització (INSERT, DELETE, UPDATE) que o bé s'executen totes o bé no s'executa ninguna.</p>
+<p>La manera de confirmar les sentències és amb <strong>COMMIT</strong>, i la manera de rebutjar-les totes és <strong>ROLLBACK</strong> (quedant l'estat com estava abans de començar la transacció). En qualsevol dels dos casos, després d'executar les sentències de control <strong>COMMIT</strong> o <strong>ROLLBACK</strong>, començarà una transacció nova.</p>
+<p>JDBC trasllada també aquest metodologia al seu <acronym title="Application Programming Interface">API</acronym>. Per defecte, les connexions JDBC consideren que cada objecte <b>Statement </b>és en si mateix una transacció. Abans de cada execució es demana l’inici d’una transacció i al final, si l’execució té èxit, s’envia un <b>commit</b> i si no té èxit, un <b>rollback</b>. Per això diem que la connexió actua en mode <b>autocommit</b>.</p>
+<p>Però hi ha una altra manera de funcionar. Els <b>Statements </b>poden treballar sense automatitzar el <b>commit</b> després de cada execució, canviant la connexió de mode amb el mètode <b>setAutoCommit(false)</b>.</p>
+<p>A partir d’aleshores es consideraran instruccions d’una mateixa transacció totes les sentències executades entre dues cridades als mètodes <b>commit</b> o <strong>rollback </strong>(equivalents JDBC de les instruccions <b>COMMIT </b>i <strong>ROLLBACK</strong> de <acronym title="Structured Query Language">SQL</acronym>).</p>
+<p>A continuació tenim un programa en el qual fem una sèrie de canvis (una modificació de files i un esborrat) però després fem un rollback, i per tant no s'haurà fet cap de les actualitzacions. És sobre la Base de Dades de SQLite <strong>Empleats,sqlite</strong>, que només tenia la taula EMPLEAT. Per a mostrar que estem fent els canvis, però que després ls desfem amb <strong>rollback</strong>, mostrem un resum en el qual senzillament indiquem el número d'empleat i el total dels sous.</p>
+<p>Prèviament ens guardem el estat que tenia l'<strong>autocommit</strong>, i després el desactivem. Quan finalitza tot el procés posem autocommit com estava en un principi.</p>
+<p>Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple_4_61_Transaccions.kt </strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.sql.DriverManager
+import java.sql.Connection
+
+fun main(args: Array&lt;String&gt;) {
+    val con = DriverManager.getConnection("jdbc:sqlite:Empleats.sqlite")
+
+    resumEmpleats(con)			// estat inicial
+
+    val autocommit = con.getAutoCommit()
+    con.setAutoCommit(false)
+    val st = con.createStatement()
+    st.executeUpdate("UPDATE EMPLEAT SET sou = sou * 1.05")
+    st.executeUpdate("DELETE FROM EMPLEAT WHERE depart=10")
+
+    resumEmpleats(con)			// s'han modificat els sous i s'han esborrat dos empleats
+
+    con.rollback()				// desfem els canvis
+
+    resumEmpleats(con)			// hem tornat a l'estat inicial:
+    // no s'ha fet ni l'actualització de sous ni l'esborrat d'empleats
+
+    con.setAutoCommit(autocommit)
+
+    con.close()
+}
+
+fun resumEmpleats(c: Connection) {  // En el resum traurem el número d'empleats i el total de sous
+    val st = c.createStatement()
+    val rs = st.executeQuery("SELECT COUNT(*), SUM(sou) FROM EMPLEAT")
+    rs.next()
+    println("Actualment hi ha " + rs.getInt(1) + " empleats que cobren un total de " + rs.getDouble(2) + " €")
+    rs.close()
+    st.close()
+}</code></pre>
+</div>
+</div>
+<p>La major part de SGBD permeten utilitzar transaccions explícites amb qualsevol instrucció <acronym title="Structured Query Language">SQL</acronym>, fins i tot alguns SGBD també en sentències DDL (<em>data definition language</em>) com CREATE TABLE, etc . Les sentències de definició modifiquen directament l’estructura de les dades i, per tant, cal anar molt en compte perquè poden provocar danys importants, pèrdues de dades existents, etc.</p>
+<p>Però hi ha alguns SGBD com Oracle que no suporten la revocació de sentències DDL i en cas d’executar <b>rollback</b>, obtindrem un error indicant que les sentències DDL no es poden revocar.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="65__millora_de_rendiment.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

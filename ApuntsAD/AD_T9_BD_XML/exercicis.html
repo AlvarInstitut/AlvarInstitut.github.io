@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-26"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 9: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__estratgies_demmagatzematge_de_xml.html" class="no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul class="other-section">
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li><a href="33__funcions_que_produeixen_contingut_xml.html" class="no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li><a href="34__convertir_taules_senceres_a_xml.html" class="no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li><a href="36__utilitzaci_des_de_java.html" class="no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml_natives.html" class="no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul class="other-section">
+      <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
+      <ul class="other-section">
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li><a href="614__funcions.html" class="no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+         <li><a href="627__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">6.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+         <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="715__modificar_la_base_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id38">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.0 (voluntari) (PostgreSQL)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta38_92_2" class="block iDevice_content">
+<p>Modifica (ampliant-la) la sentència de l'apartat 3.7 per a guardar en un únic document XML les comarques de la taula COMARQUES. En cada comarca hauran d'aparèixer tots els seu pobles (taula POBLACIONS), i en cada poble tots els seus instituts (taula INSTITUTS).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id35">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.1 (voluntari) (PostgreSQL)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta35_89_2" class="block iDevice_content">
+<p>Dins de la BD pròpia de cadascú (la mateixa ja utilitzada en el Tema 6; si no tens clar quina és, contacta amb el teu professor) crea una taula anomenada <strong>DOC_XML </strong>amb 3 camps:</p>
+<ul>
+<li><strong>num</strong> (de tipus <strong>serial</strong>, que és l'autonumèric) que contindrà el número del document. Ha de ser <strong>clau principal</strong><strong>.</strong></li>
+<li><strong>nom</strong> (de tipus cadena) que contindrà un nom per al document.</li>
+<li><strong>doc</strong> (de tipus xml) que contindrà els documents XML</li>
+</ul>
+<p>Puja la sentència de creació de la taula.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id36">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.2 (voluntari) (PostgreSQL)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta36_90_2" class="block iDevice_content">
+<p>Fes un programa en Java (en el projecte <strong>Tema9_1</strong>, en un paquet nou anomenat <strong>exercicis</strong>) anomenat <strong>Ruta_XML_PostgreSQL</strong> que guarde en la taula creada en el punt anterior el contingut del document <strong>Rutes.xml</strong> ja fet en anteriors exercicis (i que et proporcionarà el professor). El nom del document podria ser <strong>Rutes</strong>, i el número no li l'has de proporcionar, ja que és un autonumèric.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id40">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.3 (voluntari) (PostgreSQL)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta40_90_2" class="block iDevice_content">
+<p>Fes un programa dins del mateix projecte i paquet anomenat <strong>Vis_Rutes_XML</strong> (i el JFrame: <strong>Vis_Rutes_XML_Pantalla</strong>) que aprofite les llibreries gràfiques Awt i Swing per a mostrar les rutes i els seus punts guardades en la taula DOC_XML del punt anterior, d'una forma molt similar a l'exercici 3.4 del tema 3.</p>
+<p>Observa que es tractarà d'accedir al document XML guardat en la Base de Dades PostgreSQL, però no cal guardar tota l'estructura, sinó que és suficient amb la recerca de determinades coses:</p>
+<ul>
+<li>Per al JComboBox s'han de buscar els noms de les rutes.</li>
+<li>Per al JArea el nom dels punts de la ruta seleccionada.</li>
+</ul>
+<p style="text-align: center;"><img src="T7_Ex_1.png" width="400" height="400" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id59">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.4 (voluntari) (PostgreSQL)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta59_89_2" class="block iDevice_content">
+<p>Intenta fer l'exercici 6.5 , però ara accedint als document XML de la Base de Dades PostgreSQL. Anomena'l <strong>Vis_Rutes_XML_PostgreSQL_Complet</strong></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="T6_Ex_5.png" width="455" height="578" /></p>
+<p>Intenta traure concusions sobre quina manera és més còmoda.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id49">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.5 (eXist)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta49_91_2" class="block iDevice_content">
+<p>Realitzar les expressions XPath que tornen les següents qüestions (totes elles sobre <strong>Rutes.xml</strong>):</p>
+<ol>
+<li>Traure el nom de totes les rutes.</li>
+<li>Traure el nom de les rutes amb un desnivell major que 600 m.</li>
+<li>Traure les rutes en les quals el desnivell acumulat duplica el desnivell. (<strong>Observació</strong>: quan en una condició combinem alguna operació amb una comparació, és millor posar l'operació abans de l'operador de comparació)</li>
+<li>Traure el nom del primer punt de cada ruta.</li>
+<li>Traure el nom de l'últim punt de cada ruta</li>
+<li>Traure els punts de la tercera ruta.</li>
+<li>Traure el número de punts de la tercera ruta</li>
+<li>Traure el nom de les rutes que tenen estrictament més de 5 punts.</li>
+<li>Traure la mitjana de desnivell de les rutes</li>
+<li>Traure les rutes en les quals hi ha alun punt més avall del paral·lel 40</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id77">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.6 (eXist)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta77_90_2" class="block iDevice_content">
+<p>Fer les expressions XQuery per a aconsequir:</p>
+<p>1. El mòdul amb el nom del professor com a atribut:</p>
+<p class="codi2">&lt;modul <span class="ace_keyword">professor</span>="<span class="ace_string">Joan Puig</span>"<span>&gt;</span><span class="ace_identifier">Llenguatges de Marques</span>&lt;/modul&gt;</p>
+<p>2. El nom de cada ruta amb el número de punts com a argument:</p>
+<div class="codi2">
+<div>&lt;rutes&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="5"&gt;Pujada a Penyagolosa&lt;/ruta&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="7"&gt;La Magdalena&lt;/ruta&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="6"&gt;Pelegrins de Les Useres&lt;/ruta&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="6"&gt;Catí - Sant Pere de Castellfort&lt;/ruta&gt;</div>
+<div>&lt;/rutes&gt;</div>
+</div>
+<p> 3. Cada ruta amb el nom com a atribut, la latitud mitjana dels seus punts i la longitud mitjana</p>
+<div class="codi2">
+<div>&lt;ruta nom="Pujada a Penyagolosa"&gt;</div>
+<div style="margin-left: 30px;">&lt;lat_mitj&gt;40.2408508&lt;/lat_mitj&gt;</div>
+<div style="margin-left: 30px;">&lt;long_mitj&gt;-0.3515282&lt;/long_mitj&gt;</div>
+<div>&lt;/ruta&gt;</div>
+<div>&lt;ruta nom="La Magdalena"&gt;</div>
+<div style="margin-left: 30px;">&lt;lat_mitj&gt;40.01264257142857&lt;/lat_mitj&gt;</div>
+<div style="margin-left: 30px;">&lt;long_mitj&gt;-0.02034042857142857&lt;/long_mitj&gt;</div>
+<div>&lt;/ruta&gt;</div>
+<div>...</div>
+</div>
+<p> 4. La mitjana de punts de les rutes</p>
+<p class="codi2">6</p>
+<p>5. Quants punts de cada ruta estan en l'hemisferi est (és a dir, longitud positiva)</p>
+<div class="codi2">
+<div>Pujada a Penyagolosa: 0</div>
+<div>La Magdalena: 0</div>
+<div>Pelegrins de Les Useres: 0</div>
+<div>Catí - Sant Pere de Castellfort: 2</div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id76">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9.7 (eXist)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta76_89_2" class="block iDevice_content">
+<p>En el projecte <strong>Tema9</strong>, i en un paquet nou anomenat <strong>exercicis</strong>, fer un programa similar a l'exercici 6.4, però aquesta vegada accedint a la Base de Dades  XML-Nativa eXist:</p>
+<p><img src="T7_Ex7.png" style="display: block; margin-left: auto; margin-right: auto;" width="456" height="561" /></p>
+<p>En aquesta ocasió la connexió serà permanent, fins apretar el botó de tancar. Observeu com els objectes<strong> s</strong> (XQDataSource), <strong>conn</strong> (XQConnection) i <strong>rs </strong>(XResultSequence) estan declarats al principi per no perdre la connexió, fins apretar el botó <strong>Tancar</strong>.</p>
+<p>Ens aprofitarem dels mètodes de moviment (<strong>first()</strong>, <strong>previous()</strong>, <strong>next()</strong>, <strong>last()</strong>) per a menejar-nos d'una ruta a una altra, i per tant s'ha de poder permetre el moviment cap avant i cap arrere.</p>
+<p>Observeu com el mètode <strong>plenar_taula(element)</strong> ha canviat. Us pot servir de model per a emplenar les altres coses, i observeu com se li ha de passar un element DOM (l'element <strong>punts</strong>).</p>
+<p>Podeu anomenar al fitxer <strong>T9Ex7</strong><strong>_Rutes_XML_eXist.kt</strong>:<strong></strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javax.swing.JFrame
+import java.awt.EventQueue
+import javax.swing.JLabel
+import javax.swing.JTextField
+import javax.swing.JTable
+import javax.swing.JButton
+import javax.swing.JPanel
+import java.awt.GridLayout
+import javax.swing.BoxLayout
+import javax.swing.JScrollPane
+import java.awt.FlowLayout
+import org.w3c.dom.Element
+import javax.xml.xquery.XQDataSource
+import javax.xml.xquery.XQConnection
+import javax.xml.xquery.XQResultSequence
+import net.xqj.exist.ExistXQDataSource
+import javax.xml.xquery.XQConstants
+
+class T9Ex7_Rutes_XML_eXist : JFrame() {
+	val s = ExistXQDataSource()
+
+	var conn: XQConnection = s.getConnection()
+	var rs: XQResultSequence? = null
+
+	val etiqueta = JLabel("")
+	val etNom = JLabel("Ruta:")
+	val qNom = JTextField(15)
+	val etDesn = JLabel("Desnivell:")
+	val qDesn = JTextField(5)
+	val etDesnAcum = JLabel("Desnivell acumulat:")
+	val qDesnAcum = JTextField(5)
+	val etPunts = JLabel("Punts:")
+	val punts = JTable(1, 3)
+	val primer = JButton("&lt;&lt;")
+	val anterior = JButton("&lt;")
+	val seguent = JButton("&gt;")
+	val ultim = JButton("&gt;&gt;")
+	val tancar = JButton("Tancar")
+
+	init {
+		getContentPane().setLayout(GridLayout(0, 1))
+		val p_prin = JPanel()
+		p_prin.setLayout(BoxLayout(p_prin, BoxLayout.Y_AXIS))
+
+		val panell1 = JPanel(GridLayout(0, 2))
+		panell1.add(etNom)
+		qNom.setEditable(false)
+		panell1.add(qNom)
+		panell1.add(etDesn)
+		qDesn.setEditable(false)
+		panell1.add(qDesn)
+		panell1.add(etDesnAcum)
+		qDesnAcum.setEditable(false)
+		panell1.add(qDesnAcum)
+		panell1.add(etPunts)
+
+		val panell2 = JPanel(GridLayout(0, 1))
+		punts.setEnabled(false)
+		val scroll = JScrollPane(punts)
+		panell2.add(scroll, null)
+
+		val panell5 = JPanel(FlowLayout())
+		panell5.add(primer)
+		panell5.add(anterior)
+		panell5.add(seguent)
+		panell5.add(ultim)
+		panell5.add(tancar)
+
+		getContentPane().add(p_prin)
+		p_prin.add(panell1)
+		p_prin.add(panell2)
+		p_prin.add(panell5)
+
+		setVisible(true)
+		pack()
+
+		primer.addActionListener() {
+
+		}
+		
+		anterior.addActionListener() {
+
+		}
+		
+		seguent.addActionListener() {
+
+		}
+		
+		ultim.addActionListener() {
+
+		}
+		
+		tancar.addActionListener() {
+
+		}
+
+		inicialitzar()
+		VisRuta()
+	}
+
+	fun plenar_taula(e_punts: Element) {
+		val ll_punts = e_punts.getElementsByTagName("punt")
+		val ll = Array(ll_punts.getLength()) { Array(3) { "" } }
+		for (i in 0..ll_punts.getLength() - 1) {
+			val p = ll_punts.item(i) as Element
+			ll[i][0] = p.getElementsByTagName("nom").item(0).getFirstChild().getNodeValue()
+			ll[i][1] = p.getElementsByTagName("latitud").item(0).getFirstChild().getNodeValue()
+			ll[i][2] = p.getElementsByTagName("longitud").item(0).getFirstChild().getNodeValue()
+		}
+		val caps = arrayOf&lt;String&gt;("Nom punt", "Latitud", "Longitud")
+		punts.setModel(javax.swing.table.DefaultTableModel(ll, caps))
+	}
+
+	fun inicialitzar() {
+
+	}
+
+	fun VisRuta() {
+
+	}
+}
+
+fun main(args: Array&lt;String&gt;) {
+	EventQueue.invokeLater {
+		T9Ex7_Rutes_XML_eXist().isVisible = true
+	}
+}</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="715__modificar_la_base_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

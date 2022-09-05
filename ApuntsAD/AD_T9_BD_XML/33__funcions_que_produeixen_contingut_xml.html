@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3 - Funcions que produeixen contingut XML | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-32"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 9: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__estratgies_demmagatzematge_de_xml.html" class="no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li class="current-page-parent"><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="current-page-parent daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul>
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li id="active"><a href="33__funcions_que_produeixen_contingut_xml.html" class="active no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li><a href="34__convertir_taules_senceres_a_xml.html" class="no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li><a href="36__utilitzaci_des_de_java.html" class="no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml_natives.html" class="no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul class="other-section">
+      <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
+      <ul class="other-section">
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li><a href="614__funcions.html" class="no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+         <li><a href="627__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">6.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+         <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32__funcions_de_conversi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34__convertir_taules_senceres_a_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3 - Funcions que produeixen contingut XML</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id29">
+<div class="iDevice emphasis0">
+<div id="ta29_1" class="block iDevice_content">
+<p>Veurem en aquest apartat les funcions que ens proporciona PostgreSQL per a generar contingut XML. El resultat de totes elles és de tipus XML, i serviran per a generar un element, atribut, element arrel, concatenar, ... de manera que podrem generar contingut XML ben format. </p>
+<p>Són aquestes:</p>
+<p class="titolet">XMLCOMMENT</p>
+<p style="margin-left: 30px;"><em>Sintaxi</em>: <strong>xmlcomment (<em>text</em>)</strong></p>
+<p style="margin-left: 30px;"><em>Descripció</em>: genera un comentari XML, amb el contingut del paràmetre. En aquest contingut no pot anar '<strong>--</strong>', per  a no confondre amb l'etiqueta del comentari</p>
+<p style="margin-left: 30px;"><em>Exemple</em>: </p>
+<div class="codi2">
+<div></div>
+<div style="margin-left: 30px;">SELECT xmlcomment('Hola');</div>
+<div> </div>
+<div style="margin-left: 30px;">  xmlcomment</div>
+<div style="margin-left: 30px;">--------------</div>
+<div style="margin-left: 30px;"> &lt;!--Hola--&gt;</div>
+</div>
+<p> </p>
+<p class="titolet">XMLCONCAT</p>
+<p><em>Sintaxi</em>: <strong>xmlconcat (<em>xml</em> [, ... ])</strong></p>
+<p><em>Descripció</em>: concatena una llista de valors XML, sent el resultat també XML</p>
+<p><em>Exemple</em>: </p>
+<div class="codi2">
+<div> </div>
+<div>
+<div style="margin-left: 30px;">SELECT xmlconcat('&lt;primer&gt;Hola&lt;/primer&gt;','&lt;segon&gt;Adéu&lt;/segon&gt;');</div>
+<div> </div>
+<div style="margin-left: 30px;">                xmlconcat                 </div>
+<div style="margin-left: 30px;">------------------------------------------</div>
+<div style="margin-left: 30px;"> &lt;primer&gt;Hola&lt;/primer&gt;&lt;segon&gt;Adéu&lt;/segon&gt;</div>
+<div> </div>
+</div>
+</div>
+<p> </p>
+<p class="titolet">XMLELEMENT</p>
+<p><em>Sintaxi</em>: <strong>xmlelement (name <em>nom</em> [, xmlattributes (<em>valor</em> [AS <em>nomatribut</em>] [ , ... ] ) ]  [ , <em>contingut</em> , ... ] )</strong></p>
+<p><em>Descripció</em>: genera un element amb el nom especificat, possibles atributs amb els seus valors, i possible contingut (si no posem contingut serà un element buit</p>
+<p><em>Exemples</em>: </p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT xmlelement(name primer);</div>
+<div> </div>
+<div style="margin-left: 30px;"> xmlelement </div>
+<div style="margin-left: 30px;">------------</div>
+<div style="margin-left: 30px;"> &lt;primer/&gt;</div>
+<div> </div>
+</div>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT xmlelement(name segon, 'Hola');</div>
+<div> </div>
+<div style="margin-left: 30px;">     xmlelement      </div>
+<div style="margin-left: 30px;">---------------------</div>
+<div style="margin-left: 30px;"> &lt;segon&gt;Hola&lt;/segon&gt;</div>
+<div style="margin-left: 30px;"> </div>
+</div>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT xmlelement(name tercer, xmlattributes ('Primer atribut' as a1),'Hola');  </div>
+<div> </div>
+<div style="margin-left: 30px;">             xmlelement             </div>
+<div style="margin-left: 30px;">------------------------------------</div>
+<div style="margin-left: 30px;"> &lt;tercer a1="Primer atribut"&gt;Hola&lt;/tercer&gt;</div>
+<div> </div>
+</div>
+<p> Anem a posar ara un exemple que combine tot un poc:</p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT xmlelement(name quart, xmlattributes(current_date as data),</div>
+<div style="margin-left: 30px;">                              xmlelement(name quart_1),</div>
+<div style="margin-left: 30px;">                              xmlcomment('comentari'),</div>
+<div style="margin-left: 30px;">                              xmlelement(name quart_2, 'valor quart 2'));</div>
+<div> </div>
+<div style="margin-left: 30px;">                                       xmlelement                      </div>
+<div style="margin-left: 30px;">-------------------------------------------------------------------------------------------</div>
+<div style="margin-left: 30px;">&lt;quart data="2016-12-21"&gt;&lt;quart_1/&gt;&lt;!--comentari--&gt;&lt;quart_2&gt;valor quart 2&lt;/quart_2&gt;&lt;/quart&gt;</div>
+<div> </div>
+</div>
+<p>O un altre molt interessant que crea un element comarca per a cada comarca de la taula COMARQUES, posant-li a més com a atribut la província:</p>
+<div class="codi2">
+<div> </div>
+   SELECT xmlelement(name Comarca,xmlattributes(provincia as Provincia),nom_c) <br />       FROM COMARQUES<br />       ORDER BY provincia,nom_c;<br />
+<div> </div>
+</div>
+<p style="margin-left: 30px;"> El resultat seria aquest:</p>
+<p style="margin-left: 30px; text-align: center;"><img src="T7_3_3_1.png" style="border: 1px solid black;" width="648" height="348" /></p>
+<p style="margin-left: 30px;">on podria sorprendre el tractament dels accents i caràcter especials, però no oblidem que és la manera de codificar aquestos caràcters en XML</p>
+<p class="titolet">XMLFOREST</p>
+<p><em>Sintaxi</em>: <strong>xmlforest (<em>contingut </em>[ AS <em>nom</em>] [ , ... ])</strong></p>
+<p><em>Descripció</em>: crea una sèrie d'elements i els seqüencia un darrere de l'altre. És especialment útil quan accedim a alguna taula</p>
+<p><em>Exemple</em>: </p>
+<div class="codi2">
+<div> </div>
+<div>
+<div style="margin-left: 30px;">SELECT xmlforest('Hola' AS primer,'Adéu' AS segon);</div>
+<div> </div>
+<div style="margin-left: 30px;">                xmlconcat                 </div>
+<div style="margin-left: 30px;">------------------------------------------</div>
+<div style="margin-left: 30px;"> &lt;primer&gt;Hola&lt;/primer&gt;&lt;segon&gt;Adéu&lt;/segon&gt;</div>
+<div> </div>
+</div>
+</div>
+<p> Com comentàvem és especialment útil quan accedim a taules. El següent exemple crea els element nom i província amb els valors de cadascuna de les files:</p>
+<div class="codi2"><br />
+<div style="margin-left: 30px;"><span></span>SELECT xmlforest(nom_c,provincia) <br />    FROM COMARQUES <br />    ORDER BY nom_c;</div>
+<div> </div>
+<div style="margin-left: 30px;">                          xmlforest                          </div>
+<div style="margin-left: 30px;">-------------------------------------------------------------</div>
+<div style="margin-left: 30px;"> &lt;nom&gt;Alacantí&lt;/nom&gt;&lt;provincia&gt;Alacant&lt;/provincia&gt;</div>
+<div style="margin-left: 30px;"> &lt;nom&gt;Alcalatén&lt;/nom&gt;&lt;provincia&gt;Castelló&lt;/provincia&gt;</div>
+<div style="margin-left: 30px;"> &lt;nom&gt;Alcoià&lt;/nom&gt;&lt;provincia&gt;Alacant&lt;/provincia&gt;</div>
+<div style="margin-left: 30px;"> &lt;nom&gt;Alt Maestrat&lt;/nom&gt;&lt;provincia&gt;Castelló&lt;/provincia&gt;</div>
+<div style="margin-left: 30px;">...</div>
+<div> </div>
+</div>
+<p> Si açò ho enganxem amb la creació de l'element comarca, el tindrem ben format, d'una forma equivalent a una anterior, però sense atributs, tot subelements:</p>
+<div class="codi2">
+<div style="margin-left: 30px;"> </div>
+<div style="margin-left: 30px;">SELECT xmlelement(name Comarca,xmlforest(nom_c,provincia))                             <br />    FROM COMARQUES <br />    ORDER BY nom_c;</div>
+<div> </div>
+<div style="margin-left: 30px;">                                   xmlelement                                  </div>
+<div style="margin-left: 30px;"> --------------------------------------------------------------------------------</div>
+<div style="margin-left: 30px;"> &lt;comarca&gt;&lt;nom&gt;Alacantí&lt;/nom&gt;&lt;provincia&gt;Alacant&lt;/provincia&gt;&lt;/comarca&gt;</div>
+<div style="margin-left: 30px;"> &lt;comarca&gt;&lt;nom&gt;Alcalatén&lt;/nom&gt;&lt;provincia&gt;Castelló&lt;/provincia&gt;&lt;/comarca&gt;</div>
+<div style="margin-left: 30px;"> &lt;comarca&gt;&lt;nom&gt;Alcoià&lt;/nom&gt;&lt;provincia&gt;Alacant&lt;/provincia&gt;&lt;/comarca&gt;</div>
+<div style="margin-left: 30px;"> &lt;comarca&gt;&lt;nom&gt;Alt Maestrat&lt;/nom&gt;&lt;provincia&gt;Castelló&lt;/provincia&gt;&lt;/comarca&gt;</div>
+<div style="margin-left: 30px;"> &lt;comarca&gt;&lt;nom&gt;Alt Millars&lt;/nom&gt;&lt;provincia&gt;Castelló&lt;/provincia&gt;&lt;/comarca&gt;</div>
+<div style="margin-left: 30px;"> ...</div>
+<div> </div>
+</div>
+<p> </p>
+<p class="titolet">XMLAGG</p>
+<p><em>Sintaxi</em>: <strong>xmagg (<em>xml</em>)</strong></p>
+<p><em>Descripció</em>: podem considerar-la una funció d'agregat, que concatena tots els element que li arriben. És a dir, que <strong>xmlconcat </strong>concatena els valors dels paràmetres, però de forma aïllada, cada fila és en un resultat diferent. En canvi <strong>xmlagg</strong> els junta tots en un únic resultat.</p>
+<p><em>Exemples</em>: </p>
+<div class="codi2">
+<div style="margin-left: 30px;"> </div>
+<div style="margin-left: 30px;">SELECT xmlagg(xmlforest('Hola' AS primer,'Adéu' AS segon));</div>
+<div> </div>
+<div style="margin-left: 30px;">                  xmlagg                  </div>
+<div style="margin-left: 30px;">------------------------------------------</div>
+<div style="margin-left: 30px;"> &lt;primer&gt;Hola&lt;/primer&gt;&lt;segon&gt;Adéu&lt;/segon&gt;</div>
+<div style="margin-left: 30px;"> </div>
+</div>
+<p>Que així queda aproximadament com la concatenació. Però la utilitat gran és quan agreguem els elements d'una taula (recordeu que el paràmetre ha de ser XML)</p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT xmlagg(xmlforest(nom_c,provincia)) <br />    FROM COMARQUES;</div>
+<div> </div>
+<div style="margin-left: 30px;">                                    xmlagg                 </div>
+<div style="margin-left: 30px;">-------------------------------------------------------------------------------------</div>
+<div style="margin-left: 30px;"> &lt;nom&gt;Safor&lt;/nom&gt;&lt;provincia&gt;València&lt;/provincia&gt;&lt;nom&gt;Horta Sud&lt;/nom&gt;&lt;provincia&gt;València&lt;/provincia&gt; ....</div>
+<div> </div>
+</div>
+<p> </p>
+<p>Per tant ara ja tenim la manera d'ajuntar totes les comarques en un únic XML i posar-li nom al conjunt:</p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT xmlelement(name comarques, xmlagg(xmlelement(name comarca,xmlforest(nom_c,provincia))))<br />    FROM COMARQUES;</div>
+<div> </div>
+<div style="margin-left: 30px;">                                   xmlconcat                 </div>
+<div style="margin-left: 30px;">---------------------------------------------------------------------</div>
+<div style="margin-left: 30px;">&lt;comarques&gt;&lt;comarca&gt;&lt;nom&gt;Safor&lt;/nom&gt;&lt;provincia&gt;València&lt;/provincia&gt;&lt;/comarca&gt;&lt;comarca&gt;&lt;nom&gt;Horta Sud&lt;/nom&gt;&lt;provincia&gt;València&lt;/provincia&gt;&lt;/comarca&gt;...&lt;/comarques&gt;</div>
+<div> </div>
+</div>
+<p> </p>
+<p class="titolet">XMLROOT</p>
+<p><em>Sintaxi</em>:<strong> xmlroot(<em>xml</em>, version <em>text</em> | no value [, standalone yes|no|no value])</strong></p>
+<p><em>Descripció</em>: modifica les propietats del node arrel del XML que tenim com a primer paràmetre. Si s'especifica la versió, reemplaçarà la que hi haja. I el mateix amb l'atribut standalone.</p>
+<p><em>Exemple:</em></p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT xmlroot(xmlparse(document '&lt;primer&gt;abc&lt;/primer&gt;'), version '1.0', standalone yes);</div>
+<div> </div>
+<div style="margin-left: 30px;">                         xmlroot</div>
+<div style="margin-left: 30px;">--------------------------------------------------------------</div>
+<div style="margin-left: 30px;">&lt;?xml version="1.0" standalone="yes"?&gt; &lt;primer&gt;abc&lt;/primer&gt;</div>
+<div> </div>
+</div>
+<p>Com podem comprovar, amb aquestes funcions podem formar un document sencer, i de forma prou senzilla.</p>
+<p>Anem a aprofitar-ho doncs per a inserir una nova fila a la taula P_XML, on teníem un camp XML. Per a poder introduir totes les comarques en un document, i afegir-lo a aquesll taula podríem fer:</p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">INSERT INTO P_XML</div>
+<div style="margin-left: 60px;">SELECT 3, xmlroot(xmlparse(document (SELECT xmlelement(name comarques,</div>
+<div style="margin-left: 480px;">xmlagg(xmlelement(name comarca,xmlforest(nom_c,provincia))))</div>
+<div style="margin-left: 480px;">FROM COMARQUES)),</div>
+<div style="margin-left: 60px;">version '1.0', standalone yes);</div>
+<div style="margin-left: 30px;"> </div>
+</div>
+<p> A continuació veurem una forma molt més senzilla d'introduir tota la taula de comarques com un document XML, però aquesta forma que acabem d'utilitzar ens permetria modificar al gust el format (per exemple posant la província com un atribut)</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32__funcions_de_conversi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34__convertir_taules_senceres_a_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

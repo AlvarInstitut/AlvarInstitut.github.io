@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.- Classes bàsiques de swing | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li id="active"><a href="2_classes_bsiques_de_swing.html" class="active no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li><a href="4_components.html" class="daddy">4.- Components</a>
+   <ul class="other-section">
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li><a href="6_dilegs.html" class="daddy">6.- Diàlegs</a>
+   <ul class="other-section">
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_designer_gui.html" class="no-ch">7.- Designer GUI</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_contenidors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.- Classes bàsiques de swing</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id1">
+<div class="iDevice emphasis0">
+<div id="ta1_1" class="block iDevice_content">
+<p>Veja'm alguna imatge on es quede reflectida la jerarquia de classes de Swing.</p>
+<p>En aquesta primera imatge més completa podem veure com Swing depèn de AWT:</p>
+<p> <img src="Ann_Swing_1_JavaSwingCompoentsList.PNG" style="display: block; margin-left: auto; margin-right: auto;" width="940" height="735" /></p>
+<p> </p>
+<p>Es poden diferenciar fàcilment les classes de AWT i de Swing, perquè aquestes últimes sempre comencen per <strong>J</strong>, mentre que les de AWT no.</p>
+<p>En aquesta segona imatge veurem les classes que més ens interessen de forma resumida, però també incompleta.</p>
+<p><img src="Ann_Swing_2_Resum_Classes.png" style="display: block; margin-left: auto; margin-right: auto;" width="1049" height="583" /></p>
+<p>Podem comprovar que tres són les classes principals:</p>
+<ul>
+<li><strong>JFrame</strong>: permet crear una finestra que serà l'aplicació principal.</li>
+<li><strong>JDialog</strong>: permet crear finestres de diàleg, de les que no es poden redimensionar, a partir de l'aplicació principal.</li>
+<li><strong>JComponent</strong>: tots els components de Swing deriven d'aquesta classe</li>
+</ul>
+<p>Anem a veure el procés de crear una finestra on residirà la nostra aplicació. No es pot definir en el programa principal (el què conté <strong>main</strong>). Des d'aquest programa normalment l'únic que farem serà cridar, activar la finestra (JFrame), i ací és on residirà realment el programa. Els passos seran aquestos:</p>
+<ul>
+<li>Des del programa principal (el del main) definim un objecte de la classe que serà la finestra.</li>
+<li>També cridarem a un mètode de la finestra que servirà per a iniciar.</li>
+<li>La classe que representa la finestra haurà de extrendre <strong>JFrame</strong> (<strong>extends JFrame</strong>).</li>
+<li>Haurà de tenir un mètode d'iniciació (per exemple <strong>iniciar</strong>) que serà el que cridarem des del programa principal. Com a mínim haurà de fer <strong>setVisible(true)</strong>, per a poder fer -la visible. <strong>setVisible()</strong> és un mètode del JFrame, per tant podem posar-lo directament (o <strong>this.setVisible()</strong> ). I també seria molt recomanable donar-li una grandària determinada, ja que sinó serà de 0x0. Ho farem amb el mètode <strong>setSize(x,y)</strong>. Ho podem fer abans de setVisible o després, però quasi que sembla més lògic posar-lo abans. També hem posat el mètode <strong>setDefaultCloseOperation</strong> donant-li el valor per a que tanque el programa quan es tanca la finestra (sinó, tancaríem la finestra, però el programa continuaria en marxa)</li>
+</ul>
+<p>A continuació mostrem aquest esquelet que permet visualitzar una finestra. Observeu que en el programa principal (el main) únicament creem un objecte de tipus finestra, i el fem visible. S'ha de fer amb <strong>EventQueue.invokeLater</strong> per a llançar-lo en un segon fil. Aquest main no el modificarem en tots els exemples. La classe Finestra, evidentment sí.</p>
+<p>Senzillament creem una finestra que tanque el programa quan es tanque la finestra, amb un determinat títol i una determinada grandària. Copieu el següent codi en el fitxer <strong>Exemple_Inicial.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javax.swing.*
+import java.awt.*
+
+class Finestra : JFrame() {
+
+	init {
+		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+		setTitle("Exemple inicial")
+		setSize(400, 300)
+	}
+}
+
+fun main(args: Array&lt;String&gt;) {
+	EventQueue.invokeLater {
+		Finestra().isVisible = true
+	}
+}</code></pre>
+</div>
+</div>
+<p>Aquest seria el resultat. </p>
+<p style="text-align: center;"><img src="AnnexSwing_2_1.png" width="400" height="342" /></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_contenidors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

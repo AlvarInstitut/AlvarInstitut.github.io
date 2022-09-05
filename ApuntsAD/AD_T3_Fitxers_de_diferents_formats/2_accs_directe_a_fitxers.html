@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.- Accés directe a fitxers | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li id="active"><a href="2_accs_directe_a_fitxers.html" class="active no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52_driver_orgjson.html" class="daddy">5.2 Driver org.json</a>
+      <ul class="other-section">
+         <li><a href="521__lectura.html" class="no-ch">5.2.1 - Lectura</a></li>
+         <li><a href="522__escriptura.html" class="no-ch">5.2.2 - Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="53_driver_moshi.html" class="daddy">5.3 Driver Moshi</a>
+      <ul class="other-section">
+         <li><a href="531_lectura.html" class="no-ch">5.3.1 Lectura</a></li>
+         <li><a href="532_escriptura.html" class="no-ch">5.3.2 Escriptura</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_fitxers_binaris_amb_formats_especfics.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_seriaci_dobjectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.- Accés directe a fitxers</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p> </p>
+<p style="text-align: justify;">Els exemples de l'apartat anterior ens poden fer reflexionar sobre un altre tipus d'accés als fitxers. De moment tots els accessos que hem fet als fitxers, tant binaris com de caràcter, ha estat <strong>seqüencials</strong>. Això vol dir que sempre comencem pel principi del fitxer fins que arribem a la informació que volem, o en la major part dels casos fins el final de fitxer.</p>
+<p style="text-align: justify;">Però, i si volem únicament una determinada informació? En l'exemple de l'apartat anterior, què hauríem de fer si volguérem només la informació de l'empleada 3 (Clàudia)? Doncs hauríem de passar primer per tots els anteriors. Com només hi ha 2 davant, no sembla molta feina, però és fàcil de veure la dificultat (o millor dit el cost) si el fitxer constara de centenars o milers d'empleats. Suposem un fitxer de 10.000 empleats. Si volem accedir a l'empleat 9.500 hauríem de passar pels 9.499 empleats anteriors, ja que l'accés seqüencial obliga a començar pel principi i anar passant fins que trobem la informació. I encara pitjor: i si després de consultar l'empleat 9.500 ara volem consultar el 9.000? Doncs hauríem de començar des del principi, perquè ja ens l'havíem passat.</p>
+<p style="text-align: justify;">Afortunadament i ha una altra manera d'accedir, un altre tipus d'accés. S'anomena <strong>accés directe</strong> perquè permetrà anar directament a una posició determinada del fitxer. Moltes vegades també es diu <strong>accés relatiu</strong> o <strong>accés aleatori</strong>, però el funcionament sempre és el mateix. I mireu que estem parlant d'accés. Per tant el que canviarà no és la classe <strong>File</strong> sinó qui permet accedir al contingut, és a dir les classes de <strong>flux d'informació</strong> (els Streams).</p>
+<p style="text-align: justify;">Les classes <strong>InputStream-OutputStream</strong> i <strong>Reader-Writer</strong> només permeten l'accés seqüencial. Per tant per a l'accés directe disposarem d'una altra classe que ens permetrà fer totes les operacions, tant de lectura com d'escriptura. Té l'avantatge que disposa de molts mètodes per a poder accedir a la informació. No ens fara falta, per tant, les classes "decoradores" que afegeixen funcionalitats. Amb aquesta classe tindrem suficient.</p>
+<p class="titolet">RandomAccessFile</p>
+<p style="text-align: justify;">La classe <strong>RandomAccessFile</strong> ens permetrà accedir de forma directa a un fitxer. No ens farà falta, en principi, cap altra classe més. Ens proporcionarà tota la funcionalitat necessària.</p>
+<p style="text-align: justify;">En els constructors aniran 2 paràmetres. El primer farà referència al fitxer. El segon al mode d'accés: només lectura (<strong>r</strong>) o lectura-escriptura (<strong>rw</strong>).</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>RandomAccessFile(fitxer: File, mode: String)</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>RandomAccessFile(fitxer: String, mode: String)</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">En el primer cas li especifiquem un <strong>File </strong>en el primer paràmetre. En el segon un <strong>String </strong>que correspondrà amb el nom del fitxer</p>
+<p style="text-align: justify;">En ambdós casos, el segon paràmetre indicarà el mode:</p>
+<ul style="text-align: justify;">
+<li><strong>"r"</strong> indica només lectura</li>
+<li><strong>"rw"</strong> indica lectura escriptura</li>
+</ul>
+<p style="text-align: justify;"> </p>
+<p style="text-align: justify;">A pesar de ser una classe completament diferent de la jerarquia de <strong>InputStream-OutpuStream</strong> (o <strong>Readre-Writer</strong>) implementa mètodes que es diuen exactament igual que els d'aquelles classes, cosa que fa molt més còmoda la utilització. Els mètodes més importants són:</p>
+<table border="1" align="center">
+<tbody>
+<tr>
+<td>Mètode</td>
+<td>Explicació</td>
+<td>Mètode</td>
+</tr>
+<tr>
+<td>int <strong>read()</strong></td>
+<td>llig (escriu) un byte (encara així torna o se li passa un enter)</td>
+<td>void <strong>write(int)</strong></td>
+</tr>
+<tr>
+<td>int <strong>read(byte[])</strong></td>
+<td>llig (escriu) un sèrie de bytes, tants com la grandària de l'array (si pot)</td>
+<td>int <strong>write(byte[])</strong></td>
+</tr>
+<tr>
+<td>byte <strong>readByte()</strong></td>
+<td>llig (escriu) un byte interpretat com número de 8 bits amb signe</td>
+<td>void <strong>writeByte(int)</strong></td>
+</tr>
+<tr>
+<td>char <strong>readChar()</strong></td>
+<td>llig (escriu) un caràcter</td>
+<td>void <strong>write(char)</strong></td>
+</tr>
+<tr>
+<td>int <strong>readInt()</strong></td>
+<td>llig (escriu) un enter (4 bytes)</td>
+<td>void <strong>write(int)</strong></td>
+</tr>
+<tr>
+<td>short <strong>readShort()</strong></td>
+<td>llig (escriu) un enter xicotet (2 bytes)</td>
+<td>void <strong>write(short)</strong></td>
+</tr>
+<tr>
+<td>long <strong>readLong()</strong></td>
+<td>llig (escriu) un enter llarg (8 bytes)</td>
+<td>void <strong>write(long)</strong></td>
+</tr>
+<tr>
+<td>float <strong>readFloat()</strong></td>
+<td>llig (escriu) un número real en simple precisió (4 bytes)</td>
+<td>void <strong>write(float)</strong></td>
+</tr>
+<tr>
+<td>double <strong>readDouble()</strong></td>
+<td>llig (escriu) un número real en doble precisió (8 bytes)</td>
+<td>void <strong>write(double)</strong></td>
+</tr>
+<tr>
+<td>String <strong>readUTF()</strong></td>
+<td>llig (escriu) un cadena de caràcters (interpretat com UTF-8)</td>
+<td>void <strong>writeUTF()</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>void <strong>seek(long)</strong></td>
+<td>situa el punter en la posició, mesurat des del principi del fitxer</td>
+<td> </td>
+</tr>
+<tr>
+<td>long <strong>length()</strong></td>
+<td>torna la grandària del fitxer</td>
+<td> </td>
+</tr>
+<tr>
+<td>void <strong>close()</strong></td>
+<td>Tanca el flux de l'accés directe</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">En cada lectura, després de llegir el punter que apunta al fitxer estarà situat després de la dada llegida, siga quina siga la grandària.</p>
+<p style="text-align: justify;">Anem a veure un exemple utilitzant el fitxer <strong>Empleats.dat</strong> creat en l'apartat anterior. Obrim l'accés directe únicament en mode lectura, i ens situem directament a la posició 56, que és on comença la informació de l'empleada 3 (Clàudia). Posteriorment utilitzem el mètode de lectura apropiat per a cada tipus de dada. Copieu el codi següent en un fitxer de kotlin anomenat <strong>Exemple_3_2_1_EmpleatsDirecte.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.RandomAccessFile
+
+fun main(args: Array&lt;String&gt;) {
+    val f = RandomAccessFile("Empleats.dat", "r")
+    f.seek(56)
+    println("Núm.: " + f.readInt())
+    println("Nom: " + f.readUTF())
+    println("Depart: " + f.readInt())
+    println("Edat: " + f.readInt())
+    println("Sou: " + f.readDouble())
+    f.close()
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Ràpidament observem una cosa: com sabíem que ens havíem de situar en la posició 56? I si els noms del dos primers hagueren sigut més llargs o més curts?</p>
+<p style="text-align: justify;">Per a poder solucionar els problemes anteriors, podríem fer que els noms siguen de llargària fixa. Les altres dades no donen problemes. Intentarem ara donar sempre una grandària de 10 caràcters a cada nom (si sospitàrem que no en tenim prou, hauríem de fer-los més grans). Anem a crear el fitxer <strong>Empleats2.dat</strong>, i serà exactament igual al de l'anterior apartat, excepte que en el moment de posar els noms (en un array de strings) posem exactament 10 caràcters, omplint amb blancs si és necessari. Evidentment, aquesta no és l'única manera, però per a les poques dades que tenim, sí la més ràpida.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>val noms = arrayOf("Andreu    ","Bernat    ","Clàudia   ","Damià     ")</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">La sentència anterior és l'única diferència respecte al programa de creació d'Empleats.dat de la pregunta anterior, a banda del nom del fitxer, que ara serà <strong>Empleat2.dat</strong>:. Copieu el següent codi en el fitxer Kotlin: <strong>Exemple_3_2_2_Crear_Empleats2.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.DataOutputStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f = DataOutputStream(FileOutputStream("Empleats2.dat"))
+
+    val noms = arrayOf("Andreu    ","Bernat    ","Clàudia   ","Damià     ")
+    val departaments = arrayOf( 10, 20, 10, 10 )
+    val edats = arrayOf( 32, 28, 26, 40 )
+    val sous = arrayOf( 1000.0, 1200.0, 1100.0, 1500.0 )
+
+    for (i in 0..3){
+        f.writeInt(i + 1)
+        f.writeUTF(noms[i])
+        f.writeInt(departaments[i])
+        f.writeInt(edats[i])
+        f.writeDouble(sous[i])
+    }
+    f.close()
+    println("Fitxer creat")
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Ara que sabem la grandària exacta del nom, podem saber que la informació de cada empleat és:</p>
+<table border="0">
+<tbody>
+<tr>
+<td>Número d'empleat (enter)</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td>Nom (10 caràcters + 2 bytes)  </td>
+<td>10 + 2 bytes</td>
+</tr>
+<tr>
+<td>Departament (enter)</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td>Edat (enter)</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td>Sou (doble precisió)</td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td valign="top"><strong>Total:<br /></strong></td>
+<td valign="top"><strong>32 bytes<br /></strong></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Sabent que cada registre (la informació de cada empleat) ocupa 32 bytes, sembla fàcil anar a un determinat empleat. Per a poder provar-lo bé, introduirem el número d'empleat per teclat, fins introduir 0. Observeu que si s'introdueix 1, hem d'anar a pel primer registre, que està a principi de fitxer. Si introduïm 2, anem a pel segon, que només en té un davant, per tant 32 bytes. Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple_3_2_3_Empleats2Directe.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.RandomAccessFile
+import java.util.Scanner
+
+fun main(args: Array&lt;String&gt;) {
+    val f = RandomAccessFile("Empleats2.dat", "rw")
+    val sc = Scanner(System.`in`)
+    println("Quin registre? (-1 per a eixir): ")
+    var num = sc.nextInt ()
+    while (num != -1) {
+        f.seek(32 * (num - 1).toLong())
+        println("Núm.: " + f.readInt())
+        println("Nom: " + f.readUTF())
+        println("Depart: " + f.readInt())
+        println("Edat: " + f.readInt())
+        println("Sou: " + f.readDouble())
+        println()
+        println("Quin registre? (-1 per a eixir): ")
+        num = sc.nextInt()
+
+    }
+    f.close()
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">El problema ara també sembla obvi. Hem assumit que cada caràcter ocupa un byte. Com es codificarà en UTF-8, mentre siguen caràcters normals així serà. Però què passarà quan hi haja un caràcter accentuat? Que ocuparà 2 caràcters. Així, com Clàudia té un d'aquestos caràcters, la cadena no ocuparà 10+2 = 12 bytes, sinó 13. Aleshores, si intentem anar al quart empleat, ens donarà problemes.</p>
+<p style="text-align: justify;">La manera de solucionar-lo serà escriure de manera que tots els caràcters ocupen sempre el mateix. Hi ha un mètode que ens ho permet: <strong>writeChars</strong>. Guardarà cada caràcter amb dos bytes, i no es guardarà la llargària de la cadena. Podem intentar utilitzar-lo per construir el fitxer <strong>Empleats3.dat</strong>. Només haurem de substituir la següent sentència:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>f.writeChars(noms[i])</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">a banda del nom del fitxer, clar. Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple_3_2_4_CrearEmpleat3.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.DataOutputStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f = DataOutputStream(FileOutputStream("Empleats3.dat"))
+
+    val noms = arrayOf("Andreu    ","Bernat    ","Clàudia   ","Damià     ")
+    val departaments = arrayOf( 10, 20, 10, 10 )
+    val edats = arrayOf( 32, 28, 26, 40 )
+    val sous = arrayOf( 1000.0, 1200.0, 1100.0, 1500.0 )
+
+    for (i in 0..3){
+        f.writeInt(i + 1)
+        f.writeChars(noms[i])
+        f.writeInt(departaments[i])
+        f.writeInt(edats[i])
+        f.writeDouble(sous[i])
+    }
+    f.close()
+    println("Fitxer creat")
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Lamentablement la lectura no és tan fàcil. Haurem de llegir exactament 10 caràcters (podríem utilitzar algun altre mètode, però el que es mostra permet identificar clarament que es llegiran 10 caràcters). Els anirem acumulant en un String poder mostrar-lo. Recordeu també que ara el nom ocupa 20 bytes, que sumats als altres 20 de les altres dades fan un total de 40 bytes per registre. Copieu el següent codi en el fitxer Kotlin <strong>Exemple_3_2_5_Empleats3Directe.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.RandomAccessFile
+import java.util.Scanner
+
+fun main(args: Array&lt;String&gt;) {
+    val f = RandomAccessFile("Empleats3.dat", "rw")
+    val sc = Scanner(System.`in`)
+    println("Quin registre? (-1 per a eixir): ")
+    var num = sc.nextInt()
+    while (num != -1) {
+        f.seek(40 * (num - 1).toLong())
+        println("Núm.: " + f.readInt())
+        var nom = ""
+        for (i in 1..10)
+            nom += f.readChar()
+        println("Nom: " + nom)
+        println("Depart: " + f.readInt())
+        println("Edat: " + f.readInt())
+        println("Sou: " + f.readDouble())
+        println()
+        println("Quin registre? (-1 per a eixir): ")
+        num = sc.nextInt()
+
+    }
+    f.close()
+}</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_fitxers_binaris_amb_formats_especfics.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_seriaci_dobjectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

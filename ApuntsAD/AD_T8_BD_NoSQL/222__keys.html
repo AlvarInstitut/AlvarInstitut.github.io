@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.2 - Keys | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_clauvalor.html" class="current-page-parent daddy">2 - Bases de Dades Clau-Valor</a>
+   <ul>
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li class="current-page-parent"><a href="22__utilitzaci_de_redis.html" class="current-page-parent daddy">2.2 - Utilització de Redis</a>
+      <ul>
+         <li><a href="221__strings.html" class="no-ch">2.2.1 - Strings</a></li>
+         <li id="active"><a href="222__keys.html" class="active no-ch">2.2.2 - Keys</a></li>
+         <li><a href="223__hash.html" class="no-ch">2.2.3 - Hash</a></li>
+         <li><a href="224__list.html" class="no-ch">2.2.4 - List</a></li>
+         <li><a href="225__set.html" class="no-ch">2.2.5 - Set</a></li>
+         <li><a href="226__set_ordenat.html" class="no-ch">2.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="23__connexi_des_de_kotlin.html" class="no-ch">2.3 - Connexió des de Kotlin</a></li>
+   </ul>
+   </li>
+   <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="34__connexi_des_de_kotlin.html" class="no-ch">3.4 - Connexió des de Kotlin</a></li>
+      <li><a href="35__connexi_des_de_kotlin_al_servidor_de_linstitut.html" class="no-ch">3.5 - Connexió des de Kotlin al servidor de l'Institut</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="221__strings.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="223__hash.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.2 - Keys</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id22">
+<div class="iDevice emphasis0">
+<div id="ta22_85" class="block iDevice_content">
+<p>Ara anem a veure comandos que ens permeten treballar amb les claus, per a buscar-les, veure si existeixen, etc. No importarà el tipus de les claus (de moment només hem treballat amb claus de tipus <strong>String</strong>, però si ja en tinguérem dels altres tipus també es veurien afectades). En cap cas d'aquestos comandos accedirem al valor de les claus.</p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id24">
+<div class="iDevice emphasis0">
+<div id="ta24_85" class="block iDevice_content">
+<p class="titolet">KEYS</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">keys patró</p>
+<p>Torna totes les claus que coincideixen amb el patró. En el patró podem posar caràcters comodí:</p>
+<ul>
+<li><strong>*</strong> : equival a 0 o més caràcters. Per exemple "Mar*a" podria tornar "Mara", "Maria", "Marta", "Margarita", ...</li>
+<li><strong>? </strong>: equival exactament a un caràcter. Per exemple "Mar?a" podria tornar "Maria" o "Marta",  però no "Mara", "Margarita", ...</li>
+<li><strong>[ab]</strong> : serà cert si en el lloc corresponent hi ha un dels caràcters especificats entre els claudàtors. Per exemple "Mar[it]a" podria tornar "Maria" o "Marta", però no "Marga"</li>
+</ul>
+<p>Per a tornar totes les claus utilitzarem <strong>keys *</strong></p>
+<p class="codi2">127.0.0.1:6379&gt; keys *<br /> 1) "compt3"<br /> 2) "mes5"<br /> 3) "mes3"<br /> 4) "comp3"<br /> 5) "mes7"<br /> 6) "mes2"<br /> 7) "mes6"<br /> 8) "salutacio"<br /> 9) "mes4"<br />10) "mes1"<br />11) "clau_1"<br />12) "compt1"<br />13) "compt2"<br />127.0.0.1:6379&gt; keys mes?<br />1) "mes5"<br />2) "mes3"<br />3) "mes7"<br />4) "mes2"<br />5) "mes6"<br />6) "mes4"<br />7) "mes1"<br />127.0.0.1:6379&gt; keys c*<br />1) "compt3"<br />2) "comp3"<br />3) "clau_1"<br />4) "compt1"<br />5) "compt2"<br />127.0.0.1:6379&gt; keys mes[125]<br />1) "mes5"<br />2) "mes2"<br />3) "mes1"</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id23">
+<div class="iDevice emphasis0">
+<div id="ta23_85" class="block iDevice_content">
+<p class="titolet">EXISTS</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">exists clau</p>
+<p>Torna 1 si la clau existeix, i 0 si no existeix. No importa de quin tipus siga la clau.</p>
+<p class="codi2">127.0.0.1:6379&gt; exists clau_1<br />(integer) 1<br />127.0.0.1:6379&gt; exists clau_25<br />(integer) 0</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id25">
+<div class="iDevice emphasis0">
+<div id="ta25_85" class="block iDevice_content">
+<p class="titolet">DEL</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">del clau1 clau2 clauN</p>
+<p>Elimina la clau o claus especificades. Si posem més d'una clau i alguna no existeix, la ignorarà i sí que esborrarà les altres.</p>
+<p class="codi2">127.0.0.1:6379&gt; del compt2<br />(integer) 1<br />127.0.0.1:6379&gt; del mes6 mes7 mes8 mes9<br />(integer) 2</p>
+<p>Observeu que ens indica quantes claus ha esborrat. En el primer exemple ha esborrat la clau especificada, i en el segon diu que ha esborrat 2, que seran <strong>mes6</strong> i <strong>mes7</strong>, ja que <strong>mes8</strong> i <strong>mes9</strong> no existien.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id26">
+<div class="iDevice emphasis0">
+<div id="ta26_85" class="block iDevice_content">
+<p class="titolet">TYPE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">type clau</p>
+<p>Torna el tipus de la clau especificada. Els valors possibles són:</p>
+<ul>
+<li>string</li>
+<li>hash</li>
+<li>list</li>
+<li>set</li>
+<li>zset (conjunt ordenat)</li>
+</ul>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; type clau_1<br />string<span style="text-decoration: underline;"><br /></span></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id27">
+<div class="iDevice emphasis0">
+<div id="ta27_85" class="block iDevice_content">
+<p class="titolet">RENAME</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">rename clau novaclau</p>
+<p>Canvia el nom de la clau a la clau nova, conservant el valor. Dóna error si la clau antiga no existeix. Si la clau nova ja existia reemplaçarà el seu valor.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p></p>
+<p class="codi2">127.0.0.1:6379&gt; get salutacio<br />"Hola. Com va?"<br />127.0.0.1:6379&gt; rename salutacio saludar<br />OK<br />127.0.0.1:6379&gt; get salutacio<br />(nil)<br />127.0.0.1:6379&gt; get saludar<br />"Hola. Com va?"<br />127.0.0.1:6379&gt; rename clau_22 clau_23<br />(error) ERR no such key</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id28">
+<div class="iDevice emphasis0">
+<div id="ta28_85" class="block iDevice_content">
+<p class="titolet">RENAMENX</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">renamenx clau novaclau</p>
+<p>Igual que l'anterior però únicament si la clau nova no existia. Si ja existia no fa res (tornant 0 per a indicar-h0).</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; renamenx compt1 compt3<br />(integer) 0<br />127.0.0.1:6379&gt; get compt1<br />"9"</p>
+<p>Estem suposant que la clau <strong>compt3</strong> ja existeix</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id29">
+<div class="iDevice emphasis0">
+<div id="ta29_85" class="block iDevice_content">
+<p class="titolet">EXPIRE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">expire clau segons</p>
+<p>Assigna com a temps d'expiració de la clau els segons especificats. Si ja tenia temps d'expiració, el modifica posant-li aquest valor especificat.</p>
+<p>En cas que a una clau amb temps d'expiració li canviem el nom amb <strong>RENAME</strong>, continuarà amb temps d'expiració que li quedava.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id30">
+<div class="iDevice emphasis0">
+<div id="ta30_85" class="block iDevice_content">
+<div id="ta29_85" class="block iDevice_content">
+<p class="titolet">PEXPIRE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">pexpire clau milisegons</p>
+<p>El mateix però en milisegons</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id31">
+<div class="iDevice emphasis0">
+<div id="ta31_85" class="block iDevice_content">
+<div id="ta30_85" class="block iDevice_content">
+<div id="ta29_85" class="block iDevice_content">
+<p class="titolet">TTL</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">ttl clau</p>
+<p>Torna el temps de vida (fins l'expiració) d'una clau. Si la clau no té temps d'expiració, torna -1.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; expire compt3 10<br />(integer) 1<br />127.0.0.1:6379&gt; ttl compt3<br />(integer) 6<br />127.0.0.1:6379&gt; ttl compt3<br />(integer) 3<br />127.0.0.1:6379&gt; ttl compt3<br />(integer) 0<br />127.0.0.1:6379&gt; get compt3<br />(nil)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id32">
+<div class="iDevice emphasis0">
+<div id="ta32_85" class="block iDevice_content">
+<p class="titolet">PTTL</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">pttl clau</p>
+<p>Igual que l'anterior, però ens torna el temps en milisegons.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_85" class="block iDevice_content">
+<div id="ta31_85" class="block iDevice_content">
+<div id="ta30_85" class="block iDevice_content">
+<div id="ta29_85" class="block iDevice_content">
+<p class="titolet">PERSIST</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">persist clau</p>
+<p>Elimina el temps d'expiració d'una clau, si és que en tenia. Ara la clau no expirarà mai.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; expire compt1 20<br />(integer) 1<br />127.0.0.1:6379&gt; ttl compt1<br />(integer) 12<br />127.0.0.1:6379&gt; ttl compt1<br />(integer) 7<br />127.0.0.1:6379&gt; persist compt1<br />(integer) 1<br />127.0.0.1:6379&gt; ttl compt1<br />(integer) -1<br />127.0.0.1:6379&gt; get compt1<br />"9"</p>
+</div>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="221__strings.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="223__hash.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

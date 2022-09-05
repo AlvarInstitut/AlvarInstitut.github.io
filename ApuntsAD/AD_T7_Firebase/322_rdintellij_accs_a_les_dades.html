@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.2 RD-IntelliJ: Accés a les dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-51"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: FIREBASE</a></li>
+   <li><a href="1__introducci_firebase.html" class="no-ch">1 - Introducció: Firebase</a></li>
+   <li><a href="2__creaci_duna_aplicaci.html" class="no-ch">2 - Creació d'una aplicació</a></li>
+   <li class="current-page-parent"><a href="3__realtime_database_rd.html" class="current-page-parent daddy">3 - Realtime Database (RD)</a>
+   <ul>
+      <li><a href="31_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">3.1 RD: Utilització des de l'entorn de Firebase</a></li>
+      <li class="current-page-parent"><a href="32_rd_utilitzaci_des_de_intellij.html" class="current-page-parent daddy">3.2 RD: Utilització des de IntelliJ</a>
+      <ul>
+         <li><a href="321_rdintellij_connexi_des_de_kotlin.html" class="no-ch">3.2.1 RD-IntelliJ: Connexió des de Kotlin</a></li>
+         <li id="active"><a href="322_rdintellij_accs_a_les_dades.html" class="active no-ch">3.2.2 RD-IntelliJ: Accés a les dades</a></li>
+         <li><a href="323_rdintellij_tot_lexemple.html" class="no-ch">3.2.3 RD-IntelliJ: Tot l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_rd_utilitzaci_des_dandroid.html" class="daddy">3.3 RD: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="331_rdandroid_connexi_des_dandroid.html" class="no-ch">3.3.1 RD-Android: Connexió des d'Android</a></li>
+         <li><a href="332_rdandroid_accs_a_les_dades.html" class="no-ch">3.3.2 RD-Android: Accés a les dades</a></li>
+         <li><a href="333_rdandroid_tot_lexemple.html" class="no-ch">3.3.3 RD-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__cloud_firestore_cf.html" class="daddy">4 - Cloud Firestore (CF)</a>
+   <ul class="other-section">
+      <li><a href="41_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">4.1 CF: Utilització des de l'entorn de Firebase</a></li>
+      <li><a href="42_cf_utilitzaci_des_de_intellij.html" class="daddy">4.2 CF: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="421_cfintellij_connexi_des_de_kotlin.html" class="no-ch">4.2.1 CF-IntelliJ: Connexió des de Kotlin</a></li>
+         <li><a href="422_cfintellij_accs_a_les_dades.html" class="no-ch">4.2.2 CF-IntelliJ: Accés a les dades</a></li>
+         <li><a href="423_cfintellij_tot_lexemple.html" class="no-ch">4.2.3 CF-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="424_cfintellij_exemple_ampliat.html" class="no-ch">4.2.4 CF-IntelliJ: Exemple ampliat</a></li>
+      </ul>
+      </li>
+      <li><a href="43_cf_utilitzaci_des_dandroid.html" class="daddy">4.3 CF: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="431_cfandroid_connexi.html" class="no-ch">4.3.1 CF-Android: Connexió</a></li>
+         <li><a href="432_cfandroid_accs_a_les_dades.html" class="no-ch">4.3.2 CF-Android: Accés a les dades</a></li>
+         <li><a href="433_cfandroid_tot_lexemple.html" class="no-ch">4.3.3 CF-Android: Tot l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="5__cloud_storage.html" class="daddy">5 - Cloud Storage</a>
+   <ul class="other-section">
+      <li><a href="51_cs_utilitzaci_des_de_lentorn.html" class="no-ch">5.1 CS: Utilització des de l'entorn</a></li>
+      <li><a href="52_cs_utilitzaci_des_de_intellij.html" class="daddy">5.2 CS: Utilització des de IntelliJ</a>
+      <ul class="other-section">
+         <li><a href="521_csintellij_connexi.html" class="no-ch">5.2.1 CS-IntelliJ: Connexió</a></li>
+         <li><a href="522_csintellij_accs_a_les_dades.html" class="no-ch">5.2.2 CS-IntelliJ: Accés a les dades</a></li>
+         <li><a href="523_csintellij_tot_lexemple.html" class="no-ch">5.2.3 CS-IntelliJ: Tot l'exemple</a></li>
+         <li><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.2.4 CS-IntelliJ: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+      <li><a href="53_cs_utilitzaci_des_dandroid.html" class="daddy">5.3 CS: Utilització des d'Android</a>
+      <ul class="other-section">
+         <li><a href="531_csandroid_connexi.html" class="no-ch">5.3.1 CS-Android: Connexió</a></li>
+         <li><a href="532_csandroid_accs_als_fitxers.html" class="no-ch">5.3.2 CS-Android: Accés als fitxers</a></li>
+         <li><a href="533_csandroid_tot_lexemple.html" class="no-ch">5.3.3 CS-Android: Tot l'exemple</a></li>
+         <li><a href="534_csandroid_exemple_ampliat_combinant_amb_cloud_firestore.html" class="no-ch">5.3.4 CS-Android: Exemple ampliat, combinant amb Cloud Firestore</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="321_rdintellij_connexi_des_de_kotlin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_rdintellij_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.2 RD-IntelliJ: Accés a les dades</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id180">
+<div class="iDevice emphasis0" >
+<div id="ta180_185_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Guardar dades</p>
+<p style="text-align: justify;">Disposem del mètode <strong>setValue()</strong> de la referència a la dada a la que volem accedir. Accepta 2 paràmetres:</p>
+<ul style="text-align: justify;">
+<li>El primer és el valor que volem introduir.</li>
+<li>El segon és un listener per a poder sincronitzar. Ens farà falta sincronitzar únicament en els programes mode text senzills que fem. Quan fem els <strong>gràfics</strong> no ens farà falta, i posarem <strong>null</strong></li>
+</ul>
+<p style="text-align: justify;">Si per exemple vulguérem guardar en la variable <strong>a1</strong>, de forma senzilla ho faríem així (ens funcionaria en els gràfics):</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #660e7a;">refA1</span>.setValue(<span style="color: #660e7a;">"Valor per a a1"</span>, null);</pre>
+<p style="text-align: justify;">En l'operació de guardar si la parella clau-valor on es va a guardar existia, doncs modificarà el valor. I si no existia, la crearà.</p>
+<p style="text-align: justify;">En el cas que vulguem guardar no en l'arrel, sinó més avall en l'estructura JSON, disposem del mètode <strong>child()</strong>, que ens permet anar a un determinat fill, a l'estil de la segona manera descrita en el subpunt anterior. Per exemple si vulguérem canviar l'edat del primer empleat, l'estructura per a arribar seria:<strong> empresa --&gt; empleat --&gt; 0 --&gt; edat</strong></p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="background-color: #e4e4ff;">empresa</span>.child(<span style="color: #008000; font-weight: bold;">"empleat"</span>).child(<span style="color: #008000; font-weight: bold;">"0"</span>).child(<span style="color: #008000; font-weight: bold;">"edat"</span>).setValue(<span style="color: #008000; font-weight: bold;">"33"</span>, null);</pre>
+<p style="text-align: justify;">Si no existia abans qualsevol dels nodes de l'estructura, el crearà. Fins i tot, si no existira abans de la sentència anterior <strong>empresa</strong>, doncs crearia <strong>empresa</strong>, i dins d'ell <strong>empleat</strong>, i dins d'ell <strong>0</strong>, i dins d'ell <strong>edat</strong>, amb el valor 33.</p>
+<p style="text-align: justify;">També podríem guardar tot un objecte, i es convertirà en estructura JSON, però ens ho deixem per a més avant.</p>
+<p style="text-align: justify;">Però com havíem dit abans, s'ha de sincronitzar amb Firebase, des del programa Java ens hem d'esperar a aquesta sincronització, si no no ens funcionarà. En el segon paràmetre ens posem un <strong>listener</strong>. Aquest exemple ja està complet. Guardeu-lo amb el nom <strong>Exemple_7_3_1_FirebaseRD_Guardar.kt</strong></p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>import java.io.FileInputStream
+import com.google.firebase.FirebaseOptions
+import com.google.auth.oauth2.GoogleCredentials
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.FirebaseDatabase
+import java.util.concurrent.CountDownLatch
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.DatabaseError
+
+fun main() {
+	val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
+
+	val options = FirebaseOptions.builder()
+		.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+		.setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com").build()
+
+	FirebaseApp.initializeApp(options)
+
+	val empresa = FirebaseDatabase.getInstance().getReference("empresa")
+
+	val done = CountDownLatch (1)
+	
+	empresa.child("empleat").child("0").child("edat").setValue("33",
+		object : DatabaseReference.CompletionListener {
+            override fun onComplete(p0: DatabaseError?, p1: DatabaseReference) {
+                done.countDown()
+			}
+	})
+	done.await()
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Recordeu que heu de canviar el <strong>nom del fitxer json</strong> i la <strong>URL</strong> per les vostres.</p>
+<p style="text-align: justify;">I aquest és el resultat d'executar-lo. A la dreta podem veure com s'està modificant la dada que preteníem:</p>
+<p style="text-align: center;"><img src="T7_3_2_1.png" alt="" width="1311" height="673" /></p>
+<p style="text-align: justify;">Però com comentàvem, en el cas de les aplicacions gràfiques resulta més senzill, ja que no haurem d'esperar expressament a la sincronització, sinó que l'aplicació es queda en marxa, i per tant no hi haurà problema.</p>
+<p style="text-align: justify;">Ho practicarem en un exemple nou, on arribarem a construir un Xat, i ens servirà per a practicar totes les coses que us volem mostrar en Realtme Database de Firebase.</p>
+<p style="text-align: justify;">Aquest és l'esquelet del programa. Guardeu-lo amb el nom <strong>Exemple_7_3_2_FirebaseRD_CrearXat.kt</strong>:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>import java.awt.EventQueue
+import javax.swing.JFrame
+import javax.swing.JLabel
+import javax.swing.JTextArea
+import javax.swing.JButton
+import javax.swing.JTextField
+import java.awt.BorderLayout
+import javax.swing.JPanel
+import java.awt.FlowLayout
+import java.awt.Color
+import javax.swing.JScrollPane
+import java.io.FileInputStream
+
+import com.google.firebase.FirebaseOptions
+import com.google.auth.oauth2.GoogleCredentials
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.*
+
+class CrearXat : JFrame() {
+
+    val etUltimMissatge= JLabel("Últim missatge: ")
+    val ultimMissatge= JLabel()
+
+    val etiqueta = JLabel("Missatges:")
+    val area = JTextArea()
+
+    val etIntroduccioMissatge = JLabel("Introdueix missatge:")
+    val enviar = JButton("Enviar")
+    val missatge = JTextField(15)
+
+    // en iniciar posem un contenidor per als elements anteriors
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        setBounds(100, 100, 450, 300)
+        setLayout(BorderLayout())
+
+        // contenidor per als elements
+        //Hi haurà títol. Panell de dalt: últim missatge. Panell de baix: per a introduir missatge. Panell central: tot el xat
+
+        val panell1 = JPanel(FlowLayout())
+        panell1.add(etUltimMissatge)
+        panell1.add(ultimMissatge)
+        getContentPane().add(panell1, BorderLayout.NORTH)
+
+        val panell2 = JPanel(BorderLayout())
+        panell2.add(etiqueta, BorderLayout.NORTH)
+        area.setForeground(Color.blue)
+        area.setEnabled(false)
+        val scroll = JScrollPane(area)
+        panell2.add(scroll, BorderLayout.CENTER)
+        getContentPane().add(panell2, BorderLayout.CENTER)
+
+        val panell3 = JPanel(FlowLayout())
+        panell3.add(etIntroduccioMissatge)
+        panell3.add(missatge)
+        panell3.add(enviar)
+        getContentPane().add(panell3, BorderLayout.SOUTH)
+
+        setVisible(true)
+        enviar.addActionListener{enviar()}
+
+        val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
+
+        val options = FirebaseOptions.builder()
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com").build()
+
+        FirebaseApp.initializeApp(options)
+
+        // Exemple de listener de lectura única addListenerForSingleValue()
+        // Per a posar el títol. Sobre nomXat
+
+        // Exemple de listener de lectura contínua addValueEventListener()
+        // Per a posar l'últim missatge registrat. Sobre a1
+
+        // Exemple de listener d'una llista addChildEventListener()
+        // Per a posar tota la llista de missatges. Sobre xat
+
+    }
+
+    // Exemple de guardar dades sense haver d'esperar per ser una aplicació gràfica
+    // Per a guardar dades. Sobre a1, i despŕes sobre la llista xat
+    fun enviar(){
+
+    }
+
+}
+
+fun main(args: Array&lt;String&gt;) {
+    EventQueue.invokeLater {
+        CrearXat().isVisible = true
+    }
+}</code></pre>
+</div>
+</div>
+<div id="ta164_85" class="block iDevice_content">
+<p style="text-align: justify;">Recordeu que heu de canviar el <strong>nom del fitxer json</strong> i la <strong>URL</strong> per les vostres. Ho podeu copiar de l'exemple anterior<code></code></p>
+<p style="text-align: justify;">Observeu que ja tenim col·locades en l'anterior programa les dades de connexió:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>		val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
+
+		val options = FirebaseOptions.Builder()
+				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+				.setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com").build()
+
+		FirebaseApp.initializeApp(options)
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I torne a insistir en què heu de <strong>canviar la referència al fitxer JSON i la URL</strong>.</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Per a guardar les dades, en aquest exemple de moment guardarem en la clau de Firebase <strong>a1</strong> en el moment de apretar el botó de baix d'<strong>Enviar</strong>. No farà falta muntar cap listener per veure si ja hem acabat, ja que el programa continua en marxa.</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>	// Exemple de guardar dades sense haver d'esperar per ser una aplicació gràfica
+	// Per a guardar dades. Sobre a1, i despŕes sobre la llista xat
+	fun enviar(){
+			val refA1 = FirebaseDatabase.getInstance().getReference("a1")
+			refA1.setValue(missatge.getText(), null)
+	}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Observeu que ara queda molt senzilla la sentència de guardar, i no ha fet falta ficar cap listener en el segon paràmetre, sinó <strong>null</strong>, per estar en una aplicació gràfica:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code><strong>refA1.setValue(missatge.getText(), null)</strong></code></pre>
+</div>
+</div>
+<p style="text-align: justify;">El resultat seria aquest, on es veu la modificació de la dada que volíem:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_2_2.png" alt="" width="1329" height="738" /></p>
+<p></p>
+<p style="text-align: center;"></p>
+</div></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id185">
+<div class="iDevice emphasis0" >
+<div id="ta185_187_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Recuperar dades</p>
+<p style="text-align: justify;">La lectura de dades és més complicada que l'escriptura. És en bona part per culpa de la "sincronització" de les dades que obtenim. Per això no existeix un mètode tan senzill com el <span style="color: #ff0000;"><strong>getValue()</strong></span>. La lectura s'ha de muntar sempre amb <strong> Listeners</strong>, que es queden escoltant si hi ha alguna actualització de la dada registrada. Recordeu que és de la dada registrada, no de tota la Base de Dades.</p>
+<p style="text-align: justify;">Podem muntar dos tipus de Listeners, però el seu funcionament serà similar</p>
+<ul style="text-align: justify;">
+<li>Els que només escolten per a llegir les dades al principi, i no esperaran per a posteriors canvis en les dades (i per tant no consumiran tants recursos): <strong>addListenerForSingleValueEvent()</strong></li>
+<li>Els que es queden escoltant tota l'estona: <strong>addValueEventListener()</strong><strong></strong></li>
+</ul>
+<p style="text-align: justify;">En ambdos casos obtenim com a paràmetre un <strong>Data</strong><strong>Snapshot</strong> (còpia) de la dada registrada. I d'aquest tipus, <strong>DataSnapshot</strong>, sí que tenim el mètode <strong>getValue()</strong> per a accedir a la dada. Ambdós tipus de Listeners tenen un tractament absolutament similar, únicament amb la diferència abans esmentada que el segon està sempre escoltant, i el primer només escolta una vegada al principi.</p>
+<p style="text-align: justify;">El mètode <strong>getValue()</strong> admet un paràmetre que serà la classe del tipus que volem obtenir. Podem posar les següents:</p>
+<ul>
+<li style="text-align: justify;"><strong>String.class</strong>, i aleshores el que obtenim s'interpretarà com un String</li>
+<li style="text-align: justify;"><strong>Double.class</strong>, i s'interpretarà com un número real de doble precisió</li>
+<li style="text-align: justify;"><strong>Boolean.class</strong>, i s'interptretaràcom un valor booleà</li>
+<li style="text-align: justify;">També es poden posar classes per a obtenir tot un objecte (Map) i per a una llista (List). Fins i tot es podria arribar a posar una classe definida per nosaltres. Però amb els anteriors nosaltres en tindrem prou</li>
+</ul>
+<p style="text-align: justify;"></p>
+<h2 style="text-align: justify;">addListenerForSingleValue()</h2>
+<p style="text-align: justify;">En aquest primer exemple anem a agafar una única vegada la dada que ens interessa, i per tant  utilitzarem <strong>addListenerForSingleValueEvent()</strong>. Ens servirà per a posar el títol de l'aplicació, i ho farem consultant la clau <strong>nomXat </strong>que haurà d'estar creada prèviament des del mateix entorn de Firebase.</p>
+<p><img src="T7_2_2_2_2_3.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1328" height="737" /></p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"></pre>
+<p style="text-align: justify;">Modificarem el fragment de programa marcat pel comentari, i el que fem és esperar per a llegir només una vegada.<strong></strong></p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>		// Exemple de listener de lectura única addListenerForSingleValue()
+		// Per a posar el títol. Sobre nomXat
+		val nomXat = FirebaseDatabase.getInstance().getReference("nomXat")
+
+		nomXat.addListenerForSingleValueEvent(object : ValueEventListener {
+			override
+			fun onDataChange(dataSnapshot: DataSnapshot) {
+				setTitle(dataSnapshot.getValue().toString())
+			}
+
+			override
+			fun onCancelled(error: DatabaseError) {
+			}
+		})
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Aquest és el resultat, i quan l'executeu observareu que tarda un poc en mostrar el títol. És perquè ho està llegint de Firebase.</p>
+<p><img src="T7_2_2_2_2_4.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="450" height="300" /></p>
+<p></p>
+<h2 style="text-align: justify;">addValueEventListener()</h2>
+<p style="text-align: justify;">Anem a veure ara un exemple per a l'altre mètode, el <strong>addValueEventListener()</strong>, que és el que es queda escoltant tota la estona</p>
+<p style="text-align: justify;">Concretarem el que farem és escoltar  tota la estona per si es produeix algun canvi en la clau <strong>a1</strong>. Si es produeix aquest canvi, modificarà el valor del JLabel <strong>ultimMissatge </strong>que està dalt.</p>
+<p style="text-align: justify;">També afegirem el missatge al JTextArea, per a que tinga apariència de xat, encara que després ho modificarem per a millorar-ho. Ho hem de col·locar on està marcat pel comentari</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>		// Exemple de listener de lectura contínua addValueEventListener()
+		// Per a posar l'últim missatge registrat. Sobre a1
+		val ultim = FirebaseDatabase.getInstance().getReference("a1")
+
+		ultim.addValueEventListener(object : ValueEventListener {
+			override
+			fun onDataChange(dataSnapshot: DataSnapshot) {
+				ultimMissatge.setText(dataSnapshot.getValue().toString())
+				area.append(dataSnapshot.getValue().toString() + "\n")         // aquesta línia després la llevarem
+			}
+
+			override
+			fun onCancelled(error: DatabaseError ) {
+			}
+		})
+</code></pre>
+</div>
+</div>
+<p><br /><code></code></p>
+<p style="text-align: justify;">L'execució serà com la de la pantalla de dalt a l'esquerra. Però si es produeix algun canvi (com es mostra en la pantalla de la dreta), aquest canvi es reflectirà automàticament tant en el JLabel de dalt com en el TextArea, tal i com es mostra en la imatge de baix a l'esquerra:</p>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<p><img src="T7_2_2_2_2_6.png" alt="" width="450" height="300" /></p>
+<p><img src="T7_2_2_2_2_8.png" alt="" width="450" height="300" /></p>
+</td>
+<td><img src="T7_2_2_2_2_7.png" alt="" width="1319" height="733" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p style="text-align: justify;">En canvi, una vegada està en marxa el programeta del xat, per més que canviem <strong>nomXat</strong>, que es traslladava al títol de la finestra, aquest títol ja <strong>no canviarà</strong> perquè recordem que es feia una única lectura</p>
+<p style="text-align: center;"><img src="T7_2_2_2_2_8_5.png" alt="" width="1025" height="800" /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: justify;">Com veieu ha estat molt fàcil construir una espècie de xat. Ara millorarem aquest xat.</p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id227">
+<div class="iDevice emphasis0" >
+<div id="ta227_187_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Tractament de llistes</p>
+<p>Per a explicar millor el tractament de llistes, crearem una altra referència a una clau que representarà una llista de missatges. Cada missatge constarà d'un nom i un contingut, i així vuerem també el tractament d'objectes.</p>
+<p>El primer que ens haurem de definir és la referència a aquesta nova clau, que l'anomenarem <strong>xat</strong> (no està creada encara en la Base de Dades).</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">val </span>xat = FirebaseDatabase.getInstance().getReference(<span style="color: #008000; font-weight: bold;">"xat"</span>)</pre>
+<p>Anar afegint elements a la llista, ho podem fer a mà, posant nosaltres l'índex, ja que hem vist que la manera de representar en Firebase una llista són fills únicament amb clau, que seria el subíndex.</p>
+<p>Per tant una manera d'afegir el primer missatge del xat, seria amb l'índex 0. Posem aquest codi quan apretem el botó (no hem llevat de moment el fet de guardar en <strong>a1</strong>, per a que mentre fem les proves es veja tot el xat):</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>	// Exemple de guardar dades sense haver d'esperar per ser una aplicació gràfica
+	// Per a guardar dades. Sobre a1, i despŕes sobre la llista xat
+	fun enviar() {
+		val refA1 = FirebaseDatabase.getInstance().getReference("a1")
+		refA1.setValue(missatge.getText(), null)
+		val xat = FirebaseDatabase.getInstance().getReference("xat")
+		xat.child("0").child("nom").setValue("Usuari1", null)
+		xat.child("0").child("contingut").setValue(missatge.getText(), null)
+	}
+</code></pre>
+</div>
+</div>
+<p>Quan apretem s'actualitzarà la Base de Dades d'aquesta manera:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_2_9.png" alt="" width="587" height="377" /></p>
+<p>Però aquesta manera d'introduir en la llista acaba per ser molt poc pràctica. Si ara anàrem a introduir un segon missatge (nom i contingut) li hauríem de posar com a índex 1. No és viable.</p>
+<p>Podríem dur 2 polítiques per a gestionar els índex:</p>
+<ul>
+<li>Podríem portar un comptador per a saber quin índex toca inserir en cada moment, cosa també molt poc pràctica perquè si l'aplicació està instal·lada en més d'un dispositiu, podria haver col·lisió en el número d'índex.</li>
+<li>Podríem mirar quin és l'últim índex introduït, per a incrementar-lo en una unitat. Però açò suposa llegir de la Base de Dades, i com hem vist abans suposarà muntar un Listener, segurament dels d'un únic ús. Per tant se'ns complic la cosa. Es pot fer, però no és còmode.</li>
+</ul>
+<p>Per a estalviar-nos aquesta feina, Firebase ens proporciona un métode per a afegir un nou element a una llista, el mètode <strong>push()</strong>. Introdueix un nou element a la llista, i li posa com a índex un numero generat de manera que no es repetirà mai. L'única preocupació que hem de tenir és guardar aquest índex (amb <strong>getKey()</strong>), per a poder posar-lo com a clau.</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>	// Exemple de guardar dades sense haver d'esperar per ser una aplicació gràfica
+	// Per a guardar dades. Sobre a1, i despŕes sobre la llista xat
+	fun enviar() {
+		val refA1 = FirebaseDatabase.getInstance().getReference("a1")
+		refA1.setValue(missatge.getText(), null)
+		val xat = FirebaseDatabase.getInstance().getReference("xat")
+		val clau = xat.push().getKey()
+		xat.child(clau).child("nom").setValue("Usuari1", null)
+		xat.child(clau).child("contingut").setValue(missatge.getText(), null)
+	}
+</code></pre>
+</div>
+</div>
+<p>I el resultat és aquest:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_2_10.png" alt="" width="552" height="441" /></p>
+<p>Com veiem és una cadena molt llarga que no és repetirà mai.</p>
+<p>Anem a fer una tercera inserció d'un missatge, però ara ho completarem més, i solucionarem de pas algun problemeta que podíem haver tingut.</p>
+<p>Crearem una classe anomenada <strong>Missatge</strong>, que inclourà les propietats <strong>nom</strong> i <strong>contingut</strong>. Crearem un objecte <strong>Missatge </strong>amb uns nous valors, i veurem que el podem guardar perfectament. Per a aquest exemple segurament no valdria la pena l'esforç, però es pot veure la utilitat per a objectes més complexos.</p>
+<p>Primer definim la classe. El millor és que el guardem com una classe nova, és a dir com a <strong>Missatge.kt </strong><strong></strong>:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre class="  language-java"><code class="  language-java"><span class="token keyword">class</span> <span class="token class-name">Missatge</span><span class="token punctuation">(</span>var nom<span class="token operator">:</span> String<span class="token punctuation">,</span> var contingut<span class="token operator">:</span> String<span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<p>Per a guardar, col·locaríem aquestes sentències entre les accions del clic del botó, com en les altres ocasions. Observeu com ara ni tan sols ens fa falta guardar en una variable el <strong>getKey()</strong>, ja que es fa tot només en una operació:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>	// Exemple de guardar dades sense haver d'esperar per ser una aplicació gràfica
+	// Per a guardar dades. Sobre a1, i despŕes sobre la llista xat
+	fun enviar() {
+		val refA1 = FirebaseDatabase.getInstance().getReference("a1")
+		refA1.setValue(missatge.getText(), null)
+		val xat = FirebaseDatabase.getInstance().getReference("xat")
+		val m = Missatge("Usuari1", missatge.getText())
+		xat.push().setValue(m, null)
+	}
+</code></pre>
+</div>
+</div>
+<p>El resultat seria el mateix que en l'ocasió anterior:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_2_11.png" alt="" width="604" height="525" /></p>
+<p>Ara només ens falta el tractament de lectura de les llistes.</p>
+<h2>addChildEventListener()</h2>
+<p>Podríem muntar un Listener com en les altres ocasions, però ara disposarem d'uns altres Listeners que se'ns acoplen millor ja que s'activen quan hi ha modificacions en algun element de la llista. En l'exemple només utilitzarem el de creació d'un nou element, però com veurem també podríem utilitzar els moments de supressió o modificació d'elements.</p>
+<p>Es tracta del Listener <strong>ChildEventListener</strong>, i hem d'utilitzar el mètode <strong>addChildEventListener()</strong> sobre la llista. Voldrà la implementació dels mètodes: <strong>onChildAdded()</strong>, <strong>onChildChanged()</strong>, <strong>onChildRemoved()</strong> i <strong>onChildMoved()</strong>, a banda de <strong>onCancelled()</strong>. Però com comentàvem ara només utilitzarem la de creació d'un nou element, i senzillament el mostrarem en el TextView.</p>
+<p>Al <strong>dataSnapshot</strong> arriba únicament l'element introduït, modificat o esborrat, no tota la llista. Per tant és molt còmode. També arriba el nom de l'element anterior com a segon paràmetre, per si hem de fer algun tractament. És important fixar-nos en que aquest segon paràmetre l'hem de definir com a <strong>String?</strong> (amb la interrogant per a contemplar el null). Si no posem la interrogant, no es comportarà bé la primera vegada.</p>
+<p>Açò ens substituirà l'escriptura que féiem abans del TextArea (a mi m'havia quedat en la línia 95, vosaltres la tindreu aproximadament per ahí). Per tant llevem aquesta línia:</p>
+<div style="font-weight: bold;">
+<div>
+<pre><span style="color: #ff0000;"><code>				area.append(dataSnapshot.getValue().toString() + "\n");  // aquesta línia després la llevarem</code></span></pre>
+</div>
+</div>
+<p>I posem el següent on queda marcat pel comentari. Així ens quedarà un xat més "professional"</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>		// Exemple de listener d'una llista addChildEventListener()
+		// Per a posar tota la llista de missatges. Sobre xat
+		val xat = FirebaseDatabase.getInstance().getReference("xat")
+
+		xat.addChildEventListener(object : ChildEventListener {
+				override
+				fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
+					area.append(dataSnapshot.child("nom").getValue().toString() + ": "
+								+ dataSnapshot.child("contingut").getValue().toString() + "\n"
+					)
+				}
+
+				override
+				fun onChildChanged(dataSnapshot: DataSnapshot, s: String?) {
+				}
+
+				override
+				fun onChildRemoved(dataSnapshot: DataSnapshot) {
+				}
+
+				override
+				fun onChildMoved(dataSnapshot: DataSnapshot, s: String?) {
+				}
+
+				override
+				fun onCancelled(databaseError: DatabaseError) {
+				}
+			}
+		)</code></pre>
+</div>
+</div>
+<p><br /><code><br /></code></p>
+<p>Si executem aquest programa, tenint només en el clic del botó l'addició d'un element a la llista i aquest Listener anterior, veurem que inicialment ens apareixeran tots els elements de la llista. Això és perquè considera que inicialment s'afegeix cadascun dels elements de la llista, i en el mateix ordre en que estan definits. En aquest imatge hem aprofitat per afegir un quart missatge:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_2_12.png" alt="" width="450" height="300" /></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="321_rdintellij_connexi_des_de_kotlin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_rdintellij_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

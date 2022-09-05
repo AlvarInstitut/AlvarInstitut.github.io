@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.6 - Utilització des de Java | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-36"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 9: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__estratgies_demmagatzematge_de_xml.html" class="no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li class="current-page-parent"><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="current-page-parent daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul>
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li><a href="33__funcions_que_produeixen_contingut_xml.html" class="no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li><a href="34__convertir_taules_senceres_a_xml.html" class="no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li id="active"><a href="36__utilitzaci_des_de_java.html" class="active no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml_natives.html" class="no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul class="other-section">
+      <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
+      <ul class="other-section">
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li><a href="614__funcions.html" class="no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+         <li><a href="627__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">6.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+         <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="35__consultes_xpath.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="37__ampliaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.6 - Utilització des de Java</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id34">
+<div class="iDevice emphasis0">
+<div id="ta34_1" class="block iDevice_content">
+<p>Però no hem de perdre de perspectiva que el que ens interessa és accedir des de Java als documents XML.</p>
+<p>En principi el que podem fer és portar-nos tot el document a Java i tractar-lo com ha vam fer en el tema de fitxers: ens creem un document DOM resultat d'analitzar aquest document, i per tant ja tindrem tota l'estructura del document XML en DOM. La manera de dur tot el document és una senzilla instrucció SQL. L'única dificultat és cridar a l'analitzador (<strong><em>parse</em></strong>) tenint en compte que ara no ve d'un fitxer sinó d'un String (al que haurem convertit el que ve del resulset de la consulta).</p>
+<p>En el següent exemple agafem el document que provenia de les comarques (num=5). Una vegada en Java traurem senzillament els noms. Ho podeu fer en un projecte nou anomenat <strong>Tema8_1</strong>, en un paquet anomenat <strong>Exemples</strong>. No us oblideu de canviar la Base de Dade, usuari i contrasenya (<strong>rxx</strong>) a la vostra:</p>
+<div class="codi">import java.io.IOException;<br />import java.io.StringReader;<br />import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />import javax.xml.parsers.DocumentBuilder;<br />import javax.xml.parsers.DocumentBuilderFactory;<br />import javax.xml.parsers.ParserConfigurationException;<br /><br />import org.w3c.dom.Document;<br />import org.w3c.dom.Element;<br />import org.w3c.dom.NodeList;<br />import org.xml.sax.InputSource;<br />import org.xml.sax.SAXException;<br /><br />public class PG_Prova1 {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException, ParserConfigurationException, SAXException, IOException  {<br />        String url = "jdbc:postgresql://89.36.214.106:5432/rxx";<br />        String usuari = "rxx";<br />        String password = "rxx";<br /><br />        Class.forName("org.postgresql.Driver");<br /><br />        Connection con = DriverManager.getConnection(url, usuari, password);<br />        <br />        ResultSet rs = con.createStatement().executeQuery("SELECT doc FROM P_XML WHERE num=5");<br /><br />        if (rs.next()) {<br />            DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();<br />            Document doc = db.parse(new InputSource(new StringReader(rs.getString(1))));<br /><br />            Element arrel = (Element) doc.getDocumentElement();<br />            NodeList llista = arrel.getElementsByTagName("nom");<br /><br />            for (int i = 0; i &lt; llista.getLength(); i++) {<br />                Element el = (Element) llista.item(i);<br />                System.out.println(el.getNodeName() + ' ' + el.getFirstChild().getNodeValue());<br />            }<br />        }<br />        con.close();<br />    }<br />}</div>
+<p> </p>
+<p>Amb l'anterior únicament estem utilitzant la capacitat de PostgreSQL de guardar documents XML. Però podem anar més enllà. Anem a fer que treballe un poc més PostgreSQL i ens done la informació un poc més elaborada. Farem una consulta <strong>XPATH</strong>. Recordem que el resultat ve en un <strong>array de XML</strong>. Però si considerem que la consulta ja ens torna la informació final podem agafar-lo com un <strong>array de strings</strong>. Recordeu que l'array no és el normal de Java, sinó el tipus de SQL. La manera que vam fer de recórrer-lo era passar-lo a un altre ResultSet</p>
+<div class="codi">import java.sql.Array;<br />import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />
+<div> </div>
+<div>public class PG_Prova2 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws SQLException, ClassNotFoundException {</div>
+<div style="margin-left: 60px;">String url="jdbc:postgresql://89.36.214.106:5432/rxx";</div>
+<div style="margin-left: 60px;">String usuari="rxx";</div>
+<div style="margin-left: 60px;">String password="rxx";</div>
+<div> </div>
+      Class.forName("org.postgresql.Driver");<br /><br />      Connection con = DriverManager.getConnection(url, usuari, password);<br /><br />      ResultSet rs = con.createStatement()<br />                .executeQuery("SELECT xpath('//poble[nom_c=\"Plana Alta\"]/nom/text()',doc) FROM P_XML WHERE num=5");<br /><br />      if (rs.next()) {<br />          System.out.println(rs.getString(1));<br />          Array pobles = rs.getArray(1);<br />          ResultSet rs1 = pobles.getResultSet();<br />          while (rs1.next())<br />              System.out.println(rs1.getString(2));<br />      }<br />      con.close();<br />  }<br />}</div>
+<p>Hem de ser conscients que el resultat de la funció <strong>XPATH</strong> és un array de <strong>xml</strong>. Si volem només un resultat, hem d'anar en compte, perquè serà un array amb un únic element. Per exemple, si volem l'<strong>altura</strong> de <strong>Vistabella</strong>, encara que només és un resultat, ens ve en un array:</p>
+<p></p>
+<div class="codi">import java.sql.Array;<br />import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />
+<div> </div>
+<div>public class PG_Prova3_1 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws SQLException, ClassNotFoundException {</div>
+<div style="margin-left: 60px;">String url="jdbc:postgresql://89.36.214.106:5432/rxx";</div>
+<div style="margin-left: 60px;">String usuari="rxx";</div>
+<div style="margin-left: 60px;">String password="rxx";</div>
+<div> </div>
+      Class.forName("org.postgresql.Driver");<br /><br />      Connection con = DriverManager.getConnection(url, usuari, password);<br /><br />      ResultSet rs = con.createStatement().executeQuery(<br />                "SELECT xpath('//poble[nom=\"Vistabella del Maestrat\"]/altura/text()',doc) FROM P_XML WHERE num=5");<br /><br />      if (rs.next()) {<br />          Array poble = rs.getArray(1);<br />          ResultSet rs1 = poble.getResultSet();<br />          if (rs1.next())<br />              System.out.println(rs1.getString(2));<br />      }<br />      con.close();<br />  }<br />}</div>
+<p>Tanmateix podem estalviar-nos el segon <strong>ResltSet</strong>, si elaborem un poc millor la consulta. Com que ja sabem que només serà un resultat, en la consulta podem agafar el primer element únicament. Mireu que estem obligats a tancar la funció entre parèntesis per a que funcione bé.</p>
+<p></p>
+<div class="codi">import java.sql.Array;<br />import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />
+<div> </div>
+<div>public class PG_Prova3_2 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws SQLException, ClassNotFoundException {</div>
+<div style="margin-left: 60px;">String url="jdbc:postgresql://89.36.214.106:5432/rxx";</div>
+<div style="margin-left: 60px;">String usuari="rxx";</div>
+<div style="margin-left: 60px;">String password="rxx";</div>
+<div> </div>
+      Class.forName("org.postgresql.Driver");<br /><br />      Connection con = DriverManager.getConnection(url, usuari, password);<br /><br />      ResultSet rs = con.createStatement().executeQuery(<br />                "SELECT (xpath('//poble[nom=\"Vistabella del Maestrat\"]/altura/text()',doc))[1] FROM P_XML WHERE num=5");<br /><br />      if (rs.next()) {<br />          System.out.println("Altura de Vistabella: " + rs.getString(1));<br />      }<br />      con.close();<br />  }<br />}</div>
+<p></p>
+<p></p>
+<p>I treballant a la inversa, també podrem inserir les dades provinents de Java (per exemple agafant les dades des d'un fitxer) en la BD de PostgreSQL. Podreu agafar el fitxer <strong>biblioteca.xml</strong> de l'aula virtual. L'haureu de col·locar a l'arrel del projecte.</p>
+<div class="codi">
+<div>import java.io.FileReader;</div>
+<div>import java.io.IOException;</div>
+<div>import java.sql.Array;</div>
+<div>import java.sql.Connection;</div>
+<div>import java.sql.DriverManager;</div>
+<div>import java.sql.ResultSet;</div>
+<div>import java.sql.SQLException;</div>
+<div> </div>
+<div> </div>
+<div>public class PG_Prova4 {</div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {</div>
+<div style="margin-left: 60px;">String url="jdbc:postgresql://89.36.214.106:5432/rxx";</div>
+<div style="margin-left: 60px;">String usuari="rxx";</div>
+<div style="margin-left: 60px;">String password="rxx";</div>
+<div> </div>
+<div style="margin-left: 60px;">Class.forName("org.postgresql.Driver");<br /><br />Connection con = DriverManager.getConnection(url,usuari,password);</div>
+<div> </div>
+<div style="margin-left: 60px;">FileReader f = new FileReader("biblioteca.xml");</div>
+<div> </div>
+<div style="margin-left: 60px;">String tot="";</div>
+<div style="margin-left: 60px;">int c = f.read();</div>
+<div style="margin-left: 60px;">while (c!=-1){</div>
+<div style="margin-left: 90px;">tot += (char) c;</div>
+<div style="margin-left: 90px;">c=f.read();</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">con.createStatement().executeUpdate("INSERT INTO P_XML VALUES(7,XMLPARSE(CONTENT '" + tot + "'))");</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">//Ja està inserit. Anem a comprovar que ha arribat de forma correcta</div>
+<div style="margin-left: 60px;">ResultSet rs = con.createStatement().executeQuery("SELECT xpath('//titol/text()',doc) FROM P_XML WHERE num=7");</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">while (rs.next()){</div>
+<div style="margin-left: 90px;">Array llibres =  rs.getArray(1);</div>
+<div style="margin-left: 90px;">ResultSet rs1 = llibres.getResultSet();</div>
+<div style="margin-left: 90px;">while (rs1.next())</div>
+<div style="margin-left: 120px;">System.out.println(rs1.getString(2));</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">f.close();</div>
+<div style="margin-left: 60px;">con.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="35__consultes_xpath.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="37__ampliaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
