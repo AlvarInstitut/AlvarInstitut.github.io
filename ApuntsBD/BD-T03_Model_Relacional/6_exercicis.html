@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. Exercicis | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Model Relacional</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_estructura_del_model_relacional.html" class="no-ch">2. Estructura del Model Relacional</a></li>
+   <li><a href="3_restriccions.html" class="daddy">3. Restriccions</a>
+   <ul class="other-section">
+      <li><a href="31_restriccions_inherents.html" class="no-ch">3.1 Restriccions inherents</a></li>
+      <li><a href="32_restriccions_dusuari.html" class="daddy">3.2 Restriccions d'usuari</a>
+      <ul class="other-section">
+         <li><a href="321_restricci_de_domini.html" class="no-ch">3.2.1 Restricció de domini</a></li>
+         <li><a href="322_restricci_de_clau_principal.html" class="no-ch">3.2.2 Restricció de clau principal</a></li>
+         <li><a href="323_restricci_dunicitat.html" class="no-ch">3.2.3 Restricció d'unicitat</a></li>
+         <li><a href="324_restricci_de_valor_no_nul.html" class="no-ch">3.2.4 Restricció de valor no nul</a></li>
+         <li><a href="325_integritat_referencial.html" class="no-ch">3.2.5 Integritat referencial</a></li>
+         <li><a href="326_restriccions_externes.html" class="no-ch">3.2.6 Restriccions externes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_tranformaci_del_m_er_al_m_relacional.html" class="daddy">4. Tranformació del M. E/R al M. Relacional</a>
+   <ul class="other-section">
+      <li><a href="41_entitats.html" class="no-ch">4.1 Entitats</a></li>
+      <li><a href="42_relacions_1n.html" class="no-ch">4.2 Relacions 1:N</a></li>
+      <li><a href="43_relacions_mn.html" class="no-ch">4.3 Relacions M:N</a></li>
+      <li><a href="44_relacions_11.html" class="no-ch">4.4 Relacions 1:1</a></li>
+      <li><a href="45_entitats_dbils.html" class="no-ch">4.5 Entitats dèbils</a></li>
+      <li><a href="46_resum_dependncies.html" class="no-ch">4.6 Resum dependències</a></li>
+      <li><a href="47_relacions_ternries.html" class="no-ch">4.7 Relacions ternàries</a></li>
+      <li><a href="48_especialitzacions.html" class="no-ch">4.8 Especialitzacions</a></li>
+      <li><a href="49_restriccions_externes.html" class="no-ch">4.9 Restriccions externes</a></li>
+      <li><a href="410_exemple.html" class="no-ch">4.10 Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="5_llenguatges_relacionals.html" class="no-ch">5. Llenguatges relacionals</a></li>
+   <li id="active"><a href="6_exercicis.html" class="active no-ch">6. Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5_llenguatges_relacionals.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="autoavaluaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6. Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id25">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 1</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta25_21_2" class="block iDevice_content">
+<p>Realitzar l'esquema relacional corresponent a l'exercici 1 del Tema 2.</p>
+<p> Recordeu que teníem 3 opcions:</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="T2Act1_3sol.png" /></p>
+<p> </p>
+<div style="text-align: center;"></div>
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id26">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 2</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta26_22_2" class="block iDevice_content">
+<p>Realitzar l'esquema relacional corresponent a l'exercici 2 del Tema 2.</p>
+<p> </p>
+<p align="center"><img src="T2Ex2.jpeg" height="268" width="872" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id27">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta27_23_2" class="block iDevice_content">
+
+<p>
+Realitzar l'esquema relacional  corresponent a l'exercici 3 del Tema 2.
+</p>
+<p>
+&nbsp;
+</p>
+<p align="center">
+  <img src="T2Ex3.jpeg" height="227" width="805" />
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id28">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 4</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta28_21_2" class="block iDevice_content">
+
+<p>
+Realitzar l'esquema relacional  corresponent a l'exercici 4 del Tema 2. Recordeu que el rombe amb doble ratlla significa dependència en identificació;
+</p>
+<p>
+&nbsp;
+</p>
+<div style="text-align: center">
+<img src="T2Ex4.jpeg" height="287" width="894" />
+</div>
+<p>
+&nbsp;
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id29">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta29_22_2" class="block iDevice_content">
+
+<p>
+Realitzar l'esquema relacional  corresponent a l'exercici 5 del Tema 2.
+</p>
+<p>
+&nbsp;
+</p>
+<div style="text-align: center">
+<img src="T2Ex5.jpeg" height="390" width="789" />
+</div>
+<p>
+&nbsp;
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id30">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta30_23_2" class="block iDevice_content">
+
+<p>
+Realitzar l'esquema relacional  corresponent a l'exercici 6 del Tema 2.
+</p>
+<p>
+&nbsp;
+</p>
+<div style="text-align: center">
+<img src="T2Ex6.jpeg" height="422" width="875" />
+</div>
+<p>
+&nbsp;
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id31">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta31_21_2" class="block iDevice_content">
+<p>Realitzar l'esquema relacional corresponent a l'exercici 7 del Tema 2.</p>
+<p>En la de dalt considerem únicament els viatges (i no els trajectes). A més, només marquem estació d'origen i de destí d'un viatge.</p>
+<p>En la segona incorporem els trajectes, i a més marquem totes les estacions on es para en un trajecte.</p>
+<p> </p>
+<div style="text-align: center;"><img src="T2Act7.jpeg" height="965" width="920" /></div>
+<p> </p>
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id32">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta32_22_2" class="block iDevice_content">
+Es desitja
+mantenir informació sobre el material informàtic d'una empresa.
+<ul class="unIndentedList">
+	<li>
+	L'empresa té unes quantes xarxes, interconnectades algunes d'elles.</li>
+	<li>
+	La major part dels ordinadors estan connectats
+	en xarxa, encara que uns altres no ho estan. També existeixen ordinadors que
+	estan connectats a més de una xarxa (són ponts).</li>
+	<li>
+	Cada ordinador pot ser utilitzat por un o més
+	d'un empleat. Un empleat pot tenir permís per a utilitzar un o més d'un
+	ordinador.</li>
+	<li>
+	Una xarxa (o segment) és responsabilitat d'un
+	únic empleat que la gestiona. Aquest empleat pot tenir sota la seua
+	responsabilitat més d'una xarxa.</li>
+	<li>
+	Cada ordinador pot tenir connectada com a màxim
+	una impressora. No es contemplen les impressores de xarxa. Sempre estaran connectades pel port paral·lel a un ordinador.</li>
+	<li>
+	Les aplicacions de l'empresa estan
+	emmagatzemades en els ordinadors i no estan duplicades (una aplicació està en
+	un únic ordinador). Els empleats que tenen accés a aquest ordinador tindran,
+	per tant, accés també a les aplicacions que l'ordinador conté. A més tindran
+	accés a unes altres aplicacions a través de la xarxa. Cada aplicació té
+	assignats permisos per als usuaris que poden accedir a través de la xarxa.</li>
+</ul>
+<p>
+<br />
+Es vol que el sistema
+d'informació siga capaç de respondre a consultes com:
+</p>
+<p>
+Per a una xarxa:
+</p>
+<ul class="unIndentedList">
+	<li> Empleat
+	responsable de la mateixa.</li>
+	<li> Ordinadors
+	que la componen.</li>
+	<li> Impressores en la xarxa.</li>
+	<li> Aplicacions
+	dins de la xarxa.</li>
+</ul>
+<p>
+Per a un ordinador:
+</p>
+<ul class="unIndentedList">
+	<li> Xarxes
+	a les quals està connectat.</li>
+	<li> Impressora connectada (si en té).</li>
+	<li> Aplicacions
+	que conté.</li>
+	<li> Empleats
+	que poden utilitzar-lo.</li>
+	<li> Saber
+	si és pont o no.</li>
+</ul>
+Per a un empleat:
+<ul class="unIndentedList">
+	<li> Ordinadors
+	que pot utilitzar.</li>
+	<li> Aplicacions
+	a les quals té accés.</li>
+</ul>
+<p>
+Per a una aplicació:
+</p>
+<ul class="unIndentedList">
+	<li> Per
+	motius de seguretat es vol conèixer, per
+	cada accés a ella, l'empleat que va accedir, la data i l'ordinador des del qual
+	es va accedir.</li>
+	<li> En
+	quin ordinador està guardada.</li>
+	<li> Empleats
+	que poden accedir.</li>
+</ul>
+<div align="center">
+<img src="T3_6_1.png" border="1" height="440" width="751" />
+</div>
+<div align="center">
+ 
+</div>
+<div align="justify">
+<u><b>Nota</b></u>
+</div>
+<div align="justify">
+Observeu com per una banda heu de guardar els permisos dels empleats sobre les aplicacions, i per una altra els accessos reals fets pels empleats a les aplicacions, i en aquest cas hem de saber des de quin ordinador i la data 
+</div>
+<div align="center">
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id33">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 9</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta33_23_2" class="block iDevice_content">
+
+<div align="justify">
+Dissenyar el diagrama E-R, i traduir-lo després al
+relacional, d'un sistema d'informació d'una empresa que ven gran varietat de
+productes. Per a la venda d'aquestos productes, disposa d'un conjunt de
+viatjants que realitzen visites als clients oferint els seus productes.
+<p>
+La zona
+geogràfica d'influència de l'empresa està dividida en sectors no solapats que
+comprenen unes quantes ciutats. Un viatjant té assignats alguns d'aquestos
+sectors. Açò no significa que tinga assignats els sectors en exclusivitat; més
+d'un viatjant pot tenir assignat el mateix sector.
+</p>
+<p>
+A un
+determinat client li poden oferir productes distints viatjants de l'empresa,
+però mai el mateix producte.
+</p>
+<p>
+Un producte
+pot ser ofert per distints viatjants, però sempre a clients distints. Un
+viatjant no ofereix tots els productes (només alguns). A un client sempre li
+ofereix un producte el mateix viatjant.
+</p>
+<p>
+Un producte és
+ofert per un viatjant a clients distints a preus distints.
+</p>
+<p>
+El sistema d'informació
+ha de ser capaç de respondre a consultes com:
+</p>
+<ul>
+	<li>Quins clients hi ha en un sector.</li>
+	<li>Quins clients hi ha en una ciutat.</li>
+	<li>Quins productes son oferts a un client i a quin
+	preu.</li>
+	<li>Quins clients té assignat cada viatjant.</li>
+	<li>Quins productes s'ofereixen en un determinat
+	sector.</li>
+	<li>Quines ciutats té assignades un viatjant (per
+	estar dins dels seus sectors).</li>
+	<li>Quines ciutats realment visita un viatjant (per
+	tenir en elles clients als quals els ofereix algun producte).</li>
+</ul>
+<div align="center">
+<img src="T3_6_2.png" border="1" height="610" width="931" />
+</div>
+</div>
+<br />
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id34">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 10</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta34_21_2" class="block iDevice_content">
+
+<p align="justify">
+Fer l'esquema E/R i posteriorment passar-lo a relacional corresponent a un Parc Zoològic que vol guardar informació de les espècies que té, els empleats (cuidadors i guies), i els distints itineraris de visita que ofrereix. La informació està estructurada de la següent manera:
+</p>
+<div align="justify">
+</div>
+<ul>
+	<li>
+	<div align="justify">
+	Especies: de les espècies ens interessa saber el nom, el nom científic i una descripció general. S'ha de tenir en compte que una espècie pot viure en diferents hàbitats naturals i que un hàbitat pot ser ocupat per diferents espècies. Per una altra banda, les espècies estan en distintes zones del parc de manera que cada espècie està en una zona i en una zona hi ha unes quantes espècies.
+	</div>
+	</li>
+</ul>
+<ul>
+	<li>
+	<div align="justify">
+	Hàbitats: els diferents hàbitats naturals venen definits pel nom, el clima i el tipus de vegetació predominants.
+	</div>
+	</li>
+</ul>
+<ul>
+	<li>
+	<div align="justify">
+	Zones: les zones del parc en les quals estan les distintes espècies venen definides pel nom i l'extensió que ocupen.
+	</div>
+	</li>
+</ul>
+<ul>
+	<li>
+	<div align="justify">
+	Itineraris: els itineraris discorren per distintes zones del parc. La informació d'interès per als itineraris és: códi d'itinerari, durada del recorregut, llargària de l'itinerari, el màxim número de visitants autoritzat i el número de distintes espècies que visita (que han de ser totes les de les zones que recorre). Un itinerari recorre distintes zones del parc i una zona pot ser recorreguda per diferents itineraris.
+	</div>
+	</li>
+</ul>
+<ul>
+	<li>
+	<div align="justify">
+	Empleats: de tots els empleats voldrem saber el nom, dni, adreça, telèfon i data que van començar a treballar al zoo. Els empleats poden ser de dos tipus: guies i cuidadors.
+	</div>
+	<ul>
+		<li>
+		<div align="justify">
+		Guies: Interessa saber quins guies porten cada itinerari, tenint en compte que un guia pot dur uns quants itineraris i que un itinerari pot ser assignat a més d'un guia en diferents hores. Aquestes hores són una dada d'interès.
+		</div>
+		</li>
+		<li>
+		<div align="justify">
+		Cuidadors: s'encarreguen de cuidar les diferents espècies. Un cuidador pot encarregar-se d'unes quantes espècies i una espècie pot ser  atesa per uns quants cuidadores. Ens interessa la data en la qual un cuidador es fa càrrec d'una espècie.
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5_llenguatges_relacionals.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="autoavaluaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

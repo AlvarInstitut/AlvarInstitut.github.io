@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. Models de dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Bases de Dades</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Introducció</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_tradicionals.html" class="no-ch">1. Fitxers tradicionals</a></li>
+   <li><a href="2_concepte_de_base_de_dades.html" class="no-ch">2. Concepte de Base de Dades</a></li>
+   <li><a href="3_caracterstiques_desitjables_dun_sgbd.html" class="no-ch">3. Característiques desitjables d'un SGBD</a></li>
+   <li id="active"><a href="4_models_de_dades.html" class="active no-ch">4. Models de dades</a></li>
+   <li><a href="5_arquitectura_a_3_nivells.html" class="no-ch">5. Arquitectura a 3 nivells</a></li>
+   <li><a href="6_llenguatges_del_sgbd.html" class="no-ch">6. Llenguatges del SGBD</a></li>
+   <li><a href="7_classificacions_dels_sgbd.html" class="no-ch">7. Classificacions dels SGBD</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="3_caracterstiques_desitjables_dun_sgbd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_arquitectura_a_3_nivells.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4. Models de dades</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_1" class="block iDevice_content">
+<p> </p>
+<p></p>
+<p style="text-align: justify;">Per a poder definir l'estructura de la B.D. ens farà falta alguna ferramenta, alguna manera d'expressar el que veiem en el món real.</p>
+<p style="text-align: justify;">Un <b>Model de Dades</b> serà un conjunt de conceptes que poden servir per a descriure, a distints nivells d'abstracció, l'estructura d'una B.D. A aquesta estructura expressada per mig del model de dades l'anomenarem <b>esquema</b>. Caldrà diferenciar entre esquema i les dades concretes que pot tenir la B.D. en un moment determinat (a la qual cosa alguns autors anomenen <b>estat de la B.D.</b> o conjunt d'<b>ocurrències</b> o <b>exemplars</b>).</p>
+<p style="text-align: justify;">Al llarg de la història s'han proposat molts models de dades, tants que s'hauran de classificar un poc.</p>
+<ul>
+<li style="text-align: justify;"><b>Models d'alt nivell </b>o <b>conceptuals</b>: disposen de conceptes molt propers a la manera de percebre les dades les persones. El més conegut és el <b>Model Entitat-Relació</b>. Uns altres serien els <b>orientats a objectes</b>. Serviran per a poder dissenyar la B.D. a partir de les percepcions del món real. Nosaltres veurem el Model Entitat-Relació (M. E/R). El model orientat a objectes està utilitzant-se prou en l'actualitat, bé de forma pura o bé barrejat amb el Model Relacional.</li>
+</ul>
+<ul>
+<li style="text-align: justify;"><b>Models de baix nivell </b>o <b>físics</b>: proporcionen detalls de com es guardaran les dades a l'ordinador.</li>
+</ul>
+<ul>
+<li style="text-align: justify;">Models de <b>representació</b> o <b>implementació</b>: estan a mig camí dels dos anteriors, ja que els conceptes els poden entendre els usuaris finals, encara que no estan massa allunyats de la manera com es guarden les dades a l'ordinador. Són els més utilitzats en els SGBD actuals. Es poden destacar el <b>Jeràrquic</b>, el<b> de Xarxa </b>(o <b>Codasyl</b>) i el<b> Relacional</b>, que és el que nosaltres veurem en profunditat.</li>
+</ul>
+</div>
+</div>
+</article>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="3_caracterstiques_desitjables_dun_sgbd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_arquitectura_a_3_nivells.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</section>
+</div>
+</div>
+</body></html>

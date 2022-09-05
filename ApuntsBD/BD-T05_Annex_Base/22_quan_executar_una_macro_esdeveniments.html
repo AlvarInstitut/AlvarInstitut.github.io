@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2 Quan executar una macro: esdeveniments | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-44"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Base avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="part_i_prctica_inicial.html" class="daddy">Part I: Pràctica inicial</a>
+   <ul class="other-section">
+      <li><a href="11_taules.html" class="no-ch">1.1 Taules</a></li>
+      <li><a href="12_consultes.html" class="no-ch">1.2 Consultes</a></li>
+      <li><a href="13_formularis_i_informes.html" class="no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="part_ii_macros_voluntari.html" class="current-page-parent daddy">Part II: Macros (Voluntari)</a>
+   <ul>
+      <li><a href="21_creaci_i_execuci_directa_duna_macro.html" class="no-ch">2.1 Creació i execució directa d'una Macro</a></li>
+      <li id="active"><a href="22_quan_executar_una_macro_esdeveniments.html" class="active no-ch">2.2 Quan executar una macro: esdeveniments</a></li>
+      <li><a href="23_obrir_automticament_un_formulari.html" class="no-ch">2.3 Obrir automàticament un formulari</a></li>
+      <li><a href="24_exemple_avanat_compliment_de_restriccions_externes.html" class="no-ch">2.4 Exemple avançat: compliment de restriccions externes</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="21_creaci_i_execuci_directa_duna_macro.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="23_obrir_automticament_un_formulari.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2 Quan executar una macro: esdeveniments</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id92">
+<div class="iDevice emphasis0" >
+<div id="ta92_112_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">L'anterior manera d'executar les macros és la més senzilla, però no és l'habitual, no és gens pràctica.</p>
+<p style="text-align: justify;">El més habitual és executar la macro en produir-se un <strong>esdeveniment</strong> (evento , event): quan apretem un botó, en actualitzar-se algun camp d'un formulari, quan visualitzem un nou registre...</p>
+<p style="text-align: justify;">La llista d'esdeveniments és molt llarga, i en aquest annex que té una pretensió merament introductòria només veurem uns pocs esdeveniments.</p>
+<p style="text-align: justify;">Per a poder fer la primera prova, anem a crear un nou formulari que anomenarem <strong>Menú principal</strong> per motius que veurem després.</p>
+<p style="text-align: justify;">En aquest formulari posarem un botó <strong>(Botó per prémer</strong>) i fem doble-clic sobre ell per a anar a les propietats del botó. Posarem l'etiqueta <strong>Saludar</strong>, i en la pestanya <strong>Esdeveniments</strong> apretarem als 3 puntets que estan al costat de <strong>Aprova l'acció</strong>, per a triar l'única macro que tenim de moment: <strong>Saludar</strong></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 40%;"><img src="T5_2_2_1.1.png" alt="" width="983" height="634" /></td>
+<td style="width: 40%;"><img src="T5_2_2_2.png" alt="" width="983" height="634" /></td>
+<td style="width: 20%;"><img src="T5_2_2_3.png" alt="" width="708" height="562" /></td>
+</tr>
+</tbody>
+</table>
+<p>Per a poder comprovar-ho hem d'anar al mode d'execució del formulari, abandonant el mode d'edició.</p>
+<p></p>
+<p>Per a fer més útil aquest formulari, intentarem posar un botó per a poder anar a cadascun dels formularis que hem creat per a les diferents taules També posarem un botó per a eixir de LibreOffice Base.</p>
+<p>Prèviament haurem de crear les macros per a poder anar a cadascun dels formularis i per a eixir. L'acció serà <strong>open</strong> sobre el formulari, que primer hem de buscar. L'acció d'eixir serà <strong>Close(True)</strong> sobre el document que és aquesta Base de Dades.</p>
+<p>Copieu-vos el següent codi dins del <strong>Module1</strong> de <strong>Empresa.odb</strong>, on teniu ja la macro de saludar. Recordeu que per a anar al codi de VisualBasic heu de fer <strong> Eines -&gt; Macros -&gt; Organitza les macros -&gt; Basic</strong>. Hem posat també la macro <strong>Saludar</strong> (només ha d'estar una vegada, clar)</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Sub Saludar
+	print("Hola")
+End Sub
+
+Sub obrirDepartament
+	ThisDatabaseDocument.FormDocuments.getbyname("DEPARTAMENT").open
+End Sub
+
+Sub obrirEmpleatFamiliar
+	ThisDatabaseDocument.FormDocuments.getbyname("EMPLEAT-FAMILIAR").open
+End Sub
+
+Sub obrirProjecte
+	ThisDatabaseDocument.FormDocuments.getbyname("PROJECTE").open
+End Sub
+
+Sub obrirTreballa
+	ThisDatabaseDocument.FormDocuments.getbyname("Treballa").open
+End Sub
+
+Sub eixir
+	ThisDatabaseDocument.Close(True)
+End Sub</code></pre>
+</div>
+</div>
+<p>A continuació, heu de modificar el botó que ja teniu per a posar-li l'etiqueta <strong>DEPARTAMENT</strong> i canviar la macro de quan s'apreta el botó (esdeveniment Aprova l'acció) per la macro <strong>obrirDepartament</strong>.</p>
+<p>Després haureu de crear 3 botons més per a obrir els altres 3 formularis, i un altre botó per a eixir (macro <strong>eixir</strong>).</p>
+<p>Aquest podria ser l'aspecte del formulari:</p>
+<p style="text-align: center;"><img src="T5_2_2_4.png" alt="" width="839" height="652" /></p>
+<div class="nota_blau">
+<p><b><u>NOTA</u></b></p>
+<p>Heu de cuidar que en el codi de les macros heu posat el formulari que voleu obrir <strong>EXACTAMENT IGUAL</strong> que el nom real que li heu donat al formulari. Per exemple, si el formulari es diu <strong>Treballa</strong> i en la macro hem posat </p>
+<p style="padding-left: 60px;"><span style="font-family: 'courier new', courier, monospace;"><strong>Sub obrirTreballa</strong></span><br /><span style="font-family: 'courier new', courier, monospace;"><strong>    ThisDatabaseDocument.FormDocuments.getbyname("TREBALLA").open</strong></span><br /><span style="font-family: 'courier new', courier, monospace;"><strong>End Sub</strong></span></p>
+<p>És a dir, que el nom és només amb la primera majúscula, però en la macro ho hem posat tot amb majúscules.</p>
+<p>Ens apareixerà el següent error:</p>
+<p style="text-align: center;"><img src="T5_2_2_5.png" alt="" width="434" height="156" /></p>
+</div></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="21_creaci_i_execuci_directa_duna_macro.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="23_obrir_automticament_un_formulari.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. Dependència Funcional | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Normalització</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_primer_forma_normal_1fn.html" class="no-ch">2. Primer Forma Normal (1FN)</a></li>
+   <li id="active"><a href="3_dependncia_funcional.html" class="active no-ch">3. Dependència Funcional</a></li>
+   <li><a href="4_segona_forma_normal_2fn.html" class="no-ch">4. Segona Forma Normal (2FN)</a></li>
+   <li><a href="5_dependncia_funcional_transitiva.html" class="no-ch">5. Dependència Funcional Transitiva</a></li>
+   <li><a href="6_tercera_forma_normal_3fn.html" class="no-ch">6. Tercera Forma Normal (3FN)</a></li>
+   <li><a href="7_forma_normal_boycecodd_fnbc.html" class="no-ch">7. Forma Normal Boyce-Codd (FNBC)</a></li>
+   <li><a href="resum.html" class="no-ch">Resum</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_primer_forma_normal_1fn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_segona_forma_normal_2fn.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3. Dependència Funcional</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_1" class="block iDevice_content">
+<p>
+&nbsp;
+</p>
+<p>
+
+</p>
+<p class="titolet">
+3.1
+DEPENDÈNCIA FUNCIONAL 
+</p>
+<table align="justify" border="1">
+	<tbody>
+		<tr>
+			<td>
+			Un atribut o conjunt d'atributs <b>Y</b> depèn funcionalment
+			de l'atribut o conjunt de atributs <b>X</b>, i es representa com <b>X <font size="4">→</font> Y</b>
+			, si i només si cada valor de X es correspon amb un únic
+			valor de Y.</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="justify">
+Per exemple, entre DNI i NOM existeix
+una dependència funcional, ja que el valor DNI es correspon
+amb un únic nom.
+</p>
+<div align="center">
+<font size="4"><b>DNI </b></font><font face="courier new,courier" size="5">→</font><font size="4"><b> NOM</b></font>
+</div>
+<p align="justify">
+En aquest cas (suposant que el NOM és
+únic i no existeixen dos noms iguals) s'acompleix també
+la dependència
+</p>
+<div align="center">
+<font size="4"><b>NOM </b></font><font face="courier new,courier" size="5">→</font><font size="4"><b> DNI</b></font>
+</div>
+<p>
+i ho podríem abreviar per
+</p>
+<div align="center">
+<font size="4"><b>DNI </b></font><font face="courier new,courier" size="5">←→</font><font size="4"><b> NOM</b></font>
+</div>
+<p align="justify">
+No sempre es dóna de forma
+biunívoca la dependència funcional entre dos atributs,
+es més, en pocs casos succeeix. Per exemple, entre els
+atributs DNI i ADREÇA existeix una dependència
+funcional ja que una persona identificada pel seu DNI viu en una
+única ADREÇA.
+</p>
+<div align="center">
+<font size="4"><b>DNI </b></font><font face="courier new,courier" size="5">→</font><font size="4"><b> ADRECA</b></font>
+</div>
+<p align="justify">
+Però en aquest cas no es dóna
+la dependència en sentit invers, perquè en una ADREÇA
+viuen unes quantes persones. A més, l'adreça no ens diu
+ni tan sols la ciutat on es troba (per exemple, el &quot;C/ Major, 7&quot;
+es troba en moltes ciutats)
+</p>
+<p align="justify">
+Hi ha atributs que no tenen entre ells
+una dependència funcional com és el cas de ADREÇA i DATA_NAIXEMENT.
+</p>
+<p>
+&nbsp;
+</p>
+<p align="justify">
+En moltes ocasions, per a determinar un
+únic valor d'un atribut, no és suficient amb conèixer
+el valor d'un altre atribut, sinó que és necessari
+trobar els valors d'uns quants atributs. Això és el que
+passa, si tenim els atributs: DNI, EMPRESA i SOU, i sabem que una
+persona pot treballar en més d'una empresa. Entre els atributs
+DNI i SOU no existeix cap dependència funcional, ja que un
+individu pot guanyar sous distints en empreses distintes. Però
+si coneixem l'empresa en la qual treballa, sí que podem dir
+que:
+</p>
+<div align="center">
+<font size="4"><b>DNI . EMPRESA </b></font><font face="courier new,courier" size="5">→</font><font size="4"><b> SOU</b></font>
+</div>
+<p align="justify">
+L'operador punt &quot;.&quot; representa
+l'expressió &quot;junt amb&quot; o &quot;i&quot; entre els dos atributs i
+l'operador barra &quot;|&quot; fa referència a l'expressió &quot;o
+també&quot;.
+</p>
+<p>
+Per tant, podem dir que DNI &quot;junt
+amb&quot; EMPRESA determinen el SOU. I per a la dependència:
+</p>
+<div align="center">
+<font size="4"><b>DNI </b></font><font face="courier new,courier" size="5">→</font><font size="4"><b> NOM | ADRECA</b></font>
+</div>
+<p>
+direm que amb el DNI es coneix el NOM
+&quot;o també&quot; l'ADREÇA.
+</p>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+3.2
+DEPENDÈNCIA FUNCIONAL TOTAL
+</p>
+<table align="justify" border="1">
+	<tbody>
+		<tr>
+			<td>Es diu que l'atribut <b>Y</b> té una <b>dependència funcional
+			total</b> de l'atribut <b>X</b> si té una dependència
+			funcional de X i NO depèn funcionalment de cap subconjunt de
+			X.</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p>
+Per exemple, una dependència
+funcional seria:
+</p>
+<div align="center">
+<font size="4"><b>DNI . EMPRESA </b></font><font face="courier new,courier" size="5">→</font><font size="4"><b> NOM</b></font>
+</div>
+<p align="justify">
+Però, lògicament, aquesta
+dependència no és total ja que NOM depèn
+funcionalment de DNI. Per això, a aquesta dependència
+s'anomena <b>dependència parcial</b>.
+</p>
+<p>
+La dependència funcional total
+seria:
+</p>
+<div align="center">
+<font size="4"><b>DNI . EMPRESA </b></font><font face="courier new,courier" size="5">→</font><font size="4"><b> SOU</b></font>
+</div>
+<p>
+Ara sí, el SOU no depèn
+funcionalment de cap subconjunt.
+</p>
+<p align="justify">
+És evident que si X està
+format únicament per un atribut, la dependència
+funcional serà total.
+</p>
+<p align="justify">
+Les dependències que ens
+interessen per a la normalització són sempre les
+dependències funcionals totals.
+</p>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+3.3 GRAF DE LES DEPENDÈNCIES
+FUNCIONALS
+</p>
+<p align="justify">
+Serveix per a mostrar gràficament
+la relació existent entre tots els atributs i és una
+forma clara de tenir una visió general de les dades i de la
+cohesió existent entre elles. La clau principal es representa
+dins d'una caixa de línies contínues amb els seus
+atributs primaris. La resta dels atributs es representa fora de la
+caixa.
+</p>
+<p align="justify">
+Si existeixen dependències d'un
+conjunt d'atributs que no són la clau, aniran dins d'una
+caixa de línies discontínues per a no confondre-ho amb
+la clau principal de la taula.
+</p>
+<p>
+Exemple:
+</p>
+<p>
+<b>A . B . C 	 </b><font face="courier new,courier" size="5">→</font><b> M | S</b><br />
+<b>M 	  </b><font face="courier new,courier" size="5">→</font><b> N</b><br />
+<b>B . C </b><font face="courier new,courier" size="5">→</font><b>	         O | R</b><br />
+<b>O 	 </b><font face="courier new,courier" size="5">→</font><b> P</b><br />
+<b>C    	 </b><font face="courier new,courier" size="5">→</font><b> Q</b>
+<br />
+<b>(clau = A . B . C)</b>
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+El graf associat és:
+</p>
+<p align="center">
+<img src="T4_3_1.png" border="1" height="170" width="329" />
+</p>
+<p>
+&nbsp;
+</p>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_primer_forma_normal_1fn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_segona_forma_normal_2fn.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

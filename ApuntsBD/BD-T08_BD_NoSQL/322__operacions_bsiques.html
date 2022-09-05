@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.2 - Operacions bàsiques | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__bd_clauvalor_redis.html" class="daddy">2 - BD Clau-Valor: Redis</a>
+   <ul class="other-section">
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__mongodb.html" class="current-page-parent daddy">3 - MongoDB</a>
+   <ul>
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="32__utilitzaci_de_mongodb.html" class="current-page-parent daddy">3.2 - Utilització de MongoDB</a>
+      <ul>
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li id="active"><a href="322__operacions_bsiques.html" class="active no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__bd_xml_existdb.html" class="daddy">4 - BD XML: eXist-db</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul class="other-section">
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li><a href="422__xquery.html" class="daddy">4.2.2 - XQUERY</a>
+         <ul class="other-section">
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li><a href="4224__expressions_flwor.html" class="no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="321__tipus_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323__operacions_dactualitzaci_avanada.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.2 - Operacions bàsiques</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id95">
+<div class="iDevice emphasis0">
+<div id="ta95_85" class="block iDevice_content">
+<p>En aquest punt anem a veure les operacions més bàsiques, per a poder treballar sobre exemples pràctics, i així disposar ja d'unes dades inicials per a practicar.</p>
+<p class="titolet">Inserció elemental</p>
+<p>La funció <strong>insert</strong> afegirà documents a una col·lecció. En el paràmetre posem el document directament, o una variable que continga el document. Si la col·lecció no existia, la crearà i després afegirà el document. En la següent sentència estem treballant sobre la col·lecció <strong>exemple</strong>, que segurament ja existirà de quan vam la pregunta 3.1 d'instal·lació de MongoDB, que per a provar vam inserir un document. Però si no existia, la crearà sense problemes.</p>
+<p class="codi2">&gt; db.exemple.insert({ msg2 : "Com va la cosa?"})<br />WriteResult({ "nInserted" : 1 })</p>
+<p>Acabem d'inserir un nou document, i així ens ho avisa ( <strong>{ "nInserted" : 1 }</strong> , s'ha inserit un document). Automàticament haurà creat un element <strong>_id</strong> de tipus <strong>ObjectId</strong>, ja que li fa falta per a identificar el document entre tots els altres de la col·lecció.</p>
+<p>I en aquest exemple ens guardem el document en la variable <strong>doc</strong>, i després l'inserim</p>
+<p class="codi2">&gt; doc = { msg3 : "Per ací no ens podem queixar ..."}<br />{ "msg3" : "Per ací no ens podem queixar ..." }<br />&gt; db.exemple.insert(doc)<br />WriteResult({ "nInserted" : 1 })</p>
+<p>També ens indica que ha inserit un document. I haurà creat també el camp <strong>_id</strong> com veurem en el següent punt</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id102">
+<div class="iDevice emphasis0">
+<div id="ta102_85" class="block iDevice_content">
+<p class="titolet">Lectura</p>
+<p>Tenim dues funcions per a recuperar informació: <em><strong>find</strong></em> i <em><strong>findOne</strong></em>.</p>
+<ul>
+<li><strong>find() </strong>: recuperarà tots els documents de la col·lecció, encara que podrem posar criteris per a que ens torne tots els documents que acomplesquen aquestos criteris (ho veurem més avant).</li>
+<li><strong>findOne()</strong> : només tornarà un document, en principi el primer. Pot ser sobre tots els documents (i per tant seria el primer document), o posar una condició, i tornaria el primer que acomplirà la condició.</li>
+</ul>
+<p>Exemple de <strong>find()</strong>:</p>
+<p class="codi2">&gt; db.exemple.find()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?" }<br />{ "_id" : ObjectId("56ce31f6c61e04ba81def50c"), "msg2" : "Com va la cosa?" }<br />{ "_id" : ObjectId("56ce3237c61e04ba81def50d"), "msg3" : "Per ací no ens podem queixar ..." }<br />&gt;</p>
+<p>Exemple de <strong>findOne()</strong>:</p>
+<p class="codi2">&gt; db.exemple.findOne()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?" }<br />&gt;</p>
+<p></p>
+<p>En tots els casos podem comprovar que és cert el que veníem afirmant, que ha creat automàticament l'element <strong>_id</strong> per a cada document guardat. Evidentment, cadascú de nosaltres tindrà una valors diferents.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id106">
+<div class="iDevice emphasis0">
+<div id="ta106_85" class="block iDevice_content">
+<p class="titolet">Inserció especificant el id</p>
+<p>Ara que ja sabem consultar els document de la col·lecció amb <strong>find()</strong> anem a continuar les insercions de documents, per veure les possibilitats que tenim.</p>
+<p>En els document que hem inserit fins el moment, no hem especificat el camp <strong>_id</strong>, i Mongo l'ha generat automàticament de tipus <strong>ObjectId</strong>.</p>
+<p>Però nosaltres podrem posar aquest camp <strong>_id</strong> amb el valor que vulguem. Això sí, haurem d'estar segurs que aquest valor no l'agafa cap altre dcument de la col·lecció, o ens donarà un error.</p>
+<p>Així per exemple anem a inserir la informació d'uns alumnes. Els posarem en una col·lecció nova anomenada <strong>alumnes</strong>, i els intentarem posar un <strong>_id</strong> personal. Per exemple posarem els números 51, 52, 53, ...</p>
+<p class="codi2">&gt; db.alumnes.insert ({_id: 51 , nom: "Rebeca" , cognoms: "Martí Peral"})<br />WriteResult({ "nInserted" : 1 })</p>
+<p>Ha anat bé, i si mirem els documents que tenim en la col·lecció, comprovarem que ens ha respectat el <strong>_id</strong>:</p>
+<p class="codi2">&gt; db.alumnes.find()<br />{ "_id" : 51, "nom" : "Rebeca", "cognoms" : "Martí Peral" }<br />&gt;</p>
+<p>Però si intentem inserir un altre document amb el mateix <strong>_id</strong> (51), ens donarà error:</p>
+<p class="codi2">&gt; db.alumnes.insert ({_id: 51 , nom: "Raquel" , cognoms: "Gomis Arnau"})<br />WriteResult({<br />    "nInserted" : 0,<br />    "writeError" : {<br />        "code" : 11000,<br />        "errmsg" : "E11000 duplicate key error collection: test.alumnes index: _id_ dup key: { : 51.0 }"<br />    }<br />})<br />&gt;</p>
+<p>Ens avisa que estem duplicant la <em>clau</em> <em>principal </em>, és a dir l'identificador.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id107">
+<div class="iDevice emphasis0">
+<div id="ta107_85" class="block iDevice_content">
+<p class="titolet">Inserció múltiple: insertMany()</p>
+<p>Quan els documents que volem inserir són senzills, podem inserir més d'un a la vegada, posant dis del <strong>insert()</strong> un <strong>array</strong> amb tots els elements. Depenent de la versió de Mongo, aquesta operació l'haurem de fer per mig d'una altre sentència: <strong>insertMany() </strong>En el següent exemple creem uns quants nombres primers en la col·lecció del mateix nom:</p>
+<p class="codi2">&gt; db.nombresprimers.insertMany( [ {_id:2} , {_id:3} , {_id:5} , {_id:7} , {_id:11} , {_id:13} , {_id:17} , {_id:19} ] )<br />BulkWriteResult({<br />    "writeErrors" : [ ],<br />    "writeConcernErrors" : [ ],<br />    "nInserted" : 8,<br />    "nUpserted" : 0,<br />    "nMatched" : 0,<br />    "nModified" : 0,<br />    "nRemoved" : 0,<br />    "upserted" : [ ]<br />})<br />&gt;</p>
+<p>Ens avisa que ha fet 8 insercions, i ací els tenim:</p>
+<p class="codi2">&gt; db.nombresprimers.find()<br />{ "_id" : 2 }<br />{ "_id" : 3 }<br />{ "_id" : 5 }<br />{ "_id" : 7 }<br />{ "_id" : 11 }<br />{ "_id" : 13 }<br />{ "_id" : 17 }<br />{ "_id" : 19 }<br />&gt;</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id104">
+<div class="iDevice emphasis0">
+<div id="ta104_85" class="block iDevice_content">
+<p class="titolet">Esborrat</p>
+<p>Per a esborrar un document d 'una col·lecció utilitzarem la funció <strong>remove</strong>, passant-li com a paràmetre la condició del document o documents a esborrar.</p>
+<p class="codi2">&gt; db.nombresprimers.remove( {"_id" : 19} )<br />WriteResult({ "nRemoved" : 1 })<br />&gt;</p>
+<p>Ens avisa que ha esborrat un document.</p>
+<p>La condició no cal que siga sobre el camp <strong>_id</strong>. Pot ser sobre qualsevol camp, i esborrarà tots els que coincideixen.</p>
+<p class="codi2">&gt; db.exemple.remove( {"msg3" : "Per ací no ens podem queixar ..."} )<br />WriteResult({ "nRemoved" : 1 })<br />&gt;</p>
+<p></p>
+<p>També tenim la possibilitat d'esborrar tota una col·lecció amb la funció <strong>drop()</strong>. Pareu atenció perquè és molt senzilla d'eliminar, i per tant, potencialment molt perillosa.</p>
+<p class="codi2">&gt; db.nombresprimers.drop()<br />true<br />&gt;</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id103">
+<div class="iDevice emphasis0">
+<div id="ta103_85" class="block iDevice_content">
+<p class="titolet">Actualització: update() i updateMany()</p>
+<p>La funció <em><strong>update</strong></em> servirà per a actualitzar un document ja guardat. Pot tindre tres paràmetres, els dos primers obligatoris:</p>
+<ul>
+<li>El primer paràmetre serà la condició per a trobar el document (o els documents) que es va a actualitzar.</li>
+<li>El segon paràmetre serà el nou document que substituirà l'anterior</li>
+<li>El tercer paràmetre és per a especificar opcions addicionals, com per exemple si es modifica només un document o tots els que acompleixen la condició</li>
+</ul>
+<p>Per exemple, si mirem les dades actuals:</p>
+<p class="codi2">&gt; db.exemple.find()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?" }<br />{ "_id" : ObjectId("56ce31f6c61e04ba81def50c"), "msg2" : "Com va la cosa?" }</p>
+<p>Podem comprovar el contingut del segon document, el que te <strong>msg2</strong>. Anem a modificar-lo: en el primer paràmetre posem condició de búsqueda (només hi haurà un) i en el segon posem el nou document que substituirà l'anterior</p>
+<p class="codi2">&gt; db.exemple.update( {msg2:"Com va la cosa?"} , {msg2:"Què? Com va la cosa?"} )<br />WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })</p>
+<p>Observeu que la contestació del <strong>update</strong><strong>()</strong> és que ha fet <strong>match</strong> (hi ha hagut coincidència) amb un document, i que ha modificat un. Si no en troba cap, no donarà error, senzillament dirà que ha fet match amb 0 documents, i que ha modificat 0 documents. Mirem com efectivament ha canviat el segon document</p>
+<p class="codi2">&gt; db.exemple.find()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?" }<br />{ "_id" : ObjectId("56ce31f6c61e04ba81def50c"), "msg2" : "Què? Com va la cosa?" }</p>
+<p></p>
+<p>Ens vindran molt bé les variables per a les actualitzacions, ja que en moltes ocasions serà modificar lleugerament el document, canviant o afegint algun element. Ho podrem fer còmodament amb la variable: primer guardem el document a modificar en una variable; després modifiquem la variable; i per últim fem l'operació d'actualització. Evidentment si tenim alguna variable amb el contingut del document ens podríem estalviar el primer pas.</p>
+<p class="codi2">&gt; doc1 = db.exemple.findOne()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?" }</p>
+<p class="codi2">&gt; doc1.titol = "Missatge 1"<br />Missatge 1</p>
+<p class="codi2">&gt; db.exemple.update( {msg:"Hola, què tal?"} , doc1)<br />WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })<br />&gt; db.exemple.findOne()<br />{<br />    "_id" : ObjectId("56ce310bc61e04ba81def50b"),<br />    "msg" : "Hola, què tal?",<br />    "titol" : "Missatge 1"<br />}<br />&gt;</p>
+<p><strong></strong></p>
+<p><strong>Opcions</strong></p>
+<p>Com havíem comentat al principi de la pregunta, es pot posar un tercer paràmetre per a especificar una sèrie d'opcions. Només en veurem una: la possibilitat de dir que es modifiquen tots els documents que acomplesquen la condició del primer paràmetre. Per defecte, si no posem aquesta opció, es modificarà únicament el primer document que acompleix la condició. Si volem que es modifiquen tots els documents que acompleixen la condició haurem de posar com a tercer paràmetre:</p>
+<p class="codi">{ multi: true }</p>
+<p>Per exemple, suposem que tenim dos documents amb el camp <strong>msg</strong> amb el valor "Hola, què tal?, aleshores, amb aquesta sentència es modificarien els dos:</p>
+<p class="codi2"><span style="color: #ff0000;">&gt; db.exemple.update( {msg:"Hola, què tal?"} , doc1, {multi:true})</span><br /><span style="color: #ff0000;">WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })</span><br /><br /></p>
+<p> Està marcat en roig, perquè segurament no tindrem 2 documents amb aquesta condició.</p>
+<p>També ho aconseguiríem amb la funció <strong>updateMany()</strong>, que modificarà tots els documents que acomplesquen la condició. Mo caldrà, evidentment, posar-li el tercer paràmetre:</p>
+<p class="codi2"><span style="color: #ff0000;">&gt; db.exemple.updateMany( {msg:"Hola, què tal?"} , doc1)</span><br /><span style="color: #ff0000;">WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })</span><br /><br /></p>
+<p>També està marcat en roig perquè segurament no tindrem 2 documents amb aquesta condició.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id119">
+<div class="iDevice emphasis0">
+<div id="ta119_85" class="block iDevice_content">
+<p class="titolet">Funció Save</p>
+<p>Hem vist la manera d'inserir nous documents amb <strong>insert()</strong> i d'actualitzar documents existents amb <strong>update()</strong>. Però si intentem inserir un document ja existent (la manera de saber-ho és pel camp <strong>_id</strong>) ens donarà error. I si intentem actualitzar un document no existent, no donarà error, però no actualitzarà res.</p>
+<p>La funció <strong>save()</strong> és una barreja dels dos: si el document que anem a salvar ja existeix, doncs el modificarà, i si no existeix el crearà.</p>
+<p>Provem-ho amb un exemple, i aprofitem-nos que en la variable <strong>doc1</strong> tenim el contingut d'un document. Fem una modificació, per exemple afegint el camp destinatari:</p>
+<p class="codi2">&gt; doc1.destinatari = "Ferran"<br />Ferran</p>
+<p class="codi2">&gt; doc1<br />{<br />    "_id" : ObjectId("56ce310bc61e04ba81def50b"),<br />    "msg" : "Hola, què tal?",<br />    "titol" : "Missatge 1",<br />    "destinatari" : "Ferran"<br />}</p>
+<p>Anem a guardar-lo amb <strong>save()</strong>:</p>
+<p class="codi2">&gt; db.exemple.save(doc1)<br />WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })</p>
+<p>Ja ens avisa qiue com ha trobat el document (<strong>"nMatched : 1"</strong>) ha modificat un. Efectivament, mirem com ha modificat el document existent:</p>
+<p class="codi2">&gt; db.exemple.find()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?", "titol" : "Missatge 1", "destinatari" : "Ferran" }<br />{ "_id" : ObjectId("56ce31f6c61e04ba81def50c"), "msg2" : "Què? Com va la cosa?" }</p>
+<p></p>
+<p>Anem a fer ara una modificació del camp <strong>_id</strong>. A tots els efectes serà un document nou, ja que la manera d'identificar un document és per aquest camp:</p>
+<p class="codi2">&gt; doc1._id=100<br />100</p>
+<p class="codi2">&gt; doc1<br />{<br />    "_id" : 100,<br />    "msg" : "Hola, què tal?",<br />    "titol" : "Missatge 1",<br />    "destinatari" : "Ferran"<br />}</p>
+<p>I ara anem a fer el <strong>save()</strong> d'aquest document:</p>
+<p class="codi2">&gt; db.exemple.save(doc1)<br />WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : 100 })</p>
+<p>Observeu com ara avisa que no n'ha trobat cap igual, i el que fa és inserir-lo (ens diu <strong>nUpserted</strong>, que és una barreja de <strong>Up</strong>dated i <strong></strong>In<strong>serted</strong>; més avant tornarem a aquesta paraula)</p>
+<p class="codi2">&gt; db.exemple.find()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?", "titol" : "Missatge 1", "destinatari" : "Ferran" }<br />{ "_id" : ObjectId("56ce31f6c61e04ba81def50c"), "msg2" : "Què? Com va la cosa?" }<br />{ "_id" : 100, "msg" : "Hola, què tal?", "titol" : "Missatge 1", "destinatari" : "Ferran" }</p>
+<p>Efectivament s'ha guardat com un nou document</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="321__tipus_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323__operacions_dactualitzaci_avanada.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5. Funcions | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Programació en PostgreSQL</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i Coneixements previs</a></li>
+   <li><a href="0_nota_inicial.html" class="no-ch">0. Nota inicial</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_plpgsql.html" class="no-ch">2. PL/pgSQL</a></li>
+   <li><a href="3_declaraci_de_variables.html" class="no-ch">3. Declaració de variables</a></li>
+   <li><a href="4_instruccions.html" class="no-ch">4. Instruccions</a></li>
+   <li id="active"><a href="5_funcions.html" class="active daddy">5. Funcions</a>
+   <ul>
+      <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="6_utilitzaci_de_cursors.html" class="daddy">6. Utilització de cursors</a>
+   <ul class="other-section">
+      <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="7_missatges_i_excepcions.html" class="no-ch">7. Missatges i excepcions</a></li>
+   <li><a href="8_triggers.html" class="daddy">8. Triggers</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="9_creaci_daltres_objectes_basats_en_funcions.html" class="daddy">9. Creació d'altres objectes basats en funcions</a>
+   <ul class="other-section">
+      <li><a href="91_operadors.html" class="daddy">9.1 Operadors</a>
+      <ul class="other-section">
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="92_operadors_de_classe.html" class="no-ch">9.2 Operadors de classe</a></li>
+      <li><a href="93_funcions_dagregat.html" class="daddy">9.3 Funcions d'agregat</a>
+      <ul class="other-section">
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_instruccions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5. Funcions</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_1" class="block iDevice_content">
+<p> </p>
+<p>En PL/pgSQL no hi ha procediments. Només hi ha funcions, encara que puguem declarar-les per a que no tornen cap valor (<i><b>void</b></i>).</p>
+<p style="margin-left: 30px;"><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p style="margin-left: 30px;">La diferència per tant entre un procediment i una funció és que la segona torna un valor, mentre que el primer no. Però en PL/pgSQL només hi ha funcions.</p>
+<p>La sintaxi general (i en principi per a qualsevol llenguatge) de la instrucció de creació de funcions és la següent:<code></code></p>
+<div class="codi">CREATE [OR REPLACE] FUNCTION nom_funció [(llista_paràmetres)] RETURNS tipus_del_valor_tornat AS '<br />
+<blockquote>instruccions</blockquote>
+' LANGUAGE llenguatge;</div>
+<p>on el llenguatge potser un dels definits (SQL, PL/pgSQL, ...).</p>
+<p>El cos de la funció pot anar entre cometes simples, o entre un separador que comence i acabe per <b>$</b> (per exemple <b>$cos$</b>) i que ha de ser igual al principi i al final, com veurem en un exemple més avant.</p>
+<p>Concretament, en el cas de PL/pgSQL, podem refinar un poc més la sintaxi<code></code></p>
+<div class="codi">CREATE [OR REPLACE] FUNCTION nom_funció [(llista_paràmetres)]<br />
+<blockquote>RETURNS tipus_del_valor_tornat AS '</blockquote>
+[DECLARE<br />
+<blockquote>declaració de variables]</blockquote>
+BEGIN<br />
+<blockquote>instruccions<br />RETURN expressió</blockquote>
+END;<br />' LANGUAGE plpgsql;</div>
+<p>Si la funció torna un valor (i per tant l'hem declarada com a que retorna un valor), la instrucció que ens permet retornar el valor és <b>RETURN </b></p>
+<p>Per exemple, anem a crear una funció que passe de pessetes a euros. Ho podem fer sobre la Base de Dades <b>geo_999x</b>:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE FUNCTION EUROS(n int4) RETURNS numeric AS '
+BEGIN
+    RETURN ROUND(n/166.386,2);
+END; ' LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT euros(1000);</code></pre>
+</div>
+</div>
+<p>Els tipus de dades de tornada pot ser qualsevol, fins i tot un creat per l'usuari. I si volem que torne més d'un valor, podríem crear un tipus compost que abarque els valors que volem que torne.</p>
+<p>Tenim la possibilitat de posar noms als paràmetres (en el cas anterior n), o no, i aleshores la manera de fer-los referència és per mig de <b>$1</b> per al primer paràmetre, <b>$2</b> per al segon, ... Així la mateixa funció, sense gastar nom de paràmetre quedaria:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION EUROS2(int4) RETURNS numeric AS '
+BEGIN
+    RETURN ROUND($1/166.386,2);
+END; ' LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p>Anem a veure un altre exemple: una funció que puga convertir una latitud en format text al tipus de dades que ens vam crear en el tema 6, part 3, el tipus <b>lat</b>. Les instruccions estan en el punt 0 (Nota inicial)</p>
+<p>I ara anem a fer la funció que passa de tipus <strong>Text</strong> a tipus <strong>lat</strong>:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION text_a_lat(text) RETURNS lat as $COS$
+DECLARE
+    aux lat;
+BEGIN
+    IF $1 IS NOT NULL THEN
+        aux.g := SUBSTR($1,1,STRPOS($1,'º')-1);
+        aux.m := SUBSTR($1, STRPOS($1,'º')+1, STRPOS($1,'''') - STRPOS($1,'º')-1);
+        aux.s := SUBSTR($1, STRPOS($1,'''')+1, STRPOS($1,'"') - STRPOS($1,'''')-1);
+        aux.h := SUBSTR($1,STRPOS($1,'"')+1);
+    ELSE aux := (NULL,NULL,NULL,NULL);
+    END IF;
+    RETURN aux;
+END; $COS$
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p>Hem posat <b>$COS$</b> per a delimitar el cos de la funció, per evitar problemes amb les moltes cometes que hi ha. I quan busquem la cometa, doncs en posem 4: la primera i l'última són obligatòries i delimiten la constant alfanumèrica. I al mig en posem 2 més per a marcar la cometa.</p>
+<p>Podem provar a veure si va bé:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT nom,latitud,text_a_lat(latitud),nom_c FROM POBLACIONS;</code></pre>
+</div>
+</div>
+<p>Si la funció va bé, fins i tot la podríem utilitzar per omplir la taula <b>POBLACIONS3</b> (està creada en el punt <strong>0. Nota inicial</strong>), que l'havíem creada amb el tipus <strong>lat</strong> (ens convindria eliminar primer les possibles files que hi hagen creades).</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>DELETE FROM POBLACIONS3;</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>INSERT INTO POBLACIONS3
+    SELECT nom,text_a_lat(latitud),nom_c FROM POBLACIONS;</code></pre>
+</div>
+</div>
+<p>La funció inversa sembla més fàcil. L'únic problema, en tot cas, és controlar que minuts i segons sempre siguen de dues xifres. I en tot cas llevar espais en blanc que queden pel mig. I haurem d'anar amb compte amb la cometa.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_1" class="block iDevice_content">
+<p><span style="text-decoration: underline;"><b>Nota</b></span></p>
+<p>En les pràctiques següents en moltes ocasions es diu "traure per pantalla". I són funcions que no tenen paràmetre ni tornen cap valor. Encara que açò no serà el normal en PostgreSQL, per a practicar pot anar bé. La manera de crear aquestes funcions és com en el següent exemple, en el qual creem una funció que trau per pantalla el número PI:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION traure_pi() RETURNS void as $COS$
+begin
+    raise notice 'El número PI és: %',PI();
+end; $COS$
+LANGUAGE 'plpgsql';</code></pre>
+</div>
+</div>
+<p>En aquesta ocasió hem posat moltes paraules en minúscules, per a demostrar que no importen majúscules i minúscules.</p>
+<p>El resultat, si és que ho fem des de DBeaver, el veurem fent una altra consulta SQL posant</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code> SELECT traure_pi();</code></pre>
+</div>
+</div>
+<p>i el resultat el veuríem en la pestanya <b>Output</b>, ja que hem provocat traure un missatge.</p>
+<p>Com veieu estem utilitzant la sentència <strong>RAISE NOTICE</strong>, que la veurem millor en la pregunta 7 d'aquest tema, però que ja podem avançar que el que fa és traure una línia en la pestanya de missatges amb el començament <strong>NOTICE:</strong>. Posarem entre cometes simples el text que volem mostrar, i per a traure el contingut d'una variable, posarem entre les cometes un <strong>%</strong>, i al final, separat per coma la variable de la qual volem mostrar el contingut. Podem posar més d'un %, i al final haurem de posar (separades per comes) tantes variables o expressions com % hem posat entre cometes. Ho veurem millor en els següents exemples.</p>
+<p>Un altre exemple, també d'una funció que no torna res, sinó que "trau per pantalla" els números del 1 al 10:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION deu() RETURNS VOID as $COS$
+BEGIN
+    FOR i IN 1..10 LOOP
+        RAISE NOTICE '%',i;
+    END LOOP;
+END; $COS$
+LANGUAGE 'plpgsql';</code></pre>
+</div>
+</div>
+<p>Quan l'executem:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT deu();</code></pre>
+</div>
+</div>
+<p>Ens eixirà aquest resultat en la pestanya de Output:</p>
+<p style="text-align: center;"><img src="T7_5_1.png" alt="" width="349" height="286" /></p>
+<p>Una variant seria traure els números del1 al 10 i el seu doble. Observeu com posem 2 vegades <strong>%</strong>, i després posem 2 coses a mostrar, separades per comes: <strong>i , i*2</strong></p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION deu_doble() RETURNS VOID as $COS$
+BEGIN
+    FOR i IN 1..10 LOOP
+        RAISE NOTICE 'Número: %. Doble: %',i,i*2;
+    END LOOP;
+END; $COS$
+LANGUAGE 'plpgsql';</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT deu_doble();</code></pre>
+</div>
+</div>
+<p style="text-align: center;"><img src="T7_5_2.png" alt="" width="397" height="303" /></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_instruccions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.1 - Connexió al servidor de l'Institut | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-38"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__bd_clauvalor_redis.html" class="daddy">2 - BD Clau-Valor: Redis</a>
+   <ul class="other-section">
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__mongodb.html" class="current-page-parent daddy">3 - MongoDB</a>
+   <ul>
+      <li class="current-page-parent"><a href="31__installaci_de_mongodb.html" class="current-page-parent daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul>
+         <li id="active"><a href="311__connexi_al_servidor_de_linstitut.html" class="active no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__bd_xml_existdb.html" class="daddy">4 - BD XML: eXist-db</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul class="other-section">
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li><a href="422__xquery.html" class="daddy">4.2.2 - XQUERY</a>
+         <ul class="other-section">
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li><a href="4224__expressions_flwor.html" class="no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31__installaci_de_mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__utilitzaci_de_mongodb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.1 - Connexió al servidor de l'Institut</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id231">
+<div class="iDevice emphasis0" >
+<div id="ta231_229_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Quan hem utilitzat el client, hem executat el programa <strong>mongo</strong> sense posar-li res més. Per defecte s'ha connectat al servidor que tenim en la mateixa màquina.</p>
+<p style="text-align: justify;">Però en realitat li podem especificar l'adreça on està el servidor al qual volem connectar. En concret, l'adreça del servidor de dades de l'Institut en el qual també tenim instal·lat MongoDB:</p>
+<div class="highlighted-code language-java" style="text-align: justify;">
+<div>
+<pre><code>mongo  89.36.214.106</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Podem connectar, però no podrem fer cap operació, perquè està habilitada l'autenticació per a previndre atacs, cosa que no tenim en el servidor que hem instal·lat cadascú en la seua màquina.</p>
+<p style="text-align: justify;">Aleshores, si intentem fer qualsevol operació, ens donarà error perquè no estem autenticats:</p>
+<p><img src="T8_3_1_1_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1364" height="348" /></p>
+<p style="text-align: justify;">La manera d'autenticar serà utilitzant el comando <strong>db.auth("<em>usuari"</em>, "<em>contrasenya"</em>)</strong>. I en connectarem a un usuari que té permís per a utilitzar la BD test:</p>
+<ul style="text-align: justify;">
+<li>Usuari: <strong>ad</strong></li>
+<li>Contrasenya: <strong>ieselcaminas</strong></li>
+</ul>
+<p style="text-align: justify;">A partir d'eixe moment ja podrem utilitzar-lo sense problemes:</p>
+<p><img src="T8_3_1_1_2.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1364" height="709" /></p>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31__installaci_de_mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__utilitzaci_de_mongodb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

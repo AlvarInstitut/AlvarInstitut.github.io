@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.2.4 - Expressions FLWOR | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-63"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__bd_clauvalor_redis.html" class="daddy">2 - BD Clau-Valor: Redis</a>
+   <ul class="other-section">
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__bd_xml_existdb.html" class="current-page-parent daddy">4 - BD XML: eXist-db</a>
+   <ul>
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li class="current-page-parent"><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="current-page-parent daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul>
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li class="current-page-parent"><a href="422__xquery.html" class="current-page-parent daddy">4.2.2 - XQUERY</a>
+         <ul>
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li id="active"><a href="4224__expressions_flwor.html" class="active no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4223__expressions_avaluables.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4225__alternatives.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.2.4 - Expressions FLWOR</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id258">
+<div class="iDevice emphasis0">
+<div id="ta258_1" class="block iDevice_content">
+<p>Les expressions FLWOR són la part més potent d’XQuery. Estan formades per cinc instruccions opcionals que permeten fer les consultes i alhora processar-les per seleccionar els ítems que interessen d’una seqüència.</p>
+<table align="center" border="1">
+<tbody>
+<tr class="row0 borderth"><th class="col0">           </th><th class="col1 leftalign">Clàusula</th><th class="col2 leftalign">Ús</th></tr>
+<tr class="row1">
+<td class="col0 centeralign" style="text-align: center;"><strong>f</strong></td>
+<td class="col1 leftalign"><strong><b>for</b></strong></td>
+<td class="col2">Permet recórrer una seqüència, agafant cada vegada un element d'aquesta</td>
+</tr>
+<tr class="row2">
+<td class="col0 centeralign" style="text-align: center;"><strong>l</strong></td>
+<td class="col1 leftalign"><strong><b>let</b></strong></td>
+<td class="col2 leftalign">Serveix per assignar valors a una variable</td>
+</tr>
+<tr class="row3">
+<td class="col0 centeralign" style="text-align: center;"><strong>w</strong></td>
+<td class="col1 leftalign"><strong><b>where</b></strong></td>
+<td class="col2 leftalign">Permet filtrar els resultats segons condicions</td>
+</tr>
+<tr class="row4">
+<td class="col0 centeralign" style="text-align: center;"><strong>o</strong></td>
+<td class="col1"><strong><b>order by</b></strong></td>
+<td class="col2 leftalign">Ordena els resultats abans de mostrar-los</td>
+</tr>
+<tr class="row5">
+<td class="col0 centeralign" style="text-align: center;"><strong>r</strong></td>
+<td class="col1 leftalign"><strong><b>return</b></strong></td>
+<td class="col2 leftalign">Retorna el resultat de tota l’expressió</td>
+</tr>
+</tbody>
+</table>
+<p class="titolet">"FOR ... RETURN"</p>
+<p>La instrucció <strong><b>for</b></strong> es fa servir per avaluar individualment cadascun dels resultats d’una seqüència de nodes. En un <strong><b>for</b></strong> es defineixen dues coses:</p>
+<ul>
+<li class="level1">
+<div class="li">Una variable, que serà la que anirà agafant els elements de la seqüència un per un.</div>
+</li>
+<li class="level1">
+<div class="li">La paraula clau <strong><b>in</b></strong>, en la qual es defineix quina és la seqüència d’elements per processar.</div>
+</li>
+</ul>
+<p>La manera més senzilla d’expressió FLWOR és combinar el <strong><b>for</b></strong> amb el <strong><b>return</b></strong> per retornar els valors obtinguts de manera seqüencial: </p>
+<div class="codi">
+<div>for $i in ('Hola' , 'Adéu' )</div>
+<div>return $i</div>
+</div>
+<p>generarà:</p>
+<div class="codi2">
+<div>Hola</div>
+<div>Adéu</div>
+</div>
+<p>Les seqüències de valors poden ser de qualsevol tipus. Per exemple, poden ser números. Així, el següent exemple:</p>
+<div class="codi">
+<div>for $i in (1,2,3)</div>
+<div>return $i * $i</div>
+</div>
+<p>generarà:</p>
+<div class="codi2">
+<div>1</div>
+<div>4</div>
+<div>9</div>
+</div>
+<p>O bé una seqüència de nodes, per mig d'una expressió XPath. Per exemple amb l’expressió següent capturem una seqüència de nodes i els fem servir per obtenir-ne el cognom:</p>
+<div class="codi">
+<div>for $alumne in //alumne</div>
+<div>return &lt;alumne&gt; { $alumne/cognoms } &lt;/alumne&gt;</div>
+</div>
+<p>generarà:</p>
+<div class="codi2">&lt;alumne&gt;<br />   &lt;cognoms&gt;Alegre&lt;/cognoms&gt;<br />&lt;/alumne&gt;<br />&lt;alumne&gt;<br />   &lt;cognoms&gt;Balaguer&lt;/cognoms&gt;<br />&lt;/alumne&gt;<br />&lt;alumne&gt;<br />   &lt;cognoms&gt;Centelles&lt;/cognoms&gt;<br />&lt;/alumne&gt;</div>
+<p>Es pot veure que els valors del <strong><b>return</b></strong> s’han anat processant un per un i per aquest motiu es repeteixen les etiquetes <strong><b>&lt;alumne&gt;</b></strong>.</p>
+<p>Un aspecte important és que no cal que el <strong><b>for</b></strong> siga la primera expressió de la consulta. També es pot posar com a paràmetre en una funció XPath.</p>
+<p>Per exemple, l’expressió següent ens tornarà el nombre d’alumnes: </p>
+<div class="codi">
+<div>count (</div>
+<div style="margin-left: 30px;">for $alumne in //alumne</div>
+<div style="margin-left: 30px;">return $alumne</div>
+<div>)</div>
+</div>
+<p class="codi2">3</p>
+<p>En el <strong>for</strong> es pot incloure l’operador <strong>at</strong>, que permet obtenir la posició del node que s’està processant. Amb aquest operador podem fer que aparega el número d’ordre en els resultats.</p>
+<div class="codi">
+<div>for $alumne at $pos in //alumne </div>
+<div>return &lt;alumne numero="{$pos}"&gt;</div>
+<div style="margin-left: 90px;">{ $alumne/cognoms/text() }</div>
+<div style="margin-left: 60px;">&lt;/alumne&gt;</div>
+</div>
+<p>que donarà</p>
+<div class="codi2">&lt;alumne numero="1"&gt;Alegre&lt;/alumne&gt;<br />&lt;alumne numero="2"&gt;Balaguer&lt;/alumne&gt;<br />&lt;alumne numero="3"&gt;Centelles&lt;/alumne&gt;</div>
+<p> </p>
+<p class="titolet">"FOR NIUAT" ("anidat")</p>
+<p>Les ordres <strong>for</strong> es poden posar unes dins d'unes altres, d’una manera similar a com ho fa SQL amb les subconsultes. Així es poden aconseguir resultats més complexos que es basen en els resultats obtinguts anteriorment.</p>
+<div class="codi">
+<div>for $selec in //alumne </div>
+<div>return </div>
+<div>    &lt;persona&gt; </div>
+<div>        { $selec/nom } </div>
+<div>        { </div>
+<div>            for $selec2 in $selec </div>
+<div>            return $selec2//cognom </div>
+<div>        } </div>
+<div>    &lt;/persona&gt;</div>
+</div>
+<p class="codi2">&lt;persona&gt;<br />    &lt;nom&gt;Albert&lt;/nom&gt;<br />&lt;/persona&gt;<br />&lt;persona&gt;<br />    &lt;nom&gt;Bernat&lt;/nom&gt;<br />&lt;/persona&gt;<br />&lt;persona&gt;<br />    &lt;nom&gt;Joan&lt;/nom&gt;<br />&lt;/persona&gt; </p>
+<p>Aquesta sentència anterior queda un poc pobra, ja que en el document hi ha molt poques dades.</p>
+<p>Un exemple un poc més complet (i comprensiu) seria el següent:</p>
+<div class="codi">for $selec in //ruta <br />return <br />    &lt;ruta&gt; <br />        &lt;nomRuta&gt;<br />        { $selec/nom/text() }<br />        &lt;/nomRuta&gt;<br />        &lt;punts&gt;<br />        { <br />            for $selec2 in $selec//punt <br />            return &lt;punt&gt; {$selec2/nom/text()} &lt;/punt&gt; <br />        }<br />        &lt;/punts&gt;<br />    &lt;/ruta&gt;</div>
+<p>que donaria el sagüent resultat:</p>
+<div class="codi2">
+<div class="uneven">
+<div class="item">
+<div class="xml-element"><span>&lt;</span><span class="ace_keyword">ruta</span><span>&gt;</span>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">nomRuta</span><span>&gt;</span><span class="ace_identifier">Pujada a Penyagolosa</span><span>&lt;/</span><span class="ace_keyword">nomRuta</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punts</span><span>&gt;</span>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Sant Joan</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Encreuament</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Barranc de la Pegunta</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">El Corralico</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Penyagolosa</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<span>&lt;/</span><span class="ace_keyword">punts</span><span>&gt;</span></div>
+<span>&lt;/</span><span class="ace_keyword">ruta</span><span>&gt;</span></div>
+</div>
+</div>
+<div class="even">
+<div class="item">
+<div class="xml-element"><span>&lt;</span><span class="ace_keyword">ruta</span><span>&gt;</span>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">nomRuta</span><span>&gt;</span><span class="ace_identifier">La Magdalena</span><span>&lt;/</span><span class="ace_keyword">nomRuta</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punts</span><span>&gt;</span>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Primer Molí</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Segon Molí</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Caminàs</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Riu Sec</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Sant Roc</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">Explanada</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<div class="xml-element" style="margin-left: 30px;"><span>&lt;</span><span class="ace_keyword">punt</span><span>&gt;</span><span class="ace_identifier">La Magdalena</span><span>&lt;/</span><span class="ace_keyword">punt</span><span>&gt;</span></div>
+<span>&lt;/</span><span class="ace_keyword">punts</span><span>&gt;</span></div>
+<span>&lt;/</span><span class="ace_keyword">ruta</span><span>&gt;</span></div>
+</div>
+</div>
+<br />...</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id259">
+<div class="iDevice emphasis0">
+<div id="ta259_1" class="block iDevice_content">
+<p class="titolet">LET</p>
+<p>Ens permet declarar variables i assignar-los un valor. Sobretot es fa servir per guardar valors que s’han de fer servir més tard.</p>
+<div class="codi">
+<div>let $num := 1</div>
+<div>let $nom := "Pere"</div>
+<div>let $i := (1 to 3)</div>
+</div>
+<p>En les expressions FLWOR hi pot haver tants <strong>let</strong> com calga.</p>
+<div class="codi">
+<div>for $alumne in doc("db/Tema9/classe.xml")//alumne</div>
+<div>let $nom := $alumne/nom</div>
+<div>let $nota := $alumne/nota</div>
+<div>return &lt;nom&gt;{ concat($nom,": ",$nota) }&lt;/nom&gt;</div>
+</div>
+<p class="codi2">&lt;nom&gt;Albert: 6&lt;/nom&gt;<br />&lt;nom&gt;Bernat: 3&lt;/nom&gt;<br />&lt;nom&gt;Joan: 8&lt;/nom&gt;</p>
+<p>S’ha d’anar amb compte amb <strong>let</strong> perquè el seu funcionament és molt diferent del de <strong>for</strong>:</p>
+<ul>
+<li class="level1">
+<div class="li"><strong>for</strong> s’executa per a cada membre d’una seqüència.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>let</strong> fa referència al seu valor en conjunt. Si és una seqüència, el que es processa són tots els valors de cop.</div>
+</li>
+</ul>
+<p>Podem veure la diferència amb un exemple. Aquesta instrucció amb <strong>for</strong>:</p>
+<div class="codi">
+<div>for $selec in //alumne</div>
+<div>return &lt;persona&gt;{$selec/nom}&lt;/persona&gt;</div>
+</div>
+<p>Dóna:</p>
+<div class="codi2">persona&gt;<br />    &lt;nom&gt;Albert&lt;/nom&gt;<br />&lt;/persona&gt;<br />&lt;persona&gt;<br />    &lt;nom&gt;Bernat&lt;/nom&gt;<br />&lt;/persona&gt;<br />&lt;persona&gt;<br />    &lt;nom&gt;Joan&lt;/nom&gt;<br />&lt;/persona&gt;</div>
+<p>I en canvi amb <strong>let</strong>:</p>
+<div class="codi">
+<div>let $selec := //alumne</div>
+<div>return &lt;persona&gt;{$selec/nom}&lt;/persona&gt;</div>
+</div>
+<p>Donarà:</p>
+<div class="codi2">&lt;persona&gt;<br />    &lt;nom&gt;Albert&lt;/nom&gt;<br />    &lt;nom&gt;Bernat&lt;/nom&gt;<br />    &lt;nom&gt;Joan&lt;/nom&gt;<br />&lt;/persona&gt;</div>
+<p>Els resultats són bastant diferents! Es pot veure clarament que <strong>let</strong> ha tractat tots els valors de cop.</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id260">
+<div class="iDevice emphasis0">
+<div id="ta260_1" class="block iDevice_content">
+<p class="titolet">WHERE</p>
+<p>La instrucció <strong>where</strong> és la part que indicarà quin filtre s’ha de posar a les dades rebudes abans d’enviar-les a la sortida del <b>return</b>. Normalment en el filtre es fa servir algun tipus de predicat XPath:</p>
+<div class="codi">
+<div>for $alumne in //alumne</div>
+<div>where $alumne/@aprovat="si"</div>
+<div>return $alumne/nom</div>
+</div>
+<p class="codi2">&lt;nom&gt;Albert&lt;/nom&gt;<br />&lt;nom&gt;Joan&lt;/nom&gt;</p>
+<p>Com que XPath forma part d’XQuery moltes vegades el mateix filtre es pot definir de diverses maneres. Per exemple, aquesta expressió és equivalent a l’anterior:</p>
+<div class="codi">
+<div>for $alumne in //alumne[@aprovat="si"]</div>
+<div>return $alumne/nom</div>
+</div>
+<p>Això sí, en un <strong>where</strong> hi pot haver tantes condicions com faça falta simplement encadenant-les amb les operacions lògiques <strong>and</strong>, <strong>or</strong> o <strong>not()</strong>.</p>
+<p>Aquesta expressió retorna el cognom dels alumnes que han aprovat i que es diuen <em>Joan</em>:</p>
+<div class="codi">for $alumne in //alumne<br />where $alumne/@aprovat="si" and $alumne/nom="Joan"<br />return $alumne/cognoms</div>
+<p class="codi2">&lt;cognoms&gt;Centelles&lt;/cognoms&gt;</p>
+<p>El <strong>where</strong> afegeix més potència del que sembla, ja que ens permet fer els <strong>inner joins</strong> d’SQL en fitxers XML. Per exemple, a partir de dos fitxers amb les dades de dues classes diferents es poden obtenir només els alumnes que es repeteixen entre les dues classes amb:</p>
+<div class="codi">
+<div><span style="color: #ff0000;">for $alum1 in doc("db/Tema9/classe.xml")//alumne</span></div>
+<div><span style="color: #ff0000;">let $alum2 in doc("db/Tema9/classe2.xml")//alumne</span></div>
+<div><span style="color: #ff0000;">where $alum1 = $alum2</span></div>
+<div><span style="color: #ff0000;">return $alum1</span></div>
+</div>
+<p><strong><span style="text-decoration: underline;">Atenció</span></strong></p>
+<p>L'anterior només és un exemple que no funcionarà, ja que no disposem del document <strong>classe2.xml</strong> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id261">
+<div class="iDevice emphasis0">
+<div id="ta261_1" class="block iDevice_content">
+<p class="titolet">ORDER BY</p>
+<p>Una de les operacions habituals en les cerques és representar els resultats en un ordre determinat. Aquesta és la funció que fa <strong><em>order by</em></strong>.</p>
+<p>Es pot ordenar de manera ascendent amb <strong>ascending</strong> (que és el que fa per defecte) o bé descendent amb <strong>descending</strong>.</p>
+<div class="codi">
+<div>for $alumne in <span></span>//alumne</div>
+<div>order by $alumne/cognoms descending</div>
+<div>return $alumne</div>
+</div>
+<p class="codi2">&lt;alumne delegat="si" aprovat="si"&gt;<br />    &lt;nom&gt;Joan&lt;/nom&gt;<br />    &lt;cognoms&gt;Centelles&lt;/cognoms&gt;<br />    &lt;nota&gt;8&lt;/nota&gt;<br />&lt;/alumne&gt;<br />&lt;alumne aprovat="no"&gt;<br />    &lt;nom&gt;Bernat&lt;/nom&gt;<br />    &lt;cognoms&gt;Balaguer&lt;/cognoms&gt;<br />    &lt;nota&gt;3&lt;/nota&gt;<br />&lt;/alumne&gt;<br />&lt;alumne aprovat="si"&gt;<br />    &lt;nom&gt;Albert&lt;/nom&gt;<br />    &lt;cognoms&gt;Alegre&lt;/cognoms&gt;<br />    &lt;nota&gt;6&lt;/nota&gt;<br />&lt;/alumne&gt;</p>
+<p>També es poden especificar diferents conceptes en l’ordenació. En aquest exemple els resultats s’ordenaran primer per cognom i després per nom:</p>
+<div class="codi">
+<div>for $alumne in <span></span>//alumne</div>
+<div>order by $alumne/cognoms, $alumne/nom</div>
+<div>return $alumne</div>
+</div>
+<p>En aquest altre el cognom s’ordena de manera descendent i el nom de manera ascendent.</p>
+<div class="codi">
+<div>for $alumne in <span></span>//alumne</div>
+<div>order by $alumne/cognoms descending, $alumne/nom ascending</div>
+<div>return $alumne</div>
+</div>
+<p>Per defecte ordena com si el contingut de les etiquetes fóra text. Si hem d'obtenir una ordenació numèrica, caldrà convertir els valors a números amb la funció d’XPath <strong>number()</strong>.</p>
+<div class="codi">
+<div>for $ruta in doc("db/Tema9/Rutes.xml")//ruta</div>
+<div>order by number($ruta/desnivellAcumulat)</div>
+<div>return concat($ruta/nom, " --&gt; ", $ruta/desnivellAcumulat)</div>
+</div>
+<p class="codi2">La Magdalena --&gt; 84<br />Pujada a Penyagolosa --&gt; 530<br />Catí - Sant Pere de Castellfort --&gt; 1286<br />Pelegrins de Les Useres --&gt; 1738</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4223__expressions_avaluables.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4225__alternatives.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

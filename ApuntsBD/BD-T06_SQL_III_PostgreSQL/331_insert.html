@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.1 INSERT | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  DDL i consultes d'actualització (part III)</a></li>
+   <li><a href="31_introducci.html" class="no-ch">3.1 Introducció</a></li>
+   <li><a href="32_ddl.html" class="daddy">3.2 DDL</a>
+   <ul class="other-section">
+      <li><a href="321_tipus_de_dades.html" class="no-ch">3.2.1 Tipus de dades</a></li>
+      <li><a href="322_create_table.html" class="daddy">3.2.2 CREATE TABLE</a>
+      <ul class="other-section">
+         <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="323_restriccions_constraint.html" class="daddy">3.2.3 Restriccions (Constraint)</a>
+      <ul class="other-section">
+         <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="324_alter_table.html" class="daddy">3.2.4 ALTER TABLE</a>
+      <ul class="other-section">
+         <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="325_drop_table.html" class="no-ch">3.2.5 DROP TABLE</a></li>
+      <li><a href="326_ndex.html" class="daddy">3.2.6 Índex</a>
+      <ul class="other-section">
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="327_vistes.html" class="daddy">3.2.7 Vistes</a>
+      <ul class="other-section">
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="328_creaci_daltres_objectes_seqncies_dominis_i_tipus.html" class="daddy">3.2.8. Creació d'altres objectes: seqüències, dominis i tipus.</a>
+      <ul class="other-section">
+         <li><a href="3281_seqncies.html" class="no-ch">3.2.8.1 Seqüències</a></li>
+         <li><a href="3282_dominis.html" class="no-ch">3.2.8.2 Dominis</a></li>
+         <li><a href="3283_tipus_de_dades.html" class="no-ch">3.2.8.3 Tipus de dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="33_consultes_dactualitzaci.html" class="current-page-parent daddy">3.3 Consultes d'actualització</a>
+   <ul>
+      <li id="active"><a href="331_insert.html" class="active daddy">3.3.1 INSERT</a>
+      <ul>
+         <li><a href="exercicis4.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="332_delete.html" class="daddy">3.3.2 DELETE</a>
+      <ul class="other-section">
+         <li><a href="exercicis5.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="333_update.html" class="daddy">3.3.3 UPDATE</a>
+      <ul class="other-section">
+         <li><a href="exercicis6.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33_consultes_dactualitzaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis4.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.1 INSERT</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p> </p>
+<p>Servirà per a introduir noves files en una determinada taula. Hi ha dues variants d'aquesta sentència. La primera servirà per a introduir noves files proporcionant-li les dades, és a dir, indicant expressament els nous valors dels camps. L'altra podria servir per a introduir noves files de forma més massiva, agafant les dades de les taules ja existents per mig d'una sentència SELECT.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id62">
+<div class="iDevice emphasis0">
+<div id="ta62_1" class="block iDevice_content">
+<p class="titolet">Sintaxi per a inserció amb valors</p>
+<p class="codiSQL">INSERT INTO taula [ (camp1 [,camp2 [,...]]) ] <br /> VALUES (valor1 [,valor2 [,...]]) [,(...)]</p>
+<p>Com es pot comprovar d'aquesta manera s'introduirà una fila nova, i es proporcionen les dades directament, com a constants. Opcionalment podem introduir els valors per a una segona fila o quantes es vulguen, sempre posant les dades de cada fila entre parèntesis, i si hi ha més d'una fila, separats per comes.</p>
+<p>És opcional posar la llista de camps de la taula. Si no es posen, s'haurà de posar un valor per a cada camp de la taula, i en el mateix ordre com estan definits en la taula.</p>
+<p>Si posem expressament els camps de la taula, els podrem posar amb l'ordre que vulguem, i no caldrà posar-los tots. Els camps no especificats quedaran amb el valor nul (a no ser que tinguen un valor predeterminat, un valor per defecte). Per tant, haurem de posar obligatòriament tots els camps definits com a no nuls (inclosa la clau principal).</p>
+<p>Per a posar el valor nul a un camp posarem explícitament <strong>NULL</strong>.</p>
+<p>Si tenim definit un camp autonumèric (SERIAL) i volem continuar amb el següent de la seqüència, no li hem de posar cap valor. Per tant en la sentència SQL no haurà de constar el camp: haurem de posar la llista de camps, i en aquest no ha d'estar el camp autonumèric. Veurem després un exemple per veure-ho més clar.</p>
+<p>Per contra, podem trencar la seqüència posant-li un valor al camp autonumèric, però això no haurà modificat la seqüència. Si volem modificar-la hauríem de fer-ho amb la sentència <strong>ALTER SEQUENCE</strong>.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id63">
+<div class="iDevice emphasis0">
+<div id="ta63_1" class="block iDevice_content">
+<p class="titolet">Exemples</p>
+<ol>
+<li value="1">
+<p>Introduir un departament nou amb les següents dades: Número: <b>6</b>; Nom: <b>Personal</b>; Director: <b>18922222 </b>i Data: <b>01/05/99</b>. La taula <strong>DEPARTAMENT</strong> la vam crear en la pregunta <strong>3.2.3</strong> (Restriccions)</p>
+</li>
+</ol>
+<p class="codiSQL">INSERT INTO DEPARTAMENT <br /> VALUES (6,'Personal','18922222','01/05/99');</p>
+<ol>
+<li value="2">
+<p>Introduir dos departaments nous, aquest vegada sense posar la data: Número: <b>7</b>; Nom: <b>Vendes</b>; Director: <b>18876543</b>.  I Número: <b>8</b>; Nom: <b>Internacional</b>; Director: <b>18999999</b>. Podem posar a més l'ordre que vulguem:</p>
+</li>
+</ol>
+<p class="codiSQL">INSERT INTO DEPARTAMENT (num_d,director,nom_d) <br /> VALUES (7,'18876543','Vendes') , (8,'18999999','Internacional');</p>
+<blockquote>
+<p>També ho podíem haver fet així. Observeu que ara l'ordre ha de ser exactament el de la definició de la taula.</p>
+</blockquote>
+<p class="codiSQL">INSERT INTO DEPARTAMENT <br /> VALUES (7,'Vendes','18876543',NULL) , (8,'Internacional','18999999',NULL);</p>
+<ol>
+<li value="3">
+<p>Introduir 3 empleats en la taula <strong>EMPLEAT1</strong>, amb els valors següents (la taula <strong>EMPLEAT1</strong> la vam crear en la primera sentència d'exemple de la pregunta 3.2.2, CREATE TABLE):</p>
+<ul>
+<li>Dni: <strong>11111111a</strong>; Nom: <strong>Albert</strong></li>
+<li>Dni: <strong>22222222b</strong>; Nom: <strong>Berta</strong></li>
+<li>Dni: <strong>33333333c</strong>; Nom: <strong>Clàudia</strong></li>
+</ul>
+</li>
+</ol>
+<p class="codiSQL">INSERT INTO EMPLEAT1 <br />VALUES ('11111111a','Albert') , ('22222222b','Berta') , ('33333333c','Clàudia')</p>
+<ol>
+<li value="4">
+<p>Introduir 3 empleats en la taula EMPLEAT2, amb els valors següents (la taula <strong>EMPLEAT2</strong> la vam crear en la segona sentència d'exemple de la pregunta 3.2.2, CREATE TABLE):</p>
+<ul>
+<li>Dni: <strong>44444444d</strong>; Nom: <strong>David</strong>; Departament: <strong>6</strong>; Sou: <strong>1000</strong></li>
+<li>Dni: <strong>55555555e</strong>; Nom: <strong>Elena</strong>; Departament:<strong> <strong>6</strong></strong>; Sou: <strong>1500</strong></li>
+<li>Dni: <strong>66666666f</strong>; Nom: <strong>Ferran</strong>; Departament:<strong> <strong>7</strong></strong>; Sou: <strong>1750</strong></li>
+</ul>
+</li>
+</ol>
+<p class="codiSQL">INSERT INTO EMPLEAT2 (dni,nom,departament,sou)<br />VALUES ('<strong>44444444d</strong>','<strong>David</strong>',6,1000) , ('<strong>55555555e</strong>','<strong>Elena</strong>',6,1500) , ('<strong>66666666f</strong>','<strong>Ferran</strong>',7,1750)</p>
+<ol>
+<li value="5">
+<p>Suposem que tenim una taula de <strong>FACTURES</strong> en la BD <strong>proves</strong>, amb una clau principal que és un <b>autonumèric</b> (<strong>SERIAL</strong>). Com volem practicar únicament l'autonumèric, la crearem senzilleta, amb la següent estructura:</p>
+</li>
+</ol>
+<p class="codiSQL">CREATE TABLE FACTURES<br /> ( num_f SERIAL PRIMARY KEY,<br />   descripcio VARCHAR,<br />   import NUMERIC );</p>
+<blockquote>
+<p>La manera d'anar introduint normalment serà sense especificar num_f, per a que vaja agafant valors consecutius.</p>
+</blockquote>
+<p class="codiSQL">INSERT INTO FACTURES (descripcio,import)<br /> VALUES ('Factura 1',54.23);</p>
+<blockquote>
+<p>Però si volem trencar la seqüència, sí que posarem num_f.</p>
+</blockquote>
+<p class="codiSQL">INSERT INTO FACTURES<br /> VALUES (2016001,'Factura 1 del 2016',23.98);</p>
+<blockquote>
+<p>Això sí, si introduïm un altra fila sense especificar el número de factura, l'agafarà de la seqüència, que no s'hava modificat, i per tant el valor que ens donarà serà <strong>2</strong>.</p>
+</blockquote>
+<p class="codiSQL">INSERT INTO FACTURES (descripcio,import)<br />VALUES ('Factura 2',36.27);</p>
+<blockquote>
+<p>Per a canviar definitivament el valor que ha d'anar autoincrementant-se, hauríem de modificar la seqüència (<strong>ALTER SEQUENCE</strong>).</p>
+<p>Després de les 3 insercions anteriors, el contingut de la taula FACTURES serà aquest:</p>
+<p style="text-align: center;"><img style="border: 1px solid black;" src="T6_III_3_1_1.png" height="138" width="393" /></p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id64">
+<div class="iDevice emphasis0">
+<div id="ta64_1" class="block iDevice_content">
+<p class="titolet">Sintaxi per a inserció amb subconsulta</p>
+<p class="codiSQL">INSERT INTO taula [ (camp1 [,camp2 [,...]]) ] <br /> SELECT ...</p>
+<p align="justify">És a dir, les dades que van a inserir-se les traiem a partir d'una sentència SELECT. La sentència SELECT pot ser tan complicada com faça falta, i podem posar les clàusules necessàries: WHERE, GROUP BY, ... El requisit és que haurà de tornar tants camps com tinga la taula o com estiguen especificats en la sentència INSERT, i que les dades que tornen siguen del mateix tipus (o tipus compatibles, encara que Access pot fer una conversió de tipus automàtica). Igual que en l'anterior format, quan no s'especifique un camp se li assignarà el valor nul, o el valor predeterminat si en té definit.</p>
+<p>Es podria especificar fins i tot una taula d'una base de dades externa. Consulteu la sentència SELECT, l'apartat "Especificació d'una B.D. externa".</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id75">
+<div class="iDevice emphasis0">
+<div id="ta75_1" class="block iDevice_content">
+<p class="titolet">Exemples</p>
+<ol>
+<li value="1">
+<p>Inserir tots els registres de la taula <strong>EMPLEAT1</strong> en <strong>EMPLEAT3</strong> , suposant que existeixen aquestes taules i encara que tenen una estructura diferent, les dues tenen els camps <strong>dni</strong> i <strong>nom</strong>. Si no existeix la taula <strong>EMPLEAT3</strong>, pots tornar a crear-la, utilitzant l'última sentència de la pregunta 3.2.3 (Restriccions)</p>
+</li>
+</ol>
+<p class="codiSQL">INSERT INTO EMPLEAT3(dni,nom) <br /> SELECT dni,nom FROM EMPLEAT1;</p>
+<ol>
+<li value="2">
+<p>Inserir en la taula <strong>EMPLEAT3</strong> tots els empleats de la taula <strong>EMPLEAT2 </strong>dels departaments 6 i 7.</p>
+</li>
+</ol>
+<p class="codiSQL">INSERT INTO EMPLEAT3 <br /> SELECT * FROM EMPLEAT2 <br />     WHERE departament IN (6,7);</p>
+<ol>
+<li value="3">
+<p>Inserir en la taula EMPLEAT3 els empleats que tenen més d'un familiar. Aquesta sentència no la podrem executar, ja que no tenim la taula <strong>FAMILIAR</strong>. Està únicament de manera il·lustrativa.</p>
+</li>
+</ol>
+<p class="codiSQL"><span style="color: #ff0000;">INSERT INTO EMPLEAT3 </span><br /><span style="color: #ff0000;"> SELECT * FROM EMPLEAT </span><br /><span style="color: #ff0000;">     WHERE dni IN (SELECT dni </span><br /><span style="color: #ff0000;">                       FROM FAMILIAR </span><br /><span style="color: #ff0000;">                       GROUP BY dni </span><br /><span style="color: #ff0000;">                       HAVING COUNT(*) &gt; 1);</span></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33_consultes_dactualitzaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis4.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

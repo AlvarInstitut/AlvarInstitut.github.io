@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.8 Especialitzacions | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Model Relacional</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_estructura_del_model_relacional.html" class="no-ch">2. Estructura del Model Relacional</a></li>
+   <li><a href="3_restriccions.html" class="daddy">3. Restriccions</a>
+   <ul class="other-section">
+      <li><a href="31_restriccions_inherents.html" class="no-ch">3.1 Restriccions inherents</a></li>
+      <li><a href="32_restriccions_dusuari.html" class="daddy">3.2 Restriccions d'usuari</a>
+      <ul class="other-section">
+         <li><a href="321_restricci_de_domini.html" class="no-ch">3.2.1 Restricció de domini</a></li>
+         <li><a href="322_restricci_de_clau_principal.html" class="no-ch">3.2.2 Restricció de clau principal</a></li>
+         <li><a href="323_restricci_dunicitat.html" class="no-ch">3.2.3 Restricció d'unicitat</a></li>
+         <li><a href="324_restricci_de_valor_no_nul.html" class="no-ch">3.2.4 Restricció de valor no nul</a></li>
+         <li><a href="325_integritat_referencial.html" class="no-ch">3.2.5 Integritat referencial</a></li>
+         <li><a href="326_restriccions_externes.html" class="no-ch">3.2.6 Restriccions externes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_tranformaci_del_m_er_al_m_relacional.html" class="current-page-parent daddy">4. Tranformació del M. E/R al M. Relacional</a>
+   <ul>
+      <li><a href="41_entitats.html" class="no-ch">4.1 Entitats</a></li>
+      <li><a href="42_relacions_1n.html" class="no-ch">4.2 Relacions 1:N</a></li>
+      <li><a href="43_relacions_mn.html" class="no-ch">4.3 Relacions M:N</a></li>
+      <li><a href="44_relacions_11.html" class="no-ch">4.4 Relacions 1:1</a></li>
+      <li><a href="45_entitats_dbils.html" class="no-ch">4.5 Entitats dèbils</a></li>
+      <li><a href="46_resum_dependncies.html" class="no-ch">4.6 Resum dependències</a></li>
+      <li><a href="47_relacions_ternries.html" class="no-ch">4.7 Relacions ternàries</a></li>
+      <li id="active"><a href="48_especialitzacions.html" class="active no-ch">4.8 Especialitzacions</a></li>
+      <li><a href="49_restriccions_externes.html" class="no-ch">4.9 Restriccions externes</a></li>
+      <li><a href="410_exemple.html" class="no-ch">4.10 Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="5_llenguatges_relacionals.html" class="no-ch">5. Llenguatges relacionals</a></li>
+   <li><a href="6_exercicis.html" class="no-ch">6. Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="47_relacions_ternries.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="49_restriccions_externes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.8 Especialitzacions</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p align="justify">
+Aquest
+aspecte, com en el cas de les relacions 1:1, també té múltiples solucions. El
+problema de les especialitzacions és que, encara que de forma teòrica la
+solució siga correcta, en la pràctica suposa moltes taules i amb un cert grau
+de manteniment entre elles. Per tant, i aplicant el sentit comú, moltes vegades es fa una simplificació, llevant
+bé les subclasses, bé la superclasse, com veurem a continuació. Aquestes són les possibilitats:
+</p>
+<div align="justify">
+<ul class="unIndentedList">
+	<li>
+	Transformar les especialitzacions en taules amb
+	la clau principal heretada i els atributs específics (com si substituírem
+	l'especialització en relacions 1:1, amb les subclasses depenent en
+	identificació de la superclasse). Estaria també bé afegir un atribut a la
+	superclasse per a poder saber de quin tipus és. En l'exemple ens quedaria:</li>
+</ul>
+<div align="center">
+<img src="T3_4_8_1.png" border="1" height="104" width="346" />
+</div>
+<ul class="unIndentedList">
+	<li>
+	Simplificar les subclasses. Aleshores tots els
+	atributs d'aquestes haurien de passar a la superclasse. També s'haurien de
+	passar totes les relacions que afecten a les subclasses, &quot;retocant&quot;
+	les participacions totals (que ara ja no ho serien). Ara serà obligatori tenir
+	el camp que distingeix el tipus (sinó, perdríem aquesta informació).</li>
+</ul>
+<div align="center">
+<img src="T3_4_8_2.png" border="1" height="34" width="493" />
+</div>
+</div>
+<p align="justify">
+&nbsp;
+</p>
+<ul class="unIndentedList">
+	<li>
+	Simplificar la superclasse. Aleshores tots els
+	atributs d'aquesta passarien a cadascuna de les subclasses. També passarien les
+	relacions a cadascuna d'aquestes, &quot;retocant&quot; les participacions
+	totals.</li>
+</ul>
+<div align="center">
+<img src="T3_4_8_3.png" border="1" height="73" width="442" />
+</div>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="47_relacions_ternries.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="49_restriccions_externes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

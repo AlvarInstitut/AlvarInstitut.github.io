@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.2 Consultes | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Base avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li class="current-page-parent"><a href="part_i_prctica_inicial.html" class="current-page-parent daddy">Part I: Pràctica inicial</a>
+   <ul>
+      <li><a href="11_taules.html" class="no-ch">1.1 Taules</a></li>
+      <li id="active"><a href="12_consultes.html" class="active no-ch">1.2 Consultes</a></li>
+      <li><a href="13_formularis_i_informes.html" class="no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_ii_macros_voluntari.html" class="daddy">Part II: Macros (Voluntari)</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_i_execuci_directa_duna_macro.html" class="no-ch">2.1 Creació i execució directa d'una Macro</a></li>
+      <li><a href="22_quan_executar_una_macro_esdeveniments.html" class="no-ch">2.2 Quan executar una macro: esdeveniments</a></li>
+      <li><a href="23_obrir_automticament_un_formulari.html" class="no-ch">2.3 Obrir automàticament un formulari</a></li>
+      <li><a href="24_exemple_avanat_compliment_de_restriccions_externes.html" class="no-ch">2.4 Exemple avançat: compliment de restriccions externes</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="11_taules.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="13_formularis_i_informes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.2 Consultes</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_1" class="block iDevice_content">
+<p>Continueu amb les següents qüestions:</p>
+<p><b>2.1) </b>Construir una consulta anomenada <strong>2.1</strong><b><span style="text-decoration: underline;"><strong>: E</strong>mpleats - Sou en Pessetes</span></b> on tindrem el nom de l'empleat, Dni, sou en euros i sou en pessetes. (1euro = 166,386pts). Aquesta consulta ha d'anar ordenada de major sou a menor.</p>
+<p> </p>
+<p><b>2.2) </b>Fer una consulta, <b><span style="text-decoration: underline;">2.2: Empleats - comencen per G</span></b>, on aparega el nom i dni d'aquells empleats que comencen per <b>G</b>.</p>
+<p> </p>
+<p><b>2.3)</b> Construir una consulta, <span style="text-decoration: underline;"><b>2.3: Empleats - Departaments</b></span>, amb el nom dels empleats i els noms dels departaments als quals pertanyen. Ordenat per nom d'empleat.</p>
+<p align="center"><img src="T5_1_2.png" width="283" height="153" border="1" /></p>
+<blockquote>
+<p><span style="text-decoration: underline;"><b>Atenció</b></span></p>
+</blockquote>
+<blockquote>
+<p>És més complicada del que sembla en un principi, ja que podeu tenir un efecte no desitjat. Observeu que hi ha d'haver 7 files en total.</p>
+</blockquote>
+<p> </p>
+<p><b>2.4) </b>Construir una consulta anomenada <span style="text-decoration: underline;"><strong>2.4: Empleats - Número de Projectes</strong></span> on tindrem el nom de l'empleat, Dni i número de projectes en els quals treballa, ordenat pel nom de l'empleat<b> </b><!-- [if gte vml 1]>
+<![if gte mso 9]>
+<![endif]><![endif]--></p>
+<div align="center"><img src="T5_1_3.png" width="443" height="152" border="1" /></div>
+<div align="center"></div>
+<p><b>2.5)</b> Construir una consulta pareguda a l'anterior anomenada <b><span style="text-decoration: underline;">2.5: Projectes - Total hores</span></b> on tindrem el nom del projecte, el número de projecte i la suma de les hores treballades en ell, ordenat pel nom del projecte<b> </b><!-- [if gte vml 1]>
+<![if gte mso 9]>
+<![endif]><![endif]--></p>
+<div style="text-align: center;"><img src="T5_1_4.png" width="388" height="132" border="1" /></div>
+<div style="text-align: center;"></div>
+<!-- [if gte vml 1]><![endif]-->
+<p><b>2.6) </b>Construir una consulta anomenada <b><span style="text-decoration: underline;">2.6: Familiars dels empleats amb sous mitjans d'un departament</span></b>, on tindrem número de departament, Dni, nom de l'empleat, nom del familiar, parentesc i sou de l'empleat, ordenat per nom empleat, dels empleats que tenen un sou entre 2.000 i 2.500 €. (ambdós inclosos) d'un departament introduït per teclat (serà un paràmetre). Per exemple, si quan pregunte el departament s'introdueix el <b>3</b>, el resultat seria:</p>
+<p align="center"><img src="T5_1_4_5.png" width="738" height="77" border="1" /></p>
+<p style="text-align: justify; margin-left: 30px;" align="center"><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p style="text-align: justify; margin-left: 30px;" align="center"><span style="text-decoration: underline;"><strong></strong></span>Per a posar un paràmetre en una consulta per a que ens demane el valor per teclat, hem de posar dos punts davant d'un nom que no siga com cap camp de les taules que entren en la consulta i que no tinga espais en blanc. Per exemple <strong>:Numero_Departament</strong>. D'aquesta manera, ens demanarà el valor per teclat.</p>
+<p><b>2.7) </b>Construir una consulta de supervisors, on tindrem els dni i nom de <b><span style="text-decoration: underline;">tots</span></b> els empleats, i el nombre de empleats que supervisa cadascun. Guardeu-la amb el nom <b><span style="text-decoration: underline;">2.7: Empleats - Supervisors</span></b>.</p>
+<p align="center"><img src="T5_1_5.png" width="434" height="153" border="1" /></p>
+<blockquote>
+<p align="justify"><b><span style="text-decoration: underline;">Pista</span></b></p>
+<p align="justify">Farà falta posar 2 vegades la taula Empleat, una per a traure el nom i dni de cada empleat, i una altra per a poder comptar els que tenen a aquest de supervisor. I mireu que han d'eixir <span style="text-decoration: underline;"><b>tots</b></span> els empleats (fins i tot els que no supervisen a ningú, que són als que ix 0) </p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="11_taules.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="13_formularis_i_informes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

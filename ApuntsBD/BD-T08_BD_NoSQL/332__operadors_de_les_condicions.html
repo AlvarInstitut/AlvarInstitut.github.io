@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.2 - Operadors de les condicions | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-31"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__bd_clauvalor_redis.html" class="daddy">2 - BD Clau-Valor: Redis</a>
+   <ul class="other-section">
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__mongodb.html" class="current-page-parent daddy">3 - MongoDB</a>
+   <ul>
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="33__consulta_de_documents.html" class="current-page-parent daddy">3.3 - Consulta de documents</a>
+      <ul>
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li id="active"><a href="332__operadors_de_les_condicions.html" class="active no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__bd_xml_existdb.html" class="daddy">4 - BD XML: eXist-db</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul class="other-section">
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li><a href="422__xquery.html" class="daddy">4.2.2 - XQUERY</a>
+         <ul class="other-section">
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li><a href="4224__expressions_flwor.html" class="no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="331__parmetres_de_les_funcions_find_i_findone.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="333__agregaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.2 - Operadors de les condicions</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id125">
+<div class="iDevice emphasis0">
+<div id="ta125_85" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id126">
+<div class="iDevice emphasis0">
+<div id="ta126_85" class="block iDevice_content">
+<p>Abans de començar aquesta pregunta, anem a agafar unes dades de prova, que estan en el fitxer <strong>libros_ejemplo.json</strong></p>
+<p>Només heu de copiar el contingut del fitxer en la terminal del client de Mongo.</p>
+<p>Posem ací el contingut per a que pugueu pegar-li una miradeta sense necessitat d'obrir-lo. Anirà bé per als exemples posteriors.</p>
+<pre class="codi2">db.libro.save({<br />    "_id":"9788408117117",<br />      "titulo":"Circo Máximo",<br />    "autor":"Santiago Posteguillo",<br />    "editorial":"Planeta",<br />    "enstock":true,<br />    "paginas":1100,<br />    "precio":21.75,<br />    "fecha":new ISODate("2013-08-29T00:00:00Z"),        <br />      "resumen":"Circo Máximo, de Santiago Posteguillo, que ha escrito otras obras de narrativa histórica como Las Legiones Malditas o La traición de Roma, es la segunda parte de la trilogía de Trajano, que comenzó con Los asesinos del emperador, un relato impactante, descomunal, descrito con un trepidante pulso narrativo destinado a trasla dar al lector a la Roma imperial de los césares. Santiago posteguillo se ha convertido en el autor español de referencia de la novela histórica sobre Roma y el mundo antiguo. Bienvenidos al mundo de Marco Ulpio Trajano. Circo Máximo es la historia de Trajano y su gobierno, guerras y traiciones, lealtades insobornables e historias de amor imposibles. Hay una vestal, un juicio, inocentes acusados, un abogado especial, mensajes cifrados, códigos secretos, batallas campales, fortalezas inexpugnables, asedios sin fin, dos aurigas rivales, el Anfiteatro, los gladiadores y tres carreras de cuadrigas. Hay también un caballo especial, diferente a todos, leyes antiguas olvidadas, sacrificios humanos, amargura y terror, pero también destellos de nobleza y esperanza, como la llama de Vesta, que mientras arde preserva a Roma. Sólo que hay noches en las que la llama del Templo de Vesta tiembla. La rueda de la Fortuna comienza entonces a girar. En esos momentos, todo puede pasar y hasta la vida del propio Trajano, aunque él no lo sepa, corre peligro. Y, esto es lo mejor de todo, ocurrió: hubo un complot para asesinar a Marco Ulpio Trajano."<br />})<br /><br />db.libro.save({<br />     "_id":"9788401342158",<br />      "titulo":"El juego de Ripper",<br />      "autor":"Isabel Allende",<br />      "editorial":"Plaza &amp; Janes",<br />      "enstock":true,<br />      "paginas":480,<br />      "precio":21.75,<br />    "fecha":new ISODate("2014-03-01T00:00:00Z"),        <br />      "resumen":"Tal como predijo la astróloga más reputada de San Francisco, una oleada de crímenes comienza a sacudir la ciudad. En la investigación sobre los asesinatos, el inspector Bob Martín recibirá la ayuda inesperada de un grupo de internautas especializados en juegos de rol, Ripper. 'Mi madre todavía está viva, pero la matará el Viernes Santo a medianoche', le advirtió Amanda Martín al inspector jefe y éste no lo puso en duda, porque la chica había dado pruebas de saber más que él y todos sus colegas del Departamento de Homicidios. La mujer estaba cautiva en algún punto de los dieciocho mil kilómetros cuadrados de la bahía de San Francisco, tenían pocas horas para encontrarla con vida y él no sabía por dónde empezar a buscarla",<br /> })<br /> <br />db.libro.save({<br />    "_id":"9788496208919",<br />   "titulo":"Juego de tronos: Canción de hielo y fuego 1",<br />   "autor":"George R.R. Martin",<br />   "editorial":"Gigamesh",<br />   "enstock":true,<br />   "paginas":793,<br />   "precio":9.5,<br />   "fecha":new ISODate("2011-11-24T00:00:00Z"),     <br />   "resumen":"Tras el largo verano, el invierno se acerca a los Siete Reinos. Lord Eddars Stark, señor de Invernalia, deja sus dominios para unirse a la corte del rey Robert Baratheon el Usurpador, hombre díscolo y otrora guerrero audaz cuyas mayores aficiones son comer, beber y engendrar bastardos. Eddard Stark desempeñará el cargo de M ano del Rey e intentará desentrañar una maraña de intrigas que pondrá en peligro su vida... y la de los suyos. En un mundo cuyas estaciones duran décadas y en el que retazos de una magia inmemorial y olvidada surgen en los rincones más sombrios y maravillosos, la traición y la lealtad, la compasión y la sed de venganza, el amor y el poder hacen del juego de tronos una poderosa trampa que atrapa en sus fauces a los personajes... y al lector. 'El regreso triunfal de Martin a la fantasía de más alta calidad... con personajes desarrollados con maestría, prosa hábil y pura obstinación.'"<br />})<br /><br />db.libro.save({<br />  "_id":"9788499088075",<br />  "titulo":"La ladrona de libros",<br />  "autor":"Markus Zusak",<br />  "editorial":"Debolsillo",<br />  "enstock":false,<br />  "paginas":544,<br />  "precio":9.45,<br />  "fecha":new ISODate("2009-01-09T00:00:00Z"),      <br />  "resumen":"En plena II Guerra Mundial, la pequeña Liesel hallará su salvación en la lectura. Una novela preciosa, tremendamente humana y emocionante, que describe las peripecias de una niña alemana de nueve años desde que es dada en adopción por su madre hasta el final de la guerra. Su nueva familia, gente sencilla y nada afecta al na zismo, le enseña a leer y a través de los libros Rudy logra distraerse durante los bombardeos y combatir la tristeza. Pero es el libro que ella misma está escribiendo el que finalmente le salvará la vida.",<br />})<br /><br />db.libro.save({<br />  "_id":"9788415140054",<br />  "titulo":"La princesa de hielo",<br />  "autor":"Camilla Lackberg",<br />  "editorial":"Embolsillo",<br />  "enstock":true,<br />  "precio":11,<br />  "fecha":new ISODate("2012-10-30T00:00:00Z"),    <br />  "resumen":"Misterio y secretos familiares en una emocionante novela de suspense Erica vuelve a su pueblo natal tras el fallecimiento de sus padres, pero se va a encontrar con un nuevo drama. Aparentemente su amiga de la infancia, Alex, se ha suicidado. Pronto se descubre que no solamente fue asesinada sino que estaba embarazada. El primer sospechoso es Anders, un artista fracasado con quien Alex mantenía una relación especial. Pero poco después de ser liberado por falta de pruebas, Anders aparece muerto en su domicilio. Con la ayuda del comisario Patrik, Erica investigará el pasado de su amiga Alex."<br />})<br /><br />db.libro.save({<br />  "_id":"9788408113331",<br />  "titulo":"Las carreras de Escorpio",<br />  "autor":"Maggie Stiefvater",<br />  "editorial":"Planeta",<br />  "enstock":false,<br />  "paginas":290,<br />  "precio":17.23,<br />  "fecha":new ISODate("2013-06-04T00:00:00Z"),  <br />  "resumen":"En la pequeña isla de Thisby, cada noviembre los caballos de agua de la mitología celta emergen del mar. Y cada noviembre, los hombres los capturan para participar en una emocionante carrera mortal. En las carreras de Escorpio, algunos compiten para ganar. Otros para sobrevivir. Los jinetes intentan dominar a sus caballos de agua el tiempo suficiente para acabar la carrera. Algunos lo consiguen. El resto, muere en el intento. Sean Kendrick es el favorito, y necesita ganar la carrera para ganar, también, su libertad. Pero Puck Connolly está dispuesta a ser su más dura adversaria. Ella nunca quiso participar en las carreras. Pero no tiene elección: o compite y gana o… lo pierde todo.",<br />})<br /><br />db.libro.save({<br />  "_id":"9788468738895",<br />  "titulo":"Las reglas del juego",<br />  "autor":"Anna Casanovas",<br />  "enstock":true,<br />  "paginas":null,<br />  "precio":15.90,<br />  "fecha":new ISODate("2014-02-06T00:00:00Z"),<br />  "resumen":"Susana Lobato tiene la vida perfectamente planeada y está a punto de conseguir todo lo que quiere: va a tener su propio programa de noticias económicas y en dos meses va a casarse con un hombre maravilloso. Pero una noche Tim anula la boda y la abandona para perseguir un sueño que no la incluye a ella.Kev MacMurray acaba de cumplir treinta y cinco años y siente que ha llegado el momento de dar un cambio a su vida. No sabe por qué, pero últimamente se está asfixiando y está convencido de que no puede seguir donde está. Lo único que lo retiene es la boda de Tim, su mejor amigo.Pero Tim anula la boda y una noche Kev coincide con Susana y respira por primera vez en mucho tiempo.¿Por qué no le había sucedido antes? Se suponía que él y Susana no se soportaban ¿Desde cuándo siente que si no besa a la prometida de su mejor amigo no podrá seguir respirando?Susana nunca había reaccionado así con nadie. ¿Puede correr el riesgo de averiguar qué pasará si se entrega a Kev?Y qué pasará si vuelve Tim, ¿podrán dar un paso atrás?.",<br />})
+</pre>
+<p>Com podeu comprovar estan els comandos d'inserció (<strong>save()</strong> ) i també es veu prou bé els camps de cada document.</p>
+<p>Podeu comprovar que hi ha 7 documents en la nova col·lecció <strong>libro</strong>:</p>
+<p class="codi2">&gt; db.libro.count()<br />7</p>
+<p>I també podem consultar els títols de forma còmoda:</p>
+<p class="codi2">&gt; db.libro.find( {} , {titulo:1} )<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo" }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper" }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1" }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros" }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo" }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego" }</p>
+<p>I un altre exemple, on consultem els llibres que estan en stock (hi ha un camp booleà que ho diu: <strong>enstock</strong>), mostrant títol, editorial i preu</p>
+<p class="codi2">&gt; db.libro.find( {enstock: true} , {titulo:1 , editorial:1 , precio:1} )<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta", "precio" : 21.75 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes", "precio" : 21.75 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh", "precio" : 9.5 }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo", "precio" : 11 }</p>
+<p>I un últim exemple, on consultem els llibres que estan en stock i tenen un preu de 21.75 €, mostrant tot excepte el _id i el resum</p>
+<p class="codi2">&gt; db.libro.find( {enstock: true , precio: 21.75} , {titulo:1 , editorial:1 , precio:1} )<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta", "precio" : 21.75 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes", "precio" : 21.75 }</p>
+<p></p>
+<p>Anem a mirar ara operadors que ens serviran per fer millor les consultes.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id127">
+<div class="iDevice emphasis0">
+<div id="ta127_85" class="block iDevice_content">
+<p class="titolet">Operadors de comparació</p>
+<p>Fins ara en totes les condicions hem utilitzat la igualtat, si un determinat camp era igual a un determinat valor. Però hi ha infinitat de consultes en les quals voldrem altres operacions de comparació: major, major o igual, menor, ...</p>
+<p>Aquestos són els operadors de comparació:</p>
+<ul>
+<li><strong>$lt</strong> (<em>less than</em>) <strong>menor</strong></li>
+<li><strong>$lte </strong>(<em>less than or equal</em>)<strong> menor o igual</strong></li>
+<li><strong>$gt </strong>(<em>gretaer than</em>) major</li>
+<li><strong>$gte</strong> (<em>gretaer than or equal</em>) <strong>major o igual</strong></li>
+<li><strong>$ne</strong> (<em>not equal</em>) <strong>distint</strong></li>
+<li><strong>$eq</strong> (<em>equal</em>) <strong>igual</strong> (però aquest quasi que no caldria, perquè en no posar res es refereix a la igualtat com fins ara)</li>
+</ul>
+<p>La sintaxi per a la seua utilització és, com sempre, acoplar-se a la sintaxi JSON:</p>
+<p class="codi">clau : { $operador : valor [, ... ] }</p>
+<p>Així per exemple, per a buscar els llibres de més de 10 €:</p>
+<p class="codi2">&gt; db.libro.find( { precio : { $gt : 10 } } , { titulo:1 , precio:1 } )<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "precio" : 21.75 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "precio" : 21.75 }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "precio" : 11 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "precio" : 17.23 }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "precio" : 15.9 }</p>
+<p>I per a buscar els llibres entre 10 i 20 €:</p>
+<p class="codi2">&gt; db.libro.find( { precio : { $gt : 10 , $lt:20 } } , { titulo:1 , precio:1 } )<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "precio" : 11 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "precio" : 17.23 }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "precio" : 15.9 }</p>
+<p style="text-align: justify;">És especialment útil per a les dates, ja que difícilment trobarem una data (i hora) exacta, i voldrem quasi sempre els documents anteriors a una data, o posteriors, o entre dues dates. Haurem d'anar amb compte pel tractament especial de les dates: hem de comparar coses del mateix tipus, i per tant la data amb la qual volem comparar l'haurem de tenir en forma de data:</p>
+<p class="codi2">&gt; var d = new ISODate("2013-01-01T00:00:00Z")<br /> &gt; db.libro.find( {fecha:{$gte:d} } , {fecha:1} )<br />{ "_id" : "9788408117117", "fecha" : ISODate("2013-08-29T00:00:00Z") }<br />{ "_id" : "9788401342158", "fecha" : ISODate("2014-03-01T00:00:00Z") }<br />{ "_id" : "9788408113331", "fecha" : ISODate("2013-06-04T00:00:00Z") }<br />{ "_id" : "9788468738895", "fecha" : ISODate("2014-02-06T00:00:00Z") }</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id129">
+<div class="iDevice emphasis0">
+<div id="ta129_85" class="block iDevice_content">
+<p class="titolet">$in</p>
+<p>Servirà per a comprovar si el valor d'un camp està entre els d'una llista, proporcionada com un array. La sitaxi és:</p>
+<p class="codi">clau : { $in : [valor1 , valor2 , ... , valorN] }</p>
+<p>I ací tenim un exemple, els llibre de les editorials Planeta i Debolsillo:</p>
+<p class="codi2">&gt; db.libro.find( { editorial: {$in : ["Planeta" , "Debolsillo"]} } , {titulo:1 , editorial:1} )<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta" }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo" }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta" }<br /><br /></p>
+<p></p>
+<p class="titolet">$nin</p>
+<p>És el contrari, traura els que no estan en la llista.</p>
+<p class="codi2">&gt; db.libro.find( { editorial: {$nin : ["Planeta" , "Debolsillo"]} } , {titulo:1 , editorial:1} )<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes" }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh" }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego" }</p>
+<p>Observeu com també trau els llibres que no tenen editorial, com és el cas de l'últim llibre, Las reglas del juego</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id130">
+<div class="iDevice emphasis0">
+<div id="ta130_85" class="block iDevice_content">
+<p class="titolet">$or</p>
+<p>L'operador anterior, <strong>$in</strong>, ja feia una espècie de OR, però sempre sobre el mateix camp. Si l'operació OR la volem fer sobre camps distints, haurem d'utilitzar l'operador <strong>$or</strong>. La seua sintaxi ha de jugar amb la possibilitat de posar molts elements, i per tant convé l'array:</p>
+<p class="codi">$or : [ {clau1:valor1} , {clau2:valor2} , ... , {clauN:valorN} ]</p>
+<p>Serà cert si s'acompleix alguna de les condicions. Per exemple, traure els llibres que no estan en stock o que no tenen editorial:</p>
+<p class="codi2">&gt; db.libro.find( { $or : [ {enstock:false} , {editorial:null} ] } , {titulo:1 , enstock:1 , editorial:1} )<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo", "enstock" : false }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta", "enstock" : false }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "enstock" : true }</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id131">
+<div class="iDevice emphasis0">
+<div id="ta131_85" class="block iDevice_content">
+<p class="titolet">$not</p>
+<p>Serveix per a negar una altra condició.</p>
+<p class="codi">$not : { condició }</p>
+<p>Per exemple els llibres que no són de l'editorial Planeta (observeu que seria més senzill utilitzar l'operador <strong>$ne</strong>, però és per a mostrar el seu funcionament:</p>
+<p class="codi2">&gt; db.libro.find( { editorial: {$not : {$eq:"Planeta"} } } , {titulo:1 , editorial:1} )<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes" }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh" }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo" }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego" }<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id132">
+<div class="iDevice emphasis0">
+<div id="ta132_85" class="block iDevice_content">
+<p class="titolet">$exists</p>
+<p>Servirà per a saber els documents que tenen un determinat camp</p>
+<p class="codi">clau : { $exists : <em>boolean</em> }</p>
+<p>Depenet del valor <em>boolean</em>, el funcionament serà:</p>
+<ul>
+<li><strong>true</strong>: torna els documents en els quals existeix el camp, encara que el seu valor siga nul</li>
+<li><strong>false</strong>: torna els documents que no tenen el camp.</li>
+</ul>
+<p>Anem a traure els llibres que tenen el camp <strong>paginas</strong>:</p>
+<p class="codi2">&gt; db.libro.find( { paginas: {$exists:true} } , {titulo:1 , paginas:1} )<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "paginas" : 1100 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "paginas" : 480 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "paginas" : 793 }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "paginas" : 544 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "paginas" : 290 }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "paginas" : null }</p>
+<p>Observeu com ens apareix també l'ultim llibre, que té el camp <strong>paginas</strong> amb el valor <strong>nul</strong>. En canvi si haguérem fet la consulta preguntant pels que són diferent de nul, no apareixeria aquest últim llibre:</p>
+<p class="codi2">&gt; db.libro.find( { paginas: {$ne:null} } , {titulo:1 , paginas:1} )<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "paginas" : 1100 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "paginas" : 480 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "paginas" : 793 }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "paginas" : 544 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "paginas" : 290 }</p>
+<p>I si posem <strong>false</strong> al valor en el <strong>$exists</strong>, únicament ens apareixerà el llibre que no té el camp:</p>
+<p class="codi2">&gt; db.libro.find( { paginas: {$exists:false} } , {titulo:1 , paginas:1} )<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo" }</p>
+<p>I per la mateixa raó que abans, si traiem els que tenen paginas a null, ens eixirà tant qui no té el camp, com qui el té però amb valor nul:</p>
+<p class="codi2">&gt; db.libro.find( { paginas: null } , {titulo:1 , paginas:1} )<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "paginas" : null }</p>
+<p>Per tant, per a segons quines coses, ens interessa l'operador <strong>$exists</strong>, en compte de jugar amb el nul.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id133">
+<div class="iDevice emphasis0">
+<div id="ta133_85" class="block iDevice_content">
+<p class="titolet">Expressions regulars</p>
+<p>Mongo accepta les expressions regulars de forma nativa, cosa que dóna molta potència per a poder buscar informació diversa.</p>
+<p>Les expressions regulars en Mongo tenen la mateixa sintaxi que en Perl, i que és molt molt pareguda a la major part de llenguatges de programació.</p>
+<p>Mirem alguns exemples. Els llibres dins dels quals està la paraula <strong>juego</strong>:</p>
+<p class="codi2">&gt; db.libro.find( { titulo: /juego/ } , {titulo:1} )<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego" }</p>
+<p>Ara que tenen la paraula <strong>juego</strong> sense importar majúscules o minúscules:</p>
+<p class="codi2">&gt; db.libro.find( { titulo: /juego/i } , {titulo:1} )<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper" }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego" }</p>
+<p>I ara que tenen la paraula <strong>juego </strong>només al principi.</p>
+<p class="codi2">&gt; db.libro.find( { titulo: /^juego/i } , {titulo:1} )<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1" }</p>
+<p>I ara els llibres que en el reusum (<strong>resumen</strong>) que tenen la paraula <strong>amiga</strong> o <strong>amigo</strong>, és a dir <strong>amig</strong> seguit d'una <strong>a</strong> o una <strong>o</strong>:</p>
+<p class="codi2">&gt; db.libro.find( { resumen: /amig[ao]/i } , {titulo:1} )<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego" }</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id134">
+<div class="iDevice emphasis0">
+<div id="ta134_85" class="block iDevice_content">
+<p class="titolet">Arrays</p>
+<p>Les consultes dins d'arrays de Mongo són molt senzilles.</p>
+<p>La més senzilla és com quan busquem un valor d'un tipus senzill, i en aquest cas el que farà Mongo és buscar en tot l'array per si està aquest valor. És a dir, exactament igual que el que hem fet fins ara.</p>
+<p class="codi">db.col_leccio1.find ( { clau_array : valor } )</p>
+<p>Mirem-ho en un exemple. Anem a crear dos documents que tinguen un array cadascun, per exemple de colors. El creem en una col·lecció nova, anomenada <strong>colorins</strong>, en dos documents amb el mateix camp de tipus array, <strong>color</strong>, però amb dades diferents<strong></strong><strong></strong>:</p>
+<p class="codi2">&gt; db.colorins.insert({color: ["roig","blau","groc"]})<br />WriteResult({ "nInserted" : 1 })</p>
+<p class="codi2">&gt; db.colorins.insert({color: ["negre","blanc","roig"]})<br />WriteResult({ "nInserted" : 1 })</p>
+<p class="codi2">&gt; db.colorins.find();<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc", "roig" ] }</p>
+<p><br />Com es veu en la sintaxi, triar els documents que tenen un camp (en aquest cas d'array) que continga un valor, és igual de senzill que quan es tracta d'un camp de tipus string, per exemple:</p>
+<p class="codi2">&gt; db.colorins.find({color:"roig"})<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc", "roig" ] }</p>
+<p>També podem utilitzar qualsevol dels operadors vistos fins el moment, com per exemple l'operador <strong>$in</strong>, que mirarà els documents que tenen algun dels colors que s'especifica a continuació:</p>
+<p class="codi2">&gt; db.colorins.find({color: {$in : ["groc","lila"]} })<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }</p>
+<p>O per exemple també utilitzar <strong>expressions regulars</strong>:</p>
+<p class="codi2">&gt; db.colorins.find({color: /bl/ })<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc", "roig" ] }</p>
+<p></p>
+<p><span style="font-size: large;"><strong>$<span style="text-decoration: underline;">all</span></strong></span></p>
+<p>L'operador <strong>$all</strong> el podem utilitzar quan vulguem seleccionar els documents que en l'array tiguen <strong>tots</strong> els elements especificats.</p>
+<p>Per exemple, anem a buscar els document que tenen el color roig i blau.</p>
+<p class="codi2">&gt; db.colorins.find({color : { $all : ["roig","blau"]} })<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }</p>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>Subíndex</strong></span></p>
+<p>Si volem mirar exactament una determinada posició de l'array, podem especificar la posició immediatament després de la clau, <strong>separada per un punt</strong>. Recordeu que la primera posició és la <strong>0</strong>. Hem de posar entre cometes la clau i la posició, sinó no sabrà trobar-la.</p>
+<p>Per exemple, busquem els documents que tenen el roig en la primera posició.</p>
+<p class="codi2">&gt; db.colorins.find({"color.0" : "roig"} )<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }</p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>Accedir a una determinada posició és fàcil, però no és tan fàcil accedir a una posició calculada, per exemple a l'última posició. Ja fa falta coneixements un poc més avançats de JavaScript, per a posar dins del <strong>find()</strong> una funció en JavaScript, i actuar dins d'aquesta.</p>
+<p>Únicament de manera il·lustrativa, posem ací la manera de traure els documents, l'últim color dels quals és el roig. En ella ens creem una variable amb l'últim element de l'array (amb <strong>pop()</strong>), i el comparem amb el color roig, tornant true en cas de que sí que siguen iguals:</p>
+<p class="codi2">&gt; db.colorins.find(function() { var a =this.color.pop(); return (a =="roig")}  )<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc", "roig" ] }</p>
+<p>També hi ha una forma alternativa de fer-ho, que és utilitzant l'operador $where, que ens permet crear condicions amb sintaxi JavaScript:</p>
+<p class="codi2">&gt; db.colorins.find({$where:"this.color[this.color.length - 1]=='roig'"})<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc", "roig" ] }</p>
+</div>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>$size</strong></span></p>
+<p>L'operador <strong>$size</strong> ens servirà per a fer condicions sobre el número d'elements d'un array.</p>
+<p>Incorporem 2 documents nous, amb 2 i 4 elements respectivament, per a poder comprovar-lo:</p>
+<p class="codi2">&gt; db.colorins.insert({color: ["negre","blanc"]})<br />WriteResult({ "nInserted" : 1 })</p>
+<p class="codi2">&gt; db.colorins.insert({color: ["taronja","gris","lila","verd"]})<br />WriteResult({ "nInserted" : 1 })</p>
+<p class="codi2">&gt; db.colorins.find()<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc", "roig" ] }<br />{ "_id" : ObjectId("56e16972aa3c92aaed389da6"), "color" : [ "negre", "blanc" ] }<br />{ "_id" : ObjectId("56e16990aa3c92aaed389da7"), "color" : [ "taronja", "gris", "lila", "verd" ] }</p>
+<p>Ara anem a seleccionar els documents que tenen 4 colors</p>
+<p class="codi2">&gt; db.colorins.find({color:{$size:4}})<br />{ "_id" : ObjectId("56e16990aa3c92aaed389da7"), "color" : [ "taronja", "gris", "lila", "verd" ] }</p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>L'operador <strong>$size</strong> només admet un valor numèric, i no es poden concatenar expressions amb altres operadors, com per exemple intentar la condició que la grandària de l'array siga menor o igual a un determinat valor. Es pot tornar a esquivar la qüestió amb l'operador <strong>$where</strong>, i posar la condició en JavaScript. Així la consulta dels documents que tenen 3 o menys colors la podríem traure d'aquesta manera:</p>
+<p class="codi2">&gt; db.colorins.find({$where:"this.color.length&lt;=3"})<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau", "groc" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc", "roig" ] }<br />{ "_id" : ObjectId("56e16972aa3c92aaed389da6"), "color" : [ "negre", "blanc" ] }</p>
+</div>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>$slice</strong></span></p>
+<p>L'operador <strong>$slice</strong> no és un operador que es puga posar en les condicions (criteris), sinó que servirà per a extraure determinats elements de l'array, pel número d'ordre d'aquestos elements en e l'array. Només el podrem posar, per tant, en el segon paràmetre del <strong>find()</strong>.</p>
+<p>La sintaxi és:</p>
+<p class="codi">clau : {$slice : x }</p>
+<p>Els valors que pot agafar <strong>x</strong> són:</p>
+<ul>
+<li>Números positius: serà el número d'elements del principi (per l'esquerra)</li>
+<li>Números negatius: serà el número d'elements del final (per la dreta)</li>
+<li>Un array de 2 elements (<strong>[x,y]</strong>): traurà a partir de la posició <strong>x</strong> (0 és el primer), tants elements com indique <strong>y</strong></li>
+</ul>
+<p>Per exemple, anem a traure els dos primers colors de cada document:</p>
+<p class="codi2">&gt; db.colorins.find({} , {color:{$slice:2} })<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "roig", "blau" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "negre", "blanc" ] }<br />{ "_id" : ObjectId("56e16972aa3c92aaed389da6"), "color" : [ "negre", "blanc" ] }<br />{ "_id" : ObjectId("56e16990aa3c92aaed389da7"), "color" : [ "taronja", "gris" ] }</p>
+<p>O traure l'últim color:</p>
+<p class="codi2">&gt; db.colorins.find({} , {color:{$slice:-1 }})<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "groc" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "roig" ] }<br />{ "_id" : ObjectId("56e16972aa3c92aaed389da6"), "color" : [ "blanc" ] }<br />{ "_id" : ObjectId("56e16990aa3c92aaed389da7"), "color" : [ "verd" ] }</p>
+<p>O traure el tercer element, tinguen els que tinguen. Recordeu que el segon element, és el de la posició 2, i en volem traure 1.</p>
+<p class="codi2">&gt; db.colorins.find({} , {color:{$slice:[2,1] }})<br />{ "_id" : ObjectId("56e1438ff6663c8169030e09"), "color" : [ "groc" ] }<br />{ "_id" : ObjectId("56e14398f6663c8169030e0a"), "color" : [ "roig" ] }<br />{ "_id" : ObjectId("56e16972aa3c92aaed389da6"), "color" : [ ] }<br />{ "_id" : ObjectId("56e16990aa3c92aaed389da7"), "color" : [ "lila" ] }</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id135">
+<div class="iDevice emphasis0">
+<div id="ta135_85" class="block iDevice_content">
+<p class="titolet">Recerques en objectes</p>
+<p>Per a fer recerques en camps que a la seua vegada són objectes (o documents dins de documents, en la terminologia de Mongo), només hem de posar la ruta de les claus separant per mig de punts, i cuider de posar-les entre cometes.</p>
+<p>Així, per exemple, anem a fer una consulta sobre la col·lecció d'alumnes, que eren uns documents en els quals hi havia algun camp de tipus objecte.</p>
+<p class="codi2">&gt; db.alumnes.find().pretty()<br />{<br />    "_id" : ObjectId("56debe3017bf4ed437dc77c8"),<br />    "nom" : "Abel",<br />    "cognoms" : "Bernat Cantera",<br />    "edat" : 22,<br />    "adreça" : {<br />        "carrer" : "Major",<br />        "numero" : 7,<br />        "cp" : "12502"<br />    },<br />    "nota" : [<br />        9.5,<br />        9<br />    ]<br />}<br />{<br />    "_id" : ObjectId("56dfdbd136d8b095cb6bd57a"),<br />    "nom" : "Berta",<br />    "cognoms" : "Bernat Cantero"<br />}</p>
+<p>Es podrien traure els documents (els alumnes) que viuen en el codi postal 12502. Ens ha d'eixir l'únic alumne del qual tenim l'adreça, que justament té aquest codi postal. Recordeu que en la clau (realment clau.subclau), ha d'anar entre cometes. Hem posat al final <strong>pretty()</strong> per a una millor lectura, però evidentment no és necessari.</p>
+<p class="codi2">&gt; db.alumnes.find({"adreça.cp": "12502"}).pretty()<br />{<br />    "_id" : ObjectId("56debe3017bf4ed437dc77c8"),<br />    "nom" : "Abel",<br />    "cognoms" : "Bernat Cantera",<br />    "edat" : 22,<br />    "adreça" : {<br />        "carrer" : "Major",<br />        "numero" : 7,<br />        "cp" : "12502"<br />    },<br />    "nota" : [<br />        9.5,<br />        9<br />    ]<br />}</p>
+<p>I funcionaria igual amb qualsevol número de subnivells, és a dir, documents que tenen objectes, els quals tenen objectes, ... I també amb altres tipus d'operadors, o expressions regulars, ...</p>
+<p>Per exemple, tots els alumnes de Castelló (el codi postal ha de començar per 12 i contenir 3 xifres més, és a dir, caràcter del 0 al 9, i 3 vegades.</p>
+<p class="codi2">&gt; db.alumnes.find({"adreça.cp": /^12[0-9]{3}/}).pretty()<br />{<br />    "_id" : ObjectId("56debe3017bf4ed437dc77c8"),<br />    "nom" : "Abel",<br />    "cognoms" : "Bernat Cantera",<br />    "edat" : 22,<br />    "adreça" : {<br />        "carrer" : "Major",<br />        "numero" : 7,<br />        "cp" : "12502"<br />    },<br />    "nota" : [<br />        9.5,<br />        9<br />    ]<br />}</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id136">
+<div class="iDevice emphasis0">
+<div id="ta136_85" class="block iDevice_content">
+<p class="titolet">Limit, Skip i Sort</p>
+<p>Una vegada tenim feta una consulta, podem limitar el nombre de documents que ens ha de tornar, o ordenar-los.</p>
+<p>Per a això hi ha uns mètodes que apliqiuem al final del <strong>find()</strong>, és a dir, a continuació del <strong>find()</strong>, separats per un punt.</p>
+<p>Ho aplicarem als llibres, que és on tenim més documents. I no mostrem tots els camps, per a una millor lectura:</p>
+<p class="codi2">&gt; db.libro.find({} , {titulo:1 , precio:1 , editorial:1})<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta", "precio" : 21.75 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes", "precio" : 21.75 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh", "precio" : 9.5 }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo", "precio" : 9.45 }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo", "precio" : 11 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta", "precio" : 17.23 }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "precio" : 15.9 }</p>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>limit(<em>n</em>)</strong></span></p>
+<p>Limita el número de documents tornats a <em><strong>n </strong></em>documents.</p>
+<p class="codi2">&gt; db.libro.find({} , {titulo:1 , precio:1 , editorial:1}).limit(3)<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta", "precio" : 21.75 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes", "precio" : 21.75 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh", "precio" : 9.5 }</p>
+<p>Si el número de documents que fa la consulta és menor que <em><strong>n</strong></em>, donc se'n tornaran menys. Així per exemple, de l'editorial Planeta només hi ha dos llibres. Encara que posem limit(3), se'n tornaran 2.</p>
+<p class="codi2">&gt; db.libro.find({editorial:"Planeta"} , {titulo:1 , precio:1 , editorial:1}).limit(3)<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta", "precio" : 21.75 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta", "precio" : 17.23 }</p>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>skip(<em>n</em>)</strong></span></p>
+<p>Se saltaran els primers<em><strong> n</strong></em> documents. Si hi haguera menys documents dels que se salten, doncs no se'n mostraria cap.</p>
+<p class="codi2">&gt; db.libro.find({} , {titulo:1 , precio:1 , editorial:1}).skip(2)<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh", "precio" : 9.5 }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo", "precio" : 9.45 }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo", "precio" : 11 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta", "precio" : 17.23 }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "precio" : 15.9 }</p>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>sort()</strong></span></p>
+<p>Serveix per a ordenar. Com a paràmetre se li passarà un objecte JSON amb les claus per a ordenar, i els valors seran:</p>
+<ul>
+<li>1: ordre ascendent</li>
+<li>-1: ordre descendent</li>
+</ul>
+<p>Si posem més d'una clau, s'ordenarà pel primer, en cas d'empat pel segon, ...</p>
+<p>En aquest exemple ordenem pel preu</p>
+<p class="codi2">&gt; db.libro.find({} , {titulo:1 , precio:1 , editorial:1}).sort({precio:1})<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo", "precio" : 9.45 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh", "precio" : 9.5 }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo", "precio" : 11 }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "precio" : 15.9 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta", "precio" : 17.23 }<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta", "precio" : 21.75 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes", "precio" : 21.75 }</p>
+<p>I com déiem, es pot posar més d'un camp d'ordenació. Per exemple, per editorial en ordre ascendent, i per preu en ordre descendent</p>
+<p class="codi2">&gt; db.libro.find({} , {titulo:1 , precio:1 , editorial:1}).sort({editorial:1 , precio:-1})<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "precio" : 15.9 }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo", "precio" : 9.45 }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo", "precio" : 11 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh", "precio" : 9.5 }<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta", "precio" : 21.75 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta", "precio" : 17.23 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes", "precio" : 21.75 }</p>
+<p>Observeu com el primer és el que no té editorial (equivalent a null). I com que hi ha dos de l'editorial Planeta, apareix primer el més car, i després el més barat.</p>
+<p></p>
+<p>I evidentment, es poden combinar els mètodes limit, skip i sort.</p>
+<p>En aquest exemple traurem el segon i tercer llibre més car. Per a això ordenem per preu de forma descendent, saltem un i limitem a 2. No importa l'ordre com col·locar skip, limit i sort.</p>
+<p class="codi2">&gt; db.libro.find({} , {titulo:1 , precio:1 , editorial:1}).sort({precio:-1}).skip(1).limit(2)<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes", "precio" : 21.75 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta", "precio" : 17.23 }</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="331__parmetres_de_les_funcions_find_i_findone.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="333__agregaci.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

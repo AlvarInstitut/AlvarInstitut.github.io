@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.1 Tipus de dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-67"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  DDL i consultes d'actualització (part III)</a></li>
+   <li><a href="31_introducci.html" class="no-ch">3.1 Introducció</a></li>
+   <li class="current-page-parent"><a href="32_ddl.html" class="current-page-parent daddy">3.2 DDL</a>
+   <ul>
+      <li id="active"><a href="321_tipus_de_dades.html" class="active no-ch">3.2.1 Tipus de dades</a></li>
+      <li><a href="322_create_table.html" class="daddy">3.2.2 CREATE TABLE</a>
+      <ul class="other-section">
+         <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="323_restriccions_constraint.html" class="daddy">3.2.3 Restriccions (Constraint)</a>
+      <ul class="other-section">
+         <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="324_alter_table.html" class="daddy">3.2.4 ALTER TABLE</a>
+      <ul class="other-section">
+         <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="325_drop_table.html" class="no-ch">3.2.5 DROP TABLE</a></li>
+      <li><a href="326_ndex.html" class="daddy">3.2.6 Índex</a>
+      <ul class="other-section">
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="327_vistes.html" class="daddy">3.2.7 Vistes</a>
+      <ul class="other-section">
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="328_creaci_daltres_objectes_seqncies_dominis_i_tipus.html" class="daddy">3.2.8. Creació d'altres objectes: seqüències, dominis i tipus.</a>
+      <ul class="other-section">
+         <li><a href="3281_seqncies.html" class="no-ch">3.2.8.1 Seqüències</a></li>
+         <li><a href="3282_dominis.html" class="no-ch">3.2.8.2 Dominis</a></li>
+         <li><a href="3283_tipus_de_dades.html" class="no-ch">3.2.8.3 Tipus de dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="33_consultes_dactualitzaci.html" class="daddy">3.3 Consultes d'actualització</a>
+   <ul class="other-section">
+      <li><a href="331_insert.html" class="daddy">3.3.1 INSERT</a>
+      <ul class="other-section">
+         <li><a href="exercicis4.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="332_delete.html" class="daddy">3.3.2 DELETE</a>
+      <ul class="other-section">
+         <li><a href="exercicis5.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="333_update.html" class="daddy">3.3.3 UPDATE</a>
+      <ul class="other-section">
+         <li><a href="exercicis6.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32_ddl.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_create_table.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.1 Tipus de dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id48">
+<div class="iDevice emphasis0">
+<div id="ta48_1" class="block iDevice_content">
+<p align="justify">En el moment de definir un camp haurem d'especificar obligatòriament de quin tipus serà. Ja es van veure els tipus bàsics d'Access en el tutorial del tema 5. Ara els veurem els tipus bàsics de <strong>PostgreSQL</strong>, i veurem que hi haurà molts tipus similars (com en tots els SGBD).</p>
+<p align="justify">En el següent quadre es resumeixen els tipus de dades més importants de PostgreSQL. És un conjunt molt extens, que fins i tot pot ampliar l'usuari amb la instrucció <b>CREATE TYPE</b>, com veurem al final del tema. Són especialment interessants els tipus geomètrics (amb <b><i>POINT</i></b>, <b><i>BOX</i></b>,...) i el <span style="font-weight: bold;">INET</span> (adreça IP).</p>
+<table cellpadding="0" cellspacing="0" border="1">
+<tbody>
+<tr>
+<td style="width: 51px;"> </td>
+<td style="font-weight: bold; width: 144px;" valign="top">TIPUS DE DADES</td>
+<td style="width: 594px;" valign="top"><span style="font-weight: bold;">DESCRIPCIÓ</span></td>
+<td style="width: 100px;" valign="top"><span style="font-weight: bold;">BYTES</span></td>
+</tr>
+<tr>
+<td style="width: 51px;" rowspan="4" align="center">C<br /> A<br /> R<br /> À<br /> C<br /> T<br /> E<br /> R</td>
+<td style="width: 144px;" height="18" valign="top"><b><span style="color: #ff0000;" color="#FF0000">CHAR</span></b></td>
+<td style="width: 594px;" valign="top">Un caràcter.</td>
+<td style="width: 100px;" valign="top">1 byte</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;" height="18"><b><span style="color: #ff0000;" color="#FF0000">CHAR(n)</span></b></td>
+<td style="width: 594px;">Cadena fixa de n caràcters.</td>
+<td style="width: 100px;">(4+n) bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">VARCHAR(<i>n</i>)</span></b></td>
+<td style="width: 594px;">Cadena de caràcters de llargària variable, amb un màxim de <i>n</i> caràcters. S’ha d’especificar la llargària.</td>
+<td style="width: 100px;">(4+x) bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">TEXT</span></b></td>
+<td style="width: 594px;">Igual que l'anterior, però no s'ha d'especificar la llargària màxima.</td>
+<td style="width: 100px;">(4+x) bytes</td>
+</tr>
+<tr>
+<td style="width: 51px;" rowspan="8" align="center">N<br /> U<br /> M<br /> È<br /> R<br /> I<br /> C</td>
+<td style="width: 144px;" valign="top"><b><span style="color: #ff0000;" color="#FF0000">DECIMAL(<i>n,d</i>)</span></b></td>
+<td style="width: 594px;" valign="top">Número amb una precisió de <i>n</i> xifres, amb <i>d</i> decimals. Si no es posa <i>d </i>no hi ha decimals. La precisió màxima és de 1000 xifres.</td>
+<td style="width: 100px;" valign="top">variable</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">NUMERIC(<i>n,d</i>)</span></b></td>
+<td style="width: 594px;">Igual que l'anterior</td>
+<td style="width: 100px;"> </td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><span style="color: #ff0000;" color="#FF0000"><b>FLOAT4 , REAL<br /></b></span></td>
+<td style="width: 594px;">Coma flotant de simple precisió (6 xifres decimals)</td>
+<td style="width: 100px;">4 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">FLOAT8 , FLOAT , <span style="font-size: x-small;">DOUBLE PRECISION</span><br /></span></b></td>
+<td style="width: 594px;">Coma flotant doble precisió (15 xifres decimals)</td>
+<td style="width: 100px;">8 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><span style="color: #ff0000;" color="#FF0000"><b>INT2 , SMALLINT<br /></b></span></td>
+<td style="width: 594px;">Enter (-32.768,32767)</td>
+<td style="width: 100px;">2 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">INT4 , INT , INTEGER<br /></span></b></td>
+<td style="width: 594px;">Enter (-2.147.483.648, 2.147.483.647)</td>
+<td style="width: 100px;">4 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">INT8 , BIGINT<br /></span></b></td>
+<td style="width: 594px;">Enter amb unes 18 xifres</td>
+<td style="width: 100px;">8 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">SERIAL</span></b></td>
+<td style="width: 594px;">Autonumèric (internament es crea una seqüència)</td>
+<td style="width: 100px;">4 bytes</td>
+</tr>
+<tr>
+<td style="width: 51px;" rowspan="4" align="center">D<br /> A<br /> T<br /> A</td>
+<td style="width: 144px;" valign="top"><b><span style="color: #ff0000;" color="#FF0000">DATE</span></b></td>
+<td style="width: 594px;" valign="top">Tipus data. Valor mínim 1-1-4713 AC. Valor màxim 31-12-5874897 DC.</td>
+<td style="width: 100px;" valign="top">4 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">TIME</span></b></td>
+<td style="width: 594px;">Tipus hora. Guarda fins a la micra de segon</td>
+<td style="width: 100px;">8 bytes</td>
+</tr>
+<tr>
+<td><b><span style="color: #ff0000;" color="#FF0000">TIMESTAMP</span></b></td>
+<td>Tipus data-hora (combinant les característiques dels dos anteriors)</td>
+<td>8 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">INTERVAL</span></b></td>
+<td style="width: 594px;">Un interval de temps (amb precisió d'un microsegon, però que pot arribar als 178.000.000 anys)</td>
+<td style="width: 100px;">12 bytes</td>
+</tr>
+<tr>
+<td style="width: 51px;" align="center"> </td>
+<td style="width: 144px;" valign="top"><b><span style="color: #ff0000;" color="#FF0000">BOOL</span></b></td>
+<td style="width: 594px;" valign="top">Booleà, amb valors True i False</td>
+<td style="width: 100px;" valign="top">1 byte</td>
+</tr>
+<tr>
+<td style="width: 51px;" rowspan="6" align="center">G<br /> E<br /> O<br /> M<br /> È<br /> T<br /> R<br /> I<br /> C</td>
+<td style="width: 144px;" valign="top"><b><span style="color: #ff0000;" color="#FF0000">POINT</span></b></td>
+<td style="width: 594px;" valign="top">Un punt de l'espai bidimensional (x,y) (dos float8)</td>
+<td style="width: 100px;" valign="top">16 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">LSEG</span></b></td>
+<td style="width: 594px;">Segment de línia definit per 2 punts (x1,y1) (x2,y2)</td>
+<td style="width: 100px;">32 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">BOX</span></b></td>
+<td style="width: 594px;">Rectangle, definit pels extrems (x1,y1) (x2,y2)</td>
+<td style="width: 100px;">32 bytes</td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">PATH</span></b></td>
+<td style="width: 594px;">Conjunt de punts que representen una figura oberta o tancada: (x1,y1), ..., (xn,yn)</td>
+<td style="width: 100px;">16+16n <span style="font-size: medium;" size="3">bytes</span></td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">POLYGON</span></b></td>
+<td style="width: 594px;">Conjunt de punts que representen un figura tancada (x1,y1), ..., (xn,yn) (similar al path tancat)</td>
+<td style="width: 100px;">40+16n <span style="font-size: medium;" size="3">bytes</span></td>
+</tr>
+<tr valign="top">
+<td style="width: 144px;"><b><span style="color: #ff0000;" color="#FF0000">CIRCLE</span></b></td>
+<td style="width: 594px;">Cercle representat pel centre i el radi</td>
+<td style="width: 100px;">24 bytes</td>
+</tr>
+<tr>
+<td style="width: 51px;" align="center"> </td>
+<td style="width: 144px;" valign="top"><b><span style="color: #ff0000;" color="#FF0000">INET</span></b></td>
+<td style="width: 594px;" valign="top">Adreça IP, de 4 números separats per punts, amb número de bits de la màscara separat per /</td>
+<td style="width: 100px;" valign="top">variable</td>
+</tr>
+</tbody>
+</table>
+<p>També disposarem d'un tipus <span style="font-weight: bold;">enumerat</span>. El veurem en l'última pregunta del tema.</p>
+<p>En la documentació de PostgreSQL trobarem tots els tipus possibles: <a href="http://www.postgresql.org/docs/9.5/static/datatype.html">http://www.postgresql.org/docs/9.5/static/datatype.html</a></p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32_ddl.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_create_table.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

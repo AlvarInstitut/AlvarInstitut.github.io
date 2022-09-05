@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.3 Combinació externa | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-47"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  Consultes avançades (part II)</a></li>
+   <li><a href="21_introducci.html" class="no-ch">2.1 Introducció</a></li>
+   <li class="current-page-parent"><a href="22_combinacions_de_taules.html" class="current-page-parent daddy">2.2 Combinacions de taules</a>
+   <ul>
+      <li><a href="221_producte_cartesi.html" class="no-ch">2.2.1 Producte cartesià</a></li>
+      <li><a href="222_combinaci_interna.html" class="daddy">2.2.2 Combinació interna</a>
+      <ul class="other-section">
+         <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="223_combinaci_externa.html" class="active daddy">2.2.3 Combinació externa</a>
+      <ul>
+         <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="23_subconsultes.html" class="daddy">2.3 Subconsultes</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="24_consultes_doperacions_de_conjunts.html" class="daddy">2.4 Consultes d'operacions de conjunts</a>
+   <ul class="other-section">
+      <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema_amb_els_resultats.html" class="no-ch">Exercicis de tot el tema, amb els resultats</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="exercicis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis0.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.3 Combinació externa</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id37">
+<div class="iDevice emphasis0">
+<div id="ta37_1" class="block iDevice_content">
+<p> </p>
+<p>En ocasions ens interessarà fer una combinació diferent. Com quasi sempre ens basarem en un exemple. Quan en un exemple del punt anterior traíem els nom de les poblacions amb el nom dels instituts, no podien eixir les poblacions que no tenen instituts. Ara ens plantejarem la possibilitat de traure totes les poblacions, fins i tot aquelles que no tenen instituts, però d'aquelles que sí que en tinguen traure també el nom dels instituts. Aquesta operació s'anomena <b>COMBINACIÓ EXTERNA</b>.</p>
+<p class="titolet">Sintaxi</p>
+<p>Tindrem dues possibilitats: traure totes les de l'esquerra o traure totes les de la dreta.</p>
+<p>Per a traure TOTES les files de la taula de l'esquerra, i aquelles que estiguen relacionades de la de la dreta:</p>
+<p class="codiSQL">SELECT ... <br /> FROM taula1 LEFT [OUTER] JOIN taula2 ON <i>condició</i></p>
+<p>Així traurem TOTES les files de taula1, i aquelles que estiguen relacionades de taula2.</p>
+<p> </p>
+<p>Per a fer-ho al revès, és a dir, totes les files de la taula de la dreta i aquelles files que estiguen relacionades de l'esquerra: </p>
+<p class="codiSQL">SELECT ... <br /> FROM taula1 RIGHT [OUTER] JOIN taula2 ON <i>condició</i></p>
+<p>D'aquesta manera traurem TOTES les files de taula2, i aquelles que estiguen relacionades de taula1.</p>
+<p> </p>
+<p>En el nostre exemple:</p>
+<p class="codiSQL">SELECT POBLACIONS.nom,INSTITUTS.nom<br />FROM POBLACIONS LEFT JOIN INSTITUTS ON POBLACIONS.cod_m=INSTITUTS.cod_m<br />ORDER BY 1</p>
+<p>on hem ordenat pel nom de la població per a una millor lectura, i ens donarà el següent resultat:</p>
+<p align="center"><img src="T6_II_2_3_1.png" height="655" width="807" /></p>
+<p>Podem observar que ens trau fins i tot els pobles que no tenen instituts, i que en el camp nom de l'institut tenen el valor NULL.</p>
+<p align="justify"></p>
+<p align="justify">Fem una variant interessant. Anem a traure els pobles amb el nombre d'instituts que té cadascun. Ens farà falta la taula POBLACIONS per a poder traure el nom de la població i la taula INSTITUTS per a traure el nombre d'instituts, i agruparem pel nom de la població. Les dues taules les hem de combinar (per evitar el producte cartesià). Si fem una combinació normal (interna), <i>els que no tenen instituts no entren</i>. Però si fem una <b>combinació externa</b> <i><b>sí que entraran</b></i>.</p>
+<p align="justify">Només ens queda comptar per un camp que en el cas dels que no tenen instituts tinga el valor nul, és a dir, per un camp de la taula INSTITUTS, i el que millor se'ns acopla és algun que forma part de la clau principal, ja que com no pot agafar un valor nul en la taula INSTITUTS, l'única possibilitat que agafe el valor nul en la combinació externa és que la població no tinga institut, i aleshores en el moment de comptar ens donarà el valor 0.</p>
+<p align="justify">Aquesta serà la consulta, on hem tornat a ordenar pel nom de la població</p>
+<p class="codiSQL">SELECT POBLACIONS.nom,COUNT(INSTITUTS.codi)<br />FROM POBLACIONS LEFT JOIN INSTITUTS ON POBLACIONS.cod_m=INSTITUTS.cod_m<br />GROUP BY POBLACIONS.nom<br />ORDER BY 1</p>
+<p>I aquest serà el resultat</p>
+<p align="center"><img src="T6_II_2_3_2.png" height="655" width="807" /></p>
+<p> </p>
+<p>Una altra variant també interessant és fer una consulta similar per a traure els pobles que no tenen institut. Haurem de fer una combinació externa, i en la condició posar justament que un dels camps de la taula INSTITUTS siga nul (per exemple, la clau principal):</p>
+<p align="justify">Aquesta serà la consulta, on hem tornat a ordenar pel nom de la població:</p>
+<p class="codiSQL">SELECT POBLACIONS.nom<br />FROM POBLACIONS LEFT JOIN INSTITUTS ON POBLACIONS.cod_m=INSTITUTS.cod_m<br />WHERE INSTITUTS.codi IS NULL<br />ORDER BY 1</p>
+<p>I aquest serà el resultat:</p>
+<p style="text-align: center;"><img src="T6_II_2_3_3.png" height="655" width="807" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id44">
+<div class="iDevice emphasis0">
+<div id="ta44_1" class="block iDevice_content">
+<p class="titolet">Exemples</p>
+<ol start="1">
+<li>
+<p><b> Traure totes les comarques amb el número de pobles que té cadascuna, fins i tot aquelles comarques que no tinguen cap poble.</b></p>
+<p>Aquest exemple és poc il·lustratiu, perquè no tenim en principi cap camarca que no tinga pobles. De tota manera, la manera seria fent un LEFT JOIN entre COMARQUES i POBLACIONS, per a després agrupar per comarca i comptar les poblacions. Observeu com també podem utilitzar la sintaxi del <strong>USING</strong> en el LEFT JOIN.</p>
+<p class="codiSQLgran">SELECT COMARQUES.nom_c, COUNT(cod_m)<br />FROM COMARQUES LEFT JOIN POBLACIONS USING(nom_c)<br />GROUP BY COMARQUES.nom_c<br />ORDER BY 1;</p>
+</li>
+</ol>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="exercicis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis0.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

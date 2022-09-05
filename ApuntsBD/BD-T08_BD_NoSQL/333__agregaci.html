@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.3 - Agregació | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-34"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__bd_clauvalor_redis.html" class="daddy">2 - BD Clau-Valor: Redis</a>
+   <ul class="other-section">
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__mongodb.html" class="current-page-parent daddy">3 - MongoDB</a>
+   <ul>
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="33__consulta_de_documents.html" class="current-page-parent daddy">3.3 - Consulta de documents</a>
+      <ul>
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li id="active"><a href="333__agregaci.html" class="active no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__bd_xml_existdb.html" class="daddy">4 - BD XML: eXist-db</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul class="other-section">
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li><a href="422__xquery.html" class="daddy">4.2.2 - XQUERY</a>
+         <ul class="other-section">
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li><a href="4224__expressions_flwor.html" class="no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="332__operadors_de_les_condicions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__bd_xml_existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.3 - Agregació</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id137">
+<div class="iDevice emphasis0">
+<div id="ta137_85" class="block iDevice_content">
+<p>L'agregació ens permetrà fer consultes molt avançades. És un procés un poc complicat però molt potent. Ens donarà una potència quasi com la del SQL quan comencem a utilitzar el GROUP BY i HAVING.</p>
+<p>La tècnica que s'utilitza és la del <em><strong>pipeline</strong></em>, és a dir fer una s`erie de comandos, cadascun agafa les dades que proporciona l'anterior i a la seua vegada proporciona les dades al següent comando. D'aquesta manera es tractarà un conjunt de documents i es faran "operacions" sobre ells seqüencialment en blocs: filtrat, projecció, agrupacions, ordenació, limitació i <em>skipping</em> (saltar alguns).</p>
+<p>La sintaxi serà:</p>
+<p class="codi">db.col_leccio1.aggregate ( <em>operador $matc</em>h , <em>operador $projec</em>t , <em>operador $group</em> , <em>operador $sort</em> , <em>operador $limit</em> , <em>operador $skip</em> )</p>
+<p>L'ordre dels operadors pot canviar, però hem de tenir en compte que els comandos s'executen en el ordre en què els posem (d'esquerra a dreta). Així, per exemple, pot ser molt convenient posar el primer operador el $match, que és el de seleccionar documents, així les altres operacions es faran sobre menys documents i aniran més ràpides.</p>
+<p>Cada paràmetre del aggregate, és a dir, cada operador tindrà format JSON, i per tant sempre serà de l'estil:</p>
+<p class="codi">{ $operador : { clau:valor , ... } }</p>
+<p>Abans de veure els comandos d'agrupació, mirem un exemple per a poder adonar-nos de la potència</p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id138">
+<div class="iDevice emphasis0">
+<div id="ta138_85" class="block iDevice_content">
+<p class="titolet">Operador $match</p>
+<p>Servirà per a filtrar els documents. Aleshores, l'agregació només afectarà als documents seleccionats. Es poden utilitzar tots els operadors que hem anat estudiant.</p>
+<p>El següent exemple selecciona (per a aggregate, però com no fem res més senzillament selecciona els documents) els documents de l'editorial Planeta.</p>
+<p class="codi2">&gt; db.libro.aggregate({$match:{editorial:"Planeta"}})</p>
+<p>En el següent exemple, a més de seleccionar els de l'editorial Planeta després apliquem una projecció sobre els camps títol i editorial, per a poder visualitzar millor el resultat.</p>
+<p class="codi2">&gt; db.libro.aggregate({$match:{editorial:"Planeta"}},{$project:{titulo:1,editorial:1}})<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta" }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta" }</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id139">
+<div class="iDevice emphasis0">
+<div id="ta139_85" class="block iDevice_content">
+<p class="titolet">Operador $project</p>
+<p>Ens permet projectar sobre determinats camps del document, però és molt més complet que en la projecció "normal" que havíem fet fins ara, ja que permet també renomenar camps, fer càlculs, etc.</p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>Projecció</strong></span></p>
+<p>La manera més senzilla, evidentment és projectar sobre alguns camps dels existents, i el funcionament és idèntic al de l'altra vegada (valors 1 per a que apareguen, 0 per a que no apareguen; per defecte<strong> _id</strong> sempre apareix):</p>
+<p class="codi2">&gt; db.libro.aggregate({$project:{titulo:1,editorial:1}})<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta" }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "editorial" : "Plaza &amp; Janes" }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "editorial" : "Gigamesh" }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "editorial" : "Debolsillo" }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "editorial" : "Embolsillo" }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta" }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego" }</p>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>Renomenar</strong></span></p>
+<p>$project també ens permet renomenar camps existents (després veurem que també càlculs). La manera serà posar d'aquest manera:</p>
+<p class="codi">{ $project : { "nom_nou" : "$camp_vell" } }</p>
+<p>El secret està en el dòlar que va davant del camp vell, ja que d'aquesta manera ens referim al valor d'aquest camp. Així per exemple renomenem el camp <strong>enstock</strong> a <strong>disponible</strong>, a banda de traure el títol:</p>
+<p class="codi2">&gt; db.libro.aggregate({$project:{titulo:1 , disponible:"$enstock"}})<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "disponible" : true }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "disponible" : true }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "disponible" : true }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "disponible" : false }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "disponible" : true }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "disponible" : false }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "disponible" : true }</p>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>Camps calculats</strong></span></p>
+<p>Amb aquest nom genèric ens referirem a tots els càlculs, expressions i més coses que podrem posar per a trasnsformar el que ja tenim. Com veiem, açò és molt més potent que la projecció normal.</p>
+<ul>
+<li>
+<div>
+<p><strong>Expressions matemàtiques</strong>: Podrem aplicar fórmules per a sumar (<strong>$add</strong>), restar (<strong>$subtract</strong>), multiplicar (<strong>$multiply</strong>), dividir (<strong>$divide</strong>) i més coses (potència, arrel quadrada, valor absolut, mòdul, ...). Cada operació té el seu operador que serà una paraula precedida pel dòlar, i amb la sintaxi de JSON, on posarem els operands en un array. </p>
+<p>Per exemple, traurem títol del llibre, preu i preu en pessetes (multiplicant per 166.386)</p>
+<p class="codi2">&gt; db.libro.aggregate({$project:{titulo:1 , precio:1 , preu_pessetes:{$multiply:["$precio" , 166.386]}}})<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "precio" : 21.75, "preu_pessetes" : 3618.8955 }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "precio" : 21.75, "preu_pessetes" : 3618.8955 }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "precio" : 9.5, "preu_pessetes" : 1580.667 }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "precio" : 9.45, "preu_pessetes" : 1572.3476999999998 }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "precio" : 11, "preu_pessetes" : 1830.2459999999999 }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "precio" : 17.23, "preu_pessetes" : 2866.83078 }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "precio" : 15.9, "preu_pessetes" : 2645.5374 }</p>
+</div>
+</li>
+<li>
+<div>
+<p><strong>Expressions de dates</strong>: Ja veurem i ja podem anar intuint que moltes agregacions estaran basades en el temps, per a poder fer consultes de documents de la setmana passada, o el mes passat, ... Per a poder fer aquestes agregacions, hi ha un conjunt d'expressions que permeten extraure fàcilment d'una data el seu dia, mes, any, ... en forma de número</p>
+<p>Són les expressions: <strong>$year, $month, $week, $dayOfMonth, $DayOfWeek, $dayOfYear, $hour, $minute </strong>i <strong>$second</strong>.</p>
+<p>En el següent exemple traurem tots els documents, projectant per la data, any i mes:</p>
+<p class="codi2">&gt; db.libro.aggregate({$project : {fecha:1 , año:{$year:"$fecha"} , mes:{$month:"$fecha"}}})<br />{ "_id" : "9788408117117", "fecha" : ISODate("2013-08-29T00:00:00Z"), "año" : 2013, "mes" : 8 }<br />{ "_id" : "9788401342158", "fecha" : ISODate("2014-03-01T00:00:00Z"), "año" : 2014, "mes" : 3 }<br />{ "_id" : "9788496208919", "fecha" : ISODate("2011-11-24T00:00:00Z"), "año" : 2011, "mes" : 11 }<br />{ "_id" : "9788499088075", "fecha" : ISODate("2009-01-09T00:00:00Z"), "año" : 2009, "mes" : 1 }<br />{ "_id" : "9788415140054", "fecha" : ISODate("2012-10-30T00:00:00Z"), "año" : 2012, "mes" : 10 }<br />{ "_id" : "9788408113331", "fecha" : ISODate("2013-06-04T00:00:00Z"), "año" : 2013, "mes" : 6 }<br />{ "_id" : "9788468738895", "fecha" : ISODate("2014-02-06T00:00:00Z"), "año" : 2014, "mes" : 2 }</p>
+</div>
+</li>
+<li>
+<div>
+<p><strong>Expressions de strings</strong>: Ens permeten manipular els strings per a extraure subcadenes, concatenar, passar a majúscules o minúscules. Aquestes són algunes de les funcions:</p>
+<ul>
+<li><strong>$substr : [exp , inici , llargària] </strong>: extrau una subcadena del string del primer paràmetre, des de la posició que indica el segon paràmetre (o primer caràcter) i tants caràcters com el tercer paràmetre</li>
+<li><strong>$concat : [ exp1 , exp2 , ...]</strong> : concatena les expressions que hi ha en l'array</li>
+<li><strong>$toLower : exp</strong> i <strong>$toUpper : exp</strong> : converteixen l'expressió a majúscules i minúscules respectivament</li>
+</ul>
+<p>Per exemple, anem a traure el títol dels llibres amb l'autor entre parèntesis:</p>
+<p class="codi2">&gt; db.libro.aggregate({$project: { "Llibre:" : {$concat : ["$titulo" , " (" , "$autor" , ")"]}}})<br />{ "_id" : "9788408117117", "Llibre:" : "Circo Máximo (Santiago Posteguillo)" }<br />{ "_id" : "9788401342158", "Llibre:" : "El juego de Ripper (Isabel Allende)" }<br />{ "_id" : "9788496208919", "Llibre:" : "Juego de tronos: Canción de hielo y fuego 1 (George R.R. Martin)" }<br />{ "_id" : "9788499088075", "Llibre:" : "La ladrona de libros (Markus Zusak)" }<br />{ "_id" : "9788415140054", "Llibre:" : "La princesa de hielo (Camilla Lackberg)" }<br />{ "_id" : "9788408113331", "Llibre:" : "Las carreras de Escorpio (Maggie Stiefvater)" }<br />{ "_id" : "9788468738895", "Llibre:" : "Las reglas del juego (Anna Casanovas)" }</p>
+<p>I ara el mateix, però amb el títol en majúscules:</p>
+<p class="codi2">&gt; db.libro.aggregate({$project: { "Llibre:" : {$concat : [{$toUpper:"$titulo"}, " (" , "$autor" , ")"]}}})<br />{ "_id" : "9788408117117", "Llibre:" : "CIRCO MáXIMO (Santiago Posteguillo)" }<br />{ "_id" : "9788401342158", "Llibre:" : "EL JUEGO DE RIPPER (Isabel Allende)" }<br />{ "_id" : "9788496208919", "Llibre:" : "JUEGO DE TRONOS: CANCIóN DE HIELO Y FUEGO 1 (George R.R. Martin)" }<br />{ "_id" : "9788499088075", "Llibre:" : "LA LADRONA DE LIBROS (Markus Zusak)" }<br />{ "_id" : "9788415140054", "Llibre:" : "LA PRINCESA DE HIELO (Camilla Lackberg)" }<br />{ "_id" : "9788408113331", "Llibre:" : "LAS CARRERAS DE ESCORPIO (Maggie Stiefvater)" }<br />{ "_id" : "9788468738895", "Llibre:" : "LAS REGLAS DEL JUEGO (Anna Casanovas)" }</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id140">
+<div class="iDevice emphasis0">
+<div id="ta140_85" class="block iDevice_content">
+<p class="titolet">Operador $group</p>
+<p>Realitza grups sobre els documents seleccionats prèviament, per a valors iguals del camp o expressions que determinem. Posteriorment, amb els grups, podrem realitzar operacions, com sumar o traure la mitjana d'alguna quantitat dels documents del grup, o el màxim o mínim, ...</p>
+<p>Per a poder agrupar, haurem de definir com a <strong>_id</strong> del grup el camp o camps pels valors dels quals volem agrupar. Per exemple, si volem agrupar els llibres per l'editorial, haurem de definir el <strong>_id</strong> del grup el camp editorial</p>
+<p class="codi">$group : { "_id" : <em>camp o camps</em> }</p>
+<p>Si agrupem per un únic camp, senzillament el posem amb un dòlar davant i entre cometes. Si és més d'un camp, els posem com un objecte. Per exemple, agrupem per editorial:</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : "$editorial" } } )<br />{ "_id" : "Debolsillo" }<br />{ "_id" : null }<br />{ "_id" : "Gigamesh" }<br />{ "_id" : "Embolsillo" }<br />{ "_id" : "Plaza &amp; Janes" }<br />{ "_id" : "Planeta" }</p>
+<p>Podem observar com hi ha algun llibre que no té editorial.</p>
+<p>Ara agrupem per any de publicació (l'extraurem del camp <strong>fecha</strong>):</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : { "any" : { $year : "$fecha" } } } } )<br />{ "_id" : { "any" : 2012 } }<br />{ "_id" : { "any" : 2009 } }<br />{ "_id" : { "any" : 2011 } }<br />{ "_id" : { "any" : 2014 } }<br />{ "_id" : { "any" : 2013 } }</p>
+<p>I ara agrupem per editorial i any de publicació (els dos llibres de Planeta són del 2013)</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : { "Editorial" : "$editorial" , "any" : { $year : "$fecha" } } } } )<br />{ "_id" : { "Editorial" : "Embolsillo", "any" : 2012 } }<br />{ "_id" : { "any" : 2014 } }<br />{ "_id" : { "Editorial" : "Debolsillo", "any" : 2009 } }<br />{ "_id" : { "Editorial" : "Gigamesh", "any" : 2011 } }<br />{ "_id" : { "Editorial" : "Plaza &amp; Janes", "any" : 2014 } }<br />{ "_id" : { "Editorial" : "Planeta", "any" : 2013 } }</p>
+<p></p>
+<p><span style="text-decoration: underline; font-size: large;"><strong>Operadors d'agrupació</strong></span></p>
+<p>Ens permetran fer alguna operació sobre els documents del grup. Es posen com a segon paràmetre del grup (després de la definició del <strong>_id</strong>).</p>
+<ul>
+<li><strong>$sum : valor</strong> : sumarà el valor de tots els documents del grup. El valor pot ser un camp numèric, o alguna altra cosa més complicada.</li>
+<li><strong>$avg : valor</strong> : calcularà la mitjana dels valors per als documents del grup</li>
+<li><strong>$max : valor</strong> : màxim</li>
+<li><strong>$min : valor</strong> : mínim</li>
+<li><strong>$first : exp</strong> : agafarà el primer valor de l'expressió del grup, ignorant les altres del grup</li>
+<li><strong>$last : exp</strong> : agafarà l'últim</li>
+</ul>
+<p>Per exemple, la suma dels preus dels llibres de cada editorial:</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : "$editorial" , "suma_preus" : { $sum : "$precio"} } } )<br />{ "_id" : "Debolsillo", "suma_preus" : 9.45 }<br />{ "_id" : null, "suma_preus" : 15.9 }<br />{ "_id" : "Gigamesh", "suma_preus" : 9.5 }<br />{ "_id" : "Embolsillo", "suma_preus" : 11 }<br />{ "_id" : "Plaza &amp; Janes", "suma_preus" : 21.75 }<br />{ "_id" : "Planeta", "suma_preus" : 38.980000000000004 }</p>
+<p>O la mitjana dels preus de cada any:</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : { "any" : { $year : "$fecha" } } , "mitjana preus" : { $avg : "$precio" } } } )<br />{ "_id" : { "any" : 2012 }, "mitjana preus" : 11 }<br />{ "_id" : { "any" : 2009 }, "mitjana preus" : 9.45 }<br />{ "_id" : { "any" : 2011 }, "mitjana preus" : 9.5 }<br />{ "_id" : { "any" : 2014 }, "mitjana preus" : 18.825 }<br />{ "_id" : { "any" : 2013 }, "mitjana preus" : 19.490000000000002 }</p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id141">
+<div class="iDevice emphasis0">
+<div id="ta141_85" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id142">
+<div class="iDevice emphasis0">
+<div id="ta142_85" class="block iDevice_content">
+<p class="titolet">Operador $sort</p>
+<p>Serveix per a ordenar i segueix la mateixa sintàxi que en les consultes normal (1: ordre ascendent; -1: ordre descendent). Podrem ordenar pels camps normals o per camps clalculats.</p>
+<p>Per exemple ordenem per la suma de preus de cada editorial:</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : "$editorial" , "suma_preus" : { $sum : "$precio"} } } , { $sort : { suma_preus : 1 } })<br />{ "_id" : "Debolsillo", "suma_preus" : 9.45 }<br />{ "_id" : "Gigamesh", "suma_preus" : 9.5 }<br />{ "_id" : "Embolsillo", "suma_preus" : 11 }<br />{ "_id" : null, "suma_preus" : 15.9 }<br />{ "_id" : "Plaza &amp; Janes", "suma_preus" : 21.75 }<br />{ "_id" : "Planeta", "suma_preus" : 38.980000000000004 }</p>
+<p>I ara ordenem de forma descendent per la mitjana de preus de cada any:</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : {"any":{$year:"$fecha"}} , "mitjana preus":{$avg:"$precio"} } } , {$sort:{"mitjana preus":-1}})<br />{ "_id" : { "any" : 2013 }, "mitjana preus" : 19.490000000000002 }<br />{ "_id" : { "any" : 2014 }, "mitjana preus" : 18.825 }<br />{ "_id" : { "any" : 2012 }, "mitjana preus" : 11 }<br />{ "_id" : { "any" : 2011 }, "mitjana preus" : 9.5 }<br />{ "_id" : { "any" : 2009 }, "mitjana preus" : 9.45 }</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id143">
+<div class="iDevice emphasis0">
+<div id="ta143_85" class="block iDevice_content">
+<p class="titolet">Operador $limit</p>
+<p>Limita el resultat del aggregate al número indicat.</p>
+<p>Per exemple, els tres anys de mitjana de preus més cara. És com l'últim exemple, afegint el límit:</p>
+<p class="codi2">&gt; db.libro.aggregate({$group:{"_id":{"any":{$year:"$fecha"}},"mitjana preus":{$avg:"$precio"}}} , {$sort:{"mitjana preus":-1}} , {$limit:3})<br />{ "_id" : { "any" : 2013 }, "mitjana preus" : 19.490000000000002 }<br />{ "_id" : { "any" : 2014 }, "mitjana preus" : 18.825 }<br />{ "_id" : { "any" : 2012 }, "mitjana preus" : 11 }</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id144">
+<div class="iDevice emphasis0">
+<div id="ta144_85" class="block iDevice_content">
+<p class="titolet">Operador $skip</p>
+<p>Salta el número indicat</p>
+<p>En l'exemple anterior, ara saltem els 3 primers:</p>
+<p class="codi2">&gt; db.libro.aggregate({$group:{"_id":{"any":{$year:"$fecha"}},"mitjana preus":{$avg:"$precio"}}} , {$sort:{"mitjana preus":-1}} , {$skip:3})<br />{ "_id" : { "any" : 2011 }, "mitjana preus" : 9.5 }<br />{ "_id" : { "any" : 2009 }, "mitjana preus" : 9.45 }</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="332__operadors_de_les_condicions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__bd_xml_existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

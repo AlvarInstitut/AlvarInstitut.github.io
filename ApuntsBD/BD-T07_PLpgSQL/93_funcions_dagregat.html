@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.3 Funcions d'agregat | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Programació en PostgreSQL</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i Coneixements previs</a></li>
+   <li><a href="0_nota_inicial.html" class="no-ch">0. Nota inicial</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_plpgsql.html" class="no-ch">2. PL/pgSQL</a></li>
+   <li><a href="3_declaraci_de_variables.html" class="no-ch">3. Declaració de variables</a></li>
+   <li><a href="4_instruccions.html" class="no-ch">4. Instruccions</a></li>
+   <li><a href="5_funcions.html" class="daddy">5. Funcions</a>
+   <ul class="other-section">
+      <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="6_utilitzaci_de_cursors.html" class="daddy">6. Utilització de cursors</a>
+   <ul class="other-section">
+      <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="7_missatges_i_excepcions.html" class="no-ch">7. Missatges i excepcions</a></li>
+   <li><a href="8_triggers.html" class="daddy">8. Triggers</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="9_creaci_daltres_objectes_basats_en_funcions.html" class="current-page-parent daddy">9. Creació d'altres objectes basats en funcions</a>
+   <ul>
+      <li><a href="91_operadors.html" class="daddy">9.1 Operadors</a>
+      <ul class="other-section">
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="92_operadors_de_classe.html" class="no-ch">9.2 Operadors de classe</a></li>
+      <li id="active"><a href="93_funcions_dagregat.html" class="active daddy">9.3 Funcions d'agregat</a>
+      <ul>
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="92_operadors_de_classe.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis3.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">9.3 Funcions d'agregat</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_1" class="block iDevice_content">
+<p style="text-align: justify;">En PostgreSQL també podem definir funcions d'agregat, de l'estil de <b>MAX</b>, <b>SUM</b>, <b>AVG</b>, ... Podem fer-ho sobre qualsevol tipus, existent o definit per l'usuari</p>
+<p style="text-align: justify;">Una funció d'agregat vindrà definida pel seu nom i pel tipus de dades. Per això encara no funciona la sentència</p>
+<div class="codi" style="text-align: justify;"><span style="color: #ff0000;">SELECT MAX(latitud)</span><br />
+<blockquote><span style="color: #ff0000;">FROM POBLACIONS3;</span></blockquote>
+</div>
+<p style="text-align: justify;">ja que <b>MAX </b>no està definida sobre el tipus de dades nou.</p>
+<p style="text-align: justify;">A banda del tipus de dades, podrem jugar amb un tipus de dades intern, mentre es calcula la funció d'agregat, que no té per què ser igual al tipus de dades de la funció. I la funció d'agregat vindrà definida per una o dues funcions: una funció de transició d'estat (<i><b>sfunc</b></i>) que anirà calculant l'estat intern mentre van arribant nous valors; i opcionalment una altra funció final (<i><b>ffunc</b></i>) per a fer un últim càlcul i donar el valor final (per exemple en la mitjana <i><b>sfunc </b></i>anirà calculant la suma dels valors, i <i><b>ffunc </b></i>haurà de dividir pel nombre total d'elements).</p>
+<div class="codi" style="text-align: justify;">sfunc( estat-intern, següent-item-dades ) ---&gt; següent-estat-intern</div>
+<p style="text-align: justify;"></p>
+<div class="codi" style="text-align: justify;">ffunc( estat-intern ) ---&gt; valor-final</div>
+<p style="text-align: justify;">Opcionalment també podrem donar un valor inicial. La sintaxi és:</p>
+<div class="codi" style="text-align: justify;">CREATE AGGREGATE nom (<br />
+<blockquote>BASETYPE = tipus_dades,<br />SFUNC = sfunc,<br />STYPE = tipus_dades_intern<br />[ , FINALFUNC = ffunc ]<br />[ , INITCOND = condició_inicial ]<br />[ , SORTOP = operador_ordenació ]</blockquote>
+)</div>
+<p style="text-align: justify;">Anem a crear la funció d'agregat MAX per al tipus de dades lat. Comencem per la funció d'estat, que en aquest cas senzillament anirà agafant el màxim. És, per tant, com la funció que calcula el màxim de dos números, però en lat. No tindrem en consideració els valors nuls, per no complicar la cosa.</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION MAX2(lat1 lat,lat2 lat) RETURNS lat AS $cos$
+BEGIN
+	IF lat2 &gt; lat1 THEN RETURN lat2;
+	ELSE RETURN lat1;
+	END IF;
+END; $cos$ 
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Ara ja va la funció d'agregat:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE AGGREGATE MAX (
+	BASETYPE = lat,
+	SFUNC = MAX2,
+	STYPE = lat,
+	INITCOND = '(S,90,0,0)');</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Hem posat com a valor inicial el pol sud, per evitar el problema dels nuls. Si tot ha anat bé, ja podrem fer consultes com la del principi d'aquesta pregunta.</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT MAX(latitud)
+    FROM POBLACIONS3;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Si havíem creat també l'operador de classe, les podrem complicar ordenant-les. Per exemple, podem traure la latitud màxima de cada comarca, ordenades de nord a sud:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT comarca,MAX(latitud)
+	FROM POBLACIONS3
+	GROUP BY comarca
+	ORDER BY MAX(latitud) DESC;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="92_operadors_de_classe.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis3.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1 Taules | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Base avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li class="current-page-parent"><a href="part_i_prctica_inicial.html" class="current-page-parent daddy">Part I: Pràctica inicial</a>
+   <ul>
+      <li id="active"><a href="11_taules.html" class="active no-ch">1.1 Taules</a></li>
+      <li><a href="12_consultes.html" class="no-ch">1.2 Consultes</a></li>
+      <li><a href="13_formularis_i_informes.html" class="no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_ii_macros_voluntari.html" class="daddy">Part II: Macros (Voluntari)</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_i_execuci_directa_duna_macro.html" class="no-ch">2.1 Creació i execució directa d'una Macro</a></li>
+      <li><a href="22_quan_executar_una_macro_esdeveniments.html" class="no-ch">2.2 Quan executar una macro: esdeveniments</a></li>
+      <li><a href="23_obrir_automticament_un_formulari.html" class="no-ch">2.3 Obrir automàticament un formulari</a></li>
+      <li><a href="24_exemple_avanat_compliment_de_restriccions_externes.html" class="no-ch">2.4 Exemple avançat: compliment de restriccions externes</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="part_i_prctica_inicial.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_consultes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.1 Taules</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+<p>Realitzar les següents qüestions:</p>
+<p><b>1.1) </b>Crear una BD en blanc amb el nom <b>Empresa.odb</b></p>
+<p style="text-align: left;" align="center"><b>1.2) </b>Crear les taules <b>DEPARTAMENT</b> i <b>EMPLEAT</b> amb els següents tipus de dades</p>
+<div style="background-color: #ffffff;">
+<div style="text-align: left; padding-left: 30px;"><strong>DEPARTAMENT</strong> (<strong><u>num_d</u></strong>: integer, <strong>nom_d</strong>: varchar, <strong>director</strong>: varchar(10), <strong>data</strong>: date)</div>
+<div style="text-align: left; padding-left: 30px;">                                                                                 (no nul, únic)</div>
+<p></p>
+<div style="text-align: left; padding-left: 30px;"><strong>EMPLEAT</strong> (<strong><u>dni</u></strong>: varchar(10), <strong>nom</strong>: varchar(30), <strong>adreca</strong>: varchar(30), <strong>telefon</strong>: varchar(9), <strong>sou</strong>: decimal(6,2), <strong>data_n</strong>: date, <strong>departament</strong>: integer, <strong>supervisor</strong>: varchar(10))</div>
+<div style="text-align: left; padding-left: 30px;">                                                                                                                                                                                                         (no nul)</div>
+</div>
+<div style="text-align: left; padding-left: 30px;">No us oblideu de les claus principals, respectivament <strong>num_d</strong> i <strong>dni</strong> , i que els camps <strong>director</strong> (DEPARTAMENT) i <strong>departament </strong>(EMPLEAT) són <strong>no nuls</strong>. A més <strong>director</strong> (DEPARTAMENT) ha de ser <strong>únic</strong>.</div>
+<p><b>1.3) </b>Copiar les dades des de <strong>Empresa.ods</strong> (un full de càlcul). Les dades estan en les pàgines <strong>DEPARTAMENT </strong>i <strong>EMPLEAT</strong> respectivament, i heu d'incloure els noms dels camps que estan en la primera línia. Quan enganxeu en la Base de Dades, recordeu d'<strong>afegir</strong> a les taules ja existents.</p>
+<p><strong>1.4)</strong> Copiar les dades de <strong>FAMILIAR</strong> des del mateix full de càlcul (pàgina FAMILIAR). També heu d'incloure els noms dels camps que estan en la primera línia.Quan enganxeu, feu-lo en un taula nova (definició i dades), a la qual li heu de posar el nom FAMILIAR. Durant el procés preguntarà quins camps volem incorporar (tots) i els tipus de dades de cada camp. Aprofiteu eixe moment per posar que el nom del camp és <strong>dni_emp</strong> (no <strong>Dni) </strong>i que el camp <strong>data_n</strong> és de tipus <strong>date</strong>. En aquest moment <strong>NO</strong> heu de crear la clau principal</p>
+<p><strong>1.5)</strong> Crear la clau principal de <strong>FAMILIAR</strong>, formada per <strong>dni_emp + nom</strong></p>
+<p><strong>1.6)</strong> Crea la taula PROJECTE amb les següents característiques:<strong></strong></p>
+<div style="background-color: #ffffff;">
+<div style="text-align: left; padding-left: 30px;"><strong>PROJECTE</strong> (<strong><u>num_p</u></strong>: integer, <strong>nom_p</strong>: varchar, <strong>departament</strong>: integer)</div>
+<div style="text-align: left; padding-left: 30px;">                                                                                 (no nul)</div>
+</div>
+<p>No us oblideu de que <strong>num_p </strong>és la clau principal, i que el camp <strong>Departament</strong> és <strong>no nul</strong>.</p>
+<blockquote></blockquote>
+<p><b>1.7)</b> Copiar les dades de <strong>PROJECTE</strong> des del mateix full de càlcul (pàgina Projecte). Observeu que ara no tenim el nom dels camps, per tant hem d'aconseguir <strong>afegir</strong> les dades a la taula PROJECTE, però desmarcar la casella  <strong>Usar la primera línia com a noms de les columnes</strong></p>
+<p><b>1.8)</b> Crea la taula <strong>TREBALLA</strong> amb la següent estructura</p>
+<div style="background-color: #ffffff;">
+<p style="padding-left: 30px;"><strong>TREBALLA</strong> (<strong><u>dni</u></strong>: varchar(10), <strong>num_p</strong>: integer, <strong>hores</strong>: integer)</p>
+</div>
+<p>No us oblideu de la clau principal formada per <strong>dni + num_p</strong></p>
+<p><b>1.9) </b>Crear <b><span style="text-decoration: underline;">totes</span></b> les integritats referencials. Recordeu que la integritat referencial obliga que la clau externa agafe un dels valors ja introduïts de la clau principal on apunta (així per exemple, la fletxa que apunta des del camp <b><i>Departament</i></b> de la taula <b>EMPLEAT </b>fins el camp <b><i>Num_d</i></b> de la taula <b>DEPARTAMENT</b> obliga a posar a cada empleat un departament vàlid, és a dir, dels existents en l'actualitat). A més les de <b>FAMILIAR</b> i <b>TREBALLA</b> han de modificar i esborrar en <b><i>cascada</i></b>.</p>
+<p>Segurament la més "complicada" de fer és la reflexiva que marca els supervisors. Per a poder representar-la, en Base heu d'arrastrar des del camp que serà clau externa fins la clau principal de la mateixa taula.</p>
+<p>Ací teniu una imatge on es veuen totes les integritats referencials:</p>
+<p style="text-align: center;"><img src="T5_1_1_1.png" alt="" width="680" height="486" /></p>
+<p><b>1.10) </b>Dissenyar un <b>formulari</b> anomenat <b><span style="text-decoration: underline;">Treballa</span></b> per a introduir les dades a aquesta taula. Els atributs <b>Dni </b>i <b> Num_p</b> s'introduiran per mig de <i><b>quadres de llista </b></i>(<strong>List Box</strong>). En el primer es visualitzaran per més comoditat els <strong>noms dels empleat</strong>, encara que en realitat servirà per a introduir el <strong>dni</strong>. En el segon visualitzarem els <strong>noms dels projectes</strong>, encara que en realitat s'introduirà el <strong>num_p</strong>. L'atribut Hores s'introduirà per mig d'un quadre de text.</p>
+<p>El següent vídeo explica com crear aquest formulari. La dificultat consisteix en definir bé els quadres de llista. El quadre combinat (Combo Box) no resulta ser tan útil en LibreOffice Base, ja que no és tan flexible i no ens permet visualitzar un camp (per exemple el nom de l'empleat) però utilitzar en realitat un altre (el dni de l'empleat).</p>
+<div style="text-align: center;" align="justify"><iframe width="851" height="588" src="https://slides.com/alvarinstitut/t05_video_form_treballa/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></div>
+<p><br />Introduïu a continuació les següents dades. Observeu que entre parèntesi està el Dni de l'empleat i el número de projecte, però únicament a nivell informatiu. No ha d'aparéixer en el quadre combinat.</p>
+<p> </p>
+<table cellspacing="0" cellpadding="0" border="1" align="center">
+<tbody>
+<tr>
+<td width="265" valign="top"><b>"dni"</b></td>
+<td width="203" valign="top"><b>"Num_p"</b></td>
+<td width="58" valign="top"><b>hores</b></td>
+</tr>
+<tr>
+<td width="265" valign="top">Llopis Bernat, Jaume (18876543)</td>
+<td width="203" valign="top">Auditoria 98 (2)</td>
+<td width="58" valign="top" align="right">10</td>
+</tr>
+<tr>
+<td width="265" valign="top">Folch Mestre, Pilar (18932165)</td>
+<td width="203" valign="top">Auditoria 98 (2)</td>
+<td width="58" valign="top" align="right">5</td>
+</tr>
+<tr>
+<td width="265" valign="top">Peris Andreu, Joan (18933333)</td>
+<td width="203" valign="top">Programa comptabilitat (3)</td>
+<td width="58" valign="top" align="right">10</td>
+</tr>
+<tr>
+<td width="265" valign="top">Sebastià Broch, Ferran (18934567)</td>
+<td width="203" valign="top">Programa comptabilitat (3)</td>
+<td width="58" valign="top" align="right">20</td>
+</tr>
+<tr>
+<td width="265" valign="top">Garrido Vidal, Rosa (18900111)</td>
+<td width="203" valign="top">Control vendes (4)</td>
+<td width="58" valign="top" align="right">5</td>
+</tr>
+<tr>
+<td width="265" valign="top">Nebot Aliaga, Carme (18922222)</td>
+<td width="203" valign="top">Control vendes (4)</td>
+<td width="58" valign="top" align="right">25</td>
+</tr>
+<tr>
+<td width="265" valign="top">Folch Mestre, Pilar (18932165)</td>
+<td width="203" valign="top">Control vendes (4)</td>
+<td width="58" valign="top" align="right">5</td>
+</tr>
+<tr>
+<td width="265" valign="top">Garcia Tomàs, Alícia (18944444)</td>
+<td width="203" valign="top">Control vendes (4)</td>
+<td width="58" valign="top" align="right">15</td>
+</tr>
+<tr>
+<td width="265" valign="top">Garrido Vidal, Rosa (18900111)</td>
+<td width="203" valign="top">Recopilació dades (5)</td>
+<td width="58" valign="top" align="right">15</td>
+</tr>
+<tr>
+<td width="265" valign="top">Folch Mestre, Pilar (18932165)</td>
+<td width="203" valign="top">Anàlisi estadística (6)</td>
+<td width="58" valign="top" align="right">5</td>
+</tr>
+<tr>
+<td width="265" valign="top">Sebastià Broch, Ferran (18934567)</td>
+<td width="203" valign="top">Anàlisi estadística (6)</td>
+<td width="58" valign="top" align="right">10</td>
+</tr>
+<tr>
+<td width="265" valign="top">Llopis Bernat, Jaume (18876543)</td>
+<td width="203" valign="top">Estudi rendiment (7)</td>
+<td width="58" valign="top" align="right">5</td>
+</tr>
+<tr>
+<td width="265" valign="top">Folch Mestre, Pilar (18932165)</td>
+<td width="203" valign="top">Estudi rendiment (7)</td>
+<td width="58" valign="top" align="right">15</td>
+</tr>
+<tr>
+<td width="265" valign="top">Garcia Tomàs, Alícia (18944444)</td>
+<td width="203" valign="top">Estudi rendiment (7)</td>
+<td width="58" valign="top" align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>Però ¿com estaran introduïdes de veritat les dades? ¿Estarà el nom o el Dni? Les dades "reals" les veurem sempre en la taula (en aquest cas <b>TREBALLA</b>)</p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="part_i_prctica_inicial.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_consultes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

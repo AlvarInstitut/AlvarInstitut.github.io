@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__bd_clauvalor_redis.html" class="daddy">2 - BD Clau-Valor: Redis</a>
+   <ul class="other-section">
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__bd_xml_existdb.html" class="daddy">4 - BD XML: eXist-db</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul class="other-section">
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li><a href="422__xquery.html" class="daddy">4.2.2 - XQUERY</a>
+         <ul class="other-section">
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li><a href="4224__expressions_flwor.html" class="no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id152">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.1 (Redis)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta152_43_2" class="block iDevice_content">
+<p style="text-align: justify;">Sobre la Base de Dades <strong>REDIS</strong> del Servidor de l'Institut (adreça <strong>89.36.214.106</strong>) fer les següents operacions, tant per a guardar una sèrie de dades, com per a recuperar-les. Sempre posarem a les claus el prefix <strong>9999x_</strong> , on com sempre heu de substituir 9999 per les 4 últimes xifres del vostre DNI, i la x per la letra del NIF. Copia-les en un únic fitxer de text, de forma numerada. És aquest fitxer el que hauràs de pujar.</p>
+<ol style="list-style-type: decimal; text-align: justify;">
+<li>Crea la clau <strong>9999x_Nom</strong> amb el teu nom</li>
+<li>Crea la clau <strong>9999x_Cognoms</strong> amb els teus cognoms. Una de les dues almenys, nom o cognoms, ha de constar de més d'una paraula.</li>
+<li>Mostra totes les claus teues, i únicament les teues.</li>
+<li>Dóna un temps de vida a la clau <strong>9999x_Nom</strong> de <strong>200 segons</strong>. Comprova el temps de vida que li queda. Posteriorment fes-la <strong>permanent</strong>.</li>
+<li>Crea la clau <strong>9999x_Adreca</strong>, de tipus Hash, amb els subcamps <strong>carrer</strong>, <strong>numero</strong> i <strong>cp</strong>. No importa que les dades siguen falses. Pots fer-lo en una sentència o en més d'una.</li>
+<li>Afegeix a l'anterior el subcamp <strong>poblacio</strong></li>
+<li>Mostra tota la informació de la teua adreça (només la informació, no les subclaus)<strong></strong></li>
+<li>Crea la clau <strong>9999x_Moduls_ASIX</strong> o <strong>9999x_Moduls_DAM</strong> o <strong>9999x_Moduls_DAW</strong>, depenent del teu cicle. Ha de ser de tipus Set, amb tots els mòduls del teu cicle, que es detallen a continuació. Pots fer-lo en una o en més d'una sentència.
+<ul>
+<li><strong>ASIX</strong>: ISO, PAX, FH, GBD, LM, FOL, ASO, SXI, IAW, ASGBD, SAD, EIE, PROJ i FCT</li>
+<li><strong>DAW</strong>: SI, BD, PR, LM, ED, FOL, DWEC, DWES, DAW, DIW, EIE, PROJ i FCT</li>
+<li><strong>DAM</strong>: SI, BD, PR, LM, ED, FOL, AD, PMDM, DI, PSP, SGE, EIE, PROJ i FCT.</li>
+</ul>
+</li>
+<li>Crea la clau <strong>9999x_Moduls_meus</strong>, de tipus Set, amb tots els mòduls als quals estàs matriculat. Pots fer-lo en una o en més d'una sentència.</li>
+<li>Guarda en la clau <strong>9999x_Moduls_altres</strong> els mòduls en els quals no estàs matriculat actualment. Ha de ser per mig d'operacions de conjunts. Pots comprovar que el resultat és correcte amb <strong>smembers</strong></li>
+<li>Crea una llista amb el nom <strong>9999x_Notes_BD</strong> amb la nota de 4 exercicis de BD. Les notes seran: 7, 9, 6, 10. Han de quedar en aquest ordre (no en ordre invers)</li>
+<li>Modifica la tercera nota, que passa de ser 6 a 8.</li>
+<li>Crea un <strong>Set Ordenat</strong> (<strong>zset</strong>) anomenat <strong>9999x_Carrera</strong> amb els següents valors. Pots fer-lo en una o en més d'una sentència. I ves amb compte perquè els temps han de ser numèrics<br />
+<div class="highlighted-code language-json">
+<div>
+<pre><code>Sandra	12'52
+Isabel	12'25
+Marta 	12'10
+Maria 	12'07
+Rosa 	11'95
+Bea		11'97
+Balma  	11'90
+Anna  	12'74</code></pre>
+</div>
+</div>
+</li>
+<li>Trau les participants de la carrera ordenades pel temps</li>
+<li>Penalitza el temps de Bea amb 2 dècimes (0'2), i torna a traure les participants ordenades (Bea ha d'haver perdut 2 posicions, passant de tercera a cinquena posició)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id153">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.2 (MongoDB)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta153_232_2" class="block iDevice_content">
+<div class="pbl-task-description"><p>Sobre la teua Base de Dades <strong>MONGODB</strong> treballarem sobre la col·lecció <strong>libro</strong><strong></strong>, la mateixa que hem utilitzat en els exemples. Si no la tens creada, executa les sentències del principi de la pregunta 3.3.2. Fes les següents consultes. Copia-les en un únic fitxer de text, de forma numerada. És aquest fitxer el que hauràs de pujar.</p>
+<ol style="list-style-type: decimal;" class=" auto-numbered">
+<li style="text-align: justify;">Busca els llibres que tenen més de 500 pàgines. Visualitza el _id, el títol i el número de pàgines</li>
+<li style="text-align: justify;">Busca els llibres de l'any 2014. Visualitza únicament títol i data</li>
+<li style="text-align: justify;">Busca els llibres de l'editorial Planeta. Visualitza únicament títol i editorial</li>
+<li style="text-align: justify;">Busca els llibres de l'editorial Planeta de més de 500 pàgines. Visualitza únicament títol, editorial i pàgines</li>
+<li style="text-align: justify;">Busca els llibres que no tenen editorial. Visualitza únicament títol i editorial</li>
+<li style="text-align: justify;">Busca els llibres que en el resum contenen la paraula <strong>caballo</strong>. Visualitza el resum per poder comprovar-ho. Han d'eixir 2 llibres, <strong>Circo máximo</strong> i <strong>Las carreras de Escorpio</strong>.</li>
+<li style="text-align: justify;">Utilitzant la funció <strong>aggregate</strong>, trau l'editorial i la mitjana de pàgines d'aquelles editorials que tenen una mitjana de pàgines superior a 500. Eixiran 3 editorials.</li>
+</ol></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id162">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.3 (MongoDB)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta162_285_2" class="block iDevice_content">
+<div class="pbl-task-description"><p>Aquest exercici l'has de realitzar sobre la teua BD de MongoDB.</p>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>title : Fight Club
+writer : Chuck Palahniuk
+year : 1999
+actors : [
+  Brad Pitt
+  Edward Norton ]</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>title : Pulp Fiction
+writer : Quentin Tarantino
+year : 1994
+actors : [
+  John Travolta
+  Uma Thurman ]
+</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>title : Inglorious Basterds
+writer : Quentin Tarantino
+year : 2009
+actors : [
+  Brad Pitt
+  Diane Kruger
+  Eli Roth ]</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>title : The Hobbit: An Unexpected Journey
+writer : J.R.R. Tolkein
+year : 2012
+franchise : The Hobbit</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>title : The Hobbit: The Desolation of Smaug
+writer : J.R.R. Tolkein
+year : 2013
+franchise : The Hobbit</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>title : The Hobbit: The Battle of the Five Armies
+writer : J.R.R. Tolkein
+year : 2012
+franchise : The Hobbit
+synopsis : Bilbo y compañía se ven obligados a participar en una guerra contra una serie de combatientes y evitar que la Lonely Mountain caiga en manos de una oscuridad creciente.
+</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>title : Pee Wee Herman's Big Adventure</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-php">
+<div>
+<pre><code>title : Avatar</code></pre>
+</div>
+</div>
+<ol>
+<li>Inserir tots els documents anteriors. Ha de ser <strong>obligatòriament</strong> amb una única sentència, per a la qual cosa hauràs d'utilitzar variables, una per a cada document.</li>
+<li>Consultar tots els documents</li>
+<li>Obtenir els documents amb <strong>writer</strong> igual a <strong>"Quentin Tarantino"</strong></li>
+<li>Obtenir els documents amb <strong>actors</strong> que incloguen a <strong>"Brad Pitt"</strong></li>
+<li>Obtenir els documents amb <strong>franchise</strong> igual a <strong>"The Hobbit"</strong></li>
+<li>Obtenir totes les pel·lícules dels anys 90.</li>
+<li>Obtenir les pel·lícules estrenades entre l'any 2000 i el 2010.</li>
+<li>Agregar sinopsis a <strong>"The Hobbit: An Unexpected Journey"</strong>:
+<ul>
+<li>"Un hobbit reacio, Bilbo Baggins, se dirige a Lonely Mountain con un enérgico grupo de enanos para reclamar su hogar en la montaña, y el oro que contiene, del dragón Smaug".</li>
+</ul>
+</li>
+<li>Agregar sinopsis a <strong>"The Hobbit: The Desolation of Smaug</strong>":
+<ul>
+<li>"Los enanos, junto con Bilbo Baggins y Gandalf the Grey, continúan su búsqueda para recuperar Erebor, su tierra natal, de manos de Smaug. Bilbo Baggins está en posesión de un anillo misterioso y mágico".</li>
+</ul>
+</li>
+<li>Agregar un actor anomenat <strong>"Samuel L. Jackson"</strong> a la pel·lícula "Pulp Fiction"</li>
+<li>Trobar les pel·lícules que en la sinopsis continguen la paraula <strong>"Bilbo"</strong></li>
+<li>Trobar les pel·lícules que en la sinopsis continguen la paraula <strong>"Gandalf"</strong></li>
+<li>Trobar les pel·lícules que en la sinopsis continguen la paraula <strong>"Bilbo"</strong> i no la paraula <strong>"Gandalf"</strong>. S'aconsella utilitzar l'operador <strong>$and</strong></li>
+<li>Trobar les pel·lícules que en la sinopsis continguen la paraula <strong>"enanos"</strong> o <strong>"hobbit"</strong></li>
+<li>Trobar les pel·lícules que en la sinopsis continguen les paraules <strong>"oro"</strong> i <strong>"dragón"</strong></li>
+<li>Eliminar la pel·lícula <strong>"Pee Wee Herman's Big Adventure"</strong></li>
+<li>Eliminar la pel·lícula <strong>"Avatar"</strong></li>
+</ol></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id163">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.4 (mongoDB)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta163_284_2" class="block iDevice_content">
+<div class="pbl-task-description"><p>Sobre la teua Base de Dades MONGODB treballarem sobre la col·lecció <strong>libro</strong>, la mateixa que hem utilitzat en els exemples. Si no la tens creada, executa les sentències del principi de la pregunta<strong> 3.3.2</strong>. Fes les següents consultes. Copia-les en un únic fitxer de text, de forma numerada. És aquest fitxer el que hauràs de pujar.</p>
+<ol>
+<li>Incrementar el preu dels llibres de l'editorial Planeta en 2€ (recordeu que per a modificar més d'un document, hem de posar com a tercer paràmetre l'opció <strong>{multi:true}</strong> )</li>
+<li>Crear el camp editorial amb el valor nul, per a tots aquells documents que no tinguen el camp editorial</li>
+<li>Fer l'operació inversa: eliminar el camp editorial per a tots aquells que el tinguen nul</li>
+<li>Traure l'any del llibre, a partir de la <strong>fecha</strong> (serà un camp calculat anomenat <strong>año</strong>)</li>
+<li>Aprofita el camp anterior per a traure els llibres estrictament anteriors a l'any 2013. Visualitza <strong>titulo</strong>, <strong>fecha</strong> i <strong>año</strong></li>
+</ol></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id282">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.5 (eXist)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta282_91_2" class="block iDevice_content">
+<p>Realitzar les expressions XPath que tornen les següents qüestions (totes elles sobre <strong>Rutes.xml</strong>):</p>
+<ol>
+<li>Traure el nom de totes les rutes.</li>
+<li>Traure el nom de les rutes amb un desnivell major que 600 m.</li>
+<li>Traure les rutes en les quals el desnivell acumulat duplica el desnivell. (<strong>Observació</strong>: quan en una condició combinem alguna operació amb una comparació, és millor posar l'operació abans de l'operador de comparació)</li>
+<li>Traure el nom del primer punt de cada ruta.</li>
+<li>Traure el nom de l'últim punt de cada ruta</li>
+<li>Traure els punts de la tercera ruta.</li>
+<li>Traure el número de punts de la tercera ruta</li>
+<li>Traure el nom de les rutes que tenen estrictament més de 5 punts.</li>
+<li>Traure la mitjana de desnivell de les rutes</li>
+<li>Traure les rutes en les quals hi ha alun punt més avall del paral·lel 40</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id283">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.6 (eXist)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta283_90_2" class="block iDevice_content">
+<p>Fer les expressions XQuery per a aconsequir:</p>
+<p>1. El mòdul amb el nom del professor com a atribut:</p>
+<p class="codi2">&lt;modul <span class="ace_keyword">professor</span>="<span class="ace_string">Joan Puig</span>"<span>&gt;</span><span class="ace_identifier">Llenguatges de Marques</span>&lt;/modul&gt;</p>
+<p>2. El nom de cada ruta amb el número de punts com a argument:</p>
+<div class="codi2">
+<div>&lt;rutes&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="5"&gt;Pujada a Penyagolosa&lt;/ruta&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="7"&gt;La Magdalena&lt;/ruta&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="6"&gt;Pelegrins de Les Useres&lt;/ruta&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta numPunts="6"&gt;Catí - Sant Pere de Castellfort&lt;/ruta&gt;</div>
+<div>&lt;/rutes&gt;</div>
+</div>
+<p> 3. Cada ruta amb el nom com a atribut, la latitud mitjana dels seus punts i la longitud mitjana</p>
+<div class="codi2">
+<div>&lt;ruta nom="Pujada a Penyagolosa"&gt;</div>
+<div style="margin-left: 30px;">&lt;lat_mitj&gt;40.2408508&lt;/lat_mitj&gt;</div>
+<div style="margin-left: 30px;">&lt;long_mitj&gt;-0.3515282&lt;/long_mitj&gt;</div>
+<div>&lt;/ruta&gt;</div>
+<div>&lt;ruta nom="La Magdalena"&gt;</div>
+<div style="margin-left: 30px;">&lt;lat_mitj&gt;40.01264257142857&lt;/lat_mitj&gt;</div>
+<div style="margin-left: 30px;">&lt;long_mitj&gt;-0.02034042857142857&lt;/long_mitj&gt;</div>
+<div>&lt;/ruta&gt;</div>
+<div>...</div>
+</div>
+<p> 4. La mitjana de punts de les rutes</p>
+<p class="codi2">6</p>
+<p>5. Quants punts de cada ruta estan en l'hemisferi est (és a dir, longitud positiva)</p>
+<div class="codi2">
+<div>Pujada a Penyagolosa: 0</div>
+<div>La Magdalena: 0</div>
+<div>Pelegrins de Les Useres: 0</div>
+<div>Catí - Sant Pere de Castellfort: 2</div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

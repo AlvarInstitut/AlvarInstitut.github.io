@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.3 Formularis i Informes | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Base avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li class="current-page-parent"><a href="part_i_prctica_inicial.html" class="current-page-parent daddy">Part I: Pràctica inicial</a>
+   <ul>
+      <li><a href="11_taules.html" class="no-ch">1.1 Taules</a></li>
+      <li><a href="12_consultes.html" class="no-ch">1.2 Consultes</a></li>
+      <li id="active"><a href="13_formularis_i_informes.html" class="active no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_ii_macros_voluntari.html" class="daddy">Part II: Macros (Voluntari)</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_i_execuci_directa_duna_macro.html" class="no-ch">2.1 Creació i execució directa d'una Macro</a></li>
+      <li><a href="22_quan_executar_una_macro_esdeveniments.html" class="no-ch">2.2 Quan executar una macro: esdeveniments</a></li>
+      <li><a href="23_obrir_automticament_un_formulari.html" class="no-ch">2.3 Obrir automàticament un formulari</a></li>
+      <li><a href="24_exemple_avanat_compliment_de_restriccions_externes.html" class="no-ch">2.4 Exemple avançat: compliment de restriccions externes</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="12_consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="part_ii_macros_voluntari.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.3 Formularis i Informes</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_1" class="block iDevice_content">
+<p> </p>
+<p><b>3.1) </b>Crear un formulari, utilitzant l'assistent, per a la taula <b>PROJECTE</b>, posant tots els camps i totes les opcions per defecte. Us posarà com a nom del formulari també <strong>PROJECTE</strong>. Com veureu, aquest formulari que és amb format "<strong>Com a full de dades</strong>", és molt paregut a la presentació de les dades de la taula.</p>
+<p style="text-align: center;"> <img src="T5_1_3_1.png" alt="" width="467" height="388" /></p>
+<p><b>3.2) </b>Crear un formulari, utilitzant l'assistent, per a la taula <b>DEPARTAMENT</b>, però en el moment de triar els camps, deixar per a l'últim lloc el camp <strong>director</strong> . I a més en el punt 5 de l'assistent, "<strong>5. Organitzeu els controls</strong>", triar el primer format <strong>"En columnes - Etiquetes a l'esquerra"</strong>. Us posarà com a nom del formulari també <b>DEPARTAMENT</b>.</p>
+<p style="text-align: center;"><img src="T5_1_3_2.1.png" alt="" width="444" height="276" /> </p>
+<p><b>3.3) </b>Al formulari <b>DEPARTAMENT</b> li hem donat l'aspecte <strong>En columnes</strong>. Aquest aspecte agrupa cada control amb l'etiqueta, per si s'han de recol·locar, que vagen junts. Ara intentarem canviar el quadre de text corresponent al director per un <strong>Quadre de</strong> <strong>Llista</strong>, com els del formulari <strong>Treballa</strong>. El primer que hem de fer és <strong>desagrupar-los</strong>. Després amb el botó de la dreta podem <strong>convertir</strong> el Quadre de Text en Quadre de llista. Haurem de modificar les propietats del control per a que ens porte les dades d'una consulta SQL. Aquesta consulta ha d'agafar el nom i el dni (en aquest ordre) de la taula EMPLEAT, ordenant pel nom de forma ascendent. En la pestanya <strong>General</strong> modifiqueu també la propietat <strong>Desplegable</strong> <strong>a Sí</strong>. D'aquesta manera estem aconseguint un ComboBox. I poseu en el <strong>Recompte de línies</strong> el valor 8, per a que es mostren tots els empleats. Aquest hauria de ser l'aspecte final del formulari:</p>
+<p align="center"><img src="T5_1_3_3.png" alt="" width="433" height="268" /></p>
+<p><b>3.4)</b> Construir un formulari amb l'aspecte de la imatge. Per aconseguir-ho haureu de triar en la primera pantalla de l'assistent els camps de la taula <strong>EMPLEAT </strong>, i en la següent pantalla afegir un subformulari basat en la relació <strong>FAMILIAR</strong>. En el punt 5 de l'assistent, <strong>"5. Organitzeu els controls"</strong>, triarem la disposició <strong>"En columnes - Etiquetes a l'esquerra"</strong> per al formulari principal i  <strong>"Com a full de dades"</strong> per al subformulari. Guardeu-lo com <b><span style="text-decoration: underline;">Empleat-Familiar</span></b>:<b> </b><!-- [if gte vml 1]>
+<![if gte mso 9]>
+<![endif]><![endif]--></p>
+<div align="center"><img src="T5_1_3_4.1.png" alt="" width="668" height="466" /> <!-- [if gte vml 1]><![endif]--></div>
+<p> </p>
+<p><b>3.5)</b> Crear un informe que diga el nombre de familiars de cada empleat de cada departament. Haurà de tenir el següent aspecte. Guardeu-lo amb el nom <b><span style="text-decoration: underline;">Informe</span></b>: <b> </b></p>
+<p style="text-align: center;"><img src="T5_1_3_5.png" alt="" width="820" height="599" /></p>
+<div align="justify"><span style="text-decoration: underline;">Nota</span></div>
+<div align="justify">Haureu de considerar si es pot fer directament l'informe, i si no es pot quina solució tenim (que segur que passarà per crear una consulta prèvia on estiga tota la informació que volem; i volem <span style="text-decoration: underline;"><b>tots</b></span> els empleats, fins i tot els que no tenen familiars)</div>
+<p align="justify"></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="12_consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="part_ii_macros_voluntari.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

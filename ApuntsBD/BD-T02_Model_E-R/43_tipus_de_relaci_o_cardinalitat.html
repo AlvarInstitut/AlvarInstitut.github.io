@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3 Tipus de Relació o Cardinalitat | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-27"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: MODEL ENTITAT-RELACIÓ</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_exemple.html" class="no-ch">2. Exemple</a></li>
+   <li><a href="3_les_entitats_del_model_er.html" class="daddy">3. Les Entitats del Model E/R</a>
+   <ul class="other-section">
+      <li><a href="31_entitats.html" class="daddy">3.1 Entitats</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="32_atributs.html" class="daddy">3.2 Atributs</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple0.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_dominis.html" class="no-ch">3.3 Dominis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li class="current-page-parent"><a href="4_les_relacions_del_model_er.html" class="current-page-parent daddy">4. Les Relacions del Model E/R</a>
+   <ul>
+      <li><a href="41_relaci.html" class="daddy">4.1 Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple1.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="42_atributs_de_relaci.html" class="daddy">4.2 Atributs de Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple2.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="43_tipus_de_relaci_o_cardinalitat.html" class="active daddy">4.3 Tipus de Relació o Cardinalitat</a>
+      <ul>
+         <li><a href="aplicaci_a_lexemple3.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   <li><a href="5_relacions_de_grau_major_que_dos.html" class="no-ch">5. Relacions de grau major que dos</a></li>
+   <li><a href="6_model_er_ests.html" class="daddy">6. Model E/R Estès</a>
+   <ul class="other-section">
+      <li><a href="61_cardinalitat_mxima_i_mnima_participaci_total.html" class="daddy">6.1 Cardinalitat màxima i mínima. Participació total.</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple4.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="62_entitats_dbils.html" class="no-ch">6.2 Entitats dèbils</a></li>
+      <li><a href="63_generalitzaci_i_herncia.html" class="daddy">6.3 Generalització i herència</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple5.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_restriccions_externes.html" class="no-ch">7. Restriccions externes</a></li>
+   <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   <li><a href="informaci_addicional.html" class="no-ch">Informació addicional</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="aplicaci_a_lexemple2.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="aplicaci_a_lexemple3.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3 Tipus de Relació o Cardinalitat</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id24">
+<div class="iDevice emphasis0">
+<div id="ta24_1" class="block iDevice_content">
+
+<p class="MsoBodyTextIndent" style="text-indent: 0cm" align="justify">
+&nbsp;
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm" align="justify">
+Encara no hem reflectit tota la realitat. Per exemple no hem pogut expressar que un empleat pertany
+únicament a un departament, i en canvi pot estar en més d’un projecte.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Això ho farem per mig de la
+cardinalitat, que ens durà a distintes classes de relacions.
+</p>
+<p>
+La <b>CARDINALITAT</b> especifica el número d'ocurrències d'una entitat que
+poden intervenir en la relació per cada ocurrència de l'altra entitat.
+</p>
+<p align="justify">
+Una ocurrència d'EMPLEAT (un empleat concret) només pot estar relacionat amb
+una ocurrència de DEPARTAMENT (Joan Peris pertany a Comptabilitat, i a cap
+altre departament més). En canvi una ocurrència de DEPARTAMENT pot estar
+relacionada amb moltes ocurrències d'EMPLEAT (tots els que hi pertanyen).
+Aleshores la relació PERTANY entre DEPARTAMENT i EMPLEAT té raó de cardinalitat
+<b> 1:N</b> (un departament relacionat amb molts
+empleats, però un empleat amb un departament).
+</p>
+<p align="justify">
+Ho representarem així: 
+</p>
+<p>
+&nbsp;
+</p>
+<div style="text-align: center">
+<img src="relacio_card1.png" v:shapes="_x0000_s1026 _x0000_s1027 _x0000_s1028 _x0000_s1029 _x0000_s1030 _x0000_s1031 _x0000_s1032 _x0000_s1033 _x0000_s1034 _x0000_s1035 _x0000_s1036 _x0000_s1037 _x0000_s1038" border="1" height="111" width="489" />
+</div>
+<p>
+&nbsp;
+</p>
+<p>
+o millor:
+</p>
+<p align="justify">
+&nbsp;
+</p>
+<div style="text-align: center">
+<img src="relacio_card2.png" v:shapes="_x0000_s1039 _x0000_s1040 _x0000_s1041 _x0000_s1042 _x0000_s1043 _x0000_s1044 _x0000_s1045 _x0000_s1046 _x0000_s1047 _x0000_s1048 _x0000_s1049 _x0000_s1050 _x0000_s1051 _x0000_s1052" border="1" height="96" width="485" />
+</div>
+<p>
+&nbsp;
+</p>
+<br />
+<p>
+Els distints tipus de
+relacions que hi pot haver són:
+</p>
+<ul class="unIndentedList">
+	<li>
+	<b>1:1</b> (llegirem: <b>ú a ú</b>) com a màxim una ocurrència de cada. Per
+	exemple la relació DIRIGEIX (un empleat dirigeix com a molt un departament, i
+	un departament és dirigit per un empleat).</li>
+</ul>
+<ul class="unIndentedList">
+	<li>
+	<b>1:N</b> (llegirem: <b>ú a ena</b> o <b>ú a molts</b>) en una entitat una ocurrència i en l'altra
+	moltes.</li>
+</ul>
+<ul class="unIndentedList">
+	<li>
+	<b>M:N</b> (llegirem: <b>ema a ena</b> o <b>molts a molts</b>) hi ha més d'una ocurrència en cada entitat.
+	Per exemple la relació TREBALLA (un empleat pot treballar en més d'un projecte,
+	i en un projecte pot treballar més d'un empleat).</li>
+</ul>
+<p>
+&nbsp;
+</p>
+<p>
+Per a poder distingir
+aquesta cardinalitat ens farem dues preguntes, resultat de fixar una ocurrència
+en una entitat i veure quantes ocurrències es relacionen en l'altra entitat. És
+a dir, per a una ocurrència d'una, quantes hi ha de l'altra. En l'exemple de
+més amunt: 
+</p>
+<ul>
+	<li>A un departament determinat, quants empleats
+	poden pertànyer? (molts).</li>
+</ul>
+<ul>
+	<li>Un empleat determinat, a quants departaments pot
+	pertànyer? (a un).</li>
+</ul>
+<p>
+Aquestes preguntes
+normalment tenen molt fàcil contestació. Si hi ha dubte hauríem d'investigar
+millor en les especificacions.
+</p>
+<blockquote>
+	<p>
+	<u><b>Nota</b></u>
+	</p>
+	<p>
+	La cardinalitat M:N també la podríem representar N:N. Senzillament vol dir que són moltes ocurrències de cada entitat per cadascuna de l'altra. En aquestos apunts normalment posaré M:N, senzillament perquè &quot;sóna&quot; millor. 
+	</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="aplicaci_a_lexemple2.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="aplicaci_a_lexemple3.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

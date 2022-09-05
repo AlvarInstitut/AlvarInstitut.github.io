@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-40"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: MODEL ENTITAT-RELACIÓ</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_exemple.html" class="no-ch">2. Exemple</a></li>
+   <li><a href="3_les_entitats_del_model_er.html" class="daddy">3. Les Entitats del Model E/R</a>
+   <ul class="other-section">
+      <li><a href="31_entitats.html" class="daddy">3.1 Entitats</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="32_atributs.html" class="daddy">3.2 Atributs</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple0.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_dominis.html" class="no-ch">3.3 Dominis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="4_les_relacions_del_model_er.html" class="daddy">4. Les Relacions del Model E/R</a>
+   <ul class="other-section">
+      <li><a href="41_relaci.html" class="daddy">4.1 Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple1.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="42_atributs_de_relaci.html" class="daddy">4.2 Atributs de Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple2.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="43_tipus_de_relaci_o_cardinalitat.html" class="daddy">4.3 Tipus de Relació o Cardinalitat</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple3.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   <li><a href="5_relacions_de_grau_major_que_dos.html" class="no-ch">5. Relacions de grau major que dos</a></li>
+   <li><a href="6_model_er_ests.html" class="daddy">6. Model E/R Estès</a>
+   <ul class="other-section">
+      <li><a href="61_cardinalitat_mxima_i_mnima_participaci_total.html" class="daddy">6.1 Cardinalitat màxima i mínima. Participació total.</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple4.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="62_entitats_dbils.html" class="no-ch">6.2 Entitats dèbils</a></li>
+      <li><a href="63_generalitzaci_i_herncia.html" class="daddy">6.3 Generalització i herència</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple5.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_restriccions_externes.html" class="no-ch">7. Restriccions externes</a></li>
+   <li id="active"><a href="exercicis1.html" class="active no-ch">Exercicis</a></li>
+   <li><a href="informaci_addicional.html" class="no-ch">Informació addicional</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="7_restriccions_externes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="informaci_addicional.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id36">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta36_48_2" class="block iDevice_content">
+
+<p>
+Dissenyar
+un esquema E/R que arreplegue informació sobre una universitat. Es considera
+que:
+</p>
+<ul class="unIndentedList">
+	<li>
+	Els departaments (com per exemple el Departament de <i>Llenguatges i Sistemes Informàtics</i>) poden estar en una única
+	facultat o ser interfacultatius, agrupant en aquest cas càtedres que pertanyen
+	a facultats distintes.</li><br />
+	<li>
+	Una càtedra (per exemple la de <i>Bases de Dades</i>) pertany a un únic departament.</li><br />
+	<li>
+	Una càtedra està en una única facultat.</li><br />
+	<li>
+	Un professor està sempre assignat a un únic
+	departament i adscrit a una o més d'una càtedra. Pot canviar de càtedra però no
+	de departament. Ens interessa la data en què un professor és adscrit a una
+	càtedra.</li><br />
+	<li>
+	Existeixen àrees de coneixement (com per exemple l'àrea d'<i>Informàtica</i>, que inclou els departaments de <i>Llenguatges i Sistemes Informàtics</i> i de <i>Enginyeria i Ciència dels Computadors</i>) i tot
+	departament tindrà una única àrea de coneixement.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id37">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 4</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta37_49_2" class="block iDevice_content">
+
+<p>
+L'anàlisi
+de requisits d'una determinada xarxa bancària és el següent:
+</p>
+<ul class="unIndentedList">
+	<li>
+	De cada banc ens interessa el nom i l'adreça de
+	la seu social. Hi ha un codi distint per a cada entitat bancària.</li><br />
+	<li>
+	Cada banc té distintes sucursal, que
+	s'identifiquen internament per un codi.</li><br />
+	<li>
+	Cada sucursal té assignades una sèrie de comptes
+	corrents, que s'identifiquen <i>internament </i>per un codi. Un compte pot pertànyer a
+	un o més d'un client. És possible que cada client puga fer operacions distintes
+	amb els comptes. Així podria ser que, encara que dos clients siguen titulars
+	d'un mateix compte, només un tinga facultat per tancar-lo.</li><br />
+	<li>
+	Cada client, que s'identifica pel seu DNI, pot
+	tenir més d'un compte, i evidentment privilegis distints en cadascun d'ells.</li><br />
+	<li>
+	Cada compte pot tenir domiciliacions associades
+	a ell.</li><br />
+	<li>
+	Les sucursals poden atorgar préstecs als
+	clients, que no estaran associats als comptes. Cada préstec s'atorga a nom d'un
+	únic client, i a un client se li pot atorgar més d'un préstec.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id61">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta61_22_2" class="block iDevice_content">
+
+<p>
+Es vol
+mantenir informació sobre una <b>biblioteca</b>,
+on podem tenir de cada llibre més d'un exemplar, que a més es poden prestar, i
+que també ens interessa un històric de préstecs. L'anàlisi de requisits seria
+el següent:
+</p>
+<ul class="unIndentedList">
+	<li>
+	Cada llibre (amb un determinat títol, ISBN,
+	idioma, número d'edició i data d'edició) tracta només d'un tema, està editat
+	per una única editorial, escrit per un o més autors, i disposarem d'uns quants
+	exemplars. Dels exemplars sempre tindrem el número de registre, que l'identifica unívocament.</li><br />
+	<li>
+	Un exemplar es pot prestar a un únic lector (del
+	qual tindrem Dni, Nom, Adreça i Telèfon), i ens interessa la data en la qual
+	s'ha prestat. Un lector pot tenir més d'un llibre prestat.</li><br />
+	<li>
+	A banda del préstec actual, voldrem saber en el
+	passat a qui s'ha prestat. Per tant en l'històric de préstecs cada exemplar
+	s'haurà prestat a molts lectors, i per a poder dur el seguiment ens interessa
+	la data de préstec i la de tornada.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id60">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta60_21_2" class="block iDevice_content">
+
+<p align="justify">
+Realitzeu
+l'esquema E/R que arreplegue informació d'una associació d'afeccionats a les <b>papallones</b>, que volen guardar informació respecte a exemplars
+capturats bé per a la seua observació, bé per a ser inclosos en una col·lecció:
+</p>
+<div align="justify">
+<ul class="unIndentedList">
+	<li>
+	Com en qualsevol ordre natural, un exemplar de
+	papallona pertany a una espècie única. Una espècie pertany a un gènere únic, i
+	un gènere a una família natural única.</li><br />
+	<li>
+	Cada espècie de papallona té un nom científic
+	únic, encara que el seu nom comú, que depèn de la comarca on s'ha agafat, també
+	ens interessa.</li><br />
+	<li>
+	Ja siga per a l'observació o per a formar part
+	d'una col·lecció, primer s'ha de capturar l'exemplar de papallona. Aquesta captura
+	la realitza una única persona, i voldrem saber també en quin lloc (comarca) s'ha capturat. Si l'exemplar és destinat a l'observació voldrem saber la durada de l'observació.</li><br />
+	<li>
+	Una determinada persona només pot ser
+	propietària d'una col·lecció, però els exemplars d'aquesta col·lecció poden
+	haver estat capturats per altres persones.</li><br />
+	<li>
+	Es vol mantenir informació de les famílies,
+	gèneres i espècies de papallones encara que no s'hagen capturat exemplars dels
+	mateixos.</li><br />
+	<li>Una papallona només pot pertànyer a una col·lecció,
+	i una col·lecció està formada almenys per un exemplar. Tota papallona que
+	pertany a una col·lecció tindrà un determinat valor.
+	</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id62">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta62_22_2" class="block iDevice_content">
+<div align="justify">Una empresa de l&iacute;nies ferrovi&agrave;ries vol que se li dissenye una Base de Dades per a la seua gesti&oacute;. Aquesta &eacute;s l'an&agrave;lisi de requeriments:</div>
+<div align="justify">&nbsp;</div>
+<ul>
+<li>La companyia necessita controlar els trens, els seus treballadors i els viatges realitzats.&nbsp;</li>
+</ul>
+<ul>
+<li>Dels treballadors es vol guardar el seu codi i nom. Per als conductors, a m&eacute;s a m&eacute;s, ens interessa el n&uacute;mero d'hores que han realitzat.</li>
+</ul>
+<ul>
+<li>Tots els treballadors tenen una estaci&oacute; base a la qual pertanyen i de les estacions es vol tenir el nom, la localitat i el tel&egrave;fon.</li>
+</ul>
+<ul>
+<li>Els trens tenen un codi que els identifica, un tipus (rodalies, grans l&iacute;nies,&hellip;) i una estaci&oacute; on se li realitzen les revisions de manteniment.</li>
+</ul>
+<ul>
+<li>Un viatge de tren utilitzar&agrave; &ograve;bviament un tren. Tindr&agrave; un origen, un dest&iacute;, una data, una hora d'eixida i un o uns conductors que el porten (no ens interessen els altres possibles treballador que van en els viatges). Tots els viatges s'identifiquen per un codi, per exemple, el viatge de Castell&oacute; a Val&egrave;ncia de les 12:10 d'un determinat dia &eacute;s el viatge 4356. S'haur&agrave; de controlar tota aquesta informaci&oacute; durant un per&iacute;ode d'una temporada (un any sencer).</li>
+</ul>
+<p>Opcionalment, podem posar totes les estacions a les quals s'arriba en un viatge (substituint l'estaci&oacute; origen i dest&iacute;). Haurem de saber si l'estaci&oacute; &eacute;s origen, dest&iacute; o de pas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="7_restriccions_externes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="informaci_addicional.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Concepte de Base de Dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Bases de Dades</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Introducció</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_tradicionals.html" class="no-ch">1. Fitxers tradicionals</a></li>
+   <li id="active"><a href="2_concepte_de_base_de_dades.html" class="active no-ch">2. Concepte de Base de Dades</a></li>
+   <li><a href="3_caracterstiques_desitjables_dun_sgbd.html" class="no-ch">3. Característiques desitjables d'un SGBD</a></li>
+   <li><a href="4_models_de_dades.html" class="no-ch">4. Models de dades</a></li>
+   <li><a href="5_arquitectura_a_3_nivells.html" class="no-ch">5. Arquitectura a 3 nivells</a></li>
+   <li><a href="6_llenguatges_del_sgbd.html" class="no-ch">6. Llenguatges del SGBD</a></li>
+   <li><a href="7_classificacions_dels_sgbd.html" class="no-ch">7. Classificacions dels SGBD</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1_fitxers_tradicionals.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_caracterstiques_desitjables_dun_sgbd.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2. Concepte de Base de Dades</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id1">
+<div class="iDevice emphasis0">
+<div id="ta1_1" class="block iDevice_content">
+<p> </p>
+<p>Per a millorar els problemes que se'ns presentaven amb els fitxers tradicionals introduirem el concepte de Base de Dades.</p>
+<p> </p>
+<p class="titolet">2.1 Definició</p>
+<p style="text-align: justify;">Hi ha moltes definicions de Bases de Dades. Intentarem donar una que no sigue massa pesada.</p>
+<p style="text-align: justify;">Una <b>Base de Dades</b> és un conjunt de dades relacionades entre elles, integrat en una única estructura global que és independent dels programes que la utilitzen i sense redundàncies innecessàries.</p>
+<p style="text-align: justify;">Comentem un poc aquesta definició. El primer comentari és sobre les dades. No intentarem agafar totes les dades del món, sinó únicament sobre les coses que volem estudiar, i d'elles únicament les dades interessants, per aconseguir el propòsit perseguit. Per tant, una Base de Dades té una font de la qual es deriven les dades i uns usuaris als quals interessen les dades.</p>
+<p style="text-align: justify;">Per la pròpia definició, la Base de Dades es podria crear i mantenir manualment (pensem en les fitxes tradicionals d'una biblioteca). Es podria crear i mantenir també per mig d'un grup de programes d'aplicació realitzats específicament per aquesta feina, però el més normal, i el que ens interessa a nosaltres és que açò es faça per mig d'un Sistema Gestor de Bases de Dades.</p>
+<p style="text-align: justify;">Un <b>Sistema Gestor de Bases de Dades</b> (<b>SGBD</b>; en anglès <i>DataBase Management System: DBMS</i>) és un conjunt de programes que permet als usuaris crear i mantenir Bases de Dades. Així la Base de Dades són les nostres dades (organitzades) i el SGBD serien productes com ACCESS, POSTGRESQL o ORACLE que ens permeten crear i mantenir aquesta Base de Dades.</p>
+<p> </p>
+<div style="text-align: center;"><img src="T1_2_1.png" width="511" height="259" border="1" /></div>
+<p style="text-align: justify;">Per la figura ja veiem que la Base de Dades s'organitza en dos grans blocs, un és el <b>catàleg</b> o <b>diccionari de dades</b>, on està l'estructura i tipus de les dades. En l'altre estan les pròpies dades. Per tant veiem que l'estructura de les dades va amb la pròpia Base de Dades.</p>
+<p style="text-align: justify;">Totes les peticions d'accés a les dades no es fan directament, sinó que es demanen al SGBD, que és qui s'encarrega d'accedir a elles. L'accés es pot fer per mig de processos (programes, formularis, ...) o bé de forma interactiva (per exemple amb consultes SQL). Alguns autors anomenen al conjunt de la Base de Dades i el SGBD com <b>Sistema de Base de Dades</b>.</p>
+<p> </p>
+<p class="titolet">2.2 Comparació amb fitxers tradicionals</p>
+<p style="text-align: justify;">Una vegada hem vist la definició de Base de Dades i alguna de les seues característiques anem a comparar amb els fitxers tradicionals per veure els avantatges.</p>
+<ul>
+<li>Una Base de Dades és autodescriptiva, és a dir la definició de l'estructura, tipus de dades, etc. forma part de la pròpia B.D. (el <b>diccionari de dades</b>). En els fitxers tradicionals l'estructura d'aquestos havia d'anar en cada programa.</li>
+</ul>
+<p></p>
+<ul>
+<li>Independència de les dades dels programes. És conseqüència de l'anterior. Així, en una B.D., la modificació de l'estructura (afegint algun camp o modificant-ne algun) no afecta als programes que puguen accedir a ella. Ja havíem vist que no era així en els fitxers tradicionals.</li>
+</ul>
+<p></p>
+<ul>
+<li>No hi ha redundància, o molt poca. Potser convenient un poc de redundància per un millor rendiment, però aquesta pot ser controlada (per a evitar inconsistències, ...)</li>
+</ul>
+<p></p>
+<ul>
+<li>Múltiples vistes d'usuari. Podríem pensar que al concentrar en una única B.D. totes les dades es perd la visió particular d'un usuari (que en fitxers tradicionals són el fitxers individuals de cadascun d'ells). Però no és així, ja que en les B.D. es poden definir vistes, que són la part de les dades que li interessen a un usuari determinat.</li>
+</ul>
+<p></p>
+<ul>
+<li>Compartiment de les dades per part de molts usuaris, amb accés simultani sobre elles. Haurà d'haver en el software un control de concurrència, per assegurar que l'actualització simultània d'uns quants usuaris siga correcta.</li>
+</ul>
+<p>Els inconvenients que suposa la utilització de B.D. són els següents:</p>
+<ul>
+<li>El Hardware i el software són més costosos.</li>
+</ul>
+<p></p>
+<ul>
+<li>Necessitat de personal especialitzat.</li>
+</ul>
+<p></p>
+<ul>
+<li>La implantació és més llarga i difícil, i per tant és una solució bona a mig i llarg termini.</li>
+</ul>
+<p>És a dir, que si és una aplicació senzilla, potser siga convenient utilitzar fitxers tradicionals, però si és d'una certa envergadura o s'ha d'anar ampliant al llarg del temps, convé una B.D.</p>
+<p> </p>
+<p class="titolet">2.3 Usuaris de la BD</p>
+<p>Els múltiples usuaris que poden utilitzar la B.D. són de distints tipus. Anem a fer una classificació d'aquestos. Aquesta classificació agrupa dos grans blocs: els usuaris amb coneixements informàtics i els usuaris que no en tenen (o no tenen per què tenir-ne).</p>
+<p><b>A. </b><b>Usuaris informàtics</b>.</p>
+<blockquote>
+<p><b>A.1 </b><b>Dissenyadors</b>.</p>
+</blockquote>
+<blockquote></blockquote>
+<blockquote>
+<blockquote>
+<p>Encarregats de dissenyar la B.D.: triar el tipus d'informació necessària, organitzar-la en estructures adequades.</p>
+</blockquote>
+</blockquote>
+<blockquote></blockquote>
+<blockquote>
+<p><b>A.2 </b><b>Administradors</b>.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>És l'encarregat de vetllar pel bon funcionament del sistema: administrar els usuaris i permisos, protegir la B.D. d'errades (fent còpies de seguretat, ..), optimitzar el sistema, etc. És a dir molta feina.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><b>A.3 </b><b>Analistes i programadors</b>.</p>
+</blockquote>
+<blockquote></blockquote>
+<blockquote>
+<blockquote>
+<p>Estudien els requeriments dels usuaris finals per a fer programes, formularis, ... que possibiliten la feina d'aquestos.</p>
+</blockquote>
+</blockquote>
+<blockquote></blockquote>
+<p><b>B. </b><b>Usuaris finals</b>.</p>
+<blockquote>
+<p>Són les persones que necessiten l'accés a la B.D. per a introduir dades, actualitzar-les, consultar-les, generar informes, ... Entre ells distingim:</p>
+</blockquote>
+<blockquote>
+<p><b>B.1 </b><b>Habituals</b>.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>També anomenats <b>paramètrics</b>, solen fer consultes i actualitzacions constants (sempre les mateixes). Normalment els analistes i programadors els faran els programes o formularis per a fer la seua feina.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><b>B.2 </b><b>Esporàdics</b>.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Utilitzen la B.D. de tant en tant, i cada vegada per a obtenir una informació diferent. El més normal és que utilitzen un llenguatge de consulta de la B.D. avançat però senzill d'utilitzar.</p>
+</blockquote>
+</blockquote>
+<p> </p>
+</div>
+</div>
+</article>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1_fitxers_tradicionals.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_caracterstiques_desitjables_dun_sgbd.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</section>
+</div>
+</div>
+</body></html>

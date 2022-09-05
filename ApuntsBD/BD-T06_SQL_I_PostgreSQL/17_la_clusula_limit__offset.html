@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>17. La clàusula LIMIT .. OFFSET | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  Consulta bàsica (part I)</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i Coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_ddl_i_dml.html" class="no-ch">2. DDL i DML</a></li>
+   <li><a href="3_client_dbeaver_installaci_i_confiuraci.html" class="no-ch">3. Client DBeaver: instal·lació i confiuració</a></li>
+   <li><a href="4_client_dbeaver_utilitzaci.html" class="no-ch">4. Client DBeaver: utilització</a></li>
+   <li><a href="5_dades_dels_exemples_i_els_exercicis.html" class="no-ch">5. Dades dels exemples i els exercicis</a></li>
+   <li><a href="6_operadors.html" class="no-ch">6. Operadors</a></li>
+   <li><a href="7_funcions.html" class="daddy">7. Funcions</a>
+   <ul class="other-section">
+      <li><a href="71_formats_de_les_dates.html" class="no-ch">7.1 Formats de les dates</a></li>
+      <li><a href="72_formats_dels_nmeros.html" class="no-ch">7.2 Formats dels números</a></li>
+   </ul>
+   </li>
+   <li><a href="8_la_consulta_select.html" class="no-ch">8. La consulta SELECT</a></li>
+   <li><a href="9_consulta_bsica.html" class="daddy">9. Consulta bàsica</a>
+   <ul class="other-section">
+      <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="10_lies_en_les_columnes.html" class="daddy">10. Àlies en les columnes</a>
+   <ul class="other-section">
+      <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="11_la_clusula_where.html" class="daddy">11. La clàusula WHERE</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="12_funcions_dagregat.html" class="daddy">12. Funcions d'agregat</a>
+   <ul class="other-section">
+      <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="13_la_clusula_group_by.html" class="daddy">13. La clàusula GROUP BY</a>
+   <ul class="other-section">
+      <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="14_la_clusula_having.html" class="daddy">14. La clàusula HAVING</a>
+   <ul class="other-section">
+      <li><a href="exercicis4.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="15_la_clusula_order_by.html" class="daddy">15. La clàusula ORDER BY</a>
+   <ul class="other-section">
+      <li><a href="exercicis5.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="16_el_predicat_distinct.html" class="daddy">16. El predicat DISTINCT</a>
+   <ul class="other-section">
+      <li><a href="exercicis6.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="17_la_clusula_limit__offset.html" class="active daddy">17. La clàusula LIMIT .. OFFSET</a>
+   <ul>
+      <li><a href="exercicis7.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="18_consulta_de_creaci_de_taules.html" class="daddy">18. Consulta de creació de taules</a>
+   <ul class="other-section">
+      <li><a href="exercicis8.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="19_ordre_amb_qu_sexecuta_una_sentncia_sql.html" class="no-ch">19. Ordre amb què s'executa una sentència SQL</a></li>
+   <li><a href="exercicis_de_tot_el_tema_amb_els_resultats.html" class="no-ch">Exercicis de tot el tema, amb els resultats</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="exercicis6.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis7.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">17. La clàusula LIMIT .. OFFSET</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_1" class="block iDevice_content">
+<p> </p>
+<p>Per mig de la clàusula <b>LIMIT - OFFSET</b> podrem fer que no apareguen totes les files que torna la sentència, sinó unes quantes.</p>
+<ul>
+<li><strong>LIMIT número</strong>: especificarem quantes files volem que es tornen</li>
+<li><strong>OFFSET número</strong>: especificarem a partir de quina posició volem que es tornen les files</li>
+</ul>
+<p>Si no posem la part del OFFSET, apareixeran les primeres, i si especifiquem OFFSET, se saltaran les primeres, tantes com s'indica en OFFSET. Per a que realment tinga sentit aquesta clàusula, és conveninet ordenar la informació, ja que al dir les primeres ja s'està assumint que seran les primeres respecte algun ordre. Així, per exemple ens podrem plantejar traure coses com les 10 poblacions més altes, o les més habitades.</p>
+<p>L'ordre implícit que acabem de comentar s'haurà de fer per mig de la clàusula ORDER BY. Així, si volem traure els clients més joves haurem d'ordenar per la data de naixement en ordre descendent, per a després traure els primenrs. Per tant és molt difícil veure una clàusula LIMIT si no tenim una clàusula ORDER BY.</p>
+<p></p>
+<p style="margin-left: 30px;"><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p style="margin-left: 30px;">En el SQL d'Access no existeix la clàusula LIMIT. Per a fer coses similar disposa del predicat <strong>TOP</strong>, que es posa immediatament després del SELECT, però sempre traurà les primeres, no té possibilitat d'OFFSET.</p>
+<p> </p>
+<p class="titolet">Sintaxi</p>
+<p class="codiSQL">SELECT &lt;columnes&gt;<br />FROM &lt;taules&gt;<br />[LIMIT <em>n</em>] [OFFSET <em>m</em>]</p>
+<p> </p>
+<p>El número <i><b>n</b></i> ha de ser un enter, i se seleccionaran únicament les <i><b>n</b></i> primeres files (les de dalt). En cas de posat OFFSET se saltaran <em><strong>m</strong></em> files. En cas de no posar <strong>LIMIT</strong>, se saltaran <em><strong>m</strong> </em>files i es trauran totes les altres fins el final.</p>
+<p>Per exemple, si volem traure les 10 poblacions més altes, haurem d'agafar les 10 primeres, ordenant per altura en forma descendent:</p>
+<p class="codiSQL">SELECT nom , altura<br />FROM POBLACIONS<br />ORDER BY altura DESC<br />LIMIT 10</p>
+<p>L'exemple anterior sembla correcte, però no funciona del tot bé perquè amb les dades que tenim, hi ha 3 poblacions que no tenen altura, i el valor nul el posa al final de tots els altres valors, en ordre ascendent, i per tant al principi en ordre descendent.</p>
+<p>Ho podem arreglar senzillament saltant les 3 primeres (que són les del nul)</p>
+<p class="codiSQL">SELECT nom , altura<br />FROM POBLACIONS<br />ORDER BY altura DESC<br />LIMIT 10 OFFSET 3</p>
+<p>Encara que sembla millor llevar les d'altura nula, així no estem obligats a saber quantes poblacions amb altura nula hi ha</p>
+<p class="codiSQL">SELECT nom , altura<br />FROM POBLACIONS<br />WHERE altura IS NOT NULL<br />ORDER BY altura DESC<br />LIMIT 10 </p>
+<p></p>
+<p>Si vulguérem traure totes les poblacions i altures, excepte les que tenen nul, i sabem que aquestes en són 3, podem posar OFFSET sense LIMIT, per a saltar les 3 primeres, i traure-les totes fins el final</p>
+<p class="codiSQL">SELECT nom , altura<br />FROM POBLACIONS<br />ORDER BY altura DESC<br />OFFSET 3</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id40">
+<div class="iDevice emphasis0">
+<div id="ta40_1" class="block iDevice_content">
+<p class="titolet">Exemples</p>
+<p> </p>
+<ol>
+<li value="1">
+<p>Traure les 5 poblacions més poblades</p>
+</li>
+</ol>
+<p class="codiSQL">SELECT nom , poblacio<br />FROM POBLACIONS<br />ORDER BY poblacio DESC<br />LIMIT 5</p>
+<p> </p>
+<ol start="2">
+<li>
+<p>Traure les 4 comarques amb més pobles.</p>
+</li>
+</ol>
+<p class="codiSQL">SELECT nom_c , COUNT(*)<br />FROM POBLACIONS<br />GROUP BY nom_c<br />ORDER BY 2 DESC<br />LIMIT 4</p>
+<p> </p>
+<ol start="3">
+<li>
+<p>Traure les 10 poblacions amb més instituts, saltant-nos les 3 primeres.</p>
+</li>
+</ol>
+<p class="codiSQL">SELECT cod_m , COUNT(*)<br />FROM INSTITUTS<br />GROUP BY cod_m<br />ORDER BY 2 DESC<br />LIMIT 10 OFFSET 3</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="exercicis6.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis7.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

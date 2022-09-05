@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Primer Forma Normal (1FN) | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Normalització</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li id="active"><a href="2_primer_forma_normal_1fn.html" class="active no-ch">2. Primer Forma Normal (1FN)</a></li>
+   <li><a href="3_dependncia_funcional.html" class="no-ch">3. Dependència Funcional</a></li>
+   <li><a href="4_segona_forma_normal_2fn.html" class="no-ch">4. Segona Forma Normal (2FN)</a></li>
+   <li><a href="5_dependncia_funcional_transitiva.html" class="no-ch">5. Dependència Funcional Transitiva</a></li>
+   <li><a href="6_tercera_forma_normal_3fn.html" class="no-ch">6. Tercera Forma Normal (3FN)</a></li>
+   <li><a href="7_forma_normal_boycecodd_fnbc.html" class="no-ch">7. Forma Normal Boyce-Codd (FNBC)</a></li>
+   <li><a href="resum.html" class="no-ch">Resum</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_dependncia_funcional.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2. Primer Forma Normal (1FN)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id1">
+<div class="iDevice emphasis0">
+<div id="ta1_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<table border="1">
+	<tbody>
+		<tr>
+			<td>
+			<p>
+			<b>Una taula està en </b><u><b>1FN</b></u><b> si i només
+			si els valors que componen cada atribut d'una tupla són
+			atòmics. És a dir, en un atribut no han d'aparèixer
+			valors repetitius.</b>
+			</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+<b></b>
+</p>
+<p>
+Per exemple, en la següent taula
+hi ha una sèrie de tipus de materials existents en una
+ferreteria. Un material té un codi que l'identifica, la seua
+descripció i les seues mides (la clau principal és el camp subratllat)
+</p>
+<p align="center">
+<b>MATERIALS</b>
+</p>
+<center>
+<table border="1" bordercolor="#000000" cellpadding="5" cellspacing="0" height="122" rules="cols" width="344">
+	<col width="84"></col>
+	<col width="122"></col>
+	<col width="76"></col>
+	<tbody>
+		<tr valign="top">
+			<td bgcolor="#cccccc" width="84">
+			<div align="center">
+			<u><b>COD-MAT</b></u>
+			</div>
+			</td>
+			<td bgcolor="#cccccc" width="122">
+			<div align="center">
+			<b>DESCRIPCIÓ</b>
+			</div>
+			</td>
+			<td bgcolor="#cccccc" width="96">
+			<div align="center">
+			<b>MIDES</b>
+			</div>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			039
+			</td>
+			<td width="122">
+			Cargol
+			</td>
+			<td width="96">
+			3,5 - 5 - 7 - 9
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			067
+			</td>
+			<td width="122">
+			Arandella
+			</td>
+			<td width="96">
+			2 - 5
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			461
+			</td>
+			<td width="122">
+			Broca
+			</td>
+			<td width="96">
+			2,5 - 3 - 3,5
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<p>
+Els problemes que planteja són
+els següents:
+</p>
+<ul>
+	<li>
+	<p>
+	La falta de espai en el camp per
+	als valors que puguen aparèixer o, pel contrari el
+	desaprofitament de l'atribut quan existeixen pocs valors.
+	</p>
+	</li>
+	<li>
+	<p>
+	La dificultat del tractament per a
+	actualitzacions, consultes i recerques d'un valor determinat.
+	</p>
+	</li>
+</ul>
+<br />
+<p class="titolet">
+Posar en 1FN 
+</p>
+<p>
+Per a passar a 1FN una taula que no ho
+estava <b>es descompon</b> en <b>dues </b>distintes:
+</p>
+<p>
+<b>
+A)</b> La <b>primera taula</b> serà la projecció
+de la taula original sobre els següents atributs:
+</p>
+<ul>
+	<li>La clau de la taula original.
+	</li>
+	<li>Els atributs atòmics (els que
+	contenen valors únics).
+	</li>
+</ul>
+<p align="center">
+<b>MATERIALS</b>
+</p>
+<center>
+<table border="1" bordercolor="#000000" cellpadding="5" cellspacing="0" rules="cols" width="210">
+	<col width="84"></col>
+	<col width="104"></col>
+	<tbody>
+		<tr valign="top">
+			<td bgcolor="#cccccc" height="8" width="84">
+			<u><b>COD-MAT</b></u>
+			</td>
+			<td bgcolor="#cccccc" width="104">
+			<b>DESCRIPCIÓ</b>
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr valign="top">
+			<td width="84">
+			039
+			</td>
+			<td width="104">
+			Cargol
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			067
+			</td>
+			<td width="104">
+			Arandella
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			461
+			</td>
+			<td width="104">
+			Broca
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<p>
+<b>
+B)</b> La <b>segona taula</b> serà la
+projecció de la taula original sobre els següents
+atributs:
+</p>
+<ul>
+	<li>
+	La clau de la
+	taula original.
+	</li>
+	<li>
+	Els atributs que tenen valors múltiples, distribuint
+	aquestos valors múltiples en tuples distintes i per tant en
+	una fila existirà un únic valor elemental.
+	</li>
+</ul>
+<blockquote>
+	<p>
+	La clau d'aquesta segona taula estarà
+	formada per tots els atributs.
+	</p>
+</blockquote>
+<p align="center">
+<b>MAT-MIDES</b>
+</p>
+<center>
+<table border="1" bordercolor="#000000" cellpadding="5" cellspacing="0" rules="cols" width="191">
+	<col width="93"></col>
+	<col width="76"></col>
+	<tbody>
+		<tr style="height: 12px" valign="top">
+			<td bgcolor="#cccccc" height="8" width="93">
+			<u><b>COD-MAT</b></u>
+			</td>
+			<td bgcolor="#cccccc" width="76">
+			<u><b>MIDA</b></u>
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			039
+			</td>
+			<td width="76">
+			3,5
+			</td>
+		</tr>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			039
+			</td>
+			<td width="76">
+			5
+			</td>
+		</tr>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			039
+			</td>
+			<td width="76">
+			7
+			</td>
+		</tr>
+		<tr>
+			<td>039</td>
+			<td>9 <br />
+			</td>
+		</tr>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			067
+			</td>
+			<td width="76">
+			2
+			</td>
+		</tr>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			067
+			</td>
+			<td width="76">
+			5
+			</td>
+		</tr>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			461
+			</td>
+			<td width="76">
+			2,5
+			</td>
+		</tr>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			461
+			</td>
+			<td width="76">
+			3
+			</td>
+		</tr>
+		<tr style="height: 12px" valign="top">
+			<td width="93">
+			461
+			</td>
+			<td width="76">
+			3,5
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<p align="justify">
+&nbsp;
+</p>
+<p align="justify">
+<u><b>Nota</b></u>
+</p>
+<p align="justify">
+També haurem de ser capaços de detectar que no està en 1FN quan tenim uns atributs multivaluats &quot;encoberts&quot;. Per exemple, una variant de l'exemple anterior podria ser:
+</p>
+<p align="center">
+<b>MATERIALS</b>
+</p>
+<center>
+<table border="1" bordercolor="#000000" cellpadding="5" cellspacing="0" rules="cols" width="334">
+	<col width="84"></col>
+	<col width="122"></col>
+	<col width="76"></col>
+	<tbody>
+		<tr valign="top">
+			<td bgcolor="#cccccc" width="84">
+			<div align="center">
+			<u><b>COD-MAT</b></u>
+			</div>
+			</td>
+			<td bgcolor="#cccccc" width="122">
+			<div align="center">
+			<b>DESCRIPCIÓ</b>
+			</div>
+			</td>
+			<td bgcolor="#cccccc" width="96">
+			<div align="center">
+			<b>MIDA1</b>
+			</div>
+			</td>
+			<td style="background-color: #cccccc"><b>MIDA2 </b></td>
+			<td style="background-color: #cccccc"> <b>MIDA3</b></td>
+			<td style="background-color: #cccccc"><b>MIDA4 </b></td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			039
+			</td>
+			<td width="122">
+			Cargol
+			</td>
+			<td width="96">
+			3,5
+			</td>
+			<td> 5</td>
+			<td> 7</td>
+			<td> 9</td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			067
+			</td>
+			<td width="122">
+			Arandella
+			</td>
+			<td width="96">
+			2
+			</td>
+			<td> 5</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr valign="top">
+			<td width="84">
+			461
+			</td>
+			<td width="122">
+			Broca
+			</td>
+			<td width="96">
+			2,5
+			</td>
+			<td> 3</td>
+			<td> 3,5</td>
+			<td> </td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<p>
+&nbsp;
+</p>
+<p>
+Es veu que es tracta d'una manera de &quot;dissimular&quot; els atributs multivaluats.  Estem davant del mateix cas que en l'exemple de dalt i tindrem els mateixos problemes, i per tant la solució és la mateixa.<br />
+</p>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_dependncia_funcional.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

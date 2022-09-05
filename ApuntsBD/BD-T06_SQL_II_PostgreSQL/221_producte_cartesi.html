@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.1 Producte cartesià | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-45"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  Consultes avançades (part II)</a></li>
+   <li><a href="21_introducci.html" class="no-ch">2.1 Introducció</a></li>
+   <li class="current-page-parent"><a href="22_combinacions_de_taules.html" class="current-page-parent daddy">2.2 Combinacions de taules</a>
+   <ul>
+      <li id="active"><a href="221_producte_cartesi.html" class="active no-ch">2.2.1 Producte cartesià</a></li>
+      <li><a href="222_combinaci_interna.html" class="daddy">2.2.2 Combinació interna</a>
+      <ul class="other-section">
+         <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="223_combinaci_externa.html" class="daddy">2.2.3 Combinació externa</a>
+      <ul class="other-section">
+         <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="23_subconsultes.html" class="daddy">2.3 Subconsultes</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="24_consultes_doperacions_de_conjunts.html" class="daddy">2.4 Consultes d'operacions de conjunts</a>
+   <ul class="other-section">
+      <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema_amb_els_resultats.html" class="no-ch">Exercicis de tot el tema, amb els resultats</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="22_combinacions_de_taules.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="222_combinaci_interna.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.1 Producte cartesià</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id35">
+<div class="iDevice emphasis0">
+<div id="ta35_1" class="block iDevice_content">
+<p> </p>
+<p>La manera més senzilla és posar les taules separades per comes, però segurament el resultat no és el que esperàvem.</p>
+<p>Per exemple podem fer la següent sentència:</p>
+<p class="codiSQL">SELECT COMARQUES.nom_c, nom <br /> FROM COMARQUES,POBLACIONS;</p>
+<blockquote>
+<p align="justify"><span style="text-decoration: underline;">Nota</span></p>
+</blockquote>
+<blockquote>
+<p align="justify">Observeu que hem posat el nom de la taula davant del camp <strong>nom_c</strong>, perquè les dues taules tenen un camp amb aquest nom. Aquesta operació s'anomena <b>qualificació</b>. Si no qualificàrem amb el nom de la taula davant, hi hauria ambigüitat, no sabria a quin camp es refereix, si el d'una taula o el de l'altra. Quan els noms dels camps són diferents i per tant no coincideixen en les dues taules, no cal qualificar el camp (com per exemple amb el camp <strong>nom</strong>)</p>
+</blockquote>
+<p align="justify">Si executem la sentència, veurem que tindrem un nombre de files inesperadament alt, <strong>18.428 files !!!</strong> I si analitzem les files veurem el perquè: s'ha combinat cada comarca amb tots els pobles (siguen de la comarca o no).</p>
+<p align="center"><img src="T6_II_2_1_1.png" height="627" width="856" /></p>
+<p align="justify">Aquesta operació s'anomena <b>PRODUCTE CARTESIÀ </b>(<i><b>cross join</b></i>), i es caracteritza en què cadascuna de les files d'una taula es combina amb totes les files de l'altra taula. El nombre de files resultant serà, doncs, el resultat de multiplicar el nombre de files d'una taula pel nombre de files de l'altra taula (en el nostre cas 34 x 542 = 18428).</p>
+<p align="justify">Rarament voldrem fer un producte cartesià. El més normal serà combinar una miqueta millor les taules. En el nostre exemple segurament ens interessarà molt més combinar <i>cada comarca amb les seues poblacions</i>.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="22_combinacions_de_taules.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="222_combinaci_interna.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>14. La clàusula HAVING | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  Consulta bàsica (part I)</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i Coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_ddl_i_dml.html" class="no-ch">2. DDL i DML</a></li>
+   <li><a href="3_client_dbeaver_installaci_i_confiuraci.html" class="no-ch">3. Client DBeaver: instal·lació i confiuració</a></li>
+   <li><a href="4_client_dbeaver_utilitzaci.html" class="no-ch">4. Client DBeaver: utilització</a></li>
+   <li><a href="5_dades_dels_exemples_i_els_exercicis.html" class="no-ch">5. Dades dels exemples i els exercicis</a></li>
+   <li><a href="6_operadors.html" class="no-ch">6. Operadors</a></li>
+   <li><a href="7_funcions.html" class="daddy">7. Funcions</a>
+   <ul class="other-section">
+      <li><a href="71_formats_de_les_dates.html" class="no-ch">7.1 Formats de les dates</a></li>
+      <li><a href="72_formats_dels_nmeros.html" class="no-ch">7.2 Formats dels números</a></li>
+   </ul>
+   </li>
+   <li><a href="8_la_consulta_select.html" class="no-ch">8. La consulta SELECT</a></li>
+   <li><a href="9_consulta_bsica.html" class="daddy">9. Consulta bàsica</a>
+   <ul class="other-section">
+      <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="10_lies_en_les_columnes.html" class="daddy">10. Àlies en les columnes</a>
+   <ul class="other-section">
+      <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="11_la_clusula_where.html" class="daddy">11. La clàusula WHERE</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="12_funcions_dagregat.html" class="daddy">12. Funcions d'agregat</a>
+   <ul class="other-section">
+      <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="13_la_clusula_group_by.html" class="daddy">13. La clàusula GROUP BY</a>
+   <ul class="other-section">
+      <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="14_la_clusula_having.html" class="active daddy">14. La clàusula HAVING</a>
+   <ul>
+      <li><a href="exercicis4.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="15_la_clusula_order_by.html" class="daddy">15. La clàusula ORDER BY</a>
+   <ul class="other-section">
+      <li><a href="exercicis5.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="16_el_predicat_distinct.html" class="daddy">16. El predicat DISTINCT</a>
+   <ul class="other-section">
+      <li><a href="exercicis6.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="17_la_clusula_limit__offset.html" class="daddy">17. La clàusula LIMIT .. OFFSET</a>
+   <ul class="other-section">
+      <li><a href="exercicis7.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="18_consulta_de_creaci_de_taules.html" class="daddy">18. Consulta de creació de taules</a>
+   <ul class="other-section">
+      <li><a href="exercicis8.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="19_ordre_amb_qu_sexecuta_una_sentncia_sql.html" class="no-ch">19. Ordre amb què s'executa una sentència SQL</a></li>
+   <li><a href="exercicis_de_tot_el_tema_amb_els_resultats.html" class="no-ch">Exercicis de tot el tema, amb els resultats</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="exercicis3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis4.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">14. La clàusula HAVING</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_1" class="block iDevice_content">
+<p> </p>
+<p>Aquesta clàusula acompanya normalment a la de <b>GROUP BY</b>, i servirà pera poder triar alguns grups que acomplesquen una determinada condició.</p>
+<p>Pot anar sense el GROUP BY, però aleshores el seu funcionament és com el WHERE, i per tant no val la pena. És a dir, en la pràctica sempre que trobem un HAVING hi haurà també el GROUP BY i servirà per seleccionar alguns grups, els que acomplesquen la condició del HAVING.</p>
+<p>També podríem dir que el HAVING és al GROUP BY, el que el WHERE és al SELECT</p>
+<p> </p>
+<p class="titolet">Sintaxi</p>
+<p class="codiSQL">SELECT &lt;columnes&gt; <br />FROM &lt;taules&gt; <br />[GROUP BY &lt;columnes&gt;] <br />HAVING &lt;condició&gt;</p>
+<p> </p>
+<p>Únicament comentarem el cas en què acompanya al GROUP BY. I com hem dit, el que fa és filtrar els grups: dels grups resultants del GROUP BY, només eixiran els que acomplesquen la condició.</p>
+<p>Aquesta condició contindrà alguna funció d'agregat o contindrà columnes incloses en el GROUP BY. Fixeu-vos que és lògic, ja que serveix per a triar grups una vegada fets, i aleshores ja no es podrà anar a un element del grup.</p>
+<p>Per exemple, aquesta sentència servirà per traure les comarques on hi ha més de 20 pobles, i el número que hi ha:</p>
+<p class="codiSQL">SELECT nom_c, COUNT(*) <br />FROM POBLACIONS<br />GROUP BY nom_c<br />HAVING COUNT(*) &gt; 20;</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id37">
+<div class="iDevice emphasis0">
+<div id="ta37_1" class="block iDevice_content">
+<p class="titolet">Exemples</p>
+<ol>
+<li value="1">
+<p>Traure aquelles poblacions que tenen més d'un de Centres Integrats de Formació Professional. La manera de saber que és un Centre Integrat és perquè el seu nom comença per CIPFP. De moment només traurem el codi de la població, i així només ens fa falta la taula INSTITUTS. Més avant aprendrem a agafar les dades de més d'una taula, i aleshores traurem també el nom de la població</p>
+</li>
+</ol>
+<div class="codiSQL">SELECT cod_m, COUNT(*)<br />FROM INSTITUTS<br />WHERE nom LIKE 'CIPFP%'<br />GROUP BY cod_m<br />HAVING COUNT(*) &gt; 1</div>
+<blockquote>
+<p>El que fem en aquesta sentència és, de la taula INSTITUTS seleccionar únicament els Centres Integrats (utilitzant l'operador LIKE per a que comencen per CIPFP)i i després agrupar pel codi de municipi. Una vegada fets els grups, eliminarem els grups que no acompleixen la condició de HAVING, és a dir, els que tenen 0 o 1 Centre Integrat. I d'aquestos grups seleccionats traurem el codi del municipi i el número de Centres Integrats (que sempre serà igual o major que 2).</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>Calcular el número d'habitants màxim, el mínim i el número d'habitants mitjà de les poblacions de les comarques amb més de 20 pobles.</p>
+</li>
+</ol>
+<div class="codiSQL">SELECT nom_c , COUNT(cod_m) AS "Número de pobles" , Max(poblacio) AS Màxim , Min(poblacio) AS Mínim , Avg(poblacio) AS Mitjana<br />FROM POBLACIONS<br />GROUP BY nom_c<br />HAVING COUNT(cod_m) &gt; 20;</div>
+<p> </p>
+<ol start="3">
+<li>
+<p>Traure l'altura mitjana, total de població i població mitjana, d'aquelles comarques que tenen una altura mitjana superior a 800 metres.</p>
+</li>
+</ol>
+<div class="codiSQL">SELECT nom_c , AVG(altura) AS "Altura mitjana" , SUM(poblacio) AS "Total població" , Avg(poblacio) AS "Població mitjana"<br />FROM POBLACIONS<br />GROUP BY nom_c<br />HAVING AVG(altura) &gt; 800;</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="exercicis3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis4.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8. Triggers | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Programació en PostgreSQL</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i Coneixements previs</a></li>
+   <li><a href="0_nota_inicial.html" class="no-ch">0. Nota inicial</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_plpgsql.html" class="no-ch">2. PL/pgSQL</a></li>
+   <li><a href="3_declaraci_de_variables.html" class="no-ch">3. Declaració de variables</a></li>
+   <li><a href="4_instruccions.html" class="no-ch">4. Instruccions</a></li>
+   <li><a href="5_funcions.html" class="daddy">5. Funcions</a>
+   <ul class="other-section">
+      <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="6_utilitzaci_de_cursors.html" class="daddy">6. Utilització de cursors</a>
+   <ul class="other-section">
+      <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="7_missatges_i_excepcions.html" class="no-ch">7. Missatges i excepcions</a></li>
+   <li id="active"><a href="8_triggers.html" class="active daddy">8. Triggers</a>
+   <ul>
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="9_creaci_daltres_objectes_basats_en_funcions.html" class="daddy">9. Creació d'altres objectes basats en funcions</a>
+   <ul class="other-section">
+      <li><a href="91_operadors.html" class="daddy">9.1 Operadors</a>
+      <ul class="other-section">
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="92_operadors_de_classe.html" class="no-ch">9.2 Operadors de classe</a></li>
+      <li><a href="93_funcions_dagregat.html" class="daddy">9.3 Funcions d'agregat</a>
+      <ul class="other-section">
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="7_missatges_i_excepcions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis1.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">8. Triggers</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_1" class="block iDevice_content">
+<p>Un <b>TRIGGER </b>o <b>disparador </b>és un procediment que se dispara quan s’acompleix una determinada condició que afecta a la Base de Dades: quan s’actualitza una o més d’una fila d’una determinada taula. En el moment de crear el trigger especificarem una funció que s'executarà quan es produesca l'event. Aquesta funció pot estar escrita en qualsevol llenguatge de programació instal·lat, i ha de tornar un valor especial: <i><b>trigger</b></i>. Juguem per tant a dues bandes. Primer amb la funció que s'executarà, i quan aquesta estiga creada, el trigger pròpiament dit.</p>
+<p>La sintaxi de creació del <i>trigger </i>és:</p>
+<div class="codi">CREATE TRIGGER nom_trig <br />
+<blockquote>{BEFORE | AFTER} {INSERT | DELETE | UPDATE} [OR {INSERT | DELETE |UPDATE} ...]<br />ON nom_taula<br />[FOR EACH {ROW | STATEMENT}]<br />EXECUTE PROCEDURE nom_funció ([paràmetres]);</blockquote>
+</div>
+<p>Lamentablement no tenim l’opció <b>OR REPLACE</b>, que ens permetria no haver d’esborrar el <i>trigger </i>en cas de voler refer-lo (cosa prou normal). Per tant, en el cas tan habitual de voler refer un <i>trigger</i>, primer l'haurem d'esborrar (<b>DROP TRIGGER</b>) i després tornar a fer-lo, <strong>encara que si és una modificació en la funció no cal tocar el</strong> <i>trigger</i>.</p>
+<p><b> BEFORE o AFTER</b> indiquen quan s’ha d’activar el <i>trigger</i>: abans de produir-se l’acció d’inserir, esborrar o modificar, o després.</p>
+<p><b>INSERT</b>, <b>DELETE </b>o <b>UPDATE </b>indiquen quina acció d’actualització de la taula provoca (o pot provocar) el <i>trigger</i>.</p>
+<p>Una actualització pot afectar més d’una fila. Aleshores ens plantegem si s’ha de disparar el <i>trigger </i>per a cada actualització de cada fila, o si només una vegada (abans o després d’actualitzar). Ho podrem especificar per mig de <b>FOR EACH ROW</b> o <b>FOR EACH STATEMENT</b>. L'opció per defecte és la segona.</p>
+<p>Suposem que volem activar un disparador sempre abans d’inserir sobre la taula <b>T1</b>, per a cada fila, per si la introducció no fóra correcta:</p>
+<div class="codi">CREATE TRIGGER trigger1 BEFORE INSERT ON T1 FOR EACH ROW<br />
+<blockquote>EXECUTE PROCEDURE ...;</blockquote>
+</div>
+<p>I ara que volem activar un altre després d’esborrar un conjunt de files (per exemple per a actualitzar una altra taula):</p>
+<div class="codi">CREATE TRIGGER trigger2 AFTER DELETE ON T1 FOR EACH STATEMENT<br />
+<blockquote>EXECUTE PROCEDURE ...;</blockquote>
+</div>
+<p>Anem a parlar ara de la funció que es crida quan es dispara el <i>trigger</i>. És una funció especial, escrita en qualsevol llenguatge definit, que com hem comentat abans ha de tornar obligatòriament un valor <b>TRIGGER</b>. De fet, amb la utilitat PgAdmin existeix l'objecte <b>TRIGGER FUNCTION</b> diferenciat de les funcions normals. Aquesta funció pot tenir paràmetres, i òbviament hauran de coincidir aquestos en la definició de la funció i en la definició del <i>trigger</i>.</p>
+<p>Quan s'arriba a la funció, que nosaltres sempre la definirem en PL/pgSQL, s'han definit unes quantes variables especials. Anem a comentar-les:</p>
+<ul>
+<li><b>NEW</b>: de tipus RECORD. Conté la fila que va a inserir-se o la nova informació, si va a actualitzar-se</li>
+</ul>
+<ul>
+<li><b>OLD</b>: de tipus RECORD. Conté la fila que va a esborrar-se o la informació vella, si va a actualitzar-se.</li>
+</ul>
+<ul>
+<li><b> TG_NAME</b>: de tipus NAME. Conté el nom del trigger que s'ha disparat i ha cridat aquesta funció (podria ser que més d'un trigger apunte a una funció, però nosaltres no ho contemplarem)</li>
+</ul>
+<ul>
+<li><b> TG_WHEN</b>: de tipus TEXT. Indica quan actua el trigger, BEFORE o AFTER.</li>
+</ul>
+<ul>
+<li><b> TG_LEVEL</b>: de tipus TEXT. Indica de quina manera actua, ROW o STATEMENT.</li>
+</ul>
+<ul>
+<li><b> TG_OP</b>: de tipus TEXT. Indica quin event ha provocat el trigger: INSERT, UPDATE o DELETE</li>
+</ul>
+<ul>
+<li><b> TG_RELID</b>: de tipus OID. Conté l'identificador de la taula que ha provocat el trigger (podria ser més d'una).</li>
+</ul>
+<ul>
+<li><b> TG_RELNAME</b>: de tipus TEXT. Conté el nom de la taula que ha provocat el trigger</li>
+</ul>
+<ul>
+<li><b> TG_NARGS</b>: de tipus INTEGER. Indica el nombre de paràmetres que se li passen.</li>
+</ul>
+<ul>
+<li><b> TG_ARGV[ ]</b>: de tipus VECTOR de TEXT. Vector que conté els paràmetres.</li>
+</ul>
+<p> Aquesta és una relació de variables prou extensiva. En la pràctica nosaltres només utilitzarem <strong>NEW</strong>, <strong>OLD</strong> i en tot cas <strong>TG_OP</strong>.</p>
+<p>Una funció de trigger ha de tornar o bé null, o bé un RECORD amb la mateixa estructura que la fila de la taula.</p>
+<p>Si un trigger de nivell de fila (<i>for each row</i>) torna un valor nul, no s'efectuaran més operacions (si és un delete, que esborra més d'una fila, si la funció torna nul ja no s'intentaran esborrar més files). En canvi si torna una cosa distinta de nul, aleshores es procedirà a l'actualització amb aquest valor. Així, per curar en salut, podem fer que l'última línia de la funció de trigger siga <b>RETURN NEW;</b> Açò pot ser molt útil, ja que si és una inserció o actualització podríem fins i tot modificar la fila NEW per a que agafe els valors que nosaltres volem (per exemple: <b>NEW.sou := NEW.sou + 500</b> si estiguérem actualitzant el sou d'un empleat).</p>
+<p>Els valors tornats per una funció trigger de nivell de <i><b>statement </b></i>són sempre ignorats, igual que un AFTER de nivell de fila (ja és massa tard per actuar), i per tant millor posar que tornen nul.</p>
+<p> </p>
+<p>Anem a veure un exemple, per impedir que es modifique el nombre d'habitants d'una localitat en més de 50000 persones (augmentant o disminuint). Només té sentit el control quan es modifique la columna <b>poblacio</b>. No té sentit ni en inserir ni en esborrar una fila. I ens convé abans d’actualitzar, per poder impedir-ho.</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE FUNCTION val_50000() RETURNS TRIGGER AS $cos$
+BEGIN
+    IF abs(NEW.poblacio - OLD.poblacio) &gt; 50000 THEN
+        RAISE EXCEPTION 'Massa diferència. No pot ser!!';
+    END IF;
+    RETURN NEW;
+END; $cos$ 
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE TRIGGER tr_val_50000 BEFORE UPDATE ON POBLACIONS
+    FOR EACH ROW
+    EXECUTE PROCEDURE val_50000();</code></pre>
+</div>
+</div>
+<p>Podríem comprovar el funcionament del trigger actualitzant alguna fila de la taula POBLACIONS:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>UPDATE POBLACIONS
+    SET poblacio = 1000
+    WHERE nom='Castelló de la Plana';</code></pre>
+</div>
+</div>
+<p>Com veieu estem intentant actualitzar la població de Castelló de la Plana a 1.000 habitants. Com que la població actual és de 173.841, hi haurà una diferència de més de 50.000 habitants, i per tant el trigger impedirà l'actualització:</p>
+<p style="text-align: center;"><img src="T7_8_1.png" alt="" width="773" height="268" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_1" class="block iDevice_content">
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><b>Nota</b></span><br /><br />En DBeaver veurem els triggers en la taula a la qual afecten.</p>
+<p style="text-align: center;"><img src="T7_8_2.png" alt="" width="1207" height="716" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_1" class="block iDevice_content">
+<p> </p>
+<p style="text-align: justify;">Mirem un altre exemple: un trigger que actualitza automàticament el nombre d'instituts de la taula <b>PROVINCIES </b>(teniu la sentència de creació en la pregunta 0 d'aquest tema) quan s'insereix o s'esborra un institut. Primer s'haurà de mirar la província de l'institut que s'està introduint o esborrant, i després s'incrementa o decrementa el nombre d'instituts de la província:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION act_inst() RETURNS TRIGGER AS $cos$
+DECLARE aux text;
+BEGIN
+    IF TG_OP='INSERT'
+    THEN
+        SELECT provincia INTO aux FROM POBLACIONS,COMARQUES
+            WHERE POBLACIONS.nom_c=COMARQUES.nom_c AND
+                POBLACIONS.cod_m = NEW.cod_m;
+        UPDATE PROVINCIES
+            SET instituts = instituts + 1
+            WHERE provincia = aux;
+    ELSE
+        SELECT provincia INTO aux FROM POBLACIONS,COMARQUES
+            WHERE POBLACIONS.nom_c=COMARQUES.nom_c AND
+                POBLACIONS.cod_m = OLD.cod_m;
+        UPDATE PROVINCIES
+            SET instituts = instituts - 1
+            WHERE provincia = aux;
+    END IF;
+    RETURN NEW;
+END; $cos$ 
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE TRIGGER tr_act_inst AFTER INSERT OR DELETE ON INSTITUTS
+    FOR EACH ROW
+    EXECUTE PROCEDURE act_inst();</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Podrem comprovar-ho, per exemple, introduint un nou registre. Abans de l'actualització, el contingut de la taula PROVINCIES és:</p>
+<p><img src="T7_8_3.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" width="345" height="114" /></p>
+<p style="text-align: justify;">Inserim ara el nou institut, corresponent a Castelló (el codi del municipi és 12040)</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>INSERT INTO INSTITUTS VALUES
+    ('12004299','IES MARJALERIA','CAMÍ LA PLANA','S/N',12003,12040);</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">El contingut de la taula PROVINCIES és ara:</p>
+<p><img src="T7_8_4.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" width="344" height="117" /></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Un últim exemple per a veure el de <b>FOR EACH STATEMENT</b>. Intentarem fer un trigger per a que actualitze la població de les províncies. Ara anem a plantejar-lo de manera que calcule una altra vegada el total de les poblacions. Per tant, segurament és millor calcular-ho quantes menys vegades millor; és a dir, si es fan unes quantes actualitzacions de les poblacions, doncs calcular al final de totes elles (i no després de cadascuna).</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION act_pobl() RETURNS TRIGGER AS $cos$
+BEGIN
+	UPDATE PROVINCIES
+	SET habitants = (SELECT SUM(poblacio)
+    					FROM COMARQUES,POBLACIONS
+    					WHERE COMARQUES.nom_c=POBLACIONS.nom_c and
+    						provincia=PROVINCIES.provincia);
+	RETURN NEW;
+END; $cos$
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE TRIGGER tr_act_pobl AFTER INSERT OR DELETE OR UPDATE
+	ON POBLACIONS FOR EACH STATEMENT
+	EXECUTE PROCEDURE act_pobl();</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Per a poder comprovar el resultat del trigger anem a fer una operació d'actualització. Per exemple anem a incrementar cada població de la comarca de l'Alcalatén en 10.000 habitants (recordeu que ja tenim un trigger que impedeix augmentar en més de 50.000).</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>UPDATE POBLACIONS
+    SET poblacio = poblacio + 10000
+    WHERE nom_c = 'Alcalatén';</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Com que la comarca té 9 pobles, la població de la província de Castelló haurà augmentat en 90.000 habitants:</p>
+<p style="text-align: justify;"><img src="T7_8_5.png" style="border: 1px solid black;" width="345" height="115" /></p>
+<p style="text-align: justify;">No oblidem executar l'operació de restar 10.000 habitants als pobles de la comarca de l'Alcalatén, i llevar l'institut de la Marjaleria, per deixar les coses com estaven (encara que només són dades de prova molt desactualitzades).</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>UPDATE POBLACIONS
+    SET poblacio = poblacio - 10000
+    WHERE nom_c = 'Alcalatén';</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>DELETE FROM INSTITUTS
+    WHERE codi = '12004299';</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><br />Per esborrar un trigger, utilitzarem la instrucció <b>DROP TRIGGER</b>:</p>
+<div class="codi" style="text-align: justify;">DROP TRIGGER nom_trigger ON nom_taula;</div>
+<p style="text-align: justify;">La modificació d'un trigger (<b>ALTER TRIGGER)</b> només permet canviar el nom d'aquest trigger.</p>
+<p style="text-align: justify;">Pot ser molt útil en ocasions desactivar un <i>trigger</i>, de manera que no tinga efecte durant una temporada, i tornar a activar-lo més avant. Està clar que sempre podríem esborrar-lo i tornar a crear-lo quan faça falta, però serà més còmoda la desactivació. Aquesta operació es fa en l'<b>ALTER TABLE</b> de la taula a la qual implica el <i>trigger</i>.</p>
+<div class="codi" style="text-align: justify;">ALTER TABLE nom_taula [ENABLE | DISABLE] TRIGGER [nom_trigger | ALL | USER ];</div>
+<p style="text-align: justify;">Com es pot comprovar, la sentència permet activar o desactivar un <i>trigger </i>en concret, o tots els <i>triggers </i>(caldrà tenir privilegis de superusuari, ja que açò inclouria els <i>triggers </i>implicits que fan acomplir les restriccions d'integritat, i això només ho podria fer un superusuari), o els <i>triggers </i>d'usuari, que són els que no són per implementar les claus externes.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="7_missatges_i_excepcions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis1.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

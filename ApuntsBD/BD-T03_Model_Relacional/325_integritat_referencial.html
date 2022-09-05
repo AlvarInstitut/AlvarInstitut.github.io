@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.5 Integritat referencial | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Model Relacional</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_estructura_del_model_relacional.html" class="no-ch">2. Estructura del Model Relacional</a></li>
+   <li class="current-page-parent"><a href="3_restriccions.html" class="current-page-parent daddy">3. Restriccions</a>
+   <ul>
+      <li><a href="31_restriccions_inherents.html" class="no-ch">3.1 Restriccions inherents</a></li>
+      <li class="current-page-parent"><a href="32_restriccions_dusuari.html" class="current-page-parent daddy">3.2 Restriccions d'usuari</a>
+      <ul>
+         <li><a href="321_restricci_de_domini.html" class="no-ch">3.2.1 Restricció de domini</a></li>
+         <li><a href="322_restricci_de_clau_principal.html" class="no-ch">3.2.2 Restricció de clau principal</a></li>
+         <li><a href="323_restricci_dunicitat.html" class="no-ch">3.2.3 Restricció d'unicitat</a></li>
+         <li><a href="324_restricci_de_valor_no_nul.html" class="no-ch">3.2.4 Restricció de valor no nul</a></li>
+         <li id="active"><a href="325_integritat_referencial.html" class="active no-ch">3.2.5 Integritat referencial</a></li>
+         <li><a href="326_restriccions_externes.html" class="no-ch">3.2.6 Restriccions externes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_tranformaci_del_m_er_al_m_relacional.html" class="daddy">4. Tranformació del M. E/R al M. Relacional</a>
+   <ul class="other-section">
+      <li><a href="41_entitats.html" class="no-ch">4.1 Entitats</a></li>
+      <li><a href="42_relacions_1n.html" class="no-ch">4.2 Relacions 1:N</a></li>
+      <li><a href="43_relacions_mn.html" class="no-ch">4.3 Relacions M:N</a></li>
+      <li><a href="44_relacions_11.html" class="no-ch">4.4 Relacions 1:1</a></li>
+      <li><a href="45_entitats_dbils.html" class="no-ch">4.5 Entitats dèbils</a></li>
+      <li><a href="46_resum_dependncies.html" class="no-ch">4.6 Resum dependències</a></li>
+      <li><a href="47_relacions_ternries.html" class="no-ch">4.7 Relacions ternàries</a></li>
+      <li><a href="48_especialitzacions.html" class="no-ch">4.8 Especialitzacions</a></li>
+      <li><a href="49_restriccions_externes.html" class="no-ch">4.9 Restriccions externes</a></li>
+      <li><a href="410_exemple.html" class="no-ch">4.10 Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="5_llenguatges_relacionals.html" class="no-ch">5. Llenguatges relacionals</a></li>
+   <li><a href="6_exercicis.html" class="no-ch">6. Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="324_restricci_de_valor_no_nul.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="326_restriccions_externes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.5 Integritat referencial</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_1" class="block iDevice_content">
+<p>Per poder explicar-la ens recolzarem en un exemple.</p>
+<div style="text-align: center;"><img src="T3_2_5_1.png" border="1" height="100" width="386" /></div>
+<p>que es podria traduir en les següents taules:</p>
+<div style="text-align: center;"><img src="T3_2_5_2.png" border="1" height="244" width="620" /></div>
+<p> </p>
+<p align="justify">Si en una taula R2 (<strong>Familiar</strong>) tenim un atribut (<strong>dni_emp</strong>) que és clau (primària o candidata) d'una altra taula R1 (<strong>Empleat </strong><strong>--&gt; dni</strong>), tot valor d'aquell atribut ha de concordar amb un valor de la clau de R1 (no he de poder posar en familiar un Dni que no el tinga cap empleat de l'empresa). L'atribut en R2 és, per tant, una <strong>CLAU EXTERNA</strong>.</p>
+<p align="justify">Ha de ser impossible posar en <strong>Familiar</strong> el Dni 18.754.321, perquè no està en l'altra, i per tant no és un Dni d'un empleat de l'empresa.</p>
+<div align="justify">Les relacions R1 i R2 no tenen per què ser distintes, poden ser la mateixa. Així, si considerem el supervisor, aquest ha de ser de l'empresa:</div>
+<div align="justify"> </div>
+<div style="text-align: center;"><img src="T3_2_5_3_2.png" height="162" width="583" style="border: 1px solid black;" /></div>
+<p>Supervisor és una clau externa, però de la mateixa taula. No tots els SGBD permeten una clau externa reflexiva.</p>
+<p>Una manera de representar les claus externes en l'esquema és la següent:</p>
+<div style="text-align: center;"><img src="T3_2_5_4_2.png" height="80" width="467" style="border: 1px solid black;" /></div>
+<p><br />On el doble subratllat indica una clau externa (que en aquest exemple, a més, forma part de la clau principal, però que no sempre serà així) que “apunta” a la clau principal de l’altra taula.</p>
+<p>L'altra manera, utilitzant la forma alternativa, serà aquesta, que també és molt fàcil d'entendre:</p>
+<div align="center"><img src="T3_3_2_5_5.png" height="139" width="260" style="border: 1px solid black;" /></div>
+<p>Açò ens impedirà que introduïm valors no correctes, no existents. ¿Però què passarà si esborrem un empleat, o si modifiquem el seu Dni? ¿Què fem amb els familiars? Doncs en principi tres podrien ser les accions a realitzar, i depenent de la situació particular triaríem una o una altra:</p>
+<ul class="unIndentedList">
+<li>No deixar esborrar-lo o modificar-lo (<strong>NO ACTION</strong>).<br />Segurament no és l'opció més adequada per a l'exemple dels empleats i els familiars. Però pensem en un altre exemple, amb clients i factures. Què fem si s'esborra un client i tenim factures d'ell? Segurament el més adequat serà no fer l'acció, és a dir, no esborrar el client (sobretot si les factures estan pendentes de cobrar ...).</li>
+<li>Esborrar també els familiars o canviar-los <strong>en cascada </strong>(<strong>CASCADE</strong>).<br />Segurament aquesta és l'opció més adequada per al cas dels familiars, que s'eliminen automàticament.</li>
+<li>Canviar el valor de la clau externa al valor nul o un valor predeterminat (<strong>SET NULL</strong> o <strong>SET DEFAULT</strong>).<br />En l'exemple dels familiars no té sentit ja que no ens interessen els familiars dels que no són de l'empresa. Però imaginem, per exemple, un proveïdor que ens ha proporcionat uns articles. Pel fet de no treballar ja amb el proveïdor i llevar-lo de la B.D. no hauríem d'eliminar els articles. Seria suficient amb donar un valor nul al proveïdor d'aquest article<a title="_ftnref1" name="_ftnref1" href="../SGBD-T03%282008%29Model%20Relacional/#_ftn1">[1]</a>.</li>
+</ul>
+<p> </p>
+<p>Hi ha SGBD que fins i tot permeten accions distintes per al cas d'esborrament i d'actualització de la clau, com per exemple Access.</p>
+<p>En <strong>Access</strong> les restriccions d'integritat (claus externes) es defineixen amb les <strong>relacions </strong>entre taules. El següent vídeo mostra com crear la clau externa de Familiar cap a Empleat, i es pot observar com la manera de representar-lo és molt pareguda a la forma alternativa que estem utilitzant.</p>
+<p style="text-align: center;"><iframe width="887" height="564" src="https://slides.com/alvarinstitut/bd-t3-video-access-relacions/embed" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p> Hem d'assegurar-nos sobretot que la tala principal està a l'esquerra en a imatge 5, i que l'altra està a la dreta marcada com "taula relacionada".</p>
+<p></p>
+<p>I aquest seria la manera de fer-ho en <strong>Base de LibreOffice</strong>, totalment paral·lela, però millor arrastrar al revès, de la relacionada a la principal</p>
+<p style="text-align: center;"><iframe width="887" height="564" src="https://slides.com/alvarinstitut/bd-t3-video-base-relacions/embed" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<hr align="left" size="1" width="33%" />
+<p> </p>
+<p><a title="_ftn1" name="_ftn1" href="../SGBD-T03%282008%29Model%20Relacional/#_ftnref1">[1]</a> Observem, però, que aquesta clau externa hauria d'admetre valors nuls. Si no ho permet, millor un valor per defecte.</p>
+<p align="justify"> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="324_restricci_de_valor_no_nul.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="326_restriccions_externes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

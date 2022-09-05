@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Fitxers tradicionals | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Bases de Dades</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Introducció</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li id="active"><a href="1_fitxers_tradicionals.html" class="active no-ch">1. Fitxers tradicionals</a></li>
+   <li><a href="2_concepte_de_base_de_dades.html" class="no-ch">2. Concepte de Base de Dades</a></li>
+   <li><a href="3_caracterstiques_desitjables_dun_sgbd.html" class="no-ch">3. Característiques desitjables d'un SGBD</a></li>
+   <li><a href="4_models_de_dades.html" class="no-ch">4. Models de dades</a></li>
+   <li><a href="5_arquitectura_a_3_nivells.html" class="no-ch">5. Arquitectura a 3 nivells</a></li>
+   <li><a href="6_llenguatges_del_sgbd.html" class="no-ch">6. Llenguatges del SGBD</a></li>
+   <li><a href="7_classificacions_dels_sgbd.html" class="no-ch">7. Classificacions dels SGBD</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_concepte_de_base_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1. Fitxers tradicionals</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id0">
+<div class="iDevice emphasis0">
+<div id="ta0_1" class="block iDevice_content">
+<p> </p>
+<p style="text-align: justify;">Els fitxers tradicionals, que són molt útils per a aplicacions menudes i concretes, comencen a donar problemes quan el sistema d'informació va creixent. Anem a veure un exemple que il·lustre l'explicació.</p>
+<p style="text-align: justify;">Suposem una empresa menuda que ha informatitzat la informació dels seus empleats. En un principi només volia una informació general d'ells, per a poder tenir uns llistats, enviar cartes a tots, etc. Així es podria plantejar un fitxer on guardar la informació dels empleats: nom, cognoms, DNI, adreça, telèfon i data de naixement. <i>Tots</i> els programes que utilitzen el fitxer (en un principi molt pocs) han de tenir la declaració dels camps del fitxer.</p>
+<div class="nota_blau">
+<p><strong><u>Nota</u></strong></p>
+<p>En els exemples que van a continuació s'ha utilitzat el llenguatge de programació C++, a pesar que vosaltres utilitzareu Java en el mòdul de programació serà Java. S'ha triat C++ per la senzillesa de l'explicació. En Java utilitzaríem objectes, i resultaria més llarga l'explicació. I a més són exemples merament il·lustratius, que no heu d'implementar</p>
+</div>
+<p>Per exemple, si són en llenguatge C++, la definició haurà de ser com la següent:</p>
+<div class="codi">... <br />struct TEmpleat <br />{ char dni[10]; <br />
+<blockquote style="margin-top: 0px; margin-bottom: 0px;">char nom[30]; <br />char adreca[30]; <br />char telefon[10]; <br />char data_n[10]</blockquote>
+} v_empleat; <br /><br />FILE *pFEmpleats; <br />...</div>
+<p>I un exemple del contingut d'aquest fitxer podria ser</p>
+<div align="center"><img src="T1_1_1.1.png" width="724" height="125" border="1" /></div>
+<p style="text-align: justify;">Suposem ara que l'empresa es planteja ampliar el seu sistema informàtic, i incloure el sou de cada empleat per a poder enviar també les nòmines. Aleshores decideix ampliar el fitxer, incloent el nou camp (sou). El primer que s'hauria de fer és canviar el fitxer, ja que l'estructura no és la mateixa. Aquest procés de substitució seria:</p>
+<ul>
+<li>Creació d'un fitxer nou amb la nova estructura</li>
+<li>Fer un programeta per a passar les dades del fitxer vell al fitxer nou</li>
+<li>Esborrar el vell i en tot cas canviar el nom del nou.</li>
+<li>Després s'hauran de modificar tots els programes que utilitzaven el fitxer per a que l'estructura del fitxer siga la correcta, tornar a compilar-los, ...</li>
+</ul>
+<div class="codi">... <br />struct TEmpleat <br />{ char dni[10]; <br />
+<blockquote style="margin-top: 0px; margin-bottom: 0px;">char nom[30]; <br />char adreca[30]; <br />char telefon[10]; <br />char data_n[10];</blockquote>
+<blockquote style="margin-top: 0px; margin-bottom: 0px;">int sou;</blockquote>
+} v_empleat; <br /><br />FILE *pFEmpleats; <br />...</div>
+<p>I un exemple del contingut d'aquest fitxer podria ser</p>
+<div align="center"><img src="T1_1_2.png" width="765" height="127" border="1" /></div>
+<p style="text-align: justify;">Suposem que l'empresa decideix continuar ampliant la informació, i ara vol mantenir informació dels distints departaments, i els empleats que pertanyen. Potser per a no haver de repetir el procés d'adequació, es construeix un fitxer nou d'empleats on està el DNI de l'empleat, el nom, el telèfon i el departament al qual pertany, ja que aquesta és la informació que li interessa.</p>
+<div class="codi">... <br />struct TEmpleat2 <br />{ char dni[10]; <br />
+<blockquote style="margin-top: 0px; margin-bottom: 0px;">char nom[30]; <br />char telefon[10]; <br />char departament[20]</blockquote>
+} v_empleat2; <br /><br />FILE *pFEmpleats2; <br />...</div>
+<p>I un exemple del contingut d'aquest fitxer podria ser ara:</p>
+<p align="center"><img src="T1_1_3.png" width="549" height="127" border="1" /></p>
+<p> </p>
+<p style="text-align: justify;">En definitiva, com el sistema està orientat als processos, es tendeix, a mida que creix el sistema, a tenir molts fitxers, a més amb molta redundància. El problema de la redundància és, a més de desaprofitar espai, la possible inconsistència de les dades. Per exemple, suposem que ara un determinat empleat canvia de telèfon. No s'haurà de canviar aquest en un fitxer, sinó en dos. Si només es canviara en un d'ells hi hauria inconsistència.</p>
+<p>Aquest seria l'esquema d'un sistema basat en fitxers tradicionals.</p>
+<p> </p>
+<div style="text-align: center;"><img src="T1_1_1.PNG" width="304" height="269" border="1" /></div>
+<p>on recordeu que en cada programa ha d'estar definida l'estructura dels fitxers que utilitza.</p>
+<p> </p>
+<p>Els problemes més importants que porta aquest sistema que ha anat creixent serien:</p>
+<p>- <b>Redundància de les dades</b>. Les mateixes dades estan en múltiples fitxers, la qual cosa comporta ocupar més lloc del necessari, i a més una dificultat de manteniment per a que les dades siguen consistents.</p>
+<p>- <b>Dificultat per a modificar l'estructura dels fitxers</b>. Ja s'ha comentat abans que s'haurien de modificar tant el fitxer (amb l'actualització del fitxer antic al nou) com els programes que l'utilitzen.</p>
+<p>- <b>Problemes de seguretat</b>. Quan hi ha molts usuaris que accedeixen als fitxers s'ha de vigilar molt que no es puguen fer actualitzacions no autoritzades</p>
+<p>Tornarem a comentar els problemes quan vegem la comparació entre fitxers tradicionals i Bases de Dades.</p>
+</div>
+</div>
+</article>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_concepte_de_base_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</section>
+</div>
+</div>
+</body></html>

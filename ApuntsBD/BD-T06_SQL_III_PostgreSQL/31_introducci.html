@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 Introducció | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-44"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  DDL i consultes d'actualització (part III)</a></li>
+   <li id="active"><a href="31_introducci.html" class="active no-ch">3.1 Introducció</a></li>
+   <li><a href="32_ddl.html" class="daddy">3.2 DDL</a>
+   <ul class="other-section">
+      <li><a href="321_tipus_de_dades.html" class="no-ch">3.2.1 Tipus de dades</a></li>
+      <li><a href="322_create_table.html" class="daddy">3.2.2 CREATE TABLE</a>
+      <ul class="other-section">
+         <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="323_restriccions_constraint.html" class="daddy">3.2.3 Restriccions (Constraint)</a>
+      <ul class="other-section">
+         <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="324_alter_table.html" class="daddy">3.2.4 ALTER TABLE</a>
+      <ul class="other-section">
+         <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="325_drop_table.html" class="no-ch">3.2.5 DROP TABLE</a></li>
+      <li><a href="326_ndex.html" class="daddy">3.2.6 Índex</a>
+      <ul class="other-section">
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="327_vistes.html" class="daddy">3.2.7 Vistes</a>
+      <ul class="other-section">
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="328_creaci_daltres_objectes_seqncies_dominis_i_tipus.html" class="daddy">3.2.8. Creació d'altres objectes: seqüències, dominis i tipus.</a>
+      <ul class="other-section">
+         <li><a href="3281_seqncies.html" class="no-ch">3.2.8.1 Seqüències</a></li>
+         <li><a href="3282_dominis.html" class="no-ch">3.2.8.2 Dominis</a></li>
+         <li><a href="3283_tipus_de_dades.html" class="no-ch">3.2.8.3 Tipus de dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="33_consultes_dactualitzaci.html" class="daddy">3.3 Consultes d'actualització</a>
+   <ul class="other-section">
+      <li><a href="331_insert.html" class="daddy">3.3.1 INSERT</a>
+      <ul class="other-section">
+         <li><a href="exercicis4.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="332_delete.html" class="daddy">3.3.2 DELETE</a>
+      <ul class="other-section">
+         <li><a href="exercicis5.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="333_update.html" class="daddy">3.3.3 UPDATE</a>
+      <ul class="other-section">
+         <li><a href="exercicis6.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_ddl.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 Introducció</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_1" class="block iDevice_content">
+<p> </p>
+<p style="text-align: justify;">Fins el moment només hem vist una sentència, el SELECT, una sentència molt potent per a poder consultar el contingut de les taules d'una Base de Dades. Però el llenguatge SQL és més complet, i permet també crear l'estructura de les taules i altres objectes. I també ens permetrà manipular la informació, introduint dades noves, eliminant-ne o modificant les ja existents.</p>
+<p style="text-align: justify;">Subdividirem, aquesta part del tema en dos grans blocs:</p>
+<ul style="text-align: justify;">
+<li><b>DDL </b>(<i>Data Definition Language</i>) llenguatge de definició de dades. És el que ens permetrà definir les estructures de dades: taules, vistes, i com veurem en altres temes, més objectes.</li>
+</ul>
+<p style="text-align: justify;"></p>
+<ul>
+<li style="text-align: justify;"><b>Consultes d'actualització</b>. No canvien cap estructura de cap taula, sinó que modifiquen el contingut de les taules. I només hi ha 3 possibilitats en la modificació del contingut: inserir noves files (INSERT), modificar les ja existents en algun camp determinat (UPDATE) o esborrar files (DELETE)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id70">
+<div class="iDevice emphasis0">
+<div id="ta70_85" class="block iDevice_content">
+<p style="text-align: justify;">Durant tota aquesta tercera part de SQL farem consultes per a crear o modificar taules, o per a modificar les dades de les taules.</p>
+<p style="text-align: justify;">No ens convé en absolut treballar sobre la Base de Dades <strong>geo</strong> ni sobre <strong>factura</strong>, ja que el que faríem seria "boicotejar-nos" entre nosaltres. Treballarem amb dues Bases de Dades noves:</p>
+<ul style="text-align: justify;">
+<li><strong>proves</strong> (connectant-nos com l'usuari <strong>proves</strong>): servirà per a fer proves, com el seu propi nom indica. Tots els exemples els farem en aquesta BD</li>
+<li><strong>f_grup_9999x</strong>, on grup és el codi del vostre grup (p.ex 1cfsg, 1cfsj, 1cfsl...), 9999 seran les 4 últimes xifres del vostre DNI, i x és la lletra del vostre NIF. És a dir, tindreu una Base de Dades per a cadascú de vosaltres, i un usuari amb el mateix nom. És on haureu de treballar els exercicis.</li>
+</ul>
+<p style="text-align: justify;">Us recomane vivament que us creeu una altra connexió per a cadascuna de les Bases de Dades anteriors. D'aquesta manera, segurament en tindreu quatre connexions: la de <strong>geo</strong>, la de <strong>factura</strong>, la de <strong>proves</strong> i la de <strong>f_grup_9999x</strong> (substituint per les dades del vostre grup i NIF)</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_ddl.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

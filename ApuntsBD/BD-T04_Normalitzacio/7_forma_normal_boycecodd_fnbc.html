@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7. Forma Normal Boyce-Codd (FNBC) | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Normalització</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_primer_forma_normal_1fn.html" class="no-ch">2. Primer Forma Normal (1FN)</a></li>
+   <li><a href="3_dependncia_funcional.html" class="no-ch">3. Dependència Funcional</a></li>
+   <li><a href="4_segona_forma_normal_2fn.html" class="no-ch">4. Segona Forma Normal (2FN)</a></li>
+   <li><a href="5_dependncia_funcional_transitiva.html" class="no-ch">5. Dependència Funcional Transitiva</a></li>
+   <li><a href="6_tercera_forma_normal_3fn.html" class="no-ch">6. Tercera Forma Normal (3FN)</a></li>
+   <li id="active"><a href="7_forma_normal_boycecodd_fnbc.html" class="active no-ch">7. Forma Normal Boyce-Codd (FNBC)</a></li>
+   <li><a href="resum.html" class="no-ch">Resum</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6_tercera_forma_normal_3fn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="resum.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7. Forma Normal Boyce-Codd (FNBC)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_1" class="block iDevice_content">
+<p>
+&nbsp;
+</p>
+<p>
+
+</p>
+<p align="justify">
+Després de la creació de la 3FN es va observar,
+posteriorment, que podien haver anomalies que no eren abordades. De tota manera són unes redundàncies ja molt extranyes, i que de vegades no valdrà la pena considerar-les.<br />
+</p>
+<p align="justify">
+Són casos de taules que encara que estan en 3FN, mantenen
+una dependència d'un atribut secundari amb part de la clau. És l'únic cas de
+dependència transitiva que se'ns podia haver escapat. Gràficament és el següent
+cas:
+</p>
+<p align="center">
+<img src="T4_7_1.png" border="1" height="105" width="186" /> 
+</p>
+<p>
+&nbsp;
+</p>
+<table border="1">
+	<tbody>
+		<tr>
+			<td>
+			<p>
+			<b>Una taula T està en FNBC si i només si està en 1FN i les úniques
+			dependències funcionals elementals són aquelles en les quals la clau principal
+			(i claus candidates) determinen un atribut.</b> 
+			</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="justify">
+La definició engloba la 3FN ja que les dependències
+transitives existeixen per mig d'atributs secundaris que no eren clau.
+</p>
+<p align="justify">
+Si la clau està formada per un únic atribut i ja estava en 3FN, la taula està
+en FNBC (com succeïa amb la 2FN).
+</p>
+<p>
+<u><b>Exemple</b></u>: Taula d'una guia de carrers
+</p>
+<p>
+<b>GUIA DE CARRERS</b>
+</p>
+<table align="center" border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td valign="top" width="95">
+			<b><u>ADREÇA</u></b>
+			</td>
+			<td valign="top" width="108">
+			<b><u>CIUTAT</u></b>
+			</td>
+			<td valign="top" width="99">
+			<b>CODPOST</b>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="95">
+			C/ Pez, 2
+			</td>
+			<td valign="top" width="108">
+			Benicarló
+			</td>
+			<td valign="top" width="99">
+			12580
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="95">
+			C/ Luz, 5
+			</td>
+			<td valign="top" width="108">
+			Benicarló
+			</td>
+			<td valign="top" width="99">
+			12580
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="95">
+			C/ Mar, 4
+			</td>
+			<td valign="top" width="108">
+			Castelló
+			</td>
+			<td valign="top" width="99">
+			12005
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="95">
+			C/ Sol, 4
+			</td>
+			<td valign="top" width="108">
+			Vinaròs
+			</td>
+			<td valign="top" width="99">
+			12500
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="95">
+			C/ Sal, 9
+			</td>
+			<td valign="top" width="108">
+			Castelló
+			</td>
+			<td valign="top" width="99">
+			12004
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="95">
+			C/ Mar, 4
+			</td>
+			<td valign="top" width="108">
+			Vinaròs
+			</td>
+			<td valign="top" width="99">
+			12500
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+Les dependències funcionals que ens trobem són:
+</p>
+<p>
+<b>ADREÇA
+. CIUTAT </b><font face="courier new,courier" size="5">→</font><b>              CODPOST</b>
+</p>
+<p>
+<b>CODPOST </b><font face="courier new,courier" size="5">→</font><b>         
+CIUTAT</b>
+</p>
+<p>
+Gràficament:
+</p>
+<p>
+&nbsp;
+</p>
+<div align="center">
+<img src="T4_7_2.png" border="1" height="100" width="261" />
+</div>
+<p align="justify">
+Si observem atentament les tuples d'una taula com aquesta,
+veurem que per a un mateix codi postal existeixen multitud de tuples que es
+corresponen amb la mateixa ciutat (tantes com adreces hi haja diferents), per
+tant existeix informació duplicada.
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Si la informació, una vegada que es dóna d'alta no varia, és més rendible que
+la dependència funcional <b>CODPOST</b> <font face="courier new,courier" size="5">→</font> <b>CIUTAT</b> es trobe en una altra taula i que
+existisca una sola tupla per a cada codi postal.
+</p>
+<p align="justify">
+A més a més, què succeeix si s'elimina la tupla amb adreça
+&quot;C/ Sol, 4&quot; de &quot;Vinaròs&quot; i la tupla &quot;C/ Mar, 4&quot;
+de &quot;Vinaròs&quot;? El que ocorre és que desapareix la relació entre el
+codi postal &quot;12500&quot; i &quot;Vinaròs&quot; i potser aquestes dades haurien
+de mantenir-se.
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Si analitzem amb més detall la taula, veuríem que en realitat es pot substituir la clau principal per <b>A + C</b> (en l'exemple <b>ADREÇA + CODPOSTAL</b>), ja que si A + B ja era clau principal, com per cada valor de C només podem tenir un de B, la combinació A + C també podrà identificar unívocament cada ocurrència de la taula. Per tant, si substituirem la clau principal, ja no tindríem dubtes de com normalitzar la taula, que serà justament com veurem a continuació:
+</p>
+<table align="center" border="0">
+	<tbody>
+		<tr>
+			<td align="center"> <img src="T4_7_1.png" border="1" height="105" width="186" /></td>
+			<td>  és equivalent a     <br />
+			</td>
+			<td><img src="T4_7_1_5.png" border="1" height="105" width="186" /> <br />
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p align="justify">
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+Posar en FNBC 
+</p>
+<p>
+L'algoritme de descomposició que s'aplica a una taula que no
+està en FNBC és el següent:
+</p>
+<p>
+Si tenim una dependència funcional <b>C <font face="courier new,courier" size="5">→</font> B</b> on <b>C </b>i <b>B</b> són disjunts, <b>C</b> és una atribut
+no primari, i <b>B</b> forma part de la clau.
+</p>
+<p>
+<b></b>S'obtenen les projeccions:
+</p>
+<blockquote>
+	<p>
+	<b>A)</b> Una <b>primera taula T1</b> amb tots els atributs, excepte <b>B</b> (el que formava part de la
+	clau principal); ara formarà part de la clau principal <b>C</b>.
+	</p>
+</blockquote>
+<blockquote>
+	<p>
+	<b>B)</b> Una <b>segona taula T2</b> amb els atributs <b>C</b> i <b>B</b>, i serà la clau principal <b>C</b> 
+	</p>
+</blockquote>
+<p>
+En l'exemple inicial d'aquesta pregunta quedarà:
+</p>
+<table border="0">
+	<tbody>
+		<tr>
+			<td valign="top"><b>A)</b>   <br />
+			</td>
+			<td>
+			<p>
+			<img src="T4_7_3.png" border="1" height="98" width="117" /> 
+			</p>
+			<p>
+			&nbsp;
+			</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"> <b>B)</b></td>
+			<td> <img src="T4_7_4.png" border="1" height="65" width="183" /></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+En l'exemple de la GUIA DE CARRERS:
+</p>
+<div align="center">
+<img src="T4_7_5.png" border="1" height="124" width="497" /> 
+</div>
+<p>
+I quedarien amb la següent informació:
+</p>
+<table align="center" border="0">
+	<tbody>
+		<tr>
+			<td><b>GUIA-ADREÇA</b></td>
+			<td>&nbsp;</td>
+			<td><b>GUIA-CODPOST</b></td>
+		</tr>
+		<tr>
+			<td> 
+			<table border="1" cellpadding="0" cellspacing="0" height="128" width="204">
+				<tbody>
+					<tr>
+						<td valign="top" width="94"><b><u>ADREÇA</u></b>
+						</td>
+						<td valign="top" width="104">
+						<b><u>CODPOST</u></b>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="94">
+						C/ Pez, 2
+						</td>
+						<td valign="top" width="104">
+						12580
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="94">
+						C/ Luz, 5
+						</td>
+						<td valign="top" width="104">
+						12580
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="94">
+						C/ Mar, 4
+						</td>
+						<td valign="top" width="104">
+						12005
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="94">
+						C/ Sol, 4
+						</td>
+						<td valign="top" width="104">
+						12500
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="94">
+						C/ Sal, 9
+						</td>
+						<td valign="top" width="104">
+						12004
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="94">
+						C/ Mar, 4
+						</td>
+						<td valign="top" width="104">
+						12500
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td>&nbsp;</td>
+			<td valign="top">
+			<table border="1" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td valign="top" width="104">
+						<b><u>CODPOST</u></b>
+						</td>
+						<td valign="top" width="94">
+						<b>CIUTAT</b>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="104">
+						12004
+						</td>
+						<td valign="top" width="94">
+						Castelló
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="104">
+						12005
+						</td>
+						<td valign="top" width="94">
+						Castelló
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="104">
+						12500
+						</td>
+						<td valign="top" width="94">
+						Vinaròs
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" width="104">
+						12580
+						</td>
+						<td valign="top" width="94">
+						Benicarló
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p>
+Per últim, observem les taules que ens queden. Voldrem tenir una taula de codis postals? Si el disseny és per a Correus o Telefònica, o una empresa gran que tinga molts client i els vol tenir distribuïts per codis postals, doncs segur que sí.
+</p>
+<p>
+Però si es tracta d'una empresa no massa gran, i que tampoc interessa massa la distribució per codis postals, segurament mantenir una taula de codis postals pot semblar fins i tot ridícul. Aleshores, mantenir la taula en 3FN i assumir la miqueta de redundància que suposa no tenir-la en FNBC, pot ser fins i tot saludable. Per això s'ha comentat des del principi del tema la importància de normalitzar fins la 3FN, i la FNBC té una importància relativa. 
+</p>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6_tercera_forma_normal_3fn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="resum.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

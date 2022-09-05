@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3 Subconsultes | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  Consultes avançades (part II)</a></li>
+   <li><a href="21_introducci.html" class="no-ch">2.1 Introducció</a></li>
+   <li><a href="22_combinacions_de_taules.html" class="daddy">2.2 Combinacions de taules</a>
+   <ul class="other-section">
+      <li><a href="221_producte_cartesi.html" class="no-ch">2.2.1 Producte cartesià</a></li>
+      <li><a href="222_combinaci_interna.html" class="daddy">2.2.2 Combinació interna</a>
+      <ul class="other-section">
+         <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="223_combinaci_externa.html" class="daddy">2.2.3 Combinació externa</a>
+      <ul class="other-section">
+         <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="23_subconsultes.html" class="active daddy">2.3 Subconsultes</a>
+   <ul>
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="24_consultes_doperacions_de_conjunts.html" class="daddy">2.4 Consultes d'operacions de conjunts</a>
+   <ul class="other-section">
+      <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema_amb_els_resultats.html" class="no-ch">Exercicis de tot el tema, amb els resultats</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="exercicis0.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis1.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3 Subconsultes</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id48">
+<div class="iDevice emphasis0">
+<div id="ta48_1" class="block iDevice_content">
+<p> </p>
+<p>Una subconsulta és una consulta dins d'una altra consulta. Aquesta subconsulta pot tenir tots els elements que hem vist fins ara.</p>
+<p align="justify">El lloc on posar una subconsulta dins de la consulta principal pot ser en la clàusual WHERE o en la clàusula HAVING (formant part d'una condició) o en el FROM, i ha d'anar entre parèntesis. Fins i tot es pot posar en el mateix SELECT, és a dir, en les columnes que van després del SELECT.</p>
+<ul>
+<li align="justify">Si va en el <b>FROM</b>, la subconsulta serà l'origen de les dades, i per tant s'executarà abans i proporcionarà les dades per a la consulta principal.</li>
+</ul>
+<ul>
+<li class="_mce_tagged_br" align="justify">Si va en el <b>WHERE </b>o el <b>HAVING </b>formarà part d'una condició, i així podrem comparar en la consulta principal un camp amb el que torne la subconsulta, per exemple. A banda de les comparacions normals que ja hem vist en el WHERE o el HAVING, podrem posar alguns operadors i predicats especials, com veurem més avant.</li>
+</ul>
+<ul>
+<li>Si va en el mateix <b>SELECT </b>normalment serà per a traure un resultat global que no afecta a la resta de la consulta</li>
+</ul>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p class="titolet">Sintaxi en el FROM</p>
+<div class="codiSQL">SELECT ... <br /> FROM ( <i>Subconsulta </i>) AS <em>Nom_Subconsulta</em></div>
+<p>Anem a posar un exemple per entendre-ho. Volem traure la mitjana de pobles per comarca. Ho podem fer de la següent manera: primer comptem quants pobles hi ha en cada comarca, i una vegada calculat això traem la mitjana.</p>
+<div class="codiSQL">SELECT AVG(quants) <br />FROM (SELECT COUNT(*) AS quants <br />          FROM POBLACIONS<br />          GROUP BY nom_c) AS S ;</div>
+<p align="justify">Observeu que és necessari posar-li un àlias a la columna de la subconsulta (quants) per a poder fer referència a ella en la consulta principal. I per una altra banda, en PostgreSQL les subconsultes que van al FROM han de tenir obligatòriament un àlies. Si no posàrem <strong>... AS S</strong> (o qualsevol altre nom) ens donaria error.</p>
+<p align="justify">Com veieu, ja té un nivell de complexitat més que acceptable. Sempre s'executa primer la subconsulta i amb les dades que proporciona, s'executa la consulta principal. Pel grau de complexitat és molt recomanable anar de dins cap a fora, és a dir, pensar bé la subconsulta, fins i tot executar-la per veure si trau el que necessitem (en l'exemple veure si trau el nombre de poblacions de cadascuna de les 34 comarques), i quan estiguem segurs que funciona bé crear la consulta principal.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id45">
+<div class="iDevice emphasis0">
+<div id="ta45_1" class="block iDevice_content">
+<p class="titolet">Sintaxi en el WHERE o el HAVING</p>
+<div class="codiSQL">SELECT ... <br /> FROM Taula <br /> WHERE camp operador ( <i>Subconsulta </i>)</div>
+<p>Podem observar que el que farem serà comparar algun camp de la taula (o una expressió amb alguna funció) amb el resultat que ve de la subconsulta.</p>
+<p>Abans de veure què podem posar com a operador o com a camp o fins i tot veure uns predicats que podrem utilitzar, posarem un exemple, per clarificar les coses. Intentarem traure les comarques amb una altura superior a la mitjana. Calcular la mitjana de les altures és fàcil, i serà la subconsulta. El que farem serà comparar l'altura de cada població amb aquesta mitjana.</p>
+<div class="codiSQL">SELECT *<br /> FROM POBLACIONS<br /> WHERE altura &gt; (SELECT AVG(altura) <br />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>    FROM POBLACIONS)</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+<p>Si executeu la consulta, veureu que l'altura de tots els pobles és superior a 300,44 que és l'altura mitjana (aproximadament, perquè ho calcula amb molta precisió)</p>
+<p>No hi ha cap problema en posar dues vegades la mateixa taula. Els camps es refereixen a la taula més propera. I funciona perfectament perquè la subconsulta ens torna un únic valor, la mitjana d'altures, i en la consulta principal es compara cada altura amb aquest valor. Posteriorment veurem com solucionar el problema de que la subconsulta torne més d'un valor.</p>
+<p>Els operadors de la condició poden ser de 3 tipus:</p>
+<ul>
+<li><strong>De comparació</strong>. És com l'exemple de dalt, però amb qualsevol operador de comparació. Es compara el camp (o l'expressió) amb el resultat de la subconsulta. Si la subconsulta només torna un valor, no hi ha més problema, però si torna més d'un valor (més d'una fila) de moment seria incorrecte (no es pot comparar un camp amb uns quants valors). Posem un altre exemple per il·lustrar. Traure la població més alta es podria fer d'aquesta manera.</li>
+</ul>
+<div class="codiSQL">SELECT *<br /> FROM POBLACIONS<br /> WHERE altura = (SELECT MAX(altura) <br />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>    FROM POBLACIONS)</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+<blockquote>No hi ha problema perquè la subconsulta torna un valor. Però anem a complicar-la anem a veure les poblacions més altes de cada comarca. Podríem intentar-lo d'aquesta manera:</blockquote>
+<div class="codiSQL"><span style="color: #ff0000;">SELECT * </span><br /><span style="color: #ff0000;"> FROM POBLACIONS</span><br /><span style="color: #ff0000;"> WHERE altura = (SELECT MAX(altura) </span><br />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote><span style="color: #ff0000;">    FROM POBLACIONS</span></blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote><span style="color: #ff0000;">    GROUP BY nom_c)</span></blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+<blockquote>Però ens donaria el següent error:</blockquote>
+<div align="center">
+<blockquote><img src="T6_II_3_1.png" height="544" width="1006" /></blockquote>
+</div>
+<div align="justify">
+<blockquote>I és que la subconsulta torna 34 valors (un per cada comarca), i d'aquesta manera no es pot comparar el valor de l'esquerra del igual amb els 34 valors de la dreta. Per a solucionar el problema de quan torna més d'un valor podem utilitzar els predicats <b>ALL </b>, <b>ANY </b>, <b>SOME</b>.</blockquote>
+<blockquote>
+<ul>
+<li>Si utilitzem <b>ALL</b> el resultat serà cert si la comparació és certa amb <strong>TOTS</strong> els valors que torna la subconsulta.</li>
+<li>Si utilitzem <b>ANY</b> o <b>SOME </b>(que són sinònims) el resultat serà cert si la comparació és certa amb <strong>ALGUN</strong> valor de la subconsulta<b>.</b></li>
+</ul>
+<p>En el nostre exemple, segurament ens convindria <b>ANY</b></p>
+</blockquote>
+</div>
+<div class="codiSQL">SELECT * <br /> FROM POBLACIONS<br /> WHERE altura = ANY (SELECT MAX(altura) <br />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>    FROM POBLACIONS</blockquote>
+<blockquote>    GROUP BY nom_c)</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+<blockquote>Aquesta consulta no funcionarà bé del tot, ja que seleccionarà totes les poblacions que coincideixen amb alguna de les altures màximes, siguen de la seua comarca o no. Així per exemple, l'altura màxima de la comarca de la <strong>Plana Alta </strong>és la <strong>Serratella, </strong>amb 781 metres, que efectivament apareix al llistat. Però també apareix <strong>Castelló</strong>, que té una altura de 30 metres. I apareix perquè l'altura màxima de la comarca <strong>Ribera Baixa</strong> dóna la casualitat que és 30 metres (Almussafes). Ja dependrem a fer bé aquesta consulta en els exemples posteriors, però per al fet de comparar amb molts valors ens va bé.</blockquote>
+<blockquote></blockquote>
+<ul>
+<li>
+<div align="justify"><strong>L'operador IN</strong>. No serà problema que la subconsulta torne un valor o molts. La condició serà certa si el valor del camp (o de l'expressió) està entre la llista de valors que torna la subconsulta. També poden utilitzar NOT IN, i la condició serà certa quan el valor del camp no està entre la llista. Per exemple, una altra manera de traure les poblacions que no tenen institut, que la vista en les combinacions externes. En la subconsulta traem els codis de municipi de la taula INSTITUTS, i per tant són els pobles que tenen institut, i en la consulta principal volem els que no estan en aquesta llista</div>
+</li>
+</ul>
+<div class="codiSQL">SELECT *<br />FROM POBLACIONS<br />WHERE cod_m NOT IN (SELECT cod_m<br />                        FROM INSTITUTS)</div>
+<ul>
+<li><strong>L'operador EXISTS</strong>. És segurament el més incòmode. No es compara un camp (o expressió) amb la subconsulta, sinó únicament es posa <b>[NOT] EXISTS (<i>subconsulta</i>)</b> . La condició serà certa si la subconsulta torna <strong>alguna fila</strong>, i no serà certa si no torna cap fila. Intentem fer el mateix exemple d'abans, el dels pobles sense institut. Hem d'aconseguir que la subconsulta no tinga cap fila en el cas dels que no tenen institut. De paraula ho podem dir així: volem els pobles per als quals no existeix cap fila en INSTITUTS amb el mateix codi de municipi. Ara ja es pot intuir per on van els tirs:</li>
+</ul>
+<div class="codiSQL">SELECT *<br />FROM POBLACIONS<br />WHERE NOT EXISTS (SELECT *<br />                      FROM INSTITUTS<br />                      WHERE cod_m= POBLACIONS.cod_m)</div>
+<blockquote>
+<p>mireu com si en la subconsulta posem un camp (en l'exemple cod_m), si el camp és de la taula (o taules) de la subconsulta, es referirà a ell, per això si volem fer referència a un camp de la taula o taules de la consulta principal hem de posar el nom de la taula davant.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id49">
+<div class="iDevice emphasis0">
+<div id="ta49_1" class="block iDevice_content">
+<p class="titolet">Sintaxi en el SELECT</p>
+<div class="codiSQL">SELECT ... ( <i>Subconsulta </i>)<br /> FROM Taula</div>
+<p>Anem a posar també un exemple per entendre-ho. Anem a calcular la diferència de l'altura de cada població amb la mitjana. La mitjana és un resultat global indepentent de la resta de la consulta, que en aquest cas és molt senzilla perquè hem d'agafar informació simple de les poblacions. La subconsulta també és molt senzilla, perquè només hem de calcular la mitjana d'altures).</p>
+<div class="codiSQL">SELECT nom, altura, altura - (SELECT AVG(altura) FROM POBLACIONS)<br />FROM POBLACIONS</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id46">
+<div class="iDevice emphasis0">
+<div id="ta46_1" class="block iDevice_content">
+<p class="titolet">Exemples</p>
+<ol>
+<li>
+<p><b> Traure l'altura mitjana de comarca més gran i la més menuda.</b></p>
+<p>Ens fa falta prèviament l'altura mitjana de cada comarca, i això serà la subconsulta. No oblidem posar un àlias al camp de la subconsulta, per poder fer referència en la consulta principal. I no oblidem tampoc que les subconsultes en el FROM han de tenir àlies.</p>
+<div class="codiSQL">SELECT MAX(mitjana),MIN(mitjana)<br />FROM (SELECT AVG(altura) AS mitjana<br />          FROM POBLACIONS<br />          GROUP BY nom_c) AS S;</div>
+<p></p>
+</li>
+<li>
+<p><b> Traure tota la informació de les poblacions que tenen més de 5 instituts.</b></p>
+<p>Podem pensar en una subconsulta on estiguen els codis de municipi de les poblacions que tenen més de 5 instituts (es consulta en la teula INSTITUTS agrupant per codi_m i comptant el número de files per a que siga major que 5).</p>
+<div class="codiSQL">SELECT *<br />FROM POBLACIONS<br />WHERE cod_m IN (SELECT cod_m<br />                    FROM INSTITUTS<br />                    GROUP BY cod_m<br />                    HAVING count(*) &gt; 5)</div>
+<p></p>
+</li>
+<li>
+<p><b> Traure tota la informació de la població més alta i de la més baixa.</b></p>
+<p>Ens plantegem 2 subconsultes, la que trau l'altura màxima i la que trau l'altura mínima (en una única sobconsulta ens tornaria valors en 2 columnes, i estaria més complicat). Senzillament serà traure tota la informació de les poblacions que tenen una altura igual al que torna una subconsulta o al que torna l'altra.</p>
+<div class="codiSQL">SELECT *<br />FROM POBLACIONS<br />WHERE altura = (SELECT MAX(altura)<br />                    FROM POBLACIONS)<br />   OR altura = (SELECT MIN(altura)<br />                    FROM POBLACIONS);</div>
+<p></p>
+</li>
+<li>
+<p><b> Traure la població més alta de cada comarca.</b></p>
+<p>La dificultat està en que ha de ser la màxima de les altures de la seua comarca. Per tant, en la subconsulta hem de fer referència a la comarca en qüestió. Com sempre estem tractant la taula POBLACIONS, tant en la consulta com en la subconsulta, haurem de posar un nom a la de la consulta principal, per poder fer referència a ella des de la subconsulta.</p>
+<div class="codiSQL">SELECT *<br />FROM POBLACIONS T1<br />WHERE altura = (SELECT MAX(altura)<br />                    FROM POBLACIONS<br />                    WHERE nom_c= T1.nom_c);</div>
+<p>En el resultat obtenim 35 poblacions, quan només hi ha 34 comarques. La raó és que a l'Alcoià, hi ha 2 poblacions amb l'altura màxima (816 metres), per tant el resultat és correcte</p>
+</li>
+<li>
+<p><b> Obtenir el nom de la comarca i la província de les comarques que tenen una altura mitjana més alta que la mitjana de totes les poblacions.</b></p>
+<p>La subconsulta serà prou senzilla: la mitjana d'altures de les poblacions. En la consulta principal haurem d'agrupar per cada comarca i calcular la mitjana d'altures de les poblacions, i comparar-la amb la mitjana que ens ve de la subconsulta. Com que demana també la província, ens fa falta també la taula COMARQUES, i per tant l'haurem de reunir amb POBLACIONS; en aquesta ocasió ho hem fet posant la condicó en el WHERE.</p>
+<div class="codiSQL">SELECT COMARQUES.nom_c, provincia, AVG(altura)<br />FROM COMARQUES , POBLACIONS<br />WHERE COMARQUES.nom_c=POBLACIONS.nom_c<br />GROUP BY COMARQUES.nom_c, provincia<br />HAVING AVG(altura) &gt; (SELECT AVG(altura)<br />                          FROM POBLACIONS)</div>
+<p></p>
+</li>
+<li>
+<p><b> Traure el nom dels departaments, el número d'empleats i el percentatge que suposa respecta al total d'empleats.</b></p>
+<p>Tota la informació la podem traure d'una reunió entre les taules COMARQUES i POBLACIONS (per a comptar quants pobles hi ha en cada comarca), però per a poder calcular el percentatge necessitem el número total de poblacions, que el podem calcular amb una senzilla subconsulta. El lloc més còmode és en el SELECT. La reunió l'hem feta en aquesta ocasió amb el USING.</p>
+<div class="codiSQL">SELECT COMARQUES.nom_c, provincia, COUNT(cod_m), COUNT (cod_m)*100.0/(SELECT COUNT(*) FROM POBLACIONS)<br />    FROM COMARQUES INNER JOIN POBLACIONS USING(nom_c)<br />    GROUP BY 1,2;</div>
+</li>
+</ol>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="exercicis0.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis1.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

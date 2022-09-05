@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. Tercera Forma Normal (3FN) | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Normalització</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_primer_forma_normal_1fn.html" class="no-ch">2. Primer Forma Normal (1FN)</a></li>
+   <li><a href="3_dependncia_funcional.html" class="no-ch">3. Dependència Funcional</a></li>
+   <li><a href="4_segona_forma_normal_2fn.html" class="no-ch">4. Segona Forma Normal (2FN)</a></li>
+   <li><a href="5_dependncia_funcional_transitiva.html" class="no-ch">5. Dependència Funcional Transitiva</a></li>
+   <li id="active"><a href="6_tercera_forma_normal_3fn.html" class="active no-ch">6. Tercera Forma Normal (3FN)</a></li>
+   <li><a href="7_forma_normal_boycecodd_fnbc.html" class="no-ch">7. Forma Normal Boyce-Codd (FNBC)</a></li>
+   <li><a href="resum.html" class="no-ch">Resum</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5_dependncia_funcional_transitiva.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_forma_normal_boycecodd_fnbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6. Tercera Forma Normal (3FN)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<table border="1">
+	<tbody>
+		<tr>
+			<td>
+			<p>
+			<b>Una taula es diu que està en <u>3FN</u> si i només si es
+			compleixen dues condicions:</b>
+			</p>
+			<ul class="unIndentedList">
+				<li>
+				<b>Es troba
+				en 2FN.</b></li>
+				<li>
+				<b>No
+				existeixen atributs no primaris (atributs que no formen part de la clau
+				principal) que són transitivament dependents de cada clau candidata de la
+				taula.</b></li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p align="justify">
+Açò vol dir que un atribut secundari només es pot conèixer a
+través de la clau principal o claus candidates de la taula i no per mig d'un
+altre atribut no primari.
+</p>
+<p align="justify">
+En el graf de dependències només han de mostrar-se les
+dependències transitives i no aquelles dependències funcionals a partir de les
+claus candidates, perquè se sap que per ser claus ja coneixen tots els
+atributs.
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Exemple: A és la clau principal, B és una clau candidata i
+es donen les següents dependències:
+</p>
+<p>
+<b>A            </b><font face="courier new,courier" size="5">→</font><b>
+B               B </b><font face="courier new,courier" size="5">→</font><b>            A          C </b><font face="courier new,courier" size="5">→</font><b>            D</b>
+</p>
+<p>
+<b>A            </b><font face="courier new,courier" size="5">→</font><b>
+C               B </b><font face="courier new,courier" size="5">→</font><b>            C               C </b><font face="courier new,courier" size="5">→</font><b>            E</b>
+</p>
+<p>
+<b>A            </b><font face="courier new,courier" size="5">→</font><b>
+D               B </b><font face="courier new,courier" size="5">→</font><b>            D</b>
+</p>
+<p>
+<b>A </b><font face="courier new,courier" size="5">→</font><b>           
+E               B </b><font face="courier new,courier" size="5">→</font><b>            E</b>
+</p>
+<p>
+El graf queda del següent mode:<br />
+</p>
+<table align="center" border="0">
+	<tbody>
+		<tr>
+			<td><img src="T4_6_1.png" border="1" height="96" width="230" /> <br />
+			</td>
+			<td>    O bé     <br />
+			</td>
+			<td> <img src="T4_6_2.png" border="1" height="112" width="277" /></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p>
+Les fletxes que mostren les dependències funcionals que té
+la clau candidata B no es representen (com hem dit anteriorment) perquè són
+evidents i no simplifiquen la visió del graf. A més a més, per a la
+normalització, no es necessiten per a res; pel contrari, solen complicar
+l'anàlisi.
+</p>
+<p>
+La taula T no està en 3FN ja que els atributs D i E són
+transitivament dependents respecte de la clau A.
+</p>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+Posar en 3FN 
+</p>
+<p>
+Per a normalitzar una taula que no estiga en tercera forma normal, és a dir, que tinga dependències transitives, descompondrem la taula en més d'una taula: 
+</p>
+<p>
+<b>A)</b> Una <b>primera taula</b> amb la clau principal més els atributs que no depenen transitivament 
+</p>
+<blockquote>
+	<p>
+	<img src="T4_6_3.png" border="1" width="194" />
+	</p>
+</blockquote>
+<p>
+<b>B)</b> Una <b>segona taula</b> amb els atributs que depenen transitivament, més l'atribut de
+qui depenen, que serà clau principal
+</p>
+<blockquote>
+	<p>
+	<img src="T4_6_4.png" border="1" height="75" width="191" /><br />
+	</p>
+</blockquote>
+<p>
+Es farà una descomposició per cada dependència transitiva
+que hi haja que afecte a camps distints.
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Per a l'exemple dels atributs NUMMAT, GRUP i AULAGRUP tenim
+el següent graf:
+</p>
+<div align="center">
+<img src="T4_6_5.png" border="1" height="92" width="402" />
+<br />
+</div>
+<br />
+<p>
+Una vegada descomposta la taula en dos segons l'algoritme
+anterior, tindrem dues taules
+</p>
+<p>
+<b> </b>
+</p>
+<div align="center">
+<img src="T4_6_6.png" border="1" height="92" width="548" />
+</div>
+<p>
+Les dues taules resultants sí que es troben en 3FN.
+</p>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5_dependncia_funcional_transitiva.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_forma_normal_boycecodd_fnbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

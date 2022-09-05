@@ -1,0 +1,999 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Auto-avaluació | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-82"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: MODEL ENTITAT-RELACIÓ</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_exemple.html" class="no-ch">2. Exemple</a></li>
+   <li><a href="3_les_entitats_del_model_er.html" class="daddy">3. Les Entitats del Model E/R</a>
+   <ul class="other-section">
+      <li><a href="31_entitats.html" class="daddy">3.1 Entitats</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="32_atributs.html" class="daddy">3.2 Atributs</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple0.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_dominis.html" class="no-ch">3.3 Dominis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="4_les_relacions_del_model_er.html" class="daddy">4. Les Relacions del Model E/R</a>
+   <ul class="other-section">
+      <li><a href="41_relaci.html" class="daddy">4.1 Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple1.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="42_atributs_de_relaci.html" class="daddy">4.2 Atributs de Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple2.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="43_tipus_de_relaci_o_cardinalitat.html" class="daddy">4.3 Tipus de Relació o Cardinalitat</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple3.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   <li><a href="5_relacions_de_grau_major_que_dos.html" class="no-ch">5. Relacions de grau major que dos</a></li>
+   <li><a href="6_model_er_ests.html" class="daddy">6. Model E/R Estès</a>
+   <ul class="other-section">
+      <li><a href="61_cardinalitat_mxima_i_mnima_participaci_total.html" class="daddy">6.1 Cardinalitat màxima i mínima. Participació total.</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple4.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="62_entitats_dbils.html" class="no-ch">6.2 Entitats dèbils</a></li>
+      <li><a href="63_generalitzaci_i_herncia.html" class="daddy">6.3 Generalització i herència</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple5.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_restriccions_externes.html" class="no-ch">7. Restriccions externes</a></li>
+   <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   <li><a href="informaci_addicional.html" class="no-ch">Informació addicional</a></li>
+   <li id="active"><a href="autoavaluaci.html" class="active no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="informaci_addicional.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Auto-avaluació</h1></div>
+<div class="iDevice_wrapper ClozeIdevice em_iDevice em_iDevice_question" id="id40">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Omplir els espais en blanc</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta40_21" class="block instructions iDevice_content">
+Has de reomplir els espais en blanc marcats amb la paraula correcta (no importen majúscules i minúscules)<br />
+
+</div>
+
+    <div class="activity" id="activity-40_22">
+<form name="cloze-form-40_22" action="#" class="activity-form cloze-activity-form">
+<div id="cloze40_22">
+<input type="hidden" name="clozeFlag40_22.strictMarking" id="clozeFlag40_22.strictMarking" value="false"/>
+
+<input type="hidden" name="clozeFlag40_22.checkCaps" id="clozeFlag40_22.checkCaps" value="false"/>
+
+<input type="hidden" name="clozeFlag40_22.instantMarking" id="clozeFlag40_22.instantMarking" value="false"/>
+
+<input type="hidden" name="clozeVar40_22.feedbackId" id="clozeVar40_22.feedbackId" value="ta40_23"/>
+
+El conjunt de programes que permeten gestionar Base de Dades s'anomena Sistema        
+<label for="clozeBlank40_22.0" class="sr-av">Buits (1):</label>
+<input class="autocomplete-off" type="text" value="" id="clozeBlank40_22.0" style="width:6em" />
+<span style="display:none" id="clozeAnswer40_22.0">JXUwMDFmJXUwMDIyJXUwMDE2JXUwMDA3JXUwMDFiJXUwMDFk
+</span>
+       de  Bases de      
+<label for="clozeBlank40_22.1" class="sr-av">Buits (2):</label>
+<input class="autocomplete-off" type="text" value="" id="clozeBlank40_22.1" style="width:5em" />
+<span style="display:none" id="clozeAnswer40_22.1">JXUwMDFjJXUwMDI1JXUwMDA1JXUwMDAxJXUwMDE2
+</span>
+     
+
+<div class="block iDevice_buttons">
+<p>
+<input class="button" type="submit" name="submit40_22" value="Envia"  id="submit40_22" />
+
+<input type="button" name="restart40_22" value="Reinicia" style="display:none" id="restart40_22" onclick="$exe.cloze.restart('40_22')" />
+
+ 
+<input type="button" name="40_22showAnswersButton" value="Mostra respostes" style="display:none" id="showAnswersButton40_22" onclick="$exe.cloze.fillInputs('40_22')" />
+
+<span class="js-hidden js-warning">Habilita el javascript</span>
+</p>
+</div>
+<div id="clozeScore40_22"></div>
+</div>
+</form>
+</div>
+    <div id="ta40_23" class="feedback js-feedback iDevice_content" style="display:none">
+Gestor, home, si ha de gestionar  serà gestor, no? I què ha de gestionar? Doncs dades...<br />
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper TrueFalseIdevice em_iDevice em_iDevice_question" id="id43">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Preguntes Veritat/Fals</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta43_16" class="block iDevice_content">
+Contesta Vertader o fals
+
+</div>
+<div class="question">
+<form name="true-false-form-0b43" action="#" class="activity-form">
+<h3 class="js-sr-av">Qüestió 1</h3>
+<div id="taquestion0b43" class="block iDevice_content">
+El Model Entitat-Relació és un model d'alt nivell, més proper a la persona que a la màquina.
+
+</div>
+<div class="iDevice_hint">
+<h4 class="iDevice_hint_title">Pista</h4>
+<div class="iDevice_hint_content js-hidden">
+
+</div>
+</div>
+<p class="iDevice_answer js-required">
+<label for="true0b43"><input type="radio" name="option0b43" id="true0b43" class="exe-radio-option exe-radio-option-0-2-0b43-truefalse" /> Veritat</label> 
+<label for="false0b43"><input type="radio" name="option0b43" id="false0b43" class="exe-radio-option exe-radio-option-1-2-0b43-truefalse" /> Mentida</label>
+</p>
+</form>
+<div id="s0b43" class="feedback js-feedback js-hidden">
+<h4 class="js-sr-av">Realimentació</h4>
+<p><strong id="s0b43-result" class="right">Veritat</strong></p>
+
+
+</div>
+</div>
+<div class="question">
+<form name="true-false-form-1b43" action="#" class="activity-form">
+<h3 class="js-sr-av">Qüestió 2</h3>
+<div id="taquestion1b43" class="block iDevice_content">
+Quan es dissenya un esquema en el Model Entitat-Relació es comença per les relacions, i després  es dedueixen les entitats que hi participen.
+
+</div>
+<div class="iDevice_hint">
+<h4 class="iDevice_hint_title">Pista</h4>
+<div class="iDevice_hint_content js-hidden">
+
+</div>
+</div>
+<p class="iDevice_answer js-required">
+<label for="true1b43"><input type="radio" name="option1b43" id="true1b43" class="exe-radio-option exe-radio-option-0-2-1b43-truefalse" /> Veritat</label> 
+<label for="false1b43"><input type="radio" name="option1b43" id="false1b43" class="exe-radio-option exe-radio-option-1-2-1b43-truefalse" /> Mentida</label>
+</p>
+</form>
+<div id="s1b43" class="feedback js-feedback js-hidden">
+<h4 class="js-sr-av">Realimentació</h4>
+<p><strong id="s1b43-result" class="wrong">Mentida</strong></p>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice em_iDevice_question" id="id44">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Elecció múltiple</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-44_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion44_2" class="block question iDevice_content">
+En cada entitat triem un atribut (o conjunt d'atributs) que puga representar unívocament cada registre. L'anomenarem:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i44_5" class="sr-av"><a href="#answer-44_5">Opció 1</a></label><input type="radio" name="option44_2" id="i44_5" class="exe-radio-option exe-radio-option-0-3-44_2-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-44_5"><a name="answer-44_5"></a>
+<div id="taans44_5" class="block iDevice_content">
+Clau Externa
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i44_41" class="sr-av"><a href="#answer-44_41">Opció 2</a></label><input type="radio" name="option44_2" id="i44_41" class="exe-radio-option exe-radio-option-1-3-44_2-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-44_41"><a name="answer-44_41"></a>
+<div id="taans44_41" class="block iDevice_content">
+Clau Principal
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i44_44" class="sr-av"><a href="#answer-44_44">Opció 3</a></label><input type="radio" name="option44_2" id="i44_44" class="exe-radio-option exe-radio-option-2-3-44_2-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-44_44"><a name="answer-44_44"></a>
+<div id="taans44_44" class="block iDevice_content">
+Clau candidata
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Realimentació</h4>
+<div id="sa0b44_2" class="feedback js-hidden"><a name="sa0b44_2"></a>
+<div id="taf44_5" class=" iDevice_content">
+Noooo!!
+
+</div>
+</div>
+<div id="sa1b44_2" class="feedback js-hidden"><a name="sa1b44_2"></a>
+<div id="taf44_41" class=" iDevice_content">
+Correcte !!  També s'anomena clau primària
+
+</div>
+</div>
+<div id="sa2b44_2" class="feedback js-hidden"><a name="sa2b44_2"></a>
+<div id="taf44_44" class=" iDevice_content">
+No. Les claus candidates són les que <i>servirien </i>com a claus principals. Però de entre totes elles triem una, que serà la <b>clau principal</b>
+
+</div>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solució</h4>
+<ol>
+<li><a href="#answer-44_5">Incorrecte</a><span> (<a href="#sa0b44_2">Realimentació</a>)</span></li>
+<li><a href="#answer-44_41">Opció correcta</a><span> (<a href="#sa1b44_2">Realimentació</a>)</span></li>
+<li><a href="#answer-44_44">Incorrecte</a><span> (<a href="#sa2b44_2">Realimentació</a>)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultiSelectIdevice em_iDevice em_iDevice_question" id="id45">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Selecció múltiple</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<div id="actitity-45_29">
+<form name="multi-select-form-45_29" action="#" class="activity-form multi-select-form">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion45_29" class="block question iDevice_content">
+Les relacions es representen gràficament com:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op45_290" class="sr-av"><a href="#answer-45_32">Opció 1</a></label><input type="checkbox" id="op45_290" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-45_32"><a name="answer-45_32"></a>
+<div id="taans45_32" class="block iDevice_content">
+Un cercle
+
+</div>
+</div>
+<div class="iDevice_answer-feedback feedback" id="feedback-45_290" style="display:none"></div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op45_291" class="sr-av"><a href="#answer-45_47">Opció 2</a></label><input type="checkbox" id="op45_291" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-45_47"><a name="answer-45_47"></a>
+<div id="taans45_47" class="block iDevice_content">
+Un rectàngle
+
+</div>
+</div>
+<div class="iDevice_answer-feedback feedback" id="feedback-45_291" style="display:none"></div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op45_292" class="sr-av"><a href="#answer-45_49">Opció 3</a></label><input type="checkbox" id="op45_292" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-45_49"><a name="answer-45_49"></a>
+<div id="taans45_49" class="block iDevice_content">
+Un rombe
+
+</div>
+</div>
+<div class="iDevice_answer-feedback feedback" id="feedback-45_292" style="display:none"></div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op45_293" class="sr-av"><a href="#answer-45_51">Opció 4</a></label><input type="checkbox" id="op45_293" value="True" />
+</p>
+<div class="iDevice_answer-content" id="answer-45_51"><a name="answer-45_51"></a>
+<div id="taans45_51" class="block iDevice_content">
+Un romboide
+
+</div>
+</div>
+<div class="iDevice_answer-feedback feedback" id="feedback-45_293" style="display:none"></div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op45_294" class="sr-av"><a href="#answer-45_38">Opció 5</a></label><input type="checkbox" id="op45_294" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-45_38"><a name="answer-45_38"></a>
+<div id="taans45_38" class="block iDevice_content">
+Una elipse
+
+</div>
+</div>
+<div class="iDevice_answer-feedback feedback" id="feedback-45_294" style="display:none"></div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="op45_295" class="sr-av"><a href="#answer-45_40">Opció 6</a></label><input type="checkbox" id="op45_295" value="False" />
+</p>
+<div class="iDevice_answer-content" id="answer-45_40"><a name="answer-45_40"></a>
+<div id="taans45_40" class="block iDevice_content">
+Un quadrat
+
+</div>
+</div>
+<div class="iDevice_answer-feedback feedback" id="feedback-45_295" style="display:none"></div>
+</div>
+</div>
+<div class="block iDevice_buttons feedback-button js-required">
+<p>
+<input type="button" name="submitSelect" class="feedbackbutton multi-select-feedback-toggler" value="Mostra realimentació" id="multi-select-feedback-toggler-6-45_29" /> 
+</p>
+</div>
+<div id="f45_29" class="js-hidden js-feedback">
+<h4 class="js-sr-av">Realimentació</h4>
+
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solució</h4>
+<ol>
+<li><a href="#answer-45_32" class="wrong">Incorrecte</a></li>
+<li><a href="#answer-45_47" class="wrong">Incorrecte</a></li>
+<li><a href="#answer-45_49" class="right">Correcte</a></li>
+<li><a href="#answer-45_51" class="right">Correcte</a></li>
+<li><a href="#answer-45_38" class="wrong">Incorrecte</a></li>
+<li><a href="#answer-45_40" class="wrong">Incorrecte</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper ClozeIdevice em_iDevice em_iDevice_question" id="id46">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Activitat de espais en blanc</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta46_21" class="block instructions iDevice_content">
+Has de reomplir els espais en blanc marcats amb la paraula correcta (no importen majúscules i minúscules)
+
+</div>
+
+    <div class="activity" id="activity-46_22">
+<form name="cloze-form-46_22" action="#" class="activity-form cloze-activity-form">
+<div id="cloze46_22">
+<input type="hidden" name="clozeFlag46_22.strictMarking" id="clozeFlag46_22.strictMarking" value="false"/>
+
+<input type="hidden" name="clozeFlag46_22.checkCaps" id="clozeFlag46_22.checkCaps" value="false"/>
+
+<input type="hidden" name="clozeFlag46_22.instantMarking" id="clozeFlag46_22.instantMarking" value="true"/>
+
+Quan totes les ocurrències d'una entitat entren a formar part  d'una relació es diu que l'entitat participa en la relació de forma    
+<label for="clozeBlank46_22.0" class="sr-av">Buits (1):</label>
+<input class="autocomplete-off" type="text" value="" id="clozeBlank46_22.0" style="width:5em" onkeyup="$exe.cloze.change(this)" />
+<span style="display:none" id="clozeAnswer46_22.0">JXUwMDJjJXUwMDFiJXUwMDFiJXUwMDE1JXUwMDBk
+</span>
+   , i ho represemtem amb una línia doble. Quan no passa l'anterior, diem que participa de forma    
+<label for="clozeBlank46_22.1" class="sr-av">Buits (2):</label>
+<input class="autocomplete-off" type="text" value="" id="clozeBlank46_22.1" style="width:7em" onkeyup="$exe.cloze.change(this)" />
+<span style="display:none" id="clozeAnswer46_22.1">JXUwMDI4JXUwMDExJXUwMDEzJXUwMDExJXUwMDBhJXUwMDA4JXUwMDBk
+</span>
+   .
+
+<div class="block iDevice_buttons">
+<p>
+<input type="button" value="Puntuació aconseguida" id="getScore46_22" onclick="$exe.cloze.showScore('46_22')" />
+ 
+<input type="button" name="46_22showAnswersButton" value="Mostra/Amaga les respostes" style="" id="showAnswersButton46_22" onclick="$exe.cloze.toggleAnswers('46_22')" />
+
+<span class="js-hidden js-warning">Habilita el javascript</span>
+</p>
+</div>
+<div id="clozeScore46_22"></div>
+</div>
+</form>
+</div>
+    <div id="ta46_23" class="feedback js-feedback iDevice_content" style="display:none">
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice em_iDevice_question" id="id47">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Elecció múltiple</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-47_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion47_2" class="block question iDevice_content">
+Si volem guardar informació sobre llibres i autors, sembla clar que tindrem les entitats <b>AUTOR </b>i <b>LLIBRE</b>, i una <b>relació </b>entre elles. Com serà aquesta relació?
+
+</div>
+<div class="iDevice_hint">
+<h4 class="iDevice_hint_title">Pista</h4>
+<div class="iDevice_hint_content js-hidden">
+<div id="tahint47_2" class="block iDevice_content">
+
+<p>
+Recorda que has de comptar:
+</p>
+<p>
+Per a un autor determinat, quants llibres pot escriure?
+</p>
+<p>
+Per a un llibre determinat: quants autors pot tenir?
+</p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i47_5" class="sr-av"><a href="#answer-47_5">Opció 1</a></label><input type="radio" name="option47_2" id="i47_5" class="exe-radio-option exe-radio-option-0-4-47_2-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-47_5"><a name="answer-47_5"></a>
+<div id="taans47_5" class="block iDevice_content">
+1:1
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i47_42" class="sr-av"><a href="#answer-47_42">Opció 2</a></label><input type="radio" name="option47_2" id="i47_42" class="exe-radio-option exe-radio-option-1-4-47_2-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-47_42"><a name="answer-47_42"></a>
+<div id="taans47_42" class="block iDevice_content">
+1:N
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i47_45" class="sr-av"><a href="#answer-47_45">Opció 3</a></label><input type="radio" name="option47_2" id="i47_45" class="exe-radio-option exe-radio-option-2-4-47_2-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-47_45"><a name="answer-47_45"></a>
+<div id="taans47_45" class="block iDevice_content">
+M:N
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i47_48" class="sr-av"><a href="#answer-47_48">Opció 4</a></label><input type="radio" name="option47_2" id="i47_48" class="exe-radio-option exe-radio-option-3-4-47_2-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-47_48"><a name="answer-47_48"></a>
+<div id="taans47_48" class="block iDevice_content">
+N:1  (en el sentit com està formulat: AUTOR   LLIBRE)
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Realimentació</h4>
+<div id="sa0b47_2" class="feedback js-hidden"><a name="sa0b47_2"></a>
+<div id="taf47_5" class=" iDevice_content">
+<font color="#ff0000">Incorrecte </font>
+
+</div>
+</div>
+<div id="sa1b47_2" class="feedback js-hidden"><a name="sa1b47_2"></a>
+<div id="taf47_42" class=" iDevice_content">
+<font color="#ff0000">Incorrecte </font>
+
+
+</div>
+</div>
+<div id="sa2b47_2" class="feedback js-hidden"><a name="sa2b47_2"></a>
+<div id="taf47_45" class=" iDevice_content">
+<font color="#0000ff">Correcte !</font>
+
+</div>
+</div>
+<div id="sa3b47_2" class="feedback js-hidden"><a name="sa3b47_2"></a>
+<div id="taf47_48" class=" iDevice_content">
+<font color="#ff0000">Incorrecte </font>
+
+
+</div>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solució</h4>
+<ol>
+<li><a href="#answer-47_5">Incorrecte</a><span> (<a href="#sa0b47_2">Realimentació</a>)</span></li>
+<li><a href="#answer-47_42">Incorrecte</a><span> (<a href="#sa1b47_2">Realimentació</a>)</span></li>
+<li><a href="#answer-47_45">Opció correcta</a><span> (<a href="#sa2b47_2">Realimentació</a>)</span></li>
+<li><a href="#answer-47_48">Incorrecte</a><span> (<a href="#sa3b47_2">Realimentació</a>)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper QuizTestIdevice em_iDevice em_iDevice_question" id="id63">
+<script type="text/javascript">/*<![CDATA[*/
+var numQuestions = 6;
+var rawScore = 0;
+var actualScore = 0;
+var question0;
+var question1;
+var question2;
+var question3;
+var question4;
+var question5;
+var key0 = 1;
+var key1 = 0;
+var key2 = 1;
+var key3 = 0;
+var key4 = 0;
+var key5 = 1;
+function getAnswer()
+        {
+            for (var i=0; i < 4; i++)
+            {
+               if (document.getElementById("quizForm63").key0b63[i].checked)
+               {
+                  question0 = document.getElementById("quizForm63").key0b63[i].value;
+                  break;
+               }
+            }
+            
+            for (var i=0; i < 4; i++)
+            {
+               if (document.getElementById("quizForm63").key1b63[i].checked)
+               {
+                  question1 = document.getElementById("quizForm63").key1b63[i].value;
+                  break;
+               }
+            }
+            
+            for (var i=0; i < 4; i++)
+            {
+               if (document.getElementById("quizForm63").key2b63[i].checked)
+               {
+                  question2 = document.getElementById("quizForm63").key2b63[i].value;
+                  break;
+               }
+            }
+            
+            for (var i=0; i < 2; i++)
+            {
+               if (document.getElementById("quizForm63").key3b63[i].checked)
+               {
+                  question3 = document.getElementById("quizForm63").key3b63[i].value;
+                  break;
+               }
+            }
+            
+            for (var i=0; i < 2; i++)
+            {
+               if (document.getElementById("quizForm63").key4b63[i].checked)
+               {
+                  question4 = document.getElementById("quizForm63").key4b63[i].value;
+                  break;
+               }
+            }
+            
+            for (var i=0; i < 4; i++)
+            {
+               if (document.getElementById("quizForm63").key5b63[i].checked)
+               {
+                  question5 = document.getElementById("quizForm63").key5b63[i].value;
+                  break;
+               }
+            }
+            }
+        function calcRawScore(){
+
+            if (question0 == key0)
+            {
+               rawScore++;
+            }
+            if (question1 == key1)
+            {
+               rawScore++;
+            }
+            if (question2 == key2)
+            {
+               rawScore++;
+            }
+            if (question3 == key3)
+            {
+               rawScore++;
+            }
+            if (question4 == key4)
+            {
+               rawScore++;
+            }
+            if (question5 == key5)
+            {
+               rawScore++;
+            }
+        
+        }
+        
+        function calcScore2()
+        {
+            getAnswer();
+     
+            calcRawScore();
+            actualScore =  Math.round(rawScore / numQuestions * 100);
+            var id = "63";
+            document.getElementById("quizForm"+id).submitB.disabled = true;
+            var s = document.getElementById("quizFormScore"+id);
+                        var msg_str ="La vostra puntuació és  %d%%";            msg_str = msg_str.replace("%d",actualScore).replace("%%","%");            if (s) { s.innerHTML = "<div class='feedback'><p>"+msg_str+"</p></div>"; } else { alert(msg_str); }
+           
+        }
+    /*]]>*/</script>
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Unes quantes preguntes tipus test</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<form name="quizForm63" id="quizForm63" action="#" class="quiz-test-form">
+<input type="hidden" name="passrate" id="passrate-63" value="50" />
+<div class="question">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion0b63" class="block iDevice_content">
+1.- Quan un atribut d'una detrminada entitat pot agafar més d'un valor per a una ocurrència de l'entitat, direm que l'atribut és:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key0b631" class="sr-av"><a href="#answer-key0b631">Opció 1</a></label><input type="radio" name="key0b63" id="key0b631" value="0" />
+</p>
+<div class="iDevice_answer-content" id="answer-key0b631"><a name="answer-key0b631"></a>
+<div id="taoptionAnswer0q0b63" class="block iDevice_content">
+multivalorat
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key0b632" class="sr-av"><a href="#answer-key0b632">Opció 2</a></label><input type="radio" name="key0b63" id="key0b632" value="1" />
+</p>
+<div class="iDevice_answer-content" id="answer-key0b632"><a name="answer-key0b632"></a>
+<div id="taoptionAnswer1q0b63" class="block iDevice_content">
+multivaluat
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key0b633" class="sr-av"><a href="#answer-key0b633">Opció 3</a></label><input type="radio" name="key0b63" id="key0b633" value="2" />
+</p>
+<div class="iDevice_answer-content" id="answer-key0b633"><a name="answer-key0b633"></a>
+<div id="taoptionAnswer2q0b63" class="block iDevice_content">
+multiplicat
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key0b634" class="sr-av"><a href="#answer-key0b634">Opció 4</a></label><input type="radio" name="key0b63" id="key0b634" value="3" />
+</p>
+<div class="iDevice_answer-content" id="answer-key0b634"><a name="answer-key0b634"></a>
+<div id="taoptionAnswer3q0b63" class="block iDevice_content">
+cap de les anteriors
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="question">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion1b63" class="block iDevice_content">
+2.- Quan una entitat depén d'una altra entitat, és a dir no pot existir sense l'altra, diem que es tracta d'una entitat :
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key1b631" class="sr-av"><a href="#answer-key1b631">Opció 1</a></label><input type="radio" name="key1b63" id="key1b631" value="0" />
+</p>
+<div class="iDevice_answer-content" id="answer-key1b631"><a name="answer-key1b631"></a>
+<div id="taoptionAnswer0q1b63" class="block iDevice_content">
+dèbil
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key1b632" class="sr-av"><a href="#answer-key1b632">Opció 2</a></label><input type="radio" name="key1b63" id="key1b632" value="1" />
+</p>
+<div class="iDevice_answer-content" id="answer-key1b632"><a name="answer-key1b632"></a>
+<div id="taoptionAnswer1q1b63" class="block iDevice_content">
+forta
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key1b633" class="sr-av"><a href="#answer-key1b633">Opció 3</a></label><input type="radio" name="key1b63" id="key1b633" value="2" />
+</p>
+<div class="iDevice_answer-content" id="answer-key1b633"><a name="answer-key1b633"></a>
+<div id="taoptionAnswer2q1b63" class="block iDevice_content">
+senzilla
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key1b634" class="sr-av"><a href="#answer-key1b634">Opció 4</a></label><input type="radio" name="key1b63" id="key1b634" value="3" />
+</p>
+<div class="iDevice_answer-content" id="answer-key1b634"><a name="answer-key1b634"></a>
+<div id="taoptionAnswer3q1b63" class="block iDevice_content">
+complexa
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="question">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion2b63" class="block iDevice_content">
+3.- En un esquema Entitat-Relació en el qual arrepleguem informació geogràfica, es consideren  les entitats COMARCA i MUNICIPI. Hi haurà una relació entre elles?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key2b631" class="sr-av"><a href="#answer-key2b631">Opció 1</a></label><input type="radio" name="key2b63" id="key2b631" value="0" />
+</p>
+<div class="iDevice_answer-content" id="answer-key2b631"><a name="answer-key2b631"></a>
+<div id="taoptionAnswer0q2b63" class="block iDevice_content">
+Sí, de tipus 1:1
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key2b632" class="sr-av"><a href="#answer-key2b632">Opció 2</a></label><input type="radio" name="key2b63" id="key2b632" value="1" />
+</p>
+<div class="iDevice_answer-content" id="answer-key2b632"><a name="answer-key2b632"></a>
+<div id="taoptionAnswer1q2b63" class="block iDevice_content">
+Sí, de tipus 1:N
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key2b633" class="sr-av"><a href="#answer-key2b633">Opció 3</a></label><input type="radio" name="key2b63" id="key2b633" value="2" />
+</p>
+<div class="iDevice_answer-content" id="answer-key2b633"><a name="answer-key2b633"></a>
+<div id="taoptionAnswer2q2b63" class="block iDevice_content">
+Sí, de tipus M:N
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key2b634" class="sr-av"><a href="#answer-key2b634">Opció 4</a></label><input type="radio" name="key2b63" id="key2b634" value="3" />
+</p>
+<div class="iDevice_answer-content" id="answer-key2b634"><a name="answer-key2b634"></a>
+<div id="taoptionAnswer3q2b63" class="block iDevice_content">
+No
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="question">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion3b63" class="block iDevice_content">
+4.- Una relació, pot tenir atributs?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key3b631" class="sr-av"><a href="#answer-key3b631">Opció 1</a></label><input type="radio" name="key3b63" id="key3b631" value="0" />
+</p>
+<div class="iDevice_answer-content" id="answer-key3b631"><a name="answer-key3b631"></a>
+<div id="taoptionAnswer0q3b63" class="block iDevice_content">
+Sí
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key3b632" class="sr-av"><a href="#answer-key3b632">Opció 2</a></label><input type="radio" name="key3b63" id="key3b632" value="1" />
+</p>
+<div class="iDevice_answer-content" id="answer-key3b632"><a name="answer-key3b632"></a>
+<div id="taoptionAnswer1q3b63" class="block iDevice_content">
+No
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="question">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion4b63" class="block iDevice_content">
+5.- Amb el concepte de participació total o parcial, es pot aconseguir la mateixa informació (els mateixos resultats) que amb la cardinalitat mínima 1 o 0.
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key4b631" class="sr-av"><a href="#answer-key4b631">Opció 1</a></label><input type="radio" name="key4b63" id="key4b631" value="0" />
+</p>
+<div class="iDevice_answer-content" id="answer-key4b631"><a name="answer-key4b631"></a>
+<div id="taoptionAnswer0q4b63" class="block iDevice_content">
+Sí
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key4b632" class="sr-av"><a href="#answer-key4b632">Opció 2</a></label><input type="radio" name="key4b63" id="key4b632" value="1" />
+</p>
+<div class="iDevice_answer-content" id="answer-key4b632"><a name="answer-key4b632"></a>
+<div id="taoptionAnswer1q4b63" class="block iDevice_content">
+No
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="question">
+<h3 class="js-sr-av">Qüestió</h3>
+<div id="taquestion5b63" class="block iDevice_content">
+6.- El valor d'un atribut que és la clau principal  de l'entitat , es pot repetir? és a dir, poden haver dues ocurrències amb el mateix valor?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Respostes</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key5b631" class="sr-av"><a href="#answer-key5b631">Opció 1</a></label><input type="radio" name="key5b63" id="key5b631" value="0" />
+</p>
+<div class="iDevice_answer-content" id="answer-key5b631"><a name="answer-key5b631"></a>
+<div id="taoptionAnswer0q5b63" class="block iDevice_content">
+Sí
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key5b632" class="sr-av"><a href="#answer-key5b632">Opció 2</a></label><input type="radio" name="key5b63" id="key5b632" value="1" />
+</p>
+<div class="iDevice_answer-content" id="answer-key5b632"><a name="answer-key5b632"></a>
+<div id="taoptionAnswer1q5b63" class="block iDevice_content">
+No
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key5b633" class="sr-av"><a href="#answer-key5b633">Opció 3</a></label><input type="radio" name="key5b63" id="key5b633" value="2" />
+</p>
+<div class="iDevice_answer-content" id="answer-key5b633"><a name="answer-key5b633"></a>
+<div id="taoptionAnswer2q5b63" class="block iDevice_content">
+Depén del tipus d'entitat
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="key5b634" class="sr-av"><a href="#answer-key5b634">Opció 4</a></label><input type="radio" name="key5b63" id="key5b634" value="3" />
+</p>
+<div class="iDevice_answer-content" id="answer-key5b634"><a name="answer-key5b634"></a>
+<div id="taoptionAnswer3q5b63" class="block iDevice_content">
+Depén del domini de l'atribut: per a alguns sí i per a uns altres no
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="block iDevice_buttons">
+<p><input type="submit" name="submitB" value="ENVIA RESPOSTES" /> <span class="js-hidden js-warning">Habilita el javascript</span></p>
+</div>
+<div id="quizFormScore63"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="informaci_addicional.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

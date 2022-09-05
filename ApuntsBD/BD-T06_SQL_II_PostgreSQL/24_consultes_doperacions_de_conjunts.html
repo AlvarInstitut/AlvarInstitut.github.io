@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.4 Consultes d'operacions de conjunts | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: SQL -  Consultes avançades (part II)</a></li>
+   <li><a href="21_introducci.html" class="no-ch">2.1 Introducció</a></li>
+   <li><a href="22_combinacions_de_taules.html" class="daddy">2.2 Combinacions de taules</a>
+   <ul class="other-section">
+      <li><a href="221_producte_cartesi.html" class="no-ch">2.2.1 Producte cartesià</a></li>
+      <li><a href="222_combinaci_interna.html" class="daddy">2.2.2 Combinació interna</a>
+      <ul class="other-section">
+         <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="223_combinaci_externa.html" class="daddy">2.2.3 Combinació externa</a>
+      <ul class="other-section">
+         <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="23_subconsultes.html" class="daddy">2.3 Subconsultes</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="24_consultes_doperacions_de_conjunts.html" class="active daddy">2.4 Consultes d'operacions de conjunts</a>
+   <ul>
+      <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema_amb_els_resultats.html" class="no-ch">Exercicis de tot el tema, amb els resultats</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="exercicis1.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis2.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.4 Consultes d'operacions de conjunts</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+<p>Agruparem en aquest apartat les consultes que tracten conjunts de files per a fer operacions d'algebra de conjunts: <strong>unió</strong>, <strong>intersecció</strong> i  <strong>diferència </strong>de conjunts</p>
+<p>Toters aquestes consultes ajunten els resultats de dues o més consultes.</p>
+<p class="titolet">Sintaxi de la UNIÓ</p>
+<p class="codi">[TABLE] consulta1 <br /> UNION [ALL] <br /> [TABLE] consulta2 ...</p>
+<p align="justify">Cadascuna de les consultes pot ser una taula (posant la paraula <b>TABLE </b>davant) o el nom d'una consulta ja guardada, encara que el més habitual serà posar directament la <b>sentència SQL</b>.</p>
+<p align="justify">Els requisits són que les dues (o més) consultes tornen el mateix nombre de camps, i que siguen sinó del mateix tipus, sí de tipus compatibles</p>
+<p align="justify">Igual que en la unió de conjunts, el resultat seran totes les files de les dues (o més) consultes individuals, però sense repetir files, és a dir, si de les dues consultes s'obtenen files iguals, aquestes només eixiran una vegada. L'anterior es pot evitar si posem el predicat ALL, i aleshores sí que eixiran les files repetides.</p>
+<p align="justify">Els noms dels camps vindran donats per la primera consulta.</p>
+<p align="justify">Si volem ordenar per algun camp, ho haurem de posar al final de l'última consulta, però referint-se en tot cas als camps de la primera consulta (ho podem evitar posant el número d'ordre en el ORDER BY)</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id47">
+<div class="iDevice emphasis0">
+<div id="ta47_1" class="block iDevice_content">
+<p class="titolet">Exemple</p>
+<ol>
+<li value="1">
+<p>Volem veure en un únic resultat tant el nom de les comarques com el nom de les poblacions, sempre amb el nom de la província al costat</p>
+</li>
+</ol>
+<p class="codi">SELECT nom_c, provincia <br />     FROM COMARQUES<br /> UNION <br /> SELECT nom, provincia <br />     FROM COMARQUES INNER JOIN POBLACIONS USING (nom_c)<br />ORDER BY nom_c;</p>
+<p style="margin-left: 30px;">Com a curiositat, eixiran 575 files, però si posàrem UNION ALL ens eixirien 576. Això és perquè la comarca de la ciutat de València es diu València i està a la província de València. Per tant és una fila que apareixerà tant en la primera com en la segona consulta. Si fem UNION no es repetirà, però si fem UNION ALL sí que es repetirà.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id52">
+<div class="iDevice emphasis0">
+<div id="ta52_85" class="block iDevice_content">
+<p class="titolet">Sintaxi de la INTERSECCIÓ</p>
+<p>És identica a la unió, però posant la paraula <strong>INTERSECT</strong>, i servirà per a traure únicament les files que estan en les dues consultes.</p>
+<p class="codi">[TABLE] consulta1 <br /> INTERSECT [ALL] <br /> [TABLE] consulta2 ...</p>
+<p align="justify">Igual que abans, cadascuna de les consultes pot ser una taula (posant la paraula <b>TABLE </b>davant), i tenim el requisit que les dues (o més) consultes tornen el mateix nombre de camps, i de tipus compatibles.</p>
+<p align="justify">En principi no eixiran files repetides, a no ser que posem <strong>ALL</strong></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id53">
+<div class="iDevice emphasis0">
+<div id="ta53_85" class="block iDevice_content">
+<p class="titolet">Exemple</p>
+<ol>
+<li value="1">
+<p>Com que en l'exemple de la unió havíem vist que la fila València València eixia en les 2 consultes, anem a comprovar que apareix en la intersecció:</p>
+</li>
+</ol>
+<p class="codi">SELECT nom_c, provincia <br />     FROM COMARQUES<br /> INTERSECT<br /> SELECT nom, provincia <br />     FROM COMARQUES INNER JOIN POBLACIONS USING (nom_c)<br />ORDER BY nom_c;</p>
+<p style="margin-left: 30px;"></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id54">
+<div class="iDevice emphasis0">
+<div id="ta54_85" class="block iDevice_content">
+<p class="titolet">Sintaxi de la DIFERÈNCIA</p>
+<p>És identica a les anteriors, però posant la paraula <strong>EXCEPT</strong>, i servirà per a traure les files que estan en la primera consulta però que no estan en la segona.</p>
+<p class="codi">[TABLE] consulta1 <br /> EXCEPT [ALL] <br /> [TABLE] consulta2 ...</p>
+<p align="justify">Igual que abans, cadascuna de les consultes pot ser una taula (posant la paraula <b>TABLE </b>davant), i tenim el requisit que les dues (o més) consultes tornen el mateix nombre de camps, i de tipus compatibles.</p>
+<p align="justify">En principi no eixiran files repetides, a no ser que posem <strong>ALL</strong></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id55">
+<div class="iDevice emphasis0">
+<div id="ta55_85" class="block iDevice_content">
+<p class="titolet">Exemple</p>
+<ol>
+<li value="1">
+<p>Aprofitem el mateix exemple d'abans per a comprovar que amb EXCEPT no eixirà la comarca València, ja que hi ha una fila idèntica en la segona consulta:</p>
+</li>
+</ol>
+<p class="codi">SELECT nom_c, provincia <br />     FROM COMARQUES<br /> EXCEPT<br /> SELECT nom, provincia <br />     FROM COMARQUES INNER JOIN POBLACIONS USING (nom_c)<br />ORDER BY nom_c;</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="exercicis1.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis2.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Part I: Pràctica inicial | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Base avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li id="active"><a href="part_i_prctica_inicial.html" class="active daddy">Part I: Pràctica inicial</a>
+   <ul>
+      <li><a href="11_taules.html" class="no-ch">1.1 Taules</a></li>
+      <li><a href="12_consultes.html" class="no-ch">1.2 Consultes</a></li>
+      <li><a href="13_formularis_i_informes.html" class="no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_ii_macros_voluntari.html" class="daddy">Part II: Macros (Voluntari)</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_i_execuci_directa_duna_macro.html" class="no-ch">2.1 Creació i execució directa d'una Macro</a></li>
+      <li><a href="22_quan_executar_una_macro_esdeveniments.html" class="no-ch">2.2 Quan executar una macro: esdeveniments</a></li>
+      <li><a href="23_obrir_automticament_un_formulari.html" class="no-ch">2.3 Obrir automàticament un formulari</a></li>
+      <li><a href="24_exemple_avanat_compliment_de_restriccions_externes.html" class="no-ch">2.4 Exemple avançat: compliment de restriccions externes</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_taules.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Part I: Pràctica inicial</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p> </p>
+<p align="justify">Aquesta pràctica té la voluntat de servir de repàs del tutorial de Base. Seran una sèrie de exercicis sobre una mateixa Base de Dades, la corresponent a l'exemple amb què s'il·lustra el Tema 2: Model Entitat-Relació. Repetim ací la breu anàlisi de requisits de l' <b>Empresa</b>:</p>
+<div id="ta12_1" class="block" style="display: block;">
+<ol>
+<li align="justify">La companyia està organitzada en departaments. Cadascun té nom únic, número únic i un empleat que el dirigeix. Ens interessa la data en la qual va començar a dirigir-lo.</li>
+<li align="justify">Cada departament controla una sèrie de projectes. Cadascun d'aquestos projectes té nom i número únics, i estarà coordinat per un únic departament.</li>
+<li align="justify">De cada empleat ens interessa el nom (format per dos cognoms i nom de pila), DNI, adreça, telèfon, sou i data de naixement. Tot empleat està assignat a un departament, i moltes vegades tindrà un supervisor. Pot treballar en més d'un projecte (no necessàriament controlats pel mateix departament) i treballarà un determinat número d'hores a la setmana en cada projecte. En un projecte sempre treballarà, com a mínim, un empleat.</li>
+<li align="justify">Volem saber també els familiars de cada empleat, per administrar els termes dels segurs. Volem saber el nom, data de naixement i parentesc amb l'empleat.</li>
+</ol>
+</div>
+<p align="justify">L'estructura de les taules és la següent:</p>
+<div align="center"><img src="T5_1_1.png" width="613" height="418" border="1" /></div>
+<div align="justify">
+<div align="justify"></div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_taules.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Introducció | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Model Relacional</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li id="active"><a href="1_introducci.html" class="active no-ch">1. Introducció</a></li>
+   <li><a href="2_estructura_del_model_relacional.html" class="no-ch">2. Estructura del Model Relacional</a></li>
+   <li><a href="3_restriccions.html" class="daddy">3. Restriccions</a>
+   <ul class="other-section">
+      <li><a href="31_restriccions_inherents.html" class="no-ch">3.1 Restriccions inherents</a></li>
+      <li><a href="32_restriccions_dusuari.html" class="daddy">3.2 Restriccions d'usuari</a>
+      <ul class="other-section">
+         <li><a href="321_restricci_de_domini.html" class="no-ch">3.2.1 Restricció de domini</a></li>
+         <li><a href="322_restricci_de_clau_principal.html" class="no-ch">3.2.2 Restricció de clau principal</a></li>
+         <li><a href="323_restricci_dunicitat.html" class="no-ch">3.2.3 Restricció d'unicitat</a></li>
+         <li><a href="324_restricci_de_valor_no_nul.html" class="no-ch">3.2.4 Restricció de valor no nul</a></li>
+         <li><a href="325_integritat_referencial.html" class="no-ch">3.2.5 Integritat referencial</a></li>
+         <li><a href="326_restriccions_externes.html" class="no-ch">3.2.6 Restriccions externes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_tranformaci_del_m_er_al_m_relacional.html" class="daddy">4. Tranformació del M. E/R al M. Relacional</a>
+   <ul class="other-section">
+      <li><a href="41_entitats.html" class="no-ch">4.1 Entitats</a></li>
+      <li><a href="42_relacions_1n.html" class="no-ch">4.2 Relacions 1:N</a></li>
+      <li><a href="43_relacions_mn.html" class="no-ch">4.3 Relacions M:N</a></li>
+      <li><a href="44_relacions_11.html" class="no-ch">4.4 Relacions 1:1</a></li>
+      <li><a href="45_entitats_dbils.html" class="no-ch">4.5 Entitats dèbils</a></li>
+      <li><a href="46_resum_dependncies.html" class="no-ch">4.6 Resum dependències</a></li>
+      <li><a href="47_relacions_ternries.html" class="no-ch">4.7 Relacions ternàries</a></li>
+      <li><a href="48_especialitzacions.html" class="no-ch">4.8 Especialitzacions</a></li>
+      <li><a href="49_restriccions_externes.html" class="no-ch">4.9 Restriccions externes</a></li>
+      <li><a href="410_exemple.html" class="no-ch">4.10 Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="5_llenguatges_relacionals.html" class="no-ch">5. Llenguatges relacionals</a></li>
+   <li><a href="6_exercicis.html" class="no-ch">6. Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objectius_i_coneixements_previs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_estructura_del_model_relacional.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Introducció</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id0">
+<div class="iDevice emphasis0">
+<div id="ta0_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<p>
+En 1970 <b>E.F. Codd</b> va introduir la teoria
+matemàtica de les relacions en el camp dels SGBD. El model de dades que va
+crear s'anomena <b>MODEL RELACIONAL</b>,
+amb una base matemàtica (la de les relacions) molt sòlida, on les dades
+s'estructuren en forma de relacions (taules) que són estructures de dades
+simples i uniformes, que permeten una fàcil comprensió.
+</p>
+<p>
+En el moment
+en què va sorgir, els models que funcionaven eren el jeràrquic i el de xarxa
+(també anomenat Codasyl, pel grup de treball que va estandaritzar-lo). Com a
+model els va superar perquè, com va dir el mateix Codd, &quot;<i>proporciona un mitjà per a descriure les dades amb la seua estructura
+únicament, sense haver de superposar cap estructura addicional per a
+representar-se en la màquina&quot; </i>(és a dir, sense punters ni històries).
+</p>
+<p>
+A pesar
+d'això va estar uns anys en competència amb aquells, amb molta gent molt
+reticent, ja que els productes comercials que eixien no eren suficientment
+eficients, potser perquè la tecnologia de l'època no ho permetia. A partir dels
+anys 80, quan la tecnologia ho va permetre, van eixir productes millors, com
+per exemple l'<b>ORACLE</b> (1979), i
+aleshores la seua implantació va ser aplastant.
+</p>
+<p>
+Els objectius
+del Model Relacional són: 
+</p>
+<ul class="unIndentedList">
+	<li>
+	<b>Fidelitat</b>,
+	per a originar esquemes que representen fidelment la informació (els objectes i
+	relacions entre ells) que existeix en el domini del problema.</li><br />
+	<li>
+	<b>Independència
+	física</b><a href="../SGBD-T03%282008%29Model%20Relacional/#_ftn1" title="_ftnref1" name="_ftnref1">[1]</a>,
+	per a que la manera de guardar les dades no influesca en la seua manipulació
+	lògica, i així els usuaris que accedeixen a aquestes dades no hagen de
+	modificar els seus programes per canvis en l'emmagatzematge físic.</li><br />
+	<li>
+	<b>Independència
+	lògica</b>, per a que les vistes externes no es vegen afectades per canvis en
+	l'esquema conceptual de la B.D.</li><br />
+	<li>
+	<b>Flexibilitat</b>,
+	per a poder oferir les dades a cada usuari de la forma més adequada a la seua
+	aplicació.</li><br />
+	<li>
+	<b>Uniformitat</b>,
+	les estructures lògiques de les dades presenten un aspecte simple i uniforme
+	(les taules), cosa que facilita la concepció i manipulació per part dels
+	usuaris.</li><br />
+	<li>
+	<b>Senzillesa</b>,
+	les característiques anteriors, unides a uns llenguatges d'usuari senzills, fan
+	que el M. Relacional siga fàcil d'entendre i d'utilitzar per l'usuari final.</li>
+</ul>
+Recordeu que les <b>relacions </b>del Model Relacional són les <b>taules</b>. No són el mateix que les relacions del Model Entitat-Relació. Per evitar confusions intentarem anomenar-les sempre taules.<br clear="all" />
+<hr align="left" size="1" width="33%" />
+<p>
+<a href="../SGBD-T03%282008%29Model%20Relacional/#_ftnref1" title="_ftn1" name="_ftn1">[1]</a> En realitat tant la
+independència física com lògica les han intentades aconseguir tots els models.
+</p>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objectius_i_coneixements_previs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_estructura_del_model_relacional.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

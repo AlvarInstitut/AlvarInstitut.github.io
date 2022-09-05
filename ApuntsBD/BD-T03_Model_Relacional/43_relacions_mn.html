@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3 Relacions M:N | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Model Relacional</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_estructura_del_model_relacional.html" class="no-ch">2. Estructura del Model Relacional</a></li>
+   <li><a href="3_restriccions.html" class="daddy">3. Restriccions</a>
+   <ul class="other-section">
+      <li><a href="31_restriccions_inherents.html" class="no-ch">3.1 Restriccions inherents</a></li>
+      <li><a href="32_restriccions_dusuari.html" class="daddy">3.2 Restriccions d'usuari</a>
+      <ul class="other-section">
+         <li><a href="321_restricci_de_domini.html" class="no-ch">3.2.1 Restricció de domini</a></li>
+         <li><a href="322_restricci_de_clau_principal.html" class="no-ch">3.2.2 Restricció de clau principal</a></li>
+         <li><a href="323_restricci_dunicitat.html" class="no-ch">3.2.3 Restricció d'unicitat</a></li>
+         <li><a href="324_restricci_de_valor_no_nul.html" class="no-ch">3.2.4 Restricció de valor no nul</a></li>
+         <li><a href="325_integritat_referencial.html" class="no-ch">3.2.5 Integritat referencial</a></li>
+         <li><a href="326_restriccions_externes.html" class="no-ch">3.2.6 Restriccions externes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_tranformaci_del_m_er_al_m_relacional.html" class="current-page-parent daddy">4. Tranformació del M. E/R al M. Relacional</a>
+   <ul>
+      <li><a href="41_entitats.html" class="no-ch">4.1 Entitats</a></li>
+      <li><a href="42_relacions_1n.html" class="no-ch">4.2 Relacions 1:N</a></li>
+      <li id="active"><a href="43_relacions_mn.html" class="active no-ch">4.3 Relacions M:N</a></li>
+      <li><a href="44_relacions_11.html" class="no-ch">4.4 Relacions 1:1</a></li>
+      <li><a href="45_entitats_dbils.html" class="no-ch">4.5 Entitats dèbils</a></li>
+      <li><a href="46_resum_dependncies.html" class="no-ch">4.6 Resum dependències</a></li>
+      <li><a href="47_relacions_ternries.html" class="no-ch">4.7 Relacions ternàries</a></li>
+      <li><a href="48_especialitzacions.html" class="no-ch">4.8 Especialitzacions</a></li>
+      <li><a href="49_restriccions_externes.html" class="no-ch">4.9 Restriccions externes</a></li>
+      <li><a href="410_exemple.html" class="no-ch">4.10 Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="5_llenguatges_relacionals.html" class="no-ch">5. Llenguatges relacionals</a></li>
+   <li><a href="6_exercicis.html" class="no-ch">6. Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="42_relacions_1n.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="44_relacions_11.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3 Relacions M:N</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id14">
+<div class="iDevice emphasis0">
+<div id="ta14_1" class="block iDevice_content">
+<p> </p>
+<p align="justify" style="text-align: justify;">Per cada relació <strong>M:N</strong> construirem una <strong>nova taula</strong> on s'inclouran com a clau externa les claus principals de les dues entitats, i a més la seua combinació constituirà (o formarà part de) la clau principal. Inclourem també els possibles atributs de la relació.</p>
+<p align="justify">En l'exemple:</p>
+<p align="justify"> </p>
+<div style="text-align: center;"><img src="T3_4_3_1.png" border="1" height="151" width="542" /></div>
+<p></p>
+<p align="justify">Cada vegada que ens trobem amb una relació M:N i la traduïm per una nova taula haurem de<b> preguntar-nos si és suficient amb la clau principal</b> formada per les dues claus externes, o si fa falta afegir un altre camp. Hem de ser conscients que la clau principal no puga repetir-se, que hi haja 2 files amb la mateixa clau principal. Així, en l'exemple, ens hauríem de fer la següent pregunta: pot un empleat treballar en el mateix projecte més d'una vegada? En aquest cas la contestació és negativa, i per tant és suficient amb aquesta clau principal.</p>
+<p align="justify">Però suposem que la resposta és que sí que pot treballar més d'una vegada al llarg del temps. En aquest cas seria una espècie d'històric, on faria falta, a més, saber quan comença i quan acaba de treballar en un projecte un determinat treballador (serien atributs de la relació):</p>
+<div align="center"><img src="T3_4_3_2.png" border="1" height="128" width="537" /></div>
+<p><br />Aleshores, com no és suficient amb la clau principal formada per les dues claus externes, inclourem un altre camp en la clau principal. Sembla que el més adequat seria <b>Data_c</b> (ja no es pot donar el cas que el mateix treballador treballe més d'una vegada en el mateix projecte, començant el mateix dia)</p>
+<div align="center"><img src="T3_4_3_3.png" border="1" height="41" width="448" /></div>
+<p>Però per una altra banda, les claus principals molt llargues no són operatives, i encara que la traducció literal siga com hem dit, per motius pràctics podem canviar la clau principal. Considerarem que el nombre màxim de camps en la clau principal és de 3. 4 ja són massa, i aleshores buscarem una altra clau principal (un codi de treball, per exemple). Les claus externes continuarien sent-ho.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="42_relacions_1n.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="44_relacions_11.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.4 Relacions 1:1 | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-16"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Model Relacional</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_estructura_del_model_relacional.html" class="no-ch">2. Estructura del Model Relacional</a></li>
+   <li><a href="3_restriccions.html" class="daddy">3. Restriccions</a>
+   <ul class="other-section">
+      <li><a href="31_restriccions_inherents.html" class="no-ch">3.1 Restriccions inherents</a></li>
+      <li><a href="32_restriccions_dusuari.html" class="daddy">3.2 Restriccions d'usuari</a>
+      <ul class="other-section">
+         <li><a href="321_restricci_de_domini.html" class="no-ch">3.2.1 Restricció de domini</a></li>
+         <li><a href="322_restricci_de_clau_principal.html" class="no-ch">3.2.2 Restricció de clau principal</a></li>
+         <li><a href="323_restricci_dunicitat.html" class="no-ch">3.2.3 Restricció d'unicitat</a></li>
+         <li><a href="324_restricci_de_valor_no_nul.html" class="no-ch">3.2.4 Restricció de valor no nul</a></li>
+         <li><a href="325_integritat_referencial.html" class="no-ch">3.2.5 Integritat referencial</a></li>
+         <li><a href="326_restriccions_externes.html" class="no-ch">3.2.6 Restriccions externes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_tranformaci_del_m_er_al_m_relacional.html" class="current-page-parent daddy">4. Tranformació del M. E/R al M. Relacional</a>
+   <ul>
+      <li><a href="41_entitats.html" class="no-ch">4.1 Entitats</a></li>
+      <li><a href="42_relacions_1n.html" class="no-ch">4.2 Relacions 1:N</a></li>
+      <li><a href="43_relacions_mn.html" class="no-ch">4.3 Relacions M:N</a></li>
+      <li id="active"><a href="44_relacions_11.html" class="active no-ch">4.4 Relacions 1:1</a></li>
+      <li><a href="45_entitats_dbils.html" class="no-ch">4.5 Entitats dèbils</a></li>
+      <li><a href="46_resum_dependncies.html" class="no-ch">4.6 Resum dependències</a></li>
+      <li><a href="47_relacions_ternries.html" class="no-ch">4.7 Relacions ternàries</a></li>
+      <li><a href="48_especialitzacions.html" class="no-ch">4.8 Especialitzacions</a></li>
+      <li><a href="49_restriccions_externes.html" class="no-ch">4.9 Restriccions externes</a></li>
+      <li><a href="410_exemple.html" class="no-ch">4.10 Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="5_llenguatges_relacionals.html" class="no-ch">5. Llenguatges relacionals</a></li>
+   <li><a href="6_exercicis.html" class="no-ch">6. Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="43_relacions_mn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="45_entitats_dbils.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.4 Relacions 1:1</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_1" class="block iDevice_content">
+<p>
+&nbsp;
+</p>
+<p>
+
+</p>
+<p>
+No hi ha una
+forma única de traduir aquestes relacions. Tres seran les possibles
+traduccions, segons la participació total o parcial de les entitats en la
+relació, i també segons el que ens diga el &quot;<i>sentit comú</i>&quot;.
+</p>
+<ul class="unIndentedList">
+	<li>
+	<div align="justify">
+	Si de les dues entitats que entren la relació, <b>A</b> i <b>B</b>,<b> </b>una d'elles i només
+	una, participa de forma total, per exemple <b>B</b>,
+	traduirem la relació 1:1 com una <b>clau
+	externa</b> en la taula corresponent a l'entitat que participa de forma total (<b>B</b>). Podem obligar també a que aquest
+	camp que serà clau externa siga <b>no nul</b>
+	(ja que totes les ocurrències de <b>B</b>
+	entren en la relació). També podem fer que aquest camp siga <b>únic</b> (no es podrà repetir, ja que si es
+	puguera repetir seria una relació 1:N). A més, inclourem en<b> B</b> tots els possibles atributs de la
+	relació. 
+	</div>
+	</li>
+</ul>
+<blockquote>
+	Per
+	exemple, la relació <b><i>dirigeix</i></b>, que és 1:1 entre <b>EMPLEAT</b> i <b>DEPARTAMENT</b>:
+</blockquote>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_1.png" border="1" height="114" width="495" /> <br />
+</blockquote>
+</div>
+<blockquote>
+	<p>
+	Com que l'entitat de la dreta participa de forma total, triarem <b>DEPARTAMENT</b>:
+	</p>
+</blockquote>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_2.png" border="1" height="50" width="415" /> <br />
+</blockquote>
+</div>
+<blockquote>
+	<div align="justify">
+	Ho fem
+	d'aquesta manera perquè tots els departaments tenen director, però no tots els
+	empleats són directors. Si posàrem la clau externa en la taula <b>EMPLEAT </b>(s'anomenaria per exemple <b>dep_que_dirigeix</b>) moltes vegades estaria buit, ja que relativament són pocs els empleats que dirigeixen un departament.
+	</div>
+</blockquote>
+<blockquote>
+	<div align="justify">
+	Vegem un
+	altre exemple de relació 1:1, el de les papallones. Teníem una relació 1:1
+	entre <b>PERSONA</b> i<b> COL·LECCIÓ</b>
+	</div>
+</blockquote>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_3.png" border="1" height="99" width="492" /> <br />
+</blockquote>
+</div>
+<div align="justify">
+<blockquote>
+	Triaríem <b>COL·LECCIÓ</b>, ja que entra de forma plena
+	o total en la relació.
+</blockquote>
+</div>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_4.png" border="1" height="52" width="560" /> <br />
+</blockquote>
+</div>
+<ul class="unIndentedList">
+	<li>
+	<div align="justify">
+	Si les dues entitats participen de forma total,
+	es pot considerar tot (les dues entitats i la relació, amb els seus possibles
+	atributs) com una sola taula. En la pràctica això serà prou estrany, perquè ja
+	ho hauríem considerat una sola entitat. Per exemple, considerem que totes les
+	persones que estudiem tenen una col·lecció:
+	</div>
+	</li>
+</ul>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_5.png" border="1" height="100" width="481" /> <br />
+</blockquote>
+</div>
+<blockquote>
+	Aleshores
+	podríem considerar una única taula, que continga les dades de la persona i de
+	la seua col·lecció: 
+</blockquote>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_6.png" border="1" height="35" width="575" /> <br />
+</blockquote>
+</div>
+<blockquote>
+	<div align="justify">
+	</div>
+	<p align="justify">
+	De tota manera, pot ser ens interesse
+	(per separar clarament els dos tipus d'informació) dues taules. Aleshores
+	podríem traduir-lo com en el primer punt, amb una clau externa (no nula) en una
+	de les dues taules, i hauríem de triar la taula que <i>menys</i> s'utilitze.
+	</p>
+</blockquote>
+<ul class="unIndentedList">
+	<li>
+	<div align="justify">
+	Si les dues entitats participen de forma
+	parcial, com que si posem una clau externa en una de les dues, moltes vegades
+	tindrà valor nul, podem traduir-la com una nova taula que marque la relació, on
+	hi haurà una tupla per cada relació entre dues ocurrències. Inclouríem en la
+	nova taula els possibles atributs de la relació.
+	</div>
+	</li>
+</ul>
+<blockquote>
+	En
+	l'exemple podria ser que les col·leccions pertanyen a una persona particular o
+	a una institució (no tenen propietari):
+</blockquote>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_7.png" border="1" height="104" width="486" />
+</blockquote>
+</div>
+<blockquote>
+	Quedaria:
+</blockquote>
+<div align="center">
+<blockquote>
+	<img src="T3_4_4_8.png" border="1" height="113" width="567" />
+</blockquote>
+</div>
+<blockquote>
+	<div align="justify">
+	</div>
+	<p align="justify">
+	Però com comentàvem al principi, haurem
+	d'aplicar el sentit comú, ja que potser una de les dues podria participar de
+	forma &quot;quasi&quot; total (per exemple, quasi totes les col·leccions són
+	d'una persona). Aleshores podria ser millor traduir-lo com en el primer cas,
+	posant la clau externa en la que participa de forma &quot;quasi&quot; total, ja
+	que aquesta tindrà relativament pocs valors nuls, i seria més costós mantenir
+	una altra taula. Evidentment la clau externa sí que podria ser nula, en aquest
+	cas. 
+	</p>
+	<p>
+	&nbsp;
+	</p>
+</blockquote>
+<p align="justify">
+Resumint, <b>una relació 1:1 quasi sempre
+la traduirem com una clau externa en la taula que participa en la relació de
+forma total o quasi total</b> (o la que previsiblement té més ocurrències en la
+relació)
+</p>
+<blockquote>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="43_relacions_mn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="45_entitats_dbils.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

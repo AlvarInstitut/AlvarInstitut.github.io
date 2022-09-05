@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.1 Operadors | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Programació en PostgreSQL</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i Coneixements previs</a></li>
+   <li><a href="0_nota_inicial.html" class="no-ch">0. Nota inicial</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_plpgsql.html" class="no-ch">2. PL/pgSQL</a></li>
+   <li><a href="3_declaraci_de_variables.html" class="no-ch">3. Declaració de variables</a></li>
+   <li><a href="4_instruccions.html" class="no-ch">4. Instruccions</a></li>
+   <li><a href="5_funcions.html" class="daddy">5. Funcions</a>
+   <ul class="other-section">
+      <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="6_utilitzaci_de_cursors.html" class="daddy">6. Utilització de cursors</a>
+   <ul class="other-section">
+      <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="7_missatges_i_excepcions.html" class="no-ch">7. Missatges i excepcions</a></li>
+   <li><a href="8_triggers.html" class="daddy">8. Triggers</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="9_creaci_daltres_objectes_basats_en_funcions.html" class="current-page-parent daddy">9. Creació d'altres objectes basats en funcions</a>
+   <ul>
+      <li id="active"><a href="91_operadors.html" class="active daddy">9.1 Operadors</a>
+      <ul>
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="92_operadors_de_classe.html" class="no-ch">9.2 Operadors de classe</a></li>
+      <li><a href="93_funcions_dagregat.html" class="daddy">9.3 Funcions d'agregat</a>
+      <ul class="other-section">
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="9_creaci_daltres_objectes_basats_en_funcions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis2.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">9.1 Operadors</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_1" class="block iDevice_content">
+<p style="text-align: justify;">Per a definir un nou operador especificarem el símbol que utilitzarem, el o els operands i la funció que l'implementa.</p>
+<p style="text-align: justify;">La sintaxi és:</p>
+<div class="codi" style="text-align: justify;">CREATE OPERATOR name (<br />
+<blockquote>PROCEDURE = funcname<br />[, LEFTARG = lefttype ] [, RIGHTARG = righttype ]<br />[, COMMUTATOR = com_op ] [, NEGATOR = neg_op ]<br />...</blockquote>
+)</div>
+<p style="text-align: justify;">Hi ha més opcions, que per a la utilitat d'aquest curs obviarem.</p>
+<ul style="text-align: justify;">
+<li>En el nom de l'operador posarem un o més d'un caràcters de la següent llista:</li>
+</ul>
+<div align="center" style="text-align: justify;"><b> + - * / &lt; &gt; = ~ ! @ # % ^ &amp; | ` ?</b></div>
+<p style="margin-left: 60px; text-align: justify;">Hi ha algunes limitacions, que podem veure en la documentació.</p>
+<ul style="text-align: justify;">
+<li>Sempre hem de posar la funció que implementa l'operador.</li>
+</ul>
+<ul style="text-align: justify;">
+<li>Si l'operador és d'un únic operand, l'haurem d'especificar (el de la dreta o de l'esquerra, el que preferim). Si és de dos operands s'hauren d'especificar els dos.</li>
+</ul>
+<ul style="text-align: justify;">
+<li><b>COMMUTATOR </b>indica un altre operador que funciona igual canviant l'ordre dels paràmetres (en numèrics el commutador de <b>&lt;</b> és <b>&gt;</b>)</li>
+</ul>
+<ul style="text-align: justify;">
+<li><b>NEGATOR </b>indica un altre operador equivalent a negar aquest (en numèrics el negador de <b>&lt;</b> és <b>&gt;=</b>)</li>
+</ul>
+<p style="text-align: justify;">Per exemple anem a crear l'operador <b>MÀXIM </b>(<b>/|</b>) que calcula el màxim entre dos números. Utilitzarem la funció <b>MAX2 </b>que ja tenim creada (és l'exercici 7.4)</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OPERATOR /| (
+	PROCEDURE = MAX2, LEFTARG = numeric, RIGHTARG = numeric);</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><br /><br /></p>
+<p style="text-align: justify;">Podem comprovar el seu funcionament amb la sentència:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>SELECT 23 /| 15;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Recordem que els operadors estan definits per a determinats operands. Així, per exemple, la següent sentència no funcionarà perquè no tenim definit l'operador per a operands de text:</p>
+<div class="codi" style="text-align: justify;"><span style="color: #ff0000;">SELECT 'Alfa' /| 'Beta';</span></div>
+<p style="text-align: justify;"> </p>
+<p style="text-align: justify;">Tampoc tenim definits els operands de comparació per al tipus <b>lat</b>, que havíem creat. I per tant coses com aquesta no funcionen:</p>
+<p class="codiSQL" style="text-align: justify;"><span style="color: #ff0000;">SELECT * FROM POBLACIONS3 <br />WHERE latitud &gt; '(N,40,0,0)';</span></p>
+<p style="text-align: justify;">I si li posem el tipus del qual es tracta:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>SELECT * FROM POBLACIONS3
+	WHERE latitud &gt; '(N,40,0,0)'::lat
+	ORDER BY nom;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">potser no funcionen bé. Encara que sembla que va bé la cosa:</p>
+<p><img style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" src="T7_9_1_1.png" /></p>
+<p style="text-align: justify;">el que ha fet en realitat és una comparació caràcter a caràcter</p>
+<p style="text-align: justify;">Per a demostrar que no funciona bé inserim una ciutat que estiga a l'hemisferi sud: Rio de Janeiro (ja havíem quedat que no importava si es deteriorava la Base de Dades).</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>INSERT INTO POBLACIONS3
+	VALUES('Rio de Janeiro','(S,22,56,58)'::lat, NULL);</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I si tornem a executar la sentència d'abans:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>SELECT * FROM POBLACIONS3
+	WHERE latitud &gt; '(N,40,0,0)'::lat
+	ORDER BY nom;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">ara ja es veu que va malament:</p>
+<p><img src="T7_9_1_2.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" height="384" width="491" /></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Anem a intentar crear tots els operadors de comparació del tipus <b>lat </b></p>
+<p style="text-align: justify;">Començarem per les funcions. No considerem quan un operand és nul, per fer-los més senzills. La d'igualtat és fàcil, ja que dos latituds són iguals si ho són tots els membres. Observeu que no hi ha problema per fer la comparació <b>$1.h=$2.h</b>, ja que són del domini <b>hemi_lat</b> basat en el tipus caràcter:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE FUNCTION igual (lat,lat) RETURNS bool AS '
+BEGIN
+	RETURN $1.h=$2.h AND $1.g=$2.g AND $1.m=$2.m AND $1.s=$2.s;
+END; '
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I ara l'operador:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OPERATOR =
+	(LEFTARG = lat,
+	RIGHTARG = lat,
+	PROCEDURE = igual,
+	COMMUTATOR = = ,
+	NEGATOR = &lt;&gt;);</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Observeu que hem posat el commutador igual a ell mateix i el negador a l'operador distint, encara que no el tenim definit.</p>
+<p style="text-align: justify;">Ara aquesta instrucció ja funciona:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>SELECT * FROM POBLACIONS3 
+	WHERE latitud = '(N,39,59,10)';</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">i fins i tot sap que ha de convertir a lat la cadena de caràcters (ja que només té un operador = amb un operand tipus <b>lat</b>).</p>
+<p style="text-align: justify;">La funció <b>distint </b>només ha de negar l'igual. I ja podem gastar l'operador:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE FUNCTION distint (lat,lat) RETURNS bool AS '
+BEGIN
+	RETURN NOT ($1 = $2);
+END; ' 
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OPERATOR &lt;&gt;
+	(LEFTARG = lat,
+	RIGHTARG = lat,
+	PROCEDURE = distint,
+	COMMUTATOR = &lt;&gt; ,
+	NEGATOR = = );</code></pre>
+</div>
+</div>
+<div class="nota_blau">
+<p style="text-align: justify;"><strong><u>Nota important</u></strong></p>
+<p style="text-align: justify;">Enguany tenim creades moltes Bases de Dades perquè l'alumnat és molt extens, i potser tenim un poc saturat el servidor.</p>
+<p style="text-align: justify;">Siga per l'anterior o per alguna altra causa, estem detectant una sobrecàrrega entre les crides als operadors nous que estem creant.</p>
+<p style="text-align: justify;">Per aquesta raó, encara que queda molt clara la funció <strong>distint</strong> (quan no són iguals), en compte d'utilitzar l'operador = serà millor cridar a la funció igual (en definitiva, l'operador = crida a la funció igual, per tant ens estalviem un pas). Com que anirem fent tots els operadors de comparació, si cridem sempre a les funcions i no a altres operadors, al final ens estalviarem molts passos.</p>
+<p style="text-align: justify;">Per això, millor fer aquesta versió de la funció <strong>distint(lat,lat)</strong></p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION distint(lat, lat) RETURNS bool AS $cos$
+BEGIN
+	RETURN NOT igual($1,$2);
+END; <br />$cos$ LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+</div>
+<p style="text-align: justify;">L'operador <b>major </b>és un poc més complicat. Hem de considerar una latitud major si està més al nord. Per tant a l'hemisferi nord quan més graus més al nord, però a l'hemisferi sud és al revés.</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE FUNCTION major (lat1 lat, lat2 lat) RETURNS bool AS $cos$
+DECLARE
+	aux bool;
+BEGIN
+	IF lat1.h='N' AND lat2.h='S' THEN aux := TRUE;
+	ELSIF lat1.h='S' AND lat2.h='N' THEN aux := FALSE;
+	ELSIF lat1.h='N' AND lat2.h='N' THEN 				-- Hemisferi NORD
+		IF lat1.g &gt; lat2.g THEN aux := TRUE;
+		ELSIF lat1.g &lt; lat2.g THEN aux := FALSE;
+		ELSE
+			IF lat1.m &gt; lat2.m THEN aux := TRUE;
+			ELSIF lat1.m &lt; lat2.m THEN aux := FALSE;
+			ELSE
+				IF lat1.s &gt; lat2.s THEN aux := TRUE;
+				ELSE aux := FALSE; -- si són iguals és fals
+				END IF;
+			END IF;
+		END IF;
+	ELSE 								-- Hemisferi SUD, al revés que al NORD
+		IF lat1.g &lt; lat2.g THEN aux := TRUE;
+		ELSIF lat1.g &gt; lat2.g THEN aux := FALSE;
+		ELSE
+			IF lat1.m &lt; lat2.m THEN aux := TRUE;
+			ELSIF lat1.m &gt; lat2.m THEN aux := FALSE;
+			ELSE
+				IF lat1.s &lt; lat2.s THEN aux := TRUE;
+				ELSE aux := FALSE;
+				END IF;
+			END IF;
+		END IF;
+	END IF;
+	RETURN aux;
+END; $cos$ 
+LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Segurament podria haver quedat més curt, però així crec que s'entén molt bé. Ara l'operador:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OPERATOR &gt;
+	(LEFTARG = lat,
+	RIGHTARG = lat,
+	PROCEDURE = major,
+	COMMUTATOR = &lt; ,
+	NEGATOR = &lt;= );</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Podríem provar-lo així:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>SELECT * FROM POBLACIONS3 
+	WHERE latitud &gt; '(N,40,0,0)'
+	ORDER BY NOM;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">i podrem comprovar que Rio de Janeiro no apareixerà.</p>
+<p style="text-align: justify;">Afortunadament tots els altres operadors es poden derivar dels que ja tenim:</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION major_igual (lat,lat) RETURNS bool AS '
+BEGIN
+	RETURN ($1 &gt; $2) OR ($1=$2);
+END; ' LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>CREATE OPERATOR &gt;=
+	(LEFTARG = lat,
+	RIGHTARG = lat,
+	PROCEDURE = major_igual,
+	COMMUTATOR = &lt;= ,
+	NEGATOR = &lt; );</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I el <b>menor </b>seria negant el major o igual i el <b>menor o igual</b> negant el major.</p>
+<div class="nota_blau">
+<p style="text-align: justify;"><strong><u>Nota important</u></strong></p>
+<p style="text-align: justify;">Per la mateixa raó de la nota anterior, millor fer aquesta versió de la funció <strong>major_igual(lat,lat)</strong>:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION major_igual (lat,lat) RETURNS bool AS '
+BEGIN
+	RETURN major($1,$2) OR igual($1,$2);
+END; ' LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I exactament igual amb les funcions <strong>menor(lat,lat)</strong> i <strong>menor_igual(lat,lat)</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="9_creaci_daltres_objectes_basats_en_funcions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis2.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

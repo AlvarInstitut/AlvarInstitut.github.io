@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1 - Instal·lació de Redis | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bd_clauvalor_redis.html" class="current-page-parent daddy">2 - BD Clau-Valor: Redis</a>
+   <ul>
+      <li id="active"><a href="21__installaci_de_redis.html" class="active no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
+         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
+            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
+            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
+            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
+            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
+            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
+         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__bd_xml_existdb.html" class="daddy">4 - BD XML: eXist-db</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul class="other-section">
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li><a href="422__xquery.html" class="daddy">4.2.2 - XQUERY</a>
+         <ul class="other-section">
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li><a href="4224__expressions_flwor.html" class="no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2__bd_clauvalor_redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22__entron_grfic_redis_desktop_manager.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.1 - Instal·lació de Redis</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_85" class="block iDevice_content">
+<p>Redis està construït per a Linux. També funciona, però, des de Windows com veurem una miqueta més avant.</p>
+<p></p>
+<p></p>
+<p class="titolet">Instal·lació en Linux</p>
+<p>El lloc des d'on baixar-lo és la pàgina oficial:</p>
+<p><a target="_blank" href="http://redis.io" rel="noopener">http://redis.io</a></p>
+<p style="text-align: justify;">En el moment de fer aquestos apunts, l'última versió estable és la <strong>6.2.6</strong>.</p>
+<p style="text-align: justify;">Ens baixem el fitxer, el descomprimim, i després des d'una terminal ens situem en el directori on s'ha descomprimit i fem <strong>make </strong>per a generar els executables. Després de molts avisos, s'hauria d'haver instal·lat bé, i sense ser necessaris els permisos d'administrador. Aquest seria el resum d'accions, fetes totes elles des d'una terminal (però no cal descomprimir des d'una terminal) i havent-nos situat prèviament en el lloc on està el fitxer baixat. També suposarem que el fitxer està col·locat en el lloc on volem que estiga instal·lat de forma definitiva. Recordeu que podeu descomprimir-lo de la manera que us resulte més còmoda:</p>
+<p class="codi" style="text-align: justify;">tar xzf redis-6.2.6.tar.gz</p>
+<p style="text-align: justify;">o també el podeu descomprimir des del navegador d'arxius, com ja havíem comentat.</p>
+<p style="text-align: justify;">Una vegada descomprimit, des d'una terminal ens hem de situar en el directori acabat de descomprimir i fer <strong>make</strong></p>
+<p class="codi" style="text-align: justify;">cd redis-6.2.6<br /><br />make</p>
+<p style="text-align: justify;">Amb açò s'haurien d'haver generat els executables, i ja hauria de funcionar. Recordeu que no fan falta permisos d'administrador per a realitzar açò.</p>
+<p style="text-align: justify;">Per a posar en marxa el servidor, quasi que el més còmode serà obrir un terminal, situar-nos en el directori <strong>redis-6.2.6/src</strong> i des d'ahi executar <strong>redis-server</strong>. Hauria d'eixir una finestra similar a la següent, amb més o menys avisos (observeu que al principi de la imatge estan les ordres donades).</p>
+<p style="text-align: center;">  <img src="T8_2_1_1.png" /></p>
+<p style="text-align: justify;">Entre altres coses diu que el servidor està en marxa esperant connexions al port 6379, que és el port per defecte de Redis. Aquesta finestra del terminal l'haurem de deixar en marxa. Quan vulguem detenir Redis, senzillament fem <strong>ctrl-c</strong>, i detindrem l'execució de forma ordenada (guardant-se les dades no guardades i tancant-se tot bé)</p>
+<p style="text-align: justify;">Podríem haver executat directament <strong>redis-server</strong> fent-li doble-clic des d'un explorador d'arxius, per exemple, però aleshores no podríem parar-lo i en definitiva controlar-lo tan còmodament.</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Per a fer una connexió des d'un client, també des d'un terminal (un altre) executem <strong>redis-cli</strong>:</p>
+<p style="text-align: center;"><img src="T8_2_1_2.png" width="724" height="483" /></p>
+<p style="text-align: justify;">Ja ha fet la connexió, concretament a localhost (127.0.0.1) i al port 6379, que havíem quedat que és el port per defecte.</p>
+<p style="text-align: justify;">Comprovem que sí que funciona. Encara no hi ha dades, perquè l'acabem d'instal·lar. I recordeu que és una Base de Dades clau-valor. Per a crear una entrada posarem <strong>set clau valor</strong>. Per a obtenir-la posarem <strong>get clau</strong>. En la imatge es pot comprovar:</p>
+<p style="text-align: center;"><img src="T8_2_1_3.png" width="723" height="485" /></p>
+<p style="text-align: justify;">Hem creat una clau anomenada <strong>clau_1</strong> amb el valor <strong>primera</strong>, com es pot comprovar en el moment d'obtenir-la amb <strong>get</strong>.</p>
+<p style="text-align: justify;">Si al programa <strong>redis-cli</strong> no li posem paràmetres, intentarà fer una connexió local (localhost). Si volem connectar a un servidor situat en una altra adreça, li la posem amb el paràmetre <strong>-h adreça</strong>, per exemple:</p>
+<p class="codi" style="text-align: justify;">redis-cli -h <span title="89.36.214.106">192.168.1.26</span></p>
+<p style="text-align: justify;">Ací tenim una imatge des d'una connexió externa, des d'un altre equip<strong></strong>:</p>
+<p style="text-align: center;"><img src="T8_2_1_4.png" alt="" width="722" height="462" /></p>
+<div class="nota_blau">
+<p><strong><u>Nota: Connexió al servidor de l'Institut</u></strong></p>
+<p>En el servidor de dades de l'Institut també tenim instal·lat redis. Però per a no tenir accessos no desitjats, cal una autenticació. Senzillament és posar el comando auth amb la contrasenya: <strong>auth ieselcaminas.ad</strong></p>
+<p>En la següent imatge es veu com sí que hem pogut connectar</p>
+<p><img src="T8_2_1_5.1.png" alt="" width="734" height="536" /></p>
+</div>
+<p class="titolet">Instal·lació en Windows de 64 bits</p>
+<p>Encara que Redis està construït per a Linux, hi ha versions per a Windows, preferiblement de 64 bits. També podrem trobar versions de 32 bits, però molt més antigues.</p>
+<p>El lloc on poder baixar els fitxers de Redis per a Windows de 64 bits és:</p>
+<p><a>https://github.com/MSOpenTech/redis/releases</a></p>
+<p style="text-align: center;"><span style="color: #ff0000;"> </span></p>
+<p style="text-align: center;"><img src="T8_2_1_5.png" style="border: 1px solid black;" width="1064" height="787" /></p>
+<p>Ens baixem el <strong>zip</strong>, el descomprimim, i ja ho tindrem disponible (sense fer <strong>make</strong> ni res). Observeu com en la carpeta resultat de descomprimir ja tenim els executables <strong>redis-server</strong> i <strong>redis-cli</strong> que són els que ens interessen:</p>
+<p style="text-align: center;"><img src="T8_2_1_6.png" width="848" height="600" /></p>
+<p style="text-align: left;">Executem <strong>redis-server</strong> directament i ja el tindrem en marxa:</p>
+<p style="text-align: center;"><img src="T8_2_1_7.png" width="675" height="340" /></p>
+<p style="text-align: left;">Executem també el <strong>redis-cli</strong> i el resultat serà el mateix que en Linux. Hem incorporar una nova clau i després obtenim el seu contingut:</p>
+<p style="text-align: center;"><img src="T8_2_1_7_2.png" width="676" height="340" /></p>
+<p style="text-align: left;"></p>
+<p class="titolet" style="text-align: left;">Instal·lació en Windows de 32 bits</p>
+<p style="text-align: left;">És un poc més complicada de trobar. I sobretot, és una versió prou més antiga. Podem descarregar-la de la següent adreça:</p>
+<p style="text-align: left;"><a href="https://github.com/rgl/redis/downloads">https://github.com/rgl/redis/downloads</a></p>
+<p style="text-align: center;"><img style="border: 1px solid black;" src="T8_2_1_8.png" width="1057" height="532" /></p>
+<p style="text-align: left;">Aquesta sí que és d'instal·lació (no de descompressió únicament). La documentació suggereix que s'active com un servei. Per això, en la llista de programes de l'Inici no està el server, únicament el <strong>client</strong>. Però el podem trobar en el directori on s'ha instal·lat: <strong>C:\Archivos de programa\Redis</strong>. Trobarem tant <strong>redis-server.exe</strong> com <strong>redis-cli.exe</strong>. Posem en marxa el servidor fent doble-clic a <strong>redis-server.exe</strong>:</p>
+<p style="text-align: center;"><img src="T8_2_1_10.png" style="border: 1px solid black;" width="676" height="343" /></p>
+<p style="text-align: left;">I ja només falta posar en marxa el client (des del menú o fent doble-clic a <strong>redis-cli.exe</strong>). En la imatge es veu com podem connectar, crear una clau i tornar el seu valor:</p>
+<p style="text-align: center;"><img src="T8_2_1_11.png" style="border: 1px solid black;" width="676" height="341" /></p>
+<p style="text-align: left;"></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2__bd_clauvalor_redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22__entron_grfic_redis_desktop_manager.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

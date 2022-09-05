@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. Segona Forma Normal (2FN) | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Normalització</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_primer_forma_normal_1fn.html" class="no-ch">2. Primer Forma Normal (1FN)</a></li>
+   <li><a href="3_dependncia_funcional.html" class="no-ch">3. Dependència Funcional</a></li>
+   <li id="active"><a href="4_segona_forma_normal_2fn.html" class="active no-ch">4. Segona Forma Normal (2FN)</a></li>
+   <li><a href="5_dependncia_funcional_transitiva.html" class="no-ch">5. Dependència Funcional Transitiva</a></li>
+   <li><a href="6_tercera_forma_normal_3fn.html" class="no-ch">6. Tercera Forma Normal (3FN)</a></li>
+   <li><a href="7_forma_normal_boycecodd_fnbc.html" class="no-ch">7. Forma Normal Boyce-Codd (FNBC)</a></li>
+   <li><a href="resum.html" class="no-ch">Resum</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_dependncia_funcional.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_dependncia_funcional_transitiva.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4. Segona Forma Normal (2FN)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<table border="1">
+	<tbody>
+		<tr>
+			<td>
+			<p>
+			<b>Una taula es diu que està en <u>2FN</u> si i només si compleix dues
+			condicions:</b>
+			</p>
+			<ul class="unIndentedList">
+				<li>
+				<b>Es troba
+				en 1FN.</b></li>
+				<li>
+				<b>Tot
+				atribut secundari (aquells que no pertanyen a la clau principal, els que es
+				troben fora de la caixa) depèn totalment (té una dependència funcional total)
+				de la clau completa i, per tant, no d'una part d'ella.</b></li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+Aquesta forma normal només es considera si la clau principal
+és composta, i per tant, està formada per diversos atributs.
+</p>
+<p>
+Si una taula <b>T</b> té com a atributs <b>A, B, C, D</b> i la clau és <b>A .
+B</b> complint-se les dependències:
+</p>
+<p>
+<!--[if gte vml 1]>
+<![endif]--><b>A
+. B            </b><font face="courier new,courier" size="5">→</font><b> C</b>
+</p>
+<p>
+<!--[if gte vml 1]>
+<![endif]--><b>B </b><font face="courier new,courier" size="5">→</font><b>           
+D</b>
+</p>
+<p align="justify">
+S'observa que la taula no es troba en 2FN ja que l'atribut D
+no té una dependència funcional total amb la clau completa A . B , sinó amb una
+part de la clau (B). El graf de les dependències funcionals seria:<br />
+</p>
+<p>
+&nbsp;
+</p>
+<div align="center">
+<img src="T4_4_1.png" border="1" height="103" width="199" />
+</div>
+<p>
+&nbsp;
+</p>
+<p>
+<b> </b>
+</p>
+<p>
+<b>Si existeix una
+fletxa que ix de l'interior de la caixa que engloba la clau, aleshores la taula
+no està en 2FN.</b>
+</p>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+Posar en 2FN  
+</p>
+<p>
+Per a convertir una taula que no està en segona forma normal
+a 2FN, es realitza una projecció i es crea:
+</p>
+<p>
+<b>A)</b> Una <b>primera taula</b> amb la clau i totes les seues dependències
+totals amb els atributs secundaris afectats:
+</p>
+<p>
+<!--[if gte vml 1]><![endif]-->
+</p>
+<blockquote>
+	<div align="left">
+	<img src="T4_4_2.png" border="1" height="97" width="185" /><br clear="all" />
+	</div>
+</blockquote>
+<p>
+<b> </b>
+</p>
+<p>
+<b>B)</b> Una <b>segona taula</b> amb la part de la clau que té
+dependències, i els atributs secundaris implicats:
+</p>
+<p>
+<!--[if gte vml 1]><![endif]-->
+</p>
+<blockquote>
+	<div align="left">
+	<img src="T4_4_3.png" border="1" height="62" width="180" />
+	</div>
+</blockquote>
+<p>
+<b> </b>
+</p>
+<blockquote>
+	<p>
+	La clau de
+	la nova taula T2 serà l'antiga part de la clau.
+	</p>
+</blockquote>
+<p>
+&nbsp;
+</p>
+<p>
+<u><b>Exemple</b></u>: Taula amb les persones que treballen en diverses
+empreses amb el sou corresponent, amb els atributs:<b>DNI , NOM , EMPRESA , SOU</b>
+</p>
+<p>
+Entre els atributs existeixen les dependències:
+</p>
+<p>
+<b> </b>
+</p>
+<p>
+<!--[if gte vml 1]>
+<![endif]--><b>DNI </b><font face="courier new,courier" size="5">→</font><b>          
+NOM</b>
+</p>
+<p>
+<!--[if gte vml 1]>
+<![endif]--><b>DNI
+. EMPRESA              </b><font face="courier new,courier" size="5">→</font><b> SOU</b>
+</p>
+<p>
+El graf que mostra les dependències és el següent:
+</p>
+<p align="center">
+<img src="T4_4_4.png" border="1" height="136" width="242" />
+</p>
+<p>
+És evident que la taula no es troba en 2FN, després de
+normalitzar s'obté:
+</p>
+<p align="center">
+<img src="T4_4_5.png" border="1" height="230" width="254" />
+</p>
+<b></b>
+<p>
+<!--[if gte vml 1]><![endif]-->
+</p>
+<b> </b>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_dependncia_funcional.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_dependncia_funcional_transitiva.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

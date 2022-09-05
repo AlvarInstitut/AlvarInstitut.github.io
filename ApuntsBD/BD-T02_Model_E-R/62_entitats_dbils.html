@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.2 Entitats dèbils | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-37"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: MODEL ENTITAT-RELACIÓ</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_exemple.html" class="no-ch">2. Exemple</a></li>
+   <li><a href="3_les_entitats_del_model_er.html" class="daddy">3. Les Entitats del Model E/R</a>
+   <ul class="other-section">
+      <li><a href="31_entitats.html" class="daddy">3.1 Entitats</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="32_atributs.html" class="daddy">3.2 Atributs</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple0.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="33_dominis.html" class="no-ch">3.3 Dominis</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="4_les_relacions_del_model_er.html" class="daddy">4. Les Relacions del Model E/R</a>
+   <ul class="other-section">
+      <li><a href="41_relaci.html" class="daddy">4.1 Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple1.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="42_atributs_de_relaci.html" class="daddy">4.2 Atributs de Relació</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple2.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li><a href="43_tipus_de_relaci_o_cardinalitat.html" class="daddy">4.3 Tipus de Relació o Cardinalitat</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple3.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   <li><a href="5_relacions_de_grau_major_que_dos.html" class="no-ch">5. Relacions de grau major que dos</a></li>
+   <li class="current-page-parent"><a href="6_model_er_ests.html" class="current-page-parent daddy">6. Model E/R Estès</a>
+   <ul>
+      <li><a href="61_cardinalitat_mxima_i_mnima_participaci_total.html" class="daddy">6.1 Cardinalitat màxima i mínima. Participació total.</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple4.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="62_entitats_dbils.html" class="active no-ch">6.2 Entitats dèbils</a></li>
+      <li><a href="63_generalitzaci_i_herncia.html" class="daddy">6.3 Generalització i herència</a>
+      <ul class="other-section">
+         <li><a href="aplicaci_a_lexemple5.html" class="no-ch">Aplicació a l'exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_restriccions_externes.html" class="no-ch">7. Restriccions externes</a></li>
+   <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   <li><a href="informaci_addicional.html" class="no-ch">Informació addicional</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="aplicaci_a_lexemple4.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="63_generalitzaci_i_herncia.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.2 Entitats dèbils</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id32">
+<div class="iDevice emphasis0">
+<div id="ta32_1" class="block iDevice_content">
+
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+&nbsp;
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+No totes les entitats són
+iguals. En les normals, que anomenarem <b>REGULARS</b>,
+les ocurrències tenen existència pròpia.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+En canvi, en les entitats <b>DÈBILS</b>, l’existència de les ocurrències
+depèn de l’existència de l’ocurrència d’una altra entitat, i així si desapareix
+aquesta última, haurien de desaparèixer també totes aquelles.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Per exemple els familiars de
+Joan Peris podrien ser [Marta, dona], [Isabel, filla] i [Marc, fill]. Si
+desapareix l’empleat Joan Peris haurien de desaparèixer també els seus
+familiars.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Les entitats dèbils les
+representarem per un doble rectangle:
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+<span>
+<div style="text-align: center">
+<img src="debil1.png" alt="Cuadro de texto: FAMILIAR" v:shapes="_x0000_s1026" height="47" width="148" />
+</div>
+</span>
+</p>
+La cardinalitat mínima i
+màxima de l’entitat regular en la relació amb la dèbil sempre és (1,1). O el
+que és el mateix, la dèbil sempre participa de forma total en la relació 1:N.
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Tal com hem comentat les
+coses fins ara direm que l’entitat dèbil té una <b>DEPENDÈNCIA EN EXISTÈNCIA<a href="#_ftn1" title="_ftnref1" name="_ftnref1"><span class="MsoFootnoteReference"><span><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><b><span style="font-size: 12pt; font-family: 'Times New Roman'">[1]</span></b></span><!--[endif]--></span></span></a></b>.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Però podem anar més enllà,
+si a més de la dependència en existència considerem que per a identificar una
+ocurrència de l’entitat dèbil ens fa falta la clau de l’entitat regular de la
+qual depèn. Si en una biblioteca tenim més d’un exemplar de cada llibre,
+tindríem l’entitat LLIBRE (on estaria tota la informació: títol, autor,
+editorial, ...) i una altra que seria EXEMPLAR. Serà lògic que per a
+identificar un determinat exemplar utilitzem el codi del llibre més el número
+d’exemplar.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Un altre exemple podria ser el de PROVÍNCIES i MUNICIPIS. El codi de la província consta de 2 xifres (Castelló és el 12). Per a identificar un municipi s'utilitzen les 2 xifres del codi de la privíncia i 4 més per al municipi. I fa falta el codi de la província, perquè si no es repetirien. 
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Aquesta dependència, encara més restrictiva que la d’existència, l’anomenarem
+<b>DEPENDÈNCIA EN IDENTIFICACIÓ</b>. Per a
+marcar aquesta dependència posarem <b>ID </b>al
+costat de la relació.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+En el nostre exemple, si
+considerem que per a identificar l’entitat FAMILIAR és suficient amb l’atribut
+Nom, serà en existència (el cas d’una companyia menuda). Si considerem que no
+és suficient, serà en identificació i la clau principal serà el DNI de
+l’empleat més el Nom del familiar.
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+Representarem la dependència
+en existència així (si considerem que amb el nom del familiar tenim prou per a identificar):
+</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm">
+<span>
+<div style="text-align: center">
+<img src="T2_6_5.png" v:shapes="_x0000_s1048 _x0000_s1049 _x0000_s1050 _x0000_s1051 _x0000_s1052 _x0000_s1053 _x0000_s1054 _x0000_s1055 _x0000_s1056 _x0000_s1057 _x0000_s1058 _x0000_s1059 _x0000_s1060 _x0000_s1061 _x0000_s1062" border="1" height="105" width="487" />
+</div>
+</span>
+</p>
+<p>
+I la dependència en
+identificació així (si considerem que també fa falta l'identificador de l'empleat, que és el DNI):
+</p>
+<p>
+<span>
+<div style="text-align: center">
+<img src="T2_6_6.png" v:shapes="_x0000_s1027 _x0000_s1028 _x0000_s1029 _x0000_s1030 _x0000_s1031 _x0000_s1032 _x0000_s1033 _x0000_s1034 _x0000_s1035 _x0000_s1036 _x0000_s1037 _x0000_s1038 _x0000_s1039 _x0000_s1040 _x0000_s1041 _x0000_s1042 _x0000_s1043 _x0000_s1044 _x0000_s1045 _x0000_s1046 _x0000_s1047" border="1" height="127" width="493" />
+</div>
+</span>
+</p>
+<p>
+Representarem aquesta última de forma alternativa amb el rombe de doble ratlla 
+</p>
+<div>
+<div style="text-align: center">
+<img src="T2_6_7.png" border="1" height="127" width="493" />
+</div>
+<hr align="left" size="1" width="33%" />
+<!--[endif]-->
+<div id="ftn1">
+<p class="MsoFootnoteText" style="text-align: justify">
+<a href="#_ftnref1" title="_ftn1" name="_ftn1"><span class="MsoFootnoteReference"><span><!--[if !supportFootnotes]--><span class="MsoFootnoteReference"><span style="font-size: 10pt; font-family: 'Times New Roman'">[1]</span></span><!--[endif]--></span></span></a> En la
+pràctica podríem pensar que tota entitat que participa de forma total en una relació és
+dèbil com a mínim en existència. Per exemple: la participació total de Familiar vol dir que tot familiar ho és d'un empleat; la dependència en existència vol dir que no pot existir un familiar sense l'empleat. Com veiem la diferència és molt subtil. A pesar d'això intentarem fer l’esforç de diferenciar ambdós casos, perquè en el següent tema sí que ens durà a dues maneres de procedir diferents.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="aplicaci_a_lexemple4.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="63_generalitzaci_i_herncia.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

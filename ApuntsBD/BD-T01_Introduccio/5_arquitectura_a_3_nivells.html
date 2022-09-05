@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5. Arquitectura a 3 nivells | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Bases de Dades</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Introducció</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_tradicionals.html" class="no-ch">1. Fitxers tradicionals</a></li>
+   <li><a href="2_concepte_de_base_de_dades.html" class="no-ch">2. Concepte de Base de Dades</a></li>
+   <li><a href="3_caracterstiques_desitjables_dun_sgbd.html" class="no-ch">3. Característiques desitjables d'un SGBD</a></li>
+   <li><a href="4_models_de_dades.html" class="no-ch">4. Models de dades</a></li>
+   <li id="active"><a href="5_arquitectura_a_3_nivells.html" class="active no-ch">5. Arquitectura a 3 nivells</a></li>
+   <li><a href="6_llenguatges_del_sgbd.html" class="no-ch">6. Llenguatges del SGBD</a></li>
+   <li><a href="7_classificacions_dels_sgbd.html" class="no-ch">7. Classificacions dels SGBD</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="4_models_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_llenguatges_del_sgbd.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5. Arquitectura a 3 nivells</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<p>
+Per a
+estandarditzar l'arquitectura dels SGBD, el comitè <i>ANSI/X3/SPARC</i> va proposar una arquitectura a 3 nivells, per assegurar
+algunes de les característiques que hem vist com a desitjables, en concret la
+de la separació entre programes i dades, les múltiples vistes i la utilització
+d'un catàleg per a la descripció de la B.D. Aquest són els 3 nivells:
+</p>
+<div align="center">
+<img src="T1_5_1.png" align="middle" border="1" height="442" width="619" /> 
+</div>
+<ol>
+	<li>Al
+	<b>NIVELL INTERN</b> o <b>FÍSIC </b>hi ha un <b>esquema
+	intern</b> que descriu l'estructura física d'emmagatzematge de la B.D.
+	S'utilitza un model físic, i descriu tots els detalls per al seu emmagatzematge
+	(on estan els fitxers, quants, estratègies d'accés a les dades, ...).
+	</li><br />
+	<li>
+	Al
+	<b>NIVELL CONCEPTUAL</b> o <b>LÒGIC </b>hi ha un <b>esquema conceptual</b>, que descriu l'estructura de tota la B.D. per al
+	conjunt dels usuaris. Oculta els detalls de les estructures físiques
+	d'emmagatzematge. S'utilitza un model de dades conceptual o d'implementació
+	</li><br />
+	<li>
+	Al
+	<b>NIVELL EXTERN</b> o <b>DE VISTES</b> s'inclouen diversos <b>esquemes
+	externs</b> o <b>vistes d'usuari</b>. Cada
+	esquema extern descriu la part de la B.D. que interessa a un grup d'usuaris
+	determinat, i oculta la resta de la B.D. S'utilitza també un model conceptual o
+	d'implementació.
+	</li>
+</ol>
+<p>
+&nbsp;
+</p>
+<p>
+Per tant els tres esquemes són distintes maneres de descriure les
+dades, encara que aquestes només existeixen realment en el nivell físic. Però
+l'esquema intern ha de ser totalment transparent als usuaris, i ells han de
+&quot;veure&quot; el seu esquema extern. Qualsevol referència a aquest esquema
+s'haurà de traduir, per part del SGBD, a referències a les dades oportunes de
+l'esquema lògic. I posteriorment s'haurà de traduir en una sol·licitud a
+l'esquema físic. Per exemple, suposem una vista on tenim el nom i l'edat dels
+empleats. Una sol·licitud de tota la vista externa s'haurà de traduir en una
+sol·licitud de les dades correctes de l'esquema lògic, el nom i la data de
+naixement. I per la seua banda s'haurà de traduir en una sol·licitud a
+l'esquema físic, on se sabran on estan exactament les dades, si hi ha índex per
+fer més ràpid l'accés, ... Posteriorment quan ja estan les dades, s'hauran de
+passar al nivell superior, i després de fer el càlcul oportú passar-les al
+nivell extern.
+</p>
+<p>
+El procés de transformar sol·licituds i resultats d'un nivell a un
+altre s'anomena correspondència o transformació (<i>mapping</i>). Evidentment consumiran temps, però facilitaran el que es
+pretenia:
+</p>
+<ul>
+	<li>
+	<b>Independència
+	lògica respecte a les dades</b>: es pot modificar l'esquema lògic sense haver
+	de modificar els esquemes externs. Per exemple, en l'esquema lògic puc
+	incorporar un camp per als empleats que siga la data d'ingrés en l'empresa.
+	Això no afectarà per a res a la vista externa d'empleats i edats.
+	</li><br />
+	<li>
+	<b>Independència
+	física respecte a les dades</b>: es pot modificar l'esquema físic sense haver
+	de modificar l'esquema lògic, i molt menys els esquemes externs. Així per
+	exemple es pot afegir més espai per a la B.D. incorporant un nou fitxer on es
+	guardaran les coses (Oracle), o s'inclou un nou índex per accedir més
+	ràpidament a les dades per un determinat ordre.
+	</li>
+</ul>
+<p>
+També hem de dir que no sempre els SGBD comercials
+compleixen estrictament aquestos 3 nivells en la seua arquitectura. Sobretot en
+els més menuts, ja que obligatòriament la correspondència entre els nivells
+tarda temps, i retarda els resultats.
+</p>
+<p>
+Anem a
+ampliar l'anterior arquitectura a tres nivells per incorporar tot el procés que
+farem en la construcció d'una B.D.
+</p>
+<div align="center">
+<img src="T1_5_2.png" align="middle" border="1" height="302" width="556" /> 
+</div>
+<p>
+&nbsp;
+</p>
+<p>
+On hem incorporat, fora de l'arquitectura a 3 nivells, és a dir fora
+del SGBD, l'esquema conceptual, que seria la concepció de la B.D. en un model
+d'alt nivell com el Model E/R. A partir d'ell realitzaríem l'esquema lògic (amb
+un model d'implantació). Després ja es passaria a l'esquema intern, i també als
+esquemes externs.
+</p>
+
+</div>
+</div>
+</article>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="4_models_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_llenguatges_del_sgbd.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</section>
+</div>
+</div>
+</body></html>

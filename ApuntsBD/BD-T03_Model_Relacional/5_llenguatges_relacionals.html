@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5. Llenguatges relacionals | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-21"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Model Relacional</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i coneixements previs</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_estructura_del_model_relacional.html" class="no-ch">2. Estructura del Model Relacional</a></li>
+   <li><a href="3_restriccions.html" class="daddy">3. Restriccions</a>
+   <ul class="other-section">
+      <li><a href="31_restriccions_inherents.html" class="no-ch">3.1 Restriccions inherents</a></li>
+      <li><a href="32_restriccions_dusuari.html" class="daddy">3.2 Restriccions d'usuari</a>
+      <ul class="other-section">
+         <li><a href="321_restricci_de_domini.html" class="no-ch">3.2.1 Restricció de domini</a></li>
+         <li><a href="322_restricci_de_clau_principal.html" class="no-ch">3.2.2 Restricció de clau principal</a></li>
+         <li><a href="323_restricci_dunicitat.html" class="no-ch">3.2.3 Restricció d'unicitat</a></li>
+         <li><a href="324_restricci_de_valor_no_nul.html" class="no-ch">3.2.4 Restricció de valor no nul</a></li>
+         <li><a href="325_integritat_referencial.html" class="no-ch">3.2.5 Integritat referencial</a></li>
+         <li><a href="326_restriccions_externes.html" class="no-ch">3.2.6 Restriccions externes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_tranformaci_del_m_er_al_m_relacional.html" class="daddy">4. Tranformació del M. E/R al M. Relacional</a>
+   <ul class="other-section">
+      <li><a href="41_entitats.html" class="no-ch">4.1 Entitats</a></li>
+      <li><a href="42_relacions_1n.html" class="no-ch">4.2 Relacions 1:N</a></li>
+      <li><a href="43_relacions_mn.html" class="no-ch">4.3 Relacions M:N</a></li>
+      <li><a href="44_relacions_11.html" class="no-ch">4.4 Relacions 1:1</a></li>
+      <li><a href="45_entitats_dbils.html" class="no-ch">4.5 Entitats dèbils</a></li>
+      <li><a href="46_resum_dependncies.html" class="no-ch">4.6 Resum dependències</a></li>
+      <li><a href="47_relacions_ternries.html" class="no-ch">4.7 Relacions ternàries</a></li>
+      <li><a href="48_especialitzacions.html" class="no-ch">4.8 Especialitzacions</a></li>
+      <li><a href="49_restriccions_externes.html" class="no-ch">4.9 Restriccions externes</a></li>
+      <li><a href="410_exemple.html" class="no-ch">4.10 Exemple</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="5_llenguatges_relacionals.html" class="active no-ch">5. Llenguatges relacionals</a></li>
+   <li><a href="6_exercicis.html" class="no-ch">6. Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Auto-avaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="410_exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5. Llenguatges relacionals</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id22">
+<div class="iDevice emphasis0">
+<div id="ta22_1" class="block iDevice_content">
+<p> </p>
+<p align="justify">Fins el moment hem dissenyat una B.D. Relacional. Però si volem la B.D. és per consultar-la, treure la informació que ens interessa, manipular-la. Ens farà falta, per tant, un llenguatge de manipulació de la B.D. (<b>DML</b>). Aquestos llenguatges poden estar basats en l'Àlgebra Relacional o en el Càlcul Relacional.</p>
+<div align="justify">
+<ul class="unIndentedList">
+<li>Per mig de l'<b>ÀLGEBRA RELACIONAL</b> farem operacions sobre les taules, combinant-les, seleccionant el que ens importa, ..., en definitiva manipulant-les. El resultat serà una nova taula, que serà el resultat final o servirà per a fer una altra operació. Les operacions poden ser <b>projecció</b> (agafar algunes columnes d'una taula), <b>selecció</b> (seleccionar algunes files d'una taula, les que acompleixen una determinada condició), <b>unió</b>, <b>intersecció</b>, <b>producte cartesià</b>, <b>reunió</b> ...</li>
+</ul>
+<blockquote>El llenguatge <b>SQL</b>, que és l'estàndard de fet i que veurem en el tema 6, està basat en l'Àlgebra relacional. Les sentències són de la forma:</blockquote>
+<p class="codiSQL">SELECT dni, nom, sou <br />FROM EMPLEAT<br />WHERE sou &gt; 2000</p>
+</div>
+<blockquote>
+<p align="justify">on estem projectant sobre els camps dni, nom i sou, i seleccionant les files que acompleixen la condició del final</p>
+<p> </p>
+<p align="justify">Anem a comentar dues de les operacions esmentades abans. El <b>producte cartesià</b> de dues taules consisteix en combinar cadascuna de les files d'una taula amb cadascuna de les files de l'altra. Així, el producte cartesià de <b>Empleat</b> i <b>Departament</b> seria:</p>
+</blockquote>
+<p class="codiSQL">SELECT dni, nom, nom_d <br />FROM EMPLEAT , DEPARTAMENT</p>
+<p> </p>
+<blockquote>
+<p align="justify">Però aquest operació no sembla tenir molt de sentit en aquest cas ¿per a què volem combinar un empleat amb tots els departaments de l'empresa? Sembla molt més lògic combinar cada empleat únicament amb el departament al qual pertany.</p>
+</blockquote>
+<blockquote>
+<p align="justify">La <b>reunió</b> de dues taules consisteix en fer un producte cartesià i després seleccionar les files que tenen el mateix valor en dos camps determinats (un de cada taula).</p>
+</blockquote>
+<p class="codiSQL">SELECT dni, nom, nom_d <br />FROM EMPLEAT , DEPARTAMENT <br />WHERE EMPLEAT.departament = DEPARTAMENT.num_d</p>
+<blockquote>
+<p align="justify">És a dir, del producte cartesià seleccionem només les files en les quals coincideixen els camp departament i num_d, combinant cada empleat amb el seu departament.</p>
+</blockquote>
+<p> </p>
+<ul class="unIndentedList">
+<li>
+<div align="justify">En el <b>CÀLCUL RELACIONAL</b>, es defineixen variables de tipus <b>taula</b>, s'utilitzen operadors entre les variables, i també uns quantificadors (<i><b>per a tot</b></i> i<span style="font-family: symbol;"><b> </b></span><i><b>existeix</b></i>). Va de forma paral·lela a l'àlgebra de manera que es poden obtenir les mateixes coses amb l'Àlgebra i amb el Càlcul.</div>
+</li>
+</ul>
+<div align="justify">
+<blockquote>El <b>QBE</b> (Query By Example) es basa en el càlcul relacional, i la seua particularitat és la senzillesa de fer consultes per als no experts. Per mig d'una plantilla podrem col·locar els atributs que volem visualitzar, l'ordre, els criteris de selecció, etc. És el que utilitzen tant <strong>Access</strong> com <strong>Base </strong> per a fer les consultes amb l'assistent.</blockquote>
+<div align="center">
+<blockquote><img src="T3_5_1.png" border="1" height="137" width="664" /> </blockquote>
+<blockquote></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="410_exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

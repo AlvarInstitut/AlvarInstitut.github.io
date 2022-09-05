@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Introducció | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Programació en PostgreSQL</a></li>
+   <li><a href="objectius_i_coneixements_previs.html" class="no-ch">Objectius i Coneixements previs</a></li>
+   <li><a href="0_nota_inicial.html" class="no-ch">0. Nota inicial</a></li>
+   <li id="active"><a href="1_introducci.html" class="active no-ch">1. Introducció</a></li>
+   <li><a href="2_plpgsql.html" class="no-ch">2. PL/pgSQL</a></li>
+   <li><a href="3_declaraci_de_variables.html" class="no-ch">3. Declaració de variables</a></li>
+   <li><a href="4_instruccions.html" class="no-ch">4. Instruccions</a></li>
+   <li><a href="5_funcions.html" class="daddy">5. Funcions</a>
+   <ul class="other-section">
+      <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="6_utilitzaci_de_cursors.html" class="daddy">6. Utilització de cursors</a>
+   <ul class="other-section">
+      <li><a href="exercicis0.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="7_missatges_i_excepcions.html" class="no-ch">7. Missatges i excepcions</a></li>
+   <li><a href="8_triggers.html" class="daddy">8. Triggers</a>
+   <ul class="other-section">
+      <li><a href="exercicis1.html" class="no-ch">Exercicis</a></li>
+   </ul>
+   </li>
+   <li><a href="9_creaci_daltres_objectes_basats_en_funcions.html" class="daddy">9. Creació d'altres objectes basats en funcions</a>
+   <ul class="other-section">
+      <li><a href="91_operadors.html" class="daddy">9.1 Operadors</a>
+      <ul class="other-section">
+         <li><a href="exercicis2.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+      <li><a href="92_operadors_de_classe.html" class="no-ch">9.2 Operadors de classe</a></li>
+      <li><a href="93_funcions_dagregat.html" class="daddy">9.3 Funcions d'agregat</a>
+      <ul class="other-section">
+         <li><a href="exercicis3.html" class="no-ch">Exercicis</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis_de_tot_el_tema.html" class="no-ch">Exercicis de tot el tema</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="0_nota_inicial.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_plpgsql.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Introducció</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_1" class="block iDevice_content">
+<p style="text-align: justify;">Una vegada vist amb suficient profunditat el SQL, anem a enfocar l'atac a una base de dades des d'un altre punt de vista. No com un comando que l'executem i ens dóna la resposta, sinó des d'un llenguatge procedimental, amb les estructures de control pròpies d'aquestos (condicionals, bucles, funcions, ...), però accedint òbviament a les dades. Ara, quan fem una consulta obtindrem un conjunt de dades al qual anomenarem <strong>cursor</strong>, i que segurament l'haurem de recórrer des del principi fins al final per a fer el tractament que siga.</p>
+<p style="text-align: justify;">La part bàsica de tot açò serà la construcció de funcions. Aquestes es poden construir utilitzant molts llenguatges, començant per <b>SQL</b>, on agruparem en una funció unes quantes sentències SQL o una sentència complicada. Anem a veure algun exemple, sobre l'usuari <b>geo_grup_9999x</b>, bé des de <b>psql </b>o bé des d'una finestra de SQL de <b>DBeaver</b>, que el que fa és sumar la població dels pobles de la comarca passada com a paràmetre. Hem utilitzat l'opció <strong>CREATE OR REPLACE</strong>, així en cas que estiga ja creada, dons la substituirem.</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION gent_com(text) RETURNS numeric AS '
+        SELECT SUM(poblacio)
+            FROM POBLACIONS
+            WHERE nom_c=$1;
+' LANGUAGE SQL;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I ara, així ens dirà quina és la població de <b>Baix Maestrat</b>:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT gent_com('Baix Maestrat');</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">O una altra també interessant, on traurem totes les comarques amb la seua població, utilitzant la funció anterior:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>SELECT nom_c,gent_com(nom_c)
+    FROM COMARQUES;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Però on realment traurem profit és amb els llenguatges procedimentals. Podríem triar entre molts: <b>C</b>, <b>Tcl</b>, <b>Perl</b>, <b>Python</b>, ... En aquest curs optarem per <b>PL/pgSQL</b> (<i>ProceduraL PostGreSQL</i>).</p>
+<p style="text-align: justify;">En versions anteriors podia passar que s'haguera de preparar la Base de Dades per a utilitzar el llenguatge. És a dir, podia passar que no estiguera disponible el llenguatge de programació en la Base de Dades. Aleshores s'havia d'instal·lar amb la sentència:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>CREATE PROCEDURAL LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Però <b>no serà el nostre cas</b>. Podem utilitzar sense problemes tant el llenguatge <b>SQL </b>com el <b>PL/pgSQL</b>, que és el que realment ens interessa.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="0_nota_inicial.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_plpgsql.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

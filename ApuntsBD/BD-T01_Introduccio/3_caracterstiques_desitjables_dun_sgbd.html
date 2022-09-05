@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. Característiques desitjables d'un SGBD | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Bases de Dades</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Introducció</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_tradicionals.html" class="no-ch">1. Fitxers tradicionals</a></li>
+   <li><a href="2_concepte_de_base_de_dades.html" class="no-ch">2. Concepte de Base de Dades</a></li>
+   <li id="active"><a href="3_caracterstiques_desitjables_dun_sgbd.html" class="active no-ch">3. Característiques desitjables d'un SGBD</a></li>
+   <li><a href="4_models_de_dades.html" class="no-ch">4. Models de dades</a></li>
+   <li><a href="5_arquitectura_a_3_nivells.html" class="no-ch">5. Arquitectura a 3 nivells</a></li>
+   <li><a href="6_llenguatges_del_sgbd.html" class="no-ch">6. Llenguatges del SGBD</a></li>
+   <li><a href="7_classificacions_dels_sgbd.html" class="no-ch">7. Classificacions dels SGBD</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="2_concepte_de_base_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_models_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3. Característiques desitjables d'un SGBD</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+<p> </p>
+<p>Ja hem vist algunes característiques que han de tenir els SGBD. Anem a completar aquest llista.</p>
+<ul>
+<li style="text-align: justify;"><b>Control de redundància</b>. Ja hem comentat que potser siga convenient en algunes ocasions un poc de redundància. Però en cas que hi haja, aquesta ha d'estar controlada. És a dir, el SGBD hauria de proporcionar mecanismes per a controlar les dades que estan duplicades, i que quan una informació s'actualitze en un lloc, automàticament s'actualitze en els altres.</li>
+</ul>
+<p></p>
+<ul>
+<li style="text-align: justify;"><b>Restricció d'accessos no autoritzats</b>. Quan molts usuaris utilitzen la B.D., és normal que no tots tinguen autorització per a accedir a tota la informació. Pot haver informació confidencial a la qual pocs usuaris tenen accés, i pot haver informació a la qual un usuari pot tenir accés però que no pot modificar. El SGBD ha de tenir, per tant, un subsistema de seguretat i autorització per a crear usuaris (que s'identifiquen amb una contrasenya) i donar distints permisos d'accés a cadascun.</li>
+</ul>
+<p></p>
+<ul>
+<li style="text-align: justify;"><b>Subministrament de múltiples interfícies per als usuaris</b>. Com que hi ha molts tipus d'usuaris, amb nivells de coneixements tècnics distints, el SGBD ha d'oferir diferents interfícies: llenguatges de consulta per a usuaris esporàdics, llenguatges de definició i control per a administradors, formularis per a usuaris habituals, ...</li>
+</ul>
+<p></p>
+<ul>
+<li style="text-align: justify;"><b>Compliment de restriccions</b>. Hi haurà restriccions que han de complir les dades. Per exemple la nota d'un alumne ha d'estar entre 0 i 10; la data de naixement no pot ser posterior a l'actual; el curs on està matriculat un alumne ha de ser un curs existent; un alumne que estiga de baixa ha de tenir contingut en la data de baixa, o no se li poden posar notes; ... Algunes d'aquestes restriccions les suportarà directament el SGBD. Altres requeriran verificació per mig de programa quan s'introduesca o es modifique la dada.</li>
+</ul>
+<p></p>
+<ul>
+<li style="text-align: justify;"><b>Recolzament i recuperació</b>. Tot SGBD ha de comptar amb recursos per a recuperar-se d'errades del hardware o del software i deixar les dades com estaven abans de la fallida.</li>
+</ul>
+</div>
+</div>
+</article>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="2_concepte_de_base_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_models_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0</a></p>
+</div>
+</section>
+</div>
+</div>
+</body></html>

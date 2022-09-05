@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Resum | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Normalització</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2_primer_forma_normal_1fn.html" class="no-ch">2. Primer Forma Normal (1FN)</a></li>
+   <li><a href="3_dependncia_funcional.html" class="no-ch">3. Dependència Funcional</a></li>
+   <li><a href="4_segona_forma_normal_2fn.html" class="no-ch">4. Segona Forma Normal (2FN)</a></li>
+   <li><a href="5_dependncia_funcional_transitiva.html" class="no-ch">5. Dependència Funcional Transitiva</a></li>
+   <li><a href="6_tercera_forma_normal_3fn.html" class="no-ch">6. Tercera Forma Normal (3FN)</a></li>
+   <li><a href="7_forma_normal_boycecodd_fnbc.html" class="no-ch">7. Forma Normal Boyce-Codd (FNBC)</a></li>
+   <li id="active"><a href="resum.html" class="active no-ch">Resum</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+   <li><a href="autoavaluaci.html" class="no-ch">Autoavaluació</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="7_forma_normal_boycecodd_fnbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Resum</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<table align="center" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td style="border: 1px solid #000000; background-color: #0ae0e0" align="center"> <b>1FN</b></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+<b>Una taula està en 1FN si i
+només si els valors que componen els atributs d'una tupla són
+atòmics.</b>
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Es descompon la taula en dos
+</p>
+<p>
+1a.- Projecció de la clau junt amb els atributs que tenen
+valors atòmics.
+</p>
+<p>
+2a.- Nova clau amb els atributs que tenen valors múltiples
+(cal idear una nova clau).
+</p>
+<p align="justify">
+&nbsp;
+</p>
+<p align="justify">
+&nbsp;
+</p>
+<table align="center" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td style="border: 1px solid #000000; background-color: #0ae0e0" align="center"> <b>2FN</b></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+<b>Una taula està en 2FN si i
+només si compleix dues condicions:</b>
+</p>
+<ul>
+	<li><b>Està en 1FN.</b>
+	</li>
+	<li><b>Tot atribut secundari (els que no pertanyen a la clau principal)
+	depèn totalment (té una dependència funcional
+	total) de la clau completa, i per tant, no d'una part d'ella.</b></li>
+</ul>
+<p>
+&nbsp;
+</p>
+<p>
+Es descompon la taula en dos
+</p>
+<blockquote>
+	<p>
+	1a.- Una taula amb la clau i totes les seues dependències
+	totals.
+	</p>
+</blockquote>
+<blockquote>
+	<p>
+	2a.- Una altra taula amb la part de la clau que té
+	dependències, i els atributs secundaris implicats.
+	</p>
+</blockquote>
+<p align="center">
+<img src="T4_R_1.png" border="1" height="112" width="540" />
+</p>
+<p align="justify">
+&nbsp;
+</p>
+<p align="justify">
+&nbsp;
+</p>
+<table align="center" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td style="border: 1px solid #000000; background-color: #0ae0e0" align="center"> <b>3FN</b></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+<b>Una taula es troba en 3FN si i només
+si es compleixen dues condicions:</b>
+</p>
+<ul>
+	<li>
+	<b>Està en 2FN.</b>
+	</li>
+	<li><b>No existeixen atributs no primaris (que no formen part de la
+	clau) que són transitivament dependents d'una clau candidata
+	(cada possible clau de la taula).</b></li>
+</ul>
+<p>
+&nbsp;
+</p>
+<p>
+Es descompon la taula en dos
+</p>
+<blockquote>
+	<p>
+	1a.- Una taula amb la clau i tots els atributs no primaris que no són
+	transitius.
+	</p>
+</blockquote>
+<blockquote>
+	<p>
+	2a.- Una altra taula amb els atributs transitius i l'atribut no
+	primari (que serà la clau de la nova taula).
+	</p>
+</blockquote>
+<p>
+&nbsp;
+</p>
+<div style="text-align: center">
+<img src="T4_R_2.png" border="1" height="95" width="582" />
+</div>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<table align="center" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td style="border: 1px solid #000000; background-color: #0ae0e0" align="center"> <b>FNBC</b></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+<b>Una taula està en FNBC si i
+només si està en 1FN i les úniques dependències
+funcionals són aquelles en què la clau principal (i
+claus candidates) determinen un atribut.</b>
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Es descompon la taula en dos
+</p>
+<blockquote>
+	<p>
+	1a.- Una taula amb tots els atributs menys la part de la clau
+	dependent de l'atribut secundari. La clau està formada per la
+	resta de la clau i l'atribut secundari del que depenia part de la
+	clau.
+	</p>
+</blockquote>
+<blockquote>
+	<p>
+	2a.- Una altra taula en què l'atribut de què depèn
+	part de la clau serà la nova clau i aquesta part de la clau
+	com a atribut secundari.
+	</p>
+</blockquote>
+<p align="center">
+<img src="T4_R_3.png" border="1" height="119" width="531" /> 
+</p>
+<blockquote>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="7_forma_normal_boycecodd_fnbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
