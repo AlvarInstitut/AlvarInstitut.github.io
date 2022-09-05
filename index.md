@@ -36,5 +36,5 @@
 
 ## BD
 
-[Tema 1: Introducció](https://alvarinstitut.github.io/ApuntsAD/AD_T1_Sistema_de_fitxers/index.html)
+[Tema 1: Introducció](https://alvarinstitut.github.io/ApuntsBD/BD-T01_Introduccio/index.html)
 
