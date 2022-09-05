@@ -38,3 +38,23 @@
 
 [Tema 1: Introducció](https://alvarinstitut.github.io/ApuntsBD/BD-T01_Introduccio/index.html)
 
+[Tema 2: Model E/R](https://alvarinstitut.github.io/ApuntsBD/BD-T0_Model_E-R/index.html)
+
+[Tema 3: Model Relacional](https://alvarinstitut.github.io/ApuntsBD/BD-T03_Model_Relacional/index.html)
+
+[Tema 4: Normalització](https://alvarinstitut.github.io/ApuntsBD/BD-T04_Normalitzacio/index.html)
+
+[Tema 5: Annex Base](https://alvarinstitut.github.io/ApuntsBD/BD-T05_Annex_Base/index.html)
+
+[Tema 6: SQL I](https://alvarinstitut.github.io/ApuntsBD/BD-T06_SQL_I_PostgreSQL/index.html)
+
+[Tema 6: SQL II](https://alvarinstitut.github.io/ApuntsBD/BD-T06_SQL_II_PostgreSQL/index.html)
+
+[Tema 6: SQL III](https://alvarinstitut.github.io/ApuntsBD/BD-T06_SQL_III_PostgreSQL/index.html)
+
+[Tema 7: PLpgSQL](https://alvarinstitut.github.io/ApuntsBD/BD-T07_PLpgSQL/index.html)
+
+[Tema 8: BD NoSQL](https://alvarinstitut.github.io/ApuntsBD/BD-T08_BD_NoSQL/index.html)
+
+
+
