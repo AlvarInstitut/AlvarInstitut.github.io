@@ -1,0 +1,27 @@
+SOLUCIONS EXERCICIS MONGODB (8.2)
+
+A)
+Busca els llibres que tenen més de 500 pàgines. Visualitza el _id, el títol i el número de pàgines
+
+db.libro.find({paginas:{$gt:500}},{titulo:1,paginas:1})
+
+B)
+Busca els llibres de l'any 2014. Visualitza únicament títol i data.
+db.libro.find({fecha:{$gte:ISODate("2014-01-01"),$lte:ISODate("2014-12-31")}},{_id:0,titulo:1,fecha:1})
+
+C)
+Busca els llibres que no tenen editorial. Visualitza únicament títol i editorial.
+
+db.libro.find({editorial:null},{_id:0,titulo:1,editorial:1})
+
+D)
+Busca els llibres que en el resum contenen la paraula caballo. Visualitza el resum per poder comprovar-ho. Han d'eixir 2 llibres, Circo máximo i Las carreras de Escorpio.
+
+db.libro.find({resumen:/caballo/},{titulo:1,resumen:1})
+
+E)
+VOLUNTARI. Utilitzant la funció aggregate, trau l'editorial i la mitjana de pàgines d'aquelles editorials que tenen una mitjana de pàgines superior a 500. Eixiran 3 editorials.
+
+db.libro.aggregate({$group:{"_id":"$editorial","mitjana_pag":{$avg:"$paginas"}}},{$match:{mitjana_pag:{$gt:500}}})
+
+

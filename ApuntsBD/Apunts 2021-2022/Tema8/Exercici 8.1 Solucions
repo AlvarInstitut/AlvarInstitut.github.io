@@ -1,0 +1,64 @@
+1) Crea la clau 9999x_Nom amb el teu nom
+
+set 9999x_Nom Alvar
+
+2) Crea la clau 9999x_Cognoms amb els teus cognoms. Una de les dues almenys, nom o cognoms, ha de constar de més d'una paraula.
+
+set 9999x_Cognoms "Serrano Calduch"
+
+3) Mostra totes les claus teues, i únicament les teues.
+
+keys 9999x_*
+
+4) Dóna un temps de vida a la clau 9999x_Nom de 200 segons. Comprova el temps que queda li queda de vida. Posteriorment fes-la permanent.
+
+expire 9999x_Nom 200
+ttl 9999x_Nom
+persist 9999x_Nom
+
+5) Crea la clau 9999x_Adreca, de tipus Hash, amb els subcamps carrer, numero i cp. No importa que les dades siguen falses. Pots fer-lo en una sentència o en més d'una.
+
+hmset 9999x_Adreca carrer Major numero 7 cp 12001
+
+6) Afegeix a l'anterior el subcamp poblacio
+
+hset 9999x_Adreca poblacio Castelló
+
+7) Mostra tota la informació de la teua adreça (només la informació, no les subclaus)
+
+hvals 9999x_Adreca
+
+8) Crea la clau 9999x_Moduls_DAM, de tipus Set, amb tots els mòduls del DAM, que són: SI, BD, PR, LM, ED, FOL, AD, PMDM, DI, PSP, SGE, EIE, PROJ i FCT. Pots fer-lo en una o en més d'una sentència.
+
+sadd 9999x_Moduls_DAM SI BD PR LM ED FOL AD PMDM DI PSP SGE EIE PROJ FCT
+
+9) Crea la clau 9999x_Moduls_meus, de tipus Set, amb tots els mòduls als quals estàs matriculat. Pots fer-lo en una o en més d'una sentència.
+
+sadd 9999x_Moduls_Meus AD PMDM DI PSP SGE EIE PROJ FCT
+
+10) Guarda en la clau 9999x_Moduls_altres els mòdules en els quals no estàs matriculat actualment. Ha de ser per mig d'operacions de conjunts. Pots comprovar que el resultat és correcte amb smembers
+
+sdiffstore 9999x_Moduls_Altres 9999x_Moduls_DAM 9999x_Moduls_Meus
+
+11) Crea una llista amb el nom 9999x_Notes_BD amb la nota de 4 exercicis de BD. Les notes seran: 7, 9, 6,10. Han de quedar en aquest ordre (no en ordre invers)
+
+rpush 9999x_Notes_BD 7 9 6 10
+
+12) Modifica la tercera nota, que passa de ser 6 a 8.
+
+lset 9999x_Notes_BD 2 8
+
+13) Crea un Set Ordenat (zset) anomenat 9999x_Carrera amb els següents valors. Pots fer-lo en una o en més d'una sentència. I ves amb compte perquè els temps han de ser numèrics
+
+zadd 9999x_Carrera 12.52 Sandra 12.25 Isabel 12.10 Marta 12.07 Maria
+zadd 9999x_Carrera 11.95 Rosa 11.97 Bea 11.90 Balma 12.74 Anna
+
+14) Trau les participants de la carrera ordenades pel temps
+
+zrange 9999x_Carrera 0 -1
+
+15) Penalitza el temps de Bea amb 2 dècimes (0'2), i torna a traure les participants ordenades (Bea ha d'haver perdut 2 posicions, passant de tercera a cinquena posició)
+
+zincrby 9999x_Carrera 0.2 Bea
+zrange 9999x_Carrera 0 -1
+

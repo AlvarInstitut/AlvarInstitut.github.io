@@ -1,0 +1,4 @@
+- En el Tema 3, en les classes Coordenades, PuntGeo i Ruta, muntar els mètodes toString(), que faciliten molt les coses.
+- En el cas de Ruta, substituir mostrarRuta() per toString()
+
+- Per a llegir JSON que comença per un Array, posar un altre exemple abans del de Bicicas, que es estrany que només té un element (0)

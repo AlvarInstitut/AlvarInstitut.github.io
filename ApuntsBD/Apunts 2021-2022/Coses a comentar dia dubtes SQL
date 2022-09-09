@@ -1,0 +1,41 @@
+COSES A COMENTAR EL DIA DE DUBTES
+
+- LIKE caràctes comodí (VILLALONGA de primer o segon)
+
+- LIKE només per a caràcters comodí
+
+- Explicar les leis de Morgan (per això de negar el que siga de primer o de segon)
+
+- Molts utilitzen strings en condicions, quan són enters. No està mal, però que siguen conscients que hi ha una convesió
+
+- 6.15: Error meu. És més fàcil select count(*) from client c where cp is null
+
+- Explicar que si tenim un OR i un AND, aquest últim és prioritari (exemple 6.38: trimestre 3 o 4 i any 2015: TO_CHAR(data,'Q')=3 OR TO_CHAR(data,'Q')=4 AND TO_CHAR(data,'YYYY')=2015 )
+
+- Per a traure resultats diferents, el millor és el DISTINCT (millor que GROUP BY). Exemple 6.53
+
+- Intentar no posar les taules no necessàries. P.ex. 6.65_ en la subconsulta no cal factura
+
+- Comentar la 6.70, que quasi tots l'han feta amb una subconsulta en el SELECT. També que uns quants del 1CFSL compten el número de pobles, no el número de venedors del poble
+
+- El between és inclusiu. Exemple 6.29
+
+- Quan hi ha moltes taules, millor ser ordenat/da per a que no s'escape cap reunió (ex. 6.52)
+
+
+- Fer la 6.74
+select cod_cat, nom , sum(quant)
+from venedor v , factura f2 ,linia_fac lf2 , article a2 
+where v.cod_ven = f2.cod_ven and f2.num_f =lf2.num_f and lf2.cod_a =a2.cod_a
+group by 1,2
+having sum(quant) = (
+			select max(q)
+			from (
+					select cod_ven, cod_cat, sum(quant) as q
+						from factura f ,linia_fac lf ,article a 
+						where f.num_f = lf.num_f and lf.cod_a =a.cod_a and 
+						      cod_cat = a2.cod_cat 
+						group by 1, 2
+						order by 2 ) as s
+			)
+order by 1

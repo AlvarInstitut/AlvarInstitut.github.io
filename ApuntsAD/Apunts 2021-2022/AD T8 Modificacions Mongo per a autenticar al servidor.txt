@@ -1,0 +1,25 @@
+# Crear usuaris, però en la versió que estem ha de ser dins de la BD del servidor
+
+use test
+db.addUser( { user: "admin",
+              pwd: "Superp0tat0",
+              roles: [ "readWrite", "dbAdmin"  ]
+            } )
+db.addUser( { user: "ad",
+              pwd: "ieselcaminas",
+              roles: [ "readWrite" ]
+            } )
+
+# I en /etc/mongodb.conf   o una cosa així
+...
+bind = 0.0.0.0
+...
+auth = true
+...
+
+# i reiniciar servei
+service mongodb restart
+
+
+# Ara en connectar, la primera sentència ha de ser la d'autenticació
+db.auth("ad","ieselcaminas")

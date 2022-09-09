@@ -1,0 +1,31 @@
+SOLUCIONS EXERCICIS XPATH
+1.- Traure el nom de totes les rutes.
+//ruta/nom/text()
+
+2.- Traure el nom de les rutes amb un desnivell major que 600 m.
+//ruta[desnivell > 600]/nom/text()
+
+3.- Traure les rutes en les quals el desnivell acumulat duplica el desnivell. (Observació: quan en una condició combinem alguna operació amb una comparació, és millor posar l'operació abans de l'operador de comparació)
+//ruta[desnivell * 2 < desnivellAcumulat]
+
+4.- Traure el nom del primer punt de cada ruta.
+//ruta//punt[1]/nom/text()
+
+5.- Traure el nom de l'últim punt de cada ruta
+//ruta//punt[position()=last()]/nom/text()
+
+6.- Traure els punts de la tercera ruta.
+//ruta[3]//punt/nom/text()
+
+7.- Traure el número de punts de la tercera ruta
+count(//ruta[3]//punt)
+
+8.- Traure el nom de les rutes que tenen estrictament més de 5 punts.
+//ruta[count(.//punt)>5]/nom/text()
+
+9.- Traure la mitjana de desnivell de les rutes
+avg(//ruta/desnivell)
+
+10.-Traure les rutes en les quals hi ha alun punt més avall del paral·lel 40
+//ruta[.//punt/latitud < 40]/nom/text()
+

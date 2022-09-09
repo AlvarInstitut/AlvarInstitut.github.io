@@ -1,0 +1,18 @@
+Exercicis 8.4:
+modificació de documents:
+1.- Incrementar el preu dels llibres de l'editorial Planeta en 2€ (recordeu que per a modificar més d'un document, hem de posar com a tercer paràmetre l'opció {multi:true} )
+db.libro.update({editorial:"Planeta"},{$inc:{precio:2}},{multi:true})
+
+2.- Crear el camp editorial amb el valor nul, per a tots aquells documents que no tinguen el camp editorial
+db.libro.update({editorial:{$exists:false}},{$set:{editorial:null}},{multi:true})
+
+3.- Fer l'operació inversa: eliminar el camp editorial per a tots aquells que el tinguen null
+db.libro.update({editorial:null},{$unset:{editorial:1}},{multi:true})
+
+aggregate:
+4.- Traure l'any del llibre, a partir de la fecha (serà un camp calculat anomenat año)
+db.libro.aggregate({$project : {fecha:1 , año:{$year:"$fecha"}}})
+
+5.- Aprofita el camp anterior per a traure els llibres estrictament anteriors a l'any 2013. Visualitza titulo, fecha i año
+db.libro.aggregate({$project : {titulo:1, fecha:1 , año:{$year:"$fecha"}}},{$match:{año:{$lt:2013}}})
+
