@@ -69,7 +69,7 @@
   <string role="key" value="_intendedEndUserRoleType"></string>
   <unicode value="learner"></unicode>
   <string role="key" value="_isChanged"></string>
-  <bool value="0"></bool>
+  <bool value="1"></bool>
   <string role="key" value="_isTemplate"></string>
   <bool value="0"></bool>
   <string role="key" value="_lang"></string>
@@ -396,8 +396,8 @@ that may help or hinder the learner in the performance of the task."></unicode>
               <string value=""></string>
               <string role="key" value="content_w_resourcePaths"></string>
               <unicode content="true" value="&lt;p style=&quot;text-align: justify;&quot;&gt;Tots els nostres programes seran en &lt;strong&gt;KOTLIN&lt;/strong&gt;, que és un llenguatge que està per damunt de Java, de manera que tots els programes, classes...  realitzats en Java els podrem utilitzar sense problemes, i a més ens permetrà una programació molt més còmoda. A més, és el llenguatge que utilitzareu tant en el mòdul de PMDM com en el de DI&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;Com a pas previ i inicial instal·larem l'entorn de treball des d'on programarem, un IDE. Enguany instal·larem &lt;strong&gt;IntelliJ IDEA&lt;/strong&gt;, la versió &lt;strong&gt;Ultimate&lt;/strong&gt;, que és la que ens proporcionarà totes les eines per a poder treballar sense problemes. Un altre entorn molt habitual és &lt;strong&gt;Eclipse&lt;/strong&gt;, que és el que hem utilitzat en anys anteriors, però que amb el plugin de Kotlin va molt lent. Esperem que IntelliJ vaja molt més fi.&lt;/p&gt;
-&lt;p&gt;El següent vídeo mostra tot el procés.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Com a pas previ i inicial instal·larem l'entorn de treball des d'on programarem, un IDE. Enguany instal·larem &lt;strong&gt;IntelliJ IDEA&lt;/strong&gt;, la versió &lt;strong&gt;Ultimate&lt;/strong&gt;, que és la que ens proporcionarà totes les eines per a poder treballar sense problemes. Un altre entorn molt habitual és &lt;strong&gt;Eclipse&lt;/strong&gt;, que és el que hem utilitzat en anys anteriors, però que amb el plugin de Kotlin va molt lent. En IntelliJ vaja molt més fi.&lt;/p&gt;
+&lt;p&gt;En el moment de fer aquestos apunts l'última versió és la 2022.2.1. El següent vídeo mostra tot el procés d'instal·lació i creació del primer projecte. Correspon a una versió anterior, però totalment similar a l'actual&lt;/p&gt;
 &lt;p&gt;&lt;iframe width=&quot;1123&quot; height=&quot;691&quot; src=&quot;https://slides.com/alvarinstitut/deck-4f5395/embed&quot; title=&quot;2021-2022 Tema1_Instal_IntelliJ&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;webkitallowfullscreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
               <int value="4"></int>
