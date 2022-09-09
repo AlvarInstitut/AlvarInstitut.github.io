@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.- La classe File. Generalitats. | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Gestió del Sistema de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li id="active"><a href="2_la_classe_file_generalitats.html" class="active no-ch">2.- La classe File. Generalitats.</a></li>
+   <li><a href="3_funcionalitat_de_la_classe_file.html" class="no-ch">3.- Funcionalitat de la classe File</a></li>
+   <li><a href="exercici.html" class="no-ch">Exercici</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_funcionalitat_de_la_classe_file.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.- La classe File. Generalitats.</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_1" class="block iDevice_content">
+<p style="text-align: justify;">En Java, i també en Kotlin per ser una espècie d'extensió de Java, per a gestionar el sistema de fitxers s’utilitza bàsicament la classe ‘<strong>File</strong>’. És una classe que s’ha d’entendre com una referència a la ruta o localització de fitxers del sistema. <strong>NO representa el contingut </strong>de cap fitxer, sinó la ruta del sistema on es localitza el fitxer. Com que es tracta d’una ruta, <em>la classe pot representar tant <strong>fitxers</strong> com <strong>carpetes o directoris</strong></em>.  </p>
+<p style="text-align: justify;">Si fem servir una classe per a representar rutes, s’aconsegueix una total independència respecte de la notació que utilitza cada sistema operatiu per descriure-les. Recordem que Java i Kotlin són llenguatges multiplataforma i, per tant, s'ha d'intentar fer programes que es puguen executar en qualsevol Sistema Operatiu (Windows o Linux).</p>
+<p style="text-align: justify;">L’estratègia utilitzada per cada SO no afecta la funcionalitat de la classe <strong>File</strong>, ja que aquesta, en col·laboració amb la màquina virtual, adaptarà les sol·licituds al SO amfitrió <strong>de forma transparent al programador</strong>, és a dir, sense necessitat que el programador haja d’indicar o configurar res.</p>
+<p style="text-align: justify;">Els objectes creats de la classe File es troben estretament vinculats a la ruta amb la qual s’han creat. Això significa que les instàncies de la classe File durant tot el seu cicle de vida <strong>només representaran una única ruta,</strong> la que se’ls va associar en el moment de la creació. La classe File <strong>no disposa</strong> de cap mètode ni mecanisme per modificar la ruta associada. En cas de necessitar noves rutes, <strong>caldrà sempre crear un nou objecte</strong> i no serà possible reutilitzar els ja creats vinculant-los a rutes diferents. </p>
+<p>Per a crear un objecte <strong>File</strong> es pot utilitzar qualsevol dels 3 constructors següents:</p>
+<ul>
+<li style="text-align: justify;"><strong>File(String <em>directori_i_fitxer</em>)</strong>: indiquem en un únic paràmetre tant el directori com el fitxer, és a dir, el fitxer amb la seua ruta. Recordeu que en sistemes Linux per a la ruta utilitzem la barra de dividir, mentre que en Windows la contra-barra. Com que aquest caràcter és el d'<em>escape</em>, s'haurà de posar dues vegades:
+<p class="codi">val fitxer_1 = File("/home/usuari/AD/T1/exemple1.txt")</p>
+<p class="codi">val fitxer_1 = File("C:\\AD\\T1\\exemple1.txt")</p>
+<div class="nota_blau"><strong><span style="text-decoration: underline;">Nota</span></strong>
+<p>Cap de les referències anteriors són desitjables, ja que nosaltres intentarem fer programes que funcionen en qualsevol plataforma, i la primera referència no funcionarà en Windows, i la segona no funcionarà en Linux. Al llarg del tema aprendrem com fer les referències de manera que funcionen en qualsevol plataforma.</p>
+<p>Per una altra banda, observeu com hem utilitzat la paraula reservada <strong>val</strong> per a crear una constant. Quasi sempre la utilitzarem per als File, ja que només en algunes ocasions voldrem reutilitzar la variable assignant-li un altre valor</p>
+</div>
+<p style="padding-left: 30px;">Per a fer referència a un directori s'utilitza la mateixa tècnica, com ja havíem vist:</p>
+<p class="codi" style="padding-left: 30px;">val dir = File("/home/usuari/AD/T1")</p>
+<p style="padding-left: 30px;">En els exemples anteriors hem posat una ruta absoluta, que comença des de l'arrel. Si no la posem absoluta (si no comença per / ) serà relativa i començarà en el directori actiu. Si suposem que el directori actiu és <strong>/home/usuari</strong>, d'aquesta manera faríem referència al mateix lloc:</p>
+<p class="codi" style="padding-left: 30px;">val dir = File("AD/T1");</p>
+<div class="nota_blau"><strong><span style="text-decoration: underline;">Nota</span></strong>
+<p>Observeu que les anteriors sentències no donarien cap error encara que els subdirectoris i fitxers no existisquen. No és cap contradicció, ja que podria ser que férem referència en un File a un fitxer o directori justament per a crear-lo. Més avant veurem que tenim mètodes per a detectar l'existència real</p>
+</div>
+</li>
+<li style="text-align: justify;"><strong>File(String <em>directori</em>, String <em>fitxer</em>)</strong>: en el primer paràmetre (String) indiquem el directori amb ruta, i en el segon el fitxer (sense ruta). Farà referència a un fitxer amb el nom com el segon paràmetre col·locat en el directori referenciat en el primer paràmetre. Observeu com el segon paràmetre podria ser també un directori, i per tant seria una referència a un subdirectori del directori referenciat en el primer paràmetre.
+<p class="codi">val fitxer_2 = File("/home/usuari/AD/T1" , "exemple2.txt")</p>
+<p></p>
+</li>
+<li><strong>File(File <em>directori</em>, String <em>fitxer</em>)</strong>: Ara el directori és un File creat anteriorment
+<p class="codi">val fitxer_3 = File(dir , "exemple3.txt")</p>
+</li>
+</ul>
+<p> </p>
+<p style="text-align: justify;">En els exemples anteriors hem posat directament les rutes. Però els programadors de Java i de Kotlin han de fer un esforç per independitzar les aplicacions implementades de les plataformes on s’executaran. Per tant, haurem d'anar amb cura, fent servir tècniques que eviten escriure les rutes directament al codi. Per això encara que ara al principi utilitzarem els 3 constructors, en el futur hauríem d'utilitzar massivament el tercer, ja que com veieu la manera d'especificar la ruta de localització del fitxer, és per mig d'un altre File, i no ha fet falta posar cap barra de dividir ni cap contra-barra. Per tant hem fet referència a un fitxer (o subdirectori) dins d'un directori <strong>sense cap barra ni contra-barra</strong>, i per tant ens val per qualsevol Sistema Operatiu.</p>
+<p> </p>
+<p style="text-align: justify;">La classe <strong>File</strong> encapsula pràcticament tota la funcionalitat necessària per gestionar un sistema de fitxers organitzat en arbre de directoris. És una gestió completa que inclou:</p>
+<ul>
+<li style="text-align: justify;" class="level1">Funcions de manipulació i consulta de la pròpia estructura jeràrquica (creació, eliminació, obtenció de la ubicació, etc. de fitxers o directoris)</li>
+<li style="text-align: justify;" class="level1">Funcions de manipulació i consulta de les característiques particulars dels elements (noms, mida o capacitat, etc.)</li>
+<li style="text-align: justify;" class="level1">Funcions de manipulació i consulta d’atributs específics de cada Sistema Operatiu, com per exemple els permisos d’escriptura, d’execució, atributs d’ocultació. Només funcionarà si el sistema operatiu amfitrió suporta també la funcionalitat d'aquestos atributs.</li>
+</ul>
+<p>En la classe original de Java no ens permet accedir al contingut dels fitxers. Això es resoldrà en el següent tema. Kotlin sí que ens permetrà accedir al contingut dels fitxers a partir de la classe File, però per coherència ho deixarem per al proper tema.</p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota <br /></strong></span></p>
+<p>Tots els exemples i exercicis de cada tema els col·locarem en un únic projecte de Kotlin amb el nom del tema. en aquest cas l'anomenarem <strong>Tema1</strong>. Els exemples els col·locarem en un paquet anomenat <strong>exemples</strong> i els exercicis en un paquet anomenat <strong>exercicis</strong>.</p>
+<p>En l'apartat d'objectius d'aquest tema, que és el de l'inici hi ha un vídeo que explica la instal·lació de l'entorn de programació, <strong>IntelliJ IDEA</strong>, i al final d'aquest vídeo s'explica com crear el projecte, els paquets exemples i exercicis i com copiar els programes en un fitxer Kotlin.</p>
+</div>
+<p style="text-align: justify;">Mirem un exemple. Anem a fer un programa per a traure la llista de fitxers i directoris del directori actual. Per a fer referència al directori actual, utilitzarem ".", que ens serveix per a tots els Sistemes. Per defecte, el directori actiu és el directori del projecte. Per a obtenir la llista d'elements (fitxers i directoris) utilitzarem el mètode <strong>list()</strong> de la classe <strong>File</strong>. Veurem aquest mètode, juntament amb els mètodes més importants en la següent pregunta. Copieu-vos el següent en un fitxer Kotlin anomenat <strong>Exemple_1_1.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main(args: Array&lt;String&gt;) {
+	val f = File(".")
+	println("Llista de fitxers i directoris del directori actual")
+	println("---------------------------------------------------")
+	for (e in f.list())
+		println(e);
+}</code></pre>
+</div>
+</div>
+<p>I aquest seria el resultat:</p>
+<p style="text-align: center;"><img src="T1_2_1.png" alt="" width="437" height="181" /></p>
+<p style="text-align: justify;">que són els fitxers del directori arrel del projecte Tema1 (situat en la carpeta <strong>IdeaProjects</strong>). Observeu que fins i tot mostra els fitxers ocults (que són els que comencen per un punt)</p>
+<p style="text-align: justify;">I aprofitant la potencialitat de Kotlin, podem traure fàcilment aquesta llista ordenada alfabèticament, senzillament posant <strong>.sorted()</strong>. D'aquesta manera, el programa anterior <strong>Exemple_1_1.kt</strong> ens quedarà ara:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main(args: Array&lt;String&gt;) {
+	val f = File(".")
+	println("Llista de fitxers i directoris del directori actual")
+	println("---------------------------------------------------")
+	for (e in f.list().sorted())
+		println(e);
+}</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">I aquest seria el resultat:</p>
+<p style="text-align: center;"><img src="T1_2_2.png" alt="" width="468" height="176" /></p>
+<p style="text-align: justify;">Si vulguérem traure el contingut d'un directori concret, el posaríem en el moment de definir el File, en compte del punt per a indicar el directori actual.</p>
+<p style="text-align: justify;">Una altra modificació seria demanar per teclat el directori del qual volem mostrar el contingut. Copieu el següent codi en el fitxer Kotlin <strong>Exemple_1_2.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package exemples
+
+import java.io.File
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
+fun main(args: Array&lt;String&gt;) {
+	println("Introdueix un directori:")
+	val ent = BufferedReader(InputStreamReader(System.`in`)).readLine()
+	val f = File(ent)
+	System.out.println("Llista de fitxers i directoris del directori " + ent)
+	System.out.println("---------------------------------------------------")
+	for (e in f.list().sorted())
+		System.out.println(e);
+}
+</code></pre>
+</div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introducci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_funcionalitat_de_la_classe_file.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

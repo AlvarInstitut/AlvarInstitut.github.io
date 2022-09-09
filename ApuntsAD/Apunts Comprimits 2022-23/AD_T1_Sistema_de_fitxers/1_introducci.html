@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.- Introducció | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Gestió del Sistema de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li id="active"><a href="1_introducci.html" class="active no-ch">1.- Introducció</a></li>
+   <li><a href="2_la_classe_file_generalitats.html" class="no-ch">2.- La classe File. Generalitats.</a></li>
+   <li><a href="3_funcionalitat_de_la_classe_file.html" class="no-ch">3.- Funcionalitat de la classe File</a></li>
+   <li><a href="exercici.html" class="no-ch">Exercici</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_la_classe_file_generalitats.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.- Introducció</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id0">
+<div class="iDevice emphasis0">
+<div id="ta0_1" class="block iDevice_content">
+<p>Un <strong>fitxer</strong> o <strong>arxiu</strong> és un conjunt de bits guardats en un dispositiu (com podria ser per exemple un disc dur). Els fitxers ens garantitzen la <strong>persistència</strong>, ja que encara que apaguem l'ordinador podrem recuperar la informació, cosa que no passaria amb la informació guardada en memòria RAM. El tema de la persistència és justament el que buscarem durant tot el curs.<strong><br /></strong></p>
+<p>Un fitxer tindrà un nom que l'identifica. Aquest nom pot tenir opcionalment una extensió, generalment de 3 caràcters que tradicionalment ha servit per identificar el tipus de fitxer. El nom i l'extensió van separats per un punt.</p>
+<p>En els sistemes informàtics actuals, en els quals un únic ordinador pot arribar a tenir guardats milions de fitxers, resulta imprescindible un sistema que permeta una gestió eficaç de localització, de manera que els usuaris puguem moure’ns còmodament entre tants arxius. La major part de <strong>sistemes de fitxers</strong> han incorporat <strong>contenidors jerarquitzats</strong> que actuen a mode de <strong>directoris</strong> facilitant la classificació, la identificació i localització dels arxius. Els directoris s’han acabat popularitzant sota la versió gràfica de <strong>carpetes</strong>. Dins d'un mateix directori, el nom del fitxer (o subdirectori) ha de ser únic.</p>
+<p>Hem de tenir en compte, que a més dels fitxers guardats en el dispositiu de l'ordinador (el disc dur, o un altre dispositiu), la necessitat desmesurada d’espai d’emmagatzematge ha dut els Sistemes Operatius a treballar amb una gran quantitat de dispositius i a permetre l’accés remot a uns altres sistemes de fitxers, distribuïts per la xarxa.</p>
+<ul>
+<li>Per a poder gestionar tanta varietat de sistemes de fitxers, alguns sistemes operatius com <strong>Linux o Unix</strong> utilitzen l’estratègia d’unificar tots els sistemes en <strong>un únic sistema de fitxers</strong>, per tal d’aconseguir una forma d’accés unificada i amb una única jerarquia que facilite la referència a qualsevol dels seus components, amb independència del dispositiu en el qual es troben realment ubicats. En Linux, siga quin siga el dispositiu o el sistema remot real on es guardarà l’arxiu,<strong> la ruta tindrà sempre la mateixa forma</strong>. Observeu que per a recórrer la ruta jeràrquica on es troba el fitxer s'utilitza<strong> la barra de dividir</strong>:</li>
+</ul>
+<p class="codi2"> /dir_1/dir_2/dir_3/.../dir_n/fitxer.txt</p>
+<ul>
+<li>Per contra, l’estratègia d’altres Sistemes Operatius com <strong>Windows</strong> passa per mantenir ben diferenciats cadascun dels sistemes i dispositius on es tinga accés. Per distingir el sistema al qual es vol fer referència, Windows utilitza una denominació específica del dispositiu o servidor, que incorpora a la ruta del fitxer o directori a referenciar. Encara que Microsoft ha apostat clarament per la convenció <strong>UNC</strong> (<em>Uniform Naming Convention</em>), l’evolució d’aquest sistema operatiu, que té com a origen l’<acronym title="Microsoft">MS</acronym>-DOS, ha fet que coexistesca amb una altra convenció també molt estesa, la que utilitza una lletra de l’alfabet seguida de dos punts per a identificar el dispositiu on es troba el fitxer. A continuació il·lustrem amb un exemple les dues convencions. Observeu com en els dos casos s'utilitza la <strong>contra-barra</strong>:</li>
+</ul>
+<p class="codi2">F:\dir_1\dir_2\dir_3\...\dir_n\fitxer.txt</p>
+<p class="codi2">\\Servidor_1\dir_1\dir_2\dir_3\...\dir_n\fitxer.txt</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objectius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_la_classe_file_generalitats.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
