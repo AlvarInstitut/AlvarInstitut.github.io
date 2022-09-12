@@ -156,7 +156,7 @@ text through the text editing buttons associated with the field."></unicode>
                <instance class="exe.engine.field.TextField">
                 <dictionary>
                  <string role="key" value="_id"></string>
-                 <int value="2575"></int>
+                 <int value="2917"></int>
                  <string role="key" value="_idevice"></string>
                  <none></none>
                  <string role="key" value="_instruc"></string>
@@ -170,7 +170,7 @@ text through the text editing buttons associated with the field."></unicode>
                 </dictionary>
                </instance>
                <string role="key" value="_id"></string>
-               <unicode value="57_1.10"></unicode>
+               <unicode value="57_1.12"></unicode>
                <string role="key" value="_imageResource"></string>
                <instance class="exe.engine.resource.Resource" reference="5">
                 <dictionary>
@@ -181,7 +181,7 @@ text through the text editing buttons associated with the field."></unicode>
                  <string role="key" value="_storageName"></string>
                  <string value="T02_Portada.mp4"></string>
                  <string role="key" value="_userName"></string>
-                 <string value="/tmp/tmpq2dAEM/T02_Portada.mp4"></string>
+                 <string value="/tmp/tmpN2HEi5/T02_Portada.mp4"></string>
                  <string role="key" value="checksum"></string>
                  <string value="4eb4bf3658209bfb4d2740873172af3f"></string>
                  <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -210,7 +210,7 @@ text through the text editing buttons associated with the field."></unicode>
           <string role="key" value="intlinks_to_anchors"></string>
           <dictionary></dictionary>
           <string role="key" value="nextImageId"></string>
-          <int value="11"></int>
+          <int value="13"></int>
           <string role="key" value="parentNode"></string>
           <reference key="4"></reference>
          </dictionary>
@@ -578,7 +578,7 @@ gamma de models estesos.
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2574"></int>
+                    <int value="2936"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -592,7 +592,7 @@ gamma de models estesos.
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="1_1.10"></unicode>
+                  <unicode value="1_1.12"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="12">
                    <dictionary>
@@ -603,7 +603,7 @@ gamma de models estesos.
                     <string role="key" value="_storageName"></string>
                     <string value="analisis.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmpq2dAEM/analisis.png"></string>
+                    <string value="/tmp/tmpN2HEi5/analisis.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="d89f3f99bbc20cac802a62cdd1fbc625"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -632,7 +632,7 @@ gamma de models estesos.
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="11"></int>
+             <int value="13"></int>
              <string role="key" value="parentNode"></string>
              <reference key="11"></reference>
             </dictionary>
@@ -723,55 +723,22 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="buttonCaption"></string>
              <string value=""></string>
              <string role="key" value="content_w_resourcePaths"></string>
-             <unicode content="true" value="&lt;p&gt;
-&amp;nbsp;
-&lt;/p&gt;
-&lt;p&gt;
-
-&lt;/p&gt;
-&lt;p align=&quot;justify&quot;&gt;
-Anem a presentar un exemple
-sobre el qual ens basarem durant tot el tema. Es tracta d'una companyia, i el
-resultat de l'anàlisi de requeriments és el següent:
-&lt;/p&gt;
-&lt;table border=&quot;1&quot; cellpadding=&quot;10&quot;&gt;
-	&lt;tbody&gt;
-		&lt;tr style=&quot;background-color: #ffffff&quot;&gt;
-			&lt;td&gt; 
-			&lt;ol&gt;
-				&lt;li&gt;
-				La
-				companyia està organitzada en departaments. Cadascun té nom únic, número únic i
-				un empleat que el dirigeix. Ens interessa la data en la qual va començar a
-				dirigir-lo.
-				&lt;/li&gt;&lt;br /&gt;
-				&lt;li&gt;
-				Cada
-				departament controla una sèrie de projectes. Cadascun d'aquestos projectes té
-				nom i número únics, i estarà coordinat per un únic departament.
-				&lt;/li&gt;&lt;br /&gt;
-				&lt;li&gt;
-				De cada empleat ens interessa el nom (format per dos cognoms
-				i nom de pila), DNI, adreça, telèfon, sou i data de naixement. Tot empleat està
-				assignat a un departament, i moltes vegades tindrà un supervisor. Pot treballar
-				en més d'un projecte (no necessàriament controlats pel mateix departament) i
-				treballarà un determinat número d'hores a la setmana en cada projecte. En un projecte sempre treballarà, com a
-				mínim, un empleat.
-				&lt;/li&gt;&lt;br /&gt;
-				&lt;li&gt;
-				Volem
-				saber també els familiars de cada empleat, per administrar els termes dels
-				segurs. Volem saber el nom, data de naixement i parentesc amb l'empleat.
-				&lt;/li&gt;
-			&lt;/ol&gt;
-			&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/tbody&gt;
+             <unicode content="true" value="&lt;p align=&quot;justify&quot;&gt;Anem a presentar un exemple sobre el qual ens basarem durant tot el tema. Es tracta d'una companyia, i el resultat de l'anàlisi de requeriments és el següent:&lt;/p&gt;
+&lt;table cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;
+&lt;tbody&gt;
+&lt;tr style=&quot;background-color: #ffffff;&quot;&gt;
+&lt;td&gt;
+&lt;ol&gt;
+&lt;li style=&quot;padding: 20px 0 20px 0;&quot;&gt;La companyia està organitzada en departaments. Cadascun té nom únic, número únic i un empleat que el dirigeix. Ens interessa la data en la qual va començar a dirigir-lo.&lt;/li&gt;
+&lt;li style=&quot;padding: 20px 0 20px 0;&quot;&gt;Cada departament controla una sèrie de projectes. Cadascun d'aquestos projectes té nom i número únics, i estarà coordinat per un únic departament.&lt;/li&gt;
+&lt;li style=&quot;padding: 20px 0 20px 0;&quot;&gt;De cada empleat ens interessa el nom (format per dos cognoms i nom de pila), DNI, adreça, telèfon, sou i data de naixement. Tot empleat està assignat a un departament, i moltes vegades tindrà un supervisor. Pot treballar en més d'un projecte (no necessàriament controlats pel mateix departament) i treballarà un determinat número d'hores a la setmana en cada projecte. En un projecte sempre treballarà, com a mínim, un empleat.&lt;/li&gt;
+&lt;li style=&quot;padding: 20px 0 20px 0;&quot;&gt;Volem saber també els familiars de cada empleat, per administrar els termes d'una assegurança. Volem saber el nom, data de naixement i parentesc amb l'empleat.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p align=&quot;justify&quot;&gt;
-&amp;nbsp;
-&lt;/p&gt;
-"></unicode>
+&lt;p align=&quot;justify&quot;&gt; &lt;/p&gt;"></unicode>
              <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
              <int value="4"></int>
              <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -908,7 +875,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2579"></int>
+                    <int value="2929"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -922,7 +889,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="41_1.7"></unicode>
+                  <unicode value="41_1.9"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="19">
                    <dictionary>
@@ -933,7 +900,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T02_Peli1.mp4"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmpgrFOFe.eXe/previews/allyourbase/T02_Peli1.mp4"></string>
+                    <string value="/tmp/tmpN2HEi5/T02_Peli1.mp4"></string>
                     <string role="key" value="checksum"></string>
                     <string value="93df6976b6dd7fcec0ce303ab56d2728"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -962,7 +929,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="8"></int>
+             <int value="10"></int>
              <string role="key" value="parentNode"></string>
              <reference key="18"></reference>
             </dictionary>
@@ -1216,7 +1183,7 @@ En el nostre exemple, el del punt 2, quedaran les següents Entitats:
                         <instance class="exe.engine.field.TextField">
                          <dictionary>
                           <string role="key" value="_id"></string>
-                          <int value="2561"></int>
+                          <int value="2937"></int>
                           <string role="key" value="_idevice"></string>
                           <none></none>
                           <string role="key" value="_instruc"></string>
@@ -1230,7 +1197,7 @@ En el nostre exemple, el del punt 2, quedaran les següents Entitats:
                          </dictionary>
                         </instance>
                         <string role="key" value="_id"></string>
-                        <unicode value="14_1.6"></unicode>
+                        <unicode value="14_1.8"></unicode>
                         <string role="key" value="_imageResource"></string>
                         <instance class="exe.engine.resource.Resource" reference="26">
                          <dictionary>
@@ -1241,7 +1208,7 @@ En el nostre exemple, el del punt 2, quedaran les següents Entitats:
                           <string role="key" value="_storageName"></string>
                           <string value="entitats.png"></string>
                           <string role="key" value="_userName"></string>
-                          <string value="/tmp/tmpq2dAEM/entitats.png"></string>
+                          <string value="/tmp/tmpN2HEi5/entitats.png"></string>
                           <string role="key" value="checksum"></string>
                           <string value="17e4ca26c0711d4da9565d605acd1eb8"></string>
                           <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1270,7 +1237,7 @@ En el nostre exemple, el del punt 2, quedaran les següents Entitats:
                    <string role="key" value="intlinks_to_anchors"></string>
                    <dictionary></dictionary>
                    <string role="key" value="nextImageId"></string>
-                   <int value="7"></int>
+                   <int value="9"></int>
                    <string role="key" value="parentNode"></string>
                    <reference key="25"></reference>
                   </dictionary>
@@ -1498,7 +1465,7 @@ Ací tindríem dues maneres (absolutament equivalents) de representar l'entitat 
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2558"></int>
+                       <int value="2916"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1512,7 +1479,7 @@ Ací tindríem dues maneres (absolutament equivalents) de representar l'entitat 
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="15_1.12"></unicode>
+                     <unicode value="15_1.16"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="30">
                       <dictionary>
@@ -1523,7 +1490,7 @@ Ací tindríem dues maneres (absolutament equivalents) de representar l'entitat 
                        <string role="key" value="_storageName"></string>
                        <string value="atributs1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/atributs1.png"></string>
+                       <string value="/tmp/tmpN2HEi5/atributs1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="b94ffec6bd80d8fcd09d43fc6f5f455a"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1550,7 +1517,7 @@ Ací tindríem dues maneres (absolutament equivalents) de representar l'entitat 
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2570"></int>
+                       <int value="2943"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1564,7 +1531,7 @@ Ací tindríem dues maneres (absolutament equivalents) de representar l'entitat 
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="15_1.13"></unicode>
+                     <unicode value="15_1.17"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="31">
                       <dictionary>
@@ -1575,7 +1542,7 @@ Ací tindríem dues maneres (absolutament equivalents) de representar l'entitat 
                        <string role="key" value="_storageName"></string>
                        <string value="atributs2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/atributs2.png"></string>
+                       <string value="/tmp/tmpN2HEi5/atributs2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="6a9545a889756d79b48ee4eb32cd3072"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1604,7 +1571,7 @@ Ací tindríem dues maneres (absolutament equivalents) de representar l'entitat 
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="14"></int>
+                <int value="18"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="29"></reference>
                </dictionary>
@@ -1730,7 +1697,7 @@ En el nostre exemple del punt 2 quedarien les altres entitats amb els següents 
                         <instance class="exe.engine.field.TextField">
                          <dictionary>
                           <string role="key" value="_id"></string>
-                          <int value="2551"></int>
+                          <int value="2942"></int>
                           <string role="key" value="_idevice"></string>
                           <none></none>
                           <string role="key" value="_instruc"></string>
@@ -1744,7 +1711,7 @@ En el nostre exemple del punt 2 quedarien les altres entitats amb els següents 
                          </dictionary>
                         </instance>
                         <string role="key" value="_id"></string>
-                        <unicode value="16_1.6"></unicode>
+                        <unicode value="16_1.8"></unicode>
                         <string role="key" value="_imageResource"></string>
                         <instance class="exe.engine.resource.Resource" reference="35">
                          <dictionary>
@@ -1755,7 +1722,7 @@ En el nostre exemple del punt 2 quedarien les altres entitats amb els següents 
                           <string role="key" value="_storageName"></string>
                           <string value="atributs3.png"></string>
                           <string role="key" value="_userName"></string>
-                          <string value="/tmp/tmpq2dAEM/atributs3.png"></string>
+                          <string value="/tmp/tmpN2HEi5/atributs3.png"></string>
                           <string role="key" value="checksum"></string>
                           <string value="42e99715a06c2d3219be5185a3334a8b"></string>
                           <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1784,7 +1751,7 @@ En el nostre exemple del punt 2 quedarien les altres entitats amb els següents 
                    <string role="key" value="intlinks_to_anchors"></string>
                    <dictionary></dictionary>
                    <string role="key" value="nextImageId"></string>
-                   <int value="7"></int>
+                   <int value="9"></int>
                    <string role="key" value="parentNode"></string>
                    <reference key="34"></reference>
                   </dictionary>
@@ -2177,7 +2144,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2580"></int>
+                    <int value="2918"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -2191,7 +2158,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="19_1.7"></unicode>
+                  <unicode value="19_1.9"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="45">
                    <dictionary>
@@ -2202,7 +2169,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T02_Peli2.mp4"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmpgrFOFe.eXe/previews/allyourbase/T02_Peli2.mp4"></string>
+                    <string value="/tmp/tmpN2HEi5/T02_Peli2.mp4"></string>
                     <string role="key" value="checksum"></string>
                     <string value="149c508b00cfa7b4795ac15b836f6b51"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2231,7 +2198,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="8"></int>
+             <int value="10"></int>
              <string role="key" value="parentNode"></string>
              <reference key="44"></reference>
             </dictionary>
@@ -2454,7 +2421,7 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2552"></int>
+                       <int value="2922"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2468,7 +2435,7 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="20_1.24"></unicode>
+                     <unicode value="20_1.32"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="49">
                       <dictionary>
@@ -2477,61 +2444,9 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="relacio2.png"></string>
-                       <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/relacio2.png"></string>
-                       <string role="key" value="checksum"></string>
-                       <string value="523097ef23146d7ce995b2b2dc70ae0e"></string>
-                       <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
-                       <int value="2"></int>
-                       <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
-                       <int value="2"></int>
-                       <string role="key" value="warningMsg"></string>
-                       <string value=""></string>
-                      </dictionary>
-                     </instance>
-                     <string role="key" value="_parent"></string>
-                     <reference key="47"></reference>
-                     <string role="key" value="_thumbnailResource"></string>
-                     <none></none>
-                     <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
-                     <int value="3"></int>
-                     <string role="key" value="makeThumbnail"></string>
-                     <bool value="0"></bool>
-                    </dictionary>
-                   </instance>
-                   <instance class="exe.engine.galleryidevice.GalleryImage">
-                    <dictionary>
-                     <string role="key" value="_caption"></string>
-                     <instance class="exe.engine.field.TextField">
-                      <dictionary>
-                       <string role="key" value="_id"></string>
-                       <int value="2565"></int>
-                       <string role="key" value="_idevice"></string>
-                       <none></none>
-                       <string role="key" value="_instruc"></string>
-                       <string value=""></string>
-                       <string role="key" value="_name"></string>
-                       <string value=""></string>
-                       <string role="key" value="content"></string>
-                       <string value=""></string>
-                       <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
-                       <int value="4"></int>
-                      </dictionary>
-                     </instance>
-                     <string role="key" value="_id"></string>
-                     <unicode value="20_1.25"></unicode>
-                     <string role="key" value="_imageResource"></string>
-                     <instance class="exe.engine.resource.Resource" reference="50">
-                      <dictionary>
-                       <string role="key" value="_idevice"></string>
-                       <reference key="46"></reference>
-                       <string role="key" value="_package"></string>
-                       <reference key="2"></reference>
-                       <string role="key" value="_storageName"></string>
                        <string value="relacio4.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/relacio4.png"></string>
+                       <string value="/tmp/tmpN2HEi5/relacio4.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="58e7225ed62725c3de2525fb402b4a00"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2558,7 +2473,7 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2567"></int>
+                       <int value="2928"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2572,9 +2487,9 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="20_1.26"></unicode>
+                     <unicode value="20_1.33"></unicode>
                      <string role="key" value="_imageResource"></string>
-                     <instance class="exe.engine.resource.Resource" reference="51">
+                     <instance class="exe.engine.resource.Resource" reference="50">
                       <dictionary>
                        <string role="key" value="_idevice"></string>
                        <reference key="46"></reference>
@@ -2583,7 +2498,7 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                        <string role="key" value="_storageName"></string>
                        <string value="relacio3.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/relacio3.png"></string>
+                       <string value="/tmp/tmpN2HEi5/relacio3.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="c46ba634027a3674d53a4ef9e6df4821"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2610,7 +2525,7 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2578"></int>
+                       <int value="2932"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2624,7 +2539,59 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="20_1.27"></unicode>
+                     <unicode value="20_1.34"></unicode>
+                     <string role="key" value="_imageResource"></string>
+                     <instance class="exe.engine.resource.Resource" reference="51">
+                      <dictionary>
+                       <string role="key" value="_idevice"></string>
+                       <reference key="46"></reference>
+                       <string role="key" value="_package"></string>
+                       <reference key="2"></reference>
+                       <string role="key" value="_storageName"></string>
+                       <string value="relacio2.png"></string>
+                       <string role="key" value="_userName"></string>
+                       <string value="/tmp/tmpN2HEi5/relacio2.png"></string>
+                       <string role="key" value="checksum"></string>
+                       <string value="523097ef23146d7ce995b2b2dc70ae0e"></string>
+                       <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
+                       <int value="2"></int>
+                       <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
+                       <int value="2"></int>
+                       <string role="key" value="warningMsg"></string>
+                       <string value=""></string>
+                      </dictionary>
+                     </instance>
+                     <string role="key" value="_parent"></string>
+                     <reference key="47"></reference>
+                     <string role="key" value="_thumbnailResource"></string>
+                     <none></none>
+                     <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
+                     <int value="3"></int>
+                     <string role="key" value="makeThumbnail"></string>
+                     <bool value="0"></bool>
+                    </dictionary>
+                   </instance>
+                   <instance class="exe.engine.galleryidevice.GalleryImage">
+                    <dictionary>
+                     <string role="key" value="_caption"></string>
+                     <instance class="exe.engine.field.TextField">
+                      <dictionary>
+                       <string role="key" value="_id"></string>
+                       <int value="2934"></int>
+                       <string role="key" value="_idevice"></string>
+                       <none></none>
+                       <string role="key" value="_instruc"></string>
+                       <string value=""></string>
+                       <string role="key" value="_name"></string>
+                       <string value=""></string>
+                       <string role="key" value="content"></string>
+                       <string value=""></string>
+                       <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
+                       <int value="4"></int>
+                      </dictionary>
+                     </instance>
+                     <string role="key" value="_id"></string>
+                     <unicode value="20_1.35"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="52">
                       <dictionary>
@@ -2635,7 +2602,7 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                        <string role="key" value="_storageName"></string>
                        <string value="relacio1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/relacio1.png"></string>
+                       <string value="/tmp/tmpN2HEi5/relacio1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="524e8da7c45c01475a07d6867a2fe758"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2664,7 +2631,7 @@ compte de &lt;b&gt;Relació&lt;/b&gt;
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="28"></int>
+                <int value="36"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="48"></reference>
                </dictionary>
@@ -2795,7 +2762,7 @@ Després  d'incorporar les relacions, el nostre exemple quedarà:
                         <instance class="exe.engine.field.TextField">
                          <dictionary>
                           <string role="key" value="_id"></string>
-                          <int value="2550"></int>
+                          <int value="2940"></int>
                           <string role="key" value="_idevice"></string>
                           <none></none>
                           <string role="key" value="_instruc"></string>
@@ -2809,7 +2776,7 @@ Després  d'incorporar les relacions, el nostre exemple quedarà:
                          </dictionary>
                         </instance>
                         <string role="key" value="_id"></string>
-                        <unicode value="21_1.7"></unicode>
+                        <unicode value="21_1.9"></unicode>
                         <string role="key" value="_imageResource"></string>
                         <instance class="exe.engine.resource.Resource" reference="56">
                          <dictionary>
@@ -2820,7 +2787,7 @@ Després  d'incorporar les relacions, el nostre exemple quedarà:
                           <string role="key" value="_storageName"></string>
                           <string value="relacio5.png"></string>
                           <string role="key" value="_userName"></string>
-                          <string value="/tmp/tmpq2dAEM/relacio5.png"></string>
+                          <string value="/tmp/tmpN2HEi5/relacio5.png"></string>
                           <string role="key" value="checksum"></string>
                           <string value="448821479f2c392138a1ae25a7e0274a"></string>
                           <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2849,7 +2816,7 @@ Després  d'incorporar les relacions, el nostre exemple quedarà:
                    <string role="key" value="intlinks_to_anchors"></string>
                    <dictionary></dictionary>
                    <string role="key" value="nextImageId"></string>
-                   <int value="8"></int>
+                   <int value="10"></int>
                    <string role="key" value="parentNode"></string>
                    <reference key="55"></reference>
                   </dictionary>
@@ -3098,7 +3065,7 @@ Posarem en roig els atributs de relació:
                         <instance class="exe.engine.field.TextField">
                          <dictionary>
                           <string role="key" value="_id"></string>
-                          <int value="2555"></int>
+                          <int value="2924"></int>
                           <string role="key" value="_idevice"></string>
                           <none></none>
                           <string role="key" value="_instruc"></string>
@@ -3112,7 +3079,7 @@ Posarem en roig els atributs de relació:
                          </dictionary>
                         </instance>
                         <string role="key" value="_id"></string>
-                        <unicode value="23_1.6"></unicode>
+                        <unicode value="23_1.8"></unicode>
                         <string role="key" value="_imageResource"></string>
                         <instance class="exe.engine.resource.Resource" reference="63">
                          <dictionary>
@@ -3123,7 +3090,7 @@ Posarem en roig els atributs de relació:
                           <string role="key" value="_storageName"></string>
                           <string value="relacio6.png"></string>
                           <string role="key" value="_userName"></string>
-                          <string value="/tmp/tmpq2dAEM/relacio6.png"></string>
+                          <string value="/tmp/tmpN2HEi5/relacio6.png"></string>
                           <string role="key" value="checksum"></string>
                           <string value="542cdb35376a3786be60669716cd44ee"></string>
                           <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -3152,7 +3119,7 @@ Posarem en roig els atributs de relació:
                    <string role="key" value="intlinks_to_anchors"></string>
                    <dictionary></dictionary>
                    <string role="key" value="nextImageId"></string>
-                   <int value="7"></int>
+                   <int value="9"></int>
                    <string role="key" value="parentNode"></string>
                    <reference key="62"></reference>
                   </dictionary>
@@ -3368,7 +3335,7 @@ millor en les especificacions.
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2563"></int>
+                       <int value="2944"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -3382,7 +3349,7 @@ millor en les especificacions.
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="24_1.12"></unicode>
+                     <unicode value="24_1.16"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="67">
                       <dictionary>
@@ -3391,11 +3358,11 @@ millor en les especificacions.
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="relacio_card2.png"></string>
+                       <string value="relacio_card1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/relacio_card2.png"></string>
+                       <string value="/tmp/tmpN2HEi5/relacio_card1.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="67bc1cc347ad84dac2aa9fb6fb6461e5"></string>
+                       <string value="abcb0509c90cc64d56bbdced25e9ebca"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -3420,7 +3387,7 @@ millor en les especificacions.
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2568"></int>
+                       <int value="2945"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -3434,7 +3401,7 @@ millor en les especificacions.
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="24_1.13"></unicode>
+                     <unicode value="24_1.17"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="68">
                       <dictionary>
@@ -3443,11 +3410,11 @@ millor en les especificacions.
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="relacio_card1.png"></string>
+                       <string value="relacio_card2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/relacio_card1.png"></string>
+                       <string value="/tmp/tmpN2HEi5/relacio_card2.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="abcb0509c90cc64d56bbdced25e9ebca"></string>
+                       <string value="67bc1cc347ad84dac2aa9fb6fb6461e5"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -3474,7 +3441,7 @@ millor en les especificacions.
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="14"></int>
+                <int value="18"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="66"></reference>
                </dictionary>
@@ -3600,7 +3567,7 @@ L'exemple cada vegada està més complet:
                         <instance class="exe.engine.field.TextField">
                          <dictionary>
                           <string role="key" value="_id"></string>
-                          <int value="2577"></int>
+                          <int value="2935"></int>
                           <string role="key" value="_idevice"></string>
                           <none></none>
                           <string role="key" value="_instruc"></string>
@@ -3614,7 +3581,7 @@ L'exemple cada vegada està més complet:
                          </dictionary>
                         </instance>
                         <string role="key" value="_id"></string>
-                        <unicode value="25_1.6"></unicode>
+                        <unicode value="25_1.8"></unicode>
                         <string role="key" value="_imageResource"></string>
                         <instance class="exe.engine.resource.Resource" reference="72">
                          <dictionary>
@@ -3625,7 +3592,7 @@ L'exemple cada vegada està més complet:
                           <string role="key" value="_storageName"></string>
                           <string value="relacio_card3.png"></string>
                           <string role="key" value="_userName"></string>
-                          <string value="/tmp/tmpq2dAEM/relacio_card3.png"></string>
+                          <string value="/tmp/tmpN2HEi5/relacio_card3.png"></string>
                           <string role="key" value="checksum"></string>
                           <string value="11814408ac7a764344a040162419d059"></string>
                           <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -3654,7 +3621,7 @@ L'exemple cada vegada està més complet:
                    <string role="key" value="intlinks_to_anchors"></string>
                    <dictionary></dictionary>
                    <string role="key" value="nextImageId"></string>
-                   <int value="7"></int>
+                   <int value="9"></int>
                    <string role="key" value="parentNode"></string>
                    <reference key="71"></reference>
                   </dictionary>
@@ -3846,12 +3813,7 @@ L'exemple cada vegada està més complet:
               <string role="key" value="buttonCaption"></string>
               <string value=""></string>
               <string role="key" value="content_w_resourcePaths"></string>
-              <unicode content="true" value="Dissenyar
-un esquema E/R que arreplegue informació sobre municipis, vivendes i persones.
-Cada persona només pot habitar una vivenda i residir en un municipi, però pot
-ser propietària de més d'una vivenda. Ens interessa també la relació de les
-persones amb el seu cap de família.
-"></unicode>
+              <unicode content="true" value="&lt;p&gt;Dissenyar un esquema E/R que arreplegue informació sobre municipis, vivendes i persones. Cada persona només pot habitar una vivenda i residir en un municipi, però pot ser propietària de més d'una vivenda. Evidentment, una vivenda pot tenir més d'un propietari. Ens interessa també la relació de les persones amb el seus caps de família (pot tenir més d'un cap de família)&lt;/p&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
               <int value="4"></int>
               <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -4258,7 +4220,7 @@ style='mso-bidi-font-weight:normal'&gt;
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2559"></int>
+                    <int value="2920"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -4272,7 +4234,7 @@ style='mso-bidi-font-weight:normal'&gt;
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="28_1.25"></unicode>
+                  <unicode value="28_1.33"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="81">
                    <dictionary>
@@ -4283,7 +4245,7 @@ style='mso-bidi-font-weight:normal'&gt;
                     <string role="key" value="_storageName"></string>
                     <string value="relacio_tern3.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmpq2dAEM/relacio_tern3.png"></string>
+                    <string value="/tmp/tmpN2HEi5/relacio_tern3.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="4f306b273ddc9ff94c6d0760b00a7e45"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -4310,7 +4272,7 @@ style='mso-bidi-font-weight:normal'&gt;
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2566"></int>
+                    <int value="2927"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -4324,7 +4286,7 @@ style='mso-bidi-font-weight:normal'&gt;
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="28_1.26"></unicode>
+                  <unicode value="28_1.34"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="82">
                    <dictionary>
@@ -4333,61 +4295,9 @@ style='mso-bidi-font-weight:normal'&gt;
                     <string role="key" value="_package"></string>
                     <reference key="2"></reference>
                     <string role="key" value="_storageName"></string>
-                    <string value="T2_5_4.PNG"></string>
-                    <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmpq2dAEM/T2_5_4.PNG"></string>
-                    <string role="key" value="checksum"></string>
-                    <string value="e8adbe2e27d1bf7643204a137d764528"></string>
-                    <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
-                    <int value="2"></int>
-                    <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
-                    <int value="2"></int>
-                    <string role="key" value="warningMsg"></string>
-                    <string value=""></string>
-                   </dictionary>
-                  </instance>
-                  <string role="key" value="_parent"></string>
-                  <reference key="79"></reference>
-                  <string role="key" value="_thumbnailResource"></string>
-                  <none></none>
-                  <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
-                  <int value="3"></int>
-                  <string role="key" value="makeThumbnail"></string>
-                  <bool value="0"></bool>
-                 </dictionary>
-                </instance>
-                <instance class="exe.engine.galleryidevice.GalleryImage">
-                 <dictionary>
-                  <string role="key" value="_caption"></string>
-                  <instance class="exe.engine.field.TextField">
-                   <dictionary>
-                    <string role="key" value="_id"></string>
-                    <int value="2573"></int>
-                    <string role="key" value="_idevice"></string>
-                    <none></none>
-                    <string role="key" value="_instruc"></string>
-                    <string value=""></string>
-                    <string role="key" value="_name"></string>
-                    <string value=""></string>
-                    <string role="key" value="content"></string>
-                    <string value=""></string>
-                    <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
-                    <int value="4"></int>
-                   </dictionary>
-                  </instance>
-                  <string role="key" value="_id"></string>
-                  <unicode value="28_1.27"></unicode>
-                  <string role="key" value="_imageResource"></string>
-                  <instance class="exe.engine.resource.Resource" reference="83">
-                   <dictionary>
-                    <string role="key" value="_idevice"></string>
-                    <reference key="78"></reference>
-                    <string role="key" value="_package"></string>
-                    <reference key="2"></reference>
-                    <string role="key" value="_storageName"></string>
                     <string value="relacio_tern2.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmpq2dAEM/relacio_tern2.png"></string>
+                    <string value="/tmp/tmpN2HEi5/relacio_tern2.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="ad18c7212964e27b047c2bb153fc9348"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -4414,7 +4324,7 @@ style='mso-bidi-font-weight:normal'&gt;
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2576"></int>
+                    <int value="2930"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -4428,7 +4338,59 @@ style='mso-bidi-font-weight:normal'&gt;
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="28_1.28"></unicode>
+                  <unicode value="28_1.35"></unicode>
+                  <string role="key" value="_imageResource"></string>
+                  <instance class="exe.engine.resource.Resource" reference="83">
+                   <dictionary>
+                    <string role="key" value="_idevice"></string>
+                    <reference key="78"></reference>
+                    <string role="key" value="_package"></string>
+                    <reference key="2"></reference>
+                    <string role="key" value="_storageName"></string>
+                    <string value="T2_5_4.PNG"></string>
+                    <string role="key" value="_userName"></string>
+                    <string value="/tmp/tmpN2HEi5/T2_5_4.PNG"></string>
+                    <string role="key" value="checksum"></string>
+                    <string value="e8adbe2e27d1bf7643204a137d764528"></string>
+                    <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
+                    <int value="2"></int>
+                    <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
+                    <int value="2"></int>
+                    <string role="key" value="warningMsg"></string>
+                    <string value=""></string>
+                   </dictionary>
+                  </instance>
+                  <string role="key" value="_parent"></string>
+                  <reference key="79"></reference>
+                  <string role="key" value="_thumbnailResource"></string>
+                  <none></none>
+                  <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
+                  <int value="3"></int>
+                  <string role="key" value="makeThumbnail"></string>
+                  <bool value="0"></bool>
+                 </dictionary>
+                </instance>
+                <instance class="exe.engine.galleryidevice.GalleryImage">
+                 <dictionary>
+                  <string role="key" value="_caption"></string>
+                  <instance class="exe.engine.field.TextField">
+                   <dictionary>
+                    <string role="key" value="_id"></string>
+                    <int value="2933"></int>
+                    <string role="key" value="_idevice"></string>
+                    <none></none>
+                    <string role="key" value="_instruc"></string>
+                    <string value=""></string>
+                    <string role="key" value="_name"></string>
+                    <string value=""></string>
+                    <string role="key" value="content"></string>
+                    <string value=""></string>
+                    <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
+                    <int value="4"></int>
+                   </dictionary>
+                  </instance>
+                  <string role="key" value="_id"></string>
+                  <unicode value="28_1.36"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="84">
                    <dictionary>
@@ -4439,7 +4401,7 @@ style='mso-bidi-font-weight:normal'&gt;
                     <string role="key" value="_storageName"></string>
                     <string value="relacio_tern1.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmpq2dAEM/relacio_tern1.png"></string>
+                    <string value="/tmp/tmpN2HEi5/relacio_tern1.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="16f4b1c97dd971a8931dfeeec3a05987"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -4468,7 +4430,7 @@ style='mso-bidi-font-weight:normal'&gt;
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="29"></int>
+             <int value="37"></int>
              <string role="key" value="parentNode"></string>
              <reference key="80"></reference>
             </dictionary>
@@ -4800,7 +4762,7 @@ a l’inrevés, en les altres entitats.
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2549"></int>
+                       <int value="2923"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -4814,7 +4776,7 @@ a l’inrevés, en les altres entitats.
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="30_1.12"></unicode>
+                     <unicode value="30_1.16"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="91">
                       <dictionary>
@@ -4823,11 +4785,11 @@ a l’inrevés, en les altres entitats.
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="estes_tot1.png"></string>
+                       <string value="estes_tot2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/estes_tot1.png"></string>
+                       <string value="/tmp/tmpN2HEi5/estes_tot2.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="0a29bda289054ef62ac85eb56ace3adb"></string>
+                       <string value="733530ba3c20f1787d809ecbde630d5c"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -4852,7 +4814,7 @@ a l’inrevés, en les altres entitats.
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2556"></int>
+                       <int value="2939"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -4866,7 +4828,7 @@ a l’inrevés, en les altres entitats.
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="30_1.13"></unicode>
+                     <unicode value="30_1.17"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="92">
                       <dictionary>
@@ -4875,11 +4837,11 @@ a l’inrevés, en les altres entitats.
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="estes_tot2.png"></string>
+                       <string value="estes_tot1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/estes_tot2.png"></string>
+                       <string value="/tmp/tmpN2HEi5/estes_tot1.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="733530ba3c20f1787d809ecbde630d5c"></string>
+                       <string value="0a29bda289054ef62ac85eb56ace3adb"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -4906,7 +4868,7 @@ a l’inrevés, en les altres entitats.
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="14"></int>
+                <int value="18"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="90"></reference>
                </dictionary>
@@ -5035,7 +4997,7 @@ Aplicant la participació total i parcial, el nostre exemple quedarà:
                         <instance class="exe.engine.field.TextField">
                          <dictionary>
                           <string role="key" value="_id"></string>
-                          <int value="2560"></int>
+                          <int value="2926"></int>
                           <string role="key" value="_idevice"></string>
                           <none></none>
                           <string role="key" value="_instruc"></string>
@@ -5049,7 +5011,7 @@ Aplicant la participació total i parcial, el nostre exemple quedarà:
                          </dictionary>
                         </instance>
                         <string role="key" value="_id"></string>
-                        <unicode value="31_1.6"></unicode>
+                        <unicode value="31_1.8"></unicode>
                         <string role="key" value="_imageResource"></string>
                         <instance class="exe.engine.resource.Resource" reference="96">
                          <dictionary>
@@ -5060,7 +5022,7 @@ Aplicant la participació total i parcial, el nostre exemple quedarà:
                           <string role="key" value="_storageName"></string>
                           <string value="estes_tot3.png"></string>
                           <string role="key" value="_userName"></string>
-                          <string value="/tmp/tmpq2dAEM/estes_tot3.png"></string>
+                          <string value="/tmp/tmpN2HEi5/estes_tot3.png"></string>
                           <string role="key" value="checksum"></string>
                           <string value="30aba748d23f3005c42dbf1bb89bab26"></string>
                           <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -5089,7 +5051,7 @@ Aplicant la participació total i parcial, el nostre exemple quedarà:
                    <string role="key" value="intlinks_to_anchors"></string>
                    <dictionary></dictionary>
                    <string role="key" value="nextImageId"></string>
-                   <int value="7"></int>
+                   <int value="9"></int>
                    <string role="key" value="parentNode"></string>
                    <reference key="95"></reference>
                   </dictionary>
@@ -5306,7 +5268,7 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2553"></int>
+                       <int value="2919"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -5320,7 +5282,7 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="32_1.26"></unicode>
+                     <unicode value="32_1.34"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="100">
                       <dictionary>
@@ -5329,11 +5291,11 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="T2_6_6.png"></string>
+                       <string value="debil1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/T2_6_6.png"></string>
+                       <string value="/tmp/tmpN2HEi5/debil1.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="dca7178e860a20e0f0b4d865b431059c"></string>
+                       <string value="c1831e05a9cb97c2b99358e9de54f423"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -5358,7 +5320,7 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2554"></int>
+                       <int value="2921"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -5372,7 +5334,7 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="32_1.27"></unicode>
+                     <unicode value="32_1.35"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="101">
                       <dictionary>
@@ -5381,61 +5343,9 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="T2_6_7.png"></string>
-                       <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/T2_6_7.png"></string>
-                       <string role="key" value="checksum"></string>
-                       <string value="fc39e49278541831c74dc1541a11250b"></string>
-                       <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
-                       <int value="2"></int>
-                       <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
-                       <int value="2"></int>
-                       <string role="key" value="warningMsg"></string>
-                       <string value=""></string>
-                      </dictionary>
-                     </instance>
-                     <string role="key" value="_parent"></string>
-                     <reference key="98"></reference>
-                     <string role="key" value="_thumbnailResource"></string>
-                     <none></none>
-                     <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
-                     <int value="3"></int>
-                     <string role="key" value="makeThumbnail"></string>
-                     <bool value="0"></bool>
-                    </dictionary>
-                   </instance>
-                   <instance class="exe.engine.galleryidevice.GalleryImage">
-                    <dictionary>
-                     <string role="key" value="_caption"></string>
-                     <instance class="exe.engine.field.TextField">
-                      <dictionary>
-                       <string role="key" value="_id"></string>
-                       <int value="2569"></int>
-                       <string role="key" value="_idevice"></string>
-                       <none></none>
-                       <string role="key" value="_instruc"></string>
-                       <string value=""></string>
-                       <string role="key" value="_name"></string>
-                       <string value=""></string>
-                       <string role="key" value="content"></string>
-                       <string value=""></string>
-                       <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
-                       <int value="4"></int>
-                      </dictionary>
-                     </instance>
-                     <string role="key" value="_id"></string>
-                     <unicode value="32_1.28"></unicode>
-                     <string role="key" value="_imageResource"></string>
-                     <instance class="exe.engine.resource.Resource" reference="102">
-                      <dictionary>
-                       <string role="key" value="_idevice"></string>
-                       <reference key="97"></reference>
-                       <string role="key" value="_package"></string>
-                       <reference key="2"></reference>
-                       <string role="key" value="_storageName"></string>
                        <string value="T2_6_5.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/T2_6_5.png"></string>
+                       <string value="/tmp/tmpN2HEi5/T2_6_5.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="f2546e80c33e2d2263e153e00ab9d27b"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -5462,7 +5372,7 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2571"></int>
+                       <int value="2925"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -5476,7 +5386,59 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="32_1.29"></unicode>
+                     <unicode value="32_1.36"></unicode>
+                     <string role="key" value="_imageResource"></string>
+                     <instance class="exe.engine.resource.Resource" reference="102">
+                      <dictionary>
+                       <string role="key" value="_idevice"></string>
+                       <reference key="97"></reference>
+                       <string role="key" value="_package"></string>
+                       <reference key="2"></reference>
+                       <string role="key" value="_storageName"></string>
+                       <string value="T2_6_7.png"></string>
+                       <string role="key" value="_userName"></string>
+                       <string value="/tmp/tmpN2HEi5/T2_6_7.png"></string>
+                       <string role="key" value="checksum"></string>
+                       <string value="fc39e49278541831c74dc1541a11250b"></string>
+                       <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
+                       <int value="2"></int>
+                       <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
+                       <int value="2"></int>
+                       <string role="key" value="warningMsg"></string>
+                       <string value=""></string>
+                      </dictionary>
+                     </instance>
+                     <string role="key" value="_parent"></string>
+                     <reference key="98"></reference>
+                     <string role="key" value="_thumbnailResource"></string>
+                     <none></none>
+                     <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
+                     <int value="3"></int>
+                     <string role="key" value="makeThumbnail"></string>
+                     <bool value="0"></bool>
+                    </dictionary>
+                   </instance>
+                   <instance class="exe.engine.galleryidevice.GalleryImage">
+                    <dictionary>
+                     <string role="key" value="_caption"></string>
+                     <instance class="exe.engine.field.TextField">
+                      <dictionary>
+                       <string role="key" value="_id"></string>
+                       <int value="2931"></int>
+                       <string role="key" value="_idevice"></string>
+                       <none></none>
+                       <string role="key" value="_instruc"></string>
+                       <string value=""></string>
+                       <string role="key" value="_name"></string>
+                       <string value=""></string>
+                       <string role="key" value="content"></string>
+                       <string value=""></string>
+                       <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
+                       <int value="4"></int>
+                      </dictionary>
+                     </instance>
+                     <string role="key" value="_id"></string>
+                     <unicode value="32_1.37"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="103">
                       <dictionary>
@@ -5485,11 +5447,11 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="debil1.png"></string>
+                       <string value="T2_6_6.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/debil1.png"></string>
+                       <string value="/tmp/tmpN2HEi5/T2_6_6.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="c1831e05a9cb97c2b99358e9de54f423"></string>
+                       <string value="dca7178e860a20e0f0b4d865b431059c"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -5516,7 +5478,7 @@ dèbil com a mínim en existència. Per exemple: la participació total de Famil
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="30"></int>
+                <int value="38"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="99"></reference>
                </dictionary>
@@ -5690,7 +5652,7 @@ entitats, però de vegades per motius pràctics se simplifica (suprimint bé el 
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2557"></int>
+                       <int value="2941"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -5704,7 +5666,7 @@ entitats, però de vegades per motius pràctics se simplifica (suprimint bé el 
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="33_1.7"></unicode>
+                     <unicode value="33_1.9"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="107">
                       <dictionary>
@@ -5715,7 +5677,7 @@ entitats, però de vegades per motius pràctics se simplifica (suprimint bé el 
                        <string role="key" value="_storageName"></string>
                        <string value="T2_6_7_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpq2dAEM/T2_6_7_2.png"></string>
+                       <string value="/tmp/tmpN2HEi5/T2_6_7_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="2efd3e2381149639b815ba6505942ef1"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -5744,7 +5706,7 @@ entitats, però de vegades per motius pràctics se simplifica (suprimint bé el 
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="8"></int>
+                <int value="10"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="106"></reference>
                </dictionary>
@@ -5876,7 +5838,7 @@ On &amp;quot;&lt;b&gt;T,D&lt;/b&gt;&amp;quot; que està dins del triangle signif
                         <instance class="exe.engine.field.TextField">
                          <dictionary>
                           <string role="key" value="_id"></string>
-                          <int value="2562"></int>
+                          <int value="2938"></int>
                           <string role="key" value="_idevice"></string>
                           <none></none>
                           <string role="key" value="_instruc"></string>
@@ -5890,7 +5852,7 @@ On &amp;quot;&lt;b&gt;T,D&lt;/b&gt;&amp;quot; que està dins del triangle signif
                          </dictionary>
                         </instance>
                         <string role="key" value="_id"></string>
-                        <unicode value="34_1.6"></unicode>
+                        <unicode value="34_1.8"></unicode>
                         <string role="key" value="_imageResource"></string>
                         <instance class="exe.engine.resource.Resource" reference="111">
                          <dictionary>
@@ -5901,7 +5863,7 @@ On &amp;quot;&lt;b&gt;T,D&lt;/b&gt;&amp;quot; que està dins del triangle signif
                           <string role="key" value="_storageName"></string>
                           <string value="esp2.png"></string>
                           <string role="key" value="_userName"></string>
-                          <string value="/tmp/tmpq2dAEM/esp2.png"></string>
+                          <string value="/tmp/tmpN2HEi5/esp2.png"></string>
                           <string role="key" value="checksum"></string>
                           <string value="720eb938da07e64c7cd2618ad12595d6"></string>
                           <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -5930,7 +5892,7 @@ On &amp;quot;&lt;b&gt;T,D&lt;/b&gt;&amp;quot; que està dins del triangle signif
                    <string role="key" value="intlinks_to_anchors"></string>
                    <dictionary></dictionary>
                    <string role="key" value="nextImageId"></string>
-                   <int value="7"></int>
+                   <int value="9"></int>
                    <string role="key" value="parentNode"></string>
                    <reference key="110"></reference>
                   </dictionary>
@@ -6281,36 +6243,30 @@ que:
               <string role="key" value="buttonCaption"></string>
               <string value=""></string>
               <string role="key" value="content_w_resourcePaths"></string>
-              <unicode content="true" value="
-&lt;p&gt;
-L'anàlisi
-de requisits d'una determinada xarxa bancària és el següent:
-&lt;/p&gt;
+              <unicode content="true" value="&lt;p&gt;L'anàlisi de requisits d'una determinada xarxa bancària és el següent:&lt;/p&gt;
 &lt;ul class=&quot;unIndentedList&quot;&gt;
-	&lt;li&gt;
-	De cada banc ens interessa el nom i l'adreça de
-	la seu social. Hi ha un codi distint per a cada entitat bancària.&lt;/li&gt;&lt;br /&gt;
-	&lt;li&gt;
-	Cada banc té distintes sucursal, que
-	s'identifiquen internament per un codi.&lt;/li&gt;&lt;br /&gt;
-	&lt;li&gt;
-	Cada sucursal té assignades una sèrie de comptes
-	corrents, que s'identifiquen &lt;i&gt;internament &lt;/i&gt;per un codi. Un compte pot pertànyer a
-	un o més d'un client. És possible que cada client puga fer operacions distintes
-	amb els comptes. Així podria ser que, encara que dos clients siguen titulars
-	d'un mateix compte, només un tinga facultat per tancar-lo.&lt;/li&gt;&lt;br /&gt;
-	&lt;li&gt;
-	Cada client, que s'identifica pel seu DNI, pot
-	tenir més d'un compte, i evidentment privilegis distints en cadascun d'ells.&lt;/li&gt;&lt;br /&gt;
-	&lt;li&gt;
-	Cada compte pot tenir domiciliacions associades
-	a ell.&lt;/li&gt;&lt;br /&gt;
-	&lt;li&gt;
-	Les sucursals poden atorgar préstecs als
-	clients, que no estaran associats als comptes. Cada préstec s'atorga a nom d'un
-	únic client, i a un client se li pot atorgar més d'un préstec.&lt;/li&gt;
+&lt;li&gt;De cada banc ens interessa el nom i l'adreça de la seu social. Hi ha un codi distint per a cada entitat bancària.&lt;/li&gt;
 &lt;/ul&gt;
-"></unicode>
+&lt;p&gt;&lt;/p&gt;
+&lt;ul class=&quot;unIndentedList&quot;&gt;
+&lt;li&gt;Cada banc té distintes sucursal, que s'identifiquen &lt;em&gt;internament&lt;/em&gt; per un codi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul class=&quot;unIndentedList&quot;&gt;
+&lt;li&gt;Cada sucursal té assignats una sèrie de comptes corrents, que s'identifiquen &lt;i&gt;internament &lt;/i&gt;per un codi. Un compte pot pertànyer a un o més d'un client. És possible que cada client puga fer operacions distintes amb els comptes. Així podria ser que, encara que dos clients siguen titulars d'un mateix compte, només un tinga facultat per tancar-lo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul class=&quot;unIndentedList&quot;&gt;
+&lt;li&gt;Cada client, que s'identifica pel seu DNI, pot tenir més d'un compte, i evidentment privilegis distints en cadascun d'ells.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul class=&quot;unIndentedList&quot;&gt;
+&lt;li&gt;Cada compte pot tenir domiciliacions associades a ell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul class=&quot;unIndentedList&quot;&gt;
+&lt;li&gt;Les sucursals poden atorgar préstecs als clients, que no estaran associats als comptes. Cada préstec s'atorga a nom d'un únic client, i a un client se li pot atorgar més d'un préstec.&lt;/li&gt;
+&lt;/ul&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
               <int value="4"></int>
               <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -6398,31 +6354,18 @@ de requisits d'una determinada xarxa bancària és el següent:
               <string role="key" value="buttonCaption"></string>
               <string value=""></string>
               <string role="key" value="content_w_resourcePaths"></string>
-              <unicode content="true" value="
-&lt;p&gt;
-Es vol
-mantenir informació sobre una &lt;b&gt;biblioteca&lt;/b&gt;,
-on podem tenir de cada llibre més d'un exemplar, que a més es poden prestar, i
-que també ens interessa un històric de préstecs. L'anàlisi de requisits seria
-el següent:
-&lt;/p&gt;
+              <unicode content="true" value="&lt;p&gt;Es vol mantenir informació sobre una &lt;b&gt;biblioteca&lt;/b&gt;, on podem tenir de cada llibre més d'un exemplar, que a més es poden prestar, i que també ens interessa un històric de préstecs. L'anàlisi de requeriments seria el següent:&lt;/p&gt;
 &lt;ul class=&quot;unIndentedList&quot;&gt;
-	&lt;li&gt;
-	Cada llibre (amb un determinat títol, ISBN,
-	idioma, número d'edició i data d'edició) tracta només d'un tema, està editat
-	per una única editorial, escrit per un o més autors, i disposarem d'uns quants
-	exemplars. Dels exemplars sempre tindrem el número de registre, que l'identifica unívocament.&lt;/li&gt;&lt;br /&gt;
-	&lt;li&gt;
-	Un exemplar es pot prestar a un únic lector (del
-	qual tindrem Dni, Nom, Adreça i Telèfon), i ens interessa la data en la qual
-	s'ha prestat. Un lector pot tenir més d'un llibre prestat.&lt;/li&gt;&lt;br /&gt;
-	&lt;li&gt;
-	A banda del préstec actual, voldrem saber en el
-	passat a qui s'ha prestat. Per tant en l'històric de préstecs cada exemplar
-	s'haurà prestat a molts lectors, i per a poder dur el seguiment ens interessa
-	la data de préstec i la de tornada.&lt;/li&gt;
+&lt;li&gt;Cada llibre (amb un determinat títol, ISBN, idioma, número d'edició i data d'edició) tracta només d'un tema, està editat per una única editorial, escrit per un o més autors, i disposarem d'uns quants exemplars. Dels exemplars sempre tindrem el número de registre, que l'identifica unívocament.&lt;/li&gt;
 &lt;/ul&gt;
-"></unicode>
+&lt;p&gt;&lt;/p&gt;
+&lt;ul class=&quot;unIndentedList&quot;&gt;
+&lt;li&gt;Els préstecs són dels exemplars dels llibres, que són les materialitzacions dels llibres. Un exemplar es pot prestar a un únic lector (del qual tindrem Dni, Nom, Adreça i Telèfon), i ens interessa la data en la qual s'ha prestat. Un lector pot tenir més d'un llibre prestat.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul class=&quot;unIndentedList&quot;&gt;
+&lt;li&gt;A banda del préstec actual, voldrem saber en el passat a qui s'ha prestat. Per tant en l'històric de préstecs cada exemplar s'haurà prestat a molts lectors, i per a poder dur el seguiment ens interessa la data de préstec i la de tornada.&lt;/li&gt;
+&lt;/ul&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
               <int value="4"></int>
               <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -11683,7 +11626,7 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="18"></reference>
+  <reference key="128"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
@@ -12850,12 +12793,12 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
   <string role="key" value="mxmlwidth"></string>
   <string value=""></string>
   <string role="key" value="release"></string>
-  <string value="2.6"></string>
+  <string value="2.7"></string>
   <string role="key" value="resources"></string>
   <dictionary>
    <string role="key" value="0a29bda289054ef62ac85eb56ace3adb"></string>
    <list>
-    <reference key="91"></reference>
+    <reference key="92"></reference>
    </list>
    <string role="key" value="11814408ac7a764344a040162419d059"></string>
    <list>
@@ -12899,7 +12842,7 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
    </list>
    <string role="key" value="523097ef23146d7ce995b2b2dc70ae0e"></string>
    <list>
-    <reference key="49"></reference>
+    <reference key="51"></reference>
    </list>
    <string role="key" value="524e8da7c45c01475a07d6867a2fe758"></string>
    <list>
@@ -12911,11 +12854,11 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
    </list>
    <string role="key" value="58e7225ed62725c3de2525fb402b4a00"></string>
    <list>
-    <reference key="50"></reference>
+    <reference key="49"></reference>
    </list>
    <string role="key" value="67bc1cc347ad84dac2aa9fb6fb6461e5"></string>
    <list>
-    <reference key="67"></reference>
+    <reference key="68"></reference>
    </list>
    <string role="key" value="6a9545a889756d79b48ee4eb32cd3072"></string>
    <list>
@@ -12927,7 +12870,7 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
    </list>
    <string role="key" value="733530ba3c20f1787d809ecbde630d5c"></string>
    <list>
-    <reference key="92"></reference>
+    <reference key="91"></reference>
    </list>
    <string role="key" value="93df6976b6dd7fcec0ce303ab56d2728"></string>
    <list>
@@ -12935,11 +12878,11 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
    </list>
    <string role="key" value="abcb0509c90cc64d56bbdced25e9ebca"></string>
    <list>
-    <reference key="68"></reference>
+    <reference key="67"></reference>
    </list>
    <string role="key" value="ad18c7212964e27b047c2bb153fc9348"></string>
    <list>
-    <reference key="83"></reference>
+    <reference key="82"></reference>
    </list>
    <string role="key" value="b94ffec6bd80d8fcd09d43fc6f5f455a"></string>
    <list>
@@ -12947,11 +12890,11 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
    </list>
    <string role="key" value="c1831e05a9cb97c2b99358e9de54f423"></string>
    <list>
-    <reference key="103"></reference>
+    <reference key="100"></reference>
    </list>
    <string role="key" value="c46ba634027a3674d53a4ef9e6df4821"></string>
    <list>
-    <reference key="51"></reference>
+    <reference key="50"></reference>
    </list>
    <string role="key" value="d89f3f99bbc20cac802a62cdd1fbc625"></string>
    <list>
@@ -12959,19 +12902,19 @@ Obtenido de &amp;quot;&lt;a href=&quot;http://es.wikipedia.org/wiki/Modelo_entid
    </list>
    <string role="key" value="dca7178e860a20e0f0b4d865b431059c"></string>
    <list>
-    <reference key="100"></reference>
+    <reference key="103"></reference>
    </list>
    <string role="key" value="e8adbe2e27d1bf7643204a137d764528"></string>
    <list>
-    <reference key="82"></reference>
+    <reference key="83"></reference>
    </list>
    <string role="key" value="f2546e80c33e2d2263e153e00ab9d27b"></string>
    <list>
-    <reference key="102"></reference>
+    <reference key="101"></reference>
    </list>
    <string role="key" value="fc39e49278541831c74dc1541a11250b"></string>
    <list>
-    <reference key="101"></reference>
+    <reference key="102"></reference>
    </list>
   </dictionary>
   <string role="key" value="root"></string>
