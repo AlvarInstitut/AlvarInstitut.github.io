@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -88,11 +88,12 @@
 <ul>
 <li>Per al <strong>negatiu</strong> (<strong>transformaNegatiu</strong>), cada byte de color (RGB) de cada punt, s'ha de transformar en el complementari. Com estem parlant de bytes però que en llegir els guardem en enters, senzillament serà calcular <strong>255 - b</strong> (si b és el byte llegit).</li>
 <li>Per a l'<strong>obscur</strong> (<strong>transformaObscur</strong>), cada byte de color (RGB) de cada punt, s'ha de baixar d'intensitat a la meitat. Senzillament serà calcular <strong>b / 2</strong> (si b és el byte llegit).</li>
-<li>Per al <strong>blanc i negre</strong> (<strong>transformaBlancNegre</strong>), que és el voluntari, hem de donar el mateix valor per al roig, el blau i el verd (RGB) de cada punt, i així aconseguirem un gris d'intensitat adequada. Una bona manera serà<strong> llegir els tres bytes</strong> de cada punt (no s'aconsella utilitzar una lectura amb un array de 3 posicions; millor fer tres lectures guardades en tres variables diferents), <strong>calcular la mitjana</strong> d'aquestos 3 valors, i <strong>escriure el resultat 3 vegades</strong> en el fitxer de destí.</li>
+<li>Per al <strong>blanc i negre</strong> (<strong>transformaBlancNegre</strong>), que és el voluntari, hem de donar el mateix valor per al roig, el blau i el verd (RGB) de cada punt, i així aconseguirem un gris d'intensitat adequada. Una bona manera serà<strong> llegir els tres bytes</strong> de cada punt (<strong>no s'aconsella utilitzar una lectura amb un array de 3 posicions</strong>; millor fer tres lectures guardades en tres variables diferents), <strong>calcular la mitjana</strong> d'aquestos 3 valors, i <strong>escriure el resultat 3 vegades</strong> en el fitxer de destí.</li>
+<li>En cap dels casos anteriors es recomana la lectura dels bytes en un ByteArray, perquè podeu tenir resultats imprevisibles a causa de la interpretació numèrica (i per tant amb signe, cosa que en aquest cas no té sentit, ja que han són números del 0 al 255). <strong>Es recomana vivament llegir byte a byte</strong>.</li>
 </ul>
 </li>
 </ul>
-<p>A mode orientatiu del que es vol fer, us adjunte la classe <strong>fitxerImatge</strong> a la qual heu de modificar el constructor i els tres mètodes de transformació (l'últim és voluntari). Recordeu que ha d'anar al paquet <strong>exercicis </strong>i li podeu donar el nom <strong>Exercici_2_1.kt</strong>.<strong></strong></p>
+<p>A mode orientatiu del que es vol fer, us adjunte la classe <strong>FitxerImatge</strong> a la qual heu de modificar el constructor i els tres mètodes de transformació (l'últim és voluntari). Recordeu que ha d'anar al paquet <strong>exercicis</strong>.<strong></strong></p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>package exercicis
@@ -100,7 +101,7 @@
 import java.io.File
 
 class FitxerImatge(fEnt: File) {
-	var f: File = File("")
+	var f: File = File("")   // No modifiqueu aquesta línia. El seu valor s'ha de modificar en el constructor
 
 	init {
 		// Constructor
@@ -128,7 +129,7 @@ class FitxerImatge(fEnt: File) {
 }</code></pre>
 </div>
 </div>
-<p>Aquest seria un exemple de programa principal, que podeu utilitzar si voleu. Recordeu que ha d'anar al paquet <strong>exercicis</strong>.</p>
+<p>Aquest seria un exemple de programa principal, que podeu utilitzar si voleu. Recordeu que ha d'anar al paquet <strong>exercicis </strong> i li podeu donar el nom <strong>Exercici_2_1.kt</strong><strong>.</strong></p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>package exercicis

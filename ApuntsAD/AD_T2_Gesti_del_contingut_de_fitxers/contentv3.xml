@@ -152,7 +152,7 @@ text through the text editing buttons associated with the field."></unicode>
                <instance class="exe.engine.field.TextField">
                 <dictionary>
                  <string role="key" value="_id"></string>
-                 <int value="2450"></int>
+                 <int value="2458"></int>
                  <string role="key" value="_idevice"></string>
                  <none></none>
                  <string role="key" value="_instruc"></string>
@@ -166,7 +166,7 @@ text through the text editing buttons associated with the field."></unicode>
                 </dictionary>
                </instance>
                <string role="key" value="_id"></string>
-               <unicode value="2_1.39"></unicode>
+               <unicode value="2_1.40"></unicode>
                <string role="key" value="_imageResource"></string>
                <instance class="exe.engine.resource.Resource" reference="5">
                 <dictionary>
@@ -177,7 +177,7 @@ text through the text editing buttons associated with the field."></unicode>
                  <string role="key" value="_storageName"></string>
                  <string value="T2_Portada.1.png"></string>
                  <string role="key" value="_userName"></string>
-                 <string value="/tmp/tmpO8qCd1/T2_Portada.1.png"></string>
+                 <string value="/tmp/tmpjtXG8n/T2_Portada.1.png"></string>
                  <string role="key" value="checksum"></string>
                  <string value="3ce2edd2d04196892beecaea3f838d06"></string>
                  <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -206,7 +206,7 @@ text through the text editing buttons associated with the field."></unicode>
           <string role="key" value="intlinks_to_anchors"></string>
           <dictionary></dictionary>
           <string role="key" value="nextImageId"></string>
-          <int value="40"></int>
+          <int value="41"></int>
           <string role="key" value="parentNode"></string>
           <reference key="4"></reference>
          </dictionary>
@@ -315,7 +315,7 @@ learning tasks."></unicode>
 &lt;div class=&quot;nota_blau&quot;&gt;
 &lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Nota&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Per als exemples i exercicis d'aquest tema, heu de crear un projecte nou, &lt;strong&gt;Tema2&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Haureu de crear 2 paquets, &lt;strong&gt;Exemples&lt;/strong&gt; i &lt;strong&gt;Exercicis&lt;/strong&gt;, de forma similar a com havíem fet en el Tema 1.&lt;/p&gt;
+&lt;p&gt;Haureu de crear 2 paquets, &lt;strong&gt;exemples&lt;/strong&gt; i &lt;strong&gt;exercicis&lt;/strong&gt;, de forma similar a com havíem fet en el Tema 1.&lt;/p&gt;
 &lt;/div&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
               <int value="4"></int>
@@ -782,7 +782,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2452"></int>
+                       <int value="2464"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -796,7 +796,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_1.39"></unicode>
+                     <unicode value="3_1.40"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="18">
                       <dictionary>
@@ -807,7 +807,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T2_2_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpO8qCd1/T2_2_1.png"></string>
+                       <string value="/tmp/tmpjtXG8n/T2_2_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="8ea48fdd783d021d81f39e52d8f791df"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -836,7 +836,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="40"></int>
+                <int value="41"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="17"></reference>
                </dictionary>
@@ -1454,7 +1454,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2454"></int>
+                       <int value="2462"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1468,7 +1468,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="5_1.39"></unicode>
+                     <unicode value="5_1.40"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="28">
                       <dictionary>
@@ -1479,7 +1479,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T2__2_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpO8qCd1/T2__2_2.png"></string>
+                       <string value="/tmp/tmpjtXG8n/T2__2_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="af2ac6badad62b8169aa13e5537466bf"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1508,7 +1508,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="40"></int>
+                <int value="41"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="27"></reference>
                </dictionary>
@@ -2210,7 +2210,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2453"></int>
+                       <int value="2465"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2224,7 +2224,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="11_1.38"></unicode>
+                     <unicode value="11_1.39"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="41">
                       <dictionary>
@@ -2235,7 +2235,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                        <string role="key" value="_storageName"></string>
                        <string value="T2_2_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpO8qCd1/T2_2_1.png"></string>
+                       <string value="/tmp/tmpjtXG8n/T2_2_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="8ea48fdd783d021d81f39e52d8f791df"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2264,7 +2264,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="39"></int>
+                <int value="40"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="40"></reference>
                </dictionary>
@@ -2431,7 +2431,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2455"></int>
+                       <int value="2463"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2445,7 +2445,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="13_1.38"></unicode>
+                     <unicode value="13_1.39"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="45">
                       <dictionary>
@@ -2456,7 +2456,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T2__2_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpO8qCd1/T2__2_2.png"></string>
+                       <string value="/tmp/tmpjtXG8n/T2__2_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="af2ac6badad62b8169aa13e5537466bf"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2485,7 +2485,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="39"></int>
+                <int value="40"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="44"></reference>
                </dictionary>
@@ -3361,11 +3361,12 @@ that may help or hinder the learner in the performance of the task."></unicode>
 &lt;ul&gt;
 &lt;li&gt;Per al &lt;strong&gt;negatiu&lt;/strong&gt; (&lt;strong&gt;transformaNegatiu&lt;/strong&gt;), cada byte de color (RGB) de cada punt, s'ha de transformar en el complementari. Com estem parlant de bytes però que en llegir els guardem en enters, senzillament serà calcular &lt;strong&gt;255 - b&lt;/strong&gt; (si b és el byte llegit).&lt;/li&gt;
 &lt;li&gt;Per a l'&lt;strong&gt;obscur&lt;/strong&gt; (&lt;strong&gt;transformaObscur&lt;/strong&gt;), cada byte de color (RGB) de cada punt, s'ha de baixar d'intensitat a la meitat. Senzillament serà calcular &lt;strong&gt;b / 2&lt;/strong&gt; (si b és el byte llegit).&lt;/li&gt;
-&lt;li&gt;Per al &lt;strong&gt;blanc i negre&lt;/strong&gt; (&lt;strong&gt;transformaBlancNegre&lt;/strong&gt;), que és el voluntari, hem de donar el mateix valor per al roig, el blau i el verd (RGB) de cada punt, i així aconseguirem un gris d'intensitat adequada. Una bona manera serà&lt;strong&gt; llegir els tres bytes&lt;/strong&gt; de cada punt (no s'aconsella utilitzar una lectura amb un array de 3 posicions; millor fer tres lectures guardades en tres variables diferents), &lt;strong&gt;calcular la mitjana&lt;/strong&gt; d'aquestos 3 valors, i &lt;strong&gt;escriure el resultat 3 vegades&lt;/strong&gt; en el fitxer de destí.&lt;/li&gt;
+&lt;li&gt;Per al &lt;strong&gt;blanc i negre&lt;/strong&gt; (&lt;strong&gt;transformaBlancNegre&lt;/strong&gt;), que és el voluntari, hem de donar el mateix valor per al roig, el blau i el verd (RGB) de cada punt, i així aconseguirem un gris d'intensitat adequada. Una bona manera serà&lt;strong&gt; llegir els tres bytes&lt;/strong&gt; de cada punt (&lt;strong&gt;no s'aconsella utilitzar una lectura amb un array de 3 posicions&lt;/strong&gt;; millor fer tres lectures guardades en tres variables diferents), &lt;strong&gt;calcular la mitjana&lt;/strong&gt; d'aquestos 3 valors, i &lt;strong&gt;escriure el resultat 3 vegades&lt;/strong&gt; en el fitxer de destí.&lt;/li&gt;
+&lt;li&gt;En cap dels casos anteriors es recomana la lectura dels bytes en un ByteArray, perquè podeu tenir resultats imprevisibles a causa de la interpretació numèrica (i per tant amb signe, cosa que en aquest cas no té sentit, ja que han són números del 0 al 255). &lt;strong&gt;Es recomana vivament llegir byte a byte&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;A mode orientatiu del que es vol fer, us adjunte la classe &lt;strong&gt;fitxerImatge&lt;/strong&gt; a la qual heu de modificar el constructor i els tres mètodes de transformació (l'últim és voluntari). Recordeu que ha d'anar al paquet &lt;strong&gt;exercicis &lt;/strong&gt;i li podeu donar el nom &lt;strong&gt;Exercici_2_1.kt&lt;/strong&gt;.&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A mode orientatiu del que es vol fer, us adjunte la classe &lt;strong&gt;FitxerImatge&lt;/strong&gt; a la qual heu de modificar el constructor i els tres mètodes de transformació (l'últim és voluntari). Recordeu que ha d'anar al paquet &lt;strong&gt;exercicis&lt;/strong&gt;.&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;highlighted-code language-java&quot;&gt;
 &lt;div&gt;
 &lt;pre&gt;&lt;code&gt;package exercicis
@@ -3373,7 +3374,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
 import java.io.File
 
 class FitxerImatge(fEnt: File) {
-	var f: File = File(&quot;&quot;)
+	var f: File = File(&quot;&quot;)   // No modifiqueu aquesta línia. El seu valor s'ha de modificar en el constructor
 
 	init {
 		// Constructor
@@ -3401,7 +3402,7 @@ class FitxerImatge(fEnt: File) {
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Aquest seria un exemple de programa principal, que podeu utilitzar si voleu. Recordeu que ha d'anar al paquet &lt;strong&gt;exercicis&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Aquest seria un exemple de programa principal, que podeu utilitzar si voleu. Recordeu que ha d'anar al paquet &lt;strong&gt;exercicis &lt;/strong&gt; i li podeu donar el nom &lt;strong&gt;Exercici_2_1.kt&lt;/strong&gt;&lt;strong&gt;.&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;highlighted-code language-java&quot;&gt;
 &lt;div&gt;
 &lt;pre&gt;&lt;code&gt;package exercicis
@@ -3462,7 +3463,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2447"></int>
+                     <int value="2459"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -3476,7 +3477,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="17_41_2.120"></unicode>
+                   <unicode value="17_41_2.124"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="59">
                     <dictionary>
@@ -3487,7 +3488,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                      <string role="key" value="_storageName"></string>
                      <string value="Penyagolosa_o.bmp"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmpO8qCd1/Penyagolosa_o.bmp"></string>
+                     <string value="/tmp/tmpjtXG8n/Penyagolosa_o.bmp"></string>
                      <string role="key" value="checksum"></string>
                      <string value="6eb94f8aea58d4fabcba42508ec9c8ad"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -3514,7 +3515,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2448"></int>
+                     <int value="2460"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -3528,7 +3529,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="17_41_2.121"></unicode>
+                   <unicode value="17_41_2.125"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="60">
                     <dictionary>
@@ -3537,11 +3538,11 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                      <string role="key" value="_package"></string>
                      <reference key="2"></reference>
                      <string role="key" value="_storageName"></string>
-                     <string value="Penyagolosa_n.bmp"></string>
+                     <string value="Penyagolosa_bn.bmp"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmpO8qCd1/Penyagolosa_n.bmp"></string>
+                     <string value="/tmp/tmpjtXG8n/Penyagolosa_bn.bmp"></string>
                      <string role="key" value="checksum"></string>
-                     <string value="0e8cef4fb8d2af8ba10d59be036251e2"></string>
+                     <string value="d7321ffaf55e1044ce5ef1ed4feb4126"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                      <int value="2"></int>
                      <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -3566,7 +3567,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2449"></int>
+                     <int value="2466"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -3580,7 +3581,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="17_41_2.122"></unicode>
+                   <unicode value="17_41_2.126"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="61">
                     <dictionary>
@@ -3591,7 +3592,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                      <string role="key" value="_storageName"></string>
                      <string value="Penyagolosa.bmp"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmpO8qCd1/Penyagolosa.bmp"></string>
+                     <string value="/tmp/tmpjtXG8n/Penyagolosa.bmp"></string>
                      <string role="key" value="checksum"></string>
                      <string value="31ed656f77e510b002baa9a6875ecc44"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -3618,7 +3619,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2451"></int>
+                     <int value="2468"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -3632,7 +3633,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="17_41_2.123"></unicode>
+                   <unicode value="17_41_2.127"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="62">
                     <dictionary>
@@ -3641,11 +3642,11 @@ fun main(args: Array&amp;lt;String&amp;gt;){
                      <string role="key" value="_package"></string>
                      <reference key="2"></reference>
                      <string role="key" value="_storageName"></string>
-                     <string value="Penyagolosa_bn.bmp"></string>
+                     <string value="Penyagolosa_n.bmp"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmpO8qCd1/Penyagolosa_bn.bmp"></string>
+                     <string value="/tmp/tmpjtXG8n/Penyagolosa_n.bmp"></string>
                      <string role="key" value="checksum"></string>
-                     <string value="d7321ffaf55e1044ce5ef1ed4feb4126"></string>
+                     <string value="0e8cef4fb8d2af8ba10d59be036251e2"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                      <int value="2"></int>
                      <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -3672,7 +3673,7 @@ fun main(args: Array&amp;lt;String&amp;gt;){
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="124"></int>
+              <int value="128"></int>
               <string role="key" value="parentNode"></string>
               <reference key="58"></reference>
              </dictionary>
@@ -3840,7 +3841,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2457"></int>
+                     <int value="2461"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -3854,7 +3855,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="18_42_2.37"></unicode>
+                   <unicode value="18_42_2.38"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="65">
                     <dictionary>
@@ -3865,7 +3866,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <string role="key" value="_storageName"></string>
                      <string value="T2_Ex2_2_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmpO8qCd1/T2_Ex2_2_1.png"></string>
+                     <string value="/tmp/tmpjtXG8n/T2_Ex2_2_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="2fa1d6c1290522ed8392f2238a1bcd51"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -3894,7 +3895,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="38"></int>
+              <int value="39"></int>
               <string role="key" value="parentNode"></string>
               <reference key="58"></reference>
              </dictionary>
@@ -4086,7 +4087,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2456"></int>
+                     <int value="2467"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -4100,7 +4101,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="19_43_2.38"></unicode>
+                   <unicode value="19_43_2.39"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="68">
                     <dictionary>
@@ -4111,7 +4112,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <string role="key" value="_storageName"></string>
                      <string value="T2_Ex2_2_2.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmpO8qCd1/T2_Ex2_2_2.png"></string>
+                     <string value="/tmp/tmpjtXG8n/T2_Ex2_2_2.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="4e66530fd4ed60682d8e1d55718dce38"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -4140,7 +4141,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="39"></int>
+              <int value="40"></int>
               <string role="key" value="parentNode"></string>
               <reference key="58"></reference>
              </dictionary>
@@ -4236,7 +4237,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="58"></reference>
+  <reference key="27"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
@@ -5161,12 +5162,12 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
   <string role="key" value="mxmlwidth"></string>
   <string value=""></string>
   <string role="key" value="release"></string>
-  <string value="2.6"></string>
+  <string value="2.7"></string>
   <string role="key" value="resources"></string>
   <dictionary>
    <string role="key" value="0e8cef4fb8d2af8ba10d59be036251e2"></string>
    <list>
-    <reference key="60"></reference>
+    <reference key="62"></reference>
    </list>
    <string role="key" value="2fa1d6c1290522ed8392f2238a1bcd51"></string>
    <list>
@@ -5200,7 +5201,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
    </list>
    <string role="key" value="d7321ffaf55e1044ce5ef1ed4feb4126"></string>
    <list>
-    <reference key="62"></reference>
+    <reference key="60"></reference>
    </list>
   </dictionary>
   <string role="key" value="root"></string>
