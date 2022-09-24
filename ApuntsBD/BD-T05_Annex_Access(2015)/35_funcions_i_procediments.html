@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.5 Funcions i Procediments | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning Portable 2.0.1.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Mostra",hide:"Amaga",showFeedback:"Mostra realimentació",hideFeedback:"Amaga realimentació",correct:"Correcte",incorrect:"Incorrecte",menu:"Menú"}</script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" >Bases de Dades</div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Access avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="part_i_prctica_inicial.html" class="daddy">Part I: Pràctica inicial</a>
+   <ul class="other-section">
+      <li><a href="11_taules.html" class="no-ch">1.1 Taules</a></li>
+      <li><a href="12_consultes.html" class="no-ch">1.2 Consultes</a></li>
+      <li><a href="13_formularis_i_informes.html" class="no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_ii_macros.html" class="daddy">Part II: Macros</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_macro.html" class="no-ch">2.1 Creació d'una Macro</a></li>
+      <li><a href="22_accions_mltiples.html" class="no-ch">2.2 Accions múltiples</a></li>
+      <li><a href="23_submacros.html" class="no-ch">2.3 Submacros</a></li>
+      <li><a href="24_condicions.html" class="no-ch">2.4 Condicions</a></li>
+      <li><a href="25_resum_daccions.html" class="no-ch">2.5 Resum d'accions</a></li>
+      <li><a href="26_resum_desdeveniments.html" class="no-ch">2.6 Resum d'esdeveniments</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="part_iii_mduls_visual_basic.html" class="current-page-parent daddy">Part III: Mòduls (Visual Basic)</a>
+   <ul>
+      <li><a href="31_creaci_dun_mdul.html" class="no-ch">3.1 Creació d'un Mòdul</a></li>
+      <li><a href="32_tipus_de_dades_constants_i_variables.html" class="no-ch">3.2 Tipus de dades, Constants i Variables</a></li>
+      <li><a href="33_tipus_especials.html" class="no-ch">3.3 Tipus especials</a></li>
+      <li><a href="34_operadors.html" class="no-ch">3.4 Operadors</a></li>
+      <li id="active"><a href="35_funcions_i_procediments.html" class="active no-ch">3.5 Funcions i Procediments</a></li>
+      <li><a href="36_sentncies.html" class="no-ch">3.6 Sentències</a></li>
+      <li><a href="37_funcions_estndard.html" class="no-ch">3.7 Funcions estàndard</a></li>
+      <li><a href="38_objectes_especials_propietats_i_mtodes.html" class="no-ch">3.8 Objectes especials: propietats i mètodes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_iv_configurar_laspecte.html" class="daddy">Part IV: Configurar l'aspecte</a>
+   <ul class="other-section">
+      <li><a href="41_configurar_la_barra_daccs_rpid.html" class="daddy">4.1 Configurar la Barra d'Accés ràpid</a>
+      <ul class="other-section">
+         <li><a href="exercici_41.html" class="no-ch">Exercici 4.1</a></li>
+      </ul>
+      </li>
+      <li><a href="42_la_cinta_dopcions.html" class="daddy">4.2 La cinta d'opcions</a>
+      <ul class="other-section">
+         <li><a href="421_modificaci_per_a_tot_access.html" class="daddy">4.2.1 Modificació per a tot Access</a>
+         <ul class="other-section">
+            <li><a href="exercici_42.html" class="no-ch">Exercici 4.2</a></li>
+         </ul>
+         </li>
+         <li><a href="422_modificaci_per_a_la_base_de_dades_actual.html" class="daddy">4.2.2 Modificació per a la Base de Dades actual</a>
+         <ul class="other-section">
+            <li><a href="exercici_43_voluntari_per_puntuable.html" class="no-ch">Exercici 4.3 (voluntari però puntuable)</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_el_panell_de_navegaci.html" class="no-ch">4.3 El panell de navegació</a></li>
+      <li><a href="44_opcions_daplicaci.html" class="daddy">4.4 Opcions d'aplicació</a>
+      <ul class="other-section">
+         <li><a href="exercici_44.html" class="no-ch">Exercici 4.4</a></li>
+      </ul>
+      </li>
+      <li><a href="45_el_panell_de_control.html" class="daddy">4.5 El panell de control</a>
+      <ul class="other-section">
+         <li><a href="exercici_45.html" class="no-ch">Exercici 4.5</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="34_operadors.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="36_sentncies.html" class="next"> Següent<span> &raquo;</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.5 Funcions i Procediments</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id57">
+<div class="iDevice emphasis0">
+<div id="ta57_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+FUNCIONS
+</p>
+<p>
+Les sentències per definir una funció són
+</p>
+<p class="codi">
+[STATIC][PUBLIC|PRIVATE] FUNCTION nom_funció ([p1 [AS tipus], ...])  [AS tipus_funció]<br />
+                                 (sentències de la funció)<br />
+                                 [nom_funció = expressió]<br />
+END FUNCTION<br />
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Com s'observa potser duga paràmetres o
+potser no, i podem definir de quin tipus és la funció (el tipus que tornarà) o
+no.
+</p>
+<p>
+Si es declara <b>STATIC</b> totes les variables locals seran estàtiques (és a dir,
+conservaran el valor entre cridades)
+</p>
+<p>
+Si es declara <b>PUBLIC</b> (que és l'opció per defecte) la funció estarà disponible des
+de qualsevol lloc, qualsevol mòdul de la Base de Dades
+</p>
+<p>
+Si es declara <b>PRIVATE</b> la funció només estarà disponible des del mòdul on està
+declarada.
+</p>
+<p class="titolet">
+PROCEDIMENTS
+</p>
+<p>
+Un procediment és molt paregut, excepte
+que no torna un valor
+</p>
+<p class="codi">
+[STATIC][PUBLIC | PRIVATE] SUB nom_subrutina ([arg1 [AS tipus], ...])<br />
+                                   (sentències del procediment)<br />
+END SUB<br />
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Encara que les funcions i els
+procediments es poden executar directament (com ho estem fent fins ara), o
+cridant-los directament en resposta a un event (com en l'exercici 3.2), moltes
+vegades es cridaran des d'altres mòduls.
+</p>
+<p>
+Per a cridar una funció o procediment és
+suficient posar el seu nom o <b>Call</b> i
+el seu nom. Recordeu que si és una funció que torna un valor, aquest es podrà
+assignar, posar en una expressió, ...
+</p>
+<p>
+&nbsp;
+</p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id58">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3.8</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta58_35_2" class="block iDevice_content">
+
+<p>
+Provar a declarar la funció de l'<b>exercici 3.5</b>, <b>MissatgeIncrementat()</b>, com a <b>Private</b>. Intentar utilitzar-la apretant
+el botó del formulari <b>Botons</b>.
+Després deixar-la com estava.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="34_operadors.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="36_sentncies.html" class="next"> Següent<span> &raquo;</span></a>
+</div>
+</div>
+<p align="center">Llicenciat sota la  <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p></div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2 Tipus de dades, Constants i Variables | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning Portable 2.0.1.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Mostra",hide:"Amaga",showFeedback:"Mostra realimentació",hideFeedback:"Amaga realimentació",correct:"Correcte",incorrect:"Incorrecte",menu:"Menú"}</script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" >Bases de Dades</div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Access avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="part_i_prctica_inicial.html" class="daddy">Part I: Pràctica inicial</a>
+   <ul class="other-section">
+      <li><a href="11_taules.html" class="no-ch">1.1 Taules</a></li>
+      <li><a href="12_consultes.html" class="no-ch">1.2 Consultes</a></li>
+      <li><a href="13_formularis_i_informes.html" class="no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_ii_macros.html" class="daddy">Part II: Macros</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_macro.html" class="no-ch">2.1 Creació d'una Macro</a></li>
+      <li><a href="22_accions_mltiples.html" class="no-ch">2.2 Accions múltiples</a></li>
+      <li><a href="23_submacros.html" class="no-ch">2.3 Submacros</a></li>
+      <li><a href="24_condicions.html" class="no-ch">2.4 Condicions</a></li>
+      <li><a href="25_resum_daccions.html" class="no-ch">2.5 Resum d'accions</a></li>
+      <li><a href="26_resum_desdeveniments.html" class="no-ch">2.6 Resum d'esdeveniments</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="part_iii_mduls_visual_basic.html" class="current-page-parent daddy">Part III: Mòduls (Visual Basic)</a>
+   <ul>
+      <li><a href="31_creaci_dun_mdul.html" class="no-ch">3.1 Creació d'un Mòdul</a></li>
+      <li id="active"><a href="32_tipus_de_dades_constants_i_variables.html" class="active no-ch">3.2 Tipus de dades, Constants i Variables</a></li>
+      <li><a href="33_tipus_especials.html" class="no-ch">3.3 Tipus especials</a></li>
+      <li><a href="34_operadors.html" class="no-ch">3.4 Operadors</a></li>
+      <li><a href="35_funcions_i_procediments.html" class="no-ch">3.5 Funcions i Procediments</a></li>
+      <li><a href="36_sentncies.html" class="no-ch">3.6 Sentències</a></li>
+      <li><a href="37_funcions_estndard.html" class="no-ch">3.7 Funcions estàndard</a></li>
+      <li><a href="38_objectes_especials_propietats_i_mtodes.html" class="no-ch">3.8 Objectes especials: propietats i mètodes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_iv_configurar_laspecte.html" class="daddy">Part IV: Configurar l'aspecte</a>
+   <ul class="other-section">
+      <li><a href="41_configurar_la_barra_daccs_rpid.html" class="daddy">4.1 Configurar la Barra d'Accés ràpid</a>
+      <ul class="other-section">
+         <li><a href="exercici_41.html" class="no-ch">Exercici 4.1</a></li>
+      </ul>
+      </li>
+      <li><a href="42_la_cinta_dopcions.html" class="daddy">4.2 La cinta d'opcions</a>
+      <ul class="other-section">
+         <li><a href="421_modificaci_per_a_tot_access.html" class="daddy">4.2.1 Modificació per a tot Access</a>
+         <ul class="other-section">
+            <li><a href="exercici_42.html" class="no-ch">Exercici 4.2</a></li>
+         </ul>
+         </li>
+         <li><a href="422_modificaci_per_a_la_base_de_dades_actual.html" class="daddy">4.2.2 Modificació per a la Base de Dades actual</a>
+         <ul class="other-section">
+            <li><a href="exercici_43_voluntari_per_puntuable.html" class="no-ch">Exercici 4.3 (voluntari però puntuable)</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_el_panell_de_navegaci.html" class="no-ch">4.3 El panell de navegació</a></li>
+      <li><a href="44_opcions_daplicaci.html" class="daddy">4.4 Opcions d'aplicació</a>
+      <ul class="other-section">
+         <li><a href="exercici_44.html" class="no-ch">Exercici 4.4</a></li>
+      </ul>
+      </li>
+      <li><a href="45_el_panell_de_control.html" class="daddy">4.5 El panell de control</a>
+      <ul class="other-section">
+         <li><a href="exercici_45.html" class="no-ch">Exercici 4.5</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31_creaci_dun_mdul.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="33_tipus_especials.html" class="next"> Següent<span> &raquo;</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2 Tipus de dades, Constants i Variables</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id48">
+<div class="iDevice emphasis0">
+<div id="ta48_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<p>
+Els tipus vàlids de dades són similars als definits en Access. Tindrem
+més facilitat per a definir-los, i tindrem un tipus molt interessant. Quasi
+tots els tipus tenen un caràcter que, seguint el nom de la variable, fa que
+siga d'aquest tipus. Així per a declarar una variable entera podem posar <b>Dim
+nom AS Integer</b>, o senzillament <b>Dim nom%</b>.
+</p>
+<table align="center" border="1" cellpadding="0" cellspacing="0" height="200" width="729">
+	<tbody>
+		<tr>
+			<td valign="top" width="118">
+			<b>
+			Tipus
+			de Dades
+			</b>
+			</td>
+			<td valign="top" width="170">
+			<b>
+			Significat
+			</b>
+			</td>
+			<td valign="top" width="161">
+			<b>
+			Grandària
+			</b>
+			</td>
+			<td valign="top" width="161">
+			<b>
+			Caràcter
+			identificador
+			</b>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Byte
+			</td>
+			<td valign="top" width="170">
+			Enter
+			positiu
+			</td>
+			<td valign="top" width="161">
+			1 byte
+			</td>
+			<td valign="top" width="161"> </td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Integer
+			</td>
+			<td valign="top" width="170">
+			Enter
+			</td>
+			<td valign="top" width="161">
+			2 bytes
+			</td>
+			<td valign="top" width="161">
+			%
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Long
+			</td>
+			<td valign="top" width="170">
+			Enter llarg
+			</td>
+			<td valign="top" width="161">
+			4 bytes
+			</td>
+			<td valign="top" width="161">
+			&amp;
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Currency
+			</td>
+			<td valign="top" width="170">
+			Enter molt
+			llarg
+			</td>
+			<td valign="top" width="161">
+			8 bytes
+			</td>
+			<td valign="top" width="161">
+			@
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Single
+			</td>
+			<td valign="top" width="170">
+			Real simple
+			precisió
+			</td>
+			<td valign="top" width="161">
+			4 bytes
+			</td>
+			<td valign="top" width="161">
+			!
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Double
+			</td>
+			<td valign="top" width="170">
+			Real doble
+			precisió
+			</td>
+			<td valign="top" width="161">
+			8 bytes
+			</td>
+			<td valign="top" width="161">
+			#
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Boolean
+			</td>
+			<td valign="top" width="170">
+			True (-1) o
+			False (0)
+			</td>
+			<td valign="top" width="161">
+			2 bytes
+			</td>
+			<td valign="top" width="161"> </td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			String
+			</td>
+			<td valign="top" width="170">
+			Cadena
+			</td>
+			<td valign="top" width="161">
+			1 byte per
+			caràcter
+			</td>
+			<td valign="top" width="161">
+			$
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Date
+			</td>
+			<td valign="top" width="170">
+			Data-Hora
+			</td>
+			<td valign="top" width="161">
+			8 bytes
+			</td>
+			<td valign="top" width="161"> </td>
+		</tr>
+		<tr>
+			<td valign="top" width="118">
+			Variant
+			</td>
+			<td valign="top" width="170">
+			Variable:
+			qualsevol tipus
+			</td>
+			<td valign="top" width="161">
+			1 byte fins
+			64Kb
+			</td>
+			<td valign="top" width="161"> </td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p>
+Especialment interessant és el tipus <b>VARIANT</b>, que pot guardar dades de qualsevol tipus. Millor dit,
+depenent del valor actual funciona com d'un tipus o d'un altre. El següent codi
+no donaria error:
+</p>
+<p class="codi">
+Dim
+v As Variant
+<br />
+v
+= 4
+<br />
+v
+= v + 2
+<br />
+v
+= &quot;Hola&quot;
+</p>
+<p>
+El que sí que
+donaria error seria després
+</p>
+<p class="codi">
+v
+= v + 2
+</p>
+<p>
+perquè en
+aquest instant la variable és alfanumèrica.
+</p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id49">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3.4</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta49_26_2" class="block iDevice_content">
+
+<p>
+Crear una altra funció, en
+el mateix mòdul d'abans, amb el nom <b>Prova_Variant</b>
+on estiguen les instruccions anteriors, però després de cadascuna visualitzar
+el contingut de <b>v</b> amb <b>MsgBox(v)</b>.<br />
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id50">
+<div class="iDevice emphasis0">
+<div id="ta50_1" class="block iDevice_content">
+
+<ul class="unIndentedList">
+	<li>
+	Per a definir <b><u>constants</u> </b>s'utilitza </li>
+</ul>
+<p class="codi">
+[Global]
+Const <i>nom </i>= <i>&lt;expressió&gt;</i>
+</p>
+<br />
+<ul class="unIndentedList">
+	<li>
+	Per a definir <b><u>variables</u></b> </li>
+</ul>
+<p class="codi">
+Dim
+<i>nom</i> [AS <i>tipus</i>]  (per defecte <b>Variant</b>)
+</p>
+<br />
+<ul class="unIndentedList">
+	<li>
+	Per a definir <b><u>vectors</u></b> </li>
+</ul>
+<p class="codi">
+Dim
+<i>nom</i><i> </i><b>([<i>límit_interior </i>TO] <i>límit_superior</i>) [AS <i>tipus</i>]</b>
+</p>
+<br />
+<p>
+Així per exemple, <b>DIM v(10) AS Integer</b> crea un vector de 11 enters (el límit inferior
+és 0, a no ser que es diga expressament amb la sentència <b>OPTION BASE 1</b>, i aleshores l'índex inicial serà 1).
+</p>
+<p>
+També es pot alterar l'índex inicial
+d'aquesta manera: <b>DIM v(10 TO 20) AS
+Integer</b>. També crea un vector de 11 posicions, però el subíndex ha d'anar
+entre 10 i 20 (sinó donarà un error d'estar fora de rang).
+</p>
+<p>
+També es poden definir matrius de dos o
+més dimensions (fins 60 dimensions). S'hauran d'especificar els límits de cada
+dimensió separats per comes: <b>DIM m(5,10)</b>
+</p>
+<ul class="unIndentedList">
+	<li>
+	Per a definir variables globals (o vectors
+	globals) poseu <b>Global</b> en compte de <b>Dim</b>. Aleshores es podrà accedir a la variable des de qualsevol lloc del mòdul. Recordem que hi havia una altra manera de crear una variable global, i que era posar-la dalt de tot, abans de la declaració de la primera funció o procediment. Si una variable no és global, serà <b>local</b> i només es pot accedir a ella des del procediment o funció on s'ha creat. La immensa majoria de les variables seran locals. Únicament haurem d'especificar variables globals en casos molt concrets. </li><br />
+	<li>
+	Per a variables estàtiques (són locals però no
+	volem que es reinicialitzen cada vegada que s'executa el procediment on estan)
+	poseu <b>Static</b>
+	en compte de <b>Dim</b>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id51">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3.5</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta51_28_2" class="block iDevice_content">
+
+<p align="justify">
+Per a
+provar el funcionament d'una variable estàtica, creeu la funció <b>MissatgeIncrementat</b> en el mòdul de
+sempre on es cree una variable estàtica de tipus <b><i>Integer</i></b> sense donar-li un
+valor inicial (s'iniciarà a 0). Incrementeu-la en una unitat i tragueu un
+missatge amb el valor de la variable. Proveu a executar unes quantes vegades la
+funció. Fins i tot inseriu un botó en el formulari <b>Botons</b> que execute aquesta funció. Veureu que únicament es
+reiniciarà quan tanqueu la Base de Dades.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id52">
+<div class="iDevice emphasis0">
+<div id="ta52_1" class="block iDevice_content">
+
+<p class="titolet">
+Registres 
+</p>
+<p>
+Podem definir estructures pròpies de dades (registres), formades per unes quantes dades individuals que anomenarem camps:
+</p>
+<p class="codi">
+TYPE nom_tipus<br />
+    nom_camp AS tipus<br />
+    ...<br />
+END TYPE<br />
+</p>
+<p>
+Aquestes estructures s'han de definir al principi del mòdul, en la zona
+de declaracions, i si estan en un mòdul de Formulari o d'Informe s'ha de posar
+davant Private.
+</p>
+<p>
+La manera d'utilitzar una estructura d'aquestes és definir una variable del tipus, i després utilitzar-la seguida del nom del camp separada per un punt.
+</p>
+<p class="codi">
+Dim v as nom_tipus<br />
+<br />
+v.nom_camp = <i>valor</i><br />
+...
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Per exemple, podem definir el  tipus  anomenat <i><b>Punt</b></i> per a representar les coordenades <b>x</b> i <b>y</b> d'un pun en el pla. En una funció, primer demanarem les coordenades d'un punt, i després les mostrarem. Per a demanar les dades utilitzem la funció <b>InputBox</b>, que obre una finestra on es pot introduir una informació en un quadre de text, i després la funció torna aquesta informació. Recordeu que la definició del tipus (<i><b>Type</b></i>) ha d'anar dalt de tot. 
+</p>
+<p class="codi">
+Type Punt<br />
+    x As Integer<br />
+    y As Integer<br />
+End Type<br />
+<br />
+Function Coordenades()<br />
+    Dim p As Punt<br />
+<br />
+    p.x = InputBox(&quot;Coordenada x&quot;)<br />
+    p.y = InputBox(&quot;Coordenada y&quot;)<br />
+    MsgBox (&quot;(&quot; &amp; p.x &amp; &quot;,&quot; &amp; p.y &amp; &quot;)&quot;)<br />
+End Function
+</p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id53">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3.6 (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta53_30_2" class="block iDevice_content">
+
+<p>
+Definir el tipus <b><i>Nom</i></b> format per 3 camps: <b><i>Nom_p</i></b>,
+<b><i>Cognom1</i></b>
+i <b><i>Cognom2</i></b>. Posteriorment crear una altra funció
+del mateix mòdul, anomenada <b>Tipus</b>,
+on heu de definir una variable del tipus <i><b>Nom</b></i>, demanar un valor per a cada camp (per mig
+de la funció <b>InputBox</b>), i després traure-ho tot junt.
+</p>
+<p>
+Recordeu que la definició dels tipus ha d'anar al principi del mòdul, en la zona de declaracions 
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31_creaci_dun_mdul.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="33_tipus_especials.html" class="next"> Següent<span> &raquo;</span></a>
+</div>
+</div>
+<p align="center">Llicenciat sota la  <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p></div>
+</div>
+</div>
+</body></html>

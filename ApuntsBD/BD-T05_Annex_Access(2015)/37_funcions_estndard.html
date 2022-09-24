@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.7 Funcions estàndard | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning Portable 2.0.1.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Mostra",hide:"Amaga",showFeedback:"Mostra realimentació",hideFeedback:"Amaga realimentació",correct:"Correcte",incorrect:"Incorrecte",menu:"Menú"}</script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" >Bases de Dades</div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5 (annex): Access avançat</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="part_i_prctica_inicial.html" class="daddy">Part I: Pràctica inicial</a>
+   <ul class="other-section">
+      <li><a href="11_taules.html" class="no-ch">1.1 Taules</a></li>
+      <li><a href="12_consultes.html" class="no-ch">1.2 Consultes</a></li>
+      <li><a href="13_formularis_i_informes.html" class="no-ch">1.3 Formularis i Informes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_ii_macros.html" class="daddy">Part II: Macros</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_macro.html" class="no-ch">2.1 Creació d'una Macro</a></li>
+      <li><a href="22_accions_mltiples.html" class="no-ch">2.2 Accions múltiples</a></li>
+      <li><a href="23_submacros.html" class="no-ch">2.3 Submacros</a></li>
+      <li><a href="24_condicions.html" class="no-ch">2.4 Condicions</a></li>
+      <li><a href="25_resum_daccions.html" class="no-ch">2.5 Resum d'accions</a></li>
+      <li><a href="26_resum_desdeveniments.html" class="no-ch">2.6 Resum d'esdeveniments</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="part_iii_mduls_visual_basic.html" class="current-page-parent daddy">Part III: Mòduls (Visual Basic)</a>
+   <ul>
+      <li><a href="31_creaci_dun_mdul.html" class="no-ch">3.1 Creació d'un Mòdul</a></li>
+      <li><a href="32_tipus_de_dades_constants_i_variables.html" class="no-ch">3.2 Tipus de dades, Constants i Variables</a></li>
+      <li><a href="33_tipus_especials.html" class="no-ch">3.3 Tipus especials</a></li>
+      <li><a href="34_operadors.html" class="no-ch">3.4 Operadors</a></li>
+      <li><a href="35_funcions_i_procediments.html" class="no-ch">3.5 Funcions i Procediments</a></li>
+      <li><a href="36_sentncies.html" class="no-ch">3.6 Sentències</a></li>
+      <li id="active"><a href="37_funcions_estndard.html" class="active no-ch">3.7 Funcions estàndard</a></li>
+      <li><a href="38_objectes_especials_propietats_i_mtodes.html" class="no-ch">3.8 Objectes especials: propietats i mètodes</a></li>
+   </ul>
+   </li>
+   <li><a href="part_iv_configurar_laspecte.html" class="daddy">Part IV: Configurar l'aspecte</a>
+   <ul class="other-section">
+      <li><a href="41_configurar_la_barra_daccs_rpid.html" class="daddy">4.1 Configurar la Barra d'Accés ràpid</a>
+      <ul class="other-section">
+         <li><a href="exercici_41.html" class="no-ch">Exercici 4.1</a></li>
+      </ul>
+      </li>
+      <li><a href="42_la_cinta_dopcions.html" class="daddy">4.2 La cinta d'opcions</a>
+      <ul class="other-section">
+         <li><a href="421_modificaci_per_a_tot_access.html" class="daddy">4.2.1 Modificació per a tot Access</a>
+         <ul class="other-section">
+            <li><a href="exercici_42.html" class="no-ch">Exercici 4.2</a></li>
+         </ul>
+         </li>
+         <li><a href="422_modificaci_per_a_la_base_de_dades_actual.html" class="daddy">4.2.2 Modificació per a la Base de Dades actual</a>
+         <ul class="other-section">
+            <li><a href="exercici_43_voluntari_per_puntuable.html" class="no-ch">Exercici 4.3 (voluntari però puntuable)</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_el_panell_de_navegaci.html" class="no-ch">4.3 El panell de navegació</a></li>
+      <li><a href="44_opcions_daplicaci.html" class="daddy">4.4 Opcions d'aplicació</a>
+      <ul class="other-section">
+         <li><a href="exercici_44.html" class="no-ch">Exercici 4.4</a></li>
+      </ul>
+      </li>
+      <li><a href="45_el_panell_de_control.html" class="daddy">4.5 El panell de control</a>
+      <ul class="other-section">
+         <li><a href="exercici_45.html" class="no-ch">Exercici 4.5</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="36_sentncies.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="38_objectes_especials_propietats_i_mtodes.html" class="next"> Següent<span> &raquo;</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.7 Funcions estàndard</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id64">
+<div class="iDevice emphasis0">
+<div id="ta64_1" class="block iDevice_content">
+
+<p>
+&nbsp;
+</p>
+<p>
+A continuació veurem algunes de les funcions que ens proporciona VBA agrupades per categories
+</p>
+<p class="titolet">
+FUNCIONS MATEMÀTIQUES
+</p>
+<table border="1" cellpadding="0" cellspacing="0" height="110" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top">
+			<b>Abs(<i>n</i>)</b>: valor absolut de <i>n</i><br />
+			</td>
+			<td valign="top">
+			<b>Cos(<i>r</i>)</b>: cosinus
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<b>Exp(<i>n</i>)</b>: el número <b><i>e</i></b> elevat a una potència
+			</td>
+			<td valign="top">
+			<b>Hex(<i>n</i>)</b>: Converteix a hexadecimal
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<b>Int(<i>r</i>)</b>: part entera de <i>r</i>
+			</td>
+			<td valign="top">
+			<b>Log(<i>r</i>)</b>: logaritme en base <b><i>e</i></b> de <i>r
+			</i></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<b>Oct(<i>n</i>)</b>: converteix a octal
+			</td>
+			<td valign="top">
+			<b>Randomize(<i>n</i>)</b>: inicialitza el generador de números aleatoris
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<b>Rnd()</b>: número aleatori entre 0 i 1
+			</td>
+			<td valign="top">
+			<b>Sin(<i>r</i>)</b>: sinus
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<b>Tan(<i>n</i>)</b>: tangent
+			</td>
+			<td valign="top">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+FUNCIONS
+DE CONVERSIÓ
+</p>
+<table border="1" cellpadding="0" cellspacing="0" height="36" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top" width="130">Convertir a un determinat tipus
+			</td>
+			<td valign="top" width="359">
+			<b>CBool, CByte, CCur, CDate, CDbl, Cdec, CInt, CLng, CSng, CStr, CVar,
+			CVErr </b>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+FUNCIONS
+DE TRACTAMENT DE CADENA
+</p>
+<p>
+(<u>Nota</u>: Hi ha moltes funcions que
+poden o no dur un $ al final: la versió que no en porta torna un valor <b>Variant</b>, mentre que la que sí que en
+duu torna un <b>String</b>) 
+</p>
+<table border="1" cellpadding="0" cellspacing="0" height="390" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top" width="123">
+			<b>Asc(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Codi ASCII del primer caràcter
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Chr(<i>n</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Torna el caràcter corresponent al codi ASCII <i>n</i>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Format(<i>text</i>,<i>format</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Torna el valor amb el format indicat
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>InStr(<i>i,cadena</i>,<i>subcadena</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Torna la posició en la qual es troba la subcadena dins de
+			la cadena (si no la troba, 0), començant des de la posició <i>i</i>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Lcase(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Passa a minúscules
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Left(<i>text</i>,<i>n</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Torna <i>n</i> caràcters del costat
+			esquerre
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Len(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Llargària de la cadena
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Ltrim(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Elimina els espais en blanc de l'esquerra
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Mid(<i>text</i>,<i>i</i>,<i>n</i>) </b>
+			</td>
+			<td valign="top" width="463">
+			Torna <i>n</i> caràcters, començant des de la posició <i>i</i>. Si no s'especifica <i>n</i> és fins el final de la cadena
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Right(<i>text</i>,<i>n</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Torna <i>n</i> caràcters del costat dret
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Rtrim(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Elimina els espais en blanc de la dreta
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Space(<i>n</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Torna una cadena amb el número de espais en blanc
+			especificat
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Str(<i>n</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Converteix un número en una cadena
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>StrComp(<i>text1</i>,<i>text2</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Compara dues cadenes (els caràcters ASCII). Es pot fer que
+			distingisca majúscules i minúscules, o que no ho faça
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>String(<i>n</i>,<i>c</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Torna una cadena amb el caràcter <i>c</i> repetit <i>n</i> vegades
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Trim(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Elimina els espais en blanc dels dos costats
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Ucase(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Passa a majúscules
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>Val(<i>text</i>)</b>
+			</td>
+			<td valign="top" width="463">
+			Converteix una cadena en un número
+			</td>
+		</tr>
+	</tbody>
+</table>
+<b><u>
+</u></b>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+FUNCIONS
+DE DATA I HORA
+</p>
+<table border="1" cellpadding="0" cellspacing="0" height="170" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top" width="293">
+			<b>Now</b>: dia i hora
+			del sistema
+			</td>
+			<td valign="top" width="293">
+			<b>Date</b>: dia del
+			sistema
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="293">
+			<b>Time</b>: hora del
+			sistema
+			</td>
+			<td valign="top" width="293">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" width="293">
+			<b>Day</b>: trau el
+			dia d'una data
+			</td>
+			<td valign="top" width="293">
+			<b>Month</b>: trau el
+			mes d'una data
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="293">
+			<b>Weekday</b>: trau
+			el dia de la setmana (diumenge 1, dilluns 2, ...)<br />
+			</td>
+			<td valign="top" width="293">
+			<b>Year</b>: trau l'any
+			d'una data
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="293">
+			<b>Hour</b>: trau
+			l'hora
+			</td>
+			<td valign="top" width="293">
+			<b>Minute</b>: trau
+			els minuts
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="293">
+			<b>Second</b>: trau
+			els segons
+			</td>
+			<td valign="top" width="293"> </td>
+		</tr>
+		<tr>
+			<td valign="top" width="293">
+			<b>DateDiff</b>:
+			diferència entre dues dates (en el format especificat: dies, mesos, ...)
+			</td>
+			<td valign="top" width="293">
+			<b>DateAdd</b>: suma a
+			una data un número determinat de espais temporals (dies, ...)
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+FUNCIONS
+D'AGREGAT
+</p>
+<p>
+Totes aquestes funcions treballen
+sobre un conjunt de valors, de files tretes d'alguna taula. Sempre tindran 3
+arguments:
+</p>
+<ul class="unIndentedList">
+	<li>
+	<b>Expresión</b>:
+	indica el camp que es busca, sobre el qual es vol fer alguna cosa.</li>
+	<li>
+	<b>Dominio</b>:
+	indica la nom de la taula o consulta d'on es trauen les dades.</li>
+	<li>
+	<b>Criterio</b>:
+	indica una possible selecció de les files de la taula.</li>
+</ul>
+<table border="1" cellpadding="0" cellspacing="0" height="109" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top" width="302">
+			<b>DAvg</b>: calcula
+			la mitjana
+			</td>
+			<td valign="top" width="288">
+			<b>DCount</b>: compta
+			quantes files
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="302">
+			<b>DLookup</b>: torna
+			el valor del camp de la primera fila que satisfa el criteri
+			</td>
+			<td valign="top" width="288">
+			<b>DFirst</b>: torna
+			el primer valor del camp especificat
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="302">
+			<b>DLast</b>: torna
+			l'últim
+			</td>
+			<td valign="top" width="288">
+			<b>DMin</b>: valor
+			mínim
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="302">
+			<b>DMax</b>:<b> </b>valor màxim
+			</td>
+			<td valign="top" width="288">
+			<b>DStDev</b>:
+			desviació típica
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="302">
+			<b>DSum</b>: suma
+			</td>
+			<td valign="top" width="288">
+			<b>DVar</b>: variància
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+<u>Nota</u>: Aquestes funcions
+les veurem bé en el tema de SQL.
+</p>
+<p>
+&nbsp;
+</p>
+<p class="titolet">
+ALTRES
+FUNCIONS
+</p>
+<table border="1" cellpadding="0" cellspacing="0" height="129" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top" width="123">
+			<b>InputBox</b>
+			</td>
+			<td valign="top" width="463">
+			Quadre de entrada. Torna un <b>String</b>. El format de la funció és:
+			<br />
+			<b>InputBox(missatge[, títol][, valor per defecte][,
+			xpos][, ypos][, helpfile, context])</b>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="123">
+			<b>MsgBox</b>
+			</td>
+			<td valign="top" width="463">
+			Finestra de missatge. Es poden especificar els botons que
+			apareixeran i la funció torna un valor que equival al botó apretat
+			<br />
+			<b>MsgBox(missatge[,
+			botons][, títol][, helpfile, context])</b>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id65">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3.14 (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta65_26_2" class="block iDevice_content">
+<p><!--[if gte vml 1]>
+<![if gte mso 9]>
+<![endif]><![endif]--><!--[if gte vml 1]><![endif]--><br clear="all" /> Per mig de les funcions de cadena intentar traure, en una <b>etiqueta nova</b> en el formulari <b>Empleat</b>, els noms dels empleats canviant l'ordre (nom + cognoms). Feu-lo progressivament així:</p>
+<ul>
+<li>Primer l'intenteu traure amb el mateix format que està, és a dir <em>Cognoms, Nom </em></li>
+<li>Després intenteu-lo amb el format de la figura: nom i cognoms. Es tractarà de trobar la <strong>coma</strong> (amb <strong>InStr() </strong>)
+<ul>
+<li>Traure primer el que hi ha darrere de la coma (pot anar molt bé la funció <b>Mid</b>, ja que pot traure fins el final de la cadena).</li>
+<li>Després el que hi ha davant, i segurament la funció més còmoda serà <strong>Left()</strong>.</li>
+<li>Per complicar-lo un poc més, podríem traure els <strong>cognoms</strong> en <strong>majúscules</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>La propietat de l'etiqueta que s'ha de modificar és <b>Caption</b>. Haureu de mirar el nom que us dóna per a l'etiqueta, que pot canviar d'uns a una altres.</p>
+<p>Aquest seria l'aspecte:</p>
+<p align="center"><img style="border: 1px solid black;" src="T5_3_7_1.png" height="536" width="849" /></p>
+<p>El moment oportú podria ser "<b><i>Al activar registro</i></b>". Com que alguns de vosaltres tindreu una macro per aquest event (realitzada en l'exercici 2.20, que era voluntari), podeu substituir-la pel procediment (que pot esat associat al formulari), i dins d'aquest cridar la macro amb:</p>
+<p class="codi">DoCmd.RunMacro "<i>nom_de_la_macro</i>"</p>
+<p>Així es es faran les dues feines, la de l'exercici 2.20 i la d'aquest exercici.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="36_sentncies.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="38_objectes_especials_propietats_i_mtodes.html" class="next"> Següent<span> &raquo;</span></a>
+</div>
+</div>
+<p align="center">Llicenciat sota la  <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p></div>
+</div>
+</div>
+</body></html>
