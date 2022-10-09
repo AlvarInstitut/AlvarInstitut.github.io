@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -368,7 +368,7 @@ fun main(args: Array&lt;String&gt;) {
 <div class="iDevice_content_wrapper">
 <div id="ta30_41_2" class="block iDevice_content">
 <p>Per a practicar un poquet més, anem a fer un altre exercici per a construir un fitxer JSON però ara amb la llibreria <strong>org.json</strong></p>
-<p>Feu un programa en el fitxer Kotlin anomenat  <strong>Ex3_7_PassarCotxesXMLJSON.kt</strong>,<strong> </strong>que haurà de passar el fitxer <strong>cotxes.xml</strong> al fitxer <strong>cotxes.json</strong>. Com que no tenim creades les classes dels cotxes, per això utilitzarem la llibreria <strong>org.json</strong>.</p>
+<p>Feu un programa en el fitxer Kotlin anomenat  <strong>Ex3_7_PassarCotxesXMLJSON.kt</strong>,<strong> </strong>que haurà de passar el fitxer <strong>cotxes.xml</strong> al fitxer <strong>cotxes.json</strong>. No tenim creades les classes dels cotxes, i per això utilitzarem la llibreria <strong>org.json</strong>.</p>
 <p>Aquest és el fitxer <strong>cotxes.xml</strong>:</p>
 <p class="codi2">&lt;oferta&gt;<br />  &lt;vehiculo&gt;<br />    &lt;marca&gt;ford&lt;/marca&gt;<br />    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;<br />    &lt;motor combustible="gasolina"&gt;duratorc 1.4&lt;/motor&gt;<br />    &lt;matricula&gt;1234AAA&lt;/matricula&gt;<br />    &lt;kilometros&gt;12500&lt;/kilometros&gt;<br />    &lt;precio_inicial&gt;12000&lt;/precio_inicial&gt;<br />    &lt;precio_oferta&gt;10000&lt;/precio_oferta&gt;<br />    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;<br />    &lt;extra valor="300"&gt;llantas&lt;/extra&gt;<br />    &lt;foto&gt;11325.jpg&lt;/foto&gt;<br />    &lt;foto&gt;11326.jpg&lt;/foto&gt;<br />  &lt;/vehiculo&gt;<br />  &lt;vehiculo&gt;<br />    &lt;marca&gt;ford&lt;/marca&gt;<br />    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;<br />    &lt;motor combustible="diesel"&gt;duratorc 2.0&lt;/motor&gt;<br />    &lt;matricula&gt;1235AAA&lt;/matricula&gt;<br />    &lt;kilometros&gt;125000&lt;/kilometros&gt;<br />    &lt;precio_inicial&gt;10000&lt;/precio_inicial&gt;<br />    &lt;precio_oferta&gt;9000&lt;/precio_oferta&gt;<br />    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;<br />    &lt;extra valor="200"&gt;spoiler trasero&lt;/extra&gt;<br />    &lt;extra valor="500"&gt;climatizador&lt;/extra&gt;<br />    &lt;foto&gt;11327.jpg&lt;/foto&gt;<br />    &lt;foto&gt;11328.jpg&lt;/foto&gt;<br />  &lt;/vehiculo&gt;<br />&lt;/oferta&gt;</p>
 <p>I aquest ha de ser l'aspecte de <strong>cotxes.json</strong>:</p>
@@ -385,17 +385,17 @@ fun main(args: Array&lt;String&gt;) {
 <div id="ta33_111_2" class="block iDevice_content">
 <p>Visualitzar en un programa gràfic l'estat actual de Bicicas, agafant-lo directament de la pàgina <a href="http://gestiona.bicicas.es/apps/apps.php" onclick="browseURL(this); return false" target="_blank" rel="noopener noreferrer">http://gestiona.bicicas.es/apps/apps.php</a>.</p>
 <ul>
-<li>En el mètode <strong>agafarBicicas() </strong>farem les instruccions per agafar-lo directament d'Internet, utilitzant un <strong>URL</strong>, el qual:</li>
+<li>En el mètode <strong>agafarBicicas() </strong>farem les instruccions per agafar-lo directament d'Internet, utilitzant un <strong>URL</strong>, en el qual:</li>
 </ul>
 <blockquote>
 <ul>
 <li>Inicialitzarem amb la pàgina que busquem</li>
-<li>Obrim la connexió amb el mètode <strong>openConnection()</strong></li>
+<li>Obrirem la connexió amb el mètode <strong>openConnection()</strong></li>
 <li>Després obtindrem el contingut amb el mètode <strong>getInputStream()</strong>, que com el seu nom indica serà un InputStream</li>
 </ul>
 </blockquote>
 <ul>
-<li>En el mètode <strong>mostrarEstacions() </strong>introduirem les instruccions per a visualitzar les estacions, utilitzant un <strong>JList</strong> (el que està a la part de l'esquerra), que s'ha de construir a partir d'un <strong>DefaultListModel</strong>. Per anar col·locant els diferents elements del JList, els haurem d'anar afagint al <strong>DefaultListModel</strong>, i aniran apareixent en el JList. Intentarem mostrar el número d'estació, nom i número de bicicletes (posicions ocupades) i el total de posicions.</li>
+<li>En el mètode <strong>mostrarEstacions() </strong>introduirem les instruccions per a visualitzar les estacions, utilitzant un <strong>JList</strong> (el que està a la part de l'esquerra), que s'ha de construir a partir d'un <strong>DefaultListModel</strong>. Per anar col·locant els diferents elements del JList, els haurem d'anar afegint al <strong>DefaultListModel</strong>, i aniran apareixent en el JList. Intentarem mostrar el número d'estació, nom i número de bicicletes (posicions ocupades) i el total de posicions.</li>
 <li>El mètode <strong>visualitzaEstacio()</strong> s'activa quan seleccionem un element del JList, i en ell mostrarem les propietats de l'estació seleccionada en el <strong>TextArea</strong> que està a la part de la dreta.</li>
 </ul>
 <p>Aquest seria l'aspecte:</p>
