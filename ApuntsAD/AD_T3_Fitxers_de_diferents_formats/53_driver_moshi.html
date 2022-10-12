@@ -73,13 +73,14 @@
 <p style="text-align: justify;">Si són relativament pocs els accessos, és molt còmode, però si s'ha de fer un accés continuat pot resultar més pesat.</p>
 <p style="text-align: justify;">Existeix una altra llibreria, que ens permet passar d'un fitxer Json a objectes de Java o Kotlin, la qual cosa ens anirà bé quan siguen molts els accessos, perquè en definitiva tindrem les dades en l'entorn natural del nostre llenguatge: els objectes.</p>
 <p style="text-align: justify;">Es tracta de la llibreria <strong>MOSHI</strong>, i aquest és el lloc on poder trobar-la:</p>
-<p style="text-align: justify;"><a href="https://github.com/square/moshi">https://github.com/square/moshi</a></p>
-<p style="text-align: justify;">En el moment de fer aquestos apunts, va per la versió 1.12.0.</p>
-<p style="text-align: justify;">Però a nosaltres, més que tota la llibreria, ens convé un .jar que ho continga tot o quasi tot. Ens conformarem amb la versió 1.2.0:</p>
-<p style="text-align: justify;"><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.2.0/source-code">https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.2.0/source-code</a></p>
-<p style="text-align: justify;"><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.9.2"></a>També ens farà falta un altre driver en el qual es basa Moshi: <a href="https://jar-download.com/artifacts/com.squareup.okio/okio/2.4.0/source-code">okio</a></p>
-<p style="text-align: justify;">Recordeu que la manera d'incorporar els drivers al nostre projecte IntelliJ és amb:</p>
-<p style="text-align: justify;"><strong>Sobre el projecte F4 --&gt; Modules --&gt; pestanya dependencies --&gt; +</strong></p></div>
+<p style="text-align: justify;"><a href="https://github.com/square/moshi" target="_blank" rel="noopener">https://github.com/square/moshi</a></p>
+<p style="text-align: justify;">En el moment de fer aquestos apunts, va per la versió 1.14.0. Tanmateix en les últimes versions dóna un error de compatibilitat. Ens conformarem per tant amb una versió anterior. Podem trobar totes les versions en aquest enllaç:</p>
+<p style="text-align: justify;"><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi" target="_blank" rel="noopener">https://jar-download.com/artifacts/com.squareup.moshi/moshi</a></p>
+<p style="text-align: justify;">Podem agafar per exemple versió 1.8.0:</p>
+<p style="text-align: justify;"><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.8.0/source-code" target="_blank" rel="noopener">https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.8.0/source-code</a></p>
+<p style="text-align: justify;">Veureu que hi ha dos drivers, el propi de <strong>Moshi</strong> i un altre driver anomenat <strong>okio</strong>. Haurem d'incorporar els dos al nostre projecte.</p>
+<p style="text-align: justify;">Recordeu que la manera d'incorporar els drivers al projecte IntelliJ és amb:</p>
+<p style="text-align: justify;"><strong>Sobre el projecte F4 (Project Structure) --&gt; Modules --&gt; pestanya dependencies --&gt; +</strong></p></div>
 </div>
 </div>
 </div>

@@ -152,7 +152,7 @@ text through the text editing buttons associated with the field."></unicode>
                <instance class="exe.engine.field.TextField">
                 <dictionary>
                  <string role="key" value="_id"></string>
-                 <int value="2797"></int>
+                 <int value="2799"></int>
                  <string role="key" value="_idevice"></string>
                  <none></none>
                  <string role="key" value="_instruc"></string>
@@ -166,7 +166,7 @@ text through the text editing buttons associated with the field."></unicode>
                 </dictionary>
                </instance>
                <string role="key" value="_id"></string>
-               <unicode value="10_1.70"></unicode>
+               <unicode value="10_1.71"></unicode>
                <string role="key" value="_imageResource"></string>
                <instance class="exe.engine.resource.Resource" reference="5">
                 <dictionary>
@@ -177,7 +177,7 @@ text through the text editing buttons associated with the field."></unicode>
                  <string role="key" value="_storageName"></string>
                  <string value="T3_Portada.png"></string>
                  <string role="key" value="_userName"></string>
-                 <string value="/tmp/tmp88FHk7/T3_Portada.png"></string>
+                 <string value="/tmp/tmphE1SCl/T3_Portada.png"></string>
                  <string role="key" value="checksum"></string>
                  <string value="a95f904c4e9cf49d7bb410f99489eda5"></string>
                  <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -206,7 +206,7 @@ text through the text editing buttons associated with the field."></unicode>
           <string role="key" value="intlinks_to_anchors"></string>
           <dictionary></dictionary>
           <string role="key" value="nextImageId"></string>
-          <int value="71"></int>
+          <int value="72"></int>
           <string role="key" value="parentNode"></string>
           <reference key="4"></reference>
          </dictionary>
@@ -1287,7 +1287,7 @@ class Empleat (var num: Int,var nom: String,var departament: Int,var edat: Int,v
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2793"></int>
+                    <int value="2807"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -1301,7 +1301,7 @@ class Empleat (var num: Int,var nom: String,var departament: Int,var edat: Int,v
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="5_1.49"></unicode>
+                  <unicode value="5_1.50"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="20">
                    <dictionary>
@@ -1312,7 +1312,7 @@ class Empleat (var num: Int,var nom: String,var departament: Int,var edat: Int,v
                     <string role="key" value="_storageName"></string>
                     <string value="T3_3_1.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp88FHk7/T3_3_1.png"></string>
+                    <string value="/tmp/tmphE1SCl/T3_3_1.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="ca2633ef7ca7f630211dc3f83818d26f"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1341,7 +1341,7 @@ class Empleat (var num: Int,var nom: String,var departament: Int,var edat: Int,v
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="50"></int>
+             <int value="51"></int>
              <string role="key" value="parentNode"></string>
              <reference key="17"></reference>
             </dictionary>
@@ -1496,7 +1496,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="2790"></int>
+                    <int value="2804"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -1510,7 +1510,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="103_1.69"></unicode>
+                  <unicode value="103_1.70"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="24">
                    <dictionary>
@@ -1521,7 +1521,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="u1_import_image_14.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp88FHk7/u1_import_image_14.png"></string>
+                    <string value="/tmp/tmphE1SCl/u1_import_image_14.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="5212c06a6978582d7215b802c2848b1f"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1550,7 +1550,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="70"></int>
+             <int value="71"></int>
              <string role="key" value="parentNode"></string>
              <reference key="23"></reference>
             </dictionary>
@@ -2194,7 +2194,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2785"></int>
+                       <int value="2800"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2208,7 +2208,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="101_1.247"></unicode>
+                     <unicode value="101_1.251"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="33">
                       <dictionary>
@@ -2217,11 +2217,11 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="T3_4_2_2.png"></string>
+                       <string value="T3_4_2_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp88FHk7/T3_4_2_2.png"></string>
+                       <string value="/tmp/tmphE1SCl/T3_4_2_1.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="3799877bf96392b47d845e68ee45c9e6"></string>
+                       <string value="3a75dd0c0e4e70217ef00ad6a1458151"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -2246,7 +2246,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2788"></int>
+                       <int value="2805"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2260,7 +2260,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="101_1.248"></unicode>
+                     <unicode value="101_1.252"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="34">
                       <dictionary>
@@ -2269,61 +2269,9 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="T3_4_2_1.jpg"></string>
-                       <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp88FHk7/T3_4_2_1.jpg"></string>
-                       <string role="key" value="checksum"></string>
-                       <string value="b7f1edd07e867003d6dba6df9fe30dfa"></string>
-                       <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
-                       <int value="2"></int>
-                       <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
-                       <int value="2"></int>
-                       <string role="key" value="warningMsg"></string>
-                       <string value=""></string>
-                      </dictionary>
-                     </instance>
-                     <string role="key" value="_parent"></string>
-                     <reference key="31"></reference>
-                     <string role="key" value="_thumbnailResource"></string>
-                     <none></none>
-                     <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
-                     <int value="3"></int>
-                     <string role="key" value="makeThumbnail"></string>
-                     <bool value="0"></bool>
-                    </dictionary>
-                   </instance>
-                   <instance class="exe.engine.galleryidevice.GalleryImage">
-                    <dictionary>
-                     <string role="key" value="_caption"></string>
-                     <instance class="exe.engine.field.TextField">
-                      <dictionary>
-                       <string role="key" value="_id"></string>
-                       <int value="2792"></int>
-                       <string role="key" value="_idevice"></string>
-                       <none></none>
-                       <string role="key" value="_instruc"></string>
-                       <string value=""></string>
-                       <string role="key" value="_name"></string>
-                       <string value=""></string>
-                       <string role="key" value="content"></string>
-                       <string value=""></string>
-                       <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
-                       <int value="4"></int>
-                      </dictionary>
-                     </instance>
-                     <string role="key" value="_id"></string>
-                     <unicode value="101_1.249"></unicode>
-                     <string role="key" value="_imageResource"></string>
-                     <instance class="exe.engine.resource.Resource" reference="35">
-                      <dictionary>
-                       <string role="key" value="_idevice"></string>
-                       <reference key="30"></reference>
-                       <string role="key" value="_package"></string>
-                       <reference key="2"></reference>
-                       <string role="key" value="_storageName"></string>
                        <string value="T3_4_2_3.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp88FHk7/T3_4_2_3.png"></string>
+                       <string value="/tmp/tmphE1SCl/T3_4_2_3.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="75a7a1307b3b0a26bdb67e794f2a98e1"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2350,7 +2298,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2794"></int>
+                       <int value="2808"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -2364,7 +2312,59 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="101_1.250"></unicode>
+                     <unicode value="101_1.253"></unicode>
+                     <string role="key" value="_imageResource"></string>
+                     <instance class="exe.engine.resource.Resource" reference="35">
+                      <dictionary>
+                       <string role="key" value="_idevice"></string>
+                       <reference key="30"></reference>
+                       <string role="key" value="_package"></string>
+                       <reference key="2"></reference>
+                       <string role="key" value="_storageName"></string>
+                       <string value="T3_4_2_1.jpg"></string>
+                       <string role="key" value="_userName"></string>
+                       <string value="/tmp/tmphE1SCl/T3_4_2_1.jpg"></string>
+                       <string role="key" value="checksum"></string>
+                       <string value="b7f1edd07e867003d6dba6df9fe30dfa"></string>
+                       <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
+                       <int value="2"></int>
+                       <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
+                       <int value="2"></int>
+                       <string role="key" value="warningMsg"></string>
+                       <string value=""></string>
+                      </dictionary>
+                     </instance>
+                     <string role="key" value="_parent"></string>
+                     <reference key="31"></reference>
+                     <string role="key" value="_thumbnailResource"></string>
+                     <none></none>
+                     <string role="key" value="exe.engine.galleryidevice.GalleryImage.persistenceVersion"></string>
+                     <int value="3"></int>
+                     <string role="key" value="makeThumbnail"></string>
+                     <bool value="0"></bool>
+                    </dictionary>
+                   </instance>
+                   <instance class="exe.engine.galleryidevice.GalleryImage">
+                    <dictionary>
+                     <string role="key" value="_caption"></string>
+                     <instance class="exe.engine.field.TextField">
+                      <dictionary>
+                       <string role="key" value="_id"></string>
+                       <int value="2809"></int>
+                       <string role="key" value="_idevice"></string>
+                       <none></none>
+                       <string role="key" value="_instruc"></string>
+                       <string value=""></string>
+                       <string role="key" value="_name"></string>
+                       <string value=""></string>
+                       <string role="key" value="content"></string>
+                       <string value=""></string>
+                       <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
+                       <int value="4"></int>
+                      </dictionary>
+                     </instance>
+                     <string role="key" value="_id"></string>
+                     <unicode value="101_1.254"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="36">
                       <dictionary>
@@ -2373,11 +2373,11 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="T3_4_2_1.png"></string>
+                       <string value="T3_4_2_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp88FHk7/T3_4_2_1.png"></string>
+                       <string value="/tmp/tmphE1SCl/T3_4_2_2.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="3a75dd0c0e4e70217ef00ad6a1458151"></string>
+                       <string value="3799877bf96392b47d845e68ee45c9e6"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -2404,7 +2404,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="251"></int>
+                <int value="255"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="32"></reference>
                </dictionary>
@@ -3592,7 +3592,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2787"></int>
+                       <int value="2801"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -3606,7 +3606,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="24_85.103"></unicode>
+                     <unicode value="24_85.106"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="54">
                       <dictionary>
@@ -3617,7 +3617,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T3_5_1_0_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp88FHk7/T3_5_1_0_2.png"></string>
+                       <string value="/tmp/tmphE1SCl/T3_5_1_0_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="be706cad47e19cf4336cf5ab354bfdcb"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -3644,7 +3644,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2791"></int>
+                       <int value="2803"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -3658,7 +3658,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="24_85.104"></unicode>
+                     <unicode value="24_85.107"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="55">
                       <dictionary>
@@ -3667,11 +3667,11 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="T3_5_1_0_1.png"></string>
+                       <string value="T3_5_1_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp88FHk7/T3_5_1_0_1.png"></string>
+                       <string value="/tmp/tmphE1SCl/T3_5_1_1.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="4657ea0c05d9f5ec5e97195dd65e3f54"></string>
+                       <string value="d317dfc8c0cfb42c8e2ee79339e21723"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -3696,7 +3696,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="2795"></int>
+                       <int value="2810"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -3710,7 +3710,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="24_85.105"></unicode>
+                     <unicode value="24_85.108"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="56">
                       <dictionary>
@@ -3719,11 +3719,11 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_package"></string>
                        <reference key="2"></reference>
                        <string role="key" value="_storageName"></string>
-                       <string value="T3_5_1_1.png"></string>
+                       <string value="T3_5_1_0_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp88FHk7/T3_5_1_1.png"></string>
+                       <string value="/tmp/tmphE1SCl/T3_5_1_0_1.png"></string>
                        <string role="key" value="checksum"></string>
-                       <string value="d317dfc8c0cfb42c8e2ee79339e21723"></string>
+                       <string value="4657ea0c05d9f5ec5e97195dd65e3f54"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                        <int value="2"></int>
                        <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -3750,7 +3750,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="106"></int>
+                <int value="109"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="53"></reference>
                </dictionary>
@@ -5029,13 +5029,14 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
 &lt;p style=&quot;text-align: justify;&quot;&gt;Si són relativament pocs els accessos, és molt còmode, però si s'ha de fer un accés continuat pot resultar més pesat.&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Existeix una altra llibreria, que ens permet passar d'un fitxer Json a objectes de Java o Kotlin, la qual cosa ens anirà bé quan siguen molts els accessos, perquè en definitiva tindrem les dades en l'entorn natural del nostre llenguatge: els objectes.&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Es tracta de la llibreria &lt;strong&gt;MOSHI&lt;/strong&gt;, i aquest és el lloc on poder trobar-la:&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;a href=&quot;https://github.com/square/moshi&quot;&gt;https://github.com/square/moshi&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;En el moment de fer aquestos apunts, va per la versió 1.12.0.&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;Però a nosaltres, més que tota la llibreria, ens convé un .jar que ho continga tot o quasi tot. Ens conformarem amb la versió 1.2.0:&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;a href=&quot;https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.2.0/source-code&quot;&gt;https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.2.0/source-code&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;a href=&quot;https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.9.2&quot;&gt;&lt;/a&gt;També ens farà falta un altre driver en el qual es basa Moshi: &lt;a href=&quot;https://jar-download.com/artifacts/com.squareup.okio/okio/2.4.0/source-code&quot;&gt;okio&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;Recordeu que la manera d'incorporar els drivers al nostre projecte IntelliJ és amb:&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;Sobre el projecte F4 --&amp;gt; Modules --&amp;gt; pestanya dependencies --&amp;gt; +&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;"></unicode>
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;a href=&quot;https://github.com/square/moshi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/square/moshi&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;En el moment de fer aquestos apunts, va per la versió 1.14.0. Tanmateix en les últimes versions dóna un error de compatibilitat. Ens conformarem per tant amb una versió anterior. Podem trobar totes les versions en aquest enllaç:&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;a href=&quot;https://jar-download.com/artifacts/com.squareup.moshi/moshi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://jar-download.com/artifacts/com.squareup.moshi/moshi&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Podem agafar per exemple versió 1.8.0:&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;a href=&quot;https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.8.0/source-code&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.8.0/source-code&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Veureu que hi ha dos drivers, el propi de &lt;strong&gt;Moshi&lt;/strong&gt; i un altre driver anomenat &lt;strong&gt;okio&lt;/strong&gt;. Haurem d'incorporar els dos al nostre projecte.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Recordeu que la manera d'incorporar els drivers al projecte IntelliJ és amb:&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;Sobre el projecte F4 (Project Structure) --&amp;gt; Modules --&amp;gt; pestanya dependencies --&amp;gt; +&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;"></unicode>
                  <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
                  <int value="4"></int>
                  <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -5401,7 +5402,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
     val adapter: JsonAdapter&amp;lt;List&amp;lt;Estacions&amp;gt;&amp;gt; = moshi.adapter(llistaTipus)
     val bicicas = adapter.fromJson(json)
 
-    val estacions = bicicas.get(0).ocupacion
+    val estacions = bicicas!!.get(0).ocupacion
     println(&quot;Hi ha &quot; + estacions.size + &quot; estacions:&quot;)
     for (e in estacions)
         println(&quot;&quot; + e.id + &quot;: &quot; + e.punto + &quot; (&quot; + e.ocupados + &quot;/&quot; + e.puestos + &quot;)&quot;)
@@ -6366,7 +6367,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2786"></int>
+                     <int value="2806"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -6380,7 +6381,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="20_41_2.59"></unicode>
+                   <unicode value="20_41_2.60"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="96">
                     <dictionary>
@@ -6391,7 +6392,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <string role="key" value="_storageName"></string>
                      <string value="T3_Ex3_4_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp88FHk7/T3_Ex3_4_1.png"></string>
+                     <string value="/tmp/tmphE1SCl/T3_Ex3_4_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="479b29cdb873b0a2e1503a3b1760b044"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -6420,7 +6421,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="60"></int>
+              <int value="61"></int>
               <string role="key" value="parentNode"></string>
               <reference key="89"></reference>
              </dictionary>
@@ -6691,7 +6692,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2796"></int>
+                     <int value="2802"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -6705,7 +6706,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="29_42_2.51"></unicode>
+                   <unicode value="29_42_2.52"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="101">
                     <dictionary>
@@ -6716,7 +6717,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <string role="key" value="_storageName"></string>
                      <string value="T3_Ex6.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp88FHk7/T3_Ex6.png"></string>
+                     <string value="/tmp/tmphE1SCl/T3_Ex6.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="36c72e53c21c3ceef3fe5d8f67c5f5a3"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -6745,7 +6746,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="52"></int>
+              <int value="53"></int>
               <string role="key" value="parentNode"></string>
               <reference key="89"></reference>
              </dictionary>
@@ -7021,7 +7022,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="2789"></int>
+                     <int value="2798"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -7035,7 +7036,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="33_111_2.34"></unicode>
+                   <unicode value="33_111_2.35"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="106">
                     <dictionary>
@@ -7046,7 +7047,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <string role="key" value="_storageName"></string>
                      <string value="T3_Ex8.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp88FHk7/T3_Ex8.png"></string>
+                     <string value="/tmp/tmphE1SCl/T3_Ex8.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="499812d9a4513056e56346a4e0baaa5c"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -7075,7 +7076,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="35"></int>
+              <int value="36"></int>
               <string role="key" value="parentNode"></string>
               <reference key="89"></reference>
              </dictionary>
@@ -7181,7 +7182,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="89"></reference>
+  <reference key="84"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
@@ -8115,15 +8116,15 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
    </list>
    <string role="key" value="3799877bf96392b47d845e68ee45c9e6"></string>
    <list>
-    <reference key="33"></reference>
+    <reference key="36"></reference>
    </list>
    <string role="key" value="3a75dd0c0e4e70217ef00ad6a1458151"></string>
    <list>
-    <reference key="36"></reference>
+    <reference key="33"></reference>
    </list>
    <string role="key" value="4657ea0c05d9f5ec5e97195dd65e3f54"></string>
    <list>
-    <reference key="55"></reference>
+    <reference key="56"></reference>
    </list>
    <string role="key" value="479b29cdb873b0a2e1503a3b1760b044"></string>
    <list>
@@ -8139,7 +8140,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
    </list>
    <string role="key" value="75a7a1307b3b0a26bdb67e794f2a98e1"></string>
    <list>
-    <reference key="35"></reference>
+    <reference key="34"></reference>
    </list>
    <string role="key" value="a95f904c4e9cf49d7bb410f99489eda5"></string>
    <list>
@@ -8147,7 +8148,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
    </list>
    <string role="key" value="b7f1edd07e867003d6dba6df9fe30dfa"></string>
    <list>
-    <reference key="34"></reference>
+    <reference key="35"></reference>
    </list>
    <string role="key" value="be706cad47e19cf4336cf5ab354bfdcb"></string>
    <list>
@@ -8159,7 +8160,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
    </list>
    <string role="key" value="d317dfc8c0cfb42c8e2ee79339e21723"></string>
    <list>
-    <reference key="56"></reference>
+    <reference key="55"></reference>
    </list>
   </dictionary>
   <string role="key" value="root"></string>

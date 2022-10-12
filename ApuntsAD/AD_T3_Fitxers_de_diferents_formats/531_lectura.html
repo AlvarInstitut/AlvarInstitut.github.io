@@ -169,7 +169,7 @@ fun main(args: Array&lt;String&gt;) {
     val adapter: JsonAdapter&lt;List&lt;Estacions&gt;&gt; = moshi.adapter(llistaTipus)
     val bicicas = adapter.fromJson(json)
 
-    val estacions = bicicas.get(0).ocupacion
+    val estacions = bicicas!!.get(0).ocupacion
     println("Hi ha " + estacions.size + " estacions:")
     for (e in estacions)
         println("" + e.id + ": " + e.punto + " (" + e.ocupados + "/" + e.puestos + ")")
