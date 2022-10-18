@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>5.2 - MongoDB | Accés a Dades </title>
+<title>5.3 - eXist-db | Accés a Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
@@ -17,7 +17,7 @@
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
 </head>
-<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
 <div id="header" ><div id="headerContent">Accés a Dades</div></div>
@@ -52,40 +52,28 @@
    <li class="current-page-parent"><a href="5__permanncia_en_altres_bd_nosql.html" class="current-page-parent daddy">5 - Permanència en altres BD NoSQL</a>
    <ul>
       <li><a href="51__redis.html" class="no-ch">5.1 - Redis</a></li>
-      <li id="active"><a href="52__mongodb.html" class="active no-ch">5.2 - MongoDB</a></li>
-      <li><a href="53__existdb.html" class="no-ch">5.3 - eXist-db</a></li>
+      <li><a href="52__mongodb.html" class="no-ch">5.2 - MongoDB</a></li>
+      <li id="active"><a href="53__existdb.html" class="active no-ch">5.3 - eXist-db</a></li>
    </ul>
    </li>
 </ul>
 </div>
 <div id='topPagination'>
 <div class="pagination noprt">
-<a href="51__redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53__existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="52__mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
 </div>
 </div>
 <div id="main-wrapper">
 <div id="main"><a name="main"></a>
-<div id="nodeDecoration"><h1 id="nodeTitle">5.2 - MongoDB</h1></div>
-<div class="iDevice_wrapper textIdevice" id="id34">
+<div id="nodeDecoration"><h1 id="nodeTitle">5.3 - eXist-db</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id36">
 <div class="iDevice emphasis0" >
-<div id="ta34_112_2" class="block iDevice_content">
-<div class="exe-text"><p>L'única dificultat que tindrem és que l'últim driver de MongoDB no funciona bé en Android, així que senzillament agafarem un driver anterior adaptat per a que funcione. No és l'oficial, sinó un adaptat per a que no done un error de javax.security.sasl</p>
-<p>Aquest és l'enllaç d'aquest driver:</p>
-<p><a href="https://github.com/matfur92/mongo-java-driver/blob/gh-pages/JARs/mongo-java-driver-3.4.0-SNAPSHOT.jar?raw=true">https://github.com/matfur92/mongo-java-driver/blob/gh-pages/JARs/mongo-java-driver-3.4.0-SNAPSHOT.jar?raw=true</a></p>
-<p>Anem a provar-lo sobre un projecte nou.</p>
+<div id="ta36_114_2" class="block iDevice_content">
+<div class="exe-text"><p>Anem a provar-lo sobre un projecte nou.</p>
 <ul>
-<li>Creeu un nou projecte d'Android, que el podeu anomenar per exemple <strong>MongoDB_Accedir</strong></li>
-<li>Incorporeu el driver de MongoDB comentat més amunt. El millor seria incorporar-lo en la vista de <strong>Project</strong> en<strong> app -&gt; libs</strong>, i després apretar damunt amb el botó de la dreta i triar<strong> Add as library</strong></li>
-<li>Doneu el permís d'accedir a Internet. En el <strong>AndroidManifest.xml</strong>, afegiu la següent línia, dins de <strong>manifest</strong> però fora de <strong>application</strong>:</li>
-</ul>
-<div class="highlighted-code language-java">
-<div>
-<pre><code>    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;</code></pre>
-</div>
-</div>
-<ul>
-<li>Afegiu el <strong>id 'kotlin-android-extensions'</strong> al <strong>build.gradle</strong> de la <strong>app</strong>, per a que els components que posem en el layout estiguen directament disponibles des del programa</li>
-<li>Creeu el següent <strong>activity_main.xml</strong>, on tindrem únicament un TextView per a poder visualitzar el resultat</li>
+<li>Creeu un nou projecte d'Android, que el podeu anomenar per exemple <strong>eXist-db_Accedir</strong></li>
+<li>Incorporeu els drivers de eXist-db (eren 3). El millor seria incorporar-los en la vista de <strong>Project</strong> en<strong> app -&gt; libs</strong>, i després apretar damunt amb el botó de la dreta en cada fitxer i triar<strong> Add as library</strong></li>
+<li>Creeu el següent <strong>activity_main.xml</strong>, on tindrem únicament un TextView per a poder visualitzar els resultats</li>
 </ul>
 <div class="highlighted-code language-markup">
 <div>
@@ -131,7 +119,7 @@ class MainActivity : AppCompatActivity() {
             val ordenar = Document()
             ordenar.put("precio", -1)
 
-            val llibres = bd.getCollection("libro").find().sort(ordenar)
+            val llibres = bd.getCollection("libro").find()
 
             for (llibre in llibres)
                 cont += llibre.get("titulo").toString() + " --&gt; " + llibre.get("precio") + "\n"
@@ -163,14 +151,14 @@ class MainActivity : AppCompatActivity() {
 </div>
 </div>
 <p>Aquest seria el resultat:</p>
-<p style="text-align: center;"><img src="Annex_Android_5_2_1.png" alt="" width="332" height="615" /></p>
+<p></p>
 <p></p></div>
 </div>
 </div>
 </div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
-<a href="51__redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53__existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="52__mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
 </div>
 </div>
 <div id="packageLicense" class="cc cc-by-nc-sa">

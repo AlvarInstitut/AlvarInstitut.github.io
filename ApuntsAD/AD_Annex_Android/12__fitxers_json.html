@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.2 - Fitxers JSON | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li class="current-page-parent"><a href="1__permanncia_en_fitxers.html" class="current-page-parent daddy">1 - Permanència en fitxers</a>
+   <ul>
+      <li><a href="11__exemple.html" class="no-ch">1.1 - Exemple</a></li>
+      <li id="active"><a href="12__fitxers_json.html" class="active no-ch">1.2 - Fitxers JSON</a></li>
+   </ul>
+   </li>
+   <li><a href="2__permanncia_en_bd_relacionals.html" class="daddy">2 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__connexi_remota.html" class="no-ch">2.1 - Connexió remota</a></li>
+      <li><a href="22__connexi_local.html" class="daddy">2.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="221__exemple.html" class="no-ch">2.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__eina_orm_biblioteca_room.html" class="daddy">3 - Eina ORM: Biblioteca ROOM</a>
+   <ul class="other-section">
+      <li><a href="31__implementar_relacions_1n.html" class="no-ch">3.1 - Implementar relacions 1:N</a></li>
+      <li><a href="32__exemple_complet.html" class="no-ch">3.2 - Exemple complet</a></li>
+      <li><a href="33__implementaci_amb_les_claus_externes.html" class="no-ch">3.3 - Implementació amb les claus externes</a></li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+   <li><a href="5__permanncia_en_altres_bd_nosql.html" class="daddy">5 - Permanència en altres BD NoSQL</a>
+   <ul class="other-section">
+      <li><a href="51__redis.html" class="no-ch">5.1 - Redis</a></li>
+      <li><a href="52__mongodb.html" class="no-ch">5.2 - MongoDB</a></li>
+      <li><a href="53__existdb.html" class="no-ch">5.3 - eXist-db</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="11__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2__permanncia_en_bd_relacionals.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.2 - Fitxers JSON</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id38">
+<div class="iDevice emphasis0" >
+<div id="ta38_112_2" class="block iDevice_content">
+<div class="exe-text"><p>Com havíem vist en el Tema 3, 2 són les maneres que hem vist d'accedir a JSON, amb un driver molt senzillet anomenat <strong>org.json</strong>, i amb un driver molt més complicat que ens permetia fer un mapatge entre el fitxer json i classes de Kotlin (realment de Java). Mirem les 2 maneres per a un mateix exemple, el de Bicicas</p>
+<p class="titolet">Driver org.json</p>
+<p>Està incorporat en Android, és d'utilització immediata. Tot el que havíem fet en el Tema 3 ens servirà ací també, sense més variació.</p>
+<p>Anem a veure un exemple, que el complicarem un poc més per a que no siga tan immediat. En compte d'agafar un fitxer (que potser l'hauríem de col·locar directament al dispositiu...) anem a accedir directament a la pàgina de Bicicas. Tindrem la complicació afegida de que haurem de donar permisos d'Internet, i també permetre que la informació ens arribe en text clar, ja que a partir de Android 9 (API level 28), no està permesa per defecte.</p>
+<p>Per tant, en el <strong>AndroidManifest.xml</strong>, afegirem les línies 3 i 6 (es posen les altres per a que quede clar el lloc on van)</p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest ...&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    &lt;application
+        ...
+        android:usesCleartextTraffic="true"
+        ...&gt;
+        ...
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>En el <strong>activity_main.xml</strong> col·locarem un únic EditText per a visualitzar l'estat actual de Bicicas. Quedaria d'aquesta manera:<br /><br /></p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"&gt;
+    &lt;EditText
+        android:text=""
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textMultiLine"
+        android:gravity="top" /&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre>
+</div>
+</div>
+<p>En el <strong>MainActivity.kt</strong> accedirem a la pàgina de Bicicas, i després farem el mateix procés que en el Tema3. La dificultat afegida ara és evidentment accedir a Internet, que a més d'haver de posar el permís en el AndroidManifest, ens impedeix accedir a Internet des del programa principal. Ho esquivem muntant un fil (thread) que s'execute en paral·lel. Des del programa principal llancem el fil, i ens esperem a que acabe. En el fil és on tenim realment l'accés a JSON.</p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONArray
+import org.json.JSONObject
+import org.json.JSONTokener
+
+import java.io.InputStreamReader
+import java.net.URL
+
+class MainActivity : AppCompatActivity() {
+    internal var cont: String = ""
+
+
+    private var sqlThread: Thread = object : Thread() {
+        override fun run() {
+
+            val adr = URL("http://gestiona.bicicas.es/apps/apps.php")
+            val ent = InputStreamReader(adr.openConnection().getInputStream(),"UTF-8")
+            val json = ent.readText()
+
+            val arrel = JSONTokener(json).nextValue() as JSONArray
+
+            val estacions = arrel.getJSONObject(0).getJSONArray("ocupacion")
+
+            for (i in 0 until estacions.length()){
+                val e = estacions.get(i) as JSONObject
+                cont += "" + e.get("id") + ".- " + e.get("punto") + " (" + e.get("ocupados") + "/" + e.get("puestos") + ")\n"
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Des de la versió 3 d'Android, no es permet obrir una connexió des del thread principal.
+        // Per tant s'ha de crear un nou.
+        sqlThread.start()
+
+        // i ara esperem a que finalitze el thread fill unint-lo (join)
+        try {
+            sqlThread.join()
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+        }
+        text.setText(cont)
+    }
+}</code></pre>
+</div>
+</div>
+<p>Observeu com les línies 24 a 29 són idèntiques al programa del Tema 3, excepte que ara en compte de guardar en l'eixida estàndar, ho guardem en una variable, per a poder assignar aquesta variable en el programa principal, quan ja s'han ajuntat els dos threads.</p>
+<p>A banda d'això, estem utilitzant la llibreria <strong>synthetic</strong>, la qual cosa ens obliga a posar dins de <strong>plugins</strong> del <strong>build.gradle</strong> de la app les extensions:</p>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>    id 'kotlin-android-extensions'</code></pre>
+</div>
+</div>
+<p>El resultat de l'execució seria el següent:</p>
+<p><img src="AD_Annex_Android_1_2_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="389" height="720" /></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="11__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2__permanncia_en_bd_relacionals.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
