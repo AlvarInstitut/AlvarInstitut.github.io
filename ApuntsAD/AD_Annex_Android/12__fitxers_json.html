@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -72,7 +72,8 @@
 <div class="exe-text"><p>Com havíem vist en el Tema 3, 2 són les maneres que hem vist d'accedir a JSON, amb un driver molt senzillet anomenat <strong>org.json</strong>, i amb un driver molt més complicat que ens permetia fer un mapatge entre el fitxer json i classes de Kotlin (realment de Java). Mirem les 2 maneres per a un mateix exemple, el de Bicicas</p>
 <p class="titolet">Driver org.json</p>
 <p>Està incorporat en Android, és d'utilització immediata. Tot el que havíem fet en el Tema 3 ens servirà ací també, sense més variació.</p>
-<p>Anem a veure un exemple, que el complicarem un poc més per a que no siga tan immediat. En compte d'agafar un fitxer (que potser l'hauríem de col·locar directament al dispositiu...) anem a accedir directament a la pàgina de Bicicas. Tindrem la complicació afegida de que haurem de donar permisos d'Internet, i també permetre que la informació ens arribe en text clar, ja que a partir de Android 9 (API level 28), no està permesa per defecte.</p>
+<p>Farem l'exemple sobre un projecte nou d'Android, que podem anomenar Bicicas_Web_orgjson (indicant així que agafarem les dades directament des de la pàgina web de Bicicas, i que utilitzarem el driver org.json, incorporat per defecte en Android).</p>
+<p>Tal i com indica el nom, el farem un poc més complicat per a que no siga tan immediat. En compte d'agafar un fitxer (que potser l'hauríem de col·locar directament al dispositiu...) anem a accedir directament a la pàgina de Bicicas. Tindrem la complicació afegida de que haurem de donar permisos d'Internet, i també permetre que la informació ens arribe en text clar, ja que a partir de Android 9 (API level 28), no està permesa per defecte.</p>
 <p>Per tant, en el <strong>AndroidManifest.xml</strong>, afegirem les línies 3 i 6 (es posen les altres per a que quede clar el lloc on van)</p>
 <div class="highlighted-code language-java line-numbers">
 <div>
@@ -115,7 +116,30 @@
 &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre>
 </div>
 </div>
-<p>En el <strong>MainActivity.kt</strong> accedirem a la pàgina de Bicicas, i després farem el mateix procés que en el Tema3. La dificultat afegida ara és evidentment accedir a Internet, que a més d'haver de posar el permís en el AndroidManifest, ens impedeix accedir a Internet des del programa principal. Ho esquivem muntant un fil (thread) que s'execute en paral·lel. Des del programa principal llancem el fil, i ens esperem a que acabe. En el fil és on tenim realment l'accés a JSON.</p>
+<p>En el <strong>MainActivity.kt</strong> accedirem a la pàgina de Bicicas, i després farem el mateix procés que en el Tema3. La dificultat afegida ara és evidentment accedir a Internet, que a més d'haver de posar el permís en el AndroidManifest, ens impedeix accedir a Internet des del programa principal. Ho esquivem muntant un fil (thread) que s'execute en paral·lel. Des del programa principal llancem el fil, i ens esperem a que acabe. En el fil és on tenim realment l'accés a JSON. Recordem que l'estructura del JSON de Bicicas és que l'arrel és un array amb un únic element, que és un objecte amb un únic membre (anomenat ocupación) que és un array d'objectes, cadascun l'equivalent a una estació, ja parelles clau-valor:</p>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>[
+  {
+    "ocupacion": 
+    [
+      {
+        "id": "01",
+        "punto": "UJI - FCHS",
+        "puestos": 27,
+        "ocupados": 9,
+        "latitud": "39.99533",
+        "longitud": "-0.06999",
+        "porcentajeAltaOcupacion": "80",
+        "porcentajeBajaOcupacion": "20"
+      },
+      ...
+    ]  
+  }
+]</code></pre>
+</div>
+</div>
+<p>El MainActivity quedarà així:</p>
 <div class="highlighted-code language-java line-numbers">
 <div>
 <pre><code>import androidx.appcompat.app.AppCompatActivity
@@ -132,12 +156,11 @@ class MainActivity : AppCompatActivity() {
     internal var cont: String = ""
 
 
-    private var sqlThread: Thread = object : Thread() {
+    private var webThread: Thread = object : Thread() {
         override fun run() {
 
             val adr = URL("http://gestiona.bicicas.es/apps/apps.php")
-            val ent = InputStreamReader(adr.openConnection().getInputStream(),"UTF-8")
-            val json = ent.readText()
+            val json = InputStreamReader((adr.openConnection().getInputStream())).readText()
 
             val arrel = JSONTokener(json).nextValue() as JSONArray
 
@@ -156,11 +179,11 @@ class MainActivity : AppCompatActivity() {
 
         // Des de la versió 3 d'Android, no es permet obrir una connexió des del thread principal.
         // Per tant s'ha de crear un nou.
-        sqlThread.start()
+        webThread.start()
 
         // i ara esperem a que finalitze el thread fill unint-lo (join)
         try {
-            sqlThread.join()
+            webThread.join()
         } catch (e: InterruptedException) {
             e.printStackTrace()
         }
@@ -169,7 +192,7 @@ class MainActivity : AppCompatActivity() {
 }</code></pre>
 </div>
 </div>
-<p>Observeu com les línies 24 a 29 són idèntiques al programa del Tema 3, excepte que ara en compte de guardar en l'eixida estàndar, ho guardem en una variable, per a poder assignar aquesta variable en el programa principal, quan ja s'han ajuntat els dos threads.</p>
+<p>Observeu com les línies 23 a 28 són idèntiques al programa del Tema 3, excepte que ara en compte de guardar en l'eixida estàndar, ho guardem en una variable, per a poder assignar aquesta variable en el programa principal, quan ja s'han ajuntat els dos threads.</p>
 <p>A banda d'això, estem utilitzant la llibreria <strong>synthetic</strong>, la qual cosa ens obliga a posar dins de <strong>plugins</strong> del <strong>build.gradle</strong> de la app les extensions:</p>
 <div class="highlighted-code language-json">
 <div>
@@ -178,6 +201,147 @@ class MainActivity : AppCompatActivity() {
 </div>
 <p>El resultat de l'execució seria el següent:</p>
 <p><img src="AD_Annex_Android_1_2_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="389" height="720" /></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id39">
+<div class="iDevice emphasis0" >
+<div id="ta39_119_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Driver Moshi</p>
+<p>Respecte al que hem vist en el Tema 3 té una lleugera modificació, a banda d'haver d'integrar els drivers necessaris, que ara no estan inclosos directament.</p>
+<p>Ho podem practicar en un projecte nou anomenat <strong>Bicicas_Web_Moshi</strong></p>
+<p>Per a incorporar correctament els drivers Moshi, posarem en el <strong>buid.gradle</strong> de l'aplicació les línies que estan a continuació. Aprofitem també per a incorporar les <strong>kotlin-android-extensions</strong></p>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>plugins {
+    ...
+    id 'kotlin-android-extensions'
+}
+
+...
+dependencies {
+    implementation "com.squareup.moshi:moshi:1.12.0"
+    implementation "com.squareup.moshi:moshi-adapters:1.12.0"
+    implementation "com.squareup.moshi:moshi-kotlin:1.12.0"<br />    ...
+ }</code></pre>
+</div>
+</div>
+<p>Igual que en l'exemple anterior, modifiquem el <strong>AndroidManifest.xml</strong>, afegint les línies 3 i 6 (es posen les altres per a que quede clar el lloc on van)</p>
+<div class="highlighted-code language-markup line-numbers">
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest ...&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    &lt;application
+        ...
+        android:usesCleartextTraffic="true"
+        ...&gt;
+        ...
+    &lt;/application&gt;
+&lt;/manifest&gt;</code></pre>
+</div>
+</div>
+<br />
+<div>
+<pre><code></code></pre>
+</div>
+</div>
+<p><br />En el activity_main.xml col·locarem un únic EditText per a visualitzar l'estat actual de Bicicas. Quedaria d'aquesta manera:</p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"&gt;
+    &lt;EditText
+        android:text=""
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textMultiLine"
+        android:gravity="top" /&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre>
+</div>
+</div>
+<p><br /> Com que l'estructura del JSON de Bicicas és un array amb un únic element, que és un objecte amb un únic membre (anomenat ocupación) que és un array d'objectes, cadascun l'equivalent a una estació, ja parelles clau-valor, ens haurem de definir les classes que seran 2: <strong>Estacio</strong> (cada parella clau-valor una propietat), i <strong>Estacions</strong> (una única propietat que és un List d'Estacio). Si posem els mateixos noms de membres que en el JSON, tot és més fàcil. Tindrem la dificultat que l'arrel és un array, que solucionarem igual que en el Tema 3, com veurem després. Aquesta serà la definició de classes. Les podem posar en fitxers diferents, o en un únic fitxer, com vulguem:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Estacio(
+    val id: Long, val punto: String, val puestos: Int,
+    val ocupados: Int, val latitud: Double, val longitud: Double,
+    val porcentajeAltaOcupacion: Int, val porcentajeBajaOcupacion: Int
+)
+
+class Estacions(val ocupacion: List&lt;Estacio&gt;)</code></pre>
+</div>
+</div>
+<p>En el <strong>MainActivity</strong> només haurem d'anar amb compte en afegir un <strong>KotlinJsonAdapterFactory()</strong> al <strong>Builder</strong> del <strong>Moshi</strong>, cosa que no ens havia fet falta en el Tema 3. Es veu en la línia 19. La resta és com en el Tema 3, tenint en compte que l'arrel és un array</p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.android.synthetic.main.activity_main.*
+
+import java.io.InputStreamReader
+import java.net.URL
+
+
+class MainActivity : AppCompatActivity() {
+    internal var cont: String = ""
+
+
+    private var sqlThread: Thread = object : Thread() {
+        override fun run() {
+            val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+            val llistaTipus = Types.newParameterizedType(List::class.java, Estacions::class.java)
+            val adapter: JsonAdapter&lt;List&lt;Estacions&gt;&gt; = moshi.adapter(llistaTipus)
+
+            val adr = URL("http://gestiona.bicicas.es/apps/apps.php")
+            val json = InputStreamReader((adr.openConnection().getInputStream())).readText()
+
+            val bicicas = adapter.fromJson(json)
+
+            val estacions = bicicas!!.get(0).ocupacion
+            cont = "Hi ha " + estacions.size + " estacions:\n"
+            for (e in estacions)
+                cont += "" + e.id + ".- " + e.punto + " (" + e.ocupados + "/" + e.puestos + ")\n"
+            }
+        }
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Des de la versió 3 d'Android, no es permet obrir una connexió des del thread principal.
+        // Per tant s'ha de crear un nou.
+        sqlThread.start()
+
+        // i ara esperem a que finalitze el thread fill unint-lo (join)
+        try {
+            sqlThread.join()
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+        }
+
+        text.setText(cont)
+
+    }
+}</code></pre>
+</div>
+</div>
+<p> El resultat és idèntic al de l'exemple anterior<strong><br /></strong></p></div>
 </div>
 </div>
 </div>
