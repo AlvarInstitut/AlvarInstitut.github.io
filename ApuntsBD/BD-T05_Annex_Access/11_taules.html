@@ -101,10 +101,18 @@
 <div id="ta5_1" class="block iDevice_content">
 <p> </p>
 <p>Realitzar les següents qüestions:</p>
-<p><b>1) </b>Crear una BD en blanc amb el nom <b>Empresa.accdb</b></p>
-<p style="text-align: left;" align="center"><b>2) </b>Importar <b>EMPLEAT</b>, <b>FAMILIAR</b> i <b>DEPARTAMENT</b> de la Base de Dades <b>OrEmpresa.accdb</b> que es proporciona. El següent vídeo us explica com fer la importació </p>
+<p><b>1.1) </b>Crear una BD en blanc amb el nom <b>Empresa.accdb</b></p>
+<p style="text-align: left;" align="center"><b>1.2) </b>Importar <b>EMPLEAT</b> i <b>DEPARTAMENT</b> de la Base de Dades <b>OrEmpresa.accdb</b> que es proporciona. El següent vídeo us explica com fer la importació </p>
 <p style="text-align: center;"><iframe width="1024" height="780" src="https://slides.com/alvarinstitut/bd-t5-importar_access/embed" title="BD-T5-Importar_Access" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
-<p><b>3) </b>Importar una taula a partir d'el fitxer de text <b>PROJECTE.txt</b>,</p>
+<p><strong>1.3</strong>) Importar una taula a partir del fitxer XML <strong>Familiar.xml</strong></p>
+<p style="padding-left: 30px;">Durant la importació haurem de cuidar els següents aspectes:</p>
+<ul>
+<li>La clau principal ha de ser <strong>Dni + Nom</strong></li>
+<li>El camp <strong>Data_n </strong>ha de ser de tipus <strong>Fecha/Hora</strong></li>
+</ul>
+<p style="padding-left: 30px;">El següent vídeo us explica com fer la importació: </p>
+<p><iframe width="943" height="530" src="https://slides.com/alvarinstitut/bd-t5_1_1-importar-xml/embed?style=light" title="BD T5_1_1 Importar XML" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p><b>1.4) </b>Importar una taula a partir del fitxer de text <b>PROJECTE.txt</b>,</p>
 <blockquote>
 <p>Durant la importació haurem de cuidar els següents aspectes:</p>
 </blockquote>
@@ -120,10 +128,10 @@
 <p style="text-align: left;" align="center">El següent vídeo us explica com fer la importació: </p>
 <p style="text-align: center;"><iframe width="1024" height="780" src="https://slides.com/alvarinstitut/bd-t5_1_1_importar_text/embed" title="BD-T5_1_1_importar_text" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
 <blockquote></blockquote>
-<p><b>4) </b>Dissenyar la taula <b>TREBALLA</b> (observeu l'esquema Relacional per veure la seua estructura). Els camps seran <b>dni</b>, <b>num_p</b> i <b>hores</b>. Els tipus de <b>dni </b>i <b>num_p</b> venen condicionats per ser claus externes. L'atribut <b>hores</b> (de tipus numèric menudet) ha de ser no nul, i major que zero (i per tant el seu valor predeterminat no convé que siga zero). No us oblideu de la clau principal.</p>
-<p><b>5) </b>Crear <b><span style="text-decoration: underline;">totes</span></b> les integritats referencials. Recordeu que la integritat referencial obliga que la clau externa agafe un dels valors ja introduïts de la clau principal on apunta (així per exemple, la fletxa que apunta des del camp <b><i>Departament</i></b> de la taula <b>EMPLEAT </b>fins el camp <b><i>Num_d</i></b> de la taula <b>DEPARTAMENT</b> obliga a posar a cada empleat un departament vàlid, és a dir, dels existents en l'actualitat). A més les de <b>FAMILIAR</b> i <b>TREBALLA</b> han de modificar i esborrar en <b><i>cascada</i></b>.</p>
+<p><b>1.5) </b>Dissenyar la taula <b>TREBALLA</b> (observeu l'esquema Relacional per veure la seua estructura). Els camps seran <b>dni</b>, <b>num_p</b> i <b>hores</b>. Els tipus de <b>dni </b>i <b>num_p</b> venen condicionats per ser claus externes. L'atribut <b>hores</b> (de tipus numèric menudet) ha de ser no nul, i major que zero (i per tant el seu valor predeterminat no convé que siga zero). No us oblideu de la clau principal.</p>
+<p><b>1.6) </b>Crear <b><span style="text-decoration: underline;">totes</span></b> les integritats referencials. Recordeu que la integritat referencial obliga que la clau externa agafe un dels valors ja introduïts de la clau principal on apunta (així per exemple, la fletxa que apunta des del camp <b><i>Departament</i></b> de la taula <b>EMPLEAT </b>fins el camp <b><i>Num_d</i></b> de la taula <b>DEPARTAMENT</b> obliga a posar a cada empleat un departament vàlid, és a dir, dels existents en l'actualitat). A més les de <b>FAMILIAR</b> i <b>TREBALLA</b> han de modificar i esborrar en <b><i>cascada</i></b>.</p>
 <p>Segurament la més "complicada" de fer és la reflexiva que marca els supervisors. Per a poder representar-la, en Access s'ha de posar la taula (en aquest cas <b>EMPLEAT</b>) 2 vegades i s'arrastra d'una a l'altra. No és que siguen 2 taules, sinó que s'afegeix a les relacions 2 vegades, però és la mateixa taula.</p>
-<p><b>6) </b>Dissenyar un <b>formulari</b> anomenat <b><span style="text-decoration: underline;">Treballa</span></b> per a introduir les dades a aquesta taula. Els atributs <b>Dni </b>i <b> Num_p</b> s'introduiran per mig de <i><b>quadres combinats</b></i>, on es visualitzaran respectivament <b>Dni - Nom</b> i <b>Num_p - Nom_p</b>. L'atribut Hores s'introduirà per mig d'un quadre de text.</p>
+<p><b>1.7) </b>Dissenyar un <b>formulari</b> anomenat <b><span style="text-decoration: underline;">Treballa</span></b> per a introduir les dades a aquesta taula. Els atributs <b>Dni </b>i <b> Num_p</b> s'introduiran per mig de <i><b>quadres combinats</b></i>, on es visualitzaran respectivament <b>Dni - Nom</b> i <b>Num_p - Nom_p</b>. L'atribut Hores s'introduirà per mig d'un quadre de text.</p>
 <p>El següent vídeo explica com crear aquest formulari. La dificultat consisteix en definir bé els quadres combinats. Per a poder explicar-lo millor, el primer quadre combinat es crea utilitzant l'assistent de quadre combinat. Després intenta estudiar les propietats més útils. El segon quadre combinat es crea més "a pèl", modificant les propietats més importants.</p>
 <div style="text-align: center;" align="justify"><iframe width="1024" height="780" src="https://slides.com/alvarinstitut/bd-t5_1_1_quadre_combinat/embed" title="BD-T5_1_1_quadre_combinat" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></div>
 <p><br />Introduïu a continuació les següents dades. Observeu que entre parèntesi està el Dni de l'empleat i el número de projecte, però únicament a nivell informatiu. No ha d'aparéixer en el quadre combinat.</p>
