@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -56,12 +56,13 @@
    </li>
    <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
    <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
    <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
 </ul>
 </div>
 <div id='topPagination'>
 <div class="pagination noprt">
-<a href="11__resum_del_llenguatge_hql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+<a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
 </div>
 </div>
 <div id="main-wrapper">
@@ -75,13 +76,13 @@
 <p>Crea un projecte nou de l'estil de <strong>Java Enterprise</strong> anomenat <strong>Tema5_</strong><strong>PostgreSQL_Rutes_Anotacions</strong>. Inclou el driver JDBC de PostgreSQL.</p>
 <ul>
 <li>Has de fer el mapatge utilitzant <strong>anotacions</strong> (no els fitxer <strong>hbm.xml</strong>)</li>
-<li>Fes el mapatge de les taules <strong>RUTA </strong>i <strong>PUNT</strong><strong></strong>, situades en la Base de Dades <strong>rutes</strong> a la qual pot accedir l'usuari <strong>rutes </strong>(contrasenya <strong>rutes</strong>) i situada en el servidor de l'Institut <strong></strong>(<strong>89.36.214.106</strong>). Guarda-les en un paquet anomenat <strong>classes</strong>. Veuràs que en el resultat apareixerà també la classe <strong>PuntPK.java</strong>. És a causa de que la clau principalde la taula PUNTS està formada per dos camps. És la manera que té Hibernate de reflectir-ho.</li>
-<li>Tria <strong>tots </strong>els camps (que es convertiran en propietats). Canvia el nom dàlguna de les propietats</li>
-<li>Veuràs que en el resultata més de les classes <strong>Ruta.java </strong>i <strong>Punt.java </strong>apareixerà també la classe <strong>PuntPK.java</strong>. És a causa de que la clau principal de la taula PUNTS està formada per dos camps. És la manera que té Hibernate de reflectir-ho.</li>
+<li>Fes el mapatge de les taules <strong>RUTA </strong>i <strong>PUNT</strong><strong></strong>, situades en la Base de Dades <strong>rutes</strong> a la qual pot accedir l'usuari <strong>rutes </strong>(contrasenya <strong>rutes</strong>) i situada en el servidor de l'Institut <strong></strong>(<strong>89.36.214.106</strong>). Guarda-les en un paquet anomenat <strong>classes</strong>. Veuràs que en el resultat apareixerà també la classe <strong>PuntPK.java</strong>. És a causa de que la clau principal de la taula PUNTS està formada per dos camps. És la manera que té Hibernate de reflectir-ho.</li>
+<li>Tria <strong>tots </strong>els camps (que es convertiran en propietats). Canvia el nom d'alguna de les propietats</li>
+<li>Veuràs que en el resultat a més de les classes <strong>Ruta.java </strong>i <strong>Punt.java </strong>apareixerà també la classe <strong>PuntPK.java</strong>. És a causa de que la clau principal de la taula PUNTS està formada per dos camps. És la manera que té Hibernate de reflectir-ho.</li>
 <li>Crea't el fitxer Kotlin <strong>VeureRutes.kt</strong>, que serà un programa senzill que visualitze les rutes, i el número de punts, ordenades per nom de ruta, a més dels noms dels punts.. Ha de ser per mig d'una <strong>consulta HQL </strong>(el més senzilla possible), i evidentment el programa ha de ser independent del número de rutes existent en aquest moment a la Base de Dades. Intenta que no apareguen tots els warnings que apareixen per defecte. El més normal és que t'aparega el següent error</li>
 </ul>
 <p style="padding-left: 60px;"><strong><span style="font-size: 10pt; font-family: 'courier new', courier, monospace; color: #ff0000;">Repeated column in mapping for entity: classes.Punt column: num_r (should be mapped with insert="false" update="false")</span></strong></p>
-<p style="padding-left: 60px;">Per a corregir-ho has d'afegir a la classe <strong>Punt.java</strong> al final de tot, on apareix l'anotació <strong>@JoinColumn</strong> el que està en negreta a continuació.</p>
+<p style="padding-left: 60px;">Per a corregir-ho has d'afegir a la classe <strong>Punt.java</strong> al final de tot, on apareix l'anotació <strong>@JoinColumn</strong>, el que està en negreta a continuació.</p>
 <table border="1" style="width: 100%; background-color: #ffffff;">
 <tbody>
 <tr>
@@ -240,7 +241,6 @@ import javax.swing.JScrollPane
 import javax.swing.JComboBox
 import javax.swing.DefaultListModel
 import javax.swing.JList
-import classes.SessionFactoryUtil
 import classes.Comarca
 import classes.Poblacio
 
@@ -364,7 +364,6 @@ import javax.swing.JTextField
 import org.hibernate.Query
 import org.hibernate.Session
 
-import classes.SessionFactoryUtil
 import classes.Comarca
 import java.awt.event.WindowEvent
 
@@ -391,7 +390,7 @@ class FinestraMantenimentComarques : JFrame() {
 	val pBotonsMov = JPanel(FlowLayout())
 	val pEixir = JPanel(FlowLayout())
 
-	val s = SessionFactoryUtil.sessionFactory.openSession();
+    val sessio = Configuration().configure().buildSessionFactory().openSession()
 
 	var llistaComarques = ArrayList&lt;Comarca&gt;()
 	var indActual = 0;
@@ -538,7 +537,6 @@ import javax.swing.JTextField
 import org.hibernate.Query
 import org.hibernate.Session
 
-import classes.SessionFactoryUtil
 import classes.Comarca
 import java.awt.event.WindowEvent
 
@@ -574,7 +572,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
 	val pBotonsAccCanc = JPanel(FlowLayout())
 	val pEixir = JPanel(FlowLayout())
 
-	val s = SessionFactoryUtil.sessionFactory.openSession();
+    val sessio = Configuration().configure().buildSessionFactory().openSession()
 
 	var llistaComarques = ArrayList&lt;Comarca&gt;()
 	var indActual = 0
@@ -765,7 +763,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
 </div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
-<a href="11__resum_del_llenguatge_hql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+<a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
 </div>
 </div>
 <div id="packageLicense" class="cc cc-by-nc-sa">

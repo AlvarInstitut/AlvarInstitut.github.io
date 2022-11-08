@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -56,6 +56,7 @@
    </li>
    <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
    <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
 </div>
@@ -71,12 +72,12 @@
 <div class="iDevice emphasis0">
 <div id="ta9_1" class="block iDevice_content">
 <p style="text-align: justify;">Des d'<strong>IntelliJ Idea</strong> no cal cap tipus d'instal·lació. Això sí, haurem d'utilitzar la versió <strong>ULTIMATE</strong> per a poder fer projectes que connecten a Hibernate.</p>
-<p style="text-align: justify;">Concretament seran projectes de tipus <strong>Java Enterprise</strong>, que com dèiem només estan disponibles en la versió <strong>Ultimate</strong>.</p>
+<p style="text-align: justify;">Concretament seran projectes de tipus <strong>Jakarta EE</strong>, que és l'evolució de <strong>Java Enterprise</strong>, i com dèiem només estan disponibles en la versió <strong>Ultimate</strong>.</p>
 <p style="text-align: justify;">Durant aquest tema, cada connexió a una Base de Dades la farem en un projecte diferent, al contrari que en temes anteriors, on ho vam col·locar tot en el mateix projecte.</p>
-<p style="text-align: justify;">Aquestos projectes seran a més de tipus <strong>Maven</strong>, que es caracteritzen per no haver d'incorporar les dependències (Drivers) a mà, sinó que es reflecteixen automàticament en un fixter <strong>pom.xml</strong>, i ell s'encarrega de baixar tots els drivers necessaris.</p>
-<p style="text-align: justify;">Els passos a seguir en cada projecte seran sempre els mateixos:</p>
+<p style="text-align: justify;">Aquestos projectes seran a més de tipus <strong>Maven</strong>, que es caracteritzen per no haver d'incorporar les dependències (Drivers) a mà, sinó que es reflecteixen automàticament en un fixter <strong>pom.xml</strong>, i ell s'encarrega de baixar tots els drivers necessaris. Ho farem així perquè, a diferència del que hem fet fins ara que hi havia pocs drivers a incorporar, per a <strong>Hibernate</strong> seran molts .jar, per tant és molt més còmode un projecte Maven, que ell s'encarregarà de baixartots els drivers necessaris</p>
+<p style="text-align: justify;"> Els passos a seguir en cada projecte seran sempre els mateixos:</p>
 <ul style="text-align: justify;">
-<li>Crear un projecte de tipus <strong>Java Enterprise</strong>, amb la implementació de <strong>JPA</strong> per <strong>Hibernate</strong></li>
+<li>Crear un projecte de tipus <strong>Jakarta EE </strong>(en versions anterior, <strong>Java Enterprise</strong>), amb la implementació de <strong>JPA</strong> per <strong>Hibernate</strong></li>
 <li>Crear la connexió a la Base de Dades</li>
 <li>Afegir la configuració de persistència d'Hibernate, per a generar el fitxer <strong>hiernate.cfg.xml</strong></li>
 <li>Mapejar les taules a classes</li>
