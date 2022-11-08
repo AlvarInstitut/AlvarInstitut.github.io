@@ -79,9 +79,9 @@
 <p style="text-align: center;"><img src="T5_7_1.png" style="border-width: 1px;" width="755" height="776" /></p>
 <p> </p>
 <p class="titolet">El fitxer hibernate.cfg.xml</p>
-<p> El fitxer <strong>hibernate.cfg.xml</strong> estableix les condicions de la connexió:</p>
+<p> El fitxer <strong>hibernate.cfg.xml</strong> estableix les condicions de la connexió. Depenent de la versió, pot estar lleugerament diferent:</p>
 <div class="codi2">&lt;?xml version='1.0' encoding='utf-8'?&gt;<br />&lt;!DOCTYPE hibernate-configuration PUBLIC<br />"-//Hibernate/Hibernate Configuration DTD//EN"<br />"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"&gt;<br />&lt;hibernate-configuration&gt;<br />  &lt;session-factory&gt;<br />    &lt;property name="connection.url"&gt;jdbc:postgresql://89.36.214.106:5432/geo_ad&lt;/property&gt;<br />    &lt;property name="connection.driver_class"&gt;org.postgresql.Driver&lt;/property&gt;<br />    &lt;property name="connection.username"&gt;geo_ad&lt;/property&gt;<br />    &lt;property name="connection.password"&gt;geo_ad&lt;/property&gt;<br />    &lt;property name="hibernate.dialect"&gt;org.hibernate.dialect.PostgreSQL93Dialect&lt;/property&gt;<br />    &lt;mapping resource="Comarca.hbm.xml"/&gt;<br />    &lt;mapping resource="Institut.hbm.xml"/&gt;<br />    &lt;mapping resource="Poblacio.hbm.xml"/&gt;<br />  &lt;/session-factory&gt;<br />&lt;/hibernate-configuration&gt;</div>
-<p>Podem observar com s'especifica el driver JDBC, la URL, l'usuari que es connecta, la contrasenya i el dialecte (per a poder comunicar-se bé). També ha registrat els fitxers de mapatge.</p>
+<p>Podem observar com s'especifica el driver JDBC, la URL, l'usuari que es connecta, la contrasenya i el dialecte (per a poder comunicar-se bé en versions anteriors). També ha registrat els fitxers de mapatge.</p>
 <p> </p>
 <p class="titolet">Els fitxers .hbm.xml</p>
 <p>Els fitxers <strong>.hbm.xml</strong> estableixen la correspondència entre taula i classe, i dins d'elles entre camps de la taula i propietats de la classe. Mirem el contingut de <strong>Comarques.hbm.xml</strong>. Posem a un costat l'estructura de la taula, i a l'altre l'estructura de l'objecte:</p>
@@ -136,7 +136,7 @@
 </ul>
 </li>
 </ul>
-<p>I ens deixem per al final la manera d'enllaçar la clau externa. Recordem que la clau externa està definida en <strong>POBLACIO</strong> i que apunta a <strong>COMARCA</strong>. En el mapatge de <strong>Comarca</strong> tindrem una línia nova que és la que indica que la propietat <strong>poblacios</strong> ha de contenir les poblacions de la comarca. És per tant un conjunt (<strong>set</strong>) de moltes poblacions. Les coses més importants són les següents:</p>
+<p>I ens deixem per al final la manera d'enllaçar la clau externa. Recordem que la clau externa està definida en <strong>POBLACIO</strong> i que apunta a <strong>COMARCA</strong>. En el mapatge de <strong>Comarca</strong> tindrem una línia nova que és la que indica que la propietat <strong>poblacions</strong> ha de contenir les poblacions de la comarca. És per tant un conjunt (<strong>Collection</strong>) de moltes poblacions. Les coses més importants són les següents:</p>
 <ul>
 <li><strong>&lt;set&gt;</strong> que indica que serà un conjunt
 <ul>
@@ -146,7 +146,7 @@
 </ul>
 </li>
 </ul>
-<p>En el cas de les poblacions, taula <strong>POBLACIO</strong> i classe <strong>Poblacio</strong>, les coses seran molt similars. La diferència més significativa és la manera de representar la clau externa. Ara serà una relació <strong>many-to-one</strong>, indicant que la població pot estar en una única comarca, és a dir farà referència a un unic objecte <strong>Comarca</strong>.</p>
+<p>En el cas de les poblacions, taula <strong>POBLACIO</strong> i classe <strong>Poblacio</strong>, les coses seran molt similars. La diferència més significativa és la manera de representar la clau externa. Ara serà una relació <strong>many-to-one</strong>, indicant que la població pot estar en una única comarca, és a dir farà referència a un únic objecte <strong>Comarca</strong>.</p>
 <table border="0">
 <tbody>
 <tr>

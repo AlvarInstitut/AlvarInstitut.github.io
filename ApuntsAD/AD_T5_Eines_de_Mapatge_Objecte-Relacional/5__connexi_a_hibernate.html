@@ -86,13 +86,16 @@
 </ul>
 <p style="text-align: justify;">El següent vídeo explica tot el procés de creació del projecte.</p>
 <p style="text-align: center;"><iframe width="1000" height="643" src="https://slides.com/alvarinstitut/ad-t5-connexiohibernate/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
-<p style="text-align: justify;">Les línies que hem afegit al fitxer <strong>hibernate.cfg.xml</strong> són:</p>
+<div class="nota_blau">
+<p style="text-align: justify;"><strong><u>Nota</u></strong></p>
+<p style="text-align: justify;">En versions anteriors, en el fitxer <strong>hibernate.cfg.xml</strong> no es guardava usuari ni contrasenya, i després li feia falta el dialecte de PostgreSQL. Concretament s'havien d'afegir les següents línies:</p>
 <div class="highlighted-code language-markup">
 <div>
 <pre><code>    &lt;property name="connection.username"&gt;geo_ad&lt;/property&gt;
     &lt;property name="connection.password"&gt;geo_ad&lt;/property&gt;
     &lt;property name="hibernate.dialect"&gt;org.hibernate.dialect.PostgreSQL93Dialect&lt;/property&gt;
 </code></pre>
+</div>
 </div>
 </div>
 <p style="text-align: justify;">I observeu que en aquest exemple hem optat per incorporar el Driver directament, ja que el teníem des del tema passat. Podríem haver optat també per incorporar-lo a l'estil Maven, que seria senzillament incorporar en el fitxer <strong>pom.xml </strong>en l'apartat de <strong>&lt;dependencies&gt;</strong> la següent. Atenció: si ja heu incorporat el Driver de PostgreSQL al projecte, no cal que fey el que va a continuació</p>

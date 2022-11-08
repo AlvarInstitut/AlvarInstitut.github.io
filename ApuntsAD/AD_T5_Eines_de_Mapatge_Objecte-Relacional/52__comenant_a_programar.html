@@ -84,7 +84,7 @@ import classes.Comarca
 fun main(args: Array&lt;String&gt;) {
     val sf = Configuration().configure().buildSessionFactory()
     val sessio = sf.openSession()
-    val com = sessio.load("classes.Comarca", "Alt Maestrat") as Comarca
+    val com = sessio.get("classes.Comarca", "Alt Maestrat") as Comarca
     print("Comarca " + com.nomC + ": ")
     print(com.provincia)
     println(" (" + com.poblacions.size + " pobles)")
@@ -115,7 +115,7 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
 
-    val com = sessio.load("classes.Comarca", "Alt Maestrat") as Comarca
+    val com = sessio.get("classes.Comarca", "Alt Maestrat") as Comarca
     print("Comarca " + com.nomC + ": ")
     print(com.provincia)
     println(" (" + com.poblacions.size + " pobles)")

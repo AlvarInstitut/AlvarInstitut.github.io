@@ -71,13 +71,13 @@
 <div class="iDevice_wrapper FreeTextIdevice" id="id19">
 <div class="iDevice emphasis0">
 <div id="ta19_1" class="block iDevice_content">
-<p>La càrrega d'objectes s'aconsegueix amb els mètodes <strong>load()</strong> i <strong>get()</strong>. Són similars excepte en una qüestió: el primer dóna un error si no es troba la fila, mentre que el segon contindrà null. Per tant, si no estem segurs de trobar la fila, hauríem d'utilitzar get, a no ser que vulguem provocar l'excepció, clar.</p>
+<p>La càrrega d'objectes s'aconsegueix amb els mètodes <strong>load()</strong> i <strong>get()</strong>. Són similars excepte en una qüestió: el primer dóna un error si no es troba la fila, mentre que el segon contindrà null. A més en les últimes versions <strong>load </strong>està <strong>deprecated</strong>, així que millor uilitzar <strong>get <br /></strong></p>
 <p>Tant si utilitzem un com l'altre, haurem d'especificar 2 paràmetres: la <strong>classe</strong> que volem buscar, i el <strong>valor</strong> de la clau principal de qui volem trobar. <strong>Aquest valor s'ha de passar amb el mateix tipus que la propietat corresponent a la clau principal</strong>, i en moltes ocasions haurem de canviar de tipus (<strong>cast</strong>). En el següent exemple, molt paregut al ja utilitzat anteriorment en <strong>SegonAcces</strong>, trobem la comarca <strong>Alt Maestrat</strong> (valor de <strong>nom_c</strong>, que correspon a la clau principal). En aquesta ocasió no cal canviar de tipus, ja que és string:</p>
 <div class="highlighted-code language-java line-numbers hightlight-3">
 <div>
 <pre><code>	val sessio = Configuration().configure().buildSessionFactory().openSession()
 	
-	val com = sessio.load("classes.Comarca","Alt Maestrat") as Comarca	// càrrega amb mètode load()
+	val com = sessio.get("classes.Comarca","Alt Maestrat") as Comarca	// càrrega amb mètode load()
 	
 	println("Comarca " + com.nomC + ": " + com.provincia)
 	sessio.close()</code></pre>
@@ -120,7 +120,7 @@ import java.util.logging.LogManager
 fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
-    val com = sessio.load("classes.Comarca", "Alcalatén") as Comarca
+    val com = sessio.get("classes.Comarca", "Alcalatén") as Comarca
     print("La comarca " + com.nomC)
     print(" (província de " + com.provincia + ") ")
     println("té " + com.poblacions.size + " pobles")
@@ -145,7 +145,7 @@ fun main(args: Array&lt;String&gt;) {
 </ul>
 <div class="highlighted-code language-java">
 <div>
-<pre style="padding-left: 60px;"><code>for (p in com.poblacios!!) {
+<pre style="padding-left: 60px;"><code>for (p in com.poblacions!!) {
 		println(p.nom + " (" + p.poblacio + " habitants)")
 }</code></pre>
 </div>
@@ -155,7 +155,7 @@ fun main(args: Array&lt;String&gt;) {
 </ul>
 <div class="highlighted-code language-java">
 <div>
-<pre><code>	com.poblacios!!.forEach { 
+<pre><code>	com.poblacions!!.forEach { 
 		println(it.nom + " (" + it.poblacio + " habitants)")
 	}
 </code></pre>
@@ -176,7 +176,7 @@ import java.util.logging.LogManager
 fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
-    val com = sessio.load("classes.Comarca", "Alcalatén") as Comarca
+    val com = sessio.get("classes.Comarca", "Alcalatén") as Comarca
     print("La comarca " + com.nomC)
     print(" (província de " + com.provincia + ") ")
     println("té " + com.poblacions.size + " pobles")
@@ -201,7 +201,7 @@ fun main(args: Array&lt;String&gt;) {
 </div>
 <p>Com veieu apareixen tots els pobles de la comarca que hem llegit, però com és un conjunt (Set) no podem assegurar l'ordre. De fet, podria ser que a cadascú de nosaltres li apareguen els pobles en ordre distint.</p>
 <p>Estaria bé que aparegueren ordenats. Sempre ho podríem fer per mig d'una consulta i ordenar pel nom de la població com veurem més avant. Però si ens interessa que els pobles apareguen sempre ordenats, podem fer una altra cosa: modificant el fitxer de mapatge, li podem dir que ens apareguen sempre ordenats per un camp. Ho havíem comentat en la pregunta 7, i ara anem a aplicar-lo.</p>
-<p>Per mig d'una senzilla indicació en el fitxer de mapatge <strong>Comarca.hbm.xml</strong>, podem fer que les dades ens vinguen ordenades, és a dir, que les poblacions d'una comarca ens vinguen per ordre alfabètic. Senzillament serà posar <strong>order-by="nom"</strong> en la definició del <strong>set </strong><strong>poblacios</strong>.</p>
+<p>Per mig d'una senzilla indicació en el fitxer de mapatge <strong>Comarca.hbm.xml</strong>, podem fer que les dades ens vinguen ordenades, és a dir, que les poblacions d'una comarca ens vinguen per ordre alfabètic. Senzillament serà posar <strong>order-by="nom"</strong> en la definició del <strong>set </strong><strong>poblacions</strong>.</p>
 <p>És a dir hauríem de substituir la línia</p>
 <p class="codi2">        &lt;set name="poblacions" inverse="true"&gt;</p>
 <p>per</p>
