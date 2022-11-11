@@ -73,11 +73,16 @@
 <div id="ta24_1" class="block iDevice_content">
 <p>Hem vist com podem accedir molt còmodament a les classes que equivalen a una taula. Però en moltes ocasions ens farà falta accedir no exactament a una taula sinó a una combinació de taules, o en definitiva voldrem informació més elaborada. Per a poder "interrogar" a la Base de Dades amb consultes més complexes, Hibernate suporta un llenguatge de consulta Orientat a Objectes anomenat <strong>HQL</strong> (<em><strong>Hibernate Query Language</strong></em>), molt paregut a SQL ja que és una extensió Orientada a Objectes d'aquest.</p>
 <p>En aquest sentit s'ha intentat fer un estàndar de llenguatge de consulta anomenat <strong>OQL</strong> (<em><strong>Object Query Language</strong></em>), desenvolupat per un grup amb ànim de crear un estàndar <strong>ODMG</strong> (Object Data Management Group). Aquest estàndar no l'ha implementat al 100% cap producte comercial, i en realitat tenim subconjunts d'aquest estàndar.</p>
-<p>Utilitzarem la classe <strong>Query</strong>, i invocarem al mètode <strong>createQuery()</strong> de <strong>Session</strong>, que justament torna una Query. Aquest seria un exemple:</p>
+<p>Utilitzarem la classe <strong>Query</strong>, i invocarem al mètode <strong>createQuery()</strong> de <strong>Session</strong>, que justament torna una Query. Aquest seria un exemple. Observeu que com a primer paràmetre se li passa la sentència, i com a segon paràmetre el tipus que torna; com que les classes no les hem traduïdes a Kotlin, hem d'especificar que són de Java:</p>
 <div class="codi2">
 <div> </div>
-<div>val q = sessio.createQuery("from Comarca")</div>
+<div>val q = sessio.createQuery("from Comarca", Comarca::class.java)</div>
 <div> </div>
+</div>
+<p></p>
+<div class="nota_blau">
+<p><b><u>Nota</u></b></p>
+<p>Abans no calia el segon paràmetre, però des de la versió d'<strong>Hibernate 6</strong>, marca com a <strong>deprecated</strong> el <strong>createQuery </strong>si no es posa aquest segon paràmetre</p>
 </div>
 <p>Per a recuperar les dades tenim dues possibilitats, utilitzant dos mètodes de la query:</p>
 <ul>
@@ -97,13 +102,13 @@ import java.util.logging.LogManager
 fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
-    val q = sessio.createQuery ("from Comarca")
+    val q = sessio.createQuery ("from Comarca", Comarca::class.java)
 
     val llista = q.list ()
 
     val it = llista.iterator ()
     while (it.hasNext()) {
-        val com = it.next() as Comarca
+        val com = it.next() // no fa falta fer un casting perquè ja sap que és Comarca
         println(com.nomC + " - " + com.provincia)
     }
     sessio.close()
@@ -126,10 +131,9 @@ import java.util.logging.LogManager
 fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
-    val q = sessio.createQuery ("from Comarca")
+    val q = sessio.createQuery ("from Comarca", Comarca::class.java)
 
     for (c in q.list()) {
-        c as Comarca
         println(c.nomC + " --- " + c.provincia)
     }
 
@@ -157,7 +161,7 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
 
-    val d = sessio.createQuery ("from Comarca where nomC='Alcalatén'").uniqueResult() as Comarca
+    val d = sessio.createQuery ("from Comarca where nomC='Alcalatén'",Comarca::class.java).uniqueResult()
 
     println(d.nomC + " - " + d.provincia)
 
@@ -165,7 +169,7 @@ fun main(args: Array&lt;String&gt;) {
 }</code></pre>
 </div>
 </div>
-<p>Però en realitat en aquest exemple poca cosa hem guanyat, perquè per a agafar l'objecte corresponent a una única fila d'una taula, ja ho féiem amb <strong>session.load()</strong>. Més endavant veurem consultes més complicades on trobarem la utilitat.</p>
+<p>Però en realitat en aquest exemple poca cosa hem guanyat, perquè per a agafar l'objecte corresponent a una única fila d'una taula, ja ho féiem amb <strong>session.get()</strong>. Més endavant veurem consultes més complicades on trobarem la utilitat.</p>
 </div>
 </div>
 </div>

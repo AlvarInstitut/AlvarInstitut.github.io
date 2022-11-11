@@ -83,7 +83,9 @@
 <div id="ta29_1" class="block iDevice_content">
 <p class="titolet">Consultes que tornen més d'un objecte dels definits</p>
 <p>Són consultes en les quals hi haurà una reunió de taules (millor dit, de les classes equivalents), i es tornen tots els camps (totes les propietats).</p>
-<p>Podríem definir-nos una classe que englobara totes les propietats de tots els objectes, però hi ha una solució més ràpida. Els resultats s'obtenen en un <strong>array d'objectes</strong>, on el primer objecte serà l'equivalent de la primera taula, el segon l'equivalent de la segona, etc. Aquest exemple, on traurem el nomde la comarca i la província, és només il·lustratiu. Està clar que es pot fer molt més curt i senzill agafant únicament les Poblacions i a partir d'elles traure la comarca. Copieu el següent codi al fitxer <strong>Exemple_41_ConsultaComplexa1.kt</strong> :</p>
+<p>Podríem definir-nos una classe que englobara totes les propietats de tots els objectes, però hi ha una solució més ràpida. Els resultats s'obtenen en un <strong>array d'objectes</strong>, on el primer objecte serà l'equivalent de la primera taula, el segon l'equivalent de la segona, etc.</p>
+<p>Per tant, la classe que posem com a segon paràmetre del <strong>createQuery</strong> sera <strong>Array::class.java</strong>.</p>
+<p>Aquest exemple, on traurem el nom de la comarca i la província, és només il·lustratiu. Està clar que es pot fer molt més curt i senzill agafant únicament les Poblacions i a partir d'elles traure la comarca. Copieu el següent codi al fitxer <strong>Exemple_41_ConsultaComplexa1.kt</strong> :</p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>package exemples
@@ -98,10 +100,9 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
 
-    val q = sessio.createQuery("from Poblacio p, Comarca c where p.comarca.nomC=c.nomC order by p.nom")
+    val q = sessio.createQuery("from Poblacio p, Comarca c where p.comarca.nomC=c.nomC order by p.nom", Array::class.java)
 
     for(tot in q.list()) {
-        tot as Array&lt;Object&gt;
         val p = tot[0] as Poblacio
         val c = tot[1] as Comarca
         println(p.nom + " (" + c.nomC + ". " + c.provincia + ")")
@@ -120,7 +121,9 @@ fun main(args: Array&lt;String&gt;) {
 <div class="iDevice emphasis0">
 <div id="ta30_1" class="block iDevice_content">
 <p class="titolet">Consultes que tornen un únic valor</p>
-<p>Aquest és el cas més senzill, ja que el valor tornat el podem agafar del tipus bàsic del valor tornat. Normalment és després d'utilitzar una funció de grup. Recordem que ha de tornar un únic valor (una única fila i una única columna, per dir-lo així). Haurem d'utilitzar el mètode <strong>uniqueResult()</strong> ja comentat amb anterioritat. L'exemple serà per a calcular l'altura mitjana de totes les poblacions. Copieu el següent codi al fitxer Kotlin <strong>Exemple_42_ConsultaComplexa2.kt</strong> :</p>
+<p>Aquest és el cas més senzill, ja que el valor tornat el podem agafar del tipus bàsic del valor tornat. Normalment és després d'utilitzar una funció de grup. Recordem que ha de tornar un únic valor (una única fila i una única columna, per dir-lo així).</p>
+<p>La classe que posem com a segon paràmetre del <strong>createQuery </strong>harà de ser la del valor tornat. En aquest cas que calculem la mitjana, a classe oportuna serà <strong>Double</strong>. Si comptàrem, per exemple, seria <strong>Long</strong>.</p>
+<p>Haurem d'utilitzar el mètode <strong>uniqueResult()</strong> ja comentat amb anterioritat. L'exemple serà per a calcular l'altura mitjana de totes les poblacions. Copieu el següent codi al fitxer Kotlin <strong>Exemple_42_ConsultaComplexa2.kt</strong> :</p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>package exemples
@@ -133,7 +136,7 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
 
-    val q = sessio.createQuery("select avg(altura) from Poblacio")
+    val q = sessio.createQuery("select avg(altura) from Poblacio",Double::class.java)
 
     val mitjana = q.uniqueResult ()
 
@@ -168,16 +171,15 @@ fun main(args: Array&lt;String&gt;) {
             + "from Comarca c , Poblacio p "
             + "where c.nomC=p.comarca.nomC "
             + "group by c.nomC "
-            + "order by c.nomC");
+            + "order by c.nomC", Array::class.java);
     for (tot in q.list()){
-        tot as Array&lt;Object&gt;
         println("Comarca: " + tot[0] + ". Núm. pobles: " + tot[1] + ". Altura mitjana: " + tot[2]);
     }
     sessio.close()
 }</code></pre>
 </div>
 </div>
-<p>Només hem d'anar amb compte amb el tipus <strong>Array&lt;Object&gt;</strong>.</p>
+<p>Només hem d'anar amb compte amb posar com a segon paràmetre de <strong>createQuery </strong>el tipus <strong>Array::class.java</strong>.</p>
 </div>
 </div>
 </div>

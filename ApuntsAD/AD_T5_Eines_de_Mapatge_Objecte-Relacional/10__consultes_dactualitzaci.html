@@ -71,8 +71,10 @@
 <div class="iDevice_wrapper FreeTextIdevice" id="id32">
 <div class="iDevice emphasis0">
 <div id="ta32_1" class="block iDevice_content">
-<p>Aquesta pregunta no té tanta importància com les altres, ja que actualitzacions ja sabíem fer amb els mètodes <strong>save()</strong>, <strong>delete()</strong> i <strong>update()</strong> de la sessió.</p>
-<p>Pràcticament l'única utilitat serà fer actualitzacions massives, que afecten a més d'una fila (millor dit, més d'un objecte). HQL també permet fer-les. Mirem la seua sintaxi:</p>
+<p>Aquesta pregunta no té tanta importància com les altres, ja que actualitzacions ja sabíem fer amb els mètodes <strong>persist()</strong>, <strong>remove()</strong> i <strong>mege()</strong> de la sessió (o els seus equivalents ja deprecated <strong>save()</strong>, <strong>delete()</strong> i <strong>update()</strong> )</p>
+<p>Pràcticament l'única utilitat serà fer actualitzacions massives, que afecten a més d'una fila (millor dit, més d'un objecte). HQL també permet fer-les.</p>
+<p>Lamentablement, aquestes sentències HQL no tornen cap classe, i per tant no podem posar res vàlid en el segon paràmetre de <strong>createQuery()</strong>. Per tant, per a aquest tipus de sentència ens veurem <strong>obligats a utilitzar la versió deprecated de createQuery()</strong>, la que no li posem un segon paràmetre</p>
+<p>Mirem la seua sintaxi:</p>
 <p class="titolet">DELETE</p>
 <div class="codi2">
 <div>DELETE [FROM] NomEntitat</div>

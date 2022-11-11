@@ -72,13 +72,13 @@
 <div class="iDevice emphasis0">
 <div id="ta27_1" class="block iDevice_content">
 <p><strong>createQuery()</strong> admet també la utilització de paràmetres, igual que feia les sentències <strong>PreparedStatement</strong> del tema anterior. La manera de posar-les és prou similar al vist en aquella ocasió. Ara, però, ho ampliarem un poc.</p>
-<p>La manera de posar valor als paràmetres serà utilitzant els mètodes <strong>set<em>Tipus</em>()</strong> que tindran 2 paràmetres, el primer per a assenyalar el paràmetre, i el segon per a indicar el valor. De moment tot igual que en el <strong>PreparedStatement</strong>. </p>
+<p>La manera de posar valor als paràmetres serà utilitzant el mètodes <strong>setParameter()</strong> que tindrà 2 paràmetres, el primer per a assenyalar el paràmetre, i el segon per a indicar el valor. De moment tot igual que en el <strong>PreparedStatement</strong>. </p>
 <p>Però ara veurem 2 maneres de posar paràmetres en la consulta:</p>
 <ul>
-<li>Amb <strong>?i</strong>, utilitzant el mètode <strong>set<em>Tipus</em>(int, <em>valor</em>)</strong> i indicant el número <strong>el mateix que després de la interrogant (la i)</strong>.</li>
-<li>Amb <strong>:<em>nom</em> </strong>, utilitzant el mètode <strong>set<em>Tipus</em>(string, <em>valor</em>)</strong> i indicant el nom del paràmetre</li>
+<li>Amb <strong>?i</strong>, utilitzant el mètode <strong>setParameter(int, <em>valor</em>)</strong> i indicant el número <strong>el mateix que després de la interrogant (la i)</strong>.</li>
+<li>Amb <strong>:<em>nom</em> </strong>, utilitzant el mètode <strong>setParameter(string, <em>valor</em>)</strong> i indicant el nom del paràmetre</li>
 </ul>
-<p>Ho veurem molt més clar en un exemple, millor dit, en dues versions del mateix exemple. Intentarem traure les poblacions d'una determinada comarca, que tenen una altura determinada o major. I aquestos dos valors els posarem coma paràmetres, i així podrem practicar les dues formes. Els valors que posarem per a la comarca serà <strong>Alcalatén</strong>, i l'altura <strong>500</strong></p>
+<p>Ho veurem molt més clar en un exemple, millor dit, en dues versions del mateix exemple. Intentarem traure les poblacions d'una determinada comarca, que tenen una altura determinada o major. I aquestos dos valors els posarem com a paràmetres, i així podrem practicar les dues formes. Els valors que posarem per a la comarca serà <strong>Alcalatén</strong>, i l'altura <strong>500</strong></p>
 <p>En aquesta primera versió assenyalem els paràmetres amb <strong>?i</strong> a l'estil de <strong>JDBC</strong>. Copieu el següent codi al fitxer <strong>Exemple_31_ConsultesAmbParametres1.kt</strong></p>
 <div class="highlighted-code language-java">
 <div>
@@ -93,9 +93,9 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
 
-    val q = sessio.createQuery("from Poblacio where altura&gt;=?1 and comarca.nomC=?2")
-    q.setInteger(1, 500)
-    q.setString(2, "Alcalatén")
+    val q = sessio.createQuery("from Poblacio where altura&gt;=?1 and comarca.nomC=?2", Poblacio::class.java)
+    q.setParameter(1, 500)
+    q.setParameter(2, "Alcalatén")
 
     for (p in q.list()) {
         p as Poblacio
@@ -106,8 +106,11 @@ fun main(args: Array&lt;String&gt;) {
 }</code></pre>
 </div>
 </div>
-<p>Marca com a deprecated els mètodes <strong>setInteger()</strong> i <strong>setString()</strong></p>
-<p>En la segona posem els paràmetres de l'altra manera. I aprofitem també per a posar el nou mètode <strong>setParameter()</strong>, Opcionalment li podríem dir també el tipus de dades, però com veieu amb aquest exemple, no cal. Copieu el següent codi al fitxer <strong>Exemple_32_ConsultesAmbParametres2.kt</strong></p>
+<div class="nota_blau">
+<p><strong><u>Nota</u></strong><br /><strong></strong></p>
+<p>En versions anteriors a banda de <strong>setParameter()</strong> s'utilitzaven els mètodes <strong>setInteger()</strong>, <strong>setString()</strong>... però des de la versió 6 d'Hibernate ja no existeixen</p>
+</div>
+<p>En la segona posem els paràmetres de l'altra manera. Copieu el següent codi al fitxer <strong>Exemple_32_ConsultesAmbParametres2.kt</strong></p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>package exemples
@@ -121,7 +124,7 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
 
-    val q = sessio.createQuery("from Poblacio where altura&gt;=:alt and comarca.nomC=:com")
+    val q = sessio.createQuery("from Poblacio where altura&gt;=:alt and comarca.nomC=:com", Poblacio::class.java)
     q.setParameter("alt",500)
     q.setParameter("com","Alcalatén")
     for (p in q.list()) {

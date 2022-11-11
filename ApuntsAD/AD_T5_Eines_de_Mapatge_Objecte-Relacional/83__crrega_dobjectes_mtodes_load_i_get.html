@@ -71,7 +71,7 @@
 <div class="iDevice_wrapper FreeTextIdevice" id="id19">
 <div class="iDevice emphasis0">
 <div id="ta19_1" class="block iDevice_content">
-<p>La càrrega d'objectes s'aconsegueix amb els mètodes <strong>load()</strong> i <strong>get()</strong>. Són similars excepte en una qüestió: el primer dóna un error si no es troba la fila, mentre que el segon contindrà null. A més en les últimes versions <strong>load </strong>està <strong>deprecated</strong>, així que millor uilitzar <strong>get <br /></strong></p>
+<p>La càrrega d'objectes s'aconsegueix amb els mètodes <strong>load()</strong> i <strong>get()</strong>. Són similars excepte en una qüestió: el primer dóna un error si no es troba la fila, mentre que el segon contindrà null. A més a partir d'Hibernate 6.0 <strong>load </strong>està <strong>deprecated</strong>, així que millor uilitzar <strong>get</strong> .<strong><br /></strong></p>
 <p>Tant si utilitzem un com l'altre, haurem d'especificar 2 paràmetres: la <strong>classe</strong> que volem buscar, i el <strong>valor</strong> de la clau principal de qui volem trobar. <strong>Aquest valor s'ha de passar amb el mateix tipus que la propietat corresponent a la clau principal</strong>, i en moltes ocasions haurem de canviar de tipus (<strong>cast</strong>). En el següent exemple, molt paregut al ja utilitzat anteriorment en <strong>SegonAcces</strong>, trobem la comarca <strong>Alt Maestrat</strong> (valor de <strong>nom_c</strong>, que correspon a la clau principal). En aquesta ocasió no cal canviar de tipus, ja que és string:</p>
 <div class="highlighted-code language-java line-numbers hightlight-3">
 <div>

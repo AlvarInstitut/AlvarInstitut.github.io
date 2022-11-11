@@ -73,7 +73,11 @@
 <div id="ta21_1" class="block iDevice_content">
 <p>En totes aquestes operacions d'actualització, recordem que farà falta posar-les en una <strong>transacció</strong> per a que tinguen efecte.</p>
 <p class="titolet">Inserció</p>
-<p>Es fa amb el mètode <strong>save()</strong> de la sessió, passant-li l'objecte que volem guardar. Posem el mateix exemple d'apartats anteriors:. Copieu l'exemple en un fitxer anomenat <strong>Exemple_11_Insercio.kt</strong> :</p>
+<div class="nota_blau">
+<p><b><u>Nota</u></b></p>
+<p>A partir de la versió 6.0 d'Hibernate, <strong>save()</strong> està deprecated, en favor de <strong>persist()</strong></p>
+</div>
+<p>Es fa amb els mètodes <strong>save()</strong> o <strong>persist() </strong>de la sessió, passant-li l'objecte que volem guardar. Posem el mateix exemple de l'apartat 8.1, el d'inserir una comarca. Copieu l'exemple en un fitxer anomenat <strong>Exemple_11_Insercio.kt</strong> :</p>
 <div class="highlighted-code language-java line-numbers hightlight-17">
 <div>
 <pre><code>package exemples
@@ -92,7 +96,7 @@ fun main(args: Array&lt;String&gt;) {
     com.nomC = "Columbretes"
     com.provincia = "Castelló"
 
-    sessio.save(com)
+    sessio.persist(com)
 
     t.commit()
     sessio.close()
@@ -103,7 +107,11 @@ fun main(args: Array&lt;String&gt;) {
 <p style="text-align: center;"><img src="T5_8_4_1.png" alt="" width="378" height="484" /></p>
 <p>I evidentment ho podríem comprovar des de <strong>DBeaver</strong></p>
 <p class="titolet">Esborrat</p>
-<p>Amb el mètode <strong>delete</strong>, passant-li com a paràmetre l'objecte. Prèviament s'ha d'haver carregar l'objecte amb els mètodes <strong>load() </strong>o <strong>get()</strong>. Copieu el següent exemple en el fitxer <strong>Exemple_12_Esborrat.kt</strong>:</p>
+<div class="nota_blau">
+<p><b><u>Nota</u></b></p>
+<p>A partir de la versió 6.0 d'Hibernate, <strong>delete()</strong> està deprecated, en favor de <strong>remove()</strong></p>
+</div>
+<p>Amb els mètodes <strong>delete </strong>o <strong>remove</strong>, passant-li com a paràmetre l'objecte. Prèviament s'ha d'haver carregar l'objecte amb els mètodes <strong>load() </strong>o <strong>get()</strong>. Copieu el següent exemple en el fitxer <strong>Exemple_12_Esborrat.kt</strong>:</p>
 <div class="highlighted-code language-java line-numbers hightlight-13">
 <div>
 <pre><code>package exemples
@@ -116,9 +124,9 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
     val t = sessio.beginTransaction()
-    val com = sessio.load("classes.Comarca", "Columbretes")
+    val com = sessio.get("classes.Comarca", "Columbretes")
 
-    sessio.delete(com)
+    sessio.remove(com)
 
     t.commit()
     sessio.close()
@@ -127,7 +135,11 @@ fun main(args: Array&lt;String&gt;) {
 </div>
 <p> </p>
 <p class="titolet">Modificació</p>
-<p>Amb el mètode <strong>update()</strong>, passant-li com a paràmetre l'objecte. Prèviament haurà d'haver estat carregat amb els mètodes <strong>load()</strong> o <strong>get()</strong>, igual que en el cas d'esborrar.</p>
+<div class="nota_blau">
+<p><b><u>Nota</u></b></p>
+<p>A partir de la versió 6.0 d'Hibernate, <strong>update()</strong> està deprecated, en favor de <strong>merge()</strong></p>
+</div>
+<p>Amb el mètode <strong>update() </strong>o <strong>merge()</strong>, passant-li com a paràmetre l'objecte. Prèviament haurà d'haver estat carregat amb els mètodes <strong>load()</strong> o <strong>get()</strong>, igual que en el cas d'esborrar.</p>
 <p>En el següent exemple estem canviant la província del Camp de Morvedre. Per a que no tinga efecte aquest canvi, i no modificar les dades que està utilitzant la resta de companys, observeu com al final estem fent un <strong>rollback</strong>. Copieu el següent en el fitxer <strong>Exemple_13_M</strong><strong>odificacio.kt </strong>:</p>
 <div class="highlighted-code language-java line-numbers hightlight-15and17">
 <div>
@@ -142,10 +154,10 @@ fun main(args: Array&lt;String&gt;) {
     LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
     val sessio = Configuration().configure().buildSessionFactory().openSession()
     val t = sessio.beginTransaction()
-    val com = sessio.load("classes.Comarca", "Camp de Morvedre") as Comarca
+    val com = sessio.get("classes.Comarca", "Camp de Morvedre") as Comarca
     com.provincia = "Castelló"
 
-    sessio.update(com)
+    sessio.merge(com)
 
     t.rollback()
 
@@ -153,7 +165,7 @@ fun main(args: Array&lt;String&gt;) {
 }</code></pre>
 </div>
 </div>
-<p>El mètode <strong>update()</strong> és específic per a fer actualitzacions d'un objecte que ja existia a la Base de Dades. Però també podríem utilitzar <strong>save()</strong>. És a dir, <strong>save()</strong> sempre funciona. Si no existeix l'objecte el crea (crea les files oportunes a la Base de Dades), i si ja existia, l'actualitza. En canvi <strong>update()</strong> només funciona amb actualitzacions.</p>
+<p>En realitat tant el mètode <strong>persist()</strong> com el mètode <strong>merge()</strong> serveixen tant per a actualitzar un objecte ja existent (que ja era persistent) com per a crear-ne un nou si no existia.</p>
 </div>
 </div>
 </div>
