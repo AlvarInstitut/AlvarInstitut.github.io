@@ -152,7 +152,7 @@ text through the text editing buttons associated with the field."></unicode>
                <instance class="exe.engine.field.TextField">
                 <dictionary>
                  <string role="key" value="_id"></string>
-                 <int value="3865"></int>
+                 <int value="3903"></int>
                  <string role="key" value="_idevice"></string>
                  <none></none>
                  <string role="key" value="_instruc"></string>
@@ -166,7 +166,7 @@ text through the text editing buttons associated with the field."></unicode>
                 </dictionary>
                </instance>
                <string role="key" value="_id"></string>
-               <unicode value="0_1.102"></unicode>
+               <unicode value="0_1.104"></unicode>
                <string role="key" value="_imageResource"></string>
                <instance class="exe.engine.resource.Resource" reference="5">
                 <dictionary>
@@ -177,7 +177,7 @@ text through the text editing buttons associated with the field."></unicode>
                  <string role="key" value="_storageName"></string>
                  <string value="T5_Portada.png"></string>
                  <string role="key" value="_userName"></string>
-                 <string value="/tmp/tmp4Erftk/T5_Portada.png"></string>
+                 <string value="/tmp/tmpFvzPg2/T5_Portada.png"></string>
                  <string role="key" value="checksum"></string>
                  <string value="2f8aeca9d8f2efa1f4ae07a7fe850d18"></string>
                  <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -206,7 +206,7 @@ text through the text editing buttons associated with the field."></unicode>
           <string role="key" value="intlinks_to_anchors"></string>
           <dictionary></dictionary>
           <string role="key" value="nextImageId"></string>
-          <int value="103"></int>
+          <int value="105"></int>
           <string role="key" value="parentNode"></string>
           <reference key="4"></reference>
          </dictionary>
@@ -449,7 +449,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="3850"></int>
+                    <int value="3888"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -463,7 +463,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="2_1.101"></unicode>
+                  <unicode value="2_1.103"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="12">
                    <dictionary>
@@ -474,7 +474,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T5_2_1.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp4Erftk/T5_2_1.png"></string>
+                    <string value="/tmp/tmpFvzPg2/T5_2_1.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="2e64371ec3d38608bd6d6356c92c0444"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -503,7 +503,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="102"></int>
+             <int value="104"></int>
              <string role="key" value="parentNode"></string>
              <reference key="11"></reference>
             </dictionary>
@@ -1050,7 +1050,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="3852"></int>
+                    <int value="3890"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -1064,7 +1064,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="8_1.101"></unicode>
+                  <unicode value="8_1.103"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="25">
                    <dictionary>
@@ -1075,7 +1075,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T5_4_2.jpg"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp4Erftk/T5_4_2.jpg"></string>
+                    <string value="/tmp/tmpFvzPg2/T5_4_2.jpg"></string>
                     <string role="key" value="checksum"></string>
                     <string value="c01846a4e974bd8d947c44f1094b42c0"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1104,7 +1104,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="102"></int>
+             <int value="104"></int>
              <string role="key" value="parentNode"></string>
              <reference key="24"></reference>
             </dictionary>
@@ -1263,7 +1263,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="3853"></int>
+                    <int value="3891"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -1277,7 +1277,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="9_1.283"></unicode>
+                  <unicode value="9_1.289"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="29">
                    <dictionary>
@@ -1288,7 +1288,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T5_5_1.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp4Erftk/T5_5_1.png"></string>
+                    <string value="/tmp/tmpFvzPg2/T5_5_1.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="1a3941bd258e1ea2b1d04083105d1e09"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1315,7 +1315,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="3859"></int>
+                    <int value="3897"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -1329,7 +1329,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="9_1.284"></unicode>
+                  <unicode value="9_1.290"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="30">
                    <dictionary>
@@ -1340,7 +1340,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T5_5_2.1.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp4Erftk/T5_5_2.1.png"></string>
+                    <string value="/tmp/tmpFvzPg2/T5_5_2.1.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="31c9a2070f8f61bf9b81dc3ed936a5c7"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1367,7 +1367,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="3863"></int>
+                    <int value="3901"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -1381,7 +1381,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="9_1.285"></unicode>
+                  <unicode value="9_1.291"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="31">
                    <dictionary>
@@ -1392,7 +1392,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T5_5_3.1.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp4Erftk/T5_5_3.1.png"></string>
+                    <string value="/tmp/tmpFvzPg2/T5_5_3.1.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="977fa6508c0c95278888670edb3d0b66"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1421,7 +1421,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="286"></int>
+             <int value="292"></int>
              <string role="key" value="parentNode"></string>
              <reference key="28"></reference>
             </dictionary>
@@ -1544,7 +1544,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="3858"></int>
+                       <int value="3896"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1558,7 +1558,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="11_1.347"></unicode>
+                     <unicode value="11_1.353"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="35">
                       <dictionary>
@@ -1569,7 +1569,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T5_5_1_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp4Erftk/T5_5_1_2.png"></string>
+                       <string value="/tmp/tmpFvzPg2/T5_5_1_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="06692625ef461790b5926be94f6ae86e"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1596,7 +1596,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="3862"></int>
+                       <int value="3900"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1610,7 +1610,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="11_1.348"></unicode>
+                     <unicode value="11_1.354"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="36">
                       <dictionary>
@@ -1621,7 +1621,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T5_5_1_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp4Erftk/T5_5_1_1.png"></string>
+                       <string value="/tmp/tmpFvzPg2/T5_5_1_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="784de883a7ed08d4b5a41ba45bf15c96"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1648,7 +1648,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="3866"></int>
+                       <int value="3904"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1662,7 +1662,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="11_1.349"></unicode>
+                     <unicode value="11_1.355"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="37">
                       <dictionary>
@@ -1673,7 +1673,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T5_5_1_3.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp4Erftk/T5_5_1_3.png"></string>
+                       <string value="/tmp/tmpFvzPg2/T5_5_1_3.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="cf14390307371a8864980ca3d3f2e953"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1702,7 +1702,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="350"></int>
+                <int value="356"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="34"></reference>
                </dictionary>
@@ -1879,7 +1879,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="3854"></int>
+                       <int value="3892"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1893,7 +1893,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="12_1.107"></unicode>
+                     <unicode value="12_1.111"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="41">
                       <dictionary>
@@ -1904,7 +1904,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                        <string role="key" value="_storageName"></string>
                        <string value="T5_5_2_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp4Erftk/T5_5_2_1.png"></string>
+                       <string value="/tmp/tmpFvzPg2/T5_5_2_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="bcdabdc38943cf11f5136a19277fd26c"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1931,7 +1931,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="3860"></int>
+                       <int value="3898"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1945,7 +1945,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="12_1.108"></unicode>
+                     <unicode value="12_1.112"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="42">
                       <dictionary>
@@ -1956,7 +1956,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                        <string role="key" value="_storageName"></string>
                        <string value="T5_5_2_3.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp4Erftk/T5_5_2_3.png"></string>
+                       <string value="/tmp/tmpFvzPg2/T5_5_2_3.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="dc35764e2c346e2502ba4f1a6f77efaf"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1985,7 +1985,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="109"></int>
+                <int value="113"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="40"></reference>
                </dictionary>
@@ -2370,7 +2370,7 @@ text through the text editing buttons associated with the field."></unicode>
                   <instance class="exe.engine.field.TextField">
                    <dictionary>
                     <string role="key" value="_id"></string>
-                    <int value="3857"></int>
+                    <int value="3895"></int>
                     <string role="key" value="_idevice"></string>
                     <none></none>
                     <string role="key" value="_instruc"></string>
@@ -2384,7 +2384,7 @@ text through the text editing buttons associated with the field."></unicode>
                    </dictionary>
                   </instance>
                   <string role="key" value="_id"></string>
-                  <unicode value="14_1.104"></unicode>
+                  <unicode value="14_1.106"></unicode>
                   <string role="key" value="_imageResource"></string>
                   <instance class="exe.engine.resource.Resource" reference="49">
                    <dictionary>
@@ -2395,7 +2395,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="_storageName"></string>
                     <string value="T5_7_1.png"></string>
                     <string role="key" value="_userName"></string>
-                    <string value="/tmp/tmp4Erftk/T5_7_1.png"></string>
+                    <string value="/tmp/tmpFvzPg2/T5_7_1.png"></string>
                     <string role="key" value="checksum"></string>
                     <string value="3192c3691ddd9931f64f10d6c0850ce8"></string>
                     <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -2424,7 +2424,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="intlinks_to_anchors"></string>
              <dictionary></dictionary>
              <string role="key" value="nextImageId"></string>
-             <int value="105"></int>
+             <int value="107"></int>
              <string role="key" value="parentNode"></string>
              <reference key="48"></reference>
             </dictionary>
@@ -3592,7 +3592,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="3864"></int>
+                       <int value="3902"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -3606,7 +3606,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="21_1.127"></unicode>
+                     <unicode value="21_1.129"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="70">
                       <dictionary>
@@ -3617,7 +3617,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                        <string role="key" value="_storageName"></string>
                        <string value="T5_8_4_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmp4Erftk/T5_8_4_1.png"></string>
+                       <string value="/tmp/tmpFvzPg2/T5_8_4_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="7e5bb1c6beda01dde9e265f638e4700e"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -3646,7 +3646,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="128"></int>
+                <int value="130"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="69"></reference>
                </dictionary>
@@ -5247,26 +5247,110 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="content_w_resourcePaths"></string>
              <unicode content="true" value="&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: #ff0000; font-size: 18pt;&quot;&gt;&lt;strong&gt;VOLUNTARI&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Durant aquest tema, i també en els exercicis, hem treballat sobre projectes en els quals a partir de les taules d'una Base de Dades ja creada en qualsevol Sistema Gestor de Bases de Dades (excepte SQLite) hem generat les classes. Funciona molt bé aquesta generació de classes amb Hibernate.&lt;/p&gt;
-&lt;p&gt;També és possible el procés invers, és a dir, &lt;strong&gt;generar les taules&lt;/strong&gt; en una Base de Dades &lt;strong&gt;a partir de les classes&lt;/strong&gt; creades en un projecte. Veurem un exemple molt senzill de com és possible. Tanmateix hem de dir ja que aquesta manera de funcionar no és tan efectiva com la inversa, i si l'estructura de classes és complexa, podem tenir problemes per a generar les taules. Per això l'exemple que posarem és molt senzill. I les classes estaran escrites en Java, no en Kotlin.&lt;/p&gt;
+&lt;p&gt;També és possible el procés invers, és a dir, &lt;strong&gt;generar les taules&lt;/strong&gt; en una Base de Dades &lt;strong&gt;a partir de les classes&lt;/strong&gt; creades en un projecte. Veurem un exemple molt senzill de com és possible. Tanmateix hem de dir ja que aquesta manera de funcionar no és tan efectiva com la inversa, i si l'estructura de classes és complexa, podem tenir problemes per a generar les taules. Per això l'exemple que posarem és molt senzil.&lt;/p&gt;
 &lt;p&gt;Aquesta pregunta és totalment voluntària. Si no teniu ganes o temps, no fa falta que feu l'exemple mostrat a continuació. El que sí que és obligatori és la generació de classes a partir de les taules, vist anteriorment.&lt;/p&gt;
-&lt;p&gt;L'exemple que intentarem implementar és una part de l'exemple de la biblioteca, vist ja en el tema 4. Només treballarem sobre 2 classes &lt;strong&gt;Editorial&lt;/strong&gt; i &lt;strong&gt;Llibre&lt;/strong&gt;, i fins i tot no posarem totes les propietats, ja que si ho posàrem tot, segurament ens donaria problemes a l'hora de la generació de taules.&lt;/p&gt;
+&lt;p&gt;L'exemple que intentarem implementar és una part de l'exemple de la biblioteca, vist ja en el tema 4. Només treballarem sobre 2 classes &lt;strong&gt;Editorial&lt;/strong&gt; i &lt;strong&gt;Llibre&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Aquestes són les classes, millor dit les propietats de les classes, com veieu amb una estructura molt senzilla:&lt;/p&gt;
-&lt;table style=&quot;width: 620.767px;&quot; height=&quot;146&quot; border=&quot;1&quot; bgcolor=&quot;#FFFFFF&quot; align=&quot;center&quot;&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: center; width: 276px;&quot;&gt;&lt;strong&gt;classe Editorial&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align: center; width: 267.767px;&quot;&gt;&lt;strong&gt;classe Llibre&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;width: 276px; padding-left: 30px;&quot;&gt;&lt;strong&gt;public class Editorial {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String codi;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String nom;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String web;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;}&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&quot;width: 267.767px; padding-left: 30px;&quot;&gt;&lt;strong&gt;public class Llibre {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String isbn;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String titol;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    int pagines;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    Editorial editorial;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;}&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Com veieu tenim una propietat en la classe &lt;strong&gt;Llibre&lt;/strong&gt; que és de tipus &lt;strong&gt;Editorial&lt;/strong&gt;, per a marcar l'editorial del llibre. El més lògic seria posar un ArrayList de tipus Llibre en la classe Editorial per a posar tots els llibres de l'editorial. Però açò segurament ens donaria problemes en el moment de la generació de taules. Per tant, farem aquest exemple tan senzill a mode il·lustratiu, i prou.&lt;/p&gt;
-&lt;p&gt;En aquestes classes, com es mostra en el vídeo posterior, s'han d'incorporar els mètodes &lt;strong&gt;get&lt;/strong&gt; i &lt;strong&gt;set&lt;/strong&gt; per a totes les propietats, així com &lt;strong&gt;constructors&lt;/strong&gt;, un sense paràmetres, i un altre amb paràmetres per a inicialitzar totes les propietats.&lt;/p&gt;
-&lt;p&gt;Posteriorment s'han de preparar les classes per a poder generar les taules. Consistirà en un procediment automàtic que s'encarregarà d'agegir les &lt;strong&gt;anotacions&lt;/strong&gt;, que són sentències que Java ignorarà i serveixen per a afegir la informació addicional necessària. Les anotacions comencen sempre per &lt;strong&gt;@&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Després de les anotacions, les classes quedaran així (hem marcat les anotacions en roig):&lt;/p&gt;
+&lt;div class=&quot;highlighted-code language-java&quot;&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code&gt;class Editorial (var codEd: String, var nom: String, var web: String, var llibres: MutableSet&amp;lt;Llibre&amp;gt;)
+
+class Llibre (var isbn: String, var titol: String, var pagines: Int, var editorial: Editorial)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Com veieu tenim una propietat en la classe &lt;strong&gt;Llibre&lt;/strong&gt; que és de tipus &lt;strong&gt;Editorial&lt;/strong&gt;, per a marcar l'editorial del llibre. I en &lt;strong&gt;Editorial&lt;/strong&gt; tenim un &lt;strong&gt;MutableSet&lt;/strong&gt; de tipus &lt;strong&gt;Llibre&lt;/strong&gt; per a posar tots els llibres de l'editorial.&lt;/p&gt;
+&lt;p&gt;La manera de crear les taules és molt senzilla, encara que si comencem de zero és un poc laboriosa, i fa falta comprendre els fitxers de mapatge &lt;strong&gt;hbm.xml&lt;/strong&gt; en profunditat, ja que els construirem nosaltres. Després serà tan senzill com guardar dades, fer-les permanents. Incloent una propietat en el fitxer &lt;strong&gt;hibernate.cfg.xml&lt;/strong&gt; es crearan les taules abans de guardar les dades.&lt;/p&gt;
+&lt;p&gt;Els fitxers de mapatge serien aquestos:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Editorial.hbm.xml&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighted-code language-markup&quot;&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;hibernate-mapping&amp;gt;
+    &amp;lt;class name=&quot;biblio.Editorial&quot; table=&quot;editorial&quot; schema=&quot;public&quot; catalog=&quot;biblio_gen&quot;&amp;gt;
+        &amp;lt;id name=&quot;codEd&quot; column=&quot;cod_ed&quot;/&amp;gt;
+        &amp;lt;property name=&quot;nom&quot; column=&quot;nom&quot;/&amp;gt;
+        &amp;lt;property name=&quot;web&quot; column=&quot;web&quot;/&amp;gt;
+        &amp;lt;set name=&quot;llibres&quot; inverse=&quot;true&quot;&amp;gt;
+            &amp;lt;key&amp;gt;
+                &amp;lt;column name=&quot;cod_ed&quot; not-null=&quot;true&quot;/&amp;gt;
+            &amp;lt;/key&amp;gt;
+            &amp;lt;one-to-many not-found=&quot;ignore&quot; class=&quot;biblio.Llibre&quot;/&amp;gt;
+        &amp;lt;/set&amp;gt;
+    &amp;lt;/class&amp;gt;
+&amp;lt;/hibernate-mapping&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Llibre.hbm.xml&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighted-code language-markup&quot;&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;hibernate-mapping&amp;gt;                                                                  
+    &amp;lt;class name=&quot;biblio.Llibre&quot; table=&quot;llibre&quot; schema=&quot;public&quot; catalog=&quot;biblio_gen&quot;&amp;gt; 
+        &amp;lt;id name=&quot;isbn&quot; column=&quot;isbn&quot;/&amp;gt;                                              
+        &amp;lt;property name=&quot;titol&quot; column=&quot;titol&quot;/&amp;gt;                                      
+        &amp;lt;property name=&quot;pagines&quot; column=&quot;pagines&quot;/&amp;gt;                                  
+        &amp;lt;many-to-one name=&quot;editorial&quot; class=&quot;biblio.Editorial&quot;&amp;gt;                      
+            &amp;lt;column name=&quot;cod_ed&quot; not-null=&quot;true&quot;/&amp;gt;                                  
+        &amp;lt;/many-to-one&amp;gt;                                                               
+    &amp;lt;/class&amp;gt;                                                                         
+&amp;lt;/hibernate-mapping&amp;gt;                                                                 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Evidentment haurem de fer la connexió amb la Base de Dades i incorporar llibreries d'Hibernate, igual com hem fet fins el moment.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Per a aquest exemple, utilitzarem un altra Base de Dades, usuari i contrasenya, també en PostgreSQL. Serà sobre la BD, usuari i contrasenya &lt;strong&gt;biblio_gen&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Una vegada feta la connexió a la Base de Dades, utilitzarem aquest &lt;strong&gt;hibernate.cfg.xml&lt;/strong&gt; :&lt;/p&gt;
+&lt;div class=&quot;highlighted-code language-markup line-numbers&quot;&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version='1.0' encoding='utf-8'?&amp;gt;
+&amp;lt;!DOCTYPE hibernate-configuration PUBLIC
+    &quot;-//Hibernate/Hibernate Configuration DTD//EN&quot;
+    &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&amp;gt;
+&amp;lt;hibernate-configuration&amp;gt;
+  &amp;lt;session-factory&amp;gt;
+    &amp;lt;property name=&quot;connection.url&quot;&amp;gt;jdbc:postgresql://89.36.214.106:5432/biblio_gen&amp;lt;/property&amp;gt;
+    &amp;lt;property name=&quot;connection.driver_class&quot;&amp;gt;org.postgresql.Driver&amp;lt;/property&amp;gt;
+    &amp;lt;property name=&quot;connection.username&quot;&amp;gt;biblio_gen&amp;lt;/property&amp;gt;
+    &amp;lt;property name=&quot;connection.password&quot;&amp;gt;biblio_gen&amp;lt;/property&amp;gt;
+    &amp;lt;!-- DB schema will be updated if needed --&amp;gt;
+    &amp;lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&amp;gt;create&amp;lt;/property&amp;gt;
+    &amp;lt;mapping resource=&quot;Editorial.hbm.xml&quot;/&amp;gt;
+    &amp;lt;mapping resource=&quot;Llibre.hbm.xml&quot;/&amp;gt;
+  &amp;lt;/session-factory&amp;gt;
+&amp;lt;/hibernate-configuration&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Aquest fitxer el podríem haver generat mapejant de la connexió, però sense mapejar les taules, clar, que encara no existeixen. I sobre ell faríem algun canvi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En la línia 12 llavaríem el comentari sobre aquesta propietat. El que li estem dient és que ha de crear les taules (té l'inconvenient que si ja existien, esborrarà les anteriors)&lt;/li&gt;
+&lt;li&gt;Les línies 13 i 14 les hem incloses per a mapejar Editorial i Llibre amb aquestos fitxers de mapatge&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I només faltarà un programeta que intente guardar les dades. Aquest seria un exemple:&lt;/p&gt;
+&lt;div class=&quot;highlighted-code language-java line-numbers&quot;&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code&gt;package biblio
+import org.hibernate.cfg.Configuration
+import java.util.logging.Level
+import java.util.logging.LogManager
+
+fun main(args: Array&amp;lt;String&amp;gt;) {
+        LogManager.getLogManager().getLogger(&quot;&quot;).setLevel(Level.SEVERE)
+        val sessio = Configuration().configure().buildSessionFactory().openSession()
+        val t = sessio.beginTransaction()
+        val e = Editorial(&quot;ed5&quot;,&quot;Tabarca Llibres&quot;,&quot;www.tabarcallibres.com&quot;, mutableSetOf&amp;lt;Llibre&amp;gt;())
+        val ll = Llibre(&quot;8480241815&quot;,&quot;L'ull de la boira&quot;,141,e)
+        e.llibres.add(ll)
+        sessio.persist(e)
+        sessio.persist(ll)
+        t.commit()
+        sessio.close()
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;En el següent vídeo s'arreplega tot el procés, des de la creació del projecte fins tenir les taules creades.&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;iframe width=&quot;909&quot; height=&quot;550&quot; src=&quot;https://slides.com/alvarinstitut/ad-t5-generacio-taules/embed?style=light&quot; title=&quot;AD T5 Generacio Taules&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;webkitallowfullscreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;div class=&quot;nota_blau&quot;&gt;
+&lt;p&gt;&lt;b&gt;&lt;u&gt;Nota&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;En Eclipse es pot automatitzar un poc més el procés, ja que és capaç de generar quasi totes les anotaions necessàries per a poder mapejar les classes (sense utilitzar els fitxers de mapatge &lt;strong&gt;hbm.xml&lt;/strong&gt;). Les classes, en Java, quedarien així:&lt;/p&gt;
 &lt;table style=&quot;width: 1014.92px;&quot; border=&quot;1&quot; bgcolor=&quot;#FFFFFF&quot; align=&quot;center&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
@@ -5274,12 +5358,15 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;td style=&quot;text-align: center; width: 516.917px;&quot;&gt;&lt;strong&gt;classe Llibre&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&quot;width: 421px; padding-left: 30px;&quot; valign=&quot;top&quot;&gt;&lt;strong&gt;import javax.persistence.Entity;&lt;br /&gt;import javax.persistence.Id;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;@Entity&lt;/span&gt;&lt;br /&gt;public class Editorial {&lt;br /&gt;   &lt;span style=&quot;color: #ff0000;&quot;&gt; @Id&lt;/span&gt;&lt;br /&gt;    String codi;&lt;br /&gt;    String nom;&lt;br /&gt;    String web;&lt;br /&gt;    &lt;br /&gt;    public Editorial() {&lt;br /&gt;        super();&lt;br /&gt;    }&lt;br /&gt;    public Editorial(String codi, String nom, String web) {&lt;br /&gt;        super();&lt;br /&gt;        this.codi = codi;&lt;br /&gt;        this.nom = nom;&lt;br /&gt;        this.web = web;&lt;br /&gt;    }&lt;br /&gt;    public String getCodi() {&lt;br /&gt;        return codi;&lt;br /&gt;    }&lt;br /&gt;    public void setCodi(String codi) {&lt;br /&gt;        this.codi = codi;&lt;br /&gt;    }&lt;br /&gt;    public String getNom() {&lt;br /&gt;        return nom;&lt;br /&gt;    }&lt;br /&gt;    public void setNom(String nom) {&lt;br /&gt;        this.nom = nom;&lt;br /&gt;    }&lt;br /&gt;    public String getWeb() {&lt;br /&gt;        return web;&lt;br /&gt;    }&lt;br /&gt;    public void setWeb(String web) {&lt;br /&gt;        this.web = web;&lt;br /&gt;    }&lt;br /&gt;}&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;width: 421px; padding-left: 30px;&quot; valign=&quot;top&quot;&gt;
+&lt;p&gt;&lt;strong&gt;import javax.persistence.Entity;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;import javax.persistence.Id;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;strong&gt;@Entity&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;public class Editorial {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    &lt;span style=&quot;color: #ff0000;&quot;&gt;@Id&lt;/span&gt;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String codi;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String nom;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    String web;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    &lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public Editorial() {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        super();&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public Editorial(String codi, String nom, String web) {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        super();&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        this.codi = codi;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        this.nom = nom;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        this.web = web;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public String getCodi() {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        return codi;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public void setCodi(String codi) {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        this.codi = codi;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public String getNom() {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        return nom;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public void setNom(String nom) {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        this.nom = nom;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public String getWeb() {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        return web;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    public void setWeb(String web) {&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;        this.web = web;&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;}&lt;/strong&gt;&lt;/p&gt;
+&lt;/td&gt;
 &lt;td style=&quot;width: 516.917px; padding-left: 30px;&quot; valign=&quot;top&quot;&gt;&lt;strong&gt;import javax.persistence.Entity;&lt;br /&gt;import javax.persistence.Id;&lt;br /&gt;import javax.persistence.ManyToOne;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;@Entity&lt;/span&gt;&lt;br /&gt;public class Llibre {&lt;br /&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;   @Id&lt;/span&gt;&lt;br /&gt;    String isbn;&lt;br /&gt;    String titol;&lt;br /&gt;    int pagines;&lt;br /&gt;   &lt;span style=&quot;color: #ff0000;&quot;&gt; @ManyToOne&lt;/span&gt;&lt;br /&gt;    Editorial editorial;&lt;br /&gt;    &lt;br /&gt;    public Llibre() {&lt;br /&gt;        super();&lt;br /&gt;    }&lt;br /&gt;    public Llibre(String isbn, String titol, int pagines, Editorial editorial) {&lt;br /&gt;        super();&lt;br /&gt;        this.isbn = isbn;&lt;br /&gt;        this.titol = titol;&lt;br /&gt;        this.pagines = pagines;&lt;br /&gt;        this.editorial = editorial;&lt;br /&gt;    }&lt;br /&gt;    public String getIsbn() {&lt;br /&gt;        return isbn;&lt;br /&gt;    }&lt;br /&gt;    public void setIsbn(String isbn) {&lt;br /&gt;        this.isbn = isbn;&lt;br /&gt;    }&lt;br /&gt;    public String getTitol() {&lt;br /&gt;        return titol;&lt;br /&gt;    }&lt;br /&gt;    public void setTitol(String titol) {&lt;br /&gt;        this.titol = titol;&lt;br /&gt;    }&lt;br /&gt;    public int getPagines() {&lt;br /&gt;        return pagines;&lt;br /&gt;    }&lt;br /&gt;    public void setPagines(int pagines) {&lt;br /&gt;        this.pagines = pagines;&lt;br /&gt;    }&lt;br /&gt;    public Editorial getEditorial() {&lt;br /&gt;        return editorial;&lt;br /&gt;    }&lt;br /&gt;    public void setEditorial(Editorial editorial) {&lt;br /&gt;        this.editorial = editorial;&lt;br /&gt;    }&lt;br /&gt;}&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Amb aquesta informació es podran generar les sentències SQL que crearan les taules en la Base de Dades. Aquestes sentències serien:&lt;/p&gt;
+&lt;p&gt;I amb aquesta informació es podran generar les sentències SQL que crearan les taules en la Base de Dades. Aquestes sentències serien:&lt;/p&gt;
 &lt;table style=&quot;width: 738px;&quot; height=&quot;283&quot; border=&quot;1&quot; bgcolor=&quot;#FFFFFF&quot; align=&quot;center&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
@@ -5287,14 +5374,15 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;td style=&quot;text-align: center; width: 423.617px;&quot;&gt;&lt;strong&gt;taula LLIBRE&lt;br /&gt;&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&quot;width: 238.383px; padding-left: 30px;&quot; valign=&quot;top&quot;&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt; create table Editorial (&lt;br /&gt;       codi varchar(255) not null,&lt;br /&gt;        nom varchar(255),&lt;br /&gt;        web varchar(255),&lt;br /&gt;        primary key (codi)&lt;br /&gt;    );&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;width: 238.383px; padding-left: 30px;&quot; valign=&quot;top&quot;&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt; create table Editorial (&lt;br /&gt;        codi varchar(255) not null,&lt;br /&gt;        nom varchar(255),&lt;br /&gt;        web varchar(255),&lt;br /&gt;        primary key (codi)&lt;br /&gt;    );&lt;/strong&gt;&lt;/td&gt;
 &lt;td style=&quot;width: 423.617px; padding-left: 30px;&quot; valign=&quot;top&quot;&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;create table Llibre (&lt;br /&gt;       isbn varchar(255) not null,&lt;br /&gt;        pagines int4 not null,&lt;br /&gt;        titol varchar(255),&lt;br /&gt;        editorial_codi varchar(255),&lt;br /&gt;        primary key (isbn)&lt;br /&gt;    );&lt;br /&gt;&lt;br /&gt;    alter table Llibre &lt;br /&gt;       add constraint FKap3159swqtnuj1i2q43xm0wk2 &lt;br /&gt;       foreign key (editorial_codi) &lt;br /&gt;       references Editorial;&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Observeu com ha creat la clau externa en LLIBRE que apunta a EDITORIAL&lt;/p&gt;
+&lt;p&gt;Observeu com fins i tot es crearia la clau externa en LLIBRE que apunta a EDITORIAL&lt;/p&gt;
 &lt;p&gt;Aquest vídeo arreplega tot el procés:&lt;/p&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;iframe width=&quot;900&quot; height=&quot;700&quot; src=&quot;https://slides.com/alvarinstitut/t5_generar_taules/embed?style=light&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;webkitallowfullscreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;"></unicode>
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;iframe width=&quot;900&quot; height=&quot;700&quot; src=&quot;https://slides.com/alvarinstitut/t5_generar_taules/embed?style=light&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;webkitallowfullscreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;/div&gt;"></unicode>
              <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
              <int value="4"></int>
              <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -5623,7 +5711,7 @@ fun main() {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="3849"></int>
+                     <int value="3887"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -5637,7 +5725,7 @@ fun main() {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="37_90_2.102"></unicode>
+                   <unicode value="37_90_2.104"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="106">
                     <dictionary>
@@ -5648,7 +5736,7 @@ fun main() {
                      <string role="key" value="_storageName"></string>
                      <string value="T5_Ex2_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp4Erftk/T5_Ex2_1.png"></string>
+                     <string value="/tmp/tmpFvzPg2/T5_Ex2_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="4249c31a5e8f508223ecabcb56b80df0"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -5677,7 +5765,7 @@ fun main() {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="103"></int>
+              <int value="105"></int>
               <string role="key" value="parentNode"></string>
               <reference key="103"></reference>
              </dictionary>
@@ -5893,7 +5981,7 @@ fun main() {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="3855"></int>
+                     <int value="3893"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -5907,7 +5995,7 @@ fun main() {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="38_89_2.105"></unicode>
+                   <unicode value="38_89_2.107"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="109">
                     <dictionary>
@@ -5918,7 +6006,7 @@ fun main() {
                      <string role="key" value="_storageName"></string>
                      <string value="T5_Ex3_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp4Erftk/T5_Ex3_1.png"></string>
+                     <string value="/tmp/tmpFvzPg2/T5_Ex3_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="a79783a937653d8d4d37b6f0bb49bcb1"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -5947,7 +6035,7 @@ fun main() {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="106"></int>
+              <int value="108"></int>
               <string role="key" value="parentNode"></string>
               <reference key="103"></reference>
              </dictionary>
@@ -6197,7 +6285,7 @@ fun main() {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="3867"></int>
+                     <int value="3905"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -6211,7 +6299,7 @@ fun main() {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="40_91_2.102"></unicode>
+                   <unicode value="40_91_2.104"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="112">
                     <dictionary>
@@ -6222,7 +6310,7 @@ fun main() {
                      <string role="key" value="_storageName"></string>
                      <string value="T5_Ex4_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp4Erftk/T5_Ex4_1.png"></string>
+                     <string value="/tmp/tmpFvzPg2/T5_Ex4_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="e80d64f06794f92b76bfcad4b4391519"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -6251,7 +6339,7 @@ fun main() {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="103"></int>
+              <int value="105"></int>
               <string role="key" value="parentNode"></string>
               <reference key="103"></reference>
              </dictionary>
@@ -6563,7 +6651,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="3856"></int>
+                     <int value="3894"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -6577,7 +6665,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="41_92_2.206"></unicode>
+                   <unicode value="41_92_2.210"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="115">
                     <dictionary>
@@ -6588,7 +6676,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
                      <string role="key" value="_storageName"></string>
                      <string value="T5_Ex5_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp4Erftk/T5_Ex5_1.png"></string>
+                     <string value="/tmp/tmpFvzPg2/T5_Ex5_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="c1ceeb4f345ce08a15c499d5e7313678"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -6615,7 +6703,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="3861"></int>
+                     <int value="3899"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -6629,7 +6717,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="41_92_2.207"></unicode>
+                   <unicode value="41_92_2.211"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="116">
                     <dictionary>
@@ -6640,7 +6728,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
                      <string role="key" value="_storageName"></string>
                      <string value="T5_Ex5_2.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp4Erftk/T5_Ex5_2.png"></string>
+                     <string value="/tmp/tmpFvzPg2/T5_Ex5_2.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="455a24788df1fb38e09b1fdd22c558ff"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -6669,7 +6757,7 @@ class FinestraMantenimentComarquesAvancat : JFrame() {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="208"></int>
+              <int value="212"></int>
               <string role="key" value="parentNode"></string>
               <reference key="103"></reference>
              </dictionary>
@@ -6774,7 +6862,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="3851"></int>
+                     <int value="3889"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -6788,7 +6876,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="45_45_2.45"></unicode>
+                   <unicode value="45_45_2.47"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="119">
                     <dictionary>
@@ -6799,7 +6887,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
                      <string role="key" value="_storageName"></string>
                      <string value="T5_Ex6_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmp4Erftk/T5_Ex6_1.png"></string>
+                     <string value="/tmp/tmpFvzPg2/T5_Ex6_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="4938c92eca5b4c6b95531674b629411c"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -6828,7 +6916,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="46"></int>
+              <int value="48"></int>
               <string role="key" value="parentNode"></string>
               <reference key="103"></reference>
              </dictionary>
@@ -6938,7 +7026,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="28"></reference>
+  <reference key="100"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>

@@ -2,6 +2,7 @@
 <html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
@@ -12,6 +13,7 @@
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
 </head>
@@ -71,26 +73,110 @@
 <div id="ta44_85" class="block iDevice_content">
 <p style="text-align: center;"><span style="color: #ff0000; font-size: 18pt;"><strong>VOLUNTARI</strong></span></p>
 <p>Durant aquest tema, i també en els exercicis, hem treballat sobre projectes en els quals a partir de les taules d'una Base de Dades ja creada en qualsevol Sistema Gestor de Bases de Dades (excepte SQLite) hem generat les classes. Funciona molt bé aquesta generació de classes amb Hibernate.</p>
-<p>També és possible el procés invers, és a dir, <strong>generar les taules</strong> en una Base de Dades <strong>a partir de les classes</strong> creades en un projecte. Veurem un exemple molt senzill de com és possible. Tanmateix hem de dir ja que aquesta manera de funcionar no és tan efectiva com la inversa, i si l'estructura de classes és complexa, podem tenir problemes per a generar les taules. Per això l'exemple que posarem és molt senzill. I les classes estaran escrites en Java, no en Kotlin.</p>
+<p>També és possible el procés invers, és a dir, <strong>generar les taules</strong> en una Base de Dades <strong>a partir de les classes</strong> creades en un projecte. Veurem un exemple molt senzill de com és possible. Tanmateix hem de dir ja que aquesta manera de funcionar no és tan efectiva com la inversa, i si l'estructura de classes és complexa, podem tenir problemes per a generar les taules. Per això l'exemple que posarem és molt senzil.</p>
 <p>Aquesta pregunta és totalment voluntària. Si no teniu ganes o temps, no fa falta que feu l'exemple mostrat a continuació. El que sí que és obligatori és la generació de classes a partir de les taules, vist anteriorment.</p>
-<p>L'exemple que intentarem implementar és una part de l'exemple de la biblioteca, vist ja en el tema 4. Només treballarem sobre 2 classes <strong>Editorial</strong> i <strong>Llibre</strong>, i fins i tot no posarem totes les propietats, ja que si ho posàrem tot, segurament ens donaria problemes a l'hora de la generació de taules.</p>
+<p>L'exemple que intentarem implementar és una part de l'exemple de la biblioteca, vist ja en el tema 4. Només treballarem sobre 2 classes <strong>Editorial</strong> i <strong>Llibre</strong>.</p>
 <p>Aquestes són les classes, millor dit les propietats de les classes, com veieu amb una estructura molt senzilla:</p>
-<table style="width: 620.767px;" height="146" border="1" bgcolor="#FFFFFF" align="center">
-<tbody>
-<tr>
-<td style="text-align: center; width: 276px;"><strong>classe Editorial</strong></td>
-<td style="text-align: center; width: 267.767px;"><strong>classe Llibre</strong></td>
-</tr>
-<tr>
-<td style="width: 276px; padding-left: 30px;"><strong>public class Editorial {</strong><br /><strong>    String codi;</strong><br /><strong>    String nom;</strong><br /><strong>    String web;</strong><br /><strong>}</strong></td>
-<td style="width: 267.767px; padding-left: 30px;"><strong>public class Llibre {</strong><br /><strong>    String isbn;</strong><br /><strong>    String titol;</strong><br /><strong>    int pagines;</strong><br /><strong>    Editorial editorial;</strong><br /><strong>}</strong></td>
-</tr>
-</tbody>
-</table>
-<p>Com veieu tenim una propietat en la classe <strong>Llibre</strong> que és de tipus <strong>Editorial</strong>, per a marcar l'editorial del llibre. El més lògic seria posar un ArrayList de tipus Llibre en la classe Editorial per a posar tots els llibres de l'editorial. Però açò segurament ens donaria problemes en el moment de la generació de taules. Per tant, farem aquest exemple tan senzill a mode il·lustratiu, i prou.</p>
-<p>En aquestes classes, com es mostra en el vídeo posterior, s'han d'incorporar els mètodes <strong>get</strong> i <strong>set</strong> per a totes les propietats, així com <strong>constructors</strong>, un sense paràmetres, i un altre amb paràmetres per a inicialitzar totes les propietats.</p>
-<p>Posteriorment s'han de preparar les classes per a poder generar les taules. Consistirà en un procediment automàtic que s'encarregarà d'agegir les <strong>anotacions</strong>, que són sentències que Java ignorarà i serveixen per a afegir la informació addicional necessària. Les anotacions comencen sempre per <strong>@</strong>.</p>
-<p>Després de les anotacions, les classes quedaran així (hem marcat les anotacions en roig):</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Editorial (var codEd: String, var nom: String, var web: String, var llibres: MutableSet&lt;Llibre&gt;)
+
+class Llibre (var isbn: String, var titol: String, var pagines: Int, var editorial: Editorial)</code></pre>
+</div>
+</div>
+<p>Com veieu tenim una propietat en la classe <strong>Llibre</strong> que és de tipus <strong>Editorial</strong>, per a marcar l'editorial del llibre. I en <strong>Editorial</strong> tenim un <strong>MutableSet</strong> de tipus <strong>Llibre</strong> per a posar tots els llibres de l'editorial.</p>
+<p>La manera de crear les taules és molt senzilla, encara que si comencem de zero és un poc laboriosa, i fa falta comprendre els fitxers de mapatge <strong>hbm.xml</strong> en profunditat, ja que els construirem nosaltres. Després serà tan senzill com guardar dades, fer-les permanents. Incloent una propietat en el fitxer <strong>hibernate.cfg.xml</strong> es crearan les taules abans de guardar les dades.</p>
+<p>Els fitxers de mapatge serien aquestos:</p>
+<p><strong>Editorial.hbm.xml</strong></p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>&lt;hibernate-mapping&gt;
+    &lt;class name="biblio.Editorial" table="editorial" schema="public" catalog="biblio_gen"&gt;
+        &lt;id name="codEd" column="cod_ed"/&gt;
+        &lt;property name="nom" column="nom"/&gt;
+        &lt;property name="web" column="web"/&gt;
+        &lt;set name="llibres" inverse="true"&gt;
+            &lt;key&gt;
+                &lt;column name="cod_ed" not-null="true"/&gt;
+            &lt;/key&gt;
+            &lt;one-to-many not-found="ignore" class="biblio.Llibre"/&gt;
+        &lt;/set&gt;
+    &lt;/class&gt;
+&lt;/hibernate-mapping&gt;</code></pre>
+</div>
+</div>
+<p><strong>Llibre.hbm.xml</strong></p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>&lt;hibernate-mapping&gt;                                                                  
+    &lt;class name="biblio.Llibre" table="llibre" schema="public" catalog="biblio_gen"&gt; 
+        &lt;id name="isbn" column="isbn"/&gt;                                              
+        &lt;property name="titol" column="titol"/&gt;                                      
+        &lt;property name="pagines" column="pagines"/&gt;                                  
+        &lt;many-to-one name="editorial" class="biblio.Editorial"&gt;                      
+            &lt;column name="cod_ed" not-null="true"/&gt;                                  
+        &lt;/many-to-one&gt;                                                               
+    &lt;/class&gt;                                                                         
+&lt;/hibernate-mapping&gt;                                                                 </code></pre>
+</div>
+</div>
+<p>Evidentment haurem de fer la connexió amb la Base de Dades i incorporar llibreries d'Hibernate, igual com hem fet fins el moment.<br /><br /></p>
+<p>Per a aquest exemple, utilitzarem un altra Base de Dades, usuari i contrasenya, també en PostgreSQL. Serà sobre la BD, usuari i contrasenya <strong>biblio_gen</strong>.</p>
+<p>Una vegada feta la connexió a la Base de Dades, utilitzarem aquest <strong>hibernate.cfg.xml</strong> :</p>
+<div class="highlighted-code language-markup line-numbers">
+<div>
+<pre><code>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"&gt;
+&lt;hibernate-configuration&gt;
+  &lt;session-factory&gt;
+    &lt;property name="connection.url"&gt;jdbc:postgresql://89.36.214.106:5432/biblio_gen&lt;/property&gt;
+    &lt;property name="connection.driver_class"&gt;org.postgresql.Driver&lt;/property&gt;
+    &lt;property name="connection.username"&gt;biblio_gen&lt;/property&gt;
+    &lt;property name="connection.password"&gt;biblio_gen&lt;/property&gt;
+    &lt;!-- DB schema will be updated if needed --&gt;
+    &lt;property name="hibernate.hbm2ddl.auto"&gt;create&lt;/property&gt;
+    &lt;mapping resource="Editorial.hbm.xml"/&gt;
+    &lt;mapping resource="Llibre.hbm.xml"/&gt;
+  &lt;/session-factory&gt;
+&lt;/hibernate-configuration&gt;</code></pre>
+</div>
+</div>
+<p>Aquest fitxer el podríem haver generat mapejant de la connexió, però sense mapejar les taules, clar, que encara no existeixen. I sobre ell faríem algun canvi:</p>
+<ul>
+<li>En la línia 12 llavaríem el comentari sobre aquesta propietat. El que li estem dient és que ha de crear les taules (té l'inconvenient que si ja existien, esborrarà les anteriors)</li>
+<li>Les línies 13 i 14 les hem incloses per a mapejar Editorial i Llibre amb aquestos fitxers de mapatge</li>
+</ul>
+<p>I només faltarà un programeta que intente guardar les dades. Aquest seria un exemple:</p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>package biblio
+import org.hibernate.cfg.Configuration
+import java.util.logging.Level
+import java.util.logging.LogManager
+
+fun main(args: Array&lt;String&gt;) {
+        LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
+        val sessio = Configuration().configure().buildSessionFactory().openSession()
+        val t = sessio.beginTransaction()
+        val e = Editorial("ed5","Tabarca Llibres","www.tabarcallibres.com", mutableSetOf&lt;Llibre&gt;())
+        val ll = Llibre("8480241815","L'ull de la boira",141,e)
+        e.llibres.add(ll)
+        sessio.persist(e)
+        sessio.persist(ll)
+        t.commit()
+        sessio.close()
+}</code></pre>
+</div>
+</div>
+<p>En el següent vídeo s'arreplega tot el procés, des de la creació del projecte fins tenir les taules creades.</p>
+<p style="text-align: center;"><iframe width="909" height="550" src="https://slides.com/alvarinstitut/ad-t5-generacio-taules/embed?style=light" title="AD T5 Generacio Taules" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p></p>
+<p></p>
+<div class="nota_blau">
+<p><b><u>Nota</u></b></p>
+<p>En Eclipse es pot automatitzar un poc més el procés, ja que és capaç de generar quasi totes les anotaions necessàries per a poder mapejar les classes (sense utilitzar els fitxers de mapatge <strong>hbm.xml</strong>). Les classes, en Java, quedarien així:</p>
 <table style="width: 1014.92px;" border="1" bgcolor="#FFFFFF" align="center">
 <tbody>
 <tr>
@@ -98,12 +184,15 @@
 <td style="text-align: center; width: 516.917px;"><strong>classe Llibre</strong></td>
 </tr>
 <tr>
-<td style="width: 421px; padding-left: 30px;" valign="top"><strong>import javax.persistence.Entity;<br />import javax.persistence.Id;<br /><br /><span style="color: #ff0000;">@Entity</span><br />public class Editorial {<br />   <span style="color: #ff0000;"> @Id</span><br />    String codi;<br />    String nom;<br />    String web;<br />    <br />    public Editorial() {<br />        super();<br />    }<br />    public Editorial(String codi, String nom, String web) {<br />        super();<br />        this.codi = codi;<br />        this.nom = nom;<br />        this.web = web;<br />    }<br />    public String getCodi() {<br />        return codi;<br />    }<br />    public void setCodi(String codi) {<br />        this.codi = codi;<br />    }<br />    public String getNom() {<br />        return nom;<br />    }<br />    public void setNom(String nom) {<br />        this.nom = nom;<br />    }<br />    public String getWeb() {<br />        return web;<br />    }<br />    public void setWeb(String web) {<br />        this.web = web;<br />    }<br />}</strong></td>
+<td style="width: 421px; padding-left: 30px;" valign="top">
+<p><strong>import javax.persistence.Entity;</strong><br /><strong>import javax.persistence.Id;</strong></p>
+<p><span style="color: #ff0000;"><strong>@Entity</strong></span><br /><strong>public class Editorial {</strong><br /><strong>    <span style="color: #ff0000;">@Id</span></strong><br /><strong>    String codi;</strong><br /><strong>    String nom;</strong><br /><strong>    String web;</strong><br /><strong>    </strong><br /><strong>    public Editorial() {</strong><br /><strong>        super();</strong><br /><strong>    }</strong><br /><strong>    public Editorial(String codi, String nom, String web) {</strong><br /><strong>        super();</strong><br /><strong>        this.codi = codi;</strong><br /><strong>        this.nom = nom;</strong><br /><strong>        this.web = web;</strong><br /><strong>    }</strong><br /><strong>    public String getCodi() {</strong><br /><strong>        return codi;</strong><br /><strong>    }</strong><br /><strong>    public void setCodi(String codi) {</strong><br /><strong>        this.codi = codi;</strong><br /><strong>    }</strong><br /><strong>    public String getNom() {</strong><br /><strong>        return nom;</strong><br /><strong>    }</strong><br /><strong>    public void setNom(String nom) {</strong><br /><strong>        this.nom = nom;</strong><br /><strong>    }</strong><br /><strong>    public String getWeb() {</strong><br /><strong>        return web;</strong><br /><strong>    }</strong><br /><strong>    public void setWeb(String web) {</strong><br /><strong>        this.web = web;</strong><br /><strong>    }</strong><br /><strong>}</strong></p>
+</td>
 <td style="width: 516.917px; padding-left: 30px;" valign="top"><strong>import javax.persistence.Entity;<br />import javax.persistence.Id;<br />import javax.persistence.ManyToOne;<br /><br /><span style="color: #ff0000;">@Entity</span><br />public class Llibre {<br /> <span style="color: #ff0000;">   @Id</span><br />    String isbn;<br />    String titol;<br />    int pagines;<br />   <span style="color: #ff0000;"> @ManyToOne</span><br />    Editorial editorial;<br />    <br />    public Llibre() {<br />        super();<br />    }<br />    public Llibre(String isbn, String titol, int pagines, Editorial editorial) {<br />        super();<br />        this.isbn = isbn;<br />        this.titol = titol;<br />        this.pagines = pagines;<br />        this.editorial = editorial;<br />    }<br />    public String getIsbn() {<br />        return isbn;<br />    }<br />    public void setIsbn(String isbn) {<br />        this.isbn = isbn;<br />    }<br />    public String getTitol() {<br />        return titol;<br />    }<br />    public void setTitol(String titol) {<br />        this.titol = titol;<br />    }<br />    public int getPagines() {<br />        return pagines;<br />    }<br />    public void setPagines(int pagines) {<br />        this.pagines = pagines;<br />    }<br />    public Editorial getEditorial() {<br />        return editorial;<br />    }<br />    public void setEditorial(Editorial editorial) {<br />        this.editorial = editorial;<br />    }<br />}</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Amb aquesta informació es podran generar les sentències SQL que crearan les taules en la Base de Dades. Aquestes sentències serien:</p>
+<p>I amb aquesta informació es podran generar les sentències SQL que crearan les taules en la Base de Dades. Aquestes sentències serien:</p>
 <table style="width: 738px;" height="283" border="1" bgcolor="#FFFFFF" align="center">
 <tbody>
 <tr>
@@ -111,14 +200,15 @@
 <td style="text-align: center; width: 423.617px;"><strong>taula LLIBRE<br /></strong></td>
 </tr>
 <tr>
-<td style="width: 238.383px; padding-left: 30px;" valign="top"><strong></strong><strong> create table Editorial (<br />       codi varchar(255) not null,<br />        nom varchar(255),<br />        web varchar(255),<br />        primary key (codi)<br />    );</strong></td>
+<td style="width: 238.383px; padding-left: 30px;" valign="top"><strong></strong><strong> create table Editorial (<br />        codi varchar(255) not null,<br />        nom varchar(255),<br />        web varchar(255),<br />        primary key (codi)<br />    );</strong></td>
 <td style="width: 423.617px; padding-left: 30px;" valign="top"><strong></strong><strong>create table Llibre (<br />       isbn varchar(255) not null,<br />        pagines int4 not null,<br />        titol varchar(255),<br />        editorial_codi varchar(255),<br />        primary key (isbn)<br />    );<br /><br />    alter table Llibre <br />       add constraint FKap3159swqtnuj1i2q43xm0wk2 <br />       foreign key (editorial_codi) <br />       references Editorial;</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Observeu com ha creat la clau externa en LLIBRE que apunta a EDITORIAL</p>
+<p>Observeu com fins i tot es crearia la clau externa en LLIBRE que apunta a EDITORIAL</p>
 <p>Aquest vídeo arreplega tot el procés:</p>
 <p style="text-align: center;"><iframe width="900" height="700" src="https://slides.com/alvarinstitut/t5_generar_taules/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+</div>
 </div>
 </div>
 </div>
