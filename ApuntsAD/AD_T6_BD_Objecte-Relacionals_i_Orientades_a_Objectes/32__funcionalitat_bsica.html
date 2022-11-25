@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -76,7 +76,7 @@
 <p>En un projecte nou, anomenat <strong>Tema6</strong>, anem a incorporar el driver de <strong>DB4O</strong></p>
 <p style="margin-left: 30px;"><strong>db4o-8.0.249.16098-all-java5.jar</strong></p>
 <p style="text-align: center;"></p>
-<p>Per organitzar-lo millor creem un paquet anomenat<strong> classesEmpleat</strong> , que ens servirà per a fer tots els exemples. Ens crearem la classe <strong>Empleat</strong>, i les classes <strong>Adreca</strong> i <strong>Telefon</strong> que utilitzarà aquella. Construïm les classes amb <strong>constructor</strong> i mètodes <strong>get</strong> i <strong>set</strong>.</p>
+<p>Per organitzar-lo millor creem un paquet anomenat<strong> classesEmpleat</strong> , que ens servirà per a fer tots els exemples. Ens crearem la classe <strong>Empleat</strong>, i les classes <strong>Adreca</strong> i <strong>Telefon</strong> que utilitzarà aquella. Construïm les classes de la manera més còmoda. Això sí, a <strong>Empleat</strong> li afegirem dos <strong>constructors</strong> per a fer més còmoda la introducció d'Empleats amb poques dades, ja veurem per què.</p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>class Adreca (var carrer: String?, var codipostal: String?, var poblacio: String?)</code></pre>
@@ -92,20 +92,21 @@
 <div class="highlighted-code language-java">
 <div>
 <pre><code>class Empleat (
-	var nif: String? , var nom: String? , var departament: Int? , var edat: Int? = 0 , var sou: Double? = 0.0 ,
-	var foto: Array&lt;Byte&gt;? ,
-	var curriculum: Array&lt;Char&gt;? ,
-	var adreca: Adreca? ,
-	var correus_e: Array&lt;String&gt;? ,
-	var telefons : Array&lt;Telefon&gt;?
+    var nif: String? , var nom: String? , var departament: Int? , var edat: Int? = 0 , var sou: Double? = 0.0 ,
+    var foto: Array&lt;Byte&gt;? ,
+    var curriculum: Array&lt;Char&gt;? ,
+    var adreca: Adreca? ,
+    var correus_e: Array&lt;String&gt;? ,
+    var telefons : Array&lt;Telefon&gt;?
 ) {
-	constructor(nif: String) : this(nif,null,null,null,null,null,null,null,null,null) 
+    constructor() : this(null,null,null,null,null,null,null,null,null,null)
+    constructor(nif: String) : this(nif,null,null,null,null,null,null,null,null,null)
 }</code></pre>
 </div>
 </div>
 <p>Com comentàvem anteriorment, hi ha una versió servidor, però que nosaltres ens conformarem amb la versió integrada (<em>embedded</em>). En el cas de la versió servidor utilitzaríem la classe <strong>Db4o</strong> per a fer la connexió. Com que nosaltres farem servir la versió integrada, utilitzarem la classe <strong>Db4oEmbedded</strong>.</p>
 <p>Des de l’aplicació indicarem el nom del fitxer on es guardaran les dades cridant el mètode estàtic de Db4oEmbedded <strong>openFile</strong>. A partir d’aquest moment, es mantindrà oberta una transacció que continuarà activa fins que tanquem amb el mètode <strong>close</strong>.</p>
-<p>Les proves que farem a continuació les podem posar en un paquet anomenat <strong>Exemples</strong></p>
+<p>Les proves que farem a continuació les podem posar en un paquet anomenat <strong>exemples</strong></p>
 <p class="titolet">Inserció</p>
 <p>Per a guardar un objecte utilitzem el mètode <strong>store(objecte)</strong></p>
 <p>Provem a introduir un empleat. Guardeu el següent programa en <strong>Exemple1_InserirEmpleat.kt</strong></p>
@@ -135,12 +136,11 @@ fun main() {
 </div>
 <p>Sí que ha guardat l'objecte. Mirem-lo des de la finestra de DB4O:</p>
 <p style="text-align: center;"><img src="T6_3_2_1.1.png" alt="" width="1304" height="737" /></p>
-<p>On hem obert la BD apretant el botó <strong>Open</strong> (de vegades no mostra les dades dient que <em><strong>This view is not available until indexes are built </strong></em>. Ho podem solucionar reiniciant IntelliJ i així obligant a reconstruir els índex. I hem apretat el botó <strong>Get Objects</strong> tenint seleccionada la classe <strong>Empleats</strong>. </p>
-<p>En finalitzar d'observar les dades des de la finestra DB4O és convenient <strong>tancar la connexió</strong>. Si no la tanquem, quan anem a executar qulsevol programa que accedisca, ens donarà error, avisant que la Base de Dades està bloquejada (<em><strong>com.db4o.ext.DatabaseFileLockedException</strong></em>).</p>
+<p>On hem obert la BD apretant el botó <strong>Open</strong> (de vegades no mostra les dades dient que <em><strong>This view is not available until indexes are built </strong></em>. Ho podem solucionar reiniciant IntelliJ i així obligant a reconstruir els índex). I hem apretat el botó <strong>Get Objects</strong> tenint seleccionada la classe <strong>Empleats</strong>. </p>
+<p>En finalitzar d'observar les dades des de la finestra DB4O és convenient <strong>tancar la connexió</strong>. Si no la tanquem, quan anem a executar qualsevol programa que accedisca, ens donarà error, avisant que la Base de Dades està bloquejada (<em><strong>com.db4o.ext.DatabaseFileLockedException</strong></em>).</p>
 <p>Per tant, haurem de tenir especial atenció a tancar la connexió a la Base de Dades. Podria passar que ens donara un error el programa, i la connexió s'haja quedat oberta. Segurament el més oportú serà intentar tancar el programa, o tancar IntelliJ, i d'aquesta manera desbloquejarem la Base de Dades.</p>
 <p>El mètode <strong>commit</strong> obliga a guardar les dades cap al contenidor i activa de nou una transacció per a les properes operacions, per tant és convenient anar utilitzant-lo després d'una sèrie d'actualitzacions.</p>
 <p>Anem a posar algunes dades més, per a tenir un poc més de joc. Concretament seran dues empleades més. Copieu el següent codi al fitxer <strong>Exemple1_1_InserirMesEmpleats.kt</strong></p>
-<p></p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>import classesEmpleat.Adreca
@@ -179,7 +179,7 @@ fun main() {
 <div class="iDevice emphasis0">
 <div id="ta39_85" class="block iDevice_content">
 <p class="titolet">Consulta bàsica</p>
-<p>En la següent pregunta, veurem les maneres de fer una consulta, però ara anem a veure la forma més senzilla, que és la realitzada a través del mètode anomenat <strong>queryByExample</strong>. Aquest mètode rep per paràmetre un objecte del tipus a cercar, que farà d’exemple o patró per trobar totes aquelles instàncies emmagatzemades coincidents amb les dades del patró. El patró que es passe per paràmetre no haurà de tenir totes les dades complimentades, sinó només aquelles de les quals se’n desitge la coincidència. Així, per exemple, si passem un objecte d'Empleat amb un únic atribut introduït (el <em>nif</em>), <b>queryByExample</b> retornarà totes aquelles instàncies que tinguen per <em>nif </em>el valor entrat. El retorn es fa en un objecte de tipus <strong>ObjectSet</strong>, una classe que implementa la interfície <strong>List</strong> de Java i també la interfície <strong>Iterable</strong>, de manera que siga possible recórrer el contingut utilitzant els mètodes <strong>next</strong> i <strong>hasNext</strong>. També podem utilitzar el bucle <strong>for</strong> (el del <strong>foreach</strong>).</p>
+<p>En la següent pregunta, veurem les maneres de fer una consulta, però ara anem a veure la forma més senzilla, que és la realitzada a través del mètode anomenat <strong>queryByExample</strong>. Aquest mètode rep per paràmetre un objecte del tipus a cercar, que farà d’exemple o patró per trobar totes aquelles instàncies emmagatzemades coincidents amb les dades del patró. El patró que es passe per paràmetre no haurà de tenir totes les dades complimentades, sinó només aquelles de les quals se’n desitge la coincidència. Així, per exemple, si passem un objecte d'Empleat amb un únic atribut introduït (el <em>nif</em>), <b>queryByExample</b> retornarà totes aquelles instàncies que tinguen per <em>nif </em>el valor entrat. Per aquesta raó volíem un constructor amb només el nif, per a poder buscar l'empleat amb aquest nif amb <strong>queryByExample()</strong>. El retorn es fa en un objecte de tipus <strong>ObjectSet</strong>, una classe que implementa la interfície <strong>List</strong> de Java i també la interfície <strong>Iterable</strong>, de manera que siga possible recórrer el contingut utilitzant els mètodes <strong>next</strong> i <strong>hasNext</strong>. També podem utilitzar el bucle <strong>for</strong> (el del <strong>foreach</strong>).</p>
 <p>En el següent exemple es veu com una vegada obtingut l'objecte, es pot accedir  molt fàcilment a tota la informació. Copieu-lo al fitxer Kotlin <strong>Exemple2_ConsultaUnEmpleat.kt</strong></p>
 <p></p>
 <div class="highlighted-code language-java">
