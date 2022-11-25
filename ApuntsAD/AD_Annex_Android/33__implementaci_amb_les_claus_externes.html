@@ -73,11 +73,15 @@
 <p class="codi2">LOCAL (<span style="text-decoration: underline;">num</span>: Integer, nom: Text, adreca: Text, punts: Integer, imatge: Blob)</p>
 <p class="codi2">COMENTARI (<u>id_com</u>: Integer, num_local: Integer, comentari: Text)</p>
 <p>No teníem definida la clau externa que va de <strong>num_local</strong> en <strong>COMENTARI</strong> a <strong>num</strong> en <strong>LOCAL</strong>, com mostra aquesta imatge de l'estructura en SQLIte Studio en què no hi ha res en l'apartat de <strong>Foreign Key</strong> del camp <strong>num_local</strong>:</p>
-<p>:</p>
 <p style="text-align: center;"><img src="Annex_Android_3_3_1.png" alt="" width="764" height="348" /></p>
 <p> on es pot comprovar que no tenim res en l'apartat <strong>Foreign Key</strong> del camp <strong>num_local</strong>.</p>
 <p>Anem a aprofitar i fer algunes modificacions més, a banda de la clau externa. Anem a declarar alguns camps com a no nuls, per a veure l'efecte sobre les classes associades.</p>
 <p>Us aconselle que si voleu provar els canvis següents, ho feu en una Base de Dades nova, copiada de <strong>CoffeeShops_Com.sqlite</strong>, amb el nom per exemple de <strong>CoffeeShops_Com_CE.sqlite</strong>, per a que l'exemple finalitzat en la pregunta 3.2 continue funcionant.</p>
+<div class="nota_blau">
+<p><u><b>Nota</b></u></p>
+<p>Les següents modificacions s'han fet des de SQLite Stodio, un client de SQL molt més adaptat a ell. Les modificacions no es poden fer des de DBeaver, ja que SQLits és molt modestet i no admet la modificació de camps amb ALTER TABLE (que seria la manera que ho intentaria fer DBeaver).</p>
+<p>Si no teniu instal·lat SQLite Studio, no val la pena l'esforç, i us podeu baixar directament la Base de Dades <strong>CoffeeShops_Com_CE.sqlite</strong> de l'aula virtual</p>
+</div>
 <p></p>
 <p class="titolet">LOCAL</p>
 <p><span style="font-size: 14pt;"><strong>NO NUL</strong></span></p>
@@ -113,7 +117,7 @@
 <p>Si voleu fer la comprovació que funciona no us oblideu de:</p>
 <ul>
 <li>Copiar la Base de Dades <strong>CoffeeShops_Com_CE.sqlite</strong> a l'apartat de <strong>Assets</strong></li>
-<li>Modificar les línies 26 i 27 de <strong>FirstFragment.kt</strong>, que és on es defineix la Base de Dades pel nom actual: <strong>CoffeeShops_Com_CE.sqlite</strong></li>
+<li>Modificar les línies 28 i 29 de <strong>FirstFragment.kt</strong>, que és on es defineix la Base de Dades pel nom actual: <strong>CoffeeShops_Com_CE.sqlite</strong></li>
 </ul></div>
 </div>
 </div>

@@ -2,6 +2,7 @@
 <html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
@@ -12,6 +13,7 @@
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
 </head>
@@ -77,7 +79,7 @@
 <p>Com havíem comentat en el punt anterior, la definició de la clau externa complica un poc la sintaxi. De moment no la definirem. Però hem de tenir clar que la definició de les anotacions ha d'anar d'acord amb la definicio de la Base de Dades. I per tant, <strong>si en la Base de Dades està definida la clau externa, també ho haurà d'estar en les anotacions</strong>. És per això que en aquest exemple no posarem la clau externa, ni en la Base de Dades ni en les anotacions.</p>
 <div class="nota_blau">
 <p><strong><u>Nota</u></strong></p>
-<p>Al final de tot, de forma il·lustrativa s'explica com es defineix la clau externa amb les anotacions.</p>
+<p>Al final de tot, en el punt 3.3, de forma il·lustrativa s'explica com es defineix la clau externa amb les anotacions.</p>
 </div>
 <p>Per a poder definir la relació 1:N, és a dir, que un local té molts comentaris, i poder tenir en l'objecte de tipus Local la llista de comentaris, en ROOM ens veiem obligats a definir una nova classe, que arreplega un objecte de la classe que participa amb cardinalitat 1, i una llista d'objectes de la classe que participa amb cardinalitat, amb unes anotacions que definiran la relació. Així en el nostre exemple definirem un objecte de la classe Local i una llista d'objectes de la classe Comentari, i com hem dit, unes anotacions per a definir la relació. A aquesta nova classe l'anomenarem en l'exemple <strong>CoffeeWithComments</strong>, per a que siga il·lustrativa.</p></div>
 </div>
@@ -90,14 +92,59 @@
 <p>Haurem de definir 3 entitats: la corresponent a <strong>Coffee</strong>, la de <strong>Comment</strong>, i com hem dit abans la que marca la relació, <strong>CoffeeWithComments</strong>.</p>
 <p>En les dues primeres aprofitarem per adequar els noms dels camps als de les propietats que ja teníem, i substituiran les que ens venen de l'exemple de DI. <strong>Però les modificarem en l'apartat posterior</strong>. Ara només anem a il·lustrar el procés.</p>
 <p class="titolet3"><span style="font-size: 14pt;"><strong>Coffee (equival a la taula LOCAL)</strong></span></p>
-<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import androidx.room.<span style="color: #9e880d;">ColumnInfo</span><br />import </span>androidx.room.<span style="color: #9e880d;">Entity<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">PrimaryKey<br /></span><span style="color: #9e880d;"><br /></span><span style="color: #9e880d;">@Entity(tableName="LOCAL")<br /></span><span style="color: #0033b3;">data class Coffee</span><span style="color: #000000;"> </span>(<br />    <span style="color: #9e880d;">@PrimaryKey </span><span style="color: #0033b3;">val </span><span style="color: #871094;">num</span>: <span style="color: #000000;">Int</span>?,<br />    <span style="color: #9e880d;">@ColumnInfo(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"nom"</span>)</span> <span style="color: #0033b3;">val </span><span style="color: #871094;">title</span>: <span style="color: #000000;">String</span>?,<br />    <span style="color: #9e880d;">@ColumnInfo(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"adreca"</span>)</span> <span style="color: #0033b3;">val </span><span style="color: #871094;">subtitle</span>: <span style="color: #000000;">String</span>?,<br />    <span style="color: #9e880d;">@ColumnInfo(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"punts"</span>)</span> <span style="color: #0033b3;">val </span><span style="color: #871094;">points</span>: <span style="color: #000000;">Int</span>?,<br />    <span style="color: #9e880d;">@ColumnInfo(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"imatge"</span>)</span> <span style="color: #0033b3;">val </span><span style="color: #871094;">image</span>: <span style="color: #000000;">ByteArray</span>?<br />)</pre>
+<div class="highlighted-code language-java">
+<div>
+<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><code>import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName="LOCAL")
+data class Coffee (
+    @PrimaryKey val num: Int?,
+    @ColumnInfo(name = "nom") val title: String?,
+    @ColumnInfo(name = "adreca") val subtitle: String?,
+    @ColumnInfo(name = "punts") val points: Int?,
+    @ColumnInfo(name = "imatge") val image: ByteArray?
+)</code></pre>
+</div>
+</div>
 <p>Observeu com no ha calgut posar <strong>@ColumnInfo</strong> en la primera propietat, perquè es diu igual que el nom del camp de la taula.</p>
 <p><span style="font-size: 14pt;"><strong>Comment (equival a la taula COMENTARIS)</strong></span></p>
-<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">ColumnInfo<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Entity<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">PrimaryKey<br /></span><span style="color: #9e880d;"><br /></span><span style="color: #9e880d;">@Entity(tableName="COMENTARIS")<br /></span><span style="color: #0033b3;">data class </span><span style="color: #000000;">Comment </span>(<br />    <span style="color: #9e880d;">@PrimaryKey @ColumnInfo</span>(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"id_com"</span>) <span style="color: #0033b3;">val </span><span style="color: #871094;">idCom</span>: <span style="color: #000000;">Int</span>?,<br />    <span style="color: #9e880d;">@ColumnInfo</span>(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"num_local"</span>) <span style="color: #0033b3;">val </span><span style="color: #871094;">numCoffee</span>: <span style="color: #000000;">Int</span>?,<br />    <span style="color: #9e880d;">@ColumnInfo</span>(<span style="color: #4a86e8;">name = </span><span style="color: #067d17;">"comentari"</span>)<span style="color: #0033b3;">val </span><span style="color: #871094;">comm</span>: <span style="color: #000000;">String</span>?<br />)</pre>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName="COMENTARIS")
+data class Comment (
+    @PrimaryKey @ColumnInfo(name = "id_com") val idCom: Int?,
+    @ColumnInfo(name = "num_local") val numCoffee: Int?,
+    @ColumnInfo(name = "comentari")val comm: String?
+)</code></pre>
+</div>
+</div>
 <p>Ara sí que hem definit totes les vegades <strong>@ColumnInfo</strong> perquè fins i tot en el primer camp estem canviant el nom<strong></strong></p>
 <p><span style="font-size: 14pt;"><strong>CoffeeWithComments</strong></span></p>
-<p>Aquesta és la novetat:</p>
-<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Embedded<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Relation<br /></span><span style="color: #0033b3;">import </span>java.io.<span style="color: #000000;">Serializable<br /></span><span style="color: #000000;"><br /></span><span style="color: #0033b3;">data class </span><span style="color: #000000;">CoffeeWithComments </span>(<br />    <span style="color: #9e880d;">@Embedded </span><span style="color: #0033b3;">val </span><span style="color: #871094;">coffee</span>: <span style="color: #000000;">Coffee</span>,<br />    <span style="color: #9e880d;">@Relation</span>(<br />        <span style="color: #4a86e8;">parentColumn = </span><span style="color: #067d17;">"num"</span>,<br />        <span style="color: #4a86e8;">entityColumn = </span><span style="color: #067d17;">"num_local"<br /></span><span style="color: #067d17;">    </span>)<br />    <span style="color: #0033b3;">val </span><span style="color: #871094;">coms</span>: <span style="color: #000000;">List</span>&lt;<span style="color: #000000;">Comment</span>&gt;<br />): <span style="color: #000000;">Serializable</span></pre>
+<p>Aquesta és la novetat, que crearem en un nou fitxer <strong>CoffeWithComments</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.room.Embedded
+import androidx.room.Relation
+import com.example.coffeeShops_fragments_room.Coffee
+import com.example.coffeeShops_fragments_room.Comment
+import java.io.Serializable
+
+data class CoffeeWithComments (
+    @Embedded val coffee: Coffee,
+    @Relation(
+        parentColumn = "num",
+        entityColumn = "num_local"
+    )
+    val coms: List&lt;Comment&gt;
+): Serializable</code></pre>
+</div>
+</div>
 <p>L'hem definida com a <strong>Serializable</strong> per un motiu que no té res a veure amb la definició. Ja s'explicarà en el seu moment.</p>
 <p>Hem definit:</p>
 <ul>
@@ -118,7 +165,22 @@
 <li>Una altra que contindrà LocalsAmbComentaris, i per tant podrem accedir als locals i als comentaris</li>
 </ul>
 <p>Observeu que curiosament la consulta és idèntica, però canvia la llista d'elements tornats: en el primer cas és <strong>List&lt;Coffee&gt;</strong> i en el segon cas és <strong>List&lt;CoffeeWithComments&gt;</strong>. Ho podem guardar al fitxer <strong>CoffeeShopsDao.kt</strong></p>
-<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.Dao<br /><span style="color: #0033b3;">import </span>androidx.room.Query<br /><br />@Dao<br /><span style="color: #0033b3;">interface </span>CoffeeShopsDao {<br />    @Query(<span style="color: #067d17;">"SELECT * FROM LOCAL"</span>)<br />    <span style="color: #0033b3;">fun </span>getCoffeesWithComments(): List&lt;CoffeeWithComments&gt;<br /><br />    @Query(<span style="color: #067d17;">"SELECT * FROM LOCAL"</span>)<br />    <span style="color: #0033b3;">fun </span>getCoffees(): List&lt;Coffee&gt;<br />}</pre></div>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.room.Dao
+import androidx.room.Query
+import com.example.coffeeShops_fragments_room.Coffee
+
+@Dao
+interface CoffeeShopsDao {
+    @Query("SELECT * FROM LOCAL")
+    fun getCoffeesWithComments(): List&lt;CoffeeWithComments&gt;
+
+    @Query("SELECT * FROM LOCAL")
+    fun getCoffees(): List&lt;Coffee&gt;
+}</code></pre>
+</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -127,7 +189,19 @@
 <div id="ta26_111_2" class="block iDevice_content">
 <div class="exe-text"><p class="titolet">RoomDatabase</p>
 <p>Només hem d'observar que hem de posar les 2 entitats de les quals agafem informació: <strong>Local </strong>i <strong> Comentaris</strong>. Justament per si hi ha més d'una taula de la qual agafar informació entre parèntesis s'especifica un Array. Ho podem guardar en un fitxer anomenat <strong>CoffeeShopsDatabase.kt</strong></p>
-<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Database<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #000000;">RoomDatabase<br /></span><span style="color: #000000;"><br /></span><span style="color: #9e880d;">@Database</span>(<span style="color: #4a86e8;">entities = </span><span style="color: #00627a; font-style: italic;">arrayOf</span>(<span style="color: #000000;">Coffee</span>::<span style="color: #0033b3;">class</span>, <span style="color: #000000;">Comment</span>::<span style="color: #0033b3;">class</span>), <span style="color: #4a86e8;">version = </span><span style="color: #1750eb;">1</span>)<br /><span style="color: #0033b3;">abstract class </span><span style="color: #000000;">CoffeeShopsDatabase </span>: RoomDatabase() {<br />    <span style="color: #0033b3;">abstract fun </span><span style="color: #00627a;">coffeeshopsDao</span>(): <span style="color: #000000;">CoffeeShopsDao<br /></span>}</pre>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.example.coffeeShops_fragments_room.Coffee
+import com.example.coffeeShops_fragments_room.Comment
+
+@Database(entities = arrayOf(Coffee::class, Comment::class), version = 1)
+abstract class CoffeeShopsDatabase : RoomDatabase() {
+    abstract fun coffeeshopsDao(): CoffeeShopsDao
+}</code></pre>
+</div>
+</div>
 <p></p></div>
 </div>
 </div>

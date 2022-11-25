@@ -72,7 +72,7 @@
 <div class="exe-text"><p>Com havíem vist en el Tema 3, 2 són les maneres que hem vist d'accedir a JSON, amb un driver molt senzillet anomenat <strong>org.json</strong>, i amb un driver molt més complicat que ens permetia fer un mapatge entre el fitxer json i classes de Kotlin (realment de Java). Mirem les 2 maneres per a un mateix exemple, el de Bicicas</p>
 <p class="titolet">Driver org.json</p>
 <p>Està incorporat en Android, és d'utilització immediata. Tot el que havíem fet en el Tema 3 ens servirà ací també, sense més variació.</p>
-<p>Farem l'exemple sobre un projecte nou d'Android, que podem anomenar Bicicas_Web_orgjson (indicant així que agafarem les dades directament des de la pàgina web de Bicicas, i que utilitzarem el driver org.json, incorporat per defecte en Android).</p>
+<p>Farem l'exemple sobre un projecte nou d'Android, que podem anomenar <strong>Bicicas_Web_orgjson</strong> (indicant així que agafarem les dades directament des de la pàgina web de Bicicas, i que utilitzarem el driver org.json, incorporat per defecte en Android).</p>
 <p>Tal i com indica el nom, el farem un poc més complicat per a que no siga tan immediat. En compte d'agafar un fitxer (que potser l'hauríem de col·locar directament al dispositiu...) anem a accedir directament a la pàgina de Bicicas. Tindrem la complicació afegida de que haurem de donar permisos d'Internet, i també permetre que la informació ens arribe en text clar, ja que a partir de Android 9 (API level 28), no està permesa per defecte.</p>
 <p>Per tant, en el <strong>AndroidManifest.xml</strong>, afegirem les línies 3 i 6 (es posen les altres per a que quede clar el lloc on van)</p>
 <div class="highlighted-code language-java line-numbers">

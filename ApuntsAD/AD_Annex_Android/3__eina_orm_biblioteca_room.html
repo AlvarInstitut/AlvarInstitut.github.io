@@ -139,8 +139,30 @@ dependencies {
 <li>Els mètodes de consulta comencen amb l'anotació <strong>@Query</strong> seguida per la sentència SQL. En la definició de la funció haurem de dir el tipus tornat, normalment un <strong>List</strong> de la classe corresponent a la taula on fem la consulta. La consulta pot ser complicada, i fins i tot utilitzar paràmetres. En aquest exemple inicial, només farem la consulta completa de tota la taula <strong>EMPLEAT</strong></li>
 </ul>
 <p>El DAO del nostre exemple, que anomenarem <strong>EmpleatsDAO</strong> podria quedar de la següent manera:</p>
-<pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.*<br /><br /><span style="color: #9e880d;">@Dao<br /></span><span style="color: #0033b3;">interface </span><span style="color: #000000;">EmpleatsDAO </span>{<br />    <span style="color: #9e880d;">@Insert<br /></span><span style="color: #9e880d;">    </span><span style="color: #0033b3;">fun </span><span style="color: #00627a;">insert</span>(e: <span style="color: #000000;">Empleat</span>)<br /><br />    <span style="color: #9e880d;">@Delete<br /></span><span style="color: #9e880d;">    </span><span style="color: #0033b3;">fun </span><span style="color: #00627a;">delete</span>(e: <span style="color: #000000;">Empleat</span>)<br /><br />    <span style="color: #9e880d;">@Update<br /></span><span style="color: #9e880d;">    </span><span style="color: #0033b3;">fun </span><span style="color: #00627a;">update</span>(e: <span style="color: #000000;">Empleat</span>)<br /><br />    <span style="color: #9e880d;">@Query</span>(<span style="color: #067d17;">"SELECT * FROM EMPLEAT"</span>)<br />    <span style="color: #0033b3;">fun </span><span style="color: #00627a;">getEmpleats</span>() : <span style="color: #000000;">List</span>&lt;<span style="color: #000000;">Empleat</span>&gt;<br />}</pre>
-<p>On recordem que els mètodes d'inserció, esborrat i modificació estan únicament amb motiu il·lustratiu. Com que no els utilitzarem, perfectament els podríem suprimir. L'únic mètode que utilitzarem serà <strong>getEmpleats()</strong></p></div>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.room.*
+
+@Dao
+interface EmpleatsDAO {
+    @Insert
+    fun insert(e: Empleat)
+
+    @Delete
+    fun delete(e: Empleat)
+
+    @Update
+    fun update(e: Empleat)
+
+    @Query("SELECT * FROM EMPLEAT")
+    fun getEmpleats() : List&lt;Empleat&gt;
+
+    @Query("SELECT * FROM EMPLEAT WHERE num = :n")
+    fun getEmpleat(n: Int) : Empleat
+}</code></pre>
+</div>
+</div>
+<p>On recordem que els mètodes d'inserció, esborrat i modificació estan únicament amb motiu il·lustratiu. També el mètode <strong>GetEmpleat(n: Int)</strong>, que serviria per agafar un empleat en concret a partir del seu número. Com que no els utilitzarem, perfectament els podríem suprimir. L'únic mètode que utilitzarem serà <strong>getEmpleats()</strong></p></div>
 </div>
 </div>
 </div>
@@ -154,6 +176,7 @@ dependencies {
 <li>Com a paràmetre de l'anterior anotació especificarem totes les entitats que volem mapejar (en el nostre exemple només és la classe Empleat). Com pot ser més d'una, s'ha de definir dins d'un Array.</li>
 <li>En ella definirem una funció que tornarà el DAO. També serà una funció abstracta</li>
 </ul>
+<p>Definim doncs la classe <strong>EmpleatsDatabase</strong>, per exemple en un fitxer del mateix nom:</p>
 <pre style="background-color: #ffffff; color: #080808; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #9e880d;">Database<br /></span><span style="color: #0033b3;">import </span>androidx.room.<span style="color: #000000;">RoomDatabase<br /></span><span style="color: #000000;"><br /></span><span style="color: #9e880d;">@Database</span>(<span style="color: #4a86e8;">entities = </span><span style="color: #00627a; font-style: italic;">arrayOf</span>(<span style="color: #000000;">Empleat</span>::<span style="color: #0033b3;">class</span>), <span style="color: #4a86e8;">version = </span><span style="color: #1750eb;">1</span>)<br /><span style="color: #0033b3;">abstract class </span><span style="color: #000000;">EmpleatsDatabase</span>:RoomDatabase() {<br />    <span style="color: #0033b3;">abstract fun </span><span style="color: #00627a;">empleatsDao</span>(): <span style="color: #000000;">EmpleatsDAO<br /></span>}</pre>
 <p></p></div>
 </div>
