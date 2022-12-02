@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>2.3.2 - Accés a través de JDBC | Accés a Dades </title>
+<title>3.4 ObjectDB (voluntari) | Accés a Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
@@ -15,7 +15,7 @@
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
 </head>
-<body class="exe-web-site" id="exe-node-20"><script type="text/javascript">document.body.className+=" js"</script>
+<body class="exe-web-site" id="exe-node-26"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
 <div id="header" ><div id="headerContent">Accés a Dades</div></div>
@@ -23,15 +23,15 @@
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
    <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
-   <li class="current-page-parent"><a href="2__bases_de_dades_objecterelacionals.html" class="current-page-parent daddy">2 - Bases de Dades Objecte-Relacionals</a>
-   <ul>
+   <li><a href="2__bases_de_dades_objecterelacionals.html" class="daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul class="other-section">
       <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
       <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
-      <li class="current-page-parent"><a href="23__manipulaci_de_dades.html" class="current-page-parent daddy">2.3 - Manipulació de dades</a>
-      <ul>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
          <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
-         <li id="active"><a href="232__accs_a_travs_de_jdbc.html" class="active daddy">2.3.2 - Accés a través de JDBC</a>
-         <ul>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
             <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
             <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
             <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
@@ -49,13 +49,13 @@
       </li>
    </ul>
    </li>
-   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
-   <ul class="other-section">
+   <li class="current-page-parent"><a href="3__bases_de_dades_orientades_a_objectes.html" class="current-page-parent daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul>
       <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
       <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
       <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
-      <li><a href="34_objectdb_voluntari.html" class="daddy">3.4 ObjectDB (voluntari)</a>
-      <ul class="other-section">
+      <li id="active"><a href="34_objectdb_voluntari.html" class="active daddy">3.4 ObjectDB (voluntari)</a>
+      <ul>
          <li><a href="341_installaci_d_objectdb.html" class="no-ch">3.4.1 Instal·lació d' ObjectDB</a></li>
          <li><a href="342_funcionalitat_bsica.html" class="no-ch">3.4.2 Funcionalitat bàsica</a></li>
          <li><a href="343_consultes.html" class="no-ch">3.4.3 Consultes</a></li>
@@ -68,26 +68,25 @@
 </div>
 <div id='topPagination'>
 <div class="pagination noprt">
-<a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2321_boolean.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="33__consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="341_installaci_d_objectdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="main-wrapper">
 <div id="main"><a name="main"></a>
-<div id="nodeDecoration"><h1 id="nodeTitle">2.3.2 - Accés a través de JDBC</h1></div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id8">
-<div class="iDevice emphasis0">
-<div id="ta8_1" class="block iDevice_content">
-<p>Una vegada ens hem familiaritzat amb els nous tipus de dades fent sentències SQL de forma còmoda, anem al que ens interessa, que és accedir des de Java a través de JDBC. També veurem l'accés als camps de tipus <strong>BYTEA</strong> (BLOB) i <strong>TEXT</strong> (CLOB). JDBC es va haver d'adaptar a aquestos nous tipus de dades, incorporant classes i mètodes, a partir de la versió 2.0.</p>
-<p>Tots aquestos exemples els farem en un projecte nou anomenat <strong>Tema6_1</strong>, dins d'un paquest anomenat <strong>Exemples</strong>. Al projecte, evidentment, li haurem d'afegir el driver de PostgreSQL.</p>
-<p>Recordeu que heu de substituir <strong>rxx</strong> pel vostre usuari i Base de Dades en el servidor de l'institut, i si treballeu sobre el vostre servidor, haureu de canviar l'adreça IP per <strong>localhost</strong>.</p>
-<p></p>
-<p> </p>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.4 ObjectDB (voluntari)</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id40">
+<div class="iDevice emphasis0" >
+<div id="ta40_114_2" class="block iDevice_content">
+<div class="exe-text"><p><strong>ObjectDB</strong> és una altra Base de Dades orientada a objectes, creada en 2014.</p>
+<p>És capaç de funcionar tant de forma <strong>incrustada</strong> (<strong>embedded</strong>) com en forma <strong>client-servidor</strong>. Nosaltres només provarem la primera forma, així la trindrem al mateix nivell de <strong>DB4O</strong>, i només haurem d'incloure un driver en el projecte per a poder guardar o buscar la informació de la Base de Dades, que es guardarà en un únic fitxer.</p>
+<p><strong>ObjectDB</strong> no ofereix la seua pròpia API, sinó que utilitza tant l'estàndar <strong>JPA</strong> com <strong>JDO</strong>. Açò, en compte de ser un inconvenient, pot ser un avantatge, cara a utilitzar sempre els mateixos estàndars. Concretament, nosaltres utilitzarem <strong>JPA</strong>. I açò ens durà un altre avatatge, el poder utilitzar un llenguatge de consulta com el <strong>JPQL</strong> (JPA Query Language), basat en la sintaxi SQL, encara que no tan potent.</p>
+<p>També té, però inconvenients. El seu rendiment no sembla tan bo com el de DB4O, sobretot en l'escriptura d'objectes.</p></div>
 </div>
 </div>
 </div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
-<a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2321_boolean.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="33__consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="341_installaci_d_objectdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="packageLicense" class="cc cc-by-nc-sa">

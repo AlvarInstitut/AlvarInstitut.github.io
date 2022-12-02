@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.4.2 Funcionalitat bàsica | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-28"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2__bases_de_dades_objecterelacionals.html" class="daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__bases_de_dades_orientades_a_objectes.html" class="current-page-parent daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul>
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+      <li class="current-page-parent"><a href="34_objectdb_voluntari.html" class="current-page-parent daddy">3.4 ObjectDB (voluntari)</a>
+      <ul>
+         <li><a href="341_installaci_d_objectdb.html" class="no-ch">3.4.1 Instal·lació d' ObjectDB</a></li>
+         <li id="active"><a href="342_funcionalitat_bsica.html" class="active no-ch">3.4.2 Funcionalitat bàsica</a></li>
+         <li><a href="343_consultes.html" class="no-ch">3.4.3 Consultes</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="341_installaci_d_objectdb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="343_consultes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.4.2 Funcionalitat bàsica</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id42">
+<div class="iDevice emphasis0" >
+<div id="ta42_115_2" class="block iDevice_content">
+<div class="exe-text"><p>Farem les proves en un projecte nou, anomenat <strong>Tema6_ObjectDB</strong>. Sobre ell ens crearem les mateixes classe que en l'exemple de <strong>DB4O</strong>, però aprofitarem per a fer les anotacions necessàries per a <strong>ObjectDB</strong>.</p>
+<p>Al projecte incorporarem l'únic driver necessari per a poder accedir</p>
+<p style="padding-left: 30px;"><strong>objectdb.jar</strong></p>
+<p>Per organitzar-lo millor creem un paquet anomenat <strong>classesEmpleat</strong> , que ens servirà per a fer tots els exemples. Ens crearem la classe <strong>Empleat</strong>, i les classes <strong>Adreca</strong> i <strong>Telefon</strong> que utilitzarà aquella. Construïm les classes de la manera més còmoda, i aprofitarem per a posar anotacions, necessàries per a poder utilitzar <strong>ObjectDB</strong>, i que són molt similars a les anotacions que fèiem en el tema anterior amb Hibernate, ja que en aquell moment també utilitzàvem <strong>JPA</strong>. Les anotacions que utilitzarem seran:</p>
+<ul>
+<li><strong>@Entity</strong>  abans de la classe que volem gfer persistent</li>
+<li><strong>@Embeddable</strong> abans d'una classe que s'incrustarà en una altra</li>
+<li><strong>@Id</strong> aband de la propietat que actuarà com a identificador a de la classe (com si fóra la clau principal)</li>
+</ul>
+<p>Podríem fer totes les classes com a <strong>@Entity</strong>, per a poder guardar-les de forma independent, i poder buscar-les també de forma independent (seria en cas de l'exemple de les comarques, poblacions i instituts). En aquest cas ens convé més que tant <strong>Adreca </strong>com <strong>Telefon</strong> siguen incrustades (embedded), ja que no té sentit una adreça ni telèfon sense tenir l'empleat. Açò farà que siga més còmoda la seua inserció. En canvi ens dificultaria les consultes si vulguérem buscar per adreces o telèfons, però no és aquest el cas</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Entity
+class Empleat (
+    @Id var nif: String?, var nom: String?, var departament: Int?, var edat: Int? = 0, var sou: Double? = 0.0,
+    var foto: Array&lt;Byte&gt;?,
+    var curriculum: Array&lt;Char&gt;?,
+    var adreca: Adreca?,
+    var correus_e: Array&lt;String&gt;?,
+    var telefons : Array&lt;Telefon&gt;?
+)</code></pre>
+</div>
+</div>
+<p>I ara posarem <strong>Adreca </strong>i <strong>Telefon </strong> com <strong>@Embeddable</strong>. No té sentit definir cap propietat com a <strong>@Id</strong>, ja que cada adreça i telèfon s'incrustarà dins de l'empleat corresponent</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Embeddable
+class Adreca (var carrer: String?, var codipostal: String?, var poblacio: String?)
+</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Embeddable
+class Telefon( var mobil : Boolean , var numero: String)</code></pre>
+</div>
+</div>
+<p></p>
+<p class="titolet">Connexió</p>
+<p>Utilitzem la API <strong>JPA</strong>. En ella s'utilitza el <strong>EntityManager</strong>, a la qual li fa falta un Factory. Resumit en una sentència quedaria així:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>val bd = Persistence.createEntityManagerFactory("Empleat.odb").createEntityManager()</code></pre>
+</div>
+</div>
+<p class="titolet">Inserció</p>
+<p>Per a guardar un objecte utilitzem el mètode <strong>persist(objecte)</strong></p>
+<p>Provem a introduir un empleat. Guardeu el següent programa en <strong>Exemple1_InserirEmpleat.kt</strong>. Guardeu-lo en el paquet <strong>exemples</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import classesEmpleat.Adreca
+import classesEmpleat.Empleat
+import classesEmpleat.Telefon
+import javax.persistence.Persistence
+
+fun main() {
+
+    val bd = Persistence.createEntityManagerFactory("Empleat.odb").createEntityManager()
+    bd.transaction.begin()
+
+    var e = Empleat("11111111a","Albert",10,45,1000.0,null,null,null,null,null)
+
+    // les dades més complicades les introduïm de forma especial
+    e.adreca = Adreca("C/ Major, 7", "12001", "Castelló")
+    e.correus_e = arrayOf("alu11111111a@ieselcaminas.org")
+    e.telefons = arrayOf(Telefon(true, "666777888"), Telefon(false, "964112233"))
+
+    bd.persist(e);
+
+    bd.transaction.commit()
+    bd.close();
+}</code></pre>
+</div>
+</div>
+<p>Com veiem necessita una <strong>transacció</strong> per a poder fer persistents les dades<br />Per a poder visualitzar les dades introduïdes, lamentablement no ho podem fer des de l'entorn de IntelliJ. Ens farà falta l'explorador de ObjectDB. Executem <strong>explorer.sh</strong> (<strong>explorer.exe</strong> en Windows).</p>
+<p>Observarem que ha detectat l'última connexió feta a una Base de Dades <strong>ObjectDB</strong> i ja la tindrem oberta:</p>
+<p><img src="T6_3_4_2_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1123" height="600" /></p>
+<p>En finalitzar d'observar les dades és convenient tancar la connexió. Si no la tanquem, quan anem a executar qualsevol programa que accedisca, ens donarà error, avisant que la Base de Dades estàsent utilitzada per un altre usuari.</p>
+<p>Per tant, haurem de tenir especial atenció a tancar la connexió a la Base de Dades. Podria passar que ens donara un error el programa, i la connexió s'haja quedat oberta. Segurament el més oportú serà intentar tancar el programa, o tancar IntelliJ, i d'aquesta manera desbloquejarem la Base de Dades.</p>
+<p>El mètode commit obliga a guardar les dades cap al contenidor i activa de nou una transacció per a les properes operacions, per tant és convenient anar utilitzant-lo després d'una sèrie d'actualitzacions.</p>
+<p>Anem a posar algunes dades més, per a tenir un poc més de joc. Concretament seran dues empleades més. Copieu el següent codi al fitxer <strong>Exemple1_1_InserirMesEmpleats.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import classesEmpleat.Adreca
+import classesEmpleat.Empleat
+import classesEmpleat.Telefon
+import javax.persistence.Persistence
+
+fun main() {
+
+    val bd = Persistence.createEntityManagerFactory("Empleat.odb").createEntityManager()
+    bd.transaction.begin()
+
+    val e = Empleat("22222222b", "Berta", 10, 35, 1700.0, null, null, null, null, null)
+    val f = Empleat("33333333c", "Clàudia", 20, 37, 1500.0, null, null, null, null, null)
+
+//les dades més complicades les introduïm de forma especial
+    e.adreca = Adreca ("C/ Enmig, 7", "12001", "Castelló")
+    val corr = arrayOf( "alu22222222b@ieselcaminas.org", "berta@gmail.com" )
+    e.correus_e = corr
+    val tels = arrayOf(Telefon(true,"666555444"), Telefon(false,"964223344"))
+    e.telefons = tels
+
+    f.adreca = Adreca ("C/ de Dalt, 7", null, "Borriana")
+    val corr2 = arrayOf("alu33333333c@ieselcaminas.org")
+    f.correus_e = corr2
+
+
+    bd.persist(e)
+    bd.persist(f)
+
+    bd.transaction.commit()
+    bd.close();
+}</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id43">
+<div class="iDevice emphasis0" >
+<div id="ta43_114_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Consulta bàsica</p>
+<p>Afortunadament <strong>ObjectDB</strong> fa les consultes molt més senzilles i potents que <strong>DB4O</strong>.</p>
+<p>En primer lloc per obtenir un objecte podem utilitzar el mètode <strong>get(classe, id)</strong>, al qual li passem la classe que volem llegir i un valor per a la propietat definida com identificador. És igual que en <strong>Hibernate</strong>, ja que també utilitza JPA.<strong></strong></p>
+<p>En el següent exemple es veu com una vegada obtingut l'objecte, es pot accedir molt fàcilment a tota la informació. Copieu-lo al fitxer Kotlin <strong>Exemple2_ConsultaUnEmpleat.kt</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import classesEmpleat.Empleat
+import javax.persistence.Persistence
+
+fun main() {
+    val bd = Persistence.createEntityManagerFactory("Empleat.odb").createEntityManager()
+
+    val e = bd.getReference(Empleat::class.java,"11111111a")
+    println(
+        "Nif: " + e.nif + ". Nom: " + e.nom + ". Població: " + e.adreca?.poblacio
+    )
+    if (e.correus_e != null)
+        print("Primer correu: " + e.correus_e?.get(0) + ".")
+
+    if (e.telefons != null)
+        print("Primer telèfon: " + e.telefons!![0].numero + ".")
+    println()
+
+    bd.close();
+}</code></pre>
+</div>
+</div>
+<p><br />Observeu com no hem utilitzat un bucle per a recórrer la llista, sinó un if. Això és perquè en aquest cas concret sabem a priori que en cas de trobar alguna instància, només serà una. Aquest seria el resultat:</p>
+<p class="codi2">Nif: 11111111a. Nom: Albert. Població: Castelló<br />Primer correu: alu11111111a@ieselcaminas.org. Primer telèfon: 666777888.</p>
+<p class="titolet">Esborrat</p>
+<p>Per a poder fer una actualització o esborrat d'algun objecte de la Base de Dades, aquest s'ha de correspondre amb algun objecte del programa Java o Kotlin, és a dir, l'objecte ha de ser persistent. Aquesta correspondència pot ser perquè un objecte nou l'hem guardat amb <strong>persist()</strong> (i continua "viu"), o perquè l'hem llegit de la BD.</p>
+<p>L’eliminació dels objectes s’aconsegueix amb el mètode <strong>remove()</strong>. Evidentment esborrarà també tot el que estiga incrustat, en el nostre exemple l'adreça i els telèfons. Distint seria si no els tinguérem incrustat, però no és el cas.</p>
+<p>Mirem un exemple en el qual esborrem un empleat. Guardeu el que va a continuació en el fitxer <strong>Exemple3_Esborrat.kt</strong>:. Hem de recordar que tota actualització requereix una <strong>transacció</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import classesEmpleat.Empleat
+import javax.persistence.Persistence
+
+fun main() {
+    val bd = Persistence.createEntityManagerFactory("Empleat.odb").createEntityManager()
+    bd.transaction.begin()
+    val e = bd.getReference(Empleat::class.java,"22222222b")
+    bd.remove(e)
+    bd.transaction.commit()
+    bd.close()
+}</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id44">
+<div class="iDevice emphasis0" >
+<div id="ta44_115_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Modificació</p>
+<p>Per a modificar un objecte de la Base de Dades primer haurem de tenir un objecte de Java que es corresponga amb ell (igual que en l'esborrat). Com en les altres ocasions, haurem de tenir una transacció en marxa, però ara ni tan sols fa falta fer-lo persistent expressament. Si modifiquem un objecte, en el moment de fer <strong>commit</strong> es guardarà, es farà persistent.</p>
+<p>Copieu el següent codi en un fitxer Kotlin anomenat <strong>Exemple4_Modificar.kt</strong> :</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import classesEmpleat.Empleat
+import javax.persistence.Persistence
+
+fun main() {
+    val bd = Persistence.createEntityManagerFactory("Empleat.odb").createEntityManager()
+    bd.transaction.begin()
+
+    val e = bd.getReference(Empleat::class.java,"11111111a")
+    if (e.sou != null) {
+        e.sou = e.sou.toString().toDouble() + 200.0
+    }
+    val adr = e.adreca
+    adr?.carrer = "Pl. Rei en Jaume, 15"
+    adr?.codipostal = "12002"
+    e.adreca = adr
+
+    bd.transaction.commit()
+    bd.close()
+}</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="341_installaci_d_objectdb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="343_consultes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

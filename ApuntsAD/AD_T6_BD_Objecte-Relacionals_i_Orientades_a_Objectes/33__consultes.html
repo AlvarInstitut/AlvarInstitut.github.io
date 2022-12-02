@@ -56,6 +56,13 @@
       <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
       <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
       <li id="active"><a href="33__consultes.html" class="active no-ch">3.3 - Consultes</a></li>
+      <li><a href="34_objectdb_voluntari.html" class="daddy">3.4 ObjectDB (voluntari)</a>
+      <ul class="other-section">
+         <li><a href="341_installaci_d_objectdb.html" class="no-ch">3.4.1 Instal·lació d' ObjectDB</a></li>
+         <li><a href="342_funcionalitat_bsica.html" class="no-ch">3.4.2 Funcionalitat bàsica</a></li>
+         <li><a href="343_consultes.html" class="no-ch">3.4.3 Consultes</a></li>
+      </ul>
+      </li>
    </ul>
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
@@ -63,7 +70,7 @@
 </div>
 <div id='topPagination'>
 <div class="pagination noprt">
-<a href="32__funcionalitat_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="32__funcionalitat_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34_objectdb_voluntari.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="main-wrapper">
@@ -161,7 +168,7 @@ fun main() {
 <p style="text-align: justify;">Observeu que una vegada definida la classe, podem fer-la servir en una <strong>Query</strong> per realitzar una consulta específica. En l'exemple, s'obtenen tots els empleats que són de Castelló o de Borriana. En variar la llista de poblacions obtindrem uns objectes empleat o uns altres. En el mètode match, que és qui diu si un element Empleat compleix la condició, es comprova si la població de l'empleat (que està dins d'adreça, i per tant s'accedeix amb <strong>emp.adreca?.poblacio</strong> ) està dins de l'array de poblacions.</p>
 <p style="text-align: justify;"> </p>
 <p style="text-align: justify;">Com que  es tracta d’una interfície amb un únic mètode a implementar, no caldrà que implementem sempre noves classes per a cada consulta diferent, sinó que podem fer servir <strong>classes anidades anònimes</strong> (anonymous nested class), per a fer-lo molt més curt, definint la classe en el oment d'utilitzar-la.</p>
-<p style="text-align: justify;">Mirem-ho en un altre exemple, en el qual es buscaran els empleats que tinguen el sou entre dos valors determinats. Construïm la classe <strong>Predicate</strong> en el mateix lloc on s'utilitza, en el <strong>query()</strong>, i no abulta molt perquè només té el mètode <strong>match()</strong>. En el mètode <strong>match()</strong> és on es comprova la condició. Comppieu el següent codi en el fitxer <strong>Exemple13_NativeQuery_2.kt</strong>:</p>
+<p style="text-align: justify;">Mirem-ho en un altre exemple, en el qual es buscaran els empleats que tinguen el sou entre dos valors determinats. Construïm la classe <strong>Predicate</strong> en el mateix lloc on s'utilitza, en el <strong>query()</strong>, i no abulta molt perquè només té el mètode <strong>match()</strong>. En el mètode <strong>match()</strong> és on es comprova la condició. Copieu el següent codi en el fitxer <strong>Exemple13_NativeQuery_2.kt</strong>:</p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>import com.db4o.Db4oEmbedded
@@ -316,7 +323,7 @@ fun main() {
 </div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
-<a href="32__funcionalitat_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="32__funcionalitat_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34_objectdb_voluntari.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="packageLicense" class="cc cc-by-nc-sa">

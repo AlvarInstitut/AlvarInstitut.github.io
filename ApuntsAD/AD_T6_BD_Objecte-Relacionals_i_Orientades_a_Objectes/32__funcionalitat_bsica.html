@@ -56,6 +56,13 @@
       <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
       <li id="active"><a href="32__funcionalitat_bsica.html" class="active no-ch">3.2 - Funcionalitat bàsica</a></li>
       <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+      <li><a href="34_objectdb_voluntari.html" class="daddy">3.4 ObjectDB (voluntari)</a>
+      <ul class="other-section">
+         <li><a href="341_installaci_d_objectdb.html" class="no-ch">3.4.1 Instal·lació d' ObjectDB</a></li>
+         <li><a href="342_funcionalitat_bsica.html" class="no-ch">3.4.2 Funcionalitat bàsica</a></li>
+         <li><a href="343_consultes.html" class="no-ch">3.4.3 Consultes</a></li>
+      </ul>
+      </li>
    </ul>
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
@@ -105,11 +112,16 @@
 </div>
 </div>
 <p>Com comentàvem anteriorment, hi ha una versió servidor, però que nosaltres ens conformarem amb la versió integrada (<em>embedded</em>). En el cas de la versió servidor utilitzaríem la classe <strong>Db4o</strong> per a fer la connexió. Com que nosaltres farem servir la versió integrada, utilitzarem la classe <strong>Db4oEmbedded</strong>.</p>
-<p>Des de l’aplicació indicarem el nom del fitxer on es guardaran les dades cridant el mètode estàtic de Db4oEmbedded <strong>openFile</strong>. A partir d’aquest moment, es mantindrà oberta una transacció que continuarà activa fins que tanquem amb el mètode <strong>close</strong>.</p>
-<p>Les proves que farem a continuació les podem posar en un paquet anomenat <strong>exemples</strong></p>
+<p class="titolet">Connexió</p>
+<p>És tan senzill com cridar des de la classe <strong>Db4oEmbedded</strong> el mètode estàtic <strong>openFile()</strong> passant-li com a paràmetre el nom del fitxer. A partir d’aquest moment, es mantindrà oberta una transacció que continuarà activa fins que tanquem amb el mètode <strong>close()</strong>.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>val bd = Db4oEmbedded.openFile("Empleats.db4o")</code></pre>
+</div>
+</div>
 <p class="titolet">Inserció</p>
 <p>Per a guardar un objecte utilitzem el mètode <strong>store(objecte)</strong></p>
-<p>Provem a introduir un empleat. Guardeu el següent programa en <strong>Exemple1_InserirEmpleat.kt</strong></p>
+<p>Provem a introduir un empleat. Guardeu el següent programa en <strong>Exemple1_InserirEmpleat.kt</strong>. Guardeu-lo en el paquet <strong>exemples</strong><br /></p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>import com.db4o.Db4oEmbedded
