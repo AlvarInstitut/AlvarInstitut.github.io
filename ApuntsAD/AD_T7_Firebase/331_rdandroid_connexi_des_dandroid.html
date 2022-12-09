@@ -177,6 +177,19 @@ class MainActivity : AppCompatActivity() {
 }</code></pre>
 </div>
 </div>
+<div class="nota_blau">
+<p><b><u>Nota</u></b></p>
+<p>En la versió d'Android Studio 2021.3.1.17 (o potser per la versió actual de Firebase), ha donat el següent error:</p>
+<p><img src="T7_3_3_1_1.0.png" alt="" width="1566" height="230" /></p>
+<p>Senzillament s'ha solucionat canviat en el <strong>buid.gradle</strong> del projecte la dependència google services de la 4.3.10 a la <strong>4.3.14</strong></p>
+<div class="highlighted-code language-json">
+<div>
+<pre><code>dependencies {
+        classpath 'com.google.gms:google-services:4.3.14'
+    }</code></pre>
+</div>
+</div>
+</div>
 <p>Quan executem el programa, crearà la clau <strong>message</strong> amb el valor <strong>Hello, World!</strong>:</p>
 <p><img src="T7_3_3_1_1.1.png" alt="" width="1920" height="1080" /></p>
 <p>I si modifiquem aquesta clau des de la consola, quasi immediatament veurem en els log de Debug com hem arreplegat el valor, gràcies al Listener:</p>
