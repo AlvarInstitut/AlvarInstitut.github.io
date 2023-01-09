@@ -104,16 +104,16 @@
 <p align="justify">Aquest tipus és molt versàtil en quant al format, bé siga per a la introducció de les dades, o el que és més habitual, per a la seua presentació. S'haurà d'utilitzar una funció, <b>TO_CHAR</b>, que acceptarà 2 paràmetres: el primer la data que es vol presentar, i el segon el format que volem. En el format indicarem per mig de determinats caràcters l'aspecte que volem. Per exemple, per a traure la data d'avui amb el format dia-mes-any, posaríem:</p>
 <p class="codi">SELECT TO_CHAR( NOW(), 'DD-MM-YYYY');</p>
 <p align="justify">El següent quadre resumeix aquestos caràcters, agrupat per categories:</p>
-<table style="width: 100%;" border="1" cellpadding="0" cellspacing="0">
+<table style="width: 100%;" cellspacing="0" cellpadding="0" border="1">
 <tbody>
 <tr>
-<td colspan="2" valign="top" width="212">
+<td colspan="2" width="212" valign="top">
 <p align="center"><span style="color: #ff0000;" color="#ff0000"><b>DIES</b></span></p>
 </td>
-<td colspan="2" valign="top" width="199">
+<td colspan="2" width="199" valign="top">
 <p align="center"><span style="color: #ff0000;" color="#ff0000"><b>MESOS</b></span></p>
 </td>
-<td colspan="2" valign="top" width="236">
+<td colspan="2" width="236" valign="top">
 <p align="center"><span style="color: #ff0000;" color="#ff0000"><b>ANYS</b></span></p>
 </td>
 </tr>
@@ -160,16 +160,16 @@
 </tbody>
 </table>
 <p>En principi els formats que tornen lletres ho estaran en anglès, però després veurem com canviar d'idioma.</p>
-<table style="width: 100%;" border="1" cellpadding="0" cellspacing="0">
+<table style="width: 100%;" cellspacing="0" cellpadding="0" border="1">
 <tbody>
 <tr>
-<td colspan="2" valign="top" width="212">
+<td colspan="2" width="212" valign="top">
 <p align="center"><span style="color: #ff0000;" color="#ff0000"><b>HORES</b></span></p>
 </td>
-<td colspan="2" valign="top" width="199">
+<td colspan="2" width="199" valign="top">
 <p align="center"><span style="color: #ff0000;" color="#ff0000"><b>MINUTS</b></span></p>
 </td>
-<td colspan="2" valign="top" width="236">
+<td colspan="2" width="236" valign="top">
 <p align="center"><span style="color: #ff0000;" color="#ff0000"><b>SEGONS</b></span></p>
 </td>
 </tr>
@@ -202,7 +202,7 @@
 </tbody>
 </table>
 <p> </p>
-<table style="width: 100%;" border="1" cellpadding="0" cellspacing="0">
+<table style="width: 100%;" cellspacing="0" cellpadding="0" border="1">
 <tbody>
 <tr>
 <td colspan="6" width="100%">
@@ -243,52 +243,52 @@
 </table>
 <p> </p>
 <p><span style="text-decoration: underline;">Exemples:</span></p>
-<p>Si ara és <b>18/01/16 13:30</b> (en el servidor, no en la vostra màquina), i fem <b>SELECT TO_CHAR(NOW(),'<i>format</i></b><b>');</b></p>
-<table style="width: 844px; height: 128px;" border="1" cellpadding="0" cellspacing="0">
+<p>Si ara fóra <b>9/1/16 13:39</b> (en el servidor, no en la vostra màquina), i férem <b>SELECT TO_CHAR(NOW(),'<i>format</i></b><b>');</b></p>
+<table style="width: 844px; height: 128px;" cellspacing="0" cellpadding="0" border="1">
 <tbody>
 <tr>
-<td valign="top" style="width: 310px;">
+<td style="width: 310.183px;" valign="top">
 <p>Format</p>
 </td>
-<td valign="top" style="width: 528px;">
+<td style="width: 528.317px;" valign="top">
 <p>Eixida</p>
 </td>
 </tr>
 <tr>
-<td style="width: 310px;">dd-mm-yy hh:mi</td>
-<td style="width: 528px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>18-01-16 01:30</b></span></td>
+<td style="width: 310.183px;">dd-mm-yy hh:mi</td>
+<td style="width: 528.317px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>09-01-23 01:39</b></span></td>
 </tr>
 <tr>
-<td style="width: 310px;">dd-mm-yy hh24:mi</td>
-<td style="width: 528px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>18-01-16 13:30</b></span></td>
+<td style="width: 310.183px;">dd-mm-yy hh24:mi</td>
+<td style="width: 528.317px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>09-01-16 13:39</b></span></td>
 </tr>
 <tr>
-<td style="width: 310px;">dd-MON-yyy</td>
-<td style="width: 528px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>18-JAN-016</b></span></td>
+<td style="width: 310.183px;">dd-MON-yyy</td>
+<td style="width: 528.317px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>09-JAN-023</b></span></td>
 </tr>
 <tr>
-<td style="width: 310px;">dd-TMMON-yyy</td>
-<td style="width: 528px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>18-ENE-016  <em>(si el tinguérem configurat en espanyol)</em></b></span></td>
+<td style="width: 310.183px;">dd-TMMON-yyy</td>
+<td style="width: 528.317px;"><span style="font-family: courier new,courier;" face="courier new,courier"><b>09-ENE-023  <em>(si el tinguérem configurat en espanyol)</em></b></span></td>
 </tr>
 <tr>
-<td style="width: 310px;">Day, dd "de" month "de" yyyy</td>
-<td style="width: 528px;"><strong><span style="font-family: courier new,courier;" face="courier new,courier">Monday   , 18 de january   de 2016</span></strong></td>
+<td style="width: 310.183px;">Day, dd "de" month "de" yyyy</td>
+<td style="width: 528.317px;"><strong><span style="font-family: courier new,courier;" face="courier new,courier">Monday , 09 de january de 2023   de 2016</span></strong></td>
 </tr>
 <tr>
-<td style="width: 310px;">FMDay, dd "de" FMmonth "de" yyyy.</td>
-<td style="width: 528px;"><strong>Monday, 18 de january de 2016.</strong></td>
+<td style="width: 310.183px;">FMDay, dd "de" FMmonth "de" yyyy.</td>
+<td style="width: 528.317px;"><strong>Monday, 09 de january de 2023.</strong></td>
 </tr>
 <tr>
-<td style="width: 310px;">TMDay, dd "de" TMmonth "de" yyyy.</td>
-<td style="width: 528px;"><strong>Lunes, 18 de enero de 2016.    </strong><em>(si el tinguérem configurat en espanyol)</em></td>
+<td style="width: 310.183px;">TMDay, dd "de" TMmonth "de" yyyy.</td>
+<td style="width: 528.317px;"><strong>Lunes, 09 de enero de 2023.    </strong><em>(si el tinguérem configurat en espanyol)</em></td>
 </tr>
 <tr>
-<td style="width: 310px;">FMDy PM FMhh-FMmi-FMss</td>
-<td style="width: 528px;"><strong>Mon PM 1-30-00</strong></td>
+<td style="width: 310.183px;">FMDy PM FMhh-FMmi-FMss</td>
+<td style="width: 528.317px;"><strong>Mon PM 1-39-00</strong></td>
 </tr>
 <tr>
-<td style="width: 310px;">TMDy PM TMhh-TMmi-TMss</td>
-<td style="width: 528px;"><strong>Lun PM 01-30-00 <em> </em></strong><em>(si el tinguérem configurat en espanyol)</em></td>
+<td style="width: 310.183px;">TMDy PM TMhh-TMmi-TMss</td>
+<td style="width: 528.317px;"><strong>Lun PM 01-39-00 <em> </em></strong><em>(si el tinguérem configurat en espanyol)</em></td>
 </tr>
 </tbody>
 </table>
