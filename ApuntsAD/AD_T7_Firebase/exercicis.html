@@ -107,8 +107,8 @@
 <li>Contrasenya: <strong>ieselcaminas_ad</strong></li>
 <li>Aplicació: <strong>xat-ad</strong></li>
 </ul>
-<p>La informació a la qual volem accedir està en el array <strong>EstadisticaVariacioPoblacional</strong> amb les províncies, i en cada província tenim el nom (<strong>nombre</strong>) i en un array anomenat <strong>data</strong> tenim diferents anys amb el número d'any i el valor de la variació de la població:</p>
-<p style="text-align: center;"><img src="T7_Ex1_1.png" alt="" width="749" height="444" /></p>
+<p>La informació a la qual volem accedir està en el array <strong>EstadisticaVariacioPoblacional</strong> amb les províncies, i en cada província tenim el nom (<strong>Nombre</strong>) i en un array anomenat <strong>Data</strong> tenim diferents anys amb el número d'any i el valor de la variació de la població:</p>
+<p style="text-align: center;"><img src="T7_Ex_1_1.png" alt="" width="831" height="529" /></p>
 <p><strong>PODEU FER L'APLICACIÓ EN INTELLIJ O EN ANDROID</strong></p>
 <p class="titolet">Aplicació en IntelliJ</p>
 <p>Podeu utilitzar el "esquelet" que hi ha a continuació. En ell tenim:</p>
@@ -116,8 +116,8 @@
 <li>Un JCombobox per a triar la província</li>
 <li>Un JTextArea, per a mostrar les dades de la província triada</li>
 </ul>
-<p>Haureu d'incorporar el fitxer json on està la configuració i la clau privada de la connexió. El fitxer s'anomena <strong>xat-ad-firebase-adminsdk-my2d0-8c69944b34.json</strong>, i el teniu com un recurs en l'aula virtual. La URL d'accés a aquesta Base de Dades és: <strong>https://xat-ad.firebaseio.com/</strong></p>
-<p>L'aplicació ha de agafar les províncies (observeu que estan en una llista) i guardar-les en un JComboBox, per a poder trair-les. Quan es trie una província, s'haurà de mostrar en el JTextArea la informació corresponent a la província, agafant tots els anys de l'array <strong>Data</strong> (observeu que també és una llista) i mostrar l'any i el valor de la variació poblacional (respectivament <strong>NombrePeriodo</strong> i <strong>Valor</strong>)</p>
+<p>Haureu d'incorporar el fitxer json on està la configuració i la clau privada de la connexió. El fitxer s'anomena <strong>xat-ad-9f901-firebase-adminsdk-f1vja-ee7dc206de.json</strong>, i el teniu com un recurs en l'aula virtual. La URL d'accés a aquesta Base de Dades és: <strong><a href="https://xat-ad-9f901-default-rtdb.europe-west1.firebasedatabase.app">https://xat-ad-9f901-default-rtdb.europe-west1.firebasedatabase.app</a></strong></p>
+<p>L'aplicació ha de agafar les províncies (observeu que estan en una llista) i guardar-les en un JComboBox, per a poder triar-les. Quan es trie una província, s'haurà de mostrar en el JTextArea la informació corresponent a la província, agafant tots els anys de l'array <strong>Data</strong> (observeu que també és una llista) i mostrar l'any i el valor de la variació poblacional (respectivament <strong>NombrePeriodo</strong> i <strong>Valor</strong>). No cal agafar tota la EstadisticaVariacioPoblacional. Podeu anar directament a un element de l'array. Per exemple <strong>EstadisticaVariacioPoblacional/0/Data</strong> fa referència a les dades de la primera província</p>
 <p style="text-align: center;"><img src="T7Ex1_2.png" alt="" width="450" height="450" /></p>
 <p>A continuació teniu l'esquelet del programa que podeu utilitzar, que el podeu guardar en el fitxer Kotlin <strong>T7Ex1_EstadisticaRD.kt</strong>:</p>
 <div class="highlighted-code language-java" style="font-weight: bold;">
@@ -137,68 +137,59 @@ import java.io.FileInputStream
 import com.google.firebase.FirebaseOptions
 import com.google.auth.oauth2.GoogleCredentials
 import com.google.firebase.FirebaseApp
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.*
 import java.awt.EventQueue
 
 
 class EstadisticaRD : JFrame() {
 
-	val etProv = JLabel("Provincia: ")
-	val provincia = JComboBox&lt;String&gt;()
+    val etProv = JLabel("Provincia: ")
+    val provincia = JComboBox&lt;String&gt;()
 
-	val etiqueta = JLabel("Missatges:")
-	val area = JTextArea()
+    val etiqueta = JLabel("Missatges:")
+    val area = JTextArea()
+    
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        setBounds(100, 100, 450, 450)
+        setLayout(BorderLayout())
 
+        val panell1 = JPanel(FlowLayout())
+        panell1.add(etProv)
+        panell1.add(provincia)
+        getContentPane().add(panell1, BorderLayout.NORTH)
 
-	// en iniciar posem un contenidor per als elements anteriors
-	init {
-		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-		setBounds(100, 100, 450, 450)
-		setLayout(BorderLayout())
-		// contenidor per als elements
-		//Hi haurà títol. Panell de dalt: últim missatge. Panell de baix: per a introduir missatge. Panell central: tot el xat
+        val panell2 = JPanel(BorderLayout())
+        panell2.add(etiqueta, BorderLayout.NORTH)
+        area.setForeground(Color.blue)
+        area.setEditable(false)
+        val scroll = JScrollPane(area)
+        panell2.add(scroll, BorderLayout.CENTER)
+        getContentPane().add(panell2, BorderLayout.CENTER)
 
-		val panell1 = JPanel(FlowLayout())
-		panell1.add(etProv)
-		panell1.add(provincia)
-		getContentPane().add(panell1, BorderLayout.NORTH)
+        setVisible(true)
 
-		val panell2 = JPanel(BorderLayout())
-		panell2.add(etiqueta, BorderLayout.NORTH)
-		area.setForeground(Color.blue)
-		area.setEditable(false)
-		val scroll = JScrollPane(area)
-		panell2.add(scroll, BorderLayout.CENTER)
-		getContentPane().add(panell2, BorderLayout.CENTER)
+        val serviceAccount = FileInputStream("xat-ad-9f901-firebase-adminsdk-f1vja-ee7dc206de.json")
 
-		setVisible(true)
+        val options = FirebaseOptions.builder()
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .setDatabaseUrl("https://xat-ad-9f901-default-rtdb.europe-west1.firebasedatabase.app").build()
 
-		val serviceAccount = FileInputStream("xat-ad-firebase-adminsdk-my2d0-8c69944b34.json")
+        FirebaseApp.initializeApp(options)
 
-		val options = FirebaseOptions.Builder()
-			.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-			.setDatabaseUrl("https://xat-ad.firebaseio.com").build()
+        // Posar tota la llista de províncies al JComboBox anomenat provincia
 
-		FirebaseApp.initializeApp(options)
+        provincia.addActionListener() {
+            // Posar la informació de tots els anys en el JTextArea anomenat area
 
-		// Posar tota la llista de províncies al JComboBox anomenat provincia
-
-
-		provincia.addActionListener() {
-			// Posar la informació de tots els anys en el JTextArea anomenat area
-
-			
-		}
-	}
+        }
+    }
 }
 
 fun main(args: Array&lt;String&gt;) {
-	EventQueue.invokeLater {
-		EstadisticaRD().isVisible = true
-	}
+    EventQueue.invokeLater {
+        EstadisticaRD().isVisible = true
+    }
 }</code></pre>
 </div>
 </div>
@@ -216,12 +207,12 @@ fun main(args: Array&lt;String&gt;) {
 </li>
 <li>Connecteu a la Base de Dades Firebase abans esmentada</li>
 </ul>
-<p>L'aplicació ha de agafar les províncies (observeu que estan en una llista) i guardar-les en el Spinner, per a poder trair-les. Quan es trie una província, s'haurà de mostrar en el TextView la informació corresponent a la província, agafant tots els anys de l'array <strong>Data</strong> (observeu que també és una llista) i mostrar l'any i el valor de la variació poblacional (respectivament <strong>NombrePeriodo</strong> i <strong>Valor</strong>)</p>
+<p>L'aplicació ha de agafar les províncies (observeu que estan en una llista) i guardar-les en el Spinner, per a poder triar-les. Quan es trie una província, s'haurà de mostrar en el TextView la informació corresponent a la província, agafant tots els anys de l'array <strong>Data</strong> (observeu que també és una llista) i mostrar l'any i el valor de la variació poblacional (respectivament <strong>NombrePeriodo</strong> i <strong>Valor</strong>). No cal agafar tota la EstadisticaVariacioPoblacional. Podeu anar directament a un element de l'array. Per exemple EstadisticaVariacioPoblacional/0/Data fa referència a les dades de la primera província</p>
 <p>A continuació teniu un exemple de activity_main.xml que us podria servir:</p>
 <pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #0000ff; font-weight: bold;">xml version</span><span style="color: #008000; font-weight: bold;">="1.0" </span><span style="color: #0000ff; font-weight: bold;">encoding</span><span style="color: #008000; font-weight: bold;">="utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res/android"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res-auto"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/tools"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">:context</span><span style="color: #008000; font-weight: bold;">=".MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">Spinner<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/combo"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="0dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintEnd_toEndOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintTop_toTopOf</span><span style="color: #008000; font-weight: bold;">="parent" </span>/&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/area"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="0dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="0dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:scrollbars</span><span style="color: #008000; font-weight: bold;">="vertical"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text</span><span style="color: #008000; font-weight: bold;">=""<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintBottom_toBottomOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintEnd_toEndOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintHorizontal_bias</span><span style="color: #008000; font-weight: bold;">="1.0"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintTop_toBottomOf</span><span style="color: #008000; font-weight: bold;">="@+id/combo"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintVertical_bias</span><span style="color: #008000; font-weight: bold;">="0.0" </span>/&gt;<br /><br />&lt;/<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</pre>
 <p>I a continuació l'esquelet del programa per si el voleu utilitzar ja que estan les recomacions-indicacions:</p>
 <pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono',monospace; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>androidx.appcompat.app.AppCompatActivity<br /><span style="color: #000080; font-weight: bold;">import </span>android.os.Bundle<br /><span style="color: #000080; font-weight: bold;">import </span>android.util.Log<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.View<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.AdapterView<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.ArrayAdapter<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.core.view.size<br /><span style="color: #000080; font-weight: bold;">import </span>com.google.firebase.database.*<br /><span style="color: #000080; font-weight: bold;">import </span>kotlinx.android.synthetic.main.activity_main.*<br /><br /><span style="color: #000080; font-weight: bold;">class </span>MainActivity : AppCompatActivity() {<br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreate(savedInstanceState: Bundle?) {<br />        <span style="color: #000080; font-weight: bold;">super</span>.onCreate(savedInstanceState)<br />        setContentView(R.layout.<span style="color: #660e7a; font-style: italic;">activity_main</span>)<br />        <span style="color: #000080; font-weight: bold;">val </span>pantPrincipal = <span style="color: #000080; font-weight: bold;">this  </span><span style="color: #808080; font-style: italic;">// per a utilitzar-lo en el ArrayAdapter del Spinner<br /></span><span style="color: #808080; font-style: italic;"><br /></span><span style="color: #808080; font-style: italic;">        // Inicialització de la referència i altres variables<br /></span><span style="color: #808080; font-style: italic;"><br /></span><span style="color: #808080; font-style: italic;">        // Lectura de totes les províncies per a posar-les després al Spinner<br /></span><span style="color: #808080; font-style: italic;">        // Es recomana llegir els fills de la llista, per tant addChildEventListener<br /></span><span style="color: #808080; font-style: italic;"><br /></span><span style="color: #808080; font-style: italic;">        // Inicialització del Spinner, amb un ArrayAdapter passant-li un ArrayList amb les províncies<br /></span><span style="color: #808080; font-style: italic;">        // es recomana fer-ho dins d'un addListenerForSingleValueEvent sobre la mateixa referència<br /></span><span style="color: #808080; font-style: italic;">        // per assegurar-nos que l'ArrayList ja té les províncies<br /></span><span style="color: #808080; font-style: italic;"><br /></span><span style="color: #808080; font-style: italic;">        // Instruccions per a posar en el TextView les dades de la provincia seleccionada<br /></span><span style="color: #808080; font-style: italic;">        // Dins del onItemSelectedListener del Spinner també es recomana llegir els fills de la llista,<br /></span><span style="color: #808080; font-style: italic;">        // per tant una altra vegada addChildEventListener<br /></span><span style="color: #808080; font-style: italic;">    </span>}<br />}</pre>
-<p>Com posa en les indicacions, podem tenir la complicació de que quan construïm el Spinner, encara no estiguen les dades llegides. Ho podem solventar afegint un altre listener, el <strong>addListenerForSingleValueEvent</strong>, que segur que s'executarà després del <strong>addChildEventListener</strong></p>
+<p>Com posa en les indicacions, podem tenir la complicació de que quan construïm el Spinner, encara no estiguen les dades llegides. Ho podem solucionar afegint un altre listener, el <strong>addListenerForSingleValueEvent</strong>, que segur que s'executarà després del <strong>addChildEventListener</strong></p>
 <p></p>
 </div>
 </div>
@@ -234,7 +225,7 @@ fun main(args: Array&lt;String&gt;) {
 <div class="iDevice_content_wrapper">
 <div id="ta240_229_2" class="block iDevice_content">
 <div class="pbl-task-description"><p>Farem un exercici paregut a l'anterior, però ara les dades estaran guardades en <strong>Cloud Firestore.</strong></p>
-<p>Es tractaran d'unes estadístiques lleugerament diferents de les anteriors, i sobretot, organitzades de forma diferent, més a l'estil de Cloud Firestore.</p>
+<p>Es tractaran d'unes estadístiques lleugerament diferents, i sobretot, organitzades de forma diferent, més a l'estil de Cloud Firestore.</p>
 <p>Les dades de connexió són les mateixes que en l'exercici anterior:</p>
 <ul>
 <li>Compte de Google: <strong>ad.ieselcaminas@gmail.com </strong></li>
@@ -279,57 +270,58 @@ import java.awt.EventQueue
 
 class EstadisticaCF : JFrame() {
 
-	val etCombo = JLabel("Llista de províncies:")
-	val comboProv = JComboBox&lt;String&gt;()
+    val etCombo = JLabel("Llista de províncies:")
+    val comboProv = JComboBox&lt;String&gt;()
 
-	val etiqueta = JLabel("Estadístiques:")
-	val area = JTextArea()
+    val etiqueta = JLabel("Estadístiques:")
+    val area = JTextArea()
 
-	// en iniciar posem un contenidor per als elements anteriors
-	init {
-		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-		setBounds(100, 100, 450, 400)
-		setLayout(BorderLayout())
-		// contenidor per als elements
+    // en iniciar posem un contenidor per als elements anteriors
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        setBounds(100, 100, 450, 400)
+        setLayout(BorderLayout())
+        // contenidor per als elements
 
-		val panell1 = JPanel(FlowLayout())
-		panell1.add(etCombo)
-		panell1.add(comboProv)
-		getContentPane().add(panell1, BorderLayout.NORTH)
+        val panell1 = JPanel(FlowLayout())
+        panell1.add(etCombo)
+        panell1.add(comboProv)
+        getContentPane().add(panell1, BorderLayout.NORTH)
 
-		val panell2 = JPanel(BorderLayout())
-		panell2.add(etiqueta, BorderLayout.NORTH)
-		area.setForeground(Color.blue)
-		area.setEditable(false)
-		val scroll = JScrollPane(area)
-		panell2.add(scroll, BorderLayout.CENTER)
-		getContentPane().add(panell2, BorderLayout.CENTER)
+        val panell2 = JPanel(BorderLayout())
+        panell2.add(etiqueta, BorderLayout.NORTH)
+        area.setForeground(Color.blue)
+        area.setEditable(false)
+        val scroll = JScrollPane(area)
+        panell2.add(scroll, BorderLayout.CENTER)
+        getContentPane().add(panell2, BorderLayout.CENTER)
 
-		setVisible(true)
+        setVisible(true)
 
-		val serviceAccount = FileInputStream("xat-ad-firebase-adminsdk-my2d0-8c69944b34.json")
+        val serviceAccount = FileInputStream("xat-ad-9f901-firebase-adminsdk-f1vja-ee7dc206de.json")
 
-		val options = FirebaseOptions.Builder()
-			.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-			.build()
+        val options = FirebaseOptions.builder()
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .build()
 
-		FirebaseApp.initializeApp(options)
+        FirebaseApp.initializeApp(options)
 
-		val db = FirestoreClient.getFirestore()
+        val db = FirestoreClient.getFirestore()
 
-		// Instruccions per a omplir el JComboBox amb les províncies
+        // Instruccions per a omplir el JComboBox amb les províncies
 
-				
-		// Instruccions per agafar la informació de tots els anys de la província triada
-		comboProv.addActionListener() {<br />
 
-	}
+        // Instruccions per agafar la informació de tots els anys de la província triada
+        comboProv.addActionListener() {
+
+        }
+    }
 }
 
 fun main(args: Array&lt;String&gt;) {
-	EventQueue.invokeLater {
-		EstadisticaCF().isVisible = true
-	}
+        EventQueue.invokeLater {
+            EstadisticaCF().isVisible = true
+        }
 }</code></pre>
 </div>
 </div>

@@ -261,14 +261,16 @@
 <pre><code>        // Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
         // Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
         db.collection("Xats").document("XatProva").collection("missatges").addSnapshotListener { snapshots, e -&gt;
-                for (dc in snapshots!!.documentChanges) {
-                    when (dc.type) {
-                        DocumentChange.Type.ADDED -&gt; {
-                            area.append( dc.document.getString("nom") + ": " + dc.document.getString("contingut") + "\n")
-                        }
+            for (dc in snapshots!!.documentChanges) {
+                when (dc.type) {
+                    DocumentChange.Type.ADDED -&gt; {
+                        area.append( dc.document.getString("nom") + ": " + dc.document.getString("contingut") + "\n")
                     }
+                    else -&gt; {}    // en les últimes versions obliga a posar totes les opcions, ADDED, MODIFIED i REMOVED, o poser el else
                 }
-         }</code></pre>
+            }
+        }
+</code></pre>
 </div>
 </div>
 <p style="text-align: justify;">I recordeu que ara hem d'eliminar o comentar l'altre moment que què actualitzàvem <strong>area</strong> amb el contingut de <strong>ultimUsuari </strong>i <strong>ultimMissatge</strong> (jo el tenia en la línia 42)</p>
@@ -375,9 +377,11 @@ class MainActivity : AppCompatActivity() {
                     DocumentChange.Type.ADDED -&gt; {
                         area.append( dc.document.getString("nom") + ": " + dc.document.getString("contingut") + "\n")
                     }
+                    else -&gt; {}    // en les últimes versions obliga a posar totes les opcions, ADDED, MODIFIED i REMOVED, o poser el else
                 }
             }
         }
+        
         // Per a guardar dades
         // Primer sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
         // Després també com a documents en la col·lecció /Xats/XatProva/missatges
@@ -391,7 +395,6 @@ class MainActivity : AppCompatActivity() {
             db.collection("Xats").document("XatProva").collection("missatges").add(m)
             text.setText("")
         }
-
     }
 }
 </code></pre>

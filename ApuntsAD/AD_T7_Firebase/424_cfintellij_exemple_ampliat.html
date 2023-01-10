@@ -113,7 +113,9 @@
 <pre><code>class Missatge(var nom: String, var data: Date, var contingut: String)</code></pre>
 </div>
 </div>
-<p>Aquest és el programa. Per comoditat hem posat la classe <strong>Missatge </strong>dins. Si l'heu definida en un fitxer independent, haureu d'esborrar la definició en aquest programa. Guardeu-lo amb el nom <strong>Exemple_7_4_2</strong><strong>_FirebaseCF_XatCloud_Millorat.kt</strong>:</p>
+<p>Aquest és el programa. Per comoditat hem posat la classe <strong>Missatge </strong>dins. Si l'heu definida en un fitxer independent, haureu d'esborrar la definició en aquest programa.</p>
+<p>No es visualitzaran els missatge que no tinguen la data incorporada.</p>
+<p>Guardeu-lo amb el nom <strong>Exemple_7_4_2</strong><strong>_FirebaseCF_XatCloud_Millorat.kt</strong>:</p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>import java.awt.EventQueue
@@ -131,14 +133,9 @@ import java.awt.Color
 import javax.swing.JScrollPane
 import java.io.FileInputStream
 
-import com.google.api.core.ApiFuture
 import com.google.auth.oauth2.GoogleCredentials
-import com.google.cloud.firestore.DocumentChange
 import com.google.cloud.firestore.DocumentReference
-import com.google.cloud.firestore.DocumentSnapshot
-import com.google.cloud.firestore.EventListener
 import com.google.cloud.firestore.Firestore
-import com.google.cloud.firestore.FirestoreException
 import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
 import com.google.firebase.cloud.FirestoreClient
@@ -150,154 +147,150 @@ class Missatge(var nom: String, var data: Date, var contingut: String)
 
 class XatCloudMillorat : JFrame() {
 
-	val etComboXats = JLabel("Llista de tots els xats disponibles:")
-	val comboXats = JComboBox&lt;String&gt;()
+    val etComboXats = JLabel("Llista de tots els xats disponibles:")
+    val comboXats = JComboBox&lt;String&gt;()
 
-	val etUsuari = JLabel("Nom Usuari:")
-	val usuari = JTextField(25)
+    val etUsuari = JLabel("Nom Usuari:")
+    val usuari = JTextField(25)
 
-	val etUltimMissatge = JLabel("Últim missatge: ")
-	val ultimMissatge = JLabel()
+    val etUltimMissatge = JLabel("Últim missatge: ")
+    val ultimMissatge = JLabel()
 
-	val etiqueta = JLabel("Missatges:")
-	val area = JTextArea()
+    val etiqueta = JLabel("Missatges:")
+    val area = JTextArea()
 
-	val etIntroduccioMissatge = JLabel("Introdueix missatge:")
-	val enviar = JButton("Enviar")
-	val missatge = JTextField(15)
+    val etIntroduccioMissatge = JLabel("Introdueix missatge:")
+    val enviar = JButton("Enviar")
+    val missatge = JTextField(15)
 
-	var database: Firestore? = null
-	var docRef: DocumentReference? = null
+    var database: Firestore? = null
+    var docRef: DocumentReference? = null
 
-	var listenerUltimMissatge: ListenerRegistration? = null
-	var listenerMissatges: ListenerRegistration? = null
+    var listenerUltimMissatge: ListenerRegistration? = null
+    var listenerMissatges: ListenerRegistration? = null
 
-	// en iniciar posem un contenidor per als elements anteriors
-	init {
-		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-		setBounds(100, 100, 550, 400)
-		setLayout(BorderLayout())
-		// contenidor per als elements
-		//Hi haurà títol. Panell de dalt: últim missatge. Panell de baix: per a introduir missatge. Panell central: tot el xat
+    // en iniciar posem un contenidor per als elements anteriors
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        setBounds(100, 100, 550, 400)
+        setLayout(BorderLayout())
+        // contenidor per als elements
+        //Hi haurà títol. Panell de dalt: últim missatge. Panell de baix: per a introduir missatge. Panell central: tot el xat
 
-		val panell10 = JPanel(FlowLayout())
-		panell10.add(etComboXats)
-		panell10.add(comboXats)
-		val panell11 = JPanel(FlowLayout())
-		panell11.add(etUsuari)
-		panell11.add(usuari)
-		val panell12 = JPanel(FlowLayout())
-		panell12.add(etUltimMissatge)
-		panell12.add(ultimMissatge)
-		val panell1 = JPanel(GridLayout(3, 1))
-		panell1.add(panell10)
-		panell1.add(panell11)
-		panell1.add(panell12)
-		getContentPane().add(panell1, BorderLayout.NORTH)
+        val panell10 = JPanel(FlowLayout())
+        panell10.add(etComboXats)
+        panell10.add(comboXats)
+        val panell11 = JPanel(FlowLayout())
+        panell11.add(etUsuari)
+        panell11.add(usuari)
+        val panell12 = JPanel(FlowLayout())
+        panell12.add(etUltimMissatge)
+        panell12.add(ultimMissatge)
+        val panell1 = JPanel(GridLayout(3, 1))
+        panell1.add(panell10)
+        panell1.add(panell11)
+        panell1.add(panell12)
+        getContentPane().add(panell1, BorderLayout.NORTH)
 
-		val panell2 = JPanel(BorderLayout())
-		panell2.add(etiqueta, BorderLayout.NORTH)
-		area.setForeground(Color.blue)
-		area.setEditable(false)
-		val scroll = JScrollPane(area)
-		panell2.add(scroll, BorderLayout.CENTER)
-		getContentPane().add(panell2, BorderLayout.CENTER)
+        val panell2 = JPanel(BorderLayout())
+        panell2.add(etiqueta, BorderLayout.NORTH)
+        area.setForeground(Color.blue)
+        area.setEditable(false)
+        val scroll = JScrollPane(area)
+        panell2.add(scroll, BorderLayout.CENTER)
+        getContentPane().add(panell2, BorderLayout.CENTER)
 
-		val panell3 = JPanel(FlowLayout())
-		panell3.add(etIntroduccioMissatge)
-		panell3.add(missatge)
-		panell3.add(enviar)
-		getContentPane().add(panell3, BorderLayout.SOUTH)
+        val panell3 = JPanel(FlowLayout())
+        panell3.add(etIntroduccioMissatge)
+        panell3.add(missatge)
+        panell3.add(enviar)
+        getContentPane().add(panell3, BorderLayout.SOUTH)
 
-		setVisible(true)
-		comboXats.addActionListener() { inicialitzarXat() }
-		enviar.addActionListener { enviar() }
+        setVisible(true)
+        comboXats.addActionListener() { inicialitzarXat() }
+        enviar.addActionListener { enviar() }
 
-		val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
+        val serviceAccount = FileInputStream("acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json")
 
-		val options = FirebaseOptions.Builder()
-			.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-			.build()
+        val options = FirebaseOptions.builder()
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .build()
 
-		FirebaseApp.initializeApp(options)
+        FirebaseApp.initializeApp(options)
 
-		database = FirestoreClient.getFirestore()
+        database = FirestoreClient.getFirestore()
 
+        // Exemple de llegir tots els documents d'una col·lecció
+        // Per a triar el xat
+        val documents = database?.collection("Xats")?.get()?.get()?.getDocuments()
+        for (document in documents!!) {
+            comboXats.addItem(document.getId())
+        }
+        comboXats.setSelectedIndex(0)
+    }
 
-		// Exemple de llegir tots els documents d'una col·lecció
-		// Per a triar el xat
-		val documents = database?.collection("Xats")?.get()?.get()?.getDocuments()
-		for (document in documents!!) {
-			comboXats.addItem(document.getId())
-		}
-		comboXats.setSelectedIndex(0)
+    fun inicialitzarXat() {
+        docRef = database?.collection("Xats")?.document(comboXats.getSelectedItem().toString())
+        area.setText("")
 
-	}
+        // Exemple de lectura única: senzillament sobre un ApiFuture i sobre ell get()
+        // Per a posar el títol. Sobre /Xats/XatProva/nomXat
+        val nomXat = docRef?.get()?.get()?.getString("nomXat")
+        this.setTitle(nomXat)
 
-	fun inicialitzarXat() {
-		docRef = database?.collection("Xats")?.document(comboXats.getSelectedItem().toString())
-		area.setText("")
+        // Exemple de listener de lectura contínua addSnapshotListener()
+        // Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
+        // Si estava en marxa, el parem abans de tornar-lo a llançar
+        if (listenerUltimMissatge != null)
+            listenerUltimMissatge!!.remove()
 
-		// Exemple de lectura única: senzillament sobre un ApiFuture i sobre ell get()
-		// Per a posar el títol. Sobre /Xats/XatProva/nomXat
-		val future = docRef?.get()
-		val nomXat = future?.get()?.getString("nomXat")
-		this.setTitle(nomXat)
+        listenerUltimMissatge = docRef?.addSnapshotListener { snapshot, e -&gt;
+            ultimMissatge.setText(snapshot?.getString("ultimMissatge"))
+        }
 
-		// Exemple de listener de lectura contínua addSnapshotListener()
-		// Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
-		// Si estava en marxa, el parem abans de tornar-lo a llançar
-		if (listenerUltimMissatge != null)
-			listenerUltimMissatge!!.remove()
+        // Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+        // Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+        // Si estava en marxa, el parem abans de tornar-lo a llançar
+        if (listenerMissatges != null)
+            listenerMissatges!!.remove()
 
-		listenerUltimMissatge = docRef?.addSnapshotListener { snapshot, e -&gt;
-			ultimMissatge.setText(snapshot?.getString("ultimMissatge"))
-		}
+        listenerMissatges = docRef?.collection("missatges")?.orderBy("data")?.addSnapshotListener { snapshots, e -&gt;
+            for (dc in snapshots!!.getDocumentChanges()) {
+                val dData = dc.getDocument().getDate("data")
+                val d = SimpleDateFormat("dd-MM-yyyy HH:mm").format(dData)
+                area.append(
+                    dc.getDocument().getString("nom") + " (" + d + "): " + dc.getDocument().getString("contingut") + "\n"
+                )
+            }
+        }
+    }
+    
+    // Exemple de guardar dades en Cloud Firestore
+    // Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+    fun enviar() {
+        val database = FirestoreClient.getFirestore()
+        val docXat = database.collection("Xats").document(comboXats.getSelectedItem().toString())
 
-		// Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
-		// Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
-		// Si estava en marxa, el parem abans de tornar-lo a llançar
-		if (listenerMissatges != null)
-			listenerMissatges!!.remove()
+        val dades = HashMap&lt;String, Any&gt;()
+        dades.put("ultimUsuari", usuari.getText())
+        dades.put("ultimMissatge", missatge.getText())
 
-		listenerMissatges = docRef?.collection("missatges")?.orderBy("data")?.addSnapshotListener { snapshots, e -&gt;
-			for (dc in snapshots!!.getDocumentChanges()) {
-				val dData = dc.getDocument().getDate("data")
-				val d = SimpleDateFormat("dd-MM-yyyy HH:mm").format(dData)
-				area.append(
-					dc.getDocument().getString("nom") + " (" + d + "): " + dc.getDocument().getString("contingut") + "\n"
-				)
-			}
-		}
-	}
+        docXat.update(dades)
 
+        val dades2 = HashMap&lt;String, Any&gt;()
+        dades2.put("nom", usuari.getText())
+        dades2.put("contingut", missatge.getText())
 
-	// Exemple de guardar dades en Cloud Firestore
-	// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
-	fun enviar() {
-		val database = FirestoreClient.getFirestore()
-		val docXat = database.collection("Xats").document(comboXats.getSelectedItem().toString())
-
-		val dades = HashMap&lt;String, Any&gt;()
-		dades.put("ultimUsuari", usuari.getText())
-		dades.put("ultimMissatge", missatge.getText())
-
-		docXat.update(dades)
-
-		val dades2 = HashMap&lt;String, Any&gt;()
-		dades2.put("nom", usuari.getText())
-		dades2.put("contingut", missatge.getText())
-
-		val m = Missatge(usuari.getText(), Date(), missatge.getText())
-		docXat.collection("missatges").add(m)
-	}
+        val m = Missatge(usuari.getText(), Date(), missatge.getText())
+        docXat.collection("missatges").add(m)
+    }
 
 }
 
 fun main(args: Array&lt;String&gt;) {
-	EventQueue.invokeLater {
-		XatCloudMillorat().isVisible = true
-	}
+    EventQueue.invokeLater {
+        XatCloudMillorat().isVisible = true
+    }
 }</code></pre>
 </div>
 </div>
