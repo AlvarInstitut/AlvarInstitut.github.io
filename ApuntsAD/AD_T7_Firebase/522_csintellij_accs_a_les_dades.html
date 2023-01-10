@@ -114,11 +114,11 @@
 <p style="text-align: justify;">De la primera manera ho faríem així, baixem el fitxer a un fitxer auxiliar, i des d'alli el carreguem</p>
 <div class="highlighted-code language-java">
 <div>
-<pre><code>		// Primera manera de llegir, amb un fitxer auxiliar
-		val destFilePath = Paths.get("auxiliar.jpg")
-		blob?.downloadTo(destFilePath)
-		val image = ImageIO.read(destFilePath.toFile())
-		foto.setIcon(ImageIcon(image))
+<pre><code>        // Primera manera de llegir, amb un fitxer auxiliar
+        val f = File("auxiliar")
+        blob?.downloadTo(FileOutputStream(f))
+        val image = ImageIO.read(f)
+        foto.setIcon(ImageIcon(image))
 </code></pre>
 </div>
 </div>

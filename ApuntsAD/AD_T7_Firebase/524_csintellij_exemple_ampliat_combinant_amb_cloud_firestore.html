@@ -106,13 +106,12 @@
 <li>Amb aquest nom d'imatge anirem a Cloud Storage per a agafar-la</li>
 </ul>
 <p>D'aquesta manera ens queda una pantalla molt senzilla, pràcticament com en l'exemple anterior, és a dir amb un <strong>JComboBox</strong> amb el nom de les imatges, que ara agafarem de Cloud Firestore, i un <strong>JButton </strong> per a mostrar la imatge.</p>
-<p>Li posarem ara el nom de <strong>Exemple_7_5_3_FirebaseCF-CS_CoffeeShops</strong><strong>.kt</strong>. El codi està simplificat al màxim, llevant tractament d'errors i opcions. Observeu que estem connectant a l'usuari comú que tenim per a fer proves, <strong>ieselcaminas.ad@gmail.com</strong></p>
+<p>Li posarem ara el nom de <strong>Exemple_7_5_3_FirebaseCF-CS_CoffeeShops</strong><strong>.kt</strong>. El codi està simplificat al màxim, llevant tractament d'errors i opcions. Observeu que estem connectant a l'usuari comú que tenim per a fer proves, <strong>ad.ieselcaminas@gmail.com</strong></p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>import javax.swing.JFrame
 import java.awt.EventQueue
 import javax.swing.JComboBox
-import javax.swing.JLabel
 import java.awt.BorderLayout
 import javax.swing.JPanel
 import java.awt.FlowLayout
@@ -122,17 +121,12 @@ import com.google.auth.oauth2.GoogleCredentials
 import com.google.firebase.FirebaseApp
 import com.google.cloud.storage.Bucket
 import com.google.firebase.cloud.StorageClient
-import java.nio.file.Paths
-import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
-import java.io.IOException
 import java.nio.ByteBuffer
 import java.io.ByteArrayInputStream
 import javax.swing.ImageIcon
-import java.io.File
 import javax.swing.JButton
 import com.google.firebase.cloud.FirestoreClient
-import com.google.cloud.firestore.DocumentChange
 import com.google.cloud.firestore.Firestore
 
 class CoffeeShops : JFrame() {
@@ -153,7 +147,7 @@ class CoffeeShops : JFrame() {
 
         getContentPane().add(foto, BorderLayout.CENTER)
 
-        val serviceAccount = FileInputStream("xat-ad-firebase-adminsdk-my2d0-8c69944b34.json")
+        val serviceAccount = FileInputStream("xat-ad-9f901-firebase-adminsdk-f1vja-ee7dc206de.json")
 
         val options = FirebaseOptions.builder()
             .setCredentials(GoogleCredentials.fromStream(serviceAccount))
@@ -161,8 +155,9 @@ class CoffeeShops : JFrame() {
 
         FirebaseApp.initializeApp(options)
 
+        bucket = StorageClient.getInstance().bucket("xat-ad-9f901.appspot.com")
+
         database = FirestoreClient.getFirestore()
-        bucket = StorageClient.getInstance().bucket("xat-ad.appspot.com")
 
         // Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
         // Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
