@@ -10,6 +10,7 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
@@ -108,8 +109,9 @@
 </div>
 <p style="text-align: justify;">Aquest <strong>blob</strong> podrem agafar-lo de dues maneres:</p>
 <ul style="text-align: justify;">
-<li>Baixant-lo a un fitxer temporal</li>
-<li>Agafant-lo directament en memòria</li>
+<li>Baixant-lo a un fitxer temporal amb el mètode <strong>downloadTo()</strong></li>
+<li>Agafant-lo directament en memòria a un <strong>ByteBuffer </strong>de grandària suficient</li>
+<li>Agafant-lo directament en memòria a un <strong>ByteArray</strong> amb el mètode <strong>getContent()</strong> i aleshores no cal especificar cap grandària (potser siga el més còmode)</li>
 </ul>
 <p style="text-align: justify;">De la primera manera ho faríem així, baixem el fitxer a un fitxer auxiliar, i des d'alli el carreguem</p>
 <div class="highlighted-code language-java">
@@ -133,13 +135,23 @@
 </code></pre>
 </div>
 </div>
-<p style="text-align: justify;">Qualsevol de les dues maneres ens hauria de funcionar bé, col·locant juntament amb la definició del blob en la funció que s'executa en apretar el botó, <strong>agafar()</strong>. I aquest seria el resultat:</p>
+<p style="text-align: justify;">La tercera manera, segurament és la més còmoda, amb el mètode <strong>getContent()</strong>, que ens torna el <strong>ByteArray</strong>. P</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        //Tercera manera de llegir: amb getContent per a carregar a un ByteArray
+        val im = blob?.getContent()
+        val image = ImageIO.read(im?.inputStream())
+        foto.setIcon(ImageIcon(image))
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;">Qualsevol de les tres maneres ens hauria de funcionar bé, col·locant juntament amb la definició del blob en la funció que s'executa en apretar el botó, <strong>agafar()</strong>. I aquest seria el resultat:</p>
 <p style="text-align: center;"><img src="T7_5_2_2_1.png" alt="" width="900" height="600" /></p>
 <p style="text-align: center;"></p>
 <p style="text-align: justify;">Altres mètodes del <strong>bucket</strong> que ens poden interessar són:</p>
 <ul>
 <li style="text-align: justify;"><strong>get()</strong>: agafa un fitxer, passant-li el nom i tornant un <strong>blob</strong>. És el que hem utiitzat.</li>
-<li style="text-align: justify;"><strong>create()</strong>: serveix per a pujar un fitxer al bucket; se li passen 2 paràmetres, el nom que tindrà el fitxer en el Clousd Storage, i el contingut, que se li pot passar en forma de ByteArray o de InputStream</li>
+<li style="text-align: justify;"><strong>create()</strong>: serveix per a pujar un fitxer al bucket; se li passen 3 paràmetres, el nom que tindrà el fitxer en el Clousd Storage, el contingut que se li pot passar en forma de ByteArray o de InputStream, i el tipus de fitxer (per exemple <strong>"image/png"</strong>)</li>
 <li style="text-align: justify;"><strong>list()</strong>: torna un conjunt de blobs en forma de <strong>Page&lt;Blob&gt;</strong>. De cada element blob podrem baixar-nos el contingut a un fitxer auxiliar, a un ByteBuffer, agafar el seu nom, ...</li>
 </ul></div>
 </div>
@@ -149,6 +161,9 @@
 <div class="pagination noprt">
 <a href="521_csintellij_connexi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="523_csintellij_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0</a></p>
 </div>
 </div>
 </div>

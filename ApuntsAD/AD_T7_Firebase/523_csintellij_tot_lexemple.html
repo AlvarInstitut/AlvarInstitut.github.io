@@ -10,6 +10,7 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
@@ -100,13 +101,13 @@
 <div class="iDevice emphasis0" >
 <div id="ta236_237_2" class="block iDevice_content">
 <div class="exe-text"><p>Anem a ajuntar tot l'exemple que visualitza una imatge guardada en Cloud Storage, modificant-lo un poc: ens guardarem els noms de les imatges en un <strong>JComboBox</strong>. I per a visualitzarla imatge, en compte d'un <strong>JLabel </strong>utilitzarem un <strong>JButton</strong>, així la imatge quedara centrada tan horitzontal com verticalment.</p>
+<p>Per a provar la pujada d'imatges, proposarem un segon nom a la imatge, i un botó. Si s'apreta es guardarà la imatge amb el nom proposat (o canviat), aprofitant l'extensió del nom per a posar el tipus d'imatge</p>
 <p>El guardarem amb un altre nom, en el fitxer Kotlin <strong>Exemple_7_5_2_FirebaseCS_AgafarImatge</strong><strong>.kt</strong></p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>import javax.swing.JFrame
 import java.awt.EventQueue
 import javax.swing.JComboBox
-import javax.swing.JLabel
 import java.awt.BorderLayout
 import javax.swing.JPanel
 import java.awt.FlowLayout
@@ -116,79 +117,80 @@ import com.google.auth.oauth2.GoogleCredentials
 import com.google.firebase.FirebaseApp
 import com.google.cloud.storage.Bucket
 import com.google.firebase.cloud.StorageClient
-import java.nio.file.Paths
-import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
-import java.io.IOException
-import java.nio.ByteBuffer
-import java.io.ByteArrayInputStream
 import javax.swing.ImageIcon
-import java.io.File
 import javax.swing.JButton
+import javax.swing.JTextField
 
 class AgafarImatge_2 : JFrame() {
-	val nomIm = JComboBox&lt;String&gt;()
+    val nomIm = JComboBox&lt;String&gt;()
+    val nomIm2 = JTextField(15)
+    val boto = JButton("Guardar còpia")
 
-	val foto = JButton()
-	var bucket: Bucket? = null
+    val foto = JButton()
+    var bucket: Bucket? = null
 
-	init {
-		defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-		setBounds(100, 100, 900, 600)
-		setLayout(BorderLayout())
+    var im = byteArrayOf()
 
-		val panell1 = JPanel(FlowLayout())
-		panell1.add(nomIm)
-		getContentPane().add(panell1, BorderLayout.NORTH)
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        setBounds(100, 100, 900, 600)
+        setLayout(BorderLayout())
 
-		getContentPane().add(foto, BorderLayout.CENTER)
+        val panell1 = JPanel(FlowLayout())
+        panell1.add(nomIm)
+        getContentPane().add(panell1, BorderLayout.NORTH)
 
-		val serviceAccount = FileInputStream(
-			"acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-fcf7da56aa.json"
-		)
+        getContentPane().add(foto, BorderLayout.CENTER)
 
-		val options = FirebaseOptions.Builder()
-			.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-			.setStorageBucket("acces-a-dades-6e5a6.appspot.com")
-			.build()
+        val panell2 = JPanel(FlowLayout())
+        panell2.add(nomIm2)
+        panell2.add(boto)
+        contentPane.add(panell2,BorderLayout.SOUTH)
 
-		FirebaseApp.initializeApp(options)
+        val serviceAccount = FileInputStream("xat-ad-9f901-firebase-adminsdk-f1vja-ee7dc206de.json")
 
-		bucket = StorageClient.getInstance().bucket()
+        val options = FirebaseOptions.builder()
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .build()
 
-		val blobs = bucket?.list()
-		for (b in blobs!!.iterateAll())
-			nomIm.addItem(b.getName())
+        FirebaseApp.initializeApp(options)
 
-		nomIm.addActionListener { agafar() }
+        bucket = StorageClient.getInstance().bucket("xat-ad-9f901.appspot.com")
 
-	}
+        val blobs = bucket?.list()
+        for (b in blobs!!.iterateAll())
+            nomIm.addItem(b.getName())
 
-	fun agafar() {
-		// Instruccions per agafar la imatge
-		val blob = bucket?.get(nomIm.getSelectedItem().toString())
+        nomIm.addActionListener { agafar() }
 
-/*
-		// Primera manera de llegir, amb un fitxer auxiliar
-		val destFilePath = Paths.get("auxiliar.jpg")
-		blob?.downloadTo(destFilePath)
-		val image = ImageIO.read(destFilePath.toFile())
-		foto.setIcon(ImageIcon(image))
-*/
-		//Segona manera de llegir: muntant un reader per a carregar a un ByteBuffer
-		val im = ByteBuffer.allocate(1024 * 1024)
-		blob?.reader()?.read(im)
-		val image = ImageIO.read(ByteArrayInputStream(im.array()))
-		foto.setIcon(ImageIcon(image))
+        boto.addActionListener { guardar() }
 
-	}
+    }
+
+    fun agafar() {
+        // Instruccions per agafar la imatge
+        val blob = bucket?.get(nomIm.getSelectedItem().toString())
+
+        //Tercera manera de llegir: amb getContent per a carregar a un ByteArray
+        im = blob!!.getContent()
+        val image = ImageIO.read(im?.inputStream())
+        foto.setIcon(ImageIcon(image))
+
+        val nom = nomIm.getSelectedItem().toString().split(".")
+        nomIm2.text = nom[0]+"2."+nom[1]
+    }
+
+    fun guardar(){
+        bucket?.create(nomIm2.text,im,"image/"+nomIm2.text.split(".")[1])
+    }
 
 }
 
 fun main(args: Array&lt;String&gt;) {
-	EventQueue.invokeLater {
-		AgafarImatge_2().isVisible = true
-	}
+    EventQueue.invokeLater {
+        AgafarImatge_2().isVisible = true
+    }
 }</code></pre>
 </div>
 </div>
@@ -202,6 +204,9 @@ fun main(args: Array&lt;String&gt;) {
 <div class="pagination noprt">
 <a href="522_csintellij_accs_a_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="524_csintellij_exemple_ampliat_combinant_amb_cloud_firestore.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0</a></p>
 </div>
 </div>
 </div>
