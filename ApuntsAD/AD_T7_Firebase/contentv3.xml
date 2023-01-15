@@ -13359,8 +13359,11 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     <string role="key" value="anchors_linked_from_fields"></string>
                     <dictionary></dictionary>
                     <string role="key" value="content_w_resourcePaths"></string>
-                    <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p&gt;Anem a ajuntar tot l'exemple que visualitza una imatge guardada en Cloud Storage, modificant-lo un poc: ens guardarem els noms de les imatges en un &lt;strong&gt;JComboBox&lt;/strong&gt;. I per a visualitzarla imatge, en compte d'un &lt;strong&gt;JLabel &lt;/strong&gt;utilitzarem un &lt;strong&gt;JButton&lt;/strong&gt;, així la imatge quedara centrada tan horitzontal com verticalment.&lt;/p&gt;
-&lt;p&gt;Per a provar la pujada d'imatges, proposarem un segon nom a la imatge, i un botó. Si s'apreta es guardarà la imatge amb el nom proposat (o canviat), aprofitant l'extensió del nom per a posar el tipus d'imatge&lt;/p&gt;
+                    <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p&gt;Anem a ajuntar tot l'exemple que visualitza una imatge guardada en Cloud Storage, modificant-lo un poc:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ens guardarem els noms de les imatges en un &lt;strong&gt;JComboBox&lt;/strong&gt;. I per a &lt;strong&gt;visualitzar&lt;/strong&gt; la imatge, en compte d'un &lt;strong&gt;JLabel &lt;/strong&gt;utilitzarem un &lt;strong&gt;JButton&lt;/strong&gt;, així la imatge quedara centrada tan horitzontal com verticalment.&lt;/li&gt;
+&lt;li&gt;Per a provar la pujada d'imatges, proposarem un segon nom a la imatge, i un botó. Si s'apreta es guardarà la imatge amb el nom proposat (o canviat), aprofitant l'extensió del nom per a posar el tipus d'imatge&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;El guardarem amb un altre nom, en el fitxer Kotlin &lt;strong&gt;Exemple_7_5_2_FirebaseCS_AgafarImatge&lt;/strong&gt;&lt;strong&gt;.kt&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;highlighted-code language-java&quot;&gt;
 &lt;div&gt;
@@ -13454,7 +13457,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;I aquest seria el resultat:&lt;/p&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;resources/T7_5_2_3_1.png&quot; alt=&quot;&quot; width=&quot;900&quot; height=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;resources/T7_5_2_3_1.png&quot; alt=&quot;&quot; width=&quot;920&quot; height=&quot;618&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/div&gt;"></unicode>
                     <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
                     <int value="4"></int>
@@ -13475,7 +13478,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                          <instance class="exe.engine.field.TextField">
                           <dictionary>
                            <string role="key" value="_id"></string>
-                           <int value="9895"></int>
+                           <int value="9906"></int>
                            <string role="key" value="_idevice"></string>
                            <none></none>
                            <string role="key" value="_instruc"></string>
@@ -13489,7 +13492,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                           </dictionary>
                          </instance>
                          <string role="key" value="_id"></string>
-                         <unicode value="236_237_2.33"></unicode>
+                         <unicode value="236_237_2.34"></unicode>
                          <string role="key" value="_imageResource"></string>
                          <instance class="exe.engine.resource.Resource" reference="209">
                           <dictionary>
@@ -13500,9 +13503,9 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                            <string role="key" value="_storageName"></string>
                            <string value="T7_5_2_3_1.png"></string>
                            <string role="key" value="_userName"></string>
-                           <string value="/tmp/tmp7BJtYn/T7_5_2_3_1.png"></string>
+                           <string value="/tmp/tmp3RAoRO.eXe/previews/allyourbase/T7_5_2_3_1.png"></string>
                            <string role="key" value="checksum"></string>
-                           <string value="8b187885c19eef552c4556ab60e5d21f"></string>
+                           <string value="64bb75c64e85f168d7dcb60a73974917"></string>
                            <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                            <int value="2"></int>
                            <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -13529,7 +13532,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     <string role="key" value="intlinks_to_anchors"></string>
                     <dictionary></dictionary>
                     <string role="key" value="nextImageId"></string>
-                    <int value="34"></int>
+                    <int value="35"></int>
                     <string role="key" value="parentNode"></string>
                     <reference key="208"></reference>
                    </dictionary>
@@ -18831,7 +18834,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="195"></reference>
+  <reference key="208"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
@@ -20129,6 +20132,10 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
    <list>
     <reference key="272"></reference>
    </list>
+   <string role="key" value="64bb75c64e85f168d7dcb60a73974917"></string>
+   <list>
+    <reference key="209"></reference>
+   </list>
    <string role="key" value="65ee0fa59875bfa7c17311ea4edaef4c"></string>
    <list>
     <reference key="122"></reference>
@@ -20184,10 +20191,6 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
    <string role="key" value="863c6b0f2b04408cfb91e55fd23c2c72"></string>
    <list>
     <reference key="244"></reference>
-   </list>
-   <string role="key" value="8b187885c19eef552c4556ab60e5d21f"></string>
-   <list>
-    <reference key="209"></reference>
    </list>
    <string role="key" value="8ec7af30ccfb77e0dd97c5a7b74886fe"></string>
    <list>
