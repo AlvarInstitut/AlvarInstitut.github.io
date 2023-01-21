@@ -32,7 +32,7 @@
 
 
 
-[Apunts Curs 2019-2020 (últim amb Java)](index AD (2019-2020).m)
+[Apunts Curs 2019-2020 (últim amb Java)](index AD (2019-2020).md)
 
 
 
