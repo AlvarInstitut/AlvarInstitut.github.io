@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.2 - Mètodes del Writer | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li class="current-page-parent"><a href="2__manipulaci_dels_fluxos_de_dades.html" class="current-page-parent daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul>
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="22__fluxos_orientats_a_carcters.html" class="current-page-parent daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul>
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li id="active"><a href="222__mtodes_del_writer.html" class="active no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="221__mtodes_del_reader.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__fluxos_decoradors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.2 - Mètodes del Writer</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_1" class="block iDevice_content">
+<p style="text-align: justify;">Comencem també pel més senzill i primordial, el mètode que escriu un caràcter.</p>
+<ul style="text-align: justify;">
+<li>void <strong>write(int <em>car</em>) </strong>: escriu el caràcter passat com a paràmetre en el flux d'eixida. En cas que siga un FileWriter, escriurà el caràcter amb la codificació per defecte del S.O. : en Windows ISO-8839 i en Linux UTF-8. Si no es poguera fer l'escriptura per qualsevol motiu (per exemple, disc ple), es llançarà una excepció de tipus <strong>IOException</strong>.</li>
+</ul>
+<p style="text-align: justify;">Igual que en l'apartat anterior, anem a veure un exemple senzill d'utilització, en el qual guardarem en un fitxer el contingut d'una cadena, ara ja sense por als caràcters estranys.</p>
+<p style="text-align: justify;">En aquest primer exemple del <strong>Writer</strong> treballarem sobre un fitxer inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb el contingut.</p>
+<div class="nota_blau">
+<p style="text-align: justify;"><strong><span style="text-decoration: underline;">Nota</span></strong></p>
+<p style="text-align: justify;">Hem de fer constar que si no es tanca el fitxer (millor dit el flux d'eixida) podria ser que no es guardara res en el fitxer. Per tant és una operació ben important que no hem d'oblidar.</p>
+</div>
+<p></p>
+<div class="codi">
+<div>import java.io.FileWriter;</div>
+<div>import java.io.IOException;</div>
+<div> </div>
+<div>public class Exemple_2_31 {</div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws IOException {</div>
+<div> </div>
+<div style="margin-left: 60px;">String text = "Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...";</div>
+<div style="margin-left: 60px;">FileWriter f_out = new FileWriter("f5.txt");</div>
+<div style="margin-left: 60px;">for (int i=0;i&lt;text.length();i++) {</div>
+<div style="margin-left: 90px;">f_out.write(text.charAt(i));</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">f_out.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p style="text-align: justify;">En el constructor del <strong>Writer</strong> no hem indicat el segon paràmetre, aquell que indicava si era per a afegir o no, i per tant si no existia el fitxer el crearà, però si ja existia el fitxer, destruirà el seu contingut i el substituirà pel nou contingut. Per això si tornem a executar el programa, tindrem el mateix resultat en <strong>f5.txt</strong></p>
+<p class="codi2"><span>Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...</span></p>
+<p>Anem a provar a substituir el constructor, posant ara</p>
+<p><span class="codi">FileWriter f_out = new FileWriter("f3.txt",true);</span></p>
+<p>Si l'executem, veurem que afegirà al final, sense destruir el que ja hi havia.</p>
+<p class="codi2"><span>Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...</span><span>Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...</span></p>
+<p> </p>
+<p>Altres mètodes del <strong>Writer</strong> són:</p>
+<ul>
+<li style="text-align: justify;">void <strong>write(char[ ] <em>buffer</em>)</strong> : escriu el contingut de l'array de caràcters al fitxer. Cal que buffer no siga nul, o provocarem un error.</li>
+<li style="text-align: justify;">void <strong>write(char[ ] <em>buffer</em>, int <em>pos</em>, int <em>llarg</em>)</strong> : escriu al fitxer el contingut de l'array que està a partir de la posició <strong>pos</strong> i tants caràcters com assenyale <strong>llarg</strong>.</li>
+<li style="text-align: justify;">void <strong>flush()</strong> : Guardar les dades en un fitxer és una operació relativament lenta, ja que és accedir a un dispositiu lent (millor dit, no tan ràpid com la memòria). És habitual que s'utilitze una memòria intermèdia per a que les coses no vagen tan lentes (com si fóra una caché). Però potser que les dades no estiguen guardades encara en el fitxer, sinó que encara estiguen en aquesta caché. El mètode <strong>flush</strong> obliga a escriure els caràcters que queden encara a la caché físicament al fitxer d'eixida.</li>
+<li style="text-align: justify;">void <strong>close()</strong> : tanca el flux d'eixida, alliberant els recursos. Si quedava alguna cosa en la caché, es guardarà al fitxer i es tancarà el flux.</li>
+</ul>
+<p>Aquestos mètodes són totalment similars als del OutputStream. A banda d'aquestos, el <strong>Writer</strong> té un altre, que pot ser especialment útil per a caràcters:</p>
+<ul>
+<li>void <strong>write(String <em>text</em>)</strong> : escriu tot el contingut del String en el fitxer.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="221__mtodes_del_reader.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__fluxos_decoradors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

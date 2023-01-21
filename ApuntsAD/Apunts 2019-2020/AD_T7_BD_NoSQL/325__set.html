@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.5 - Set | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__firebase.html" class="daddy">2 - Firebase</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__bases_de_dades_clauvalor.html" class="current-page-parent daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul>
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li class="current-page-parent"><a href="32__utilitzaci_de_redis.html" class="current-page-parent daddy">3.2 - Utilització de Redis</a>
+      <ul>
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li id="active"><a href="325__set.html" class="active no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="324__list.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="326__set_ordenat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.5 - Set</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id55">
+<div class="iDevice emphasis0">
+<div id="ta55_85" class="block iDevice_content">
+<p>Els <strong>Sets</strong> de <strong>Redis</strong> són conjunts de valors de tipus String no ordenats. Podrem afegir, actualitzar i esborrar aquestos elements de forma còmoda i eficient. No es permetran els valors duplicats.</p>
+<p>A més <strong>Redis</strong> ens ofereix operacions interessants com la unió, intersecció i diferència de conjunts.</p>
+<p>Com sempre, els comandos són específics, és a dir no ens valen els de Strings, List o Hash. Tots els comandos comencen per <strong>S</strong>.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id56">
+<div class="iDevice emphasis0">
+<div id="ta56_85" class="block iDevice_content">
+<p class="titolet">SADD</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sadd clau valor1 valor2 valorN</p>
+<p>Afegeix els valors al conjunt (creant la clau si és necessari). Recordem que l'ordre no és important, i que no es poden repetir els valors; si intentem introduir un repetit, no donarà error, però no l'introduirà. El comando tornarà el número d'elements que realment s'han afegit.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; sadd colors roig verd blau<br />(integer) 3<br />127.0.0.1:6379&gt; sadd colors verd groc<br />(integer) 1</p>
+<p><span style="text-decoration: underline;"><strong></strong></span></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id57">
+<div class="iDevice emphasis0">
+<div id="ta57_85" class="block iDevice_content">
+<p class="titolet">SMEMBERS</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">smembers clau</p>
+<p>Torna tots els valors del conjunt. Si la clau no existeix tornarà un conjunt buit. Recordeu que l'ordre dels elements no és predecible</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "groc"<br />2) "verd"<br />3) "roig"<br />4) "blau"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id58">
+<div class="iDevice emphasis0">
+<div id="ta58_85" class="block iDevice_content">
+<div id="ta57_85" class="block iDevice_content">
+<p class="titolet">SISMEMBER</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sismember clau valor</p>
+<p>Comprova si el valor està en el conjunt, tornant 1 en cas afirmatiu i 0 en cas negatiu.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; sismember colors verd<br />(integer) 1<br />127.0.0.1:6379&gt; sismember colors negre<br />(integer) 0</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id59">
+<div class="iDevice emphasis0">
+<div id="ta59_85" class="block iDevice_content">
+<div id="ta58_85" class="block iDevice_content">
+<div id="ta57_85" class="block iDevice_content">
+<p class="titolet">SCARD</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sard clau</p>
+<p>Torna la cardinalitat, és a dir, el número d'elements del conjunt en l'actualitat.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; scard colors<br />(integer) 4</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id60">
+<div class="iDevice emphasis0">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SREM</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">srem clau valor1 valor2 valorN</p>
+<p>Elimina els valors del conjunt. Si el conjunt es queda buit, eliminarà la clau també. Si algun dels valor no és cap element del conjunt, senzillament s'ignorarà. El comando torna el número d'elements realment eliminat.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; srem colors verd negre<br />(integer) 1<br />127.0.0.1:6379&gt; smembers colors<br />1) "groc"<br />2) "roig"<br />3) "blau"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id61">
+<div class="iDevice emphasis0">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SPOP</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">spop clau</p>
+<p>Torna i elimina un valor aleatori del conjunt. Recordeu que a més de tornar-lo, l'elimina del conjunt.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "groc"<br />2) "roig"<br />3) "blau"<br />127.0.0.1:6379&gt; spop colors<br />"groc"<br />127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id62">
+<div class="iDevice emphasis0">
+<div id="ta62_85" class="block iDevice_content">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SRANDMEMBER</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">srandmember clau</p>
+<p>Molt paregut a l'anterior. Torna un valor aleatori del conjunt, però en aquesta ocasió no l'elimina del conjunt.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; srandmember colors<br />"blau"<br />127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id63">
+<div class="iDevice emphasis0">
+<div id="ta63_85" class="block iDevice_content">
+<div id="ta62_85" class="block iDevice_content">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SUNION</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sunion clau1 clau2 clauN</p>
+<p>Torna la unió dels elements dels conjunts especificats. És una unió correcta, és a dir, no es repetirà cap valor.</p>
+<p>No modifica cap conjunt, i el resultat únicament es torna, no es guarda en cap lloc de forma permanent.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"<br />127.0.0.1:6379&gt; sadd colors1 verd roig groc<br />(integer) 3<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"<br />3) "verd"<br />127.0.0.1:6379&gt; sunion colors colors1<br />1) "verd"<br />2) "groc"<br />3) "roig"<br />4) "blau"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id64">
+<div class="iDevice emphasis0">
+<div id="ta64_85" class="block iDevice_content">
+<div id="ta63_85" class="block iDevice_content">
+<div id="ta62_85" class="block iDevice_content">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SUNIONSTORE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sunionstore clau_destí clau1 clau2 clauN</p>
+<p>Igual que l'anterior, però ara sí que es guarda el resultat de la unió en un conjunt, clau_destí (el primer especificat). Si la clau_destí ja existia, substituirà el contingut.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"<br />3) "verd"<br />127.0.0.1:6379&gt; sunionstore colors2 colors colors1<br />(integer) 4<br />127.0.0.1:6379&gt; smembers colors2<br />1) "verd"<br />2) "groc"<br />3) "roig"<br />4) "blau"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id65">
+<div class="iDevice emphasis0">
+<div id="ta65_85" class="block iDevice_content">
+<div id="ta63_85" class="block iDevice_content">
+<div id="ta62_85" class="block iDevice_content">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SDIFF</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sdiff clau1 clau2 clauN</p>
+<p>Torna la diferència dels elements del primer conjunt respecte de la unió de tots els altres. És a dir, torna els elements del primer conjunt que no pertanyen acap dels altres.</p>
+<p>No modifica cap conjunt, i el resultat únicament es torna, no es guarda en cap lloc de forma permanent.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"<br />3) "verd"<br />127.0.0.1:6379&gt; sdiff colors1 colors<br />1) "verd"<br />2) "groc"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id66">
+<div class="iDevice emphasis0">
+<div id="ta66_85" class="block iDevice_content">
+<div id="ta64_85" class="block iDevice_content">
+<div id="ta63_85" class="block iDevice_content">
+<div id="ta62_85" class="block iDevice_content">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SDIFFSTORE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sdiffstore clau_destí clau1 clau2 clauN</p>
+<p>Igual que l'anterior, però ara sí que es guarda el resultat de la diferència en un conjunt, clau_destí (el primer especificat). Si la clau_destí ja existia, substituirà el contingut.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"<br />3) "verd"<br />127.0.0.1:6379&gt; sdiffstore colors3 colors1 colors<br />(integer) 2<br />127.0.0.1:6379&gt; smembers colors3<br />1) "verd"<br />2) "groc"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id67">
+<div class="iDevice emphasis0">
+<div id="ta67_85" class="block iDevice_content">
+<div id="ta65_85" class="block iDevice_content">
+<div id="ta63_85" class="block iDevice_content">
+<div id="ta62_85" class="block iDevice_content">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SINTER</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sinter clau1 clau2 clauN</p>
+<p>Torna la intersecció dels elements dels conjunts. És a dir, torna els elements que pertanyen a tots els conjunts especificats.</p>
+<p>No modifica cap conjunt, i el resultat únicament es torna, no es guarda en cap lloc de forma permanent.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"<br />3) "verd"<br />127.0.0.1:6379&gt; sinter colors colors1<br />1) "roig"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id68">
+<div class="iDevice emphasis0">
+<div id="ta68_85" class="block iDevice_content">
+<div id="ta64_85" class="block iDevice_content">
+<div id="ta63_85" class="block iDevice_content">
+<div id="ta62_85" class="block iDevice_content">
+<div id="ta61_85" class="block iDevice_content">
+<div id="ta60_85" class="block iDevice_content">
+<p class="titolet">SINTERSTORE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">sinterstore clau_destí clau1 clau2 clauN</p>
+<p>Igual que l'anterior, però ara sí que es guarda el resultat de la intersecció en un conjunt, clau_destí (el primer especificat). Si la clau_destí ja existia, substituirà el contingut.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"<br />3) "verd"<br />127.0.0.1:6379&gt; sinterstore colors4 colors colors1<br />(integer) 1<br />127.0.0.1:6379&gt; smembers colors4<br />1) "roig"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id69">
+<div class="iDevice emphasis0">
+<div id="ta69_85" class="block iDevice_content">
+<p class="titolet">SMOVE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">smove clau_font clau_destí valor</p>
+<p>Meneja el valor del conjunt orígen (el primer conjunt) al conjunt destí (el segon). Això suposarà eliminar-lo del primer i afegir-lo al segon. Tornarà 1 si l'ha menejat, i 0 si no l'ha menejat.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; smembers colors<br />1) "roig"<br />2) "blau"<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"<br />3) "verd"<br />127.0.0.1:6379&gt; smove colors1 colors verd<br />(integer) 1<br />127.0.0.1:6379&gt; smembers colors<br />1) "verd"<br />2) "roig"<br />3) "blau"<br />127.0.0.1:6379&gt; smembers colors1<br />1) "groc"<br />2) "roig"</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="324__list.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="326__set_ordenat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.- Contenidors | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li id="active"><a href="3_contenidors.html" class="active no-ch">3.- Contenidors</a></li>
+   <li><a href="4_components.html" class="daddy">4.- Components</a>
+   <ul class="other-section">
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li><a href="6_dilegs.html" class="daddy">6.- Diàlegs</a>
+   <ul class="other-section">
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_windowbuilder.html" class="no-ch">7.- WindowBuilder</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_classes_bsiques_de_swing.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_components.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.- Contenidors</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_85" class="block iDevice_content">
+<div class="nota_blau">
+<p><b><span style="text-decoration: underline;">Nota</span></b></p>
+<p>Com que molts dels exemples són únicament per a mostrar possibilitats, sense cap més valor, no construirem un programa diferent per a cada exemple, sinó que senzillament modifiquem la classe <strong>Finestra</strong>, i no canviem el programa principal, que és el que està al final de la pregunta 2.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_85" class="block iDevice_content">
+<p>Els diferents components que col·locarem en l'aplicació normalment no els col·locarem directament a la finestra, sinó en <strong>layouts</strong> que són contenidors d'altres objectes i que permeten col·locar-los de forma ordenada.</p>
+<p>Podem col·locar els components directament en el frame, però posant sempre la posició i grandària a cada component. En el següent exemple posem dos botons directament especificant posició i grandària amb el mètode <strong>setBounds(x, y, amplaria, altura</strong><strong>)</strong>:</p>
+<p class="codi">import javax.swing.JButton;<br />import javax.swing.JFrame;<br /><br />public class Finestra extends JFrame{<br />    public void iniciar(){<br />        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        setSize(400,300);<br />        getContentPane().setLayout(null);<br />        JButton boto1 = new JButton("Botó 1");<br />        JButton boto2 = new JButton("Botó 2");<br /><br />        boto1.setBounds(10, 10, 100, 20);<br />        getContentPane().add(boto1);<br />        <br />        boto2.setBounds(50, 80, 80, 60);<br />        getContentPane().add(boto2);<br />        <br />        setVisible(true);<br />    }<br />}</p>
+<p>El resultat seria aquest:</p>
+<p style="text-align: center;"><img src="AnnexSwing_3_1_SenseLayout.png" width="400" height="300" /></p>
+<p>El problema és que es farà molt pesat d'anar precisant la posició i grandària de cada component, si no tenim cap tipus d'ajuda. A més, quan redimensionem la finestra no es recol·locaran els components, ja que hem posat coordenades absolutes.</p>
+<p>Per a solucionar aquestos problemes estan els  <strong>layouts</strong>, que són components que col·loquen els components amb una determinada disposició, i que quan redimensionem la finestra es recol·loca amb una disposició elegant. Els <strong>layouts</strong> són components que agafarem directament de la llibreria <strong>AWT</strong>, és a dir, no ens cal un contenidor Swing, ja que amb aquells tenim suficient. En les diferents proves col·locarem alguns components (encara que no els hem vist), per veure com queden col·locades les coses.</p>
+<p>El primer que haurem de fer és assignar-li a la finestra, al JFrame, un Layout. Es fa amb <strong>getContentPane().setLayout(layout)</strong>. Després anirem afegint components amb <strong>getContentPane().add(component)</strong>, tots dos mètodes del JFrame.</p>
+<p class="titolet">FlowLayout</p>
+<p>Col·loca els components un al costat de l'altre, d'esquerra a dreta. Quan ja no li caben un al costat de l'altre els col·loca a la línia de baix.</p>
+<p>Mirem aquest exemple:</p>
+<p class="codi">import java.awt.FlowLayout;<br /><br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br /><br />public class Finestra extends JFrame{<br />    public void iniciar(){<br />        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        setSize(400,300);<br />        getContentPane().setLayout(new FlowLayout());<br />        JButton boto1 = new JButton("Botó 1");<br />        JButton boto2 = new JButton("Botó 2");<br />        JButton boto3 = new JButton("Botó 3");<br />        JButton boto4 = new JButton("Botó 4");<br />        getContentPane().add(boto1);<br />        getContentPane().add(boto2);<br />        getContentPane().add(boto3);<br />        getContentPane().add(boto4);<br />        setVisible(true);<br />    }<br />}</p>
+<p>Que quedarà així:</p>
+<p style="text-align: center;"><img src="Ann_Swing_4_FlowLayout.png" width="400" height="300" /></p>
+<p style="text-align: justify;">Però a més si redimensionem la finestra i no caben els 4 botons, doncs baixarà automàticament els que faça falta:</p>
+<p style="text-align: center;"><img src="Ann_Swing_5_FlowLayout_Redim.png" /></p>
+<p class="titolet">GridLayout</p>
+<p>Munta una estructura de files i columnes, i col·loca cada element en una casella, començant dalt a l'esquerra i continuant primer cap a la dreta i després cap avall. En el moment de definir-la podrem dir quantes files i quantes columnes volem. I a més intentarà fer les columnes de la mateixa grandària, igual que les files.</p>
+<div class="codi">import java.awt.GridLayout;<br /><br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br /><br />public class Finestra extends JFrame{<br />    public void iniciar(){<br />        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        setSize(400,300);<br />        getContentPane().setLayout(new GridLayout(2,2));<br />        JButton boto1 = new JButton("Botó 1");<br />        JButton boto2 = new JButton("Botó 2");<br />        JButton boto3 = new JButton("Botó 3");<br />        JButton boto4 = new JButton("Botó 4");<br />        getContentPane().add(boto1);<br />        getContentPane().add(boto2);<br />        getContentPane().add(boto3);<br />        getContentPane().add(boto4);<br />        setVisible(true);<br />    }<br />}</div>
+<p>En aquest exemple hem substituït el FlowLayout per un GriLayout de 2 files i 2 columnes, així posarà un botó en cada casella.</p>
+<p style="text-align: center;"><img src="Ann_Swing_6_GridLayout.png" /></p>
+<p>Observeu que hem fixat la grandària a 400x300. Intentarà fer files iguals (150 d'alt) i també les columnes (200).</p>
+<p>I ara definirem el GridLayout de 3 files i 2 columnes. Els 4 botons ocuparan les 2 primeres files i quedarà una fila buida. Com que intentarà fer-les igual d'altes, cada botó ocuparà 200x100. Senzillament serà canviar la línia 11 per aquesta:</p>
+<p class="codi">getContentPane().setLayout(new GridLayout(3,2));</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="Ann_Swing_7_GridLayout.png" /></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_85" class="block iDevice_content">
+<p class="titolet">BorderLayout</p>
+<p>És el Layout establert per defecte. Hi haurà 5 zones: dalt, baix, dret, esquerra i centre. Quan col·loquem un component li haurem d'especificar en quina zona el volem col·locar en un segon paràmetre amb els valors: <strong>BorderLayout.NORTH</strong>, <strong>BorderLayout.SOUTH</strong>, <strong>BorderLayout.EAST</strong>, <strong>BorderLayout.WEST</strong>, <strong>BorderLayout.CENTER</strong>.</p>
+<p class="codi">import java.awt.BorderLayout;<br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br /><br />public class Finestra extends JFrame{<br />    public void iniciar(){<br />        setSize(400,300);<br />        getContentPane().setLayout(new BorderLayout());<br />        JButton boto1 = new JButton("Botó 1");<br />        JButton boto2 = new JButton("Botó 2");<br />        JButton boto3 = new JButton("Botó 3");<br />        JButton boto4 = new JButton("Botó 4");<br />        JButton boto5 = new JButton("Botó 5");<br />        getContentPane().add(boto1,BorderLayout.NORTH);<br />        getContentPane().add(boto2,BorderLayout.SOUTH);<br />        getContentPane().add(boto3,BorderLayout.EAST);<br />        getContentPane().add(boto4,BorderLayout.WEST);<br />        getContentPane().add(boto5,BorderLayout.CENTER);<br />        setVisible(true);<br />    }<br />}</p>
+<p>Donarà aquest resultat:</p>
+<p style="text-align: center;"><img src="AnnexSwing_3_5_BorderLayout_1.png" height="300" width="400" /></p>
+<p>Si una zona no l'omplim, redimensionarà la resta per a ocupar tot el lloc. Així, si només posem els botons de les zones nord i centre, quedarà:</p>
+<p style="text-align: center;"><img src="AnnexSwing_3_BorderLayout_2.png" height="300" width="400" /></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_classes_bsiques_de_swing.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_components.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

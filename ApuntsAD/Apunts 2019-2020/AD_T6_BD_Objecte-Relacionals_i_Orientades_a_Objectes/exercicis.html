@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2__bases_de_dades_objecterelacionals.html" class="daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33__consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id19">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.1 (BDOR)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta19_90_2" class="block iDevice_content">
+<p>Des de la perspectiva <strong>Database Development</strong> d'Eclipse, o des de <strong>PgAdmin </strong>si el tens instal·lat, entrant com a usuari <strong>rxx</strong> en la Base de Dades <strong>rxx</strong>:</p>
+<ul>
+<li>Crea un tipus de dades anomenat <strong>coordenades</strong>, amb dos camps: <strong>lat</strong> (numèric) i <strong>lon</strong> (numèric).</li>
+<li>Crea un tipus de dades anomenat <strong>punt</strong>, amb tres camps; <strong>num_p</strong> (enter), <strong>nom_p</strong> (text) i <strong>coord</strong> (de tipus coordenades)</li>
+<li>Crea un <strong>taula</strong> anomenada <strong>ruta</strong> amb la seguent estructura: <strong>num_r</strong> (enter, clau principal), <strong>nom_r</strong> (text), <strong>desn</strong> (enter), <strong>desn_acum</strong> (enter), <strong>llista_punts</strong> (array de <strong>punt</strong>)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id20">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.2 (BDOR)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta20_91_2" class="block iDevice_content">
+<p>Crea un nou paquet anomenat <strong>Exercicis</strong> en el projecte <strong>Tema6_1</strong>.<strong> </strong> Inclou en el projecte les llibreries de JDBC per a PostgreSQL i per a SQLite, si no ho estan encara.</p>
+<ul>
+<li>Copia el paquet <strong>util.bd</strong> al projecte. Aquest paquet el vam fer en l'exercici <strong>Ex 4.4</strong> i inclou les classes <strong>Coordenades.java</strong>, <strong>PuntGeo.java</strong> i <strong>Ruta.java</strong>. També inclou la classe <strong>GestionarRutesBD.java</strong>, que ens permetia gestionar la BD <strong>Rutes.sqlite</strong></li>
+<li>Copia també la BD <strong>Rutes.sqlite</strong>, creada en exercicis anteriors, però que l'última actualització és del mateix exercici.</li>
+</ul>
+<p>A partir d'aci comença realment l'exercici, que consistirà en passar les dades des de <strong>Rutes.sqlite</strong> fins la Base de Dades de <strong>PostgreSQL</strong> <strong>rxx</strong>, creada en l'exercici anterior, i posteriorment visualitzar-les, però de forma còmoda</p>
+<ul>
+<li>Crea la classe <strong>PassarRutaSqlitePostgresql.java</strong>, amb <strong>main()</strong> (és a dir, executable).
+<ul>
+<li>Heu d'agafar totes les rutes de Rutes.sqlite i deixar-les en un ArrayList de Ruta amb el mètode ja creat de <strong>GestionarRutesBD.java</strong> anomenat <strong>llistat()</strong>.</li>
+<li>Utilitzeu el mètode <strong>cadenaRuta</strong><strong>(ruta</strong><strong>)</strong> que us passarà el professor que torna una cadena de text amb totes les dades de la ruta, que es pot utilitzar en un <strong>INSERT</strong> (per exemple el podeu col·locar en la mateixa classe PassarRutaSQLitePostgresql). Us recomane vivament que primer tragueu per pantalla la sentència INSERT abans d'executar-la. Observeu que cadenaRuta() no torna el número de la ruta.</li>
+<li>Inseriu totes les rutes en la BD de PostgreSQL <strong>rxx</strong>.</li>
+</ul>
+</li>
+<li>Crea la classe <strong>VisRutaPostgreSQL</strong>, amb <strong>main()</strong> (és a dir, executable) que visualitze les rutes amb el següent format. Observa que sí que agafem element a element de la llista de punts, però després no intentem separar el contingut ni dels elements de tipus <strong>punt</strong>, ni molt menys dels de tipus <strong>coordenades.</strong></li>
+</ul>
+<p class="codi2">Ruta número 1: Pujada a Penyagolosa<br />Punts:<br />    (1,"Sant Joan","(40.251036,-0.354223)")<br />    (2,Encreuament,"(40.25156,-0.352507)")<br />    (3,"Barranc de la Pegunta","(40.247318,-0.351713)")<br />    (4,"El Corralico","(40.231708,-0.348859)")<br />    (5,Penyagolosa,"(40.222632,-0.350339)")<br /><strong></strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id18">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.3 (BDOO)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta18_89_2" class="block iDevice_content">
+<p>Crea un nou paquet anomenat <strong>Exercicis </strong>en el projecte <strong>Tema6_2</strong>. Incorpora en el projecte el driver per a <strong>DB4O</strong> .</p>
+<ul>
+<li>Incorpora en ell el paquet <strong>util.bd,</strong> ja utilitzades en l'exercici anterior. En ell han d'estar les classes <strong>Coordenades.java</strong>,<strong> PuntGeo.java</strong> i<strong> Ruta.java</strong>.</li>
+<li>Assegura't que la classe <strong>Ruta.java</strong> tenen els mètodes<strong><strong> getLlistaDePunts()</strong> i <strong>setLlistaDePunts()</strong></strong>, (o similar) que tornen o tenen com a paràmetre un<strong> <strong>ArrayList </strong></strong>de<strong><strong> PuntGeo</strong></strong>. En cas que no els tingues, crea'ls de la forma ràpida, i si encara tens dubtes, senzillament agafa el paquet <strong>util.bd</strong> que et proporciona el professor<strong> </strong></li>
+<li>En el paquet ha d'estar també la classe <strong>GestionarRutesBD.java</strong>, que ens permetia gestionar la BD <strong>Rutes.sqlite</strong>.</li>
+<li>Copia també la BD <strong>Rutes.sqlite</strong>.</li>
+</ul>
+<p>A partir d'aci comença realment l'exercici, que consistirà en passar les dades des de <strong>Rutes.sqlite</strong> fins la Base de Dades de <strong>DB4O</strong> <strong>Rutes.db4o</strong>.</p>
+<ul>
+<li>Crea la classe <strong>PassarRutaSqliteDB4O.java</strong>, amb <strong>main()</strong> (és a dir, executable).
+<ul>
+<li>Has d'agafar totes les rutes de Rutes.sqlite i deixar-les en un ArrayList de Ruta amb el mètode ja creat de <strong>GestionarRutesBD.java</strong> anomenat <strong>llistat()</strong>.</li>
+<li>Insereix totes les rutes en la BD <strong>Rutes.db4o</strong>.</li>
+<li>Tanca la connexió.</li>
+</ul>
+</li>
+<li>Crea la classe <strong>VisRutaDB4O.java</strong>, amb <strong>main()</strong> (és a dir, executable), que ha de connectar a la Base de Dades <strong>Rutes.db4o</strong> , ha de llegir totes les rutes (ves amb compte, perquè només has de llegir rutes; s'han guardat més objectes: punts i coordenades) i ha de traure per pantalla el nom de la ruta i el número de punts.</li>
+</ul>
+<p style="text-align: center;"><img src="T6_Ex_3_1.png" style="border: 1px solid black;" width="284" height="60" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id21">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.4 (BDOO)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta21_89_2" class="block iDevice_content">
+<p>En el mateix projecte i paquet anem a fer una aplicació amb interfície pràctica. De moment tindrà aquest aspecte:</p>
+<p style="text-align: center;"><img src="T6_4_1.png" alt="Exercici4_1" /></p>
+<p>en el qual, a banda de les etiquetes (<strong>JLabel</strong>) i quadres de text (<strong>JTextField</strong>) tenim una taula (<strong>JTable</strong>) on col·locarem tots els punts de la ruta (nom, latitud i longitud). Tots els controls són no editables, per a no poder introduir cap informació.</p>
+<p>Haureu de tenir una clase <strong>Main</strong> com la següent:</p>
+<div class="codi">public class Rutes_DB4O {<br /><br />    public static void main(String[] args) {<br />         Rutes_DB4O_pantalla finestra = new Rutes_DB4O_pantalla();<br />         finestra.iniciar();<br />    }<br />}</div>
+<p>I la classe <strong>Pantalla</strong>, que és realment és on es fa la feina. Us passe l'esquelet, amb la inclusió de tots els controls. Per cert, els controls estan deshabilitats per a no poder modificar les dades. Teniu ja construït un mètode anomenat <strong>plenarTaula()</strong> que accepta un paràmetre de tipus <strong>ArrayList&lt;PuntGeo&gt;</strong>, i s'encarrega de plenar correctament la taula</p>
+<p class="codi">import java.awt.FlowLayout;<br />import java.awt.GridLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.util.ArrayList;<br /><br />import javax.swing.BoxLayout;<br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JPanel;<br />import javax.swing.JScrollPane;<br />import javax.swing.JTextField;<br />import javax.swing.JTable;<br /><br />import com.db4o.Db4oEmbedded;<br />import com.db4o.ObjectContainer;<br />import com.db4o.ObjectSet;<br /><br />import util.bd.PuntGeo;<br />import util.bd.Ruta;<br /><br />public class Rutes_DB4O_pantalla extends JFrame implements ActionListener {<br /><br />    private static final long serialVersionUID = 1L;<br />    ArrayList&lt;Ruta&gt; llista = new ArrayList&lt;Ruta&gt;();<br />    int num_actual;<br />    <br />    JLabel etiqueta = new JLabel("");<br />    JLabel etNom = new JLabel("Ruta:");<br />    JTextField qNom = new JTextField(15);<br />    JLabel etDesn = new JLabel("Desnivell:");<br />    JTextField qDesn = new JTextField(5);<br />    JLabel etDesnAcum = new JLabel("Desnivell acumulat:");<br />    JTextField qDesnAcum = new JTextField(5);<br />    JLabel etPunts = new JLabel("Punts:");<br />    JTable punts = new JTable(1,3);<br />    JButton primer = new JButton(" &lt;&lt; ");<br />    JButton anterior = new JButton(" &lt; ");<br />    JButton seguent = new JButton(" &gt; ");<br />    JButton ultim = new JButton(" &gt;&gt; ");<br /><br />    // en iniciar posem un contenidor per als elements anteriors<br />    public void iniciar() {<br />        getContentPane().setLayout(new GridLayout(0,1));<br />        JPanel p_prin = new JPanel();<br />        p_prin.setLayout(new BoxLayout(p_prin, BoxLayout.Y_AXIS));<br />        // contenidor per als elements<br />        JPanel panell1 = new JPanel(new GridLayout(0,2));<br />        panell1.add(etNom);<br />        qNom.setEditable(false);<br />        panell1.add(qNom);<br />        panell1.add(etDesn);<br />        qDesn.setEditable(false);<br />        panell1.add(qDesn);<br />        panell1.add(etDesnAcum);<br />        qDesnAcum.setEditable(false);<br />        panell1.add(qDesnAcum);<br />        panell1.add(etPunts);<br /><br />        JPanel panell2 = new JPanel(new GridLayout(0,1));<br />        punts.setEnabled(false);<br />        JScrollPane scroll = new JScrollPane(punts);<br />        panell2.add(scroll, null);<br /><br />        JPanel panell5 = new JPanel(new FlowLayout());<br />        panell5.add(primer);<br />        panell5.add(anterior);<br />        panell5.add(seguent);<br />        panell5.add(ultim);<br />        <br />        getContentPane().add(p_prin);<br />        p_prin.add(panell1);<br />        p_prin.add(panell2);<br />        p_prin.add(panell5);<br />        <br />        setVisible(true);<br />        pack();<br />        primer.addActionListener(this);<br />        anterior.addActionListener(this);<br />        seguent.addActionListener(this);<br />        ultim.addActionListener(this);<br /><br />        inicialitzar();<br />        VisRuta();<br />    }<br /><br />    private void plenarTaula(ArrayList&lt;PuntGeo&gt; ll_punts){<br />        Object[][] ll= new Object[ll_punts.size()][3];<br />        for (int i=0;i&lt;ll_punts.size();i++){<br />            ll[i][0]=ll_punts.get(i).getNom();<br />            ll[i][1]=ll_punts.get(i).getLatitud();<br />            ll[i][2]=ll_punts.get(i).getLongitud();<br />        }<br />        String[] caps = {"Nom punt","Latitud","Longitud"};<br />        punts.setModel(new javax.swing.table.DefaultTableModel(ll,caps));<br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />      <br />    }<br /><br />    private void inicialitzar() {<br />       <br />    }<br />    <br />    private void VisRuta(){<br />        <br />    }    <br />}</p>
+<p>Vosaltres haureu de fer els 3 mètodes del final per a que apareguen les dades.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id22">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.5 (BDOO)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta22_89_2" class="block iDevice_content">
+<p>Modificar la classe anterior per a incorporar també la <strong>distància total de la ruta</strong>. Per a poder calcular-la ens ajudarem de d'una funció ja creada (que us passarà el professor) que calcula la distància en quilòmetres entre dos punts, donant les coordenades (latitud i longitud) dels dos punts: <strong>Dist(lat1,long1,lat2,long2)</strong>. Podeu incorporar-la a la classe on esteu fent l'exercici (<strong>Rutes_DB4O_pantalla</strong>).</p>
+<p>Aquest seria un exemple:</p>
+<p style="text-align: center;"><img src="T6_Ex_5_1.png" style="border: 1px solid black;" width="453" height="580" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id23">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 6.6 (ampliació - voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta23_89_2" class="block iDevice_content">
+<p>Modifica l'aplicació anterior per a que es puguen modificar, esborrar i inserir les rutes.</p>
+<p style="text-align: center;"><img src="T6_Ex_6_1.png" style="border: 1px solid black;" /></p>
+<ul>
+<li>S'haurien de posar més botons: <strong>Editar</strong>, <strong>Eliminar</strong> i <strong>Nova Ruta</strong>.</li>
+<li>Estaria bé que en entrar a qualsevol de les opcions anteriors es desactivaren els botons de navegació, que desaparegueren els d'Editar, Eliminar i Nova Ruta, i que aparegueren els d'<strong>Acceptar</strong> i <strong>Cancel·lar</strong>.</li>
+<li>En tots els casos, si es cancel·la no es fa cap acció, però s'ha de tornar a l'estat anterior (primera imatge)</li>
+<li><strong>EDITAR</strong>:
+<ul>
+<li>S'han d'"activar" els controls per a poder modificar les dades.</li>
+<li>En cas d'acceptar s'ha de fer la modificació a partir del contingut de tots els controls (no cal detectar quins s'han modificat)</li>
+<li style="text-align: left;">En cas de cancel·lar, no es fa la modificació, i senzillament s'ha de tornar a visualitzar la ruta actual (com no s'ha fet cap canvi, apareixeran les dades anteriors)</li>
+<li style="text-align: left;">Per a afegir nous punts, es podria posar un botó per a afegir una nova línia al JTable, i un altre per a llevar una línia</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: left;"><img src="T6_Ex_6_2.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" width="588" height="615" /></p>
+<ul>
+<li><strong>ELIMINAR</strong>:
+<ul>
+<li>Si s'accepta, s'haurà d'esborrar la ruta, sinó tornar a visualitzar-la</li>
+</ul>
+</li>
+</ul>
+<p><img src="T6_Ex_6_3.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" /></p>
+<ul>
+<li><strong>INSERIR</strong>:
+<ul>
+<li>Haurà de mostrar tots els camps en blanc, i evidentment activats, per a poder introduir dades.</li>
+<li>En cas d'acceptar s'ha d'introduir la nova ruta.</li>
+<li>En cas de cancel·lar, estaria bé tornar a la que s'estava mostrant abans d'apretar el botó de nova ruta.</li>
+<li style="text-align: left;">Per a introduir nous punts, es podria posar un botó per a afegir una nova línia al JTable, i un altre per a llevar una línia</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><img src="T6_Ex_6_4.png" style="border: 1px solid black;" /></p>
+<p style="text-align: left;"><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p style="text-align: left;">EL JTable de vegades és engorrós. Si s'està editant una casella, la informació no s'ha introduït encara, fins que no s'aprete enter, tab o amb el ratolí no s'aprete a algun altre lloc.Per a acabar la introducció de la informació que s'està editant, es podria executar el següent (per exemple quan s'ha apretat <strong>Acceptar</strong>):</p>
+<p style="text-align: left;" class="codi">            if (punts.isEditing())<br />                punts.getCellEditor().stopCellEditing();</p>
+<p style="text-align: left;">on <strong>punts</strong> seria al JTable.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33__consultes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

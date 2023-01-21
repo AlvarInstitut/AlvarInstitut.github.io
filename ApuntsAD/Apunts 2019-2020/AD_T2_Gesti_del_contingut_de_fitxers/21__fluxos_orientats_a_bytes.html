@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1 - Fluxos orientats a bytes | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li class="current-page-parent"><a href="2__manipulaci_dels_fluxos_de_dades.html" class="current-page-parent daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul>
+      <li id="active"><a href="21__fluxos_orientats_a_bytes.html" class="active daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul>
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2__manipulaci_dels_fluxos_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="211__mtodes_del_inputstream.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.1 - Fluxos orientats a bytes</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p style="text-align: justify;">L'arrel, la base de tota la jerarquia són <strong>InputStream</strong> i <strong>OutputStream</strong>, respectivament per a fluxos d'entrada i d'eixida. Comentarem els fluxos d'entrada, i els d'eixida són totalment paral·lels.</p>
+<p style="text-align: justify;">La super-classe <strong>InputStream</strong> servirà per a fer l'entrada des de qualsevol dispositiu: fitxer, array de bytes, una tuberia (per a dur dades des d'una altra aplicació)... Totes les classes d'entrada heretaran d'ella, i serviran per especificar exactament d'on (per exemple un fitxer: <strong>FileInputStream</strong>) o per a donar alguna altra funcionalitat, com anirem veient a poc a poc. D'aquesta manera, els mètodes que es defineixen s'hauran d'implementar per les classes que hereten de la super-classe i assegura una uniformitat, siga quina siga la font.</p>
+<p>Fem una ullada ràpida a la jerarquia de classes en la següent imatge:</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="T2_2_1.png" alt="Jerarquia InputStream" width="800" /></p>
+<p>De moment mirem únicament les que estan en color <strong>taronja</strong>, que especificaran quina serà la font de dades:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FileInputStream</strong></td>
+<td>Per a llegir informació d'un fitxer</td>
+</tr>
+<tr>
+<td><strong>PipedInputStream</strong> </td>
+<td>Per a llegir des d'una tuberia (és a dir informació que ve d'un altre programa) </td>
+</tr>
+<tr>
+<td><strong>ByteArrayInputStream</strong> </td>
+<td>L'entrada serà un array de bytes </td>
+</tr>
+<tr>
+<td><strong>SequenceInputStream</strong> </td>
+<td>Servirà per enllaçar dues entrades en una de sola, seqüencialment </td>
+</tr>
+</tbody>
+</table>
+<p>Evidentment ens centrarem en la primera, que és la que més ens interessa per a la permanència de les dades, però posarem algun exemple de les altres (concretament <strong>ByteArrayInputStream</strong>). </p>
+<p>Els fluxos d'eixida són molt molt pareguts, tots ells heretaran de <strong>OutputStream</strong>:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FileOutputStream</strong></td>
+<td>Per a guardar informació en un fitxer</td>
+</tr>
+<tr>
+<td><strong>PipedOutputStream</strong> </td>
+<td>Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa) </td>
+</tr>
+<tr>
+<td><strong>ByteArrayOutputStream</strong> </td>
+<td>L'eixida serà un array de bytes </td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p class="titolet">Constructors de FileInputStream</p>
+<p>Com hem comentat, qui més ens interessa de tots els InputStream és el <strong>FileInpuStream</strong>, per a poder accedir a la informació d'un fitxer. Dos són els constructors de FileInputStream:</p>
+<ul>
+<li><strong>FileInputStream (File<em> f</em>)</strong>: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.</li>
+<li><strong>FileInputStream (String <em>nom_f</em>)</strong>: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.</li>
+</ul>
+<p> </p>
+<p class="titolet">Constructors del FileOutputStream</p>
+<p>Canviaran lleugerament respecte als d'entrada, ja que a més de fer referència al fitxer, opcionalment podrem d'especificar la manera d'escriure en el fitxer en cas que aquest ja existesca: bé afegint al final, o bé destruint la informació anterior. Aquestos són els constructors:</p>
+<ul>
+<li><strong>FileOutputStream (File<em> f</em>)</strong>: en el paràmetre se li passa un File. Si no existia, el crearà; si ja existia esborrarà el contingut. En ambdós casos l'obrirà en mode escriptura.</li>
+<li><strong>FileOutputStream (String <em>nom_f</em>)</strong>: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+<li><strong>FileOutputStream (File<em> f</em>, boolean</strong> <em><strong>afegir</strong></em>): és com el primer, però si en el segon paràmetre se li passa <strong>true</strong>, en cas que ja existira el fitxer, la informació s'afegirà al final, en compte de substituir el que ja hi havia. Si en aquest paràmetre se li passa <strong>false</strong> s'esborrarà el contingut anterior (com en el primer cas).</li>
+<li><strong>FileOutputStream (String <em>nom_f</em><strong>, boolean</strong> <em><em><strong>afegir</strong></em></em>)</strong>: igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+</ul>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2__manipulaci_dels_fluxos_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="211__mtodes_del_inputstream.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

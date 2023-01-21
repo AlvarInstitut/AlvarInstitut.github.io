@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1.- JPanel | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li class="current-page-parent"><a href="4_components.html" class="current-page-parent daddy">4.- Components</a>
+   <ul>
+      <li id="active"><a href="41_jpanel.html" class="active no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li><a href="6_dilegs.html" class="daddy">6.- Diàlegs</a>
+   <ul class="other-section">
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_windowbuilder.html" class="no-ch">7.- WindowBuilder</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_components.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42_jbutton.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.1.- JPanel</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_85" class="block iDevice_content">
+<p>El més habitual serà combinar més d'un layout per a poder dividir la pantalla en més parts. Aleshores utilitzarem el <strong>JPanel</strong>, que senzillament és un component capaç de <strong>contenir altres components</strong>. En el moment de crear-lo li diem en quin Layout es basarà. Posteriorment són els JPanel els que afegim al JFrame, i els components els afegim als JPanel.</p>
+<p>En el següent exemple el JFrame el creem un GridLayout de dos files i una columna. En la primera casella (primera fila) posem un JPanel basat en un FlowLayout amb 3 botons. En la segona fila posem un altre JPanel basat en quest cas en un Gridlayout de 2x2.</p>
+<p class="codi">import java.awt.FlowLayout;<br />import java.awt.GridLayout;<br /><br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br />import javax.swing.JPanel;<br /><br />public class Finestra extends JFrame{<br />    public void iniciar(){<br />        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        setSize(400,300);<br />        getContentPane().setLayout(new GridLayout(2,1));<br />        JPanel panell1 = new JPanel(new FlowLayout());<br />        JPanel panell2 = new JPanel(new GridLayout(2,2));<br />        JButton boto1 = new JButton("Botó 1");<br />        JButton boto2 = new JButton("Botó 2");<br />        JButton boto3 = new JButton("Botó 3");<br />        JButton boto4 = new JButton("Botó 4");<br />        JButton boto5 = new JButton("Botó 5");<br />        JButton boto6 = new JButton("Botó 6");<br />        JButton boto7 = new JButton("Botó 7");<br />        <br />        getContentPane().add(panell1);<br />        getContentPane().add(panell2);<br />        panell1.add(boto1);<br />        panell1.add(boto2);<br />        panell1.add(boto3);<br />        panell2.add(boto4);<br />        panell2.add(boto5);<br />        panell2.add(boto6);<br />        panell2.add(boto7);<br />        setVisible(true);<br />    }<br />}</p>
+<p>El resultat és el següent:</p>
+<p style="text-align: center;"><img src="Ann_Swing_8_Cominacio_Lawout.png" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_components.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42_jbutton.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

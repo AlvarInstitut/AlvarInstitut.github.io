@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id36">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5.1</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta36_89_2" class="block iDevice_content">
+<p>Crea un projecte nou anomenat <strong>Tema5_</strong><strong>PostgreSQL_Rutes</strong>. Inclou el driver JDBC de PostgreSQL i la llibreria nostra d'Hibernate.</p>
+<ul>
+<li>Fes el mapatge de les taules <strong>RUTA </strong>i <strong>PUNT</strong><strong></strong>, situades en la Base de Dades <strong>rutes</strong> a la qual pot accedir l'usuari <strong>rutes </strong>(contrasenya <strong>rutes</strong>) i situada en el servidor de l'Institut <strong></strong>(<strong>89.36.214.106</strong>). Guarda-les en un paquet anomenat <strong>dades</strong>.</li>
+<li>Hauràs observat que ha creat les classes <strong>Ruta.java</strong>, <strong>Punt.java</strong> i també <strong>PuntId.java</strong>. Aquesta última l'ha creada perquè la clau principal de la taula <strong>PUNT</strong> està formada per <strong>num_r + num_p</strong>. No ens afectarà a nosaltres, que podem utilitzar únicament <strong>Ruta.java</strong> i <strong>Punt.java</strong>.</li>
+<li>Intenta visualitzar dades des de la perspectiva Hibernate.</li>
+<li>Copia't el fitxer <strong>log4j.properties</strong> per a que no es visualitzen els avisos.</li>
+<li>Crea't la classe <strong>SessionFactoryUtil</strong>, que serà un <strong>singleton</strong> per a poder crear una única SessionFactory. L'has d'utilitzar en totes les altres classes, sempre que et faça falta un SessionFactory. Ha d'estar en el mateix paquet <strong>dades</strong>.</li>
+<li>En un paquet anomenat <strong>Exercicis</strong>, crea't la classe <strong>VeureRutes</strong>, que serà un programa senzill que visualitze les rutes, i el número de punts, ordenades per nom de ruta. Ha de ser per mig d'una <strong>consulta HQL </strong>(el més senzilla possible), i evidentment el programa ha de ser independent del número de rutes existent en aquest moment a la Base de Dades. El resultat seria aquest: </li>
+</ul>
+<div class="codi2">La Magdalena - 7 punts<br />Pelegrins de Les Useres - 6 punts<br />Pujada a Penyagolosa - 5 punts</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id37">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5.2</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta37_90_2" class="block iDevice_content">
+<p>Sobre el projecte de <strong>Tema5_Hibernate_PostgreSQL_geo_ad </strong>, on tenim el mapatge de les taules <strong>COMARQUES</strong>, <strong>POBLACIONS </strong>i <strong>INSTITUTS</strong>, creeu-vos un paquet anomenat <strong>Exercicis</strong>, on col·locareu les classes d'aquest exercici.</p>
+<p>Per a visualitzar les coses d'una forma un poc més agradable anem a utilitzar les llibreries gràfiques <strong>Java AWT</strong> i <strong>Javax Swing</strong>. Amb aquestes llibreries incorporarem:</p>
+<ul>
+<li><strong>JPanel</strong> i <strong>JScrollPane</strong>, per a contenir altres objectes (aquest últim amb botons de scroll si són necessaris).</li>
+<li><strong>JLabel</strong>, per a etiquetes</li>
+<li><strong>JText</strong>, per a quadres de text (on poder posar informació)</li>
+<li><strong>JTextArea</strong>, és un quadre de text, però més gran. Nosaltres l'utilitzarem per a visualitzar informació extensa, i per tant el farem no editable.</li>
+<li><strong>JButton</strong>, per a botons. Estarà esperant a que l'apretem (ActionListener)</li>
+</ul>
+<p>Tot açò anirà en una classe que anomenarem <strong>Pantalla_Veure_Pobles_Comarca </strong>que estendrà <strong>JFrame</strong>, i que implementarà <strong>ActionListener</strong>.</p>
+<p>Haurem de tenir una classe principal, <strong>Veure_Pobles_Comarca.java</strong>, que únicament crearà un objecte <strong>Pantalla_Veure_Pobles_Comarca</strong> i l'iniciarà (mètode <strong>iniciar()</strong>), on col·locarem les primeres coses i prepararem el botó per a que escolte si s'apreta.</p>
+<p>Per tant, tindrem una classe <strong>Veure_Pobles_Comarca.java</strong> tan senzilla com açò:</p>
+<div class="codi">package Exercicis;<br /><br />public class Veure_Pobles_Comarca {<br /><br />    public static void main(String[] args) {<br />        final Pantalla_Veure_Pobles_Comarca finestra = new Pantalla_Veure_Pobles_Comarca();<br />        finestra.iniciar();<br />    }<br /><br />}</div>
+<p>I ara anem a per la classe <strong>Pantalla_Veure_Pobles_Comarca.java</strong>. Vosaltres haureu de completar el mètode <strong>VisualitzaCom(String comarca)</strong>, per a que si no existeix la comarca, es diga que no existeix dins del JTextArea, i si existeix, que es vegen <strong>els seus pobles </strong>(si vols pots millorar-lo per a que es vegen en ordre alfabètic).</p>
+<div class="codi">package Exercicis;<br /><br />import java.awt.BorderLayout;<br />import java.awt.Color;<br />import java.awt.FlowLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.util.Arrays;<br /><br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JPanel;<br />import javax.swing.JScrollPane;<br />import javax.swing.JTextArea;<br />import javax.swing.JTextField;<br /><br />public class Pantalla_Veure_Pobles_Comarca extends JFrame implements ActionListener {<br /><br />    private static final long serialVersionUID = 1L;<br />    JLabel etiqueta = new JLabel("Comarca:");<br />    JLabel et_ini = new JLabel("Introdueix la comarca:");<br />    JTextField com = new JTextField(15);<br />    JButton consultar = new JButton("Consultar");<br />    JTextArea area = new JTextArea();<br />    <br />    // en iniciar posem un contenidor per als elements anteriors<br />    public void iniciar() {<br />        this.setBounds(100, 100, 450, 300);<br />        this.setLayout(new BorderLayout());<br />        // contenidor per als elements<br />        JPanel panell1 = new JPanel(new FlowLayout());<br />        panell1.add(et_ini);<br />        panell1.add(com);<br />        panell1.add(consultar);<br />        getContentPane().add(panell1,BorderLayout.NORTH);<br />        <br />        JPanel panell2 = new JPanel(new BorderLayout());<br />        panell2.add(etiqueta,BorderLayout.NORTH);<br />        area.setForeground(Color.blue);<br />        JScrollPane scroll = new JScrollPane(area);<br />        panell2.add(scroll,BorderLayout.CENTER);<br />        getContentPane().add(panell2,BorderLayout.CENTER);<br />                <br />        <br />        setVisible(true);<br />        consultar.addActionListener(this);<br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource() == consultar) {<br />            etiqueta.setText("Comarca: " + com.getText());<br />            visualitzaCom(com.getText());<br />        }<br />    }<br /><br />    private void visualitzaCom(String comarca) {<br /><br />        // Instruccions per a llegir la comarca introduïda (s'ha de deixar en un objecte Comarques).<br />        // S'ha de cuidar que si no exiteix la comarca, en el JTextArea es pose que no existeix.<br />        // La manera d'anar introduint informació en el JTextArea és area.append("Linia que es vol introduir ")<br /><br />    }<br />}</div>
+<p> Aquest seria un exemple d'utilització:</p>
+<p style="text-align: center;"><img src="T5_Ex2_1.png" height="328" width="450" /></p>
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id38">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5.3</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta38_89_2" class="block iDevice_content">
+<p>Anem a fer unes quantes millores a l'exemple anterior. Copia't la classe <strong>Pantalla_Veure_Pobles_Comarca.java</strong> a aquesta altra: <strong>Pantalla_Veure_Pobles_Comarca_Combo_List.java</strong></p>
+<p>Les millores seran les següents:</p>
+<ul>
+<li>(70%) Substitueix el quadre de text per un <strong>JComboBox</strong>, i elimina el botó. Recorda que el component <strong>JCombBox </strong>funciona de la segünet manera:
+<ul>
+<li>La manera de saber si ha estat el ComboBox qui ha provocat l'esdeveniment en el <strong>actionPerformed</strong> és idèntica que en el cas del botó: <strong>if (e.getSource()==nom_ComboBox)</strong></li>
+<li>Per a obtenir l'element seleccionat utilitzarem el mètode<strong> </strong><strong>.getSelectedItem()</strong></li>
+<li>Per tant, per a omplir el ComboBox haurem de fer una consulta prèvia amb els noms de les comarques (en principi amb els noms és suficient). El resultat de la consulta pot ser un List de strings, ja que només volem el nom de la comarca. Aquesta llista la podem convertir en un array amb el mètode <strong>.toArray()</strong>, que és el que li fa falta al constructor del ComboBox. Però també podeu anar afegint elements al ComboBox amb el mètode <strong>.addItem()</strong></li>
+</ul>
+</li>
+<li>(15%) Substitueix el <strong>JTextArea</strong> on mostrem els pobles de la comarca per un <strong>JList</strong>. Aquest component serà una llista, i podrem seleccionar cada element de la llista. El seu funcionament és així:
+<ul>
+<li>Per a anar omplint el <strong>JList</strong>, no és tant senzill com el <strong>JComboBox</strong>. Ens fa falta un <strong>DefaultListModel</strong>, i construir el <strong>JList</strong> a partir d'ell. Posteriorment afegirem elements al <strong>DefaultListModel</strong>, i això suposarà que es veuran en el <strong>JList</strong>.</li>
+<li>Per a agafar els pobles de la comarca, pot donar-se el cas que hi haja cometes simples en el nom (p.e. Plana d'Utiel). Açò faria que la consulta HQL falle (ja que la cometa simple és el delimitador de les constants de text). Una manera de solucionar-lo és utilitzar un paràmetre en un <strong>PreparedStatement</strong>, ja que d'aquesta manera no hi haurà problema amb les cometes. Una altra manera de solucionar-lo és posar dos cometes simples. Podem utilitzar el mètode <strong>replaceAll()</strong> de la classe String, substituint tota cometa simple per dues cometes simples. Si per exemple tenim el nom de la comarca en el String <strong>comarca</strong>, faríem:</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 120px;" class="codi">comarca.replaceAll("'","''") :</p>
+<ul>
+<li>(15%) Quan se seleccione un element del <strong>JList</strong>, fes que es mostre baix de tot el número d'Instituts del poble seleccionat
+<ul>
+<li>Per a poder controlar si s'ha seleccionat un element del <strong>JList</strong> la classe principal haurà d'implementar també <strong>ListSelectionListener</strong>, a banda del <strong>ActionListener</strong>. Prepararem que volem escoltar aquest esdeveniment amb <strong>area.addListSelectionListener(this); </strong>(si el <strong>JList</strong> s'anomena <strong>area</strong>, clar). Posteriorment sobreescriurem el mètode <strong>valueChanged(ListSelectionEvent e)</strong>, que és on posarem les accions per a mostrar el nombre d'Instituts del poble.</li>
+<li>El nom del poble també pot dur cometes simples, per tant farem la mateixa consideració d'abans. Ho solucionem amb un paràmetre de <strong>PreparedStatement</strong>, o posar dues cometes simple substituint el nom del poble per:</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 120px;" class="codi">poble.replaceAll("'","''") :</p>
+<p>L'esquelet quedarà ara d'aquesta manera:</p>
+<p class="codi">package Exercicis;<br /><br />import java.awt.BorderLayout;<br />import java.awt.Color;<br />import java.awt.FlowLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.util.Arrays;<br />import java.util.List;<br /><br />import javax.swing.DefaultListModel;<br />import javax.swing.JComboBox;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JList;<br />import javax.swing.JPanel;<br />import javax.swing.JScrollPane;<br />import javax.swing.JTextField;<br />import javax.swing.event.ListSelectionEvent;<br />import javax.swing.event.ListSelectionListener;<br /><br />import org.hibernate.Session;<br /><br />import dades.*;<br /><br />public class Pantalla_Veure_Pobles_Comarca_Combo_List extends JFrame implements ActionListener, ListSelectionListener {<br /><br />    private static final long serialVersionUID = 1L;<br />    JLabel etiqueta = new JLabel("Comarca:");<br />    JLabel et_ini = new JLabel("Introdueix la comarca:");<br />    JComboBox com = new JComboBox();<br />    DefaultListModel listModel = new DefaultListModel();<br />    JList area = new JList(listModel);<br />    JTextField peu = new JTextField();<br />    <br />    // en iniciar posem un contenidor per als elements anteriors<br />    public void iniciar() {<br />        this.setBounds(100, 100, 450, 300);<br />        this.setLayout(new BorderLayout());<br />        // contenidor per als elements<br />        JPanel panell1 = new JPanel(new FlowLayout());<br />        panell1.add(et_ini);<br />        panell1.add(com);<br />        getContentPane().add(panell1,BorderLayout.NORTH);<br />        <br />        JPanel panell2 = new JPanel(new BorderLayout());<br />        panell2.add(etiqueta,BorderLayout.NORTH);<br />        area.setForeground(Color.blue);<br />        JScrollPane scroll = new JScrollPane(area);<br />        panell2.add(scroll,BorderLayout.CENTER);<br />        getContentPane().add(panell2,BorderLayout.CENTER);<br />        getContentPane().add(peu,BorderLayout.SOUTH);<br /><br />        agafarComarques();<br /><br />        setVisible(true);<br />        <br />        com.addActionListener(this);<br />        area.addListSelectionListener(this);<br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource() == com) {<br />            etiqueta.setText("Llista de pobles de la comarca: " + com.getSelectedItem());<br />            visualitzaCom(com.getSelectedItem().toString());<br />        }<br />    }<br />    <br />    @Override<br />    public void valueChanged(ListSelectionEvent e){<br />        JList l = (JList) e.getSource();<br />        if (l.getSelectedIndex()&gt;=0){<br />            visualitzaInstituts(l.getSelectedValue().toString());<br />        }<br />    }<br /><br />    private void visualitzaCom(String comarca) {<br /><br />        // Instruccions per a llegir la comarca introduïda (s'ha de deixar en un objecte Comarques).<br />        // S'ha de cuidar que si no exiteix la comarca, en el JList es pose que no existeix.<br />        // La manera d'anar introduint informació en el JList és a través del DefaultListModel: <br />        // listModel.addElement("Linia que es vol introduir ")<br />        // Una manera de solucionar el problema de la cometa simple és utilitzar comarca.replaceAll("'","''").<br />        // Una altra és utilitzar paràmetres amb <strong>PreparedStatement</strong><br />    }<br />    <br />    private void agafarComarques(){<br />        // Instruccions per a posar en el ComboBox el nom de totes les comarques, millor si és per ordre alfabètic<br /><br />    }<br />    <br />    private void visualitzaInstituts(String poble){<br />        // Instruccions per a mostrar el número d'Instituts del poble seleccionat<br />        // Una manera de solucionar el problema de la cometa simple és utilitzar poble.replaceAll("'","''").<br />        // Una altra és utilitzar paràmetres amb <strong>PreparedStatement</strong><br />        <br />    }<br />}</p>
+<p>Aquest seria un exemple d'execució:</p>
+<p style="text-align: center;"><img src="T5_Ex3_1.png" width="450" height="328" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id40">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5.4</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta40_91_2" class="block iDevice_content">
+<p>Anem a intentar un programa per al manteniment de les comarques (no intentarem mantenir els pobles de la comarca, únicament el nom i la província de la comarca). L'anomenarem <strong>Manteniment_Comarques</strong> al principal, i <strong>Manteniment_Comarques_Pantalla</strong> al que ho contindrà tot i estendrà de JPanel. Ambdós han d'estar en el paquet <strong>Exercicis</strong> del projecte <strong>Tema5_Hibernate_PostgreSQL_geo_ad</strong><strong>.</strong></p>
+<p>En una primera fase únicament posarem 2 quadres de text per al nom i la província (amb 2 etiquetes) i 4 botons per a desplaçar-nos: al primer, a l'anterior, al següent i a l'últim.</p>
+<p style="text-align: center;"><img src="T5_12_3.png" alt="Manteniment Comarques 1" width="350" height="400" /></p>
+<p>Ves fent progressivament les següents coses:</p>
+<ul>
+<li>Organitza les diferents seccions en diferents JPanels.</li>
+<li>Per a que queden aliniats els JLabel i JTextField, segurament el més senzill és col·locar-los en un JPanel d'estil <strong>GridLayout</strong>, amb 2 columnes: <strong>JPanel panell2 = new JPanel(new GridLayout(2,2,5,5));</strong></li>
+<li>Col·loca els JLabel i JText necessaris en el JPanel anterior.</li>
+<li>Posa en una llista de Comarques tots els objectes de les comarques (per mig d'una consulta HQL). Inicialment situa't en la primera.</li>
+<li>Posa i implementa els 4 botons de desplaçament.</li>
+<li>Controla que no es puga eixir fora del rang deshabilitant els botons corresponents quan s'estiga en la primera o l'última comarca. No t'oblides d'habilitar-los quan toque. Opcionalment pots posar una etiqueta que diga si s'està en la primera o última comarca. </li>
+</ul>
+<p>Ací tens el programa principal, així com "l'esquelet" del JFrame. Observa que la sessió està creada en la zona de declaracions de les propietats. Podríem haver-la creat en el mètode <strong>afafarComarques()</strong>, que és quan per mig d'una sentència <strong>HQL</strong> agafarem totes les comarques i les posarem en un <strong>ListArray&lt;Comarques&gt;</strong>. D'aquesta manera podríem tancar la sessió en el mateix mètode<strong> agafarComarques()</strong> i no utilitzar més recursos dels necessaris. Hem optat per tenir la sessió oberta durant tota la durada del programa per fer-lo igual que en el següent exercici, en el qual sí que ens convé tenir la sessió oberta mentre dure el programa. Observeu també que a banda de <strong>llistaComarques</strong>, l'arraylist on estan tots els objectes comarques, també tenim la propietat <strong>indActual</strong>, on guardem l'índex actual, és  a dir, l'índex de la comarca que s'ha d'estar visualitzant en aquest moment.</p>
+<p class="codi">package Exercicis;<br /><br />public class Manteniment_Comarques {<br />    public static void main(String[] args) {<br />        Manteniment_Comarques_Pantalla finestra = new Manteniment_Comarques_Pantalla();<br />        finestra.iniciar();<br />    }<br />}</p>
+<p class="codi">package Exercicis;<br /><br />import java.awt.BorderLayout;<br />import java.awt.FlowLayout;<br />import java.awt.GridLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.util.ArrayList;<br /><br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JPanel;<br />import javax.swing.JTextField;<br /><br />import org.hibernate.Query;<br />import org.hibernate.Session;<br /><br />import Exemples.SessionFactoryUtil;<br />import dades.Comarca;<br /><br />public class Manteniment_Comarques_Pantalla extends JFrame implements ActionListener{<br />    JLabel etIni= new JLabel("Manteniment de COMARQUES");<br />    JLabel etNom= new JLabel("Nom comarca");<br />    JLabel etProv= new JLabel("Nom província");<br />    <br />    JTextField nomComarca = new JTextField();<br />    JTextField nomProvincia= new JTextField();<br />    <br />    JButton primer = new JButton("&lt;&lt;");<br />    JButton anterior = new JButton("&lt;");<br />    JButton seguent = new JButton("&gt;");<br />    JButton ultim = new JButton("&gt;&gt;");<br />    <br />    JPanel pDalt = new JPanel(new FlowLayout());<br />    JPanel pCentre = new JPanel(new GridLayout(8,0));<br />    JPanel pDades = new JPanel(new GridLayout(2,2));<br />    JPanel pBotonsMov = new JPanel(new FlowLayout());<br />    <br />    Session s = SessionFactoryUtil.getSessionFactory().openSession();<br />    <br />    ArrayList&lt;Comarca&gt; llistaComarques = new ArrayList&lt;Comarca&gt;();<br />    int indActual=0;<br />    <br />    public void iniciar(){<br />        this.setBounds(100, 100, 350, 400);<br />        this.setLayout(new BorderLayout());<br />        <br />        this.getContentPane().add(pCentre, BorderLayout.CENTER);<br />        this.getContentPane().add(new JPanel(new FlowLayout()), BorderLayout.WEST);<br />        this.getContentPane().add(new JPanel(new FlowLayout()), BorderLayout.EAST);<br />        <br />        pDalt.add(etIni);        <br />        pCentre.add(pDalt);<br />                <br />        pDades.add(etNom);<br />        pDades.add(nomComarca);<br />        pDades.add(etProv);<br />        pDades.add(nomProvincia);<br />        pCentre.add(pDades);<br />        <br />        nomComarca.setEditable(false);<br />        nomProvincia.setEditable(false);<br /><br />        pCentre.add(new JPanel(new FlowLayout()));<br /><br />        pBotonsMov.add(primer);<br />        pBotonsMov.add(anterior);<br />        pBotonsMov.add(seguent);<br />        pBotonsMov.add(ultim);<br />        pCentre.add(pBotonsMov);<br />        <br />        pCentre.add(new JPanel(new FlowLayout()));<br /><br />        llistaComarques = agafarComarques();<br />        visComarca(indActual);<br /><br />        this.setVisible(true);<br />        this.setDefaultCloseOperation(EXIT_ON_CLOSE);<br />        <br />        primer.addActionListener(this);<br />        anterior.addActionListener(this);<br />        seguent.addActionListener(this);<br />        ultim.addActionListener(this);<br /><br />    }<br /><br />    private void visComarca(int index) {<br />        // Mètode per a visualitzar la comarca marcada per l'índex que ve com a paràmetre<br />        // Es pot aprofitar per a activar/desactivar els botons anterior i següent, si s'està en la primera o última comarca <br />    }<br /><br />    private ArrayList&lt;Comarca&gt; agafarComarques() {<br />        ArrayList&lt;Comarca&gt; llista = null;<br />        // ací aniran les sentències per a omplir (i retornar) la llista de comarques<br />        return llista;<br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        //ací aniran les accions de moviment primer, anterior, següent i últim<br />        if (e.getSource()==primer){<br />        }<br /><br />        if (e.getSource()==anterior){<br />        }<br />        <br />        if (e.getSource()==seguent){<br />        }<br /><br />        if (e.getSource()==ultim){<br />        }                <br />    }<br />}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id41">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5.5 (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta41_92_2" class="block iDevice_content">
+<p>Modifica l'anterior construint <strong>Manteniment_Comarques_Avançat_Pantalla </strong>per a posar també botons per a Inserir noves comarques, esborrar o modificar. En un primer moment aquestos botons prepararan l'acció, però no la realitzaran.</p>
+<p style="text-align: center;"><img src="T5_Ex_5_5_1.png" style="border: 1px solid black;" /></p>
+<ul>
+<li>Col·loca primer els 3 botons.</li>
+<li>Quan s'aprete (qualsevol dels 3) es visualitzaran uns altres dos (ja creats, ara es visualitzaran) que seran els d'Acceptar i Cancel·lar. A més d'aixó:
+<ul>
+<li>el d'inserir ha de netejar els quadres de text i si havíeu posat els quadres de text com a que no es puguen editar, doncs ara que sí.</li>
+<li>el de modificar ha de permetre l'edició de la província (si no ho estava)</li>
+</ul>
+</li>
+<li>En apretar Cancel·lar, s'ha de tornar a l'estat anterior, i fer invisibles els botons d'Acceptar i Cancel·lar.</li>
+<li>En apretar Acceptar, s'ha de distingir quina acció s'està fent, inserir, esborrar o modificar, i realitzar tal acció en la Base de Dades. Posteriorment s'hauran de fer invisibles els botons d'Acceptar i Cancel·lar</li>
+<li>Seria molt útil que en quan s'està fent una actualització (Inserir, Modificar o Esborrar), es desactiven tant els botons de moviment com d'actualització. En apretar Acceptar o Cancel·lar a més de fer les accions citades abans, s'haurien de tornar a activar els botons de moviment i d'actualització.</li>
+</ul>
+<p style="text-align: center;"><img src="T5_Ex_5_5_2.png" style="border: 1px solid black;" width="350" height="400" /></p>
+<p style="text-align: left;">Ací està "l'esquelet" del JFrame. Podeu utilitzar el mateix programa principal.</p>
+<p style="text-align: left;" class="codi">package Exercicis;<br /><br />import java.awt.BorderLayout;<br />import java.awt.FlowLayout;<br />import java.awt.GridLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.util.ArrayList;<br /><br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JOptionPane;<br />import javax.swing.JPanel;<br />import javax.swing.JTextField;<br /><br />import org.hibernate.Query;<br />import org.hibernate.Session;<br />import org.hibernate.Transaction;<br /><br />import dades.SessionFactoryUtil;<br />import dades.Comarca;<br /><br />public class Manteniment_Comarques_Avançat_Pantalla extends JFrame implements ActionListener{<br />    JLabel etIni= new JLabel("Manteniment de COMARQUES");<br />    JLabel etNom= new JLabel("Nom comarca");<br />    JLabel etProv= new JLabel("Nom província");<br />    <br />    JTextField nomComarca = new JTextField();<br />    JTextField nomProvincia= new JTextField();<br />    <br />    JButton primer = new JButton("&lt;&lt;");<br />    JButton anterior = new JButton("&lt;");<br />    JButton seguent = new JButton("&gt;");<br />    JButton ultim = new JButton("&gt;&gt;");<br />    <br />    JButton inserir = new JButton("Inserir");<br />    JButton modificar = new JButton("Modificar");<br />    JButton esborrar = new JButton("Esborrar");<br />    <br />    JButton acceptar = new JButton("Acceptar");<br />    JButton cancelar = new JButton("Cancel·lar");<br />    <br />    JPanel pDalt = new JPanel(new FlowLayout());<br />    JPanel pCentre = new JPanel(new GridLayout(8,0));<br />    JPanel pDades = new JPanel(new GridLayout(2,2));<br />    JPanel pBotonsMov = new JPanel(new FlowLayout());<br />    JPanel pBotonsAct = new JPanel(new FlowLayout());<br />    JPanel pBotonsAccCanc = new JPanel(new FlowLayout());<br />    <br />    Session s = SessionFactoryUtil.getSessionFactory().openSession();<br />    <br />    ArrayList&lt;Comarca&gt; llistaComarques = new ArrayList&lt;Comarca&gt;();<br />    int indActual=0;<br />    String accio=null;<br />    <br />    public void iniciar(){<br />        this.setBounds(100, 100, 350, 400);<br />        this.setLayout(new BorderLayout());<br />        <br />        this.getContentPane().add(pCentre, BorderLayout.CENTER);<br />        this.getContentPane().add(new JPanel(new FlowLayout()), BorderLayout.WEST);<br />        this.getContentPane().add(new JPanel(new FlowLayout()), BorderLayout.EAST);<br />        <br />        pDalt.add(etIni);        <br />        pCentre.add(pDalt);<br />                <br />        pDades.add(etNom);<br />        pDades.add(nomComarca);<br />        pDades.add(etProv);<br />        pDades.add(nomProvincia);<br />        pCentre.add(pDades);<br />        <br />        nomComarca.setEditable(false);<br />        nomProvincia.setEditable(false);<br /><br />        pCentre.add(new JPanel(new FlowLayout()));<br /><br />        pBotonsMov.add(primer);<br />        pBotonsMov.add(anterior);<br />        pBotonsMov.add(seguent);<br />        pBotonsMov.add(ultim);<br />        pCentre.add(pBotonsMov);<br />        <br />        pBotonsAct.add(inserir);<br />        pBotonsAct.add(modificar);<br />        pBotonsAct.add(esborrar);<br />        pCentre.add(pBotonsAct);<br /><br />        pBotonsAccCanc.add(acceptar);<br />        pBotonsAccCanc.add(cancelar);<br />        pCentre.add(pBotonsAccCanc);<br />        pBotonsAccCanc.setVisible(false);<br /><br />        pCentre.add(new JPanel(new FlowLayout()));<br /><br />        llistaComarques = agafarComarques();<br />        visComarca(indActual);<br /><br />        this.setVisible(true);<br />        this.setDefaultCloseOperation(EXIT_ON_CLOSE);<br />        <br />        primer.addActionListener(this);<br />        anterior.addActionListener(this);<br />        seguent.addActionListener(this);<br />        ultim.addActionListener(this);<br /><br />        inserir.addActionListener(this);<br />        modificar.addActionListener(this);<br />        esborrar.addActionListener(this);<br /><br />        acceptar.addActionListener(this);<br />        cancelar.addActionListener(this);<br /><br />    }<br /><br />    private void visComarca(int index) {<br />        // Mètode per a visualitzar la comarca marcada per l'índex que ve com a paràmetre<br />        // Es pot aprofitar per a activar/desactivar els botons anterior i següent, si s'està en la primera o última comarca <br />    }<br /><br />    private ArrayList&lt;Comarca&gt; agafarComarques() {<br />        ArrayList&lt;Comarca&gt; llista = null;<br />        // ací aniran les sentències per a omplir (i retornar) la llista de comarques<br />        return llista;<br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        //ací aniran les accions de moviment primer, anterior, següent i últim<br />        if (e.getSource()==primer){<br />        }<br /><br />        if (e.getSource()==anterior){<br />        }<br />        <br />        if (e.getSource()==seguent){<br />        }<br /><br />        if (e.getSource()==ultim){<br />        }<br />        <br />        if (e.getSource()==inserir){<br />        }<br /><br />        if (e.getSource()==modificar){<br />        }<br /><br />        if (e.getSource()==esborrar){<br />        }<br />        <br />        if (e.getSource()==acceptar){<br />        }<br />        <br />        if (e.getSource()==cancelar){<br />        }       <br />    }<br /><br />    private int BuscaCom(String text) {<br />        // Busca la comarca passada com a paràmetre en llistaComarques, tornant el seu índex. Per a situar-se després d'una inserció.<br />        int ind =0;<br />        // Ací haurien d'anar les sentències<br />        return ind;<br />    }<br /><br />    private void activarBotons(boolean b) {<br />        //Mètode per activar o desactivar (segons el paràmetre) els botons de moviment i també els d'actualització<br />    }<br />}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id45">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 5.6 (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta45_45_2" class="block iDevice_content">
+<p>Crea un projecte nou anomenat <strong>Tema5_</strong><strong>PostgreSQL_Autoescola</strong>. Inclou el driver JDBC de PostgreSQL i la llibreria nostra d'Hibernate.</p>
+<ul>
+<li>Fes el mapatge de totes les taules<strong></strong><strong></strong>, situades en la Base de Dades <strong>autoescola</strong> a la qual pot accedir l'usuari <strong>autoescola </strong>(contrasenya <strong>autoescola</strong>) i situada en el servidor de l'Institut <strong></strong>(<strong>89.36.214.106</strong>). Guarda-les en un paquet anomenat <strong>dades</strong>. El mapatge serà de 5 taules: <strong>ALUMNE, EXAMEN, PRACTIQUES, PROFESSOR i VEHICLE</strong>.</li>
+<li>Crea't la classe <strong>SessionFactoryUtil</strong>, que serà un <strong>singleton</strong> per a poder crear una única SessionFactory. L'has d'utilitzar en totes les altres classes, sempre que et faça falta un SessionFactory. Ha d'estar en el mateix paquet <strong>dades</strong>.</li>
+<li>En un paquet anomenat <strong>Exercicis</strong>, crea't la classe <strong>ConsultaAutoescola</strong>, que serà un programa senzill que visualitzarà els professors de l'autoescola i els seus alumnes, ordenats pel nom del professor. Completarem la informació amb els quilòmetres realitzats pels alumnes en la totalitat de les seues pràctiques i el número d'exàmens que ha realitzat. El resultat seria aquest:</li>
+</ul>
+<p style="text-align: center;"><img src="T5_Ex6.png" alt="" width="550" height="225" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

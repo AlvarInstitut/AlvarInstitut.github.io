@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.2.- JFileChooser | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li><a href="4_components.html" class="daddy">4.- Components</a>
+   <ul class="other-section">
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li class="current-page-parent"><a href="6_dilegs.html" class="current-page-parent daddy">6.- Diàlegs</a>
+   <ul>
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li id="active"><a href="62_jfilechooser.html" class="active no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_windowbuilder.html" class="no-ch">7.- WindowBuilder</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="61_joptionpane.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_windowbuilder.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.2.- JFileChooser</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_85" class="block iDevice_content">
+<p>El component <strong>JFileChooser </strong> és capaç d'obrir un diàleg per a poder seleccionar un fitxer permetent navegar pel sistema de fitxers. Té dues variant: <strong>showOpenDialog</strong> i <strong>showSaveDialog</strong>, amb alguna diferència que ara comentarem.</p>
+<p class="titolet">showOpenDialog()</p>
+<p>És un mètode de <strong>JFileChooser</strong> que obre un diàleg per a seleccionar un fitxer. Posteriorment:</p>
+<ul>
+<li>El fitxer seleccionat l'obtindrem amb <strong>getSelectedFile()</strong>, que torna directament el file.</li>
+<li>El mètode retorna un valor dient si s'ha seleccionat o no un fitxer (podria haver-se cancel·lat o tancat el diàleg). Aquest valor el podem compara amb la constant <strong>JFileChooser.APPROVE_OPTION</strong></li>
+</ul>
+<p>El següent codi tan senzill ens permet seleccionar un fitxer, i traure el seu nom:</p>
+<p class="codi">JFileChooser fc = new JFileChooser();<br />int r = fc.showOpenDialog(this);<br />if (r == JFileChooser.APPROVE_OPTION){<br />     System.out.println("Fitxer seleccionat: " + fc.getSelectedFile().getName());<br />}<br />else<br />     System.out.println("No s'ha seleccionat res");</p>
+<p style="text-align: center;"><img src="Ann_Swing_20_FileChooser.png" /></p>
+<p>Si ens definim l'objecte JFileChooser com una variable que es puga accedir tota l'estona, d'una vegada a l'altra podrem mantenir el fitxer seleccionat. Així doncs, en el següent exemple, si anem navegant per a seleccionar un determinat fitxer, i si apretem el botó una altra vegada per a navegar, mantindrà el subdirectori seleccionat la primera vegada, ja que el JFileChooser és el mateix i no s'ha definit una altra vegada.</p>
+<div class="highlighted-code language-java">
+<div class="codi">
+<pre>import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Finestra extends JFrame implements ActionListener{
+    JButton boto1 = new JButton("Botó 1");
+	JFileChooser fc = new JFileChooser();
+
+	public void iniciar(){
+        setSize(400,200);
+        getContentPane().setLayout(new GridLayout(2,1));
+        JPanel panell1 = new JPanel(new FlowLayout());
+        JPanel panell2 = new JPanel(new FlowLayout());
+        getContentPane().add(panell1);
+        getContentPane().add(panell2);
+        panell1.add(new JLabel("Programa principal. Per anar al diàleg apreta el botó"));
+        panell2.add(boto1);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        boto1.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==boto1){
+        	int r = fc.showOpenDialog(this);
+        	if (r == JFileChooser.APPROVE_OPTION){
+        	     System.out.println("Fitxer seleccionat: " + fc.getSelectedFile().getName());
+        	}
+        	else
+        	     System.out.println("No s'ha seleccionat res");      
+        }
+    }
+}</pre>
+</div>
+</div>
+<p><br /><br /></p>
+<p></p>
+<p class="titolet">showSaveDialog()</p>
+<p>És un diàleg idèntic a l'anterior, excepte que el títol de la finestra de diàleg i el botó principal diran <strong>Guardar</strong> en compte d'<strong>Obrir</strong>.</p>
+<p style="text-align: center;"><img src="Ann_Swing_21_FileChooser2.png" width="519" height="356" /></p>
+<p>Recordeu que aquestos dos procediments no obren ni guarden el fitxer, únicament el seleccionen.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="61_joptionpane.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_windowbuilder.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

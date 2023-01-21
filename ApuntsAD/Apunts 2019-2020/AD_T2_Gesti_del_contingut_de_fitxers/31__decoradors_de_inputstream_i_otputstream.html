@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 - Decoradors de InputStream i OtputStream | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li><a href="2__manipulaci_dels_fluxos_de_dades.html" class="daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul class="other-section">
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__fluxos_decoradors.html" class="current-page-parent daddy">3 - Fluxos decoradors</a>
+   <ul>
+      <li id="active"><a href="31__decoradors_de_inputstream_i_otputstream.html" class="active no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3__fluxos_decoradors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__decoradors_de_reader_i_writer.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 - Decoradors de InputStream i OtputStream</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id11">
+<div class="iDevice emphasis0">
+<div id="ta11_1" class="block iDevice_content">
+<p>Com hem comentat ens serviran per a donar una funcionalitat extra. Són els que estan de verd en la següent imatge:</p>
+<p style="text-align: center;"><img src="T2_2_1.png" alt="T2_2_1.png" width="800" height="837" /> </p>
+<p> Fixem-nos primers en els decoradors de <strong>InputStream</strong>:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FilterInputStream</strong> </td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem) </td>
+</tr>
+<tr>
+<td><strong>LineNumberInputStream</strong> </td>
+<td>Afegeix el número de línia de cada línia del InputStream (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>DataInputStream</strong> </td>
+<td>Permet llegir dades de qualsevol tipus de dades: enter, real, booleà, ... </td>
+</tr>
+<tr>
+<td><strong>BufferedInputStream</strong> </td>
+<td>Munta un buffer d'entrada (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PushBackInputStream</strong> </td>
+<td>Permet retrocedir un byte en la lectura, i per tant permet anar cap arrere (no la veurem) </td>
+</tr>
+<tr>
+<td><strong>ObjectInputStream</strong></td>
+<td>Permet llegir tot un objecte</td>
+</tr>
+</tbody>
+</table>
+<p>I de forma quasi paral·lela tenim els decoradors de <strong>OutputStream</strong>:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FilterOutputStream</strong> </td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem) </td>
+</tr>
+<tr>
+<td><strong>Data<strong>Out</strong>putStream</strong> </td>
+<td>Permet guardar al flux de dades d'eixida dades de qualsevol tipus: enter, real, booleà, ...</td>
+</tr>
+<tr>
+<td><strong>Buffered<strong>Out</strong>putStream</strong> </td>
+<td>Munta un buffer d'eixida (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PrintStream</strong> </td>
+<td>Permet escriure dades de diferents tipus, i té també els mètodes <em>printf</em> i <em>println</em></td>
+</tr>
+<tr>
+<td><strong>Object<strong>Out</strong>putStream</strong></td>
+<td>Permet escriure (serialitzar) tot un objecte</td>
+</tr>
+</tbody>
+</table>
+<p>Comentem-los un poquet més.</p>
+<p style="text-align: justify;"><strong>BufferedInputStream</strong> i <strong>BufferedOutputStream</strong> ens ofereixen un buffer d'entrada i d'eixida respectivament, per a fer la transferència més efectiva. En la pràctica ens oferirà poques funcionalitats útils (a banda de l'eficiència en la transferència, clar). Quan anem als decoradors de fluxos orientats a caràcters, sí que trobarem utilitats als decoradors semblants a aquestos, com per exemple llegir o escriure una línia sencera de caràcters. Però aquestos orientats a bytes, no els veurem.</p>
+<p style="text-align: justify;"><strong>DataInputStream</strong> i <strong>DataOutputStream</strong> ens oferiran la possibilitat de llegir o escriure còmodament dades de diferents tipus: enter, real, booleà, strings, ... Els veurem en detall en el proper <strong>Tema 3</strong></p>
+<p style="text-align: justify;"><strong>ObjectInputStream</strong> i <strong>ObjectOutputStream</strong> (que curiosament són els únics que no depenen de <strong>FilterInputStream </strong>i <strong>FilterOutputStream</strong>) ens permetran guardar o recuperar de cop tot un objecte, és a dir totes les seues propietats (les dades de l'objecte). No ens haurem de preocupar ni de l'ordre ni del tipus de les propietats de l'objecte: quan escrivim l'objecte, es guardaran totes les dades de forma compacta; i quan llegim es recuperaran de forma correcta. És per tant una parella de classes d'extrema utilitat per a guardar objectes, que en definitiva són l'essència de la programació en Java. Els veurem en detall en el proper <strong>Tema 3</strong>. </p>
+<p> </p>
+<p class="titolet">PrintStream</p>
+<p> L'únic que ens queda és el que veurem ara amb un poquet més de detall, el <strong>PrintStream</strong>. Ens permetrà bàsicament 3 coses:</p>
+<ul>
+<li>Escriure dades de més d'un tipus de dades. Per exemple <strong>print(5.25)</strong> escriu un número real, i <strong>print("Hola")</strong> escriu tot un string.</li>
+<li>Donar un determinat format a l'eixida, amb tota la funcionalitat a què estem acostumats amb <strong>printf</strong></li>
+<li>Escriure tota una línia amb <strong>println</strong>, és a dir, acabar una dada amb el retorn de carro, per a baixar de línia.</li>
+</ul>
+<p> Mirem un exemple que ens pot donar idea de la seua funcionalitat.</p>
+<div class="codi">
+<div>import java.io.PrintStream;</div>
+<div>import java.io.FileOutputStream;</div>
+<div>import java.io.IOException;</div>
+<div> </div>
+<div>public class Exemple_2_41 {</div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws IOException {</div>
+<div style="margin-left: 30px;"> </div>
+<div style="margin-left: 60px;">PrintStream f_out = new PrintStream(new FileOutputStream("f6.txt"));</div>
+<div> </div>
+<div style="margin-left: 60px;">float a = (float) 5.25;</div>
+<div style="margin-left: 60px;">String b = "Hola.";</div>
+<div style="margin-left: 60px;">f_out.print(b);</div>
+<div style="margin-left: 60px;">f_out.println("Què tal?");</div>
+<div style="margin-left: 60px;">f_out.println(a+3);</div>
+<div style="margin-left: 60px;">f_out.printf("El número %d en hexadecimal és %x",27,27);</div>
+<div> </div>
+<div style="margin-left: 60px;">f_out.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p> Es crearà el fitxer <strong>f6.txt</strong> (si ja existia esborrarà el contingut anterior) amb el següent contingut:</p>
+<div class="codi2">
+<div>Hola.Què tal?</div>
+<div>8.25</div>
+<div>El número 27 en hexadecimal és 1b</div>
+</div>
+<p style="text-align: justify;">En realitat el <strong>PrintStream</strong>, a banda del constructor que accepta un <strong>OutputStream</strong>, també té un altre que accepta un <strong>File </strong>i fins i tot un altre que accepta un <strong>String</strong> amb el nom del fitxer. Per tant, la següent sentència també ens funcionaria:</p>
+<p class="codi"><span>PrintStream f_out = new PrintStream("f6.txt");</span></p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3__fluxos_decoradors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__decoradors_de_reader_i_writer.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2 - L'estructura DOM | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li class="current-page-parent"><a href="4_documents_xml.html" class="current-page-parent daddy">4.- Documents XML</a>
+   <ul>
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li id="active"><a href="42__lestructura_dom.html" class="active daddy">4.2 - L'estructura DOM</a>
+      <ul>
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52__api_simple_json.html" class="no-ch">5.2 - API Simple JSON</a></li>
+      <li><a href="53__accs_complet_des_de_java.html" class="no-ch">5.3 - Accés complet des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="41__parser_o_analitzador_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="421_lectura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2 - L'estructura DOM</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id101">
+<div class="iDevice emphasis0">
+<div id="ta101_1" class="block iDevice_content">
+<p>L’estructura <acronym title="Document Object Model">DOM</acronym> pren la forma d’un arbre, on cada part del XML es  trobarà representada en forma de <strong>node</strong>. En funció de la posició en el document XML, parlarem de diferents tipus de nodes:</p>
+<ul>
+<li>El node principal que representa tot el XML sencer s’anomena <strong>Document.</strong></li>
+<li>Les diverses etiquetes, inclosa l’etiqueta arrel, es coneixen com a nodes <strong>Element</strong>.</li>
+<li>El contingut d’una etiqueta de tipus text, serà un node de tipus <strong>TextElement</strong></li>
+<li>Els atributs seran nodes de tipus <strong>Attribute</strong>.</li>
+</ul>
+<p>En l'exemple de la pàgina anterior, el fitxer <strong>cotxes.xml</strong>, que té aquesta estructura:</p>
+<div class="codi2">
+<div>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div>
+<div>&lt;oferta&gt;</div>
+<div>  &lt;vehiculo&gt;</div>
+<div>    &lt;marca&gt;ford&lt;/marca&gt;</div>
+<div>    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;</div>
+<div>    &lt;motor combustible="gasolina"&gt;duratorc 1.4&lt;/motor&gt;</div>
+<div>    &lt;matricula&gt;1234AAA&lt;/matricula&gt;</div>
+<div>    &lt;kilometros&gt;12500&lt;/kilometros&gt;</div>
+<div>    &lt;precio_inicial&gt;12000&lt;/precio_inicial&gt;</div>
+<div>    &lt;precio_oferta&gt;10000&lt;/precio_oferta&gt;</div>
+<div>    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;</div>
+<div>    &lt;extra valor="300"&gt;llantas&lt;/extra&gt;</div>
+<div>    &lt;foto&gt;11325.jpg&lt;/foto&gt;</div>
+<div>    &lt;foto&gt;11326.jpg&lt;/foto&gt;</div>
+<div>  &lt;/vehiculo&gt;</div>
+<div>  &lt;vehiculo&gt;</div>
+<div>    &lt;marca&gt;ford&lt;/marca&gt;</div>
+<div>    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;</div>
+<div>    &lt;motor combustible="diesel"&gt;duratorc 2.0&lt;/motor&gt;</div>
+<div>    &lt;matricula&gt;1235AAA&lt;/matricula&gt;</div>
+<div>    &lt;kilometros&gt;125000&lt;/kilometros&gt;</div>
+<div>    &lt;precio_inicial&gt;10000&lt;/precio_inicial&gt;</div>
+<div>    &lt;precio_oferta&gt;9000&lt;/precio_oferta&gt;</div>
+<div>    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;</div>
+<div>    &lt;extra valor="200"&gt;spoiler trasero&lt;/extra&gt;</div>
+<div>    &lt;extra valor="500"&gt;climatizador&lt;/extra&gt;</div>
+<div>    &lt;foto&gt;11327.jpg&lt;/foto&gt;</div>
+<div>    &lt;foto&gt;11328.jpg&lt;/foto&gt;</div>
+<div>  &lt;/vehiculo&gt;</div>
+<div>&lt;/oferta&gt;</div>
+</div>
+<p>Veient-lo com una estructura jeràrquica ens quedaria així:</p>
+<p style="text-align: center;"><img src="T3_4_2_1.jpg" alt="" width="1123" height="794" /></p>
+<p>On:</p>
+<ul>
+<li>El node <strong>Document</strong> és el rombe</li>
+<li>Els nodes <strong>Element</strong> són els cercles</li>
+<li>Els nodes <strong>TextElement</strong> són els rectàngles de fons taronja.</li>
+<li>Els nodes <strong>Attribute</strong> són els rectàngles arrodonits de color groc</li>
+</ul>
+<p>Cada node específic disposa de mètodes per accedir a les seues dades concretes (nom, valor, nodes fills, node pare, etc.). És a dir, que el <strong>node</strong> serveix per a situar-se en una determinada posició (element, atribut, element de text, ...). Tindrà uns mètodes, sobretot per a navegar, encara que també alguns per a traure el contingut. <strong>Element</strong> és un classe derivada de <strong>Node</strong> (per tant hereta tots els seus mètodes), i proporciona algunes coses més, sobretot per a accedir còmodament a les seues parts. Mirem els mètodes més importants, tant de<strong> Node</strong> com de <strong>Element </strong>i <strong>Document</strong></p>
+<div>
+<p><strong>Mètodes de NODE</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getNodeName()</strong></td>
+<td>torna el nom d'aquest node</td>
+</tr>
+<tr>
+<td>short</td>
+<td><strong>getNodeType()</strong></td>
+<td>torna el tipus d'aquest node (ELEMENT_NODE, ATTRIBUTE_NODE, TEXT_NODE, ...</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getNodeValue()</strong></td>
+<td>torna el valor del node, si en té</td>
+</tr>
+<tr>
+<td>NodeList</td>
+<td><strong>getChildNodes()</strong></td>
+<td>torna una llista amb els nodes fills</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>getFirstChild()</strong></td>
+<td>torna el primer fill</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>getLastChild()</strong></td>
+<td>torna l'últim fill</td>
+</tr>
+<tr>
+<td>NamedNodeMap</td>
+<td><strong>getAttributes()</strong></td>
+<td>torna una llista amb els atributs del node (null si no en té cap)</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>getParentNode()</strong></td>
+<td>torna el pare</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getTextContent()</strong></td>
+<td>torna el text contingut en l'element i el de tots els seus descendents, si en té</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><strong>hasChildNodes()</strong></td>
+<td>torna cert si el node té algun fill</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><strong>hasAttributes()</strong></td>
+<td>torna cert si el node té algun atribut</td>
+</tr>
+</tbody>
+</table>
+<p>Mètodes d' <strong>ELEMENT</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getAttribute(</strong>String nom<strong>)</strong></td>
+<td>torna el valor de l'atribut que té aquest nom</td>
+</tr>
+<tr>
+<td>NodeList</td>
+<td><strong>getElementsByTagName(</strong>String nom<strong>)</strong></td>
+<td>torna una llista de nodes amb tots els descendents que tenen aquest nom</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><strong>hasAttribute(</strong>String nom<strong>)</strong></td>
+<td>torna cert si l'element té aquest atribut</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mètodes de DOCUMENT</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>Element</td>
+<td><strong>getDocumentElement()</strong></td>
+<td>torna l'element arrel del document</td>
+</tr>
+<tr>
+<td>NodeList</td>
+<td><strong>getElementsByTagName(</strong>String nom<strong>)</strong></td>
+<td>torna una llista de nodes amb tots els descendents que tenen aquest nom</td>
+</tr>
+</tbody>
+</table>
+<p>Sempre que tinguem una<strong> llista de nodes</strong>, podrem accedir a cadascun dels membres de la llista amb el mètode <strong>item</strong> especificant el número d'ordre. Així, si volem accedir al primer posarem <strong>item(0)</strong></p>
+<p>Posterioment posarem els mètodes que serveixen per anar posant contingut a un document: crear fills, crear atributs, posar contingut, ...</p>
+<p>El <acronym title="Document Object Model">DOM</acronym> resultant obtingut des d’un <acronym title="Extensible Markup Language">XML</acronym> acaba sent un còpia exacta del fitxer, però disposat de diferent manera. Tant al <acronym title="Extensible Markup Language">XML</acronym> com al <acronym title="Document Object Model">DOM</acronym> hi haurà informació no visible, com ara els <em>retorns de carro</em>, que cal tenir en compte per tal de saber processar correctament el contingut i evitar sorpreses poc comprensibles.</p>
+<p>Per a il·lustrar el problema que poden suposar els retorn de carro, imaginem que disposem d’un document <acronym title="Extensible Markup Language">XML</acronym> amb el següent contingut:</p>
+<div class="codi2">
+<div>&lt;table&gt;</div>
+<div style="margin-left: 30px;">&lt;tr&gt;</div>
+<div style="margin-left: 60px;">&lt;td&gt; &lt;/td&gt;</div>
+<div style="margin-left: 60px;">&lt;td&gt; &lt;/td&gt;</div>
+<div style="margin-left: 30px;">&lt;/tr&gt;</div>
+<div>&lt;/table&gt;</div>
+</div>
+<div class="de1"> </div>
+<div class="de1"><span class="sc3">Veurem més clar si representem els retorn de carro en el mateix document:</span></div>
+<div class="de1"></div>
+<div class="de1">
+<div class="codi2">
+<div>&lt;table&gt;¶</div>
+<div style="margin-left: 30px;">&lt;tr&gt;¶</div>
+<div style="margin-left: 60px;">&lt;td&gt; &lt;/td&gt;¶</div>
+<div style="margin-left: 60px;">&lt;td&gt; &lt;/td&gt;¶</div>
+<div style="margin-left: 30px;">&lt;/tr&gt;¶ </div>
+<div>&lt;/table&gt;</div>
+</div>
+<div class="de1"> </div>
+</div>
+<div class="de1"><span class="sc3">A la següent figura es mostra la representació que tindria l’objecte <acronym title="Document Object Model">DOM</acronym>, un vegada estiga ja copiat en memòria. Observeu com l’element <strong><em>table</em></strong> tindrà tres fills. En un es guardarà el <strong>retorn de carro</strong> que situa l’etiqueta <strong><em>&lt;tr&gt; </em></strong>a la següent línia, en el segon trobarem l’etiqueta <strong><em>&lt;tr&gt;</em></strong>, i en el tercer el retorn de carro que fa que <strong>&lt;/table&gt;</strong> estiga en la línia de baix. El mateix passa amb els fills de <strong><em>&lt;tr&gt;</em></strong>, abans i després de cada node <strong><em>&lt;td&gt;</em></strong> trobarem un <strong>retorn de carro</strong>. </span></div>
+</div>
+<p style="text-align: center;"><br /><img src="T3_4_2_1.png" style="border: 1px solid black;" width="566" height="315" /> </p>
+<p>En canvi, si haguérem partit d'un XML equivalent però sense retorns de carro, el resultat hauria estat diferent:</p>
+<div class="codi2">
+<p>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+</div>
+<p style="text-align: center;"> <img src="T3_4_2_2.png" style="border: 1px solid black;" width="391" height="297" /></p>
+<div>
+<p>L’absència de retorns de carro en el fitxer implica també l’absència de nodes contenint els retorns de carro en l’estructura <acronym title="Document Object Model">DOM</acronym>.</p>
+<p>Un altre aspecte a tenir en compte és que el contingut de les etiquetes es plasma en el <acronym title="Document Object Model">DOM</acronym> com un node fill de l’etiqueta contenidora. És a dir, per obtenir el text d’una etiqueta cal obtenir el primer fill d’aquesta.</p>
+</div>
+<div class="codi2">
+<div>&lt;aaa&gt;</div>
+<div style="margin-left: 30px;">&lt;bbb&gt;</div>
+<div style="margin-left: 60px;">text de l'etiqueta bbb</div>
+<div style="margin-left: 30px;">&lt;/bbb&gt; </div>
+<div>&lt;/aaa&gt;</div>
+</div>
+<div class="de1"> </div>
+<div class="de1" style="text-align: center;"><img src="T3_4_2_3.png" style="border: 1px solid black;" width="455" height="306" /></div>
+<p> </p>
+<div></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="41__parser_o_analitzador_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="421_lectura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

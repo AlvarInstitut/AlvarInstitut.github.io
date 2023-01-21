@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.6 - Set ordenat | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__firebase.html" class="daddy">2 - Firebase</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__bases_de_dades_clauvalor.html" class="current-page-parent daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul>
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li class="current-page-parent"><a href="32__utilitzaci_de_redis.html" class="current-page-parent daddy">3.2 - Utilització de Redis</a>
+      <ul>
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li id="active"><a href="326__set_ordenat.html" class="active no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="325__set.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__connexi_des_de_java.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.6 - Set ordenat</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id79">
+<div class="iDevice emphasis0">
+<div id="ta79_85" class="block iDevice_content">
+<p>Els <strong>Sets Ordenats</strong> (<strong>Sorted Set</strong>) de <strong>Redis</strong> són Sets que a més de guardar els valors, guarden també una <strong>puntuació</strong> (<strong>score</strong>) per a cada valor, i <strong>Redis</strong> mantindrà el conjunt <strong>ordenat</strong> per aquesta puntuació.</p>
+<p>Els valors no es podran repetir, però sí les puntuacions.</p>
+<p>Molts dels comandos seran iguals que els del <strong>Set</strong>, ja que un conjunt ordenat no deixa de ser un conjunt, però amb la informació de la puntuació. En aquesta ocasió començaran per <strong>Z</strong></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id80">
+<div class="iDevice emphasis0">
+<div id="ta80_85" class="block iDevice_content">
+<div class="iDevice emphasis0">
+<div id="ta56_85" class="block iDevice_content">
+<p class="titolet">ZADD</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zadd clau puntuació1 valor1 puntuació2 valor2 puntuacióN valorN</p>
+<p>Afegeix els valors al conjunt (creant la clau si és necessari) amb les puntuacions corresponents. Les puntuacions seran Strings de valors reals (float). No es poden repetir els valors, però sí les puntuacions. Si intentem introduir un valor repetit, el que farà serà actualitzar la puntuació. El comando tornarà el número d'elements que realment s'han afegit.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zadd puntuacions 1 Nom1 2 Nom2 5 Nom3 4 Nom4<br />(integer) 4</p>
+<p class="codi2">127.0.0.1:6379&gt; zrange puntuacions 0 -1<br />1) "Nom1"<br />2) "Nom2"<br />3) "Nom4"<br />4) "Nom3"</p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id81">
+<div class="iDevice emphasis0">
+<div id="ta81_85" class="block iDevice_content">
+<div id="ta59_85" class="block iDevice_content">
+<div id="ta58_85" class="block iDevice_content">
+<div id="ta57_85" class="block iDevice_content">
+<p class="titolet">ZCARD</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zcard clau</p>
+<p>Torna la cardinalitat, és a dir, el número d'elements del conjunt ordenat en l'actualitat.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zcard puntuacions<br />(integer) 4</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id82">
+<div class="iDevice emphasis0">
+<div id="ta82_85" class="block iDevice_content">
+<div id="ta81_85" class="block iDevice_content">
+<div id="ta59_85" class="block iDevice_content">
+<div id="ta58_85" class="block iDevice_content">
+<div id="ta57_85" class="block iDevice_content">
+<p class="titolet">ZSCORE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zscore clau valor </p>
+<p>Torna la puntuació (score) del valor especificat del conjunt ordenat. Si no existeix el valor o no existaix la clao, torna nil.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zscore puntuacions Nom3<br />"5"<br />127.0.0.1:6379&gt; zscore puntuacions Nom7<br />(nil)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id83">
+<div class="iDevice emphasis0">
+<div id="ta83_85" class="block iDevice_content">
+<div id="ta82_85" class="block iDevice_content">
+<div id="ta81_85" class="block iDevice_content">
+<div id="ta59_85" class="block iDevice_content">
+<div id="ta58_85" class="block iDevice_content">
+<div id="ta57_85" class="block iDevice_content">
+<p class="titolet">ZCOUNT</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zcount clau min max</p>
+<p>Torna el número de valors que estan entre les puntuacions especificades (ambdues incloses).</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zcount puntuacions 2 5<br />(integer) 3</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id84">
+<div class="iDevice emphasis0">
+<div id="ta84_85" class="block iDevice_content">
+<p class="titolet">ZRANGE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zrange clau inici final [withscores]</p>
+<p>Torna els elements del conjunt ordenat inclosos entre els index inici i final, ambdós inclosos. I es trauen per ordre ascentent de puntuació. El primer element és el 0. Es poden posar valors negatius, sent -1 l'últim, -2 el penúltim, ... Opcionalment podem posar <strong>WITHSCORES</strong> per a que ens torne també la puntuació de cada element</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zrange puntuacions 0 -1<br />1) "Nom1"<br />2) "Nom2"<br />3) "Nom4"<br />4) "Nom3"<br />127.0.0.1:6379&gt; zrange puntuacions 0 -1 withscores<br />1) "Nom1"<br />2) "1"<br />3) "Nom2"<br />4) "2"<br />5) "Nom4"<br />6) "4"<br />7) "Nom3"<br />8) "5"</p>
+<p>Si vulguérem traure el conjunt en ordre invers de puntuació, utilitzaríem el comando <strong>ZREVRANGE</strong> (<strong>reverse range</strong>).</p>
+<p class="codi2">127.0.0.1:6379&gt; zrevrange puntuacions 0 -1 withscores<br />1) "Nom3"<br />2) "5"<br />3) "Nom4"<br />4) "4"<br />5) "Nom2"<br />6) "2"<br />7) "Nom1"<br />8) "1"</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id85">
+<div class="iDevice emphasis0">
+<div id="ta85_85" class="block iDevice_content">
+<p class="titolet">ZRANGEBYSCORE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zrangebyscore clau min max [withscores]</p>
+<p>Torna els elements del conjunt ordenat que tenen una puntuació compresa entre <strong>min</strong> i <strong>max</strong> (ambdues incloses). I es trauen per ordre ascentent de puntuació. Opcionalment podem posar <strong>WITHSCORES</strong> per a que ens torne també la puntuació de cada element. <strong></strong></p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zrangebyscore puntuacions 2 5<br />1) "Nom2"<br />2) "Nom4"<br />3) "Nom3"<br />127.0.0.1:6379&gt; zrangebyscore puntuacions 2 5 withscores<br />1) "Nom2"<br />2) "2"<br />3) "Nom4"<br />4) "4"<br />5) "Nom3"<br />6) "5"</p>
+<p>Si vulguérem que les puntuacions foren estrictament majors que la puntiuació mínima i/o estrictament menor que la puntuació màxima, posaríem un parèntesi davany de <strong>min</strong> i/o <strong>max</strong>:</p>
+<p class="codi2">127.0.0.1:6379&gt; zrangebyscore puntuacions 2 (5 withscores<br />1) "Nom2"<br />2) "2"<br />3) "Nom4"<br />4) "4"</p>
+<p>I si vulguérem traure el conjunt en ordre invers de puntuació, utilitzaríem el comando <strong>ZREVRANGEBYSCORE</strong> (<strong>reverse range</strong>). Cuideu que com va en ordre invers, ara el valor màxim ha de ser el primer, i el mínim el segon.</p>
+<p class="codi2">127.0.0.1:6379&gt; zrevrangebyscore puntuacions 5 2 withscores<br />1) "Nom3"<br />2) "5"<br />3) "Nom4"<br />4) "4"<br />5) "Nom2"<br />6) "2"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id86">
+<div class="iDevice emphasis0">
+<div id="ta86_85" class="block iDevice_content">
+<p class="titolet">ZRANK</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zrank clau valor</p>
+<p>Torna el número d'ordre de l'element amb el valor especificat. El primer valor és el 0. Si no existeix, torna <strong>nil</strong>.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zrank puntuacions Nom1<br />(integer) 0<br />127.0.0.1:6379&gt; zrank puntuacions Nom4<br />(integer) 2<br />127.0.0.1:6379&gt; zrank puntuacions Nom7<br />(nil)</p>
+<p>Si volem saber el número d'ordre però des del final de la llista (en ordre invers), hem d'utilitzar <strong>ZREVRANK</strong>:</p>
+<p class="codi2">127.0.0.1:6379&gt; zrevrank puntuacions Nom1<br />(integer) 3<br />127.0.0.1:6379&gt; zrevrank puntuacions Nom4<br />(integer) 1<br /><br /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id87">
+<div class="iDevice emphasis0">
+<div id="ta87_85" class="block iDevice_content">
+<p class="titolet">ZREM</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zrem clau valor1 valor2 valorN</p>
+<p>Elimina els elements amb els valors especificats. Si algun valor no existeix, senzillament l'ignora. Torna el número d'elements realment eliminats.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zrem puntuacions Nom1<br />(integer) 1<br />127.0.0.1:6379&gt; zrange puntuacions 0 -1 withscores<br />1) "Nom2"<br />2) "2"<br />3) "Nom4"<br />4) "4"<br />5) "Nom3"<br />6) "5"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id88">
+<div class="iDevice emphasis0">
+<div id="ta88_85" class="block iDevice_content">
+<div id="ta87_85" class="block iDevice_content">
+<p class="titolet">ZREMRANGEBYSCORE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zremrangebyscore clau min max</p>
+<p>Elimina els elements amb puntuació compresa entre el mínim i el màxim de forma inclusiva.els valors especificats. Si volem fer-ho de forma excusiva (sense incloure les puntuacions dels extrems) posarem un parèntesi avant del mínim i/o el màxim. Torna el número d'elements realment eliminats.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zremrangebyscore puntuacions (2 4<br />(integer) 1<br />127.0.0.1:6379&gt; zrange puntuacions 0 -1 withscores<br />1) "Nom2"<br />2) "2"<br />3) "Nom3"<br />4) "5"</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id89">
+<div class="iDevice emphasis0">
+<div id="ta89_85" class="block iDevice_content">
+<p class="titolet">ZINCRBY</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">zincrby clau increment valor</p>
+<p>Incrementa la puntuació de l'element especificat. El valor de la puntuació a incrementar és un número real. Torna el valor la puntuació final de l'element. Si l'element no existia, l'inserirà, assumint una puntuació inicial de 0.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; zincrby puntuacions 1.5 Nom2<br />"3.5"<br />127.0.0.1:6379&gt; zincrby puntuacions 2.75 Nom5<br />"2.75"<br />127.0.0.1:6379&gt; zrange puntuacions 0 -1 withscores<br />1) "Nom5"<br />2) "2.75"<br />3) "Nom2"<br />4) "3.5"<br />5) "Nom3"<br />6) "5"</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="325__set.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__connexi_des_de_java.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.2 CF: Utilització des de Java | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-57"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__firebase.html" class="current-page-parent daddy">2 - Firebase</a>
+   <ul>
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="23_cloud_firestore_cf.html" class="current-page-parent daddy">2.3 Cloud Firestore (CF)</a>
+      <ul>
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li id="active"><a href="232_cf_utilitzaci_des_de_java.html" class="active daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul>
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2321_cfjava_connexi_des_de_java.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.2 CF: Utilització des de Java</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id208">
+<div class="iDevice emphasis0">
+<div id="ta208_85" class="block iDevice_content">
+<p class="titolet">Exemple</p>
+<p>Practicarem tot el que ve a continuació sobre un programa gràfic.</p>
+<p>Aquest és el seu esquelet:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import com.google.api.core.ApiFuture;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.firestore.DocumentChange;
+import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.DocumentSnapshot;
+import com.google.cloud.firestore.EventListener;
+import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.FirestoreException;
+import com.google.cloud.firestore.QuerySnapshot;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import com.google.firebase.cloud.FirestoreClient;
+import com.google.firebase.database.annotations.Nullable;
+
+public class Pantalla_CrearXatCloud extends JFrame implements ActionListener {
+
+	private static final long serialVersionUID = 1L;
+
+	JLabel etUsuari = new JLabel("Nom Usuari:");
+	JTextField usuari = new JTextField(25);
+
+	JLabel etUltimMissatge = new JLabel("Últim missatge: ");
+	JLabel ultimMissatge = new JLabel();
+
+	JLabel etiqueta = new JLabel("Missatges:");
+	JTextArea area = new JTextArea();
+
+	JLabel etIntroduccioMissatge = new JLabel("Introdueix missatge:");
+	JButton enviar = new JButton("Enviar");
+	JTextField missatge = new JTextField(15);
+
+	// en iniciar posem un contenidor per als elements anteriors
+	public void iniciar() throws IOException, InterruptedException, ExecutionException {
+
+		this.setBounds(100, 100, 450, 300);
+		this.setLayout(new BorderLayout());
+		// contenidor per als elements
+		// Hi haurà títol. Panell de dalt: últim missatge. Panell de baix: per a
+		// introduir missatge. Panell central: tot el xat
+
+		JPanel panell11 = new JPanel(new FlowLayout());
+		panell11.add(etUsuari);
+		panell11.add(usuari);
+		JPanel panell12 = new JPanel(new FlowLayout());
+		panell12.add(etUltimMissatge);
+		panell12.add(ultimMissatge);
+		JPanel panell1 = new JPanel(new GridLayout(3, 1));
+		panell1.add(panell11);
+		panell1.add(panell12);
+		getContentPane().add(panell1, BorderLayout.NORTH);
+
+		JPanel panell2 = new JPanel(new BorderLayout());
+		panell2.add(etiqueta, BorderLayout.NORTH);
+		area.setForeground(Color.blue);
+		JScrollPane scroll = new JScrollPane(area);
+		panell2.add(scroll, BorderLayout.CENTER);
+		getContentPane().add(panell2, BorderLayout.CENTER);
+
+		JPanel panell3 = new JPanel(new FlowLayout());
+		panell3.add(etIntroduccioMissatge);
+		panell3.add(missatge);
+		panell3.add(enviar);
+		getContentPane().add(panell3, BorderLayout.SOUTH);
+
+		setVisible(true);
+		enviar.addActionListener(this);
+
+		FileInputStream serviceAccount = new FileInputStream(
+				"acces-a-dades-6e5a6-firebase-adminsdk-ei7uc-8f5d926921.json");
+
+		FirebaseOptions options = new FirebaseOptions.Builder()
+				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+				.setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com").build();
+
+		FirebaseApp.initializeApp(options);
+
+		// Exemple de lectura única: senzillament sobre un ApiFuture i sobre ell get()
+		// Per a posar el títol. Sobre /Xats/XatProva/nomXat
+
+		// Exemple de listener de lectura contínua addSnapshotListener()
+		// Per a posar l'últim missatge registrat. Sobre /Xats/XatProva/ultimUsuari i /Xats/XatProva/ultimMissatge
+
+		// Exemple de listener de lectura contínua addSnapshotListener() sobre una col·lecció
+		// Per a posar tota la llista de missatges. Sobre /Xats/XatProva/missatges
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == enviar) {
+			// Exemple de guardar dades en Cloud Firestore
+			// Per a guardar dades. Sobre /Xats/XatProva i després sobre /Xats/Xat1
+
+		}
+	}
+
+}</code></pre>
+</div>
+</div>
+<p><br /><code></code></p>
+<p>I aquest és el programa principal que crida l'anterior:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.io.IOException;
+
+public class CrearXatCloud {
+
+    public static void main(String[] args) throws IOException {
+        final Pantalla_CrearXatCloud finestra = new Pantalla_CrearXatCloud();
+        finestra.iniciar();
+    }
+}</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2321_cfjava_connexi_des_de_java.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

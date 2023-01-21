@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4 - Emmagatzematge en BD-XML Natives | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-29"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__estratgies_demmagatzematge_de_xml.html" class="no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul class="other-section">
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li><a href="33__funcions_que_produeixen_contingut_xml.html" class="no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li><a href="34__convertir_taules_senceres_a_xml.html" class="no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li><a href="36__utilitzaci_des_de_java.html" class="no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="4__emmagatzematge_en_bdxml_natives.html" class="active no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml_natives.html" class="no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul class="other-section">
+      <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
+      <ul class="other-section">
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li><a href="614__funcions.html" class="no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="37__ampliaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_de_bdxml_natives.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4 - Emmagatzematge en BD-XML Natives</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id42">
+<div class="iDevice emphasis0">
+<div id="ta42_1" class="block iDevice_content">
+<p>En les<strong> Bases de Dades XML natives</strong>, a diferència de tots els SGBD anteriors (centrats en les dades), no existeixen camps ni guarden dades en tipus de dades senzills. Sempre guarden documents XML i són Bases de Dades centrades en els documents. La unitat mínima d'emmagatzematge és el document XML.</p>
+<p>Podríem definir <strong>SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives</strong> com un sistema de gestió de la informació que ha de:</p>
+<ul>
+<li>Definir un model lògic per a un document XML (en contraposició als SGBD habilitats que defineixen el model per les dades) i enregistrar i recuperar els documents segons aquest model. Com a mínim, el model ha d’incloure elements, atributs, PCDATA i l’ordre del document.</li>
+<li>Mantenir una relació transparent amb el mecanisme subjacent d’emmagatzematge, incorporant les característiques ACID de qualsevol SGBD (<em>Atomicity, Consistency, Isolation and Durability</em>).</li>
+<li>Incloure un nombre arbitrari de nivells de dades i complexitat.</li>
+<li>Permetre les tecnologies de consulta i transformació pròpies d’<acronym title="Extensible Markup Language">XML</acronym>: <strong>XPath</strong>, <acronym title="Extensible Stylesheet Language Transformations">XSLT</acronym>, XQL, <strong>XQuery</strong>, etc.</li>
+<li>Permetre la introducció d’informació <em>data-centric</em>, <em>document-centric</em> i mixta.</li>
+</ul>
+<p>El segon punt de la definició porta implícita la idea que un SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives no té per què tenir cap model físic d’emmagatzematge subjacent específic, sinó que es podria construir damunt un SGBDR, un SGBDOO, ..., o un sistema propi d’emmagatzematge. Això sembla contradictori amb els problemes i crítiques que presenten per a la gestió de documents <acronym title="Extensible Markup Language">XML</acronym> els SGBD predecessors dels SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives. </p>
+<div>
+<p>Avantatges de les BD-<acronym title="Extensible Markup Language">XML</acronym> natives, en comparació a les BD no <acronym title="Extensible Markup Language">XML</acronym>:</p>
+<ul>
+<li class="level1">
+<div class="li">Faciliten accés i emmagatzematge d’informació en format <acronym title="Extensible Markup Language">XML</acronym> sense necessitat de codi addicional ni cap tipus de mapatge.</div>
+</li>
+<li class="level1">
+<div class="li">La majoria d’SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives incorporen un motor de recerca d’alt rendiment.</div>
+</li>
+<li class="level1">
+<div class="li">És molt senzill afegir nous documents <acronym title="Extensible Markup Language">XML</acronym>.</div>
+</li>
+<li class="level1">
+<div class="li">Permeten emmagatzemar dades heterogènies.</div>
+</li>
+<li class="level1">
+<div class="li">Conserven la integritat dels documents (es poden recuperar en el seu estat inicial).</div>
+</li>
+</ul>
+<p>Per contra, els inconvenients que tenen normalment els SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives són aquestos:</p>
+<ul>
+<li class="level1">
+<div class="li">La gran quantitat d’espai necessari per emmagatzemar el mateix document <acronym title="Extensible Markup Language">XML</acronym> com a format de representació de la informació, a causa del fet que les etiquetes poden suposar el 75% de la informació d’un document <acronym title="Extensible Markup Language">XML</acronym>. I això és, sense cap mena de dubte, innecessari en guardar molts documents validats per un mateix <acronym title="XML (Extensible Markup Language) Schema Definition">XSD</acronym> o <acronym title="Document Type Definition">DTD</acronym>.</div>
+</li>
+<li class="level1">
+<div class="li">El fet que les BD-<acronym title="Extensible Markup Language">XML</acronym> natives només puguen guardar i retornar dades en format <acronym title="Extensible Markup Language">XML</acronym>.</div>
+</li>
+<li class="level1">
+<div class="li">En emmagatzemar la informació en format <acronym title="Extensible Markup Language">XML</acronym> es fa molt complicat poder generar noves estructures a partir de la informació existent com, per exemple, aconseguir càlculs estadístics.</div>
+</li>
+<li class="level1">
+<div class="li">Les dificultats d’indexació del contingut d’una base de dades, que ha de permetre la reducció dràstica del temps necessari per trobar certs elements clau.</div>
+</li>
+<li class="level1">
+<div class="li">Les pobres facilitats per modificar el contingut dels documents <acronym title="Extensible Markup Language">XML</acronym> emmagatzemats sense haver de substituir tot el document.</div>
+</li>
+</ul>
+<p>Els dos darrers inconvenients (indexació-actualització) són cavalls de batalla dels SGBD i de ben segur que s’anirà avançant en aquest camp fins que deixen de ser inconvenients. </p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="37__ampliaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_de_bdxml_natives.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5 - Instal·lació i configuració d'Hibernate | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li id="active"><a href="5__installaci_i_configuraci_dhibernate.html" class="active daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul>
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4__arquitectura_hibernate.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5 - Instal·lació i configuració d'Hibernate</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_1" class="block iDevice_content">
+<p class="titolet">Instal·lació</p>
+<p>Anem ja a la instal·lació d'Hibernate en l'entorn d'Eclipse. En el moment de fer aquestos apunts, l'última versió disponible d'Eclipse és <strong>2019-09</strong>. Tanmateix, el següent vídeo és sobre la versió Neon d'Eclipse, prou anterior a l'actual, però no oferiex cap variació substancial. l'única diferència és que hi ha versions en les quals és suficient  amb arrastrar el botó <strong>Install</strong> de la versió (imatges 2 a 4 del següent vídeo). En d'altres, com la <strong>2019-06</strong>, s'ha d'anar a <strong>Help -&gt; Install New Software</strong>, i treballar amb l'adreça que ens dóna en <a href="http://tools.jboss.org/downloads" target="_blank" rel="noopener"><strong></strong></a><strong><a>http://tools.jboss.org/downloads</a></strong></p>
+<p style="text-align: center;"><img src="T5_5_0_1.png" alt="" width="1072" height="744" /></p>
+<p style="text-align: justify;">Com déiem, copiarem l'adreça que ens dóna l'anterior pàgina en <strong>Help -&gt; Install New Software </strong> en el quadre de text on diu <strong>Work with</strong> i l'afegim.</p>
+<p style="text-align: center;"><img src="T5_5_0_2.png" alt="" width="894" height="621" /></p>
+<p style="text-align: justify;">Una vegada ha analitzat les utilitats de l'adreça ens deixa triar quines volem instal·lar. La que ens interessa és <strong>Hibernate Tools</strong>, que està per exemlple dins de <strong>JBoss Data Services Development</strong></p>
+<p><img src="T5_5_0_3.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="1046" height="701" /></p>
+<p>La resta de la instal·lació és idèntica a versions anteriors</p>
+<p>En el següent vídeo està tot el procés d'instal·lació de la versió corresponent a Eclipse Neon</p>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="T5_Instal_Hibernate.swf" width="980" height="720"><param name="src" value="T5_Instal_Hibernate.swf" /></object></p>
+<p>La instal·lació d'una versió anterior, en cas que treballem amb una versió diferent d'Eclipse, serà igual de senzilla. Només haurem d'anar a la pàgina de <strong>All downloads</strong> (<a href="http://tools.jboss.org/downloads/overview.html">http://tools.jboss.org/downloads/overview.html</a>), on estan les versions d'Hibernate per a cada versió d'Eclipse. Millor si triem les versions estables. Ens hem de fixar en la columna de <strong>JBoss Tools</strong>. I si no està la que volem, podem anar al final de tot a: <em><strong>Look for an older version? See the archives</strong></em></p>
+<p style="text-align: center;"><img src="T5_5_1.png" alt="" style="border-width: 1px;" width="1206" height="684" /></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id42">
+<div class="iDevice emphasis0">
+<div id="ta42_85" class="block iDevice_content">
+<p class="titolet">Configuració</p>
+<p>En aquest tema, en contra del criteri seguit en els temes anteriors, ens construirem un <strong>projecte nou</strong> per a cada connexió a cada Base de Dades. Aquest projecte el configurarem per a Hibernate creant el fitxer <strong>Hibernate Configuration File</strong><strong> </strong>(<strong>cfg.xml</strong>). Aquest fitxer contindrà tot el necessari per a realitzar la connexió a la Base de Dades que volem connectar.</p>
+<p>El fitxer <strong>cfg.xml</strong> es crea amb l'opció <strong>New -&gt; Other -&gt; Hibernate -&gt; Hibernate Configuration File (cfg.xml)</strong>.</p>
+<p>Després del fitxer de configuració, també crearem la <strong>Consola de configuració</strong>.</p>
+<p>La primera connexió la realitzarem a <strong>PostgreSQL</strong>, a la Base de Dades de prova que estem utilitzant: <strong>geo_ad</strong>. El nom que posarem al projecte és <strong>Tema5_Hibernate_PostgreSQL_geo_ad</strong>, un nom molt llarg, però que ens diu perfectament el que volem fer. El següent vídeo il·lustra tot el procés:</p>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="T5_Config_Hibernate.swf" width="980" height="654"><param name="src" value="T5_Config_Hibernate.swf" /></object></p>
+<p>Les dades de connexió a PostgreSQL són aquestes (imatges 9 a 14 del vídeo anterior). Cuideu de triar la vesió <strong>5.2 </strong>d'Hibernate. Les posteriors en el moments de fer aquestos apunts (5.3 i 5.4) no funcionaven bé</p>
+<p style="text-align: center;"><img src="T5_5_2.png" alt="" style="border-width: 1px;" width="680" height="741" /></p>
+<p>Si la connexió la férem a Oracle, les dades de connexió variarien lleugerament:</p>
+<p style="text-align: center;"><img src="T5_5_3.png" alt="" width="613" height="741" /></p>
+<p>I també ho farien per a MySQL:</p>
+<p style="text-align: center;"><img src="T5_5_4.png" alt="" width="613" height="741" /></p>
+<p>No hi ha la possibilitat de connectar amb SQLite, ja que no és un servidor</p>
+<div class="nota_blau">
+<p><u><strong>Nota</strong></u></p>
+<p>Recordeu que heu de triar la <strong>versió 5.2 d'Hibernate </strong> en les pantales anteriors de crear el fitxer de configuració <strong>Hibernate Configuration File</strong><strong> </strong>(<strong>cfg.xml</strong>). I també en la creació de la consola</p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4__arquitectura_hibernate.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

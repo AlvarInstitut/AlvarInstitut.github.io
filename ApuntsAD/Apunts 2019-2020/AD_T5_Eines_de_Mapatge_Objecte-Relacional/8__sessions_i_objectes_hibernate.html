@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8 - Sessions i objectes hibernate | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li id="active"><a href="8__sessions_i_objectes_hibernate.html" class="active daddy">8 - Sessions i objectes hibernate</a>
+   <ul>
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="7__estructura_dels_fitxers_de_mapatge.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="81__transaccions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">8 - Sessions i objectes hibernate</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_1" class="block iDevice_content">
+<p>En aquesta secció comentarem el comportament de les sessions i dels objectes Hibernate (les classes creades per Hibernate).</p>
+<p>Recordem que el procés per a arribar a una sessió era <strong>Configuration -&gt; SessionFactory -&gt; Session</strong>. Les sentències serien aquestes:</p>
+<div class="codi">
+<div> </div>
+<div>Configuration cfg = new Configuration().configure();</div>
+<div> </div>
+<div>SessionFactory sf = cfg.buildSessionFactory();</div>
+<div> </div>
+<div>Session sessio = sf.openSession();</div>
+<div> </div>
+</div>
+<p> La primera sentència carrega el fitxer de configuració <strong>hibernate.cfg.xml</strong>, i inicialitza l'entorn d'Hibernate. A partir d'aquest moment podem utilitzar l'objecte Configuration per crear el <strong>SessionFactory</strong>. Ja hem comentat en el punt 5.5 que normalment només utilitzarem un objecte SessionFactory, i per tant podríem obligar a que només hi haja una instància d'aquesta classe amb la tècnica del <strong>Singleton</strong> (que utilitzarem a partir d'ara amb la classe <strong>SessionFactoryUtil.java</strong>). També hem comentat que <strong>buildSessionFactory</strong> està desfassat, però el posem ací per claredat i senzillesa. En el Singleton <strong>SessionFactoryUtil.java</strong> ja ho havíem arreglat.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="7__estructura_dels_fitxers_de_mapatge.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="81__transaccions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

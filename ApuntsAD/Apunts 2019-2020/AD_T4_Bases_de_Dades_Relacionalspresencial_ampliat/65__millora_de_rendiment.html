@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.5 - Millora de rendiment | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="no-ch">4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse</a></li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6__jdbc_avanat.html" class="current-page-parent daddy">6 - JDBC avançat</a>
+   <ul>
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li id="active"><a href="65__millora_de_rendiment.html" class="active no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="64__transaccions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.5 - Millora de rendiment</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id21">
+<div class="iDevice emphasis0">
+<div id="ta21_1" class="block iDevice_content">
+<p>Un altre aspecte important que mesura la qualitat de les aplicacions és l’eficiència amb la qual s’aconsegueix comunicar amb el SGBD. Per optimitzar la connexió és important reconèixer quins processos poden actuar de coll d’ampolla.</p>
+<p>En primer lloc, analitzarem la petició de connexió a un SGBD perquè es tracta d’un procés costós però inevitable que cal considerar.</p>
+<p>En segon lloc, estudiarem les sentències predefinides, perquè el seu ús facilita la creació de <em>dades clau</em> i índexs temporals de manera que siga possible anticipar-se a la demanda o disposar de les dades de forma molt més ràpida.</p>
+<p></p>
+<p class="titolet">Temps de vida d'una connexió</p>
+<p>L’establiment d’una connexió és un procediment molt lent, tant a la part client com a la part servidor.</p>
+<ul>
+<li>A la part client, <b>DriverManager</b> ha de descobrir el controlador correcte d’entre tots els que haja de gestionar. La majoria de vegades les aplicacions treballaran només amb un únic controlador, però cal tenir en compte que <b>DriverManager</b> no coneix a priori quina <acronym title="Uniform Resource Locator">URL</acronym> de connexió correspon a cada controlador, i per saber-ho envia una petició de connexió a cada controlador que tinga registrat, el controlador que no li retorna error serà el correcte.</li>
+<li>A la banda servidor, es crearà un context específic i s’habilitaran un conjunt de recursos per cada client connectat. És a dir, que durant la petició de connexió el SGDB ha de gastar un temps considerable abans de deixar operativa la comunicació client-servidor.</li>
+</ul>
+<p>Aquesta elevat cost de temps concentrat en el moment de la petició de connexió fa que ens plantegem si val la pena obrir i tancar la connexió cada vegada que ens toque executar una sentència <acronym title="Structured Query Language">SQL</acronym>, o obrir una connexió al principi de l'aplicació que tancaríem en finalitzar. Lamentablement no hi ha una única resposta, sinó que depèn de la freqüència d’ús de la connexió i el número de connexions contra el mateix SGBD.</p>
+<p>Com en tot, es tracta de trobar el punt d’equilibri. Si el número de clients, i per tant de connexions, és baix i la freqüència d’ús és alta, serà preferible mantenir les connexions obertes molt de temps. Per contra, si el número de connexions és molt alt i la freqüència d'ús baixa, el que serà preferible serà obrir i tancar la connexió cada vegada que es necessite. I també hi haurà una multitud de casos en què la solució consistirà a mantenir les connexions obertes però no permanentment. Es pot donar un temps de vida a cada connexió, o bé tancar-les després de restar inactiva una quantitat determinada de temps, o es pot fer servir el criteri de mantenir un número màxim de connexions obertes, tancant les més antigues o les més inactives quan se sobrepasse el límit.</p>
+<p></p>
+<p class="titolet">Sentències predefinides</p>
+<p>JDBC disposa d’un objecte derivat del <b>Statement</b> que s’anomena <b>PreparedStatement</b>., a la qual se li passa la sentència SQL en el moment de crear-lo, no en el moment d'executar la sentència (com passava amb <strong>Statement</strong>). I a més aquesta sentència pot admetre paràmetres, cosa que ens pot anar molt bé en determinades ocasions.</p>
+<p>Siga com siga, <b>PreparedStatement </b>presenta avantatges sobre el seu antecessor <b>Statement</b> quan ens toque treballar amb sentències que s'hagen d'executar diverses vegades. La raó és que qualsevol sentència <acronym title="Structured Query Language">SQL</acronym>, quan s’envia al SGBD serà compilada abans de ser executada.</p>
+<ul>
+<li>Utilitzant un objecte <b>Statement</b>, cada vegada que fem una execució d’una sentència, ja siga via <b>executeUpdate</b> o bé via <b>executeQuery</b>, el SGBD la compilarà, ja que li arribarà en forma de cadena de caràcters.</li>
+<li>En canvi, al <b>PreparedStament</b> la sentència mai varia i per tant es pot compilar i guardar dins del mateix objecte, de manera que les següents vegades que s’execute no caldrà compilar-la. Això reduirà sensiblement el temps d’execució.</li>
+</ul>
+<p>En alguns sistemes gestors, a més, fer servir <b>PreparedStatements </b>pot arribar a suposar més avantatges, ja que utilitzen la seqüència de bytes de la sentència per detectar si es tracta d’una sentència nova o ja s’ha servit amb anterioritat. D’aquesta manera es propicia que el sistema guarde les respostes en la memòria caché, de manera que es puguen lliurar de forma més ràpida.</p>
+<p>La principal diferència dels objectes <b>PreparedStatement</b> en relació als <b>Statement</b>, és que en els primers se'ls passa la sentència <acronym title="Structured Query Language">SQL</acronym> predefinida en el moment de crear-lo. Com que la sentència queda predefinida, ni els mètodes <b>executeUpdate</b> ni <b>executeQuery</b> requeriran cap paràmetre. És a dir, justet al revès que en el <strong>Statement</strong>.</p>
+<div class="codi">
+<div>   ...</div>
+<div style="margin-left: 30px;">sentenciaSQL = "INSERT INTO PAIS VALUES('Marroc')";</div>
+<div style="margin-left: 30px;">PreparedStatement stm = con.prepareStatement(sentenciaSql);</div>
+<div style="margin-left: 30px;">stm.executeUpdate();</div>
+   ...</div>
+<p>Els <strong>paràmetres</strong> de la sentència es marcaran amb el símbol d’interrogant (?) i s’identificaran per la posició que ocupen a la sentència, començant a comptar des de l’esquerra i a partir del número 1. El valor dels paràmetres s’assignarà fent servir el mètode específic, d’acord amb el tipus de dades a assignar. El nom camençarà per <strong>set</strong> i continuarà amb el nom del tipus de dades<em></em> (exemples: <b>setString</b>, <b>setInt</b>, <b>setLong</b>, <b>setBoolean</b>…). Tots aquestos mètodes segueixen la mateixa sintaxi:</p>
+<p class="codi2">setXXXX(&lt;posicioALaSentenciaSQL&gt;, &lt;valor&gt;);</p>
+<p>Veiem un exemple, en el qual suposem que tenim les dades a introduir en un objecte <strong>article</strong>:</p>
+<div class="codi" style="margin-left: 30px;">
+<div style="margin-left: 30px;">...</div>
+<div style="margin-left: 30px;">PreparedStatement st = con.prepareStatement("INSERT INTO ARTICLE (id, descripcio) VALUES(?, ?)");</div>
+<div style="margin-left: 30px;">st.setLong(1, article.getId());</div>
+<div style="margin-left: 30px;">st.setString(2, article.getDescripcio());</div>
+<div style="margin-left: 30px;">st.executeUpdate();</div>
+<div style="margin-left: 30px;">...</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="64__transaccions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

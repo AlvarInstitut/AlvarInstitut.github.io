@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.3.1 CF-Android: Connexió | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-63"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__firebase.html" class="current-page-parent daddy">2 - Firebase</a>
+   <ul>
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="23_cloud_firestore_cf.html" class="current-page-parent daddy">2.3 Cloud Firestore (CF)</a>
+      <ul>
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li class="current-page-parent"><a href="233_cf_utilitzaci_des_dandroid.html" class="current-page-parent daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul>
+            <li id="active"><a href="2331_cfandroid_connexi.html" class="active no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="233_cf_utilitzaci_des_dandroid.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2332_cfandroid_accs_a_les_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.3.1 CF-Android: Connexió</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id209">
+<div class="iDevice emphasis0" >
+<div id="ta209_209_2" class="block iDevice_content">
+<div class="exe-text"><p>L'accés és extraordinàriament fàcil gràcies als assistents que ens proporciona el propi Android Studio.</p>
+<p>Al final de tot teniu un vídeo que repassa tots els passos per a poder connectar des de la nostra aplicació d'Android. A continuació els repassem i expliquem un a un. Són els que ens marca l'assistent, que haurem d'invocar sobre el nostre projecte ja creat, i que es crida des de  <strong>Tools --&gt; Firebase --&gt; Firestore</strong> (està al final de tot)</p>
+<p style="text-align: center;"><img src="T7_2_3_3_1_1.png" alt="" width="1366" height="720" /></p>
+<p>Observeu que quasi quasi tot és idèntic, encara que utilitzem Java o Kotlin. Només farem la diferenciació en l'exemple, on estarà ja tot el codi.</p>
+<p class="titolet">Connectar l'aplicació a Firebase Cloud Firestore</p>
+<p style="text-align: center;"><img src="T7_2_3_3_1_2.png" alt="" width="1366" height="720" /></p>
+<p>En apretar el botó de<strong> Connect to Firebase</strong>, si no estàvem connectats amb el compte de Google al Firebase se'ns obrirà finestra d'un navegador per a connectar. Podria donar-se el cas que ens diguera que Android Studio vol accedir a les dades de la Base de Dades. Òbviament ho haurem de permetre:</p>
+<p style="text-align: center;"><img src="T7_2_2_3_1_2.png" alt="" width="402" height="725" /></p>
+<p>Una vegada autenticats en Firebase, des de l'entorn d'Android Studio ens ofereix la possibilitat de crear una aplicació nova (una Base de Dades nova) o utilitzar alguna de les que ja tenim. Utilitzarem la que ens ha servit de prova fins el moment:</p>
+<p style="text-align: center;"><img src="T7_2_2_3_1_3.png" alt="" width="679" height="453" /></p>
+<p>Quan haja connectat substituirà el botó <strong>Connect to Firebase</strong>, per una etiqueta que dirà <strong>connected</strong>, en verd.</p>
+<p class="titolet">Afegir la Base de Dades a la nostra aplicació</p>
+<p>En aquest segon pas, quan apretem el botó <strong>Add Cloud Firestore to your app</strong>, ens dirà els canvis que farà per a incorporar les coses necessàries per a poder connectar.</p>
+<p style="text-align: center;"><img src="T7_2_3_3_1_3.png" alt="" width="640" height="463" /></p>
+<p>Com veieu es tracta d'incorporar les llibreries necessàries de Firebase. En el vídeo del final es mostren imatges amb les dades incorporades.</p>
+<p>Igual que abans, substituirà el botó <strong>Add the Realtime Database in your app</strong>, per una etiqueta que dirà <strong>Dependencies set up correctly</strong>, en verd. És una bona guia per saber en quin punt estem.</p>
+<p class="titolet">Permetre l'accés als usuaris, si es precís canviant les regles d'accés a la Base de Dades</p>
+<p>Com que Runtime Database i Cloud Firestore, encara que sembla que estan compartint la Base de Dades, en realitat no es pot accedir d'una a l'altra, igual ens passarà amb les <strong>regles d'accés</strong> (<strong>Rules</strong>). Per tant és convenient pegar-li una miradeta. Recordeu que és des de la<strong> consola de Firebase</strong>, entrant al <strong>Cloud Firestore</strong>, i anant a la pestanya <strong>Rules</strong></p>
+<p style="text-align: center;"><img src="T7_2_3_3_1_4.png" alt="" width="1071" height="539" /></p>
+<p style="text-align: justify;">Observeu que en aquest exemple he posat que es pot connectar qualsevol fins al 30-12-2020. Inicialment dóna un mes, però si no voleu tenir problemes, ho podeu allargar canviant la data.</p>
+<p class="titolet">Copiar les sentències per a escriure i per a llegir (millor dit per a detectar els canvis en temps real)</p>
+<p>Ens diu un exemple de les sentències a copiar per a poder poder fer referència a la Base de Dades, per a guardar una informació a la Base de Dades i també per a detectar un canvi en la Base de Dades i poder obtenir el nou valor. Encara que tinguem un projecte en Kotlin, les sentències d'exemple seran de Java, però que en copiar-les les traduiria a Kotlin. No fem diferenciació per tant entre Java i Kotlin en aquest moment.</p>
+<p style="text-align: center;"><img src="T7_2_3_3_1_5.png" alt="" width="1366" height="720" /></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="233_cf_utilitzaci_des_dandroid.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2332_cfandroid_accs_a_les_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

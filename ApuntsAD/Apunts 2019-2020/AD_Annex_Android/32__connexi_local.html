@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2 - Connexió local | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__permanncia_en_fitxers.html" class="daddy">2 - Permanència en fitxers</a>
+   <ul class="other-section">
+      <li><a href="21__exemple.html" class="no-ch">2.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__permanncia_en_bd_relacionals.html" class="current-page-parent daddy">3 - Permanència en BD Relacionals</a>
+   <ul>
+      <li><a href="31__connexi_remota.html" class="no-ch">3.1 - Connexió remota</a></li>
+      <li id="active"><a href="32__connexi_local.html" class="active daddy">3.2 - Connexió local</a>
+      <ul>
+         <li><a href="321__exemple.html" class="no-ch">3.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31__connexi_remota.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="321__exemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2 - Connexió local</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_1" class="block iDevice_content">
+<p>Com comentàvem, la connexió local resulta ser un poc més complicada, a causa de que el driver JDBC per a SQLite no funciona en Android.</p>
+<p>Hi ha per la xarxa un driver JDBC de SQLite per a Android anomenat SQLDroid, però el seu funcionament és inestable i en molts llocs no el recomanen.</p>
+<p>El que està més recomanat per la xarxa per a utilitzar SQLite són unes classe noves, que estudiarem a continuació.</p>
+<p>Per a poder practicar inicialment, ens crearem un nou projecte Android anomenat <strong>ConnexioSQLiteJava</strong> o <strong>ConnexioSQLiteKotlin</strong>, sobre el paquet <strong>com.example.connexiosqlitejava</strong> o <strong>com.example.connexiosqlitekotlin </strong>respectivament.</p>
+<p>Posarem, com en exemples anteriors, únicament un EditText per agafar el contingut d'una determinada taula, o millor dit, consulta. El <strong>activity_main.xml</strong> quedarà així:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #0000ff; font-weight: bold;">xml version</span><span style="color: #008000; font-weight: bold;">="1.0" </span><span style="color: #0000ff; font-weight: bold;">encoding</span><span style="color: #008000; font-weight: bold;">="utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res/android"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res-auto"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/tools"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">:context</span><span style="color: #008000; font-weight: bold;">=".MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">EditText<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text</span><span style="color: #008000; font-weight: bold;">=""<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/text"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:inputType</span><span style="color: #008000; font-weight: bold;">="textMultiLine"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:gravity</span><span style="color: #008000; font-weight: bold;">="top" </span>/&gt;<br /><br />&lt;/<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</pre>
+<p>En el programa principal anirem col·locant totes les coses en el <strong>onCreate</strong> sense muntar cap thread ja que no accedirem a Internet. Però com comentàvem, hem de crear unes classes noves</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_85" class="block iDevice_content">
+<p class="titolet">Extends SQLiteOpenHelper</p>
+<p>Ens haurem de crear una <strong>nova classe</strong> que herete (<strong>extends</strong>) de la classe <strong>SQLiteOpenHelper</strong>. Li podem posar per exemple el nom <strong>SQLiteGestor</strong>. En aquesta classe haurem d'implementar obligatòriament:</p>
+<ul>
+<li>El constructor. L'ajuda d'Android Studio ens el pot crear i no caldrà que el modifiquem</li>
+<li>El mètode <strong>onCreate</strong>. Normalment l'utilitzarem per a crear les taules de la Base de Dades, ja que només es crida quan es crea la Base de Dades. Si no posem res estarem obligats a "col·locar" nosaltres el fitxer corresponent a la Base de Dades</li>
+<li>El mètode <strong>onUpdate</strong>. Nosaltres ens aconformarem amb esborrar les taules i tornar a crear-les. En aplicacions més elaborades es podria guardar la informació en un històric, però per a nosaltres no valdrà la pena.</li>
+</ul>
+<p>El millor que podem fer és que ens ajude Android Studio a crear el constructor i els 2 mètodes. Per tant, només amb posar que la nova classe és una extensió de <strong>SQLiteOpenHelper</strong> i deixant-nos ajudar, ens apareixerà el següent "esquelet".</p>
+<h3>JAVA</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import androidx.annotation.Nullable;
+
+public class SQLiteGestor extends SQLiteOpenHelper {
+    public SQLiteGestor(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+}</code></pre>
+</div>
+</div>
+<h3>KOTLIN</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
+
+class SQLiteGestor( context: Context?, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int ) 
+    : SQLiteOpenHelper(context, name, factory, version) {
+
+    override fun onCreate(db: SQLiteDatabase) {
+
+    }
+
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+
+    }
+}</code></pre>
+</div>
+</div>
+<p>Com podem comprovar,tant en la versió Java com Kotlin, al constructor se li passen 4 paràmetres:</p>
+<ul>
+<li><strong>Context</strong>: normalment serà el context de l'aplicació principal.</li>
+<li><strong>Nom</strong>: és el nom de la base de dades. Si no posem la ruta, l'obrirà (o crearà) en el directori
+<div class="codi2">/data/data/<em>paquet_de_la_aplicacio</em>/databases</div>
+</li>
+<li><strong>CursorFactory</strong>: per a fabricar algun cursor en aquest moment. Normalment el deixarem a <strong>null</strong>.</li>
+<li><strong>Versió</strong>: per a detectar si és una nova versió de la Base de Dades (i així aplicar <strong>onUpgrade</strong>). Normalment el deixarem a <strong>1</strong>.</li>
+</ul>
+<p>I com veieu, amb aquestos paràmetres crida al constructor de <strong>SQLiteOpenHelper</strong>. Per tant el constructor el deixarem exactament com està.</p>
+<p>El més habitual serà construir un objecte des del programa principal d'aquesta manera:</p>
+<p class="codi">private SQLiteGestor bdg = new SQLiteGestor(this,"bd.sqlite",null,1);</p>
+<p> </p>
+<p>Anem a aplicar açò al nostre exemple il·lustratiu, el projecte <strong>ConnexioSQLite </strong>(al final d'aquesta pregunta posarem el programa principal). En aquesta ocasió, en compte d'intentar copiar el fitxer <strong>Empleats.sqlite</strong> en el directori<strong> /data/data/com.example.connexiosqlite/databases</strong>, farem que es genere la taula <strong>EMPLEATS</strong> quan es cree la primera vegada. Aleshores ens aprofitarem del mètode <strong>onCreate</strong>. Li arriba un paràmetre que és justament la Base de Dades (<strong>SQLiteDatabase</strong>). Sobre ella executem sentències que no tornen dades amb el mètode <strong>execSQL(<em>sentencia</em>)</strong>, que es veurà més avant. Així ens quedarà el mètode <strong>onCreate()</strong> de la classe <strong>SQLiteGestor</strong>. La versió en Java i en Kotlin queden idèntiques, canviant només els punts i coma del final</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        String sql = "CREATE TABLE EMPLEAT("
+                + "num INTEGER CONSTRAINT cp_emp PRIMARY KEY, "
+                + "nom TEXT, " + "depart INTEGER, " + "edat INTEGER, "
+                + "sou REAL " + ")";
+        sqLiteDatabase.execSQL(sql);
+        sqLiteDatabase.execSQL("INSERT INTO EMPLEAT VALUES (1,'Andreu',10,32,1000.0)");
+        sqLiteDatabase.execSQL("INSERT INTO EMPLEAT VALUES (2,'Bernat',20,28,1200.0)");
+        sqLiteDatabase.execSQL("INSERT INTO EMPLEAT VALUES (3,'Clàudia',10,26,1100.0)");
+        sqLiteDatabase.execSQL("INSERT INTO EMPLEAT VALUES (4,'Damià',10,40,1500.0)");
+    }</code></pre>
+</div>
+</div>
+<p>Ara la utilització des del programa principal serà:</p>
+<p class="codi">private SQLiteGestor bdg = new SQLiteGestor(this,"Empleats.sqlite",null,1);</p>
+<p><br />Però el programa principal l'escriurem després d'haver-ho vist tot.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id11">
+<div class="iDevice emphasis0">
+<div id="ta11_85" class="block iDevice_content">
+<p class="titolet">SQLiteDatabase</p>
+<p>Amb el helper que hem construït heretant de <strong>SQLiteOpenHelper</strong>, ja ens podrem definir un objecte de tipus Base de Dades SQLite, que és el que utilitzarem: <strong>SQLiteDatabase</strong>. Podrem fer-lo de 2 maneres:</p>
+<ul>
+<li>bdg.<strong>getReadableDatabase()</strong> obrim la Base de Dades només de lectura.</li>
+<li>bdg.<strong>getWritableDatabase() </strong>l'obrim en mode escriptura.</li>
+</ul>
+<p>Ambdós tornen un objecte <strong>SQLiteDatabase</strong>. Per exemple:</p>
+<p class="codi">SQLiteDatabase bd = bdg.getWritableDatabase();</p>
+<p>Sobre aquest objecte <strong>SQLiteDatabase</strong> és on farem les operacions SQL. Distingirem, com en el cas de Java, entre les operacions que no tornen cap valor, sinó que serveixen per a modificar alguna taula (INSERT, DELETE, UPDATE, CREATE TABLE, ...)  i les que sí que tornen un valor, millor dit un conjunt de valors (SELECT).</p>
+<ul>
+<li><strong>execSQL</strong>: l'utilitzarem per a les que no tornen cap valor</li>
+<li><strong>query</strong>: torna un cursor amb les dades. Es construeix posant com a paràmetres la taula, les columnes, condicions, ..., i així anirà construint la sentència SQL</li>
+<li><strong>rawQuery</strong>: torna un cursor amb les dades. Com a paràmetre li posarem la sentència SQL i una possible llista de paràmetres (si no en posem el deixem a null)</li>
+</ul>
+<p> Per exemple una sentència de creació de una taula molt senzilla seria:</p>
+<p class="codi">bd.execSQL("CREATE TABLE T1 (C1 TEXT)");</p>
+<p> I una d'inserció en la taula anterior:</p>
+<p class="codi">bd.execSQL("INSERT INTO T1 VALUES('Hola')");</p>
+<p>D'aquest tipus són les sentències que havíem posat en el <strong>onCreate()</strong> i <strong>onUpgrade()</strong> de la classe Helper que ens construïm, per a crear les taules.</p>
+<p> </p>
+<p>És convenient tancar la Base de Dades quan s'acabe d'utilitzar.</p>
+<p class="codi">bd.close();</p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_85" class="block iDevice_content">
+<p class="titolet">Cursor </p>
+<p>El resultat d'una sentència SELECT és un <strong>cursor</strong>. I més concretament estarà apuntant <strong>abans</strong> de tota l'estructura de dades tornada, és a dir, abans de la primera fila. Un cursor és pràcticament igual que un <strong>ResultSet</strong> dels que utilitzàvem en Java, només que els mètodes seran lleugerament diferents.</p>
+<p>Inicialment està apuntant abans de la primera fila. Per a menejar-nos podem utilitzar el mètodes <strong>move</strong>:</p>
+<ul>
+<li><strong>moveToFirst</strong><strong>()</strong>: va al primer registre.</li>
+<li><strong>moveToPrevious()</strong>: va a l'anterior.</li>
+<li><strong>moveToNext()</strong>: va al següent.</li>
+<li><strong>moveToLast()</strong>: va a l'últim.</li>
+<li><strong>moveToPosition(int)</strong>: va a la posició indicada. El primer registre és el 0.</li>
+</ul>
+<p>Tots ells tornen <strong>true</strong> si ha pogut anar i <strong>false</strong> si no ha pogut anar. En el cas de <strong>moveToFirst()</strong> i <strong>moveToLast</strong><strong>()</strong> només es pot produir <strong>false</strong> si no tenim res en el cursor.</p>
+<p>Per a accedir a les dades de la fila activa, ho farem igual que en Java, utilitzant els mètodes <strong>getInt</strong>,<strong> </strong><strong>getString</strong>, <strong>getFloat</strong>, <strong>getDouble</strong>, ... i posant com a paràmetre el número de la columna, tenint en compte que<strong> la primera columna és la columna 0</strong>, no com féiem en Java, que en els ResultSet la primera columna era la<strong> 1</strong>.</p>
+<p>A banda d'aquestes també podem agafar més informació de les Meta Dades:</p>
+<ul>
+<li><strong>getCount()</strong>: torna el número de files del cursor.</li>
+<li><strong>getColumnCount</strong><strong>()</strong>: torna el número de columnes en el cursor.</li>
+<li><strong>getColumnName(int</strong>): torna el nom de la columna especificada (la primera és la 0).</li>
+<li><strong>getType(int)</strong>: torna el tipus de la columna especificada</li>
+</ul>
+<p>Un exemple de sentència SELECT i utilització posterior del cursor, recorrent-lo en la seua totalitat seria:</p>
+<div class="codi">
+<div>Cursor rs = bd.rawQuery("SELECT * FROM T1",null);</div>
+<div>while (rs.moveToNext())</div>
+<div style="margin-left: 30px;">System.out.println(rs.getString(0));</div>
+</div>
+<p></p>
+<p>Anem a finalitzar l'exemple <strong>ConnexioSQLite</strong>. En el programa principal, en el <strong>onCreate</strong>, ens definirem un objecte de la classe <strong>SQLiteGestor</strong> que extenia <strong>SQLiteOpenHelper</strong>. A partir d'ell ens crearem un objecte <strong>SQLiteDatabase</strong>, que en aquest cas és suficient amb que siga de lectura. Posteriorment accedirem a tota la taula EMPLEAT amb la sentència <strong> SELECT * FROM EMPLEAT</strong>, i ja només restarà recórrer el cursor per anar col·locant en el <strong>EditText</strong>, en aquest cas per a mostrar el nom i el sou dels empleats (camps segon i cinquè, per tant agafem el número 1 i 4).</p>
+<h3>JAVA</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.EditText;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
+
+ public class MainActivity extends AppCompatActivity {
+
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+         EditText text = (EditText) findViewById(R.id.text);
+
+         SQLiteGestor bdg = new SQLiteGestor(this,"Empleats.sqlite",null,1);
+         SQLiteDatabase bd = bdg.getReadableDatabase();
+
+         Cursor rs = bd.rawQuery("SELECT * FROM EMPLEAT",null);
+
+         while (rs.moveToNext()){
+             text.setText(text.getText() + rs.getString(1) + " --&gt; " + rs.getDouble(4) + "€\n");
+         }
+         rs.close();
+         bd.close();
+         bdg.close();
+     }
+ }</code></pre>
+</div>
+</div>
+<h3>KOTLIN</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val bdg = SQLiteGestor(this, "Empleats.sqlite", null, 1)
+        val bd = bdg.readableDatabase
+
+        val rs = bd.rawQuery("SELECT * FROM EMPLEAT", null)
+
+        var cont =""
+        while (rs.moveToNext()) {
+            cont += rs.getString(1) + " --&gt; " + rs.getDouble(4).toString() + "€\n"
+        }
+        text.setText(cont)
+        rs.close()
+        bd.close()
+        bdg.close()
+    }
+}</code></pre>
+</div>
+</div>
+<p>I el resultat seria aquest:</p>
+<p style="text-align: center;"><img src="Annex_Android_3_2_1.png" style="border: 1px solid black;" /></p>
+<p></p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31__connexi_remota.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="321__exemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

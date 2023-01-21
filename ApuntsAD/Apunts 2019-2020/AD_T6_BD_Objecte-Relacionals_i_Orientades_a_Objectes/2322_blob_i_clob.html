@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.2.2 BLOB i CLOB | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_objecterelacionals.html" class="current-page-parent daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul>
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li class="current-page-parent"><a href="23__manipulaci_de_dades.html" class="current-page-parent daddy">2.3 - Manipulació de dades</a>
+      <ul>
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li class="current-page-parent"><a href="232__accs_a_travs_de_jdbc.html" class="current-page-parent daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul>
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li id="active"><a href="2322_blob_i_clob.html" class="active no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2321_boolean.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2323_arrays.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.2.2 BLOB i CLOB</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id29">
+<div class="iDevice emphasis0">
+<div id="ta29_85" class="block iDevice_content">
+<h3><span style="text-decoration: underline;">BLOB i CLOB</span></h3>
+<p>Comencem per intentar introduir informació, i després la intentarem recuperar. Intentarem introduir un nou registre en <strong>PERSONA4</strong>, amb un currículum provinent d'un fitxer i també amb una foto. El fitxer el podeu crear amb un editor de textos, per a més comoditat. La foto, podeu agafar qualsevol. Respectivament s'hauran d'anomenar <strong>c_eva.txt</strong> i <strong>foto_eva.jpg</strong></p>
+<p>Per a poder introduir les dades de tipus complexos, ens serà molt més còmoda la classe <strong>PreparedStatement</strong>, ja que podrem posar paràmetres per als valors a introduir, i els paràmetres els podrem posar del tipus que ens convinga. Concretament, per a BLOB (BYTEA) i CLOB (TEXT) utilitzarem els mètodes de PreparedStatement <strong>setBynaryStream(index, inputstream, grandària)</strong> i <strong>setCharacterStream(index, reader, grandària)</strong>. També existeix el mètode <strong>setAsciiStream(index, inputstream, grandària)</strong>, però no ens assegura agafar bé tots els caràcters, únicament els caràcters ASCII no especials.</p>
+<div class="codi">import java.io.File;<br />import java.io.FileInputStream;<br />import java.io.FileReader;<br />import java.io.IOException;<br />import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.PreparedStatement;<br />import java.sql.SQLException;<br /><br />public class Prova2 {<br /><br />    public static void main(String[] args) throws SQLException, IOException {<br />        String url = "jdbc:postgresql://89.36.214.106:5432/rxx";<br /><br />        Connection con = DriverManager.getConnection(url, "rxx", "rxx");<br /><br />        File f1 = new File("c_eva.txt");<br />        FileReader in1 = new FileReader(f1);<br />        File f2 = new File("foto_eva.png");<br />        FileInputStream in2 = new FileInputStream(f2);<br /><br />        PreparedStatement st = con.prepareStatement("INSERT INTO persona4 (nif,nom,curriculum,foto) VALUES(?,?,?,?)");<br />        st.setString(1, "55555555e");<br />        st.setString(2, "Eva");<br />        st.setCharacterStream(3, in1, (int) f1.length());<br />        st.setBinaryStream(4, in2, (int) f2.length());<br />        st.executeUpdate();<br />        in1.close();<br />        in2.close();<br />        con.close();<br />    }<br />}</div>
+<p>Hem creat la referència als fitxers en 2 passos, primer el File i després el FileInputStream, per a poder disposar de la llargària del fitxer (mètode de File). Observeu com per a posar el paràmetre corresponent al fitxer de text hem utilitzat el mètode <strong>setCharacterStream()</strong>, mentre que per al fitxer binari (per al camp <strong>foto</strong>) hem utilitzat <strong>setBinaryStream()</strong>.</p>
+<p>Si mirem el contingut de la taula des del PgAdmin III, podrem veure el contingut del camp de tipus TEXT, però no el de tipus BYTEA</p>
+<p style="text-align: center;"><img src="T6_2_3_2_1.png" style="border: 1px solid black;" width="1811" height="190" /></p>
+<p></p>
+<p>Per a poder llegir el camp de grans dimensions, utilitzarem els mètodes de ResulSet <strong>getBinaryStream(index)</strong> i <strong>getCharacterStream</strong><strong>(index)</strong>, que tornen un <strong>InputStream</strong> i un <strong>Reader</strong> respectivament, que els podrem gestionar com qualsevol InputStream o Reader utilitzat en el tema 2. De moment només llegirem el fitxer de text:</p>
+<div class="codi">import java.io.BufferedReader;<br />import java.io.IOException;<br />import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br /><br />public class Prova3 {<br /><br />    public static void main(String[] args) throws SQLException, IOException {<br />        String url = "jdbc:postgresql://89.36.214.106:5432/rxx";<br /><br />        Connection con = DriverManager.getConnection(url, "rxx", "rxx");<br /><br />        ResultSet rs = con.createStatement().executeQuery(<br />                "SELECT nom,curriculum FROM persona4 WHERE nom='Eva'");<br />        while (rs.next()) {<br />            System.out.println(rs.getString(1));<br />            BufferedReader br = new BufferedReader(rs.getCharacterStream(2));<br />            String s = br.readLine();<br />            while (s != null) {<br />                System.out.println(s);<br />                s = br.readLine();<br />            }<br />        }<br />        rs.close();<br />        con.close();<br />    }<br />}</div>
+<p>Per a procedir amb un fitxer binari, ho faríem de forma absolutament similar, però amb el mètode <strong>getBinaryStream(index)</strong>.</p>
+<p>En realitat, si el camp de text no és molt gran, de manera que cap en un String, podem utilitzar sense problemes <strong>getString(index)</strong>. El que hem vist anteriorment s'utilitzaria per a textos molt grans.</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2321_boolean.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2323_arrays.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

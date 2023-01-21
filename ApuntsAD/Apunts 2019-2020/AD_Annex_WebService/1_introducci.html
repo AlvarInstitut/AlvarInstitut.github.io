@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.- Introducció | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Muntatge d'un WebService</a></li>
+   <li id="active"><a href="1_introducci.html" class="active no-ch">1.- Introducció</a></li>
+   <li><a href="2_instalaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="no-ch">2.- Instal·ació del Servidor Web i el Servidor de Bases de Dades</a></li>
+   <li><a href="3_utilitzaci_de_xampp.html" class="daddy">3.- Utilització de XAMPP</a>
+   <ul class="other-section">
+      <li><a href="31__mysql.html" class="no-ch">3.1 - MySQL</a></li>
+      <li><a href="32__ftp.html" class="no-ch">3.2 - FTP</a></li>
+   </ul>
+   </li>
+   <li><a href="4_php_accs_a_les_dades.html" class="no-ch">4.- PHP: Accés a les dades</a></li>
+   <li><a href="5_json.html" class="no-ch">5.- JSON</a></li>
+   <li><a href="6_accs_des_de_java.html" class="no-ch">6.- Accés des de Java</a></li>
+   <li><a href="7_accs_des_dandroid.html" class="no-ch">7.- Accés des d'Android</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_instalaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.- Introducció</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id1">
+<div class="iDevice emphasis0">
+<div id="ta1_1" class="block iDevice_content">
+<p>Al llarg de tot el curs hem accedit a dades guardades en molts entorns: fitxers, BD Relacionals (també amb eines de mapatge), BD Orientades a Objectes, BD XML-Natives, BD Clau-Valor, ...</p>
+<p>En el cas d'accés a Bases de Dades, del tipus que siga, unes vegades eren locals i unes altres les dades estaven en un servidor.</p>
+<p>Fixem-nos en aquest últim cas: l'accés a dades que estiguen en un servidor. Si podem connectar a ell (habitualment proporcionant usuari i contrasenya), doncs accedíem a les dades i ja està. Però en múltiples ocasions l'accés al servidor potser no siga tan senzill, bé perquè el SGDB no ho permet, bé perquè no volem que s'autentique la gent per problemes de seguretat, o bé per la raó que siga. En moltes ocasions el Servidor de dades està instal·lat en el mateix lloc que un servidor web. Aleshores ens podem plantejar una altra manera d'accedir a les dades: el <strong>Web Service</strong>. Consistirà en una sèria de pàgines web que s'executen en servidor (per exemple <strong>php</strong>) i que faran les consultes a la Base de Dades (consultes que podrien ser locals, ja que el servidor web i es servidor de dades solen estar en la mateixa màquina). Una vegada obtinguda la informació s'enviarà a qui ha sol·licitat la informació en un format d'intercanvi estàndar, habitualment <strong>XML</strong> o <strong>JSON</strong>.</p>
+<p>Intentarem muntar un <strong>Web Service</strong> senzillet:</p>
+<ul>
+<li>Primer instal·larem el Servidor Web i el servidor de Bases de Dades. Utilitzarem <strong>XAMPP</strong>, que inclou Apache, Php, MySql i ProFTPD (per a pujar les pàgines php per FTP).</li>
+<li>Després accedirem a les dades des de PHP, convertint-les al final al format JSON</li>
+<li>Per últim accedirem a les dades en format JSON des de Java i des de Android</li>
+</ul>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_instalaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

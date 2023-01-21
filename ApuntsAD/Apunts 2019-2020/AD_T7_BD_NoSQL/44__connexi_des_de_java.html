@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.4 - Connexió des de Java | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-35"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__firebase.html" class="daddy">2 - Firebase</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__mongodb.html" class="current-page-parent daddy">4 - MongoDB</a>
+   <ul>
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="44__connexi_des_de_java.html" class="active no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="433__agregaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.4 - Connexió des de Java</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id145">
+<div class="iDevice emphasis0">
+<div id="ta145_85" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id146">
+<div class="iDevice emphasis0">
+<div id="ta146_85" class="block iDevice_content">
+<p>Per a poder connectar des de Java ens sera suficient amb un driver, que haurem d'incorporar al projecte. En la següent pàgina podem trobar-lo, en diferents versions:</p>
+<p><a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver">https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver</a></p>
+<p>En el moment de fer aquestos apunts, l'últim driver disponible és el següent:</p>
+<p><a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver/3.6.1/mongo-java-driver-3.6.1.jar">https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver/3.6.1/mongo-java-driver-3.6.1.jar</a></p>
+<p>Per a separar les proves i exercicis de la part de <strong>Redis</strong>, creem un nou projecte anomenat <strong>Tema7_2</strong> , en un paquet anomenat <strong>Exemples</strong>.</p>
+<p class="titolet">Connexió</p>
+<p>La connexió és tan senzilla com el següent:</p>
+<p class="codi">MongoClient con = new MongoClient("localhost" , 27017);<br />MongoDatabase bd = con.getDatabase("test");</p>
+<p>És a dir, obtenim un objecte <strong>MongoClient</strong> passant-li al constructor l'adreça del servidor i el port de connexió (que per defecte és 27017).</p>
+<p>Posteriorment hem de connectar amb la Base de Dades. Ja havíem comentat en la instal·lació de Mongo que nosaltres només utilitzaríem una Base de Dades ja creada anomenada <strong>test</strong>. Obtenim un objecte <strong>MongoDatabase </strong>que farà referència a la Base de Dades, i és l'objecte que utilitzarem a partir d'ara. Evidentment ho podríem haver fet en una única línia.</p>
+<p>Si el servidor no el tenim en la mateixa màquina, només haurem de substituir <strong>localhost</strong> per l'adreça on estiga el servidor.</p>
+<p>Per a tancar la connexió:</p>
+<p class="codi">con.close();</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id147">
+<div class="iDevice emphasis0">
+<div id="ta147_85" class="block iDevice_content">
+<p class="titolet">Inserció de documents</p>
+<p>Des de Java podrem inserir documents amb la mateixa facilitat que des de la consola. Només haurem de crear un objecte <strong>Document </strong> de <strong>BSON</strong> (recordeu que és el format intern de Mongo, absolutament similar a <strong>JSON</strong>). La manera d'anar posant parelles calu valor en aquest document és per mig del mètode <strong>put</strong>. Fem un exemple molt senzill on senzillament guardem un document amb una parella clau-valor d'un missatge:</p>
+<p class="codi">import org.bson.Document;<br /><br />import com.mongodb.MongoClient;<br />import com.mongodb.client.MongoDatabase;<br /><br />public class Prova1 {<br /><br />    public static void main(String[] args) {<br />        MongoClient con = new MongoClient("localhost" , 27017);<br />        MongoDatabase bd = con.getDatabase("test");<br />        <br />        Document doc = new Document();<br />        doc.put("msg4", "Missatge inserit des de Java");<br />        bd.getCollection("exemple").insertOne(doc);<br />        <br />        con.close();<br />    }<br />}</p>
+<p>Segurament traurà avisos en la consola, però només són avisos. Podem comprovar en la terminal com s'ha inserit el document:</p>
+<p style="text-align: center;"><img src="T8_3_4_1.png" /></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id148">
+<div class="iDevice emphasis0">
+<div id="ta148_85" class="block iDevice_content">
+<p class="titolet">Consultes</p>
+<p>Tenim el mètode <strong>find()</strong> per a fer consultes, i li podem posar un document com a paràmetre per a seleccionar determinats documents o traure determinada informació.</p>
+<p class="codi">import org.bson.Document;<br /><br />import com.mongodb.MongoClient;<br />import com.mongodb.client.FindIterable;<br />import com.mongodb.client.MongoDatabase;<br /><br />public class Prova2 {<br /><br />    public static void main(String[] args) {<br />        MongoClient con = new MongoClient("localhost" , 27017);<br />        MongoDatabase bd = con.getDatabase("test");<br />        <br />        FindIterable&lt;Document&gt; llibres =  bd.getCollection("libro").find();<br />        <br />        for (Document llibre : llibres)<br />            System.out.println(llibre.get("titulo"));<br />        <br />        con.close();<br />    }<br />}</p>
+<p>I com comentàvem podem posar com a paràmetres en el find() per a seleccionar determinats documents, ordenar, etc. Només hem de cuidar que ho hem de posar en <strong>JSON </strong>(millor dit <strong>BSON</strong>), i per tant haurem de crear un document per a això.</p>
+<p class="codi">import org.bson.Document;<br /><br />import com.mongodb.MongoClient;<br />import com.mongodb.client.FindIterable;<br />import com.mongodb.client.MongoDatabase;<br /><br />public class Prova3 {<br /><br />    public static void main(String[] args) {<br />        MongoClient con = new MongoClient("localhost" , 27017);<br />        MongoDatabase bd = con.getDatabase("test");<br />        <br />        Document ordenar = new Document();<br />        ordenar.put("precio", -1);<br />        <br />        FindIterable&lt;Document&gt; llibres =  bd.getCollection("libro").find().sort(ordenar);<br />        <br />        for (Document llibre : llibres)<br />            System.out.println("Títol:" + llibre.get("titulo") + ". Preu:" + llibre.get("precio"));<br />        <br />        con.close();<br />    }<br />}</p>
+<p>El resultat serà aquest:</p>
+<p class="codi2"><span style="color: #ff0000;">de gen. 31, 2017 8:36:55 AM com.mongodb.diagnostics.logging.JULLogger log</span><br /><span style="color: #ff0000;">INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}</span><br /><span style="color: #ff0000;">de gen. 31, 2017 8:36:56 AM com.mongodb.diagnostics.logging.JULLogger log</span><br /><span style="color: #ff0000;">INFO: No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out</span><br /><span style="color: #ff0000;">de gen. 31, 2017 8:36:56 AM com.mongodb.diagnostics.logging.JULLogger log</span><br /><span style="color: #ff0000;">INFO: Opened connection [connectionId{localValue:1, serverValue:10}] to localhost:27017</span><br /><span style="color: #ff0000;">de gen. 31, 2017 8:36:56 AM com.mongodb.diagnostics.logging.JULLogger log</span><br /><span style="color: #ff0000;">INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 1]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, roundTripTimeNanos=549242}</span><br /><span style="color: #ff0000;">de gen. 31, 2017 8:36:56 AM com.mongodb.diagnostics.logging.JULLogger log</span><br /><span style="color: #ff0000;">INFO: Opened connection [connectionId{localValue:2, serverValue:11}] to localhost:27017</span><br />Títol:Circo Máximo. Preu:21.75<br />Títol:El juego de Ripper. Preu:21.75<br />Títol:Las carreras de Escorpio. Preu:17.23<br />Títol:Las reglas del juego. Preu:15.9<br />Títol:La princesa de hielo. Preu:11.0<br />Títol:Juego de tronos: Canción de hielo y fuego 1. Preu:9.5<br />Títol:La ladrona de libros. Preu:9.45<br /><span style="color: #ff0000;">de gen. 31, 2017 8:36:56 AM com.mongodb.diagnostics.logging.JULLogger log</span><br /><span style="color: #ff0000;">INFO: Closed connection [connectionId{localValue:2, serverValue:11}] to localhost:27017 because the pool has been closed.</span></p>
+<p>Hem pogut observar en l'execució dels exemples anteriors que ens trau una gran quantitat d'avisos. No són errors, sinó senzillament informació de com van les connexions, que mongo torna, i apareixen en l'eixida estàndar.</p>
+<p>Si no volem que apareguen podem posar al principi del programa unes sentències per a dir que únicament apareguen els errors, i no els avisos. Els errors estarien en la categoria de <strong>SEVERE</strong></p>
+<p class="codi">Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );<br />mongoLogger.setLevel(Level.SEVERE);</p>
+<p>Hem d'importar les classes de <strong>java.util</strong>. Quedaria el mateix exemple d'aquesta manera:</p>
+<p class="codi">import java.util.logging.Level;<br />import java.util.logging.Logger;<br /><br />import org.bson.Document;<br /><br />import com.mongodb.MongoClient;<br />import com.mongodb.client.FindIterable;<br />import com.mongodb.client.MongoDatabase;<br /><br />public class Prova3 {<br /><br />    public static void main(String[] args) {<br />        Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );<br />        mongoLogger.setLevel(Level.SEVERE);<br /><br />        MongoClient con = new MongoClient("localhost" , 27017);<br />        MongoDatabase bd = con.getDatabase("test");<br />        Document ordenar = new Document();<br />        ordenar.put("precio", -1);<br />        <br />        FindIterable&lt;Document&gt; llibres =  bd.getCollection("libro").find().sort(ordenar);<br />        <br />        for (Document llibre : llibres)<br />            System.out.println("Títol:" + llibre.get("titulo") + ". Preu:" + llibre.get("precio"));<br />        <br />        con.close();<br />    }<br />}</p>
+<p>I el resultat ara serà:</p>
+<p class="codi2">Títol:Circo Máximo. Preu:21.75<br />Títol:El juego de Ripper. Preu:21.75<br />Títol:Las carreras de Escorpio. Preu:17.23<br />Títol:Las reglas del juego. Preu:15.9<br />Títol:La princesa de hielo. Preu:11.0<br />Títol:Juego de tronos: Canción de hielo y fuego 1. Preu:9.5<br />Títol:La ladrona de libros. Preu:9.45</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="433__agregaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>12. Generació de taules a partir de les classes (voluntari) | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-25"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li id="active"><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="active no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="11__resum_del_llenguatge_hql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">12. Generació de taules a partir de les classes (voluntari)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id44">
+<div class="iDevice emphasis0">
+<div id="ta44_85" class="block iDevice_content">
+<p>Durant aquest tema, i també en els exercicis, hem treballat sobre projectes en els quals a partir de les taules d'una Base de Dades ja creada en qualsevol Sistema Gestor de Bases de Dades (excepte SQLite) hem generat les classes. Funciona molt bé aquesta generació de classes amb Hibernate.</p>
+<p>També és possible el procés invers, és a dir, <strong>generar les taules</strong> en una Base de Dades <strong>a partir de les classes</strong> creades en un projecte. Veurem un exemple molt senzill de com és possible. Tanmateix hem de dir ja que aquesta manera de funcionar no és tan efectiva com la inversa, i si l'estructura de classes és complexa, podem tenir problemes per a generar les taules. Per això l'exemple que posarem és molt senzill.</p>
+<p>Aquesta pregunta és totalment voluntària. Si no teniu ganes o temps, no fa falta que feu l'exemple mostrat a continuació. El que sí que és obligatori és la generació de classes a partir de les taules, vist anteriorment.</p>
+<p>L'exemple que intentarem implementar és una part de l'exemple de la biblioteca, vist ja en el tema 4. Només treballarem sobre 2 classes <strong>Editoria</strong> i <strong>Llibre</strong>, i fins i tot no posarem totes les propietats, ja que si ho posàrem tot, segurament ens donaria problemes a l'hora de la generació de taules.</p>
+<p>Aquestes són les classes, millor dit les propietats de les classes, com veieu amb una estructura molt senzilla:</p>
+<table style="width: 620.767px;" border="1" height="146" align="center" bgcolor="#FFFFFF">
+<tbody>
+<tr>
+<td style="text-align: center; width: 276px;"><strong>classe Editorial</strong></td>
+<td style="text-align: center; width: 267.767px;"><strong>classe Llibre</strong></td>
+</tr>
+<tr>
+<td style="width: 276px; padding-left: 30px;"><strong>public class Editorial {</strong><br /><strong>    String codi;</strong><br /><strong>    String nom;</strong><br /><strong>    String web;</strong><br /><strong>}</strong></td>
+<td style="width: 267.767px; padding-left: 30px;"><strong>public class Llibre {</strong><br /><strong>    String isbn;</strong><br /><strong>    String titol;</strong><br /><strong>    int pagines;</strong><br /><strong>    Editorial editorial;</strong><br /><strong>}</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Com veieu tenim una propietat en la classe <strong>Llibre</strong> que és de tipus <strong>Editorial</strong>, per a marcar l'editorial del llibre. El més lògic seria posar un ArrayList de tipus Llibre en la classe Editorial per a posar tots els llibres de l'editorial. Però açò segurament ens donaria problemes en el moment de la generació de taules. Per tant, farem aquest exemple tan senzill a mode il·lustratiu, i prou.</p>
+<p>En aquestes classes, com es mostra en el vídeo posterior, s'han d'incorporar els mètodes <strong>get</strong> i <strong>set</strong> per a totes les propietats, així com <strong>constructors</strong>, un sense paràmetres, i un altre amb paràmetres per a inicialitzar totes les propietats.</p>
+<p>Posteriorment s'han de preparar les classes per a poder generar les taules. Consistirà en un procediment automàtic que s'encarregarà d'agegir les <strong>anotacions</strong>, que són sentències que Java ignorarà i serveixen per a afegir la informació addicional necessària. Les anotacions comencen sempre per <strong>@</strong>.</p>
+<p>Després de les anotacions, les classes quedaran així (hem marcat les anotacions en roig:</p>
+<table style="width: 1014.92px;" border="1" align="center" bgcolor="#FFFFFF">
+<tbody>
+<tr>
+<td style="text-align: center; width: 421px;"><strong>classe Editorial</strong></td>
+<td style="text-align: center; width: 516.917px;"><strong>classe Llibre</strong></td>
+</tr>
+<tr>
+<td style="width: 421px; padding-left: 30px;" valign="top"><strong>import javax.persistence.Entity;<br />import javax.persistence.Id;<br /><br /><span style="color: #ff0000;">@Entity</span><br />public class Editorial {<br />   <span style="color: #ff0000;"> @Id</span><br />    String codi;<br />    String nom;<br />    String web;<br />    <br />    public Editorial() {<br />        super();<br />    }<br />    public Editorial(String codi, String nom, String web) {<br />        super();<br />        this.codi = codi;<br />        this.nom = nom;<br />        this.web = web;<br />    }<br />    public String getCodi() {<br />        return codi;<br />    }<br />    public void setCodi(String codi) {<br />        this.codi = codi;<br />    }<br />    public String getNom() {<br />        return nom;<br />    }<br />    public void setNom(String nom) {<br />        this.nom = nom;<br />    }<br />    public String getWeb() {<br />        return web;<br />    }<br />    public void setWeb(String web) {<br />        this.web = web;<br />    }<br />}</strong></td>
+<td style="width: 516.917px; padding-left: 30px;" valign="top"><strong>import javax.persistence.Entity;<br />import javax.persistence.Id;<br />import javax.persistence.ManyToOne;<br /><br /><span style="color: #ff0000;">@Entity</span><br />public class Llibre {<br /> <span style="color: #ff0000;">   @Id</span><br />    String isbn;<br />    String titol;<br />    int pagines;<br />   <span style="color: #ff0000;"> @ManyToOne</span><br />    Editorial editorial;<br />    <br />    public Llibre() {<br />        super();<br />    }<br />    public Llibre(String isbn, String titol, int pagines, Editorial editorial) {<br />        super();<br />        this.isbn = isbn;<br />        this.titol = titol;<br />        this.pagines = pagines;<br />        this.editorial = editorial;<br />    }<br />    public String getIsbn() {<br />        return isbn;<br />    }<br />    public void setIsbn(String isbn) {<br />        this.isbn = isbn;<br />    }<br />    public String getTitol() {<br />        return titol;<br />    }<br />    public void setTitol(String titol) {<br />        this.titol = titol;<br />    }<br />    public int getPagines() {<br />        return pagines;<br />    }<br />    public void setPagines(int pagines) {<br />        this.pagines = pagines;<br />    }<br />    public Editorial getEditorial() {<br />        return editorial;<br />    }<br />    public void setEditorial(Editorial editorial) {<br />        this.editorial = editorial;<br />    }<br />}</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Amb aquesta informació es podran generar les sentències SQL que crearan les taules en la Base de Dades. Aquestes sentències serien:</p>
+<table style="width: 738px;" border="1" height="283" align="center" bgcolor="#FFFFFF">
+<tbody>
+<tr>
+<td style="text-align: center; width: 238.383px;"><strong>taula EDITORIAL</strong></td>
+<td style="text-align: center; width: 423.617px;"><strong>taula LLIBRE<br /></strong></td>
+</tr>
+<tr>
+<td style="width: 238.383px; padding-left: 30px;" valign="top"><strong></strong><strong> create table Editorial (<br />       codi varchar(255) not null,<br />        nom varchar(255),<br />        web varchar(255),<br />        primary key (codi)<br />    );</strong></td>
+<td style="width: 423.617px; padding-left: 30px;" valign="top"><strong></strong><strong>create table Llibre (<br />       isbn varchar(255) not null,<br />        pagines int4 not null,<br />        titol varchar(255),<br />        editorial_codi varchar(255),<br />        primary key (isbn)<br />    );<br /><br />    alter table Llibre <br />       add constraint FKap3159swqtnuj1i2q43xm0wk2 <br />       foreign key (editorial_codi) <br />       references Editorial;</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Observeu com ha creat la clau externa en LLIBRE que apunta a EDITORIAL</p>
+<p>Aquest vídeo arreplega tot el procés:</p>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="T5_Generar_Taules_PostgreSQL.swf" width="900" height="720"><param name="src" value="T5_Generar_Taules_PostgreSQL.swf" /></object></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="11__resum_del_llenguatge_hql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

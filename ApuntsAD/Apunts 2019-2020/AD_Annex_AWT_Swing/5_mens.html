@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.- Menús | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li><a href="4_components.html" class="daddy">4.- Components</a>
+   <ul class="other-section">
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="5_mens.html" class="active no-ch">5.- Menús</a></li>
+   <li><a href="6_dilegs.html" class="daddy">6.- Diàlegs</a>
+   <ul class="other-section">
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_windowbuilder.html" class="no-ch">7.- WindowBuilder</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="46_jcombobox.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_dilegs.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.- Menús</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_85" class="block iDevice_content">
+<p>Per a poder col·locar menús ens els programes gràfic de Java utilitzarem 3 classes de Swing: <strong>JMenuBar</strong>, <strong>JMenu</strong> i <strong>JMenuItem</strong></p>
+<ul>
+<li><strong>JMenuBar</strong> : barra de menú. Serà el menú principal, el que es col·loca dalt de tot.</li>
+<li><strong>JMenu</strong>: cada element del menú principal, és a dir, els que es despleguen cap avall.</li>
+<li><strong>JMenuItem</strong>: cada element de menú. Els assignarem una acció.</li>
+</ul>
+<p>També podrem posar barres separadores (<strong>JSeparator</strong>).</p>
+<p>I si volem un submenú que es desplegue cap a la dreta, col·loquem un JMenu dins d'un JMenu.</p>
+<p>Per a incloure un element dins d'un altre, ho farem per un mètode del pare, <strong>add</strong>, especificant com a paràmetre el fill. El menú principal l'especificarem per un mètode de JFrame, <strong>setJMenuBar</strong>.</p>
+<p>Els <strong>JMenuIte</strong> són els que poden realitzar una acció, i ho farem registrant-los igual que els botons.</p>
+<p>Mirem directament un exemple, on col·loquem un poc de tot.</p>
+<p class="codi">import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br /><br />import javax.swing.JFrame;<br />import javax.swing.JMenu;<br />import javax.swing.JMenuBar;<br />import javax.swing.JMenuItem;<br />import javax.swing.JSeparator;<br /><br /><br />public class Finestra_2 extends JFrame implements ActionListener{<br />    JMenuBar menu_p = new JMenuBar();<br />    <br />    JMenu menu_1 = new JMenu("Menu 1");<br />    JMenu menu_2 = new JMenu("Menu 2");<br />    JMenu menu_3 = new JMenu("Menu 3");<br />    <br />    JMenuItem menu_11 = new JMenuItem("Menu 11");<br />    JMenu menu_12 = new JMenu("Menu 12");<br />    JMenuItem menu_13 = new JMenuItem("Menu 13");<br />    JMenuItem menu_21 = new JMenuItem("Menu 21");<br />    JMenuItem menu_22 = new JMenuItem("Menu 22");<br />    JMenuItem menu_e = new JMenuItem("Eixir");<br />    JMenuItem menu_121 = new JMenuItem("Menu 121");<br />    JMenuItem menu_122 = new JMenuItem("Menu 122 (eixir)");<br />    <br />    public void iniciar(){<br />        this.setSize(400, 300);<br />        this.setJMenuBar(menu_p);<br />        menu_p.add(menu_1);<br />        menu_p.add(menu_2);<br />        menu_p.add(menu_3);<br />        <br />        menu_1.add(menu_11);<br />        menu_1.add(menu_12);<br />        menu_1.add(new JSeparator());<br />        menu_1.add(menu_13);<br />        <br />        menu_12.add(menu_121);<br />        menu_12.add(menu_122);<br /><br />        menu_2.add(menu_21);<br />        menu_2.add(menu_22);<br />        <br />        menu_3.add(menu_e);<br />        <br />        this.setVisible(true);<br />        <br />        menu_122.addActionListener(this);<br />        menu_e.addActionListener(this);<br />        <br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if ((e.getSource() == menu_e) || (e.getSource() == menu_122))<br />            System.exit(0);<br />    }<br /><br />}</p>
+<p>El resultat serà aquest (despleguem el de més a l'esquerra per veure la barra separadora i el submenú)</p>
+<p style="text-align: center;"><img src="Ann_Swing_9_Menu.png" width="400" height="300" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="46_jcombobox.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_dilegs.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

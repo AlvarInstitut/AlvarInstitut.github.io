@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7 - Estructura dels fitxers de mapatge | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li id="active"><a href="7__estructura_dels_fitxers_de_mapatge.html" class="active no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6__classes_generades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="8__sessions_i_objectes_hibernate.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7 - Estructura dels fitxers de mapatge</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id14">
+<div class="iDevice emphasis0">
+<div id="ta14_1" class="block iDevice_content">
+<p>En la pregunta 5.1 havíem vist les classes generades per Hibernate, i també havíem vist una imatge amb el diagrama de mapatge en la pregunta 5.2. Anem a veure-ho ara amb més detall, mirant totes les classes i fitxers generades en el procés de mapatge i com s'interrelacionen entre elles.</p>
+<p>Els fitxers que serveixen de mapatge, Hibernate els genera de tipus <strong>XML</strong>, i sran:</p>
+<ul>
+<li><strong>hibernate.cfg.xml</strong>, ja comentat anteriorment i que estableix les condicions bàsiques de la connexió amb la Base de Dades (Driver, URL, usuari, contrasenya, ...).</li>
+<li>Un fitxer <strong>.hbm.xml</strong> per cada taula (i classe). Així en el nostre exemple tindrem <strong>Comarques.hbm.xml</strong>, <strong>Poblacions.hbm.xml </strong>i <strong>Instituts.hbm.xml</strong> i són els encarregats de dir la correspondència entre els camps de la taula (p.e. COMARQUES) i les propietats de l'objecte (p.e. Comarques.java).</li>
+</ul>
+<p>La següent imatge explica aquesta manera d'enllaçar:</p>
+<p style="text-align: center;"><img src="T5_7_1.png" style="border-width: 1px;" width="755" height="776" /></p>
+<p> </p>
+<p class="titolet">El fitxer hibernate.cfg.xml</p>
+<p> El fitxer <strong>hibernate.cfg.xml</strong> estableix les condicions de la connexió:</p>
+<div class="codi2">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;<br />&lt;!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"&gt;<br />&lt;hibernate-configuration&gt;<br />    &lt;session-factory&gt;<br />        &lt;property name="hibernate.bytecode.use_reflection_optimizer"&gt;false&lt;/property&gt;<br />        &lt;property name="hibernate.connection.driver_class"&gt;org.postgresql.Driver&lt;/property&gt;<br />        &lt;property name="hibernate.connection.password"&gt;geo_ad&lt;/property&gt;<br />        &lt;property name="hibernate.connection.url"&gt;jdbc:postgresql://89.36.214.106:5432/geo_ad&lt;/property&gt;<br />        &lt;property name="hibernate.connection.username"&gt;geo_ad&lt;/property&gt;<br />        &lt;property name="hibernate.default_schema"&gt;public&lt;/property&gt;<br />        &lt;property name="hibernate.dialect"&gt;org.hibernate.dialect.PostgreSQLDialect&lt;/property&gt;<br />        &lt;property name="hibernate.search.autoregister_listeners"&gt;true&lt;/property&gt;<br />        &lt;property name="hibernate.validator.apply_to_ddl"&gt;false&lt;/property&gt;<br />        &lt;mapping resource="classes/Poblacio.hbm.xml"/&gt;<br />        &lt;mapping resource="classes/Comarca.hbm.xml"/&gt;<br />        &lt;mapping resource="classes/Institut.hbm.xml"/&gt;<br />    &lt;/session-factory&gt;<br />&lt;/hibernate-configuration&gt;</div>
+<p>Podem observar com s'especifica el driver JDBC, la URL, l'usuari que es connecta, la contrasenya, l'esquema (que dependrà del SGBD; en altres farà falta el catàleg).</p>
+<p> </p>
+<p class="titolet">Els fitxers .hbm.xml</p>
+<p>Els fitxers <strong>.hbm.xml</strong> estableixen la correspondència entre taula i classe, i dins d'elles entre camps de la taula i propietats de la classe. Mirem el contingut de <strong>Comarques.hbm.xml</strong>. Posem a un costat l'estructura de la taula, i a l'altre l'estructura de l'objecte:</p>
+<table border="1" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Taula COMARCA</strong></td>
+<td style="text-align: center;"><strong>Comarca.hbm.xml</strong></td>
+<td style="text-align: center;"><strong>Comarca.java</strong></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">
+<p><strong><span style="font-size: small;"><span style="font-family: 'courier new',courier;">TABLE COMARCA (</span></span></strong><br /><strong><span style="font-size: small;"><span style="font-family: 'courier new',courier;">    nom_c VARCHAR(50) PRIMARY KEY,</span></span></strong><br /><strong><span style="font-size: small;"><span style="font-family: 'courier new',courier;">    provincia VARCHAR(25)</span></span><span style="font-size: small;"><span style="font-family: 'courier new',courier;"></span></span></strong><br /><strong><span style="font-size: small;"><span style="font-family: 'courier new',courier;"> );</span></span></strong></p>
+</td>
+<td style="background-color: #ffffff;"><strong><span style="font-family: courier new,courier; font-size: small;">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;<br /><br />&lt;hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true"&gt;<br />    &lt;class dynamic-insert="false" dynamic-update="false" mutable="true" name="classes.Comarca" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="comarca"&gt;<br />        &lt;id name="nomC" type="string"&gt;<br />            &lt;column length="50" name="nom_c"/&gt;<br />            &lt;generator class="assigned"/&gt;<br />        &lt;/id&gt;<br />        &lt;property generated="never" lazy="false" name="provincia" optimistic-lock="true" type="string" unique="false"&gt;<br />            &lt;column length="25" name="provincia"/&gt;<br />        &lt;/property&gt;<br />        &lt;set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="poblacios" optimistic-lock="true" sort="unsorted" table="poblacio"&gt;<br />            &lt;key on-delete="noaction"&gt;<br />                &lt;column length="50" name="nom_c"/&gt;<br />            &lt;/key&gt;<br />            &lt;one-to-many class="classes.Poblacio" embed-xml="true" not-found="exception"/&gt;<br />        &lt;/set&gt;<br />    &lt;/class&gt;<br />&lt;/hibernate-mapping&gt;</span></strong><br /><strong><span style="font-size: small; font-family: courier new,courier;"> </span></strong></td>
+<td style="background-color: #ffffff;"><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">package classes;</span></strong></span><br /><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">import java.util.HashSet;</span></strong></span><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">import java.util.Set;</span></strong></span><br /><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">public class Comarca implements java.io.Serializable {</span></strong></span><br /><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">    private static final long serialVersionUID = 1L;</span></strong></span><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">    private String nomC;</span></strong></span><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">    private String provincia;</span></strong></span><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">    private Set&lt;Poblacio&gt; poblacios = new HashSet&lt;Poblacio&gt;(0);</span></strong></span><br /><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">    public Comarques() {</span></strong></span><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">    }</span></strong></span><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;">...</span></strong></span><br /><span style="font-size: small;"><strong><span style="font-family: courier new,courier;"> }</span></strong></span></td>
+</tr>
+</tbody>
+</table>
+<p>Comentem un poc les coses:</p>
+<ul>
+<li><strong>&lt;hibernate-mapping&gt;</strong> és l'element arrel; tot el mapatge està contingut dins d'ell.</li>
+<li><strong>&lt;class&gt; </strong>Equival a tota la classe per una banda i tota la taula per una altra. Dins d'aquest element estaran totes les correspondències de camps i propietats.
+<ul>
+<li>L'atribut<strong> name</strong> conté el nom de la classe.</li>
+<li>L'atribut <strong>table</strong> conté el nom de la taula corresponent.</li>
+<li>Pot haver algun altre atribut, indicant el catàleg (depén del SGBD)</li>
+</ul>
+</li>
+<li><strong>&lt;id</strong><strong>&gt;</strong> especifica el camp que és clau principal. És diferent als camps normals.
+<ul>
+<li>L'atribut <strong>name</strong> indica el nom de la propietat</li>
+<li>L'atribut <strong>type</strong> el tipus de dades.</li>
+<li>L'element <strong>column</strong> és un element buit amb la propietat <strong>name</strong>, que contindrà el camp de la taula</li>
+<li>L'element <strong>generator</strong> és un element buit amb un atribut <strong>class</strong> indicant la manera de generar aquesta clau principal. Els valors possibles són:
+<ul>
+<li><strong>assigned</strong> que indica que l'usuari ha d'assignar un valor a aquesta propietat</li>
+<li><strong>increment</strong> que indica que la Base de Dades proporciona el valor autogenerat</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>&lt;property&gt;</strong> especifica un camp normal, que no és clau principal. Només s'ha d'especificar:<br />
+<ul>
+<li>L'atribut <strong>name</strong> indica el nom de la propietat</li>
+<li>L'atribut <strong>type</strong> el tipus de dades.</li>
+<li>L'element <strong>column</strong> és un element buit amb la propietat <strong>name</strong>, que contindrà el camp de la taula</li>
+</ul>
+</li>
+</ul>
+<p>Els tipus de dades no són ni de la Base de Dades ni tampoc Java. Són tipus anomenats <strong>tipus de mapatge Hibernate</strong>, i s'encarrega Hibernate de fer la correspondència entre tipus Java i de la Base de Dades de forma automàtica.</p>
+<p>I ens deixem per al final la manera d'enllaçar la clau exerna. Recordem que la clau externa està definida en <strong>POBLACIO</strong> i que apunta a <strong>COMARCA</strong>. En el mapatge de <strong>Comarca</strong> tindrem una línia nova que és la que indica que la propietat <strong>poblacios</strong> ha de contenir les poblacions de la comarca. És per tant un conjunt (<strong>set</strong>) de moltes poblacions. Les coses més importants són les següents:</p>
+<ul>
+<li><strong>&lt;set&gt;</strong> que indica que serà un conjunt
+<ul>
+<li>L'atribut <strong>name</strong> serà el nom de la propietat</li>
+<li>L'atribut <strong>table</strong> el nom de la taula on ha de buscar les dades, és a dir la que té la clau externa (en aquest cas <strong>POBLACIO</strong>)</li>
+<li>L'atribut <strong>order-by</strong> ens permet que les dades vinguen ordenades</li>
+<li>L'element <strong>key</strong> especifica la clau externa, amb l'element <strong>column</strong> i atribut <strong>name</strong>, en aquest cas <strong>nom_c</strong>.</li>
+<li>L'element <strong>one-to-many</strong> indica que un departament pot tenir molts empleats (per això era un conjunt), i especifica de quina classe són amb l'atribut <strong>class</strong></li>
+</ul>
+</li>
+</ul>
+<p>Fem especial menció a l'atribut <strong>order-by</strong>, que ens permet que les dades vinguen ordenades. Ho aplicarem en la pregunta 8.3.</p>
+<p>En el cas de les poblacions, taula <strong>POBLACIO</strong> i classe <strong>Poblacio</strong>, les coses seran molt similars. La diferència més significativa és la manera de representar la clau externa. Ara serà una relació <strong>many-to-one</strong>, indicant que la població pot estar en una única comarca, és a dir farà referència a un unic objecte <strong>Comarca</strong>.</p>
+<table border="0">
+<tbody>
+<tr>
+<td>
+<div class="codi2">&lt;many-to-one class="classes.Comarca" embed-xml="true" fetch="select" insert="true" name="comarca" not-found="exception" optimistic-lock="true" unique="false" update="true"&gt;<br />            &lt;column length="50" name="nom_c"/&gt;<br />        &lt;/many-to-one&gt;</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>&lt;many-to-one</strong><strong>&gt;</strong> en la propietat que fa referència a l'altra classe <br />
+<ul>
+<li>L'atribut <strong>name</strong> indica el nom de la propietat.</li>
+<li>L'atribut <strong>class</strong> indica la classe a què fa referència, en aquest cas <strong>Comarca</strong>.</li>
+<li>L'element <strong>column</strong> és un element buit amb la propietat <strong>name</strong>, que contindrà el camp de la taula</li>
+</ul>
+</li>
+</ul>
+<p>En resum, dins de l'element <strong>class</strong> que equival a la classe (i la taula), tindrem els elements<strong>:</strong></p>
+<ul>
+<li><strong>id</strong> per a la clau principal</li>
+<li><strong>property</strong> per als camps normals</li>
+<li><strong>many-to-one</strong> per als que són clau externa</li>
+<li><strong>set</strong> per als que són apuntats per una clau externa, indicant el conjunt.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6__classes_generades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="8__sessions_i_objectes_hibernate.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

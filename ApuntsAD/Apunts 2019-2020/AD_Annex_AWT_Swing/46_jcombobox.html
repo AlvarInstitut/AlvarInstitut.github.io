@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.6.- JComboBox | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li class="current-page-parent"><a href="4_components.html" class="current-page-parent daddy">4.- Components</a>
+   <ul>
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li id="active"><a href="46_jcombobox.html" class="active no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li><a href="6_dilegs.html" class="daddy">6.- Diàlegs</a>
+   <ul class="other-section">
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_windowbuilder.html" class="no-ch">7.- WindowBuilder</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="45_jtextarea.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_mens.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.6.- JComboBox</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_85" class="block iDevice_content">
+<p>La llista desplegable, o quadre combinat (combinació d'un quadre de text i un llista) és un component molt útil per a seleccionar una entre moltes opcions que es poden mostrar en la llista desplegable associada al component.</p>
+<p>La única dificultat radica en omplir aquesta llista. Una de les maneres és omplir-la passant-li la llista en un Array de Strings en el moment de crear el JComboBox</p>
+<p class="codi">String[] llista = {"Opció 1", "Opció 2", "Opció 3", "Opció 4"}<br />JComboBox combo = new JComboBox(llista);</p>
+<p>Una forma alternativa seria crear primer el JComboBox i després anar afegint elements amb el mètode <strong>addItem()</strong>. El mateix exemple d'abans quedaria:</p>
+<p class="codi">JComboBox combo = new JComboBox();<br />combo.addItem("Opció 1");<br />combo.addItem("Opció 2");<br />combo.addItem("Opció 3");<br />combo.addItem("Opció 4");</p>
+<p>Per a registrar l'acció de quan seleccionem un element de la llista, com sempre registrarem l'element (en aqeust cas JComboBox) amb el m'etode <strong>addListener()</strong>. Posteriorment en el mètode <strong>actionPerformed()</strong> ens preguntarem si el component que ha provocat l'acció ha estat el JComboBox. Normalment haurem de saber quin és l'element de la llista seleccionat, que sabrem amb <strong>getSelectedItem()</strong>.</p>
+<p>En el següent exemple mostrem un quadre combinat amb 4 opcions corresponents a 4 colors. Quan es tria un color, canviem el color de fons d'un botó situat al costat.</p>
+<p class="codi">import java.awt.Color;<br />import java.awt.FlowLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br /><br />import javax.swing.JButton;<br />import javax.swing.JComboBox;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br /><br />public class Finestra extends JFrame implements ActionListener{<br />    JComboBox combo;<br />    JButton boto1;<br />    <br />    public void iniciar(){<br />        setSize(400,200);<br />        getContentPane().setLayout(new FlowLayout());<br />        getContentPane().add(new JLabel("Tria un color"));<br />        <br />        String [] llista = {"Roig","Blau","Verd","Groc"}; <br />        combo = new JComboBox(llista);<br />        getContentPane().add(combo);<br />        boto1 = new JButton("Color");<br />        getContentPane().add(boto1);<br />        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        setVisible(true);<br />        combo.addActionListener(this);<br />        combo.setSelectedIndex(0);<br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource()==combo){<br />            boto1.setText(combo.getSelectedItem().toString());<br />            switch (combo.getSelectedIndex()){<br />            case 0: boto1.setBackground(Color.red);<br />                    break;<br />            case 1: boto1.setBackground(Color.blue);<br />                    break;<br />            case 2: boto1.setBackground(Color.GREEN);<br />                    break;<br />            case 3: boto1.setBackground(Color.yellow);<br />                    break;<br />            }<br />        }<br />    }<br />}</p>
+<p><img src="Annex_Swing_4_6_1_JComboBox.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="400" height="200" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="45_jtextarea.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_mens.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

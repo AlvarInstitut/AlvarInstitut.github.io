@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52__api_simple_json.html" class="no-ch">5.2 - API Simple JSON</a></li>
+      <li><a href="53__accs_complet_des_de_java.html" class="no-ch">5.3 - Accés complet des de Java</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="53__accs_complet_des_de_java.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id17">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3_1</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta17_41_2" class="block iDevice_content">
+<p>En el projecte anomenat <strong>Tema3</strong>, crea't un paquet anomenat <strong>Exercicis</strong> on col·locarem tot el relatiu als exercicis d'aquest tema. Copia't dins del projecte el fitxer <strong>Rutes.dat</strong> que us passarà el professor. En ell tenim dades prèviament guardades que seran unes <strong>rutes</strong> consistents en una sèrie de punts amb una descripció. Cada punt seran unes coordenades (com en un mapa).</p>
+<p>L'estructura de les dades guardades és la següent</p>
+<ul>
+<li>nom de la ruta (string)</li>
+<li>desnivell (int)</li>
+<li>desnivell acumulat (int)</li>
+<li>número de punts (int)</li>
+<li>Per cada punt:
+<ul>
+<li>nom (string)</li>
+<li>latitud (double)</li>
+<li>longitud (double)</li>
+</ul>
+</li>
+</ul>
+<p>Observa que la quarta dada és un enter amb el número de punts de la ruta.</p>
+<p>Fes una classe executable (amb <strong>main</strong>) anomenada <strong>Llegir_Rutes_Serial</strong> que agafe les dades del fitxer (hi ha 2 rutes, però ho heu de fer genèric per a un número indeterminat de rutes) i les traga per pantalla amb aquest aspecte:</p>
+<p class="codi2">Ruta: Pujada a Penyagolosa<br />Desnivell: 530<br />Desnivell acumulat: 530<br />Té 5 punts<br />Punt 1: Sant Joan (40.251036,-0.354223)<br />Punt 2: Encreuament (40.25156,-0.352507)<br />Punt 3: Barranc de la Pegunta (40.247318,-0.351713)<br />Punt 4: El Corralico (40.231708,-0.348859)<br />Punt 5: Penyagolosa (40.222632,-0.350339)<br /><br />Ruta: La Magdalena<br />Desnivell: 51<br />Desnivell acumulat: 84<br />Té 7 punts<br />Punt 1: Primer Molí (39.99385,-0.032941)<br />Punt 2: Segon Molí (39.99628,-0.029427)<br />Punt 3: Caminàs (40.00513,-0.022569)<br />Punt 4: Riu Sec (40.006765,-0.02237)<br />Punt 5: Sant Roc (40.017906,-0.02289)<br />Punt 6: Explanada (40.034048,-0.00633)<br />Punt 7: La Magdalena (40.034519,-0.005856)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id47">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3_2</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta47_42_2" class="block iDevice_content">
+<div class="box generalbox center clearfix">
+<div class="no-overflow"><strong></strong>Construeix les següents classes:
+<p><span style="font-size: large;"><strong>Coordenades</strong></span>, que implementarà <strong>Serializable</strong> (i que és convenient posar-li el número de versió per defecte: <strong>private static final long serialVersionUID = 1L;</strong>), i que contindrà:</p>
+<ul>
+<li><strong>latitud</strong> (double)</li>
+<li><strong>longitud</strong> (double)</li>
+</ul>
+<p style="margin-left: 30px;">Haurà de tenir un constructor <strong>public Coordenades(double latitud, double longitud)</strong></p>
+<p style="margin-left: 30px;">Haurà de tenir també els mètodes <strong>public double getLatitud()</strong> i <strong>public double getLongitud().</strong></p>
+<p style="margin-left: 30px;">Encara que no ens faran falta del tot, crea també els mètodes <strong>set</strong>, és a dir <strong>void setLatitud(double)</strong> i <strong>setLongitud(double)</strong>.</p>
+<hr />
+<p><span style="font-size: large;"><strong>PuntGeo</strong></span>, que implementarà <strong>Serializable </strong>(i que és convenient posar-li el número de versió per defecte: <strong>private static final long serialVersionUID = 1L;</strong>), i que contindrà:</p>
+<ul>
+<li><strong>nom</strong> (String)</li>
+<li><strong>coord</strong> (Coordenades)</li>
+</ul>
+<p style="margin-left: 30px;">Haurà de tenir dos constructors:</p>
+<ul>
+<li><strong>public PuntGeo(String nom, Coordenades coord)</strong></li>
+<li><strong>public PuntGeo(String nom, double latitud, double longitud)</strong><strong></strong></li>
+</ul>
+<p class="nota_blau"><span style="text-decoration: underline;"><strong>Nota importantíssima</strong></span><br /><br /> Els dos constructors han d'aconseguir que estiga creat un objecte del tipus <strong>Coordenades</strong></p>
+<p style="margin-left: 30px;">Haurà de tenir també els mètodes</p>
+<ul>
+<li><strong>public String getNom() </strong></li>
+<li><strong>public Coordenades getCoord</strong></li>
+<li><strong>public double getLatitud() </strong>(per a major comoditat)<strong><br /></strong></li>
+<li><strong>public double getLongitud()  </strong>(per a major comoditat)<strong><br /></strong></li>
+</ul>
+<hr />
+<p><span style="font-size: large;"><strong>Ruta</strong></span> . Aquesta classe us la passarà el professor.</p>
+<p>També implementa <strong>Serializable</strong> i conté:</p>
+<ul>
+<li><strong>nom</strong> (String)</li>
+<li><strong>llistaDePunts</strong>: un ArrayList de PuntGeo</li>
+<li><strong>desnivell</strong> (int)</li>
+<li><strong>desnivellAcumulat</strong> (int)</li>
+</ul>
+<p style="margin-left: 30px;">Observa com té els mètodes get i set per a les propietats normals, i que per a l'ArrayList de punts té els mètodes addPunt (afegirà un nou PuntGeo a la llista) i a banda de <strong>getLlistaPunts()</strong> que torna tota la llista en un array, també té per a major comoditat <strong>getPunt(int)</strong>, al qual se li passa un número i torna aquest punt. També té <strong>getPuntNom(int),</strong> <strong>getPuntLatitud(int)</strong> i <strong>getPuntLongitud(int)</strong> als quals se'ls passa l'índex del punt que es vol i tornarà el nom, latitud o longitud respectivament. També té el mètode <strong>length()</strong> que ens dóna el número de punts guardats en la llista.</p>
+<p style="margin-left: 30px;">Fes un mètode nou en la classe <strong>Ruta</strong> anomenat <strong>mostraRuta</strong>, que mostre el contingut de la ruta amb aquest aspecte:</p>
+<p class="codi2" style="margin-left: 30px;">Ruta: Pujada a Penyagolosa<br />Desnivell: 530<br />Desnivell Acumulat: 530<br />Té 5 punts<br />Punt 1: Sant Joan (40.251036,-0.354223)<br />Punt 2: Encreuament (40.25156,-0.352507)<br />Punt 3: Barranc de la Pegunta (40.247318,-0.351713)<br />Punt 4: El Corralico (40.231708,-0.348859)<br />Punt 5: Penyagolosa (40.222632,-0.350339)</p>
+<hr />
+<p>Per últim en una última classe <strong>PassarRutesSerialObj </strong>(executable, és a dir amb main) agafa el fitxer <strong>Rutes.dat</strong> , guarda la informació en un objecte <strong>Ruta</strong>, visualitza la seua informació amb <strong>mostraRuta </strong> i per últim guarda la informació de l'objecte en un fitxer anomenat <strong>Rutes.obj</strong></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id19">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3_3</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta19_41_2" class="block iDevice_content">
+<p>Fer una classe anomenada <strong>PassarRutesObjXML</strong> (amb main) que passe el fitxer <strong>Rutes.obj</strong> a un fitxer XML anomenat <strong>Rutes.xml </strong>amb aquest aspecte. Els punts suspensius indiquen que hi ha més d'un punt eb cada ruta, i que hi ha més d'una ruta</p>
+<div class="codi2">
+<div>&lt;rutes&gt;</div>
+<div style="margin-left: 30px;">&lt;ruta&gt;</div>
+<div style="margin-left: 60px;">&lt;nom&gt;Pujada a Penyagolosa&lt;/nom&gt;</div>
+<div style="margin-left: 60px;">&lt;desnivell&gt;530&lt;/desnivell&gt;</div>
+<div style="margin-left: 60px;">&lt;desnivellAcumulat&gt;530&lt;/desnivellAcumulat&gt;</div>
+<div style="margin-left: 60px;">&lt;punts&gt;</div>
+<div style="margin-left: 90px;">&lt;punt num="1"&gt;</div>
+<div style="margin-left: 120px;">&lt;nom&gt;Sant Joan&lt;/nom&gt;</div>
+<div style="margin-left: 120px;">&lt;latitud&gt;...&lt;/latitud&gt;</div>
+<div style="margin-left: 120px;">&lt;longitud&gt;...&lt;/longitud&gt;</div>
+<div style="margin-left: 90px;">&lt;/punt&gt;</div>
+<div style="margin-left: 90px;">...</div>
+<div style="margin-left: 60px;">&lt;/punts&gt;</div>
+<div style="margin-left: 30px;">&lt;/ruta&gt;</div>
+<div style="margin-left: 30px;">...</div>
+<div>&lt;/rutes&gt;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id20">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3_4</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta20_41_2" class="block iDevice_content">
+<p>Fer una aplicació gràfica que llegirà el fitxer <strong>Rutes.xml</strong> per a que apareguen els noms de les rutes en un JComboBox. Quan se seleccione una, ha d'aparèixer la llista de punts (nom, latitud i longitud) en un JTextArea. L'aspecte podria ser el següent:</p>
+<p style="text-align: center;"><img src="T3_Ex3_4_1.png" width="450" height="300" /></p>
+<p>Hi ha dos mètodes per a saber quin és l'element seleccionat del <strong>JComboBox</strong>:</p>
+<ul>
+<li><strong>getSelectedItem() </strong>torna un String amb l'element seleccionat</li>
+<li><strong>getSelectedIndex() </strong>torna un enter amb el número d'ordre de l'element seleccionat (0 per al primer; 1 per al segon; ...)</li>
+</ul>
+<p>Observeu com en aquest cas ens convé <strong>getSelectedIndex()</strong>, ja que el número d'ordre de l'element seleccionat serà el mateix que el número d'ordre de la ruta que busquem en el NodeList <strong>doc.getElementsByTagName("ruta")</strong></p>
+<p>L'esquelet del programa seria aquest (si voleu el podeu fer directament vosaltres amb WindowBuilder):</p>
+<p class="codi">import java.awt.BorderLayout;<br />import java.awt.FlowLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.util.ArrayList;<br /><br />import javax.swing.JComboBox;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JPanel;<br />import javax.swing.JTextArea;<br /><br />import org.w3c.dom.Document;<br /><br /><br />public class Vis_Rutes_XML_Pantalla extends JFrame implements ActionListener{<br />    <br />    JComboBox combo;<br />    JTextArea area = new JTextArea();<br />    Document doc;<br />    <br />    public void iniciar(){<br />        // sentències per a omplir doc<br />        <br />        <br />        this.setBounds(100, 100, 450, 300);<br />        this.setLayout(new BorderLayout());<br />        <br />        JPanel panell1 = new JPanel(new FlowLayout());<br />        JPanel panell2 = new JPanel(new BorderLayout());<br />        this.add(panell1,BorderLayout.NORTH);<br />        this.add(panell2,BorderLayout.CENTER);<br />        <br />        ArrayList&lt;String&gt; llista_rutes = new ArrayList&lt;String&gt;();<br />        // sentències per a omplir l'ArrayList amb el nom de les rutes<br />        <br />        <br />        combo = new JComboBox(llista_rutes.toArray());<br />        <br />        panell1.add(combo);<br />        <br />        panell2.add(new JLabel("LLista de punts de la ruta:"),BorderLayout.NORTH);<br />        panell2.add(area,BorderLayout.CENTER);<br />        <br />        this.setVisible(true);<br />        combo.addActionListener(this);<br />        <br />        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        <br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource() == combo){<br />            //accions quan s'ha seleccionat un element del combobox, i que han de consistir en omplir el JTextArea<br />        <br />            <br />        }<br />    }<br />}</p>
+<p>I el programa principal que crida a aquest JFrame:</p>
+<p class="codi">public class Vis_Rutes_XML {<br /><br />    public static void main(String[] args) {<br />        Vis_Rutes_XML_Pantalla finestra = new Vis_Rutes_XML_Pantalla();<br />        finestra.iniciar();<br />    }<br />}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id28">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3_5</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta28_41_2" class="block iDevice_content">
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta19_41_2" class="block iDevice_content">
+<p>Fer una classe anomenada <strong>PassarRutesObjJSON</strong> (amb main) que passe el fitxer <strong>Rutes.obj</strong> a un fitxer JSON <strong>Rutes.json </strong>amb aquest aspecte:</p>
+<div style="margin-left: 60px;" class="codi2">
+<div>{ "rutes" :</div>
+<div style="margin-left: 30px;">[</div>
+<div style="margin-left: 60px;">{"nom":"Pujada a Penyagolosa" ,</div>
+<div style="margin-left: 60px;"> "desnivell":530 ,</div>
+<div style="margin-left: 60px;"> "desnivellAcumulat":530 ,</div>
+<div style="margin-left: 60px;"> "punts":</div>
+        [  {"num":1" ,<br />
+<div style="margin-left: 120px;">"nom":"Sant Joan" ,</div>
+<div style="margin-left: 120px;">"latitud": ... ,</div>
+<div style="margin-left: 120px;">"longitud": ...</div>
+<div style="margin-left: 90px;">  } ,</div>
+<div style="margin-left: 90px;">...</div>
+<div style="margin-left: 90px;">]</div>
+<div style="margin-left: 60px;"> } ,</div>
+<div style="margin-left: 30px;"> ...</div>
+<div style="margin-left: 30px;">]</div>
+<div>}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id29">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3_6</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta29_42_2" class="block iDevice_content">
+<p>Replicar l'exercici 3_4, però ara llegint del fitxer <strong>Rutes.json</strong>, en compte de <strong>Rutes.obj</strong></p>
+<p>Fer una aplicació gràfica que llegirà el fitxer <strong>Rutes.json </strong>i que aparega el nom de les rutes en un JComboBox. Quan se seleccione una, ha d'aparèixer la llista de punts (nom, latitud i longitud) en un JTextArea. L'aspecte podria ser el següent:</p>
+<p style="text-align: center;"><img style="border: 1px solid black;" src="T3_Ex6.png" width="450" height="328" /></p>
+<p></p>
+<p>Hi ha dos mètodes per a saber quin és l'element seleccionat del <strong>JComboBox</strong>:</p>
+<ul>
+<li><strong>getSelectedItem() </strong>torna un String amb l'element seleccionat</li>
+<li><strong>getSelectedIndex() </strong>torna un enter amb el número d'ordre de l'element seleccionat (0 per al primer; 1 per al segon; ...)</li>
+</ul>
+<p>Observeu com en aquest cas, igual que en l'exercici 3_4, ens convé <strong>getSelectedIndex()</strong>, ja que el número d'ordre de l'element seleccionat serà el mateix que el número d'ordre de la ruta que busquem en el <strong>JsonArray rutes </strong>(que és una propietat on us convé posar les rutes en el moment d'inicialitzar, i així tenir-les a mà en tot el programa)<br /></p>
+<p>L'esquelet del programa seria aquest (si voleu el podeu fer directament vosaltres amb WindowBuilder):</p>
+<p class="codi">import java.awt.BorderLayout;<br />import java.awt.FlowLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.io.FileNotFoundException;<br />import java.io.IOException;<br />import java.util.ArrayList;<br /><br />import javax.swing.JComboBox;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JPanel;<br />import javax.swing.JTextArea;<br /><br />import com.github.cliftonlabs.json_simple.JsonArray;<br />import com.github.cliftonlabs.json_simple.JsonObject;<br /><br /><br />public class Vis_Rutes_JSON_Pantalla extends JFrame implements ActionListener{<br />    <br />    JComboBox combo;<br />    JTextArea area = new JTextArea();<br />    <br />    JsonObject arrel;<br />    JsonArray rutes;<br />    <br />    public void iniciar() throws FileNotFoundException, IOException {<br />        // sentències per a omplir arrel i rutes<br />        <br />        <br />        this.setBounds(100, 100, 450, 300);<br />        this.setLayout(new BorderLayout());<br />        <br />        JPanel panell1 = new JPanel(new FlowLayout());<br />        JPanel panell2 = new JPanel(new BorderLayout());<br />        this.add(panell1,BorderLayout.NORTH);<br />        this.add(panell2,BorderLayout.CENTER);<br />        <br />        ArrayList&lt;String&gt; llista_rutes = new ArrayList&lt;String&gt;();<br />        // sentències per a omplir l'ArrayList amb el nom de les rutes<br /><br />        <br />        combo = new JComboBox(llista_rutes.toArray());<br />        <br />        panell1.add(combo);<br />        <br />        panell2.add(new JLabel("LLista de punts de la ruta:"),BorderLayout.NORTH);<br />        panell2.add(area,BorderLayout.CENTER);<br />        <br />        this.setVisible(true);<br />        combo.addActionListener(this);<br />        <br />        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        <br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource() == combo){<br />            //accions quan s'ha seleccionat un element del combobox, i que han de consistir en omplir el JTextArea<br /><br />        <br />        }<br />    }<br />}</p>
+<p>I el programa principal quedaria així</p>
+<p class="codi">import java.io.FileNotFoundException;<br />import java.io.IOException;<br /><br />public class Vis_Rutes_JSON {<br /><br />    public static void main(String[] args) throws FileNotFoundException, IOException {<br />        Vis_Rutes_JSON_Pantalla finestra = new Vis_Rutes_JSON_Pantalla();<br />        finestra.iniciar();<br />    }<br />}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id30">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3_7 (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta30_41_2" class="block iDevice_content">
+<p>Per a practicar un poquet més, anem a fer un altre exercici per a construir un fitxer JSON.</p>
+<p>Feu la classe amb main <strong>PassarCotxesXMLJSON</strong>,<strong> </strong>que haurà de passar el fitxer <strong>cotxes.xml</strong> al fitxer <strong>cotxes.json</strong>. Aquest és el fitxer <strong>cotxes.xml</strong>:</p>
+<p class="codi2">&lt;oferta&gt;<br />  &lt;vehiculo&gt;<br />    &lt;marca&gt;ford&lt;/marca&gt;<br />    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;<br />    &lt;motor combustible="gasolina"&gt;duratorc 1.4&lt;/motor&gt;<br />    &lt;matricula&gt;1234AAA&lt;/matricula&gt;<br />    &lt;kilometros&gt;12500&lt;/kilometros&gt;<br />    &lt;precio_inicial&gt;12000&lt;/precio_inicial&gt;<br />    &lt;precio_oferta&gt;10000&lt;/precio_oferta&gt;<br />    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;<br />    &lt;extra valor="300"&gt;llantas&lt;/extra&gt;<br />    &lt;foto&gt;11325.jpg&lt;/foto&gt;<br />    &lt;foto&gt;11326.jpg&lt;/foto&gt;<br />  &lt;/vehiculo&gt;<br />  &lt;vehiculo&gt;<br />    &lt;marca&gt;ford&lt;/marca&gt;<br />    &lt;modelo color="gris"&gt;focus&lt;/modelo&gt;<br />    &lt;motor combustible="diesel"&gt;duratorc 2.0&lt;/motor&gt;<br />    &lt;matricula&gt;1235AAA&lt;/matricula&gt;<br />    &lt;kilometros&gt;125000&lt;/kilometros&gt;<br />    &lt;precio_inicial&gt;10000&lt;/precio_inicial&gt;<br />    &lt;precio_oferta&gt;9000&lt;/precio_oferta&gt;<br />    &lt;extra valor="250"&gt;pintura metalizada&lt;/extra&gt;<br />    &lt;extra valor="200"&gt;spoiler trasero&lt;/extra&gt;<br />    &lt;extra valor="500"&gt;climatizador&lt;/extra&gt;<br />    &lt;foto&gt;11327.jpg&lt;/foto&gt;<br />    &lt;foto&gt;11328.jpg&lt;/foto&gt;<br />  &lt;/vehiculo&gt;<br />&lt;/oferta&gt;</p>
+<p>I aquest ha de ser l'aspecte de <strong>cotxes.json</strong>:</p>
+<p class="codi2">{<br />  "oferta": {<br />    "vehiculo": [<br />      {<br />        "marca": "ford",<br />        "modelo": {<br />          "color": "gris",<br />          "nombre_modelo": "focus"<br />        },<br />        "motor": {<br />          "combustible": "gasolina",<br />          "nombre_motor": "duratorc 1.4"<br />        },<br />        "matricula": "1234AAA",<br />        "kilometros": "12500",<br />        "precio_inicial": "12000",<br />        "precio_oferta": "10000",<br />        "extra": [<br />          {<br />            "valor": "250",<br />            "nombre_extra": "pintura metalizada"<br />          },<br />          {<br />            "valor": "300",<br />            "nombre_extra": "llantas"<br />          }<br />        ],<br />        "foto": [<br />          "11325.jpg",<br />          "11326.jpg"<br />        ]<br />      },<br />      {<br />        "marca": "ford",<br />        "modelo": {<br />          "color": "gris",<br />          "nombre_modelo": "focus"<br />        },<br />        "motor": {<br />          "combustible": "diesel",<br />          "nombre_motor": "duratorc 2.0"<br />        },<br />        "matricula": "1235AAA",<br />        "kilometros": "125000",<br />        "precio_inicial": "10000",<br />        "precio_oferta": "9000",<br />        "extra": [<br />          {<br />            "valor": "250",<br />            "nombre_extra": "pintura metalizada"<br />          },<br />          {<br />            "valor": "200",<br />            "nombre_extra": "spoiler trasero"<br />          },<br />          {<br />            "valor": "500",<br />            "nombre_extra": "climatizador"<br />          }<br />        ],<br />        "foto": [<br />          "11327.jpg",<br />          "11328.jpg"<br />        ]<br />      }<br />    ]<br />  }<br />}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id33">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 3.8 (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta33_111_2" class="block iDevice_content">
+<p>Visualitzar en un programa gràfic l'estat actual de Bicicas, agafant-lo directament de la pàgina <a href="http://gestiona.bicicas.es/apps/apps.php" onclick="browseURL(this); return false" target="_blank" rel="noopener noreferrer">http://gestiona.bicicas.es/apps/apps.php</a>.</p>
+<ul>
+<li>En el mètode <strong>agafarBicicas() </strong>farem les instruccions per agafar-lo directament d'Internet, utilitzant un <strong>URL</strong>, el qual:</li>
+</ul>
+<blockquote>
+<ul>
+<li>Inicialitzarem amb la pàgina que busquem</li>
+<li>Obrim la connexió amb el mètode <strong>openConnection()</strong></li>
+<li>Després obtindrem el contingut amb el mètode <strong>getInputStream()</strong>, que com el seu nom indica serà un InputStream</li>
+</ul>
+</blockquote>
+<ul>
+<li>En el mètode <strong>mostrarEstacions() </strong>introduirem les instruccions per a visualitzar les estacions, utilitzant un <strong>JList</strong> (el que està a la part de l'esquerra), que s'ha de construir a partir d'un <strong>DefaultListModel</strong>. Per anar col·locant els diferents elements del JList, els haurem d'anar afagint al <strong>DefaultListModel</strong>, i aniran apareixent en el JList. Intentarem mostrar el número d'estació, nom i número de bicicletes (posicions ocupades) i el total de posicions.</li>
+<li>El mètode <strong>visualitzaEstacio()</strong> s'activa quan seleccionem un element del JList, i en ell mostrarem les propietats de l'estació seleccionada en el <strong>TextArea</strong> que està a la part de la dreta.</li>
+</ul>
+<p>Aquest seria l'aspecte:</p>
+<p><img src="T3_Ex8.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="800" height="500" /></p>
+<p>Aquest és l'esquelet del programa:</p>
+<div class="codi">
+<div>
+<pre><code>import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JLabel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import com.github.cliftonlabs.json_simple.JsonArray;
+import com.github.cliftonlabs.json_simple.JsonException;
+import com.github.cliftonlabs.json_simple.JsonObject;
+import com.github.cliftonlabs.json_simple.Jsoner;
+
+
+public class Pantalla_Vis_Bicicas_Json_JList extends JFrame implements ListSelectionListener {
+
+    private static final long serialVersionUID = 1L;
+    DefaultListModel listModel = new DefaultListModel();
+    JList list = new JList(listModel); 
+    JTextArea area = new JTextArea(5,15);
+    
+    JsonObject arrel;
+    JsonArray estacions;
+   
+    public void iniciar() throws JsonException, IOException {
+        this.setBounds(100, 100, 450, 300);
+        this.setLayout(new BorderLayout());
+
+        JPanel panell1 = new JPanel(new GridLayout(1,2));
+        JPanel panell2 = new JPanel(new FlowLayout());
+        this.add(panell1,BorderLayout.CENTER);
+        this.add(panell2,BorderLayout.NORTH);
+        list.setForeground(Color.blue);
+        JScrollPane scroll1 = new JScrollPane(list);
+        panell1.add(scroll1);
+        JScrollPane scroll2 = new JScrollPane(area);
+        panell1.add(scroll2);
+        
+        JLabel et1 = new JLabel("Llistat actual de BICICAS");
+        panell2.add(et1);
+        
+
+        agafarBicicas(); 
+        
+        mostrarEstacions();
+
+        setVisible(true);
+        
+        list.addListSelectionListener(this);
+    }
+
+    
+    @Override
+    public void valueChanged(ListSelectionEvent e){
+        JList l = (JList) e.getSource();
+        if (l.getSelectedIndex()&gt;=0){
+            visualitzaEstacio(l.getSelectedValue().toString());
+        }
+    }
+
+    private void agafarBicicas() throws JsonException, IOException {
+    	// Instruccions per a llegir de la pàgina de Bicicas i col·locar en arrel
+    	URL bicicas = new URL("http://gestiona.bicicas.es/apps/apps.php");
+        JsonArray arrel = (JsonArray) Jsoner.deserialize(new InputStreamReader(bicicas.openConnection().getInputStream()));
+        // Instruccions per a col·locar les estacions en estacions (JsonArray)
+        
+    }
+
+    private void mostrarEstacions() {
+        // Instruccions per a introduir en el JList les estacions
+        // La manera d'anar introduint informació en el JList és a través del DefaultListModel:
+        // listModel.addElement("Linia que es vol introduir ")
+    	
+    }
+    
+    private void visualitzaEstacio(String estacio){
+        // Instruccions per a mostrar les característiques en el area, el JTextArea de la dreta
+       
+    }
+}</code></pre>
+</div>
+</div>
+<p>I aquest seria el programa principal:</p>
+<div class="codi">
+<div>
+<pre><code>import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.json.simple.parser.ParseException;
+
+public class Vis_Bicicas_Json_JList {
+
+    public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+        Vis_Rutes_JSON_Pantalla finestra = new Vis_Rutes_JSON_Pantalla();
+        finestra.iniciar();
+    }
+}</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="53__accs_complet_des_de_java.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

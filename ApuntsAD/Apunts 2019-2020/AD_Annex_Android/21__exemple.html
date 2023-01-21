@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1 - Exemple | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__permanncia_en_fitxers.html" class="current-page-parent daddy">2 - Permanència en fitxers</a>
+   <ul>
+      <li id="active"><a href="21__exemple.html" class="active no-ch">2.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="3__permanncia_en_bd_relacionals.html" class="daddy">3 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="31__connexi_remota.html" class="no-ch">3.1 - Connexió remota</a></li>
+      <li><a href="32__connexi_local.html" class="daddy">3.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="321__exemple.html" class="no-ch">3.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2__permanncia_en_fitxers.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__permanncia_en_bd_relacionals.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.1 - Exemple</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p>Anem a treballar sobre un exercici senzill, ampliant el que hem fet fins ara. Mostrarem un EditText, però ara podrem fer anotacions que es podran guardar en un únic fitxer anomenat <strong>notes.txt</strong>, i així no caldrà demanar ni el nom del fitxer ni navegar.</p>
+<p>Hi haurà tres botons:</p>
+<ul>
+<li><strong>Obrir</strong>: obrirà el contingut del fitxer <strong>notes.txt </strong>i el mostrarà en el EditText</li>
+<li><strong>Guardar</strong>: guardarà el contingut del EditText en el fitxer <strong>notes.txt</strong>.</li>
+<li><strong>Esborrar</strong>: únicament esborrarà el contingut del EditText.</li>
+</ul>
+<p>Aquest podria ser l'aspecte:</p>
+<p style="text-align: center;"><img src="Annex_Android_2_1_1.png" style="border: 1px solid black;" height="611" width="369" /></p>
+<p></p>
+<p>El <strong>Activity_Main.xml</strong>: ara contindrà, a banda de l'<strong>EditText</strong>, un <strong>LinearLayout</strong> horitzontal situat a la banda de baix, i que contindrà els 3 botons.<strong><br /></strong></p>
+<div class="codi">&lt;?xml version="1.0" encoding="utf-8"?&gt;<br />&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"<br />    xmlns:tools="http://schemas.android.com/tools"<br />    android:id="@+id/activity_main"<br />    android:layout_width="match_parent"<br />    android:layout_height="match_parent"<br />    tools:context="com.example.editortext.MainActivity"&gt;<br /><br />    &lt;EditText<br />        android:text=""<br />        android:id="@+id/text"<br />        android:layout_width="match_parent"<br />        android:layout_height="match_parent"<br />        android:inputType="textMultiLine"<br />        android:gravity="top" /&gt;<br />    &lt;LinearLayout<br />        android:orientation="horizontal"<br />        android:layout_width="wrap_content"<br />        android:layout_height="wrap_content"<br />        android:layout_alignParentBottom="true"<br />        android:gravity="center_horizontal"<br />        android:layout_centerHorizontal="true"&gt;<br />        &lt;Button<br />            android:layout_width="wrap_content"<br />            android:layout_height="wrap_content"<br />            android:text="Obrir"<br />            android:id="@+id/obrir" /&gt;<br />        &lt;Button<br />            android:layout_width="wrap_content"<br />            android:layout_height="wrap_content"<br />            android:text="Guardar"<br />            android:id="@+id/guardar" /&gt;<br />        &lt;Button<br />            android:layout_width="wrap_content"<br />            android:layout_height="wrap_content"<br />            android:text="Esborrar"<br />            android:id="@+id/esborrar" /&gt;<br />    &lt;/LinearLayout&gt;<br />&lt;/RelativeLayout&gt;</div>
+<p></p>
+<p>En el programa principal, a banda de col·locar les coses, ens definim la variable <strong>PATH</strong> que contindrà la ruta on volem col·locar el fitxer, i també el tractament dels 3 botons.</p>
+<p>Podeu comprovar que mirem primer l'existència de la ruta (podria ser que no existira el subdirectori <strong>files</strong>, i aleshores el crearíem) i després es llig el fitxer línia a línia (amb un BufferedReader) i es col·loca en el EditText.</p>
+<p></p>
+<div class="codi">package com.example.editortext;<br /><br />import android.support.v7.app.AppCompatActivity;<br />import android.os.Bundle;<br />import android.view.View;<br />import android.widget.Button;<br />import android.widget.EditText;<br /><br />import java.io.BufferedReader;<br />import java.io.File;<br />import java.io.FileNotFoundException;<br />import java.io.FileReader;<br />import java.io.FileWriter;<br />import java.io.IOException;<br />import java.io.PrintWriter;<br /><br />public class MainActivity extends AppCompatActivity {<br /><br />    String PATH = null;<br />    @Override<br />    protected void onCreate(Bundle savedInstanceState) {<br />        super.onCreate(savedInstanceState);<br />        setContentView(R.layout.activity_main);<br />        PATH = "/data/data/" + getPackageName() + "/files";<br />        final EditText text = (EditText) findViewById(R.id.text);<br />        Button button1= (Button) findViewById(R.id.obrir);<br />        button1.setOnClickListener(new View.OnClickListener() {<br />            @Override<br />            public void onClick(View v) {<br />                try {<br />                    File dir = new File(PATH);<br />                    if (!dir.exists())<br />                        dir.mkdir();<br />                    BufferedReader f = new BufferedReader(new FileReader(new File(dir,"notes.txt")));<br />                    String cont = "";<br />                    String linia = f.readLine();<br />                    while (linia!=null) {<br />                        cont += linia + "\n";<br />                        linia=f.readLine();<br />                    }<br />                    text.setText(cont);<br />                    f.close();<br /><br />                } catch (FileNotFoundException e) {<br />                    e.printStackTrace();<br />                } catch (IOException e) {<br />                    e.printStackTrace();<br />                }<br />            }<br />        });<br />        Button button2= (Button) findViewById(R.id.guardar);<br />        button2.setOnClickListener(new View.OnClickListener() {<br />            @Override<br />            public void onClick(View v) {<br />                try {<br />                    File dir = new File(PATH);<br />                    if (!dir.exists())<br />                        dir.mkdir();<br />                    PrintWriter f = new PrintWriter(new FileWriter(new File(dir,"notes.txt")));<br />                    f.write(text.getText().toString());<br />                    f.close();<br /><br />                } catch (FileNotFoundException e) {<br />                    e.printStackTrace();<br />                } catch (IOException e) {<br />                    e.printStackTrace();<br />                }<br />            }<br />        });<br />        Button button3= (Button) findViewById(R.id.esborrar);<br />        button3.setOnClickListener(new View.OnClickListener() {<br />            @Override<br />            public void onClick(View v) {<br />                text.setText("");<br />            }<br />        });<br />    }<br />}</div>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2__permanncia_en_fitxers.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__permanncia_en_bd_relacionals.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

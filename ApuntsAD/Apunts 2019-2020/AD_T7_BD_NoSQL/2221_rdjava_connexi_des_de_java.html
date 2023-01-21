@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.2.1 RD-Java: Connexió des de Java | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-52"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__firebase.html" class="current-page-parent daddy">2 - Firebase</a>
+   <ul>
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li class="current-page-parent"><a href="22_realtime_database_rd.html" class="current-page-parent daddy">2.2 Realtime Database (RD)</a>
+      <ul>
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li class="current-page-parent"><a href="222_rd_utilitzaci_des_de_java.html" class="current-page-parent daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul>
+            <li id="active"><a href="2221_rdjava_connexi_des_de_java.html" class="active no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="222_rd_utilitzaci_des_de_java.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2222_rdjava_accs_a_les_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.2.1 RD-Java: Connexió des de Java</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id168">
+<div class="iDevice emphasis0">
+<div id="ta168_85" class="block iDevice_content">
+<p class="titolet">Drivers necessaris</p>
+<p>L'accés des de Java a Firebase no és senzill. És més complicat que accedir des d'Android, en contra del que cabria esperar.</p>
+<p>Concretament ens haurem de baixar molts <strong>.jar</strong>. En canvi en Android ho tindrem tot disponible, ja que els drivers estan incorporats.</p>
+<p>Són tants els drivers que ens construirem una llibreria per a poder incorporar-los després còmodament als nostres projectes. Ens els podem baixar des del següent enllaç: <a href="https://jar-download.com/artifacts/com.google.firebase">https://jar-download.com/artifacts/com.google.firebase</a></p>
+<p style="text-align: center;"><img src="T7_3_3_3_1.png" alt="" width="1159" height="858" /></p>
+<p>Una vegada baixat i descomprimit el contingut en una carpeta, construiu-vos una llibreria anomenada <strong>Firebase</strong> que incorpore tots els <strong>jar</strong>.</p>
+<p class="titolet">Configuració</p>
+<p>El primer que hem de fer és preparar el nostre projecte per a que puga accedir a l'aplicació que hem creat en Firebase. En l'entron de Java ens baixarem un fitxer json on estarà la clau per a accedir a la nostra aplicació. Hem d'anar a la configuració del projecte:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_1_1.png" alt="" width="1351" height="767" /></p>
+<p>I dins de la configuració anar a la pestanya <strong>Cuentas de servicio </strong>(<strong>Service Accounts</strong>). Ahí veurem uns exemples d'utilització (a nosaltres ens interessa <strong>Java</strong>), i baix de tot un botó per a <strong>Generar una nova clau privada</strong>:</p>
+<p style="text-align: center;"><img src="T7_2_2_2_1_2.png" alt="" width="1346" height="952" /></p>
+<p>Ens baixarà un fitxer <strong>json</strong> que<strong> haurem de guardar</strong> a l'arrel del projecte. Després, com deia l'exemple, col·loquem el següent per a un accés correcte:</p>
+<div class="codi">
+<div>
+<pre><code>FileInputStream serviceAccount = new FileInputStream(<em>nom_al_fitxer_json</em>);
+
+FirebaseOptions options = new FirebaseOptions.Builder()
+		.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+		.setDatabaseUrl("https://acces-a-dades-6e5a6.firebaseio.com").build();
+
+FirebaseApp.initializeApp(options);</code></pre>
+</div>
+</div>
+<p><strong>No us oblideu de substituir el nom del fitxer json</strong>. També heu de tenir en compte que <strong>la URL de la base de dades serà diferent per a cadascú de nosaltres</strong>.</p>
+<div id="ta162_85" class="block iDevice_content">
+<p class="titolet">Referència a la Base de Dades i a les dades concretes a les quals volem accedir</p>
+<p>Ens haurem de crear un objecte <strong>FirebaseDatabase</strong>, que serà una referència a tota la Base de Dades:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;">FirebaseDatabase database = FirebaseDatabase.<span style="font-style: italic;">getInstance</span>();</pre>
+<p>A partir d'ella podríem fer referència a una parella clau-valor que estiga a l'arrel, com quan havíem creat <strong>a1 </strong>( però recordeu que ara no existeix):</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">final </span>DatabaseReference refA1 = database.getReference(<span style="color: #008000; font-weight: bold;">"a1"</span>);</pre>
+<p>observeu com no és cap impediment que ens toque definir-la com a <strong>final</strong>, ja que aquesta referència no ha de canviar en cap moment després d'inicialitzar-la. Si que podem fer canviar el seu valor, però la referència sempre ha d'apuntar al mateix lloc.</p>
+<p>També podríem fer referència a una parella clau-valor que no estiga en l'arrel de la Base de Dades. Senzillament posaríem la ruta des de l'arrel. Per exemple, per a accedir al nom del primer empleat de l'empresa que tenim guardat, ho faríem així:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">final </span>DatabaseReference empleat1 = database.getReference(<span style="color: #008000; font-weight: bold;">"empresa/empleat/0/nom"</span>);</pre>
+<p>En els casos anteriors hem optat per agafar parelles clau-valor, bé a l'arrel o més cap a dins de l'estructura JSON. Però en definitiva és una parella clau-valor.</p>
+<p></p>
+<p>També podem optar per agafar l'estructura JSON i treballar amb ella, com vam fer en el Tema 3, quan vam treballar amb l'estructura JSON.</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">final </span>DatabaseReference empresa = database.getReference(<span style="color: #008000; font-weight: bold;">"empresa"</span>);</pre>
+<p>D'aquesta manera, en la qual agafem tota l'estructura, tindrem dues maneres de treballar posteriorment per a accedir més avall en l'estructura:</p>
+<ul>
+<li>Passar-lo a objectes i arrays de JSON, i treballar com vam fer en el Tema 3. Molt còmode, sobretot quan es tracta d'operacions de lectura</li>
+<li>Treballar directament amb mètodes de Firebase que ens permeten accedir bé a tots els fills d'una estructura, bé a un fill en concret</li>
+</ul>
+<p>Ho mostrarem en els exemples posteriors.</p>
+<p></p>
+<div id="ta163_85" class="block iDevice_content">
+<div id="ta164_85" class="block iDevice_content">
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="222_rd_utilitzaci_des_de_java.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2222_rdjava_accs_a_les_dades.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

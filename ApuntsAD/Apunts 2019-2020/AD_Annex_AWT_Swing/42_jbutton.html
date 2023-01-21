@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.- JButton | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li class="current-page-parent"><a href="4_components.html" class="current-page-parent daddy">4.- Components</a>
+   <ul>
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li id="active"><a href="42_jbutton.html" class="active no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li><a href="6_dilegs.html" class="daddy">6.- Diàlegs</a>
+   <ul class="other-section">
+      <li><a href="61_joptionpane.html" class="no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_windowbuilder.html" class="no-ch">7.- WindowBuilder</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="41_jpanel.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="43_jtextfield.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.- JButton</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_85" class="block iDevice_content">
+<p>El JButton és un dels components més habituals. Servirà per a crear un botó, amb un text o una imatge.</p>
+<p class="titolet">Creació</p>
+<p>En el moment de crear-lo li podem posar el text o la imatge. També es poden posar després modificant les propietats:</p>
+<p class="codi">JButton boto1 = new JButton("Botó 1");</p>
+<p class="codi">JButton boto2 = new JButton(new ImageIcon("imatge.jpg"));</p>
+<p class="titolet">Associar una acció</p>
+<p>Per a assignar una acció quan fem clic en un botó, haurem de fer 3 coses:</p>
+<ul>
+<li>La primera és que la classe finestra que estem definint (JFrame) ha d'implementar també <strong>ActionListener</strong>:
+<p class="codi">public class Finestra extends JFrame implements ActionListener {</p>
+</li>
+<li>Haurem de registrar l'acció del botó dins del programa:<br />
+<p><code class="codi">boto1.addActionListener(this)</code></p>
+</li>
+<li>En el mètode heretat de ActionListener <strong>actionPerformed</strong>, discriminar si és el botó en qüestió i assignar-li les accions oportunes (normalment cridar un altre mètode). Mireu que com és un altre mètode diferent d'iniciar, el botó haurà d'estar declarat no en <strong>iniciar</strong>, sinó en la mateixa classe finestra</li>
+</ul>
+<div class="codi">
+<div style="margin-left: 30px;">@Override</div>
+<div style="margin-left: 30px;">public void actionPerformed(ActionEvent e) {</div>
+<div style="margin-left: 60px;">if (e.getSource()==boto1){</div>
+<div style="margin-left: 90px;"><em>accions</em></div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 30px;">}</div>
+</div>
+<p>Mirem un exemple molt senzill en el qual posem únicament un botó, per a eixir del programa, encara que ja tenim que quan es tanca la finestra també es tanca el programa. L'acció a fer és senzillament <strong>System.exit(0)</strong></p>
+<p class="codi">import java.awt.FlowLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br /><br />import javax.swing.JButton;<br />import javax.swing.JFrame;<br /><br />public class Finestra extends JFrame implements ActionListener{<br /><br />    JButton boto1 = new JButton("Eixir");<br /><br />    public void iniciar(){<br />        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        setSize(400,300);<br />        getContentPane().setLayout(new FlowLayout());<br />        <br />        getContentPane().add(boto1);<br />        boto1.addActionListener(this);<br />        setVisible(true);<br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource()==boto1){<br />            System.out.println("Final");<br />            System.exit(0);<br />            }<br />    }<br />}</p>
+<p><img src="Annex_Swing_4_2_1_Boto.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="400" height="300" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="41_jpanel.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="43_jtextfield.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

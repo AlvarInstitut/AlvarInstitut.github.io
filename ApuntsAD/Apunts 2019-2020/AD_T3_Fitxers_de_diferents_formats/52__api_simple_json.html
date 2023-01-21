@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2 - API Simple JSON | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-24"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li><a href="4_documents_xml.html" class="daddy">4.- Documents XML</a>
+   <ul class="other-section">
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li><a href="42__lestructura_dom.html" class="daddy">4.2 - L'estructura DOM</a>
+      <ul class="other-section">
+         <li><a href="421_lectura.html" class="no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_documents_json.html" class="current-page-parent daddy">5.- Documents JSON</a>
+   <ul>
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li id="active"><a href="52__api_simple_json.html" class="active no-ch">5.2 - API Simple JSON</a></li>
+      <li><a href="53__accs_complet_des_de_java.html" class="no-ch">5.3 - Accés complet des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="51__estructura_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53__accs_complet_des_de_java.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2 - API Simple JSON</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id107">
+<div class="iDevice emphasis0">
+<div id="ta107_85" class="block iDevice_content">
+<p>Hi ha més d'una llibreria per a poder accedir i analitzar els documetns json.</p>
+<p>Les que més es comenten per Internet són <strong>GSON</strong> (de Google) i <strong>Jackson</strong>. Però nosaltres anem a utilitzar una altra, per la seua senzillesa:<strong> JSON.simple</strong>.</p>
+<p>En el moment de fer aquestos apunts l'última versió estable és la 3.1.0. En aquest enllaç teniu d'on us la podeu baixar: <a href="https://jar-download.com/artifacts/com.github.cliftonlabs/json-simple">https://jar-download.com/artifacts/com.github.cliftonlabs/json-simple</a>. Una vegada baixada l'haurem d'incorporar al nostre projecte (<strong>Project --&gt; Properties --&gt; Java Build Path --&gt; Libraries --&gt; Add Externals JARs</strong>)</p>
+<p> En ella trobem el més bàsic:</p>
+<ul>
+<li><strong>JsonObject</strong>: equivaldrà a un objecte</li>
+<li><strong>JsonArray</strong>: equivaldrà a un array</li>
+<li><strong>Jsoner</strong>: contindrà tota l'altra funcionalitat, com l'analitzador (mètode <strong>deserialize() </strong>), que agafarà com a entrada el document Json<strong></strong>, i tornarà l'objecte arrel. També té el mètode <strong>serialize()</strong> que fa el procés invers.</li>
+</ul>
+<div class="nota_blau">
+<h2><span style="text-decoration: underline;">Versió 1.1.1</span></h2>
+<p>Ja des de la versió 2 van canviar prou les coses respecte de les versions anteriors. Són compatibles les classes de versions anteriors, però estan marcades com a <strong>deprecated</strong>.</p>
+<p>En aquestes notes de color blau us posaré com es feien. <strong>Evidentment, si utilitzeu la nova versió no cal que feu les corresponents a versions anteriors</strong>.</p>
+<p>Si utilitzem la versió 1.1.1, la llibreria és <a href="http://www.java2s.com/Code/JarDownload/json-simple/json-simple-1.1.1.jar.zip">json-simple-1.1.1.jar</a></p>
+<p>Els objectes en aquella versió eren (observeu els canvis de majúscules i minúscules):</p>
+<ul>
+<li><strong>JSONObject</strong>: equivaldrà a un objecte</li>
+<li><strong>JSONArray</strong>: equivaldrà a un array</li>
+<li><strong>JSONParser</strong>: l'analitzador, que agafarà com a entrada el document Json amb el mètode <strong>parse</strong>, i tornarà l'objecte arrel</li>
+</ul>
+</div>
+<p></p>
+<p class="titolet">Jsoner</p>
+<p>El primer que haurem de fer serà analitzar el document per a obtenir l'element arrel (que com hem vist normalment serà un objecte, però de vegades pot ser un array).</p>
+<p>El mètode <strong>deserialize</strong><strong></strong> de <strong>Jsoner</strong> admet com a paràmetre un <strong>string</strong> amb tot el document json, però també admet un <strong>Reader</strong>, que normalment serà el més còmode.</p>
+<p>En el següent exemple agafem el json directament d'un <strong>string</strong>, on teníem els números parells.</p>
+<p class="codi2">{ "p1" : 2 , "p2" : 4 , "p3" : 6 , "p4" : 8 , "p5" : 10 }</p>
+<p>Observeu com per a la definició del string ens ha tocat escapar les dobles cometes.</p>
+<p class="codi">import com.github.cliftonlabs.json_simple.JsonException;<br />import com.github.cliftonlabs.json_simple.JsonObject;<br />import com.github.cliftonlabs.json_simple.Jsoner;<br /><br />public class Exemple_3_51 {<br /><br />    public static void main(String[] args) throws JsonException {<br />        String cadena = "{ \"p1\" : 2 , \"p2\" : 4 , \"p3\" : 6 , \"p4\" : 8 , \"p5\" : 10 }";<br />        <br />        JsonObject arrel = (JsonObject) Jsoner.deserialize(cadena);<br />        <br />        System.out.println(arrel.get("p1"));<br />    }<br />}</p>
+<p>Mentre que en aquest exemple accedim al fitxer <strong>parelles.json</strong> (que assumirem que té el mateix contingut). Podríem passar el contingut del fitxer a una cadena, però és molt més còmode passar el <strong>Reader</strong> com paràmetre, i ell s'encarrega de llegir-lo tot.</p>
+<p class="codi">import java.io.FileReader;<br />import java.io.IOException;<br />import java.io.Reader;<br /><br />import com.github.cliftonlabs.json_simple.JsonException;<br />import com.github.cliftonlabs.json_simple.JsonObject;<br />import com.github.cliftonlabs.json_simple.Jsoner;<br /><br /><br />public class Exemple_3_52 {<br /><br />    public static void main(String[] args) throws JsonException, IOException  {<br />        <br />         Reader r_json = new FileReader("parelles.json");<br />         <br />         JsonObject arrel = (JsonObject) Jsoner.deserialize(r_json);<br />         <br />         System.out.println(arrel.get("p1"));<br />    }<br />}</p>
+<div class="nota_blau">
+<p class="titolet">JSONParser</p>
+<p>En la versió 1.1.1, hem d'utilitzar el mètode <strong>parse</strong> de <strong>JSONParser</strong> per a analitzar. També admetia com a paràmetre un <strong>string</strong> o un <strong>Reader</strong>.</p>
+Ara el primer exemple quedarà:
+<p class="codi">import org.json.simple.JSONObject;<br />import org.json.simple.parser.JSONParser;<br />import org.json.simple.parser.ParseException;<br /><br />public class Exemple_3_51 {<br /><br />    public static void main(String[] args) throws ParseException {<br />        String cadena = "{ \"p1\" : 2 , \"p2\" : 4 , \"p3\" : 6 , \"p4\" : 8 , \"p5\" : 10 }";<br />        <br />        JSONParser parser = new JSONParser();<br />        JSONObject arrel = (JSONObject) parser.parse(cadena);<br />        <br />        System.out.println(arrel.get("p1"));<br />    }<br />}</p>
+<p>Mentre que el segon, el que llig del fitxer <strong>parelles.json</strong>, queda així:</p>
+<p class="codi">import java.io.FileReader;<br />import java.io.IOException;<br />import java.io.Reader;<br /><br />import org.json.simple.JSONObject;<br />import org.json.simple.parser.JSONParser;<br />import org.json.simple.parser.ParseException;<br /><br />public class Exemple_3_52 {<br /><br />    public static void main(String[] args) throws IOException, ParseException {<br />        Reader r_json = new FileReader("parelles.json");<br />        <br />        JSONParser parser = new JSONParser();<br />        JSONObject arrel = (JSONObject) parser.parse(r_json);<br />        <br />        System.out.println(arrel.get("p2"));<br />    }<br /><br />}</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id108">
+<div class="iDevice emphasis0">
+<div id="ta108_85" class="block iDevice_content">
+<p class="titolet">JsonObject</p>
+<p>Contindrà un <strong>objecte json</strong>. Recordeu que l'<strong>objecte</strong> es delimita amb les claus: <strong>{  }</strong></p>
+<p>El mètode més important serà <strong>get(<em>clau</em>)</strong> al qual li passem la clau del membre que volem obtenir. Si el membre és una parella clau-valor, obtindrem directament el valor. Si és un altre objecte, doncs obtindrem l'objecte o també podria ser un array. El cas que siga una parella clau-valor, ja l'hem vist en l'exemple anterior.</p>
+<p>En el següent exemple, en el fitxer <strong>empleat.json</strong> tindrem un empleat</p>
+<p class="codi2">{ "empleat" :<br />  { "num": 1 ,<br />    "nom": "Andreu" ,<br />    "departament": 10 ,<br />    "edat": 32 ,<br />    "sou": 1000.0 <br />  }<br />}</p>
+<p>Observeu com ara de l'element arrel hem d'agafar <strong>empleat</strong>, que és un objecte amb les parelles clau-valor <strong>num</strong>, <strong>nom</strong>, ...</p>
+<p class="codi">import java.io.FileReader;<br />import java.io.IOException;<br />import java.io.Reader;<br /><br />import com.github.cliftonlabs.json_simple.JsonException;<br />import com.github.cliftonlabs.json_simple.JsonObject;<br />import com.github.cliftonlabs.json_simple.Jsoner;<br /><br />public class Exemple_3_53 {<br /><br />    public static void main(String[] args) throws IOException, JsonException {<br />        Reader r_json = new FileReader("empleat.json");<br />        <br />        JsonObject arrel = (JsonObject) Jsoner.deserialize(r_json);<br />        <br />        JsonObject empleat = (JsonObject) arrel.get("empleat");<br />        <br />        System.out.println(empleat.get("nom") + " (" + empleat.get("sou") + ")");<br />    }<br />}</p>
+<div class="nota_blau">
+<p>En la versió 1.1.1, l'objecte es deia <strong>JSONObject</strong> (observeu el canvi de majúscules)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id109">
+<div class="iDevice emphasis0">
+<div id="ta109_85" class="block iDevice_content">
+<p class="titolet">JSONArray</p>
+<p>Serà l'array, que recordem que ve limitat per els claudàtors: <strong>[  ]</strong></p>
+<p>Per a obtenir els elements de l'array utilitzarem el mètode <strong>get(<em>index</em>)</strong>, on l'índex és el número d'ordre de l'element que volem obtenir.</p>
+<p>Posem el primer exemple sobre un json que només té un array els elements del qual són valors:</p>
+<p class="codi2">[ 5 , 7 , 8 , 7 ]</p>
+<p>Observeu com ara l'arrel és un array, i ens muntem un bucle per obtenir tots els elements.</p>
+<p class="codi">import com.github.cliftonlabs.json_simple.JsonArray;<br />import com.github.cliftonlabs.json_simple.JsonException;<br />import com.github.cliftonlabs.json_simple.Jsoner;<br /><br />public class Exemple_3_54 {<br /><br />    public static void main(String[] args) throws JsonException {<br />        String cadena = "[ 5 , 7 , 8 , 7 ]";<br />        <br />        JsonArray arrel = (JsonArray) Jsoner.deserialize(cadena);<br />        <br />        for (int i=0; i&lt;arrel.size();i++)<br />            System.out.println(arrel.get(i));<br />    }<br />}</p>
+<p>També podem fer servir els bucles foreach, però lamentablement no podem obtenir directament un JsonObject, i per tant l'hem de reconvertir. Ho mostrarem en el següent exemple en el qual agafem tots els empleats de l'empresa, on <strong>empresa.json</strong> és així:</p>
+<p class="codi2">{ "empresa" : <br />    { "empleats": <br />           [<br />        { "num":1, "nom": "Andreu", "departament": 10, "edat": 32, "sou": 1000.0}  ,<br />        { "num":2, "nom": "Bernat", "departament": 20, "edat": 28, "sou": 1200.0}  ,<br />        { "num":3, "nom": "Clàudia", "departament": 10, "edat": 26, "sou": 1100.0}  ,<br />        { "num":4, "nom": "Damià", "departament": 10, "edat": 40, "sou": 1500.0}<br />       ]<br />    }<br />}</p>
+<p>Tindrem un objecte arrel, amb només un objecte, <strong>empresa</strong>, que té un únic membre empleat que és un array amb 4 elements, cadascun dels empleats</p>
+<p class="codi">import java.io.FileReader;<br />import java.io.IOException;<br />import java.io.Reader;<br /><br />import com.github.cliftonlabs.json_simple.JsonException;<br />import com.github.cliftonlabs.json_simple.Jsoner;<br />import com.github.cliftonlabs.json_simple.JsonObject;<br />import com.github.cliftonlabs.json_simple.JsonArray;<br /><br />public class Exemple_3_55 {<br /><br />    public static void main(String[] args) throws IOException, JsonException {<br />        Reader r_json = new FileReader("empresa.json");<br />        <br />        JsonObject arrel = (JsonObject) Jsoner.deserialize(r_json);<br />        <br />        JsonObject empresa = (JsonObject) arrel.get("empresa");<br />        <br />        JsonArray empleats = (JsonArray) empresa.get("empleats");<br />        <br />        for (Object e : empleats) {<br />            JsonObject emp = (JsonObject) e;<br />            System.out.println(emp.get("nom") + " (" + emp.get("sou") + ")");<br />        }<br />    }<br />}</p>
+<p></p>
+<div class="nota_blau">
+<p>En la versió 1.1.1, l'objecte es deia <strong>JSONArray</strong> (observeu el canvi de majúscules)</p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="51__estructura_json.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53__accs_complet_des_de_java.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

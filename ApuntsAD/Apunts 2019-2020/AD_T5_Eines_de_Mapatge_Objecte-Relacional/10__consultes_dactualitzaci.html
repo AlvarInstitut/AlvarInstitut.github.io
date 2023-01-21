@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>10 - Consultes d'actualització | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-20"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="10__consultes_dactualitzaci.html" class="active no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11__resum_del_llenguatge_hql.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">10 - Consultes d'actualització</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id32">
+<div class="iDevice emphasis0">
+<div id="ta32_1" class="block iDevice_content">
+<p>Aquesta pregunta no té tanta importància com les altres, ja que actualitzacions ja sabíem fer amb els mètodes <strong>save()</strong>, <strong>delete()</strong> i <strong>update()</strong> de la sessió.</p>
+<p>Pràcticament l'única utilitat serà fer actualitzacions massives, que afecten a més d'una fila (millor dit, més d'un objecte). HQL també permet fer-les. Mirem la seua sintaxi:</p>
+<p class="titolet">DELETE</p>
+<div class="codi2">
+<div>DELETE [FROM] NomEntitat</div>
+<div style="margin-left: 30px;">[WHERE condició] </div>
+</div>
+<p>Esborrarà tots els objecte que acomplesquen la condició. Observeu que:</p>
+<ul>
+<li>FROM és opcional</li>
+<li>La clàusula WHERE és opcional. Si no es posa s'esborraran tots els objectes.</li>
+<li>En el FROM només es pot posar una entitat. No val a posar més d'una ni reunions ni res. Sí que es podran posar subconsultes en la clàusula WHERE, i en les consultes sí que es pot fer el que es vulga (reunions, ...).</li>
+</ul>
+<p>Per a executar la consulta s'utilitzarà el mètode <strong>Query.</strong><strong>executeUpdate()</strong> (en compte de <strong>Query.</strong><strong>list()</strong> per exemple). Aquest mètode torna un enter que serà el número de files (objectes) esborrades.</p>
+<p>I recordeu que s'ha de confirmar la transacció per a que tinguen efecte els canvis.</p>
+<p>Ací tenim un exemple, al qual li hem aplicat <strong>ROLLBACK</strong> al final, per a no fer efectiu l'esborrat. Però sí que diu quantes files "s'esborrarien".</p>
+<p>El següent exemple "esborraria" els Instituts de la província de Castelló, que són els que el seu codi comença per 12, i es diu quants serien els afectats, però després es rebutgen els canvis en fer <strong>rollback()</strong>.</p>
+<p> </p>
+<div class="codi">
+<div>import org.hibernate.Session;<br />import org.hibernate.Transaction;<br /><br />import classes.SessionFactoryUtil;<br /><br />public class EsborratMassiu {<br /><br />    public static void main(String[] args) {<br /><br />         Session sessio = SessionFactoryUtil.getSessionFactory().openSession();<br />        <br />         Transaction tr = sessio.beginTransaction();<br />         <br />         int files = sessio.createQuery("delete Institut where codi like '12%'").executeUpdate();<br />         <br />         System.out.println("S'han esborrat " + files + " files.");<br />         <br />         tr.rollback();<br />    }<br />}</div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id34">
+<div class="iDevice emphasis0">
+<div id="ta34_1" class="block iDevice_content">
+<p class="titolet">UPDATE</p>
+<div class="codi2">
+<div>UPDATE [FROM] NomEntitat</div>
+<div style="margin-left: 30px;">SET propietat = valor [, propietat2 = valor2, ...]</div>
+<div style="margin-left: 30px;">[ WHERE condicio ]</div>
+</div>
+<p>Les observacions fetes en l'apartat de DELETE també valen ací. I observeu que podem modificar més d'un camp, separant-los per comes. Ací tenim un exemple, en el qual fem també <strong>rollback()</strong> per a deixar les coses com estaven:</p>
+<div class="codi">import org.hibernate.Session;<br />import org.hibernate.Transaction;<br /><br />import classes.SessionFactoryUtil;<br /><br />public class ModificacioMassiva {<br /><br />    public static void main(String[] args) {<br /><br />        Session sessio = SessionFactoryUtil.getSessionFactory().openSession();<br />        <br />        Transaction tr = sessio.beginTransaction();<br />        <br />        int files = sessio.createQuery("update Poblacio set poblacio = poblacio *1.05 where poblacio &lt; 200").executeUpdate();<br />        <br />        System.out.println("S'han modificat " + files + " files.");<br />        <br />        tr.rollback();<br />    }<br />}</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_1" class="block iDevice_content">
+<p class="titolet">INSERT</p>
+<div class="codi2">
+<div>INSERT INTO NomEntitat (llista_propietats)</div>
+<div style="margin-left: 30px;"><em>Sentència_select</em></div>
+</div>
+<p>Ara tindrem els següents condicionants:</p>
+<ul>
+<li>No és vàlida la sentència INSERT INTO ... VALUES ... que servia per a introduir una fila donant-li els valors. Si volem fer això, millor utilitzar <strong>save()</strong>. Per tant només podrem introduir valors procedents d'una altra taula.</li>
+<li>La sentència SELECT pot ser qualsevol sentència HQL. Només hem de cuidar que els tipus tornats per la consulta siguen els que espera INSERT (és a dir, del mateix tipus que les propietats de la classe associada a la taula).</li>
+<li>Per a la propietat <strong>id</strong>, que és la que correspon a la clau principal, podem tenir 2 opcions:
+<ul>
+<li>es pot especificar en la llista de propietats, i aleshores li haurem de proporcionar un valor.</li>
+<li>es pot ometre, sempre i quan la propietat estiga definida com <strong>increment</strong> (no <strong>assigned</strong>); això vol dir que es correspon a un camp autoincrementat. Aleshores serà el SGBD qui li assignarà el valor</li>
+</ul>
+</li>
+</ul>
+<p>Aquest seria un exemple. En ell intentem introduir una nova comarca a partir d'una hipotètica taula de comarques noves (<em>NovesComarques</em>). No la podrem provar perquè no existeix aquesta taula, millor dit, aquesta classe. L'hauríem de crear, fer-li el mapatge, i posteriorment executar açò. Per tant ho veiem únicament a mode il·lustratiu:</p>
+<div class="codi">
+<div style="margin-left: 30px;"><br class="Apple-interchange-newline" /><span style="color: #ff0000;">Transaction tr = sessio.beginTransaction();</span></div>
+<div style="margin-left: 30px;"><span style="color: #ff0000;"> </span></div>
+<div style="margin-left: 30px;"><span style="color: #ff0000;">int files = sessio.createQuery("insert into Comarca (nomC, provincia) "</span></div>
+<div style="margin-left: 360px;"><span style="color: #ff0000;"> + " select n.nomC, n.provincia from NovesComarques n").executeUpdate();</span></div>
+<div style="margin-left: 30px;"><span style="color: #ff0000;"> </span></div>
+<div style="margin-left: 30px;"><span style="color: #ff0000;">System.out.println("S'han introduït " + files + " files.");</span></div>
+<div style="margin-left: 30px;"><span style="color: #ff0000;"> </span></div>
+<div style="margin-left: 30px;"><span style="color: #ff0000;">tr.rollback();</span></div>
+<div> </div>
+</div>
+<p> </p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11__resum_del_llenguatge_hql.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

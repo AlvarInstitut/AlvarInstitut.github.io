@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.3.2 RD-Android: Accés a les dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-41"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li class="current-page-parent"><a href="2__firebase.html" class="current-page-parent daddy">2 - Firebase</a>
+   <ul>
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li class="current-page-parent"><a href="22_realtime_database_rd.html" class="current-page-parent daddy">2.2 Realtime Database (RD)</a>
+      <ul>
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li class="current-page-parent"><a href="223_rd_utilitzaci_des_dandroid.html" class="current-page-parent daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul>
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li id="active"><a href="2232_rdandroid_accs_a_les_dades.html" class="active no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2231_rdandroid_connexi_des_dandroid.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2233_rdandroid_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.3.2 RD-Android: Accés a les dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id161">
+<div class="iDevice emphasis0">
+<div id="ta161_85" class="block iDevice_content">
+<p>Una vegada vist un exemple, en el qual hem guardat dades i també les hem recuperades i hem vist els canvis en temps real, anem a veure més exemples de com accedir a les dades.</p>
+<p>En l'exemple anterior hem accedit a una parella clau-valor situada en l'arrel de la Base de Dades.</p>
+<p>Anem a veure alguns exemples de com accedir dins de l'estructura JSON guardada en Firebase. Com el que voldrem serà mostrar més informació, incorporarem un <strong>TextView </strong>per a mostrar més coses còmodament, i deixem el EditText i el Button per a poder introduir informacions.</p>
+<p>Aquesta serà ara l'estructura del <strong>activity_main.xml</strong>:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #0000ff; font-weight: bold;">xml version</span><span style="color: #008000; font-weight: bold;">="1.0" </span><span style="color: #0000ff; font-weight: bold;">encoding</span><span style="color: #008000; font-weight: bold;">="utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res/android"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res-auto"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/tools"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">:context</span><span style="color: #008000; font-weight: bold;">=".MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/ultim"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="382dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="39dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentTop</span><span style="color: #008000; font-weight: bold;">="true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight</span><span style="color: #008000; font-weight: bold;">="true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text</span><span style="color: #008000; font-weight: bold;">=""<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintEnd_toEndOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintTop_toTopOf</span><span style="color: #008000; font-weight: bold;">="parent" </span>/&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/area"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="0dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="0dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text</span><span style="color: #008000; font-weight: bold;">=""<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintBottom_toTopOf</span><span style="color: #008000; font-weight: bold;">="@+id/text"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintEnd_toEndOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintTop_toBottomOf</span><span style="color: #008000; font-weight: bold;">="@+id/ultim"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintVertical_bias</span><span style="color: #008000; font-weight: bold;">="0.261" </span>/&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">EditText<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/text"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="317dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="47dp"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentTop</span><span style="color: #008000; font-weight: bold;">="true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_centerHorizontal</span><span style="color: #008000; font-weight: bold;">="true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintBottom_toBottomOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintEnd_toStartOf</span><span style="color: #008000; font-weight: bold;">="@+id/boto"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintHorizontal_bias</span><span style="color: #008000; font-weight: bold;">="0.0"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintTop_toTopOf</span><span style="color: #008000; font-weight: bold;">="@+id/ultim"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintVertical_bias</span><span style="color: #008000; font-weight: bold;">="1.0" </span>/&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">Button<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/boto"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_below</span><span style="color: #008000; font-weight: bold;">="@+id/text"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_centerHorizontal</span><span style="color: #008000; font-weight: bold;">="true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text</span><span style="color: #008000; font-weight: bold;">="Enviar"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintBottom_toBottomOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintEnd_toEndOf</span><span style="color: #008000; font-weight: bold;">="parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintHorizontal_bias</span><span style="color: #008000; font-weight: bold;">="0.993"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">app</span><span style="color: #0000ff; font-weight: bold;">:layout_constraintStart_toStartOf</span><span style="color: #008000; font-weight: bold;">="parent" </span>/&gt;<br /><br />&lt;/<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</pre>
+<p>Així les parts que tindrem, i que ens servirà per a mostrar cadascuna de les coses que volem, de forma similar que en Eclipse seran:</p>
+<ul>
+<li>El títol de l'aplicació, que el modificarem amb un <strong>addListenerForSingleValueEvent()</strong></li>
+<li>El TextView de dalt, anomenat <strong>ultim</strong>, que el modifiquem per mig d'un <strong>addValueEventListener()</strong></li>
+<li>El TextView central que ocupa quasi tota la pantalla, anomenat <strong>area</strong>, que el modificarem amb la modificació de la llista <strong>addChildEventListener()</strong></li>
+<li>El EditText de baix, anomenat <strong>text</strong>, i el botó, que servirà per a afegir un nou element del xat</li>
+</ul>
+<p>Aquest és l'esquelet del progama:</p>
+<h2>JAVA</h2>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>androidx.appcompat.app.AppCompatActivity;<br /><br /><span style="color: #000080; font-weight: bold;">import </span>android.os.Bundle;<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.View;<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.Button;<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.EditText;<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.TextView;<br /><br /><span style="color: #000080; font-weight: bold;">import </span>com.google.firebase.database.DataSnapshot;<br /><span style="color: #000080; font-weight: bold;">import </span>com.google.firebase.database.DatabaseError;<br /><span style="color: #000080; font-weight: bold;">import </span>com.google.firebase.database.DatabaseReference;<br /><span style="color: #000080; font-weight: bold;">import </span>com.google.firebase.database.FirebaseDatabase;<br /><span style="color: #000080; font-weight: bold;">import </span>com.google.firebase.database.ValueEventListener;<br /><span style="color: #000080; font-weight: bold;">import </span>com.google.firebase.database.ChildEventListener;<br /><br /><span style="color: #000080; font-weight: bold;">public class </span>MainActivity <span style="color: #000080; font-weight: bold;">extends </span>AppCompatActivity {<br /><br />    <span style="color: #808000;">@Override<br /></span><span style="color: #808000;">    </span><span style="color: #000080; font-weight: bold;">protected void </span>onCreate(Bundle savedInstanceState) {<br />        <span style="color: #000080; font-weight: bold;">super</span>.onCreate(savedInstanceState);<br />        setContentView(R.layout.<span style="color: #660e7a; font-weight: bold; font-style: italic;">activity_main</span>);<br />        <span style="color: #000080; font-weight: bold;">final </span>TextView ultim = (TextView)findViewById(R.id.<span style="color: #660e7a; font-weight: bold; font-style: italic;">ultim</span>);<br />        <span style="color: #000080; font-weight: bold;">final </span>TextView area = (TextView)findViewById(R.id.<span style="color: #660e7a; font-weight: bold; font-style: italic;">area</span>);<br />        <span style="color: #000080; font-weight: bold;">final </span>EditText text = (EditText)findViewById(R.id.<span style="color: #660e7a; font-weight: bold; font-style: italic;">text</span>);<br /><br />        <span style="color: #000080; font-weight: bold;">final </span>Button boto = (Button)findViewById(R.id.<span style="color: #660e7a; font-weight: bold; font-style: italic;">boto</span>);<br />        boto.setText(<span style="color: #008000; font-weight: bold;">"Enviar"</span>);<br /><br />        <span style="color: #808080; font-style: italic;">// Referències a la Base de Dades i a les variables a1, nomXat i xat<br /></span><br />        <span style="color: #808080; font-style: italic;">// Exemple de guardar dades. Primer sobre a1, i despŕes sobre la llista xat<br /></span><br />        <span style="color: #808080; font-style: italic;">// Exemple de listener de lectura única addListenerForSingleValueEvent()<br /></span><span style="color: #808080; font-style: italic;">        // Per a posar el títol. Sobre nomXat<br /></span><br />        <span style="color: #808080; font-style: italic;">// Exemple de listener de lectura contínua addValueEventListener()<br /></span><span style="color: #808080; font-style: italic;">        // Per a posar l'últim missatge registrat. Sobre a1<br /></span><br />        <span style="color: #808080; font-style: italic;">// Exemple de listener d'una llista addChildEventListener()<br /></span><span style="color: #808080; font-style: italic;">        // Per a posar tota la llista de missatges. Sobre xat<br /></span><br />    }<br />}</pre>
+<h2>KOTLIN</h2>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle<br />
+import kotlinx.android.synthetic.main.activity_main.*<br />
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.ValueEventListener
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        boto.text = "Enviar"
+        
+        // Referències a la Base de Dades i a les variables a1, nomXat i xat
+
+        // Exemple de guardar dades. Primer sobre a1, i despŕes sobre la llista xat
+	
+        // Exemple de listener de lectura única addListenerForSingleValueEvent()
+        // Per a posar el títol. Sobre nomXat
+	
+        // Exemple de listener de lectura contínua addValueEventListener()
+        // Per a posar l'últim missatge registrat. Sobre a1
+	
+        // Exemple de listener d'una llista addChildEventListener()
+        // Per a posar tota la llista de missatges. Sobre xat
+
+    }
+}</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id162">
+<div class="iDevice emphasis0">
+<div id="ta162_85" class="block iDevice_content">
+<p class="titolet">Referència a la Base de Dades i a les dades concretes a les quals volem accedir</p>
+<p>Podem fer referència de forma individual a cadascuna de les "variables" guardades, és a dir a cadascuna de les parelles clau-valor. En l'exemple anterior havíem utilitzat aquest:</p>
+<h3>JAVA</h3>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;">FirebaseDatabase database = FirebaseDatabase.<span style="font-style: italic;">getInstance</span>();</pre>
+<p>I per a les parelles clau-valor que utilitzarem en l'exemple:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">final </span>DatabaseReference refA1 = database.getReference(<span style="color: #008000; font-weight: bold;">"a1"</span>);<br /><span style="color: #000080; font-weight: bold;">final </span>DatabaseReference nomXat = database.getReference(<span style="color: #008000; font-weight: bold;">"nomXat"</span>);<br /><span style="color: #000080; font-weight: bold;">final </span>DatabaseReference xat = database.getReference(<span style="color: #008000; font-weight: bold;">"xat"</span>);</pre>
+<p>observeu com no és cap impediment que ens toque definir-les com a <strong>final</strong>, ja que aquesta referència no ha de canviar en cap moment després d'inicialitzar-la. Si que podem fer canviar el seu valor, però la referència sempre ha d'apuntar al mateix lloc.</p>
+<h3>KOTLIN</h3>
+<p>L'equivalent en Kotlin serà:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>val database = FirebaseDatabase.getInstance()
+val refA1 = database.getReference("a1")
+val nomXat = database.getReference("nomXat")
+val xat = database.getReference("xat")
+</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id163">
+<div class="iDevice emphasis0">
+<div id="ta163_85" class="block iDevice_content">
+<p class="titolet">Guardar dades</p>
+<p>L'operació de guardar és més senzilla que la de recuperar. Disposem del mètode <strong>setValue()</strong> de la referència a la dada a la que volem accedir. En l'exemple de la pregunta anterior guardàvem la dada d'aquesta manera:</p>
+<p>Per a <strong>JAVA</strong>:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #660e7a;">refA1</span>.setValue(<span style="color: #660e7a;">text</span>.getText().toString());</pre>
+<p>Per a <strong>KOTLIN</strong>:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;">refA1.setValue(text.<span style="color: #660e7a; font-style: italic;">text</span>.toString())</pre>
+<p>En l'operació de guardar si la parella clau-valor on es va a guardar existia, doncs modificarà el valor. I si no existia, la crearà.</p>
+<p></p>
+<p>En el nostre exemple guardarem en el moment d'apretar el botó. Inicialment ho farem sobre <strong>a1</strong>, encara que quan vegem les llistes ho canviarem</p>
+<h2>JAVA</h2>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de guardar dades. Primes sobre a1, i despŕes sobre la llista xat
+        boto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                refA1.setValue(text.getText().toString());
+                text.setText("");
+            }
+        });
+</code></pre>
+</div>
+</div>
+<h2>KOTLIN</h2>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de guardar dades. Primes sobre a1, i despŕes sobre la llista xat
+        boto.setOnClickListener {
+            refA1.setValue(text.text.toString())
+            text.setText("")
+        }
+</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id164">
+<div class="iDevice emphasis0">
+<div id="ta164_85" class="block iDevice_content">
+<p class="titolet">Recuperar dades</p>
+<p>Recordem que podem muntar dos tipus de Listeners, però el seu funcionament serà similar</p>
+<ul>
+<li>Els que escolten només una vegada al principi: <strong>addListenerForSingleValueEvent()</strong></li>
+<li>Els que es queden escoltant tota l'estona: <strong>addValueEventListener()</strong><strong></strong></li>
+</ul>
+<p>En ambdós casos obtenim com a paràmetre un <strong>Data</strong><strong>Snapshot</strong> (còpia) de la dada registrada. I d'aquest tipus, <strong>DataSnapshot</strong>, sí que tenim el mètode <strong>getValue()</strong> per a accedir a la dada. Ambdós tipus de Listeners tenen un tractament absolutament similar, únicament amb la diferència abans esmentada que el primer està sempre escoltant, i el segon només escolta una vegada al principi.</p>
+<p>El mètode <strong>getValue()</strong> admet un paràmetre que serà la classe del tipus que volem obtenir. Podem posar les següents:</p>
+<ul>
+<li><strong>String.class</strong>, i aleshores el que obtenim s'interpretarà com un String</li>
+<li><strong>Double.class</strong>, i s'interpretarà com un número real de doble precisió</li>
+<li><strong>Boolean.class</strong>, i s'interptretarà com un valor booleà.</li>
+<li>També es poden posar classes per a obtenir tot un objecte (Map) i per a una llista (List). Fins i tot es podria arribar a posar una classe definida per nosaltres. Però amb els anteriors nosaltres en tindrem prou</li>
+</ul>
+<p>Mirem la manera d'utilitzar una i altra. Ho apliquem a dues referències diferents, per a que pugueu comprovar que una sempre té efecte, mentre que l'altra només té efecte la primera vegada, i si després es modifiquen les dades, l'aplicació no s'enterarà.</p>
+<h2>addListenerForSingleValueEvent()</h2>
+<p>En aquest primer exemple anem a agafar una única vegada la dada que ens interessa, i per tant  utilitzarem <strong>addListenerForSingleValueEvent()</strong>. Ens servirà per a posar el títol de l'aplicació, i ho farem consultant la clau <strong>nomXat</strong>, que la tindrem creada des de la pregunta 2.2.2.2 de la part de Java:</p>
+<h3>JAVA</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de listener de lectura única addListenerForSingleValueEvent()
+        // Per a posar el títol. Sobre nomXat
+        nomXat.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                setTitle(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+            }
+        });
+</code></pre>
+</div>
+</div>
+<h3><code></code></h3>
+<h3>KOTLIN<code></code></h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de listener de lectura única addListenerForSingleValue()
+        // Per a posar el títol. Sobre nomXat
+        nomXat.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val value = dataSnapshot.getValue(String::class.java)
+                setTitle(value)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+<h2><strong>addValueEventListener()</strong></h2>
+<p>És la que sempre està escoltant. Per tant qualsevol modificació en la Base de Dades es veurà reflectit, és a dir, canviarà el contingut del<strong> TextView ultim</strong></p>
+<h3>JAVA</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>		// Exemple de listener de lectura contínua addValueEventListener()
+		// Per a posar l'últim missatge registrat. Sobre a1
+        refA1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                ultim.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+            }
+        });
+</code></pre>
+</div>
+</div>
+<h3>KOTLIN</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>		// Exemple de listener de lectura contínua addValueEventListener()
+		// Per a posar l'últim missatge registrat. Sobre a1
+        refA1.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val value = dataSnapshot.getValue(String::class.java)
+                ultim.setText(value)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id165">
+<div class="iDevice emphasis0">
+<div id="ta165_85" class="block iDevice_content">
+<p class="titolet">Tractament de llistes</p>
+<p>Ja vam veure en la pregunta 2.2.2.2 de la part de Java que la manera més pràtica d'inserir elements en una llista, per a no haver de dur un manteniment dels índex, era amb el mètode <strong>push()</strong>, i que per a no tenir efectes no desitjats era millor posar tot l'element d'una vegada. Així, si hem de posar el nom de l'usuari que farà l'entrada del xat i el contingut del missatge, millor crear un objecte que ho continga tot, i col·locar en la llista aquest objecte.</p>
+<p>Crearem per tant una classe anomenada <strong>Missatge</strong>, que inclourà les propietats <strong>nom</strong> i <strong>contingut</strong>. Crearem un objecte <strong>Missatge </strong>amb uns nous valors, i veurem que el podem guardar perfectament.</p>
+<p>Primer definim la classe. El millor és que el guardem com una classe nova, és a dir com a <strong>Missatge.java </strong>o <strong>Missatge.kt</strong><strong></strong>:</p>
+<h3>JAVA</h3>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">public class </span>Missatge{<br />    <span style="color: #000080; font-weight: bold;">public </span>String <span style="color: #660e7a; font-weight: bold;">nom</span>;<br />    <span style="color: #000080; font-weight: bold;">public </span>String <span style="color: #660e7a; font-weight: bold;">contingut</span>;<br /><br />    <span style="color: #000080; font-weight: bold;">public </span>Missatge(){<br />    }<br /><br />    <span style="color: #000080; font-weight: bold;">public </span>Missatge(String nom,String cont){<br />        <span style="color: #000080; font-weight: bold;">this</span>.<span style="color: #660e7a; font-weight: bold;">nom</span>=nom;<br />        <span style="color: #000080; font-weight: bold;">this</span>.<span style="color: #660e7a; font-weight: bold;">contingut</span>=cont;<br />    }<br />}</pre>
+<p>Haurem de tenir també els <strong>getters</strong> i <strong>setters</strong>.</p>
+<h3>KOTLIN</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>class Missatge(val nom: String, val contingut: String) {}</code></pre>
+</div>
+</div>
+<p></p>
+<p>Per a <strong>guardar</strong>, col·locaríem aquestes sentències entre les accions del OnClik del botó, substituint les sentències que modificaven <strong>a1</strong>, perquè ara afegirem a la llista <strong>xat</strong> :</p>
+<h3>JAVA</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de guardar dades. Primer sobre a1, i despŕes sobre la llista xat
+        boto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                refA1.setValue(text.getText().toString());
+
+                Missatge m = new Missatge("Usuari1",text.getText().toString());
+                xat.push().setValue(m);
+
+                text.setText("");
+            }
+        });
+</code></pre>
+</div>
+</div>
+<p><br /><code></code></p>
+<h3><code></code></h3>
+<h3>KOTLIN<code></code></h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de guardar dades. Primer sobre a1, i despŕes sobre la llista xat
+        boto.setOnClickListener {
+            refA1.setValue(text.text.toString())
+            xat.push().setValue(Missatge("Usuari1",text.text.toString()))
+            text.setText("")
+        }	
+</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"><br /><br /></p>
+<p>Ara només ens falta el tractament de <strong>lectura</strong> de les llistes.</p>
+<p>Utilitzarem el Listener <strong>ChildEventListener</strong>, i hem d'utilitzar el mètode <strong>addChildEventListener()</strong> sobre la llista. Voldrà la implementació dels mètodes: <strong>onChildAdded()</strong>, <strong>onChildChanged()</strong>, <strong>onChildRemoved()</strong> i <strong>onChildMoved()</strong>, però nosaltres només utilitzarem <strong>onChildAdded()</strong></p>
+<p>Al <strong>dataSnapshot</strong> arriba únicament l'element introduït, modificat o esborrat, no tota la llista. Per tant és molt còmode. També arriba una referència a l'element anterior com a segon paràmetre, per si hem de fer algun tractament, cosa que en aquest exemple no ens fa falta:</p>
+<h3>JAVA</h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>		// Exemple de listener d'una llista addChildEventListener()
+		// Per a posar tota la llista de missatges. Sobre xat
+		xat.addChildEventListener(new ChildEventListener() {
+		    @Override
+		    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+		        area.append(dataSnapshot.child("nom").getValue(String.class) + ": " + dataSnapshot.child("contingut").getValue(String.class) + "\n");
+		    }
+		    @Override
+		    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+		    }
+		    @Override
+		    public void onChildRemoved(DataSnapshot dataSnapshot) {
+		    }
+		    @Override
+		    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+		    }
+		    @Override
+		    public void onCancelled(DatabaseError databaseError) {
+		    }
+		});
+</code></pre>
+</div>
+</div>
+<h3>KOTLIN<code></code></h3>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // Exemple de listener d'una llista addChildEventListener()
+        // Per a posar tota la llista de missatges. Sobre xat
+        xat.addChildEventListener(object : ChildEventListener {
+            override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
+                area.append(
+                    dataSnapshot.child("nom").getValue(String::class.java) + ": " + dataSnapshot.child("contingut").getValue(String::class.java) + "\n"                    );
+            }
+            override fun onChildChanged(dataSnapshot: DataSnapshot, s: String?) {
+            }
+            override fun onChildRemoved(dataSnapshot: DataSnapshot) {
+            }
+            override fun onChildMoved(dataSnapshot: DataSnapshot, s: String?) {
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        })
+</code></pre>
+</div>
+</div>
+<p></p>
+<p>Aquest seria el resultat:</p>
+<p style="text-align: center;"></p>
+<p><img src="T7_2_2_3_2_5.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="403" height="720" /></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2231_rdandroid_connexi_des_dandroid.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2233_rdandroid_tot_lexemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

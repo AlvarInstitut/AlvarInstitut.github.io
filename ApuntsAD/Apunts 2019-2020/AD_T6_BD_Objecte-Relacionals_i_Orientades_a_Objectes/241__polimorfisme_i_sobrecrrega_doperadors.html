@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.4.1 - Polimorfisme i sobrecàrrega d'operadors | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_objecterelacionals.html" class="current-page-parent daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul>
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="24__altres_aportacions.html" class="current-page-parent daddy">2.4 - Altres aportacions</a>
+      <ul>
+         <li id="active"><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="active no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="24__altres_aportacions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="242__herncia.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_1" class="block iDevice_content">
+<p class="titolet">Polimorfisme</p>
+<p>PostgreSQL permet el <strong>polimorfisme de sobrec&agrave;rrega</strong>, &eacute;s a dir, construir una funci&oacute; o procediment m&eacute;s d'una vegada amb diferents par&agrave;metres. PostgreSQL sabr&agrave; quin s'ha d'executar pels par&agrave;metres.</p>
+<p>El curs passat vam crear funcions amb PL/pgSQL, el llenguatge de programaci&oacute; de PostgreSQL. Anem a veure uns exemples en els quals s'observa que podem crear 2 funcions amb el mateix nom per&ograve; diferents par&agrave;metres (en quantitat o en tipus dels par&agrave;metres), &eacute;s a dir&nbsp;<strong>polimorfisme de sobrec&agrave;rrega</strong>.</p>
+<p>En aquest primer exemple la difer&egrave;ncia entre les 2 funcions que es diuen igual &eacute;s sobre el n&uacute;mero de par&agrave;metres.</p>
+<table align="center">
+<tbody>
+<tr>
+<td>
+<div class="codi">
+<div>CREATE OR REPLACE FUNCTION MAX(a numeric,b numeric)</div>
+<div style="margin-left: 30px;">RETURNS numeric as '</div>
+<div>BEGIN</div>
+<div style="margin-left: 30px;">IF (a &gt;= b)</div>
+<div style="margin-left: 60px;">THEN RETURN a;</div>
+<div style="margin-left: 60px;">ELSE RETURN b;</div>
+<div style="margin-left: 30px;">END IF;</div>
+<div>END; ' LANGUAGE plpgsql</div>
+<div>&nbsp;</div>
+</div>
+</td>
+<td>
+<div class="codi">
+<div>CREATE OR REPLACE FUNCTION MAX(a numeric,b numeric,c numeric)</div>
+<div style="margin-left: 30px;">RETURNS numeric as '</div>
+<div>BEGIN</div>
+<div style="margin-left: 30px;">RETURN MAX(MAX(a,b),c);</div>
+<div>END; ' LANGUAGE plpgsql</div>
+<div>&nbsp;</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Aquest segon exemple &eacute;s sobre el tipus de dades dels par&agrave;metres. Ens definim una funci&oacute; anomenada <strong>enganxa&nbsp;</strong>sobre dos par&agrave;metres de tipus text, que el que fa &eacute;s senzillament concatenar. Per&ograve; a continuaci&oacute; ens definim una altre funci&oacute;&nbsp;<strong>enganxa</strong> sobre un text i un enter, que el que fa &eacute;s repetir el text tantes vegades com diu l'enter.</p>
+<table align="center">
+<tbody>
+<tr>
+<td>
+<div class="codi">
+<div>CREATE OR REPLACE FUNCTION ENGANXA(a text, b text)</div>
+<div style="margin-left: 30px;">RETURNS text AS '</div>
+<div>BEGIN</div>
+<div style="margin-left: 30px;">RETURN a || b;</div>
+<div>END; ' LANGUAGE plpgsql</div>
+</div>
+</td>
+<td>
+<div class="codi">
+<div>CREATE OR REPLACE FUNCTION ENGANXA(a text, n integer)</div>
+<div style="margin-left: 30px;">RETURNS text AS '</div>
+<div>DECLARE</div>
+<div style="margin-left: 30px;">r text := '''';</div>
+<div>BEGIN</div>
+<div style="margin-left: 30px;">FOR i IN 1..n LOOP</div>
+<div style="margin-left: 60px;">r := r || a;</div>
+<div style="margin-left: 30px;">END LOOP;</div>
+<div style="margin-left: 30px;">RETURN r;</div>
+<div>END; ' LANGUAGE plpgsql</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Ens funcionar&agrave; tant&nbsp;<strong>SELECT ENGANXA('Hola','Ad&eacute;u)</strong> com tamb&eacute;&nbsp;<strong>ENGANXA('Hola',4)</strong>, fent coses molt diferents. Ara b&eacute;, el que no funcionar&agrave; &eacute;s <strong>SELECT ENGANXA(4,'Hola')</strong>, ja que no tenim definida la funci&oacute;&nbsp;<strong>ENGANXA(integer,text)</strong>.</p>
+<p>&nbsp;</p>
+<p class="titolet">Sobrec&agrave;rrega d'operadors</p>
+<p>Nosaltres podem definir operadors.&nbsp;Per a definir un nou operador especificarem el s&iacute;mbol que utilitzarem, el o els operands i la funci&oacute; que l'implementa.</p>
+<p>La sintaxi &eacute;s:</p>
+<div class="codi">CREATE OPERATOR name (<br />
+<blockquote>PROCEDURE = funcname<br /> [, LEFTARG = lefttype ] [, RIGHTARG = righttype ]<br /> [, COMMUTATOR = com_op ] [, NEGATOR = neg_op ]<br /> ...</blockquote>
+)</div>
+<p>Hi ha m&eacute;s opcions, que per a la utilitat d'aquest curs obviarem.</p>
+<ul>
+<li>En el nom de l'operador posarem un o m&eacute;s d'un car&agrave;cters de la seg&uuml;ent llista:<br />
+<div align="center"><strong> + - * / &lt; &gt; = ~ ! @ # % ^ &amp; | ` ?</strong></div>
+Hi ha algunes limitacions, que podem veure en la documentaci&oacute;.<br />
+<div>&nbsp;</div>
+</li>
+<li>Sempre hem de posar la funci&oacute; que implementa l'operador.
+<div>&nbsp;</div>
+</li>
+<li>Si l'operador &eacute;s d'un &uacute;nic operand, l'haurem d'especificar (el de la dreta o de l'esquerra, el que preferim). Si &eacute;s de dos operands s'hauren d'especificar els dos.
+<div>&nbsp;</div>
+</li>
+<li><strong>COMMUTATOR </strong>indica un altre operador que funciona igual canviant l'ordre dels par&agrave;metres (en num&egrave;rics el commutador de <strong>&lt;</strong> &eacute;s <strong>&gt;</strong>)
+<div>&nbsp;</div>
+</li>
+<li><strong>NEGATOR </strong>indica un altre operador equivalent a negar aquest (en num&egrave;rics el negador de <strong>&lt;</strong> &eacute;s <strong>&gt;=</strong>)</li>
+</ul>
+<p>Per exemple anem a crear l'operador <strong>M&Agrave;XIM </strong>(<strong>/|</strong>) que calcula el m&agrave;xim entre dos n&uacute;meros. Utilitzarem la funci&oacute; <strong>MAX&nbsp;</strong>que ja tenim creada.</p>
+<div class="codiSQL">CREATE OPERATOR /| ( <br /> PROCEDURE = MAX, LEFTARG = numeric, RIGHTARG = numeric);</div>
+<p>Podem comprovar el seu funcionament amb la sent&egrave;ncia:</p>
+<div class="codiSQL">SELECT 23 /| 15; &nbsp;</div>
+<p>&nbsp;</p>
+<p>Anem a veure ara la sobrec&agrave;rrega d'operadors. Evidenlment estan definit els operador&nbsp;<strong>+</strong> (suma) i&nbsp;<strong>*</strong> (multiplicaci&oacute;) per a vaolrs num&egrave;rics. Per&ograve; no ho estan per a valors de text.</p>
+<ul>
+<li>Anem a sobrecarregar l'operador suma (<strong>+</strong>) per a operands de text, de manera que es fa&ccedil;a una concatenaci&oacute; (funci&oacute;&nbsp;<strong>ENGANXA(text,text)</strong>)&nbsp;)</li>
+<li>Anem a sobrecarregar l'operador producte (<strong>*</strong>) per a operand de text i enter, de manera que es repetesca el text tantes vegades com indica l'enter, &eacute;s a dir, utilitzarem la funcio&nbsp;<strong>ENGANXA(text,integer)</strong>.</li>
+</ul>
+<table align="center">
+<tbody>
+<tr>
+<td>
+<div class="codiSQL">
+<div>CREATE OPERATOR + (<br />PROCEDURE = ENGANXA, LEFTARG = text, RIGHTARG = text);</div>
+</div>
+</td>
+<td>
+<div class="codiSQL">
+<div>CREATE OPERATOR * (<br />PROCEDURE = ENGANXA, LEFTARG = text, RIGHTARG = integer);</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="24__altres_aportacions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="242__herncia.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.- PHP: Accés a les dades | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Muntatge d'un WebService</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_instalaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="no-ch">2.- Instal·ació del Servidor Web i el Servidor de Bases de Dades</a></li>
+   <li><a href="3_utilitzaci_de_xampp.html" class="daddy">3.- Utilització de XAMPP</a>
+   <ul class="other-section">
+      <li><a href="31__mysql.html" class="no-ch">3.1 - MySQL</a></li>
+      <li><a href="32__ftp.html" class="no-ch">3.2 - FTP</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="4_php_accs_a_les_dades.html" class="active no-ch">4.- PHP: Accés a les dades</a></li>
+   <li><a href="5_json.html" class="no-ch">5.- JSON</a></li>
+   <li><a href="6_accs_des_de_java.html" class="no-ch">6.- Accés des de Java</a></li>
+   <li><a href="7_accs_des_dandroid.html" class="no-ch">7.- Accés des d'Android</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32__ftp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_json.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.- PHP: Accés a les dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_85" class="block iDevice_content">
+<p><strong>PHP</strong> (<b>H</b>ipertext <b>P</b>reprocessor) és un llenguatge per a generar pàgines web que s'executa en el mateix servidor. No és com el JavaScript, que "viatja" des del servidor fins al client entre el codi HTML, i el navegador és qui l'executarà. En canvi PHP s'executa en el servidor, cosa que ens anirà bé per a que es faça la consulta a la Base de Dades, es genere el resultat i s'envie al client.</p>
+<p>Teniu un pdf amb un resum de pdf. Són uns apunts prou antics, però únicament us hauríeu de fixar en la sintaxi de PHP.</p>
+<p>En aquest annex ens centrarem únicament en la part de PHP que serveix per a accedir al SGBD, concretament a <strong>MySQL</strong>.</p>
+<p>Per a connectar a MySQL, ho farem en 2 passos: primer connectarem al servidor i després ens connectarem a la Base de Dades:</p>
+<ul>
+<li>Per a connectar al servidor s'utilitza la funció <strong>mysqli_connect()</strong>, passant-li com a paràmetres el nom o l'adreça del servidor, l'usuari, la contrasenya i la Base de Dades a la qual connectar. Segurament l'usuari <strong>root</strong> no tindrà contrasenya, però això dependrà òbviament de la instal·lació que haureu fet</li>
+</ul>
+<p class="codi">&lt;?php <br />$con = mysqli_connect("localhost", "root","","Rutes");  <br />?&gt;</p>
+<p></p>
+<p>Per a accedir a les dades, executarem una consulta per mig de la funció <strong>mysqli_query()</strong>, a la qual li passem com a paràmetres l'identificatiu de la connexió i la consulta (prèviament haurem d'haver connectat i seleccionat la BD).</p>
+<p>El resultat serà un cursor que podrem recórrer per mig de <strong>mysqli_fetch_array()</strong> sobre el cursor, cosa que ens donarà un array amb el contingut de la fila. El primer camp estarà en el subíndex 0.</p>
+<p class="codi">$res = mysqli_query($con,"SELECT * FROM RUTES"); <br />while ($fila = mysqli_fetch_array($res))<br />    //tractament</p>
+<p></p>
+<p>Provem tot l'anterior en el següent exemple. Guardeu-lo per exemple com <strong>rutes_1.php</strong> en el servidor.</p>
+<p class="codi">&lt;?php <br />$con = mysqli_connect("localhost", "root","","Rutes"); <br />$res = mysqli_query($con,"SELECT * FROM RUTES"); <br />while ($fila = mysqli_fetch_array($res))<br />    echo $fila[0] . ".- " . $fila[1] . "&lt;br/&gt;";<br />?&gt;</p>
+<p>El resultat serà el següent:</p>
+<p style="text-align: center;"><img src="Annex_WebService_4_1.png" width="1391" height="459" /></p>
+<p>Ja estem accedint a la Base de Dades, i ens mostra el reultat de la consulta. Només ens queda guardar-lo en format JSON. Si no volem donar-li un format personal, és extraordinàriment senzill: ens creem un array on anem acumulant totes les files que venen del cursor (observeu de quina forma més curiasa es pot fer en PHP). Al final utilitzem la funció <strong>json_encode()</strong>, passant-li com a paràmetre aquest array</p>
+<p>Guardeu el següent exemple amb el nom <strong>rutes_2.php</strong>, accediu des d'un navegador, i obtindreu les dades en JSON.</p>
+<p class="codi">&lt;?php <br />$con = mysqli_connect("localhost", "root","","Rutes"); <br />$res = mysqli_query($con,"SELECT * FROM RUTES"); <br />$json = array();<br />while ($fila = mysqli_fetch_array($res))<br />    $json[] = $fila;<br />echo json_encode($json);<br /><br />?&gt;</p>
+<p>I aquest seria el resultat:</p>
+<p style="text-align: center;"><img src="Annex_WebService_4_2.png" width="1391" height="459" /></p>
+<p style="text-align: justify;">Ens podem plantejar també accedir a aquest Web Service per a traure els punts d'una determinada ruta, també amb format JSON. El guardarem com a <strong>punts.php</strong></p>
+<p style="text-align: justify;">La diferència amb el programeta anterior és que ara li ha d'arribar un paràmetre, amb el número de la ruta de la qual volem els punts. La manera més senzilla d'enviar és amb el mètode GET, que consisteix a passar-lo en la URL separat del nom de la pàgina per un interrogant, i posar el nom del paràmetre, un igual, i el valor del paràmetre. És a dir, que si volem els punts de la ruta 1, construirem la URL:</p>
+<p style="text-align: justify;"><a href="http://localhost/punts.php?num_r=1">http://localhost/punts.php?num_r=1</a></p>
+<p style="text-align: justify;">Des de PHP, la manera d'agafar els paràmetres passats pel mètode GET és amb l'array <strong>$_GET</strong>. Per exemple si volem agafar el paràmetre <strong>num_r</strong> posaríem: <strong>$_GET["num_r<em></em>"]</strong>.</p>
+<p style="text-align: justify;">Guardeu el següent exemple amb el nom <strong>punts.php</strong>:</p>
+<p class="codi">&lt;?php<br />$con = mysqli_connect("localhost", "root","","Rutes");<br />$res = mysqli_query($con,"SELECT * FROM PUNTS WHERE num_r=" . $_GET["num_r"]);<br />$json = array();<br />while ($fila = mysqli_fetch_array($res))<br />    $json[] = array_map('utf8_encode', $fila);<br /><br />echo json_encode($json);<br />?&gt;</p>
+<p style="text-align: justify;">I aquest seria el resultat. Observeu com en la URL hem posat el paràmetre <strong>num_r</strong> amb el valor 1.</p>
+<p style="text-align: justify;"><img src="Annex_WebService_4_1.1.png" alt="" width="1280" height="836" /></p>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32__ftp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_json.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

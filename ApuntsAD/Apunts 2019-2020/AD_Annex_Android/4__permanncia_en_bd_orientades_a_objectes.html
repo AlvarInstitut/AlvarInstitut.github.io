@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4 - Permanència en BD Orientades a Objectes | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__permanncia_en_fitxers.html" class="daddy">2 - Permanència en fitxers</a>
+   <ul class="other-section">
+      <li><a href="21__exemple.html" class="no-ch">2.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="3__permanncia_en_bd_relacionals.html" class="daddy">3 - Permanència en BD Relacionals</a>
+   <ul class="other-section">
+      <li><a href="31__connexi_remota.html" class="no-ch">3.1 - Connexió remota</a></li>
+      <li><a href="32__connexi_local.html" class="daddy">3.2 - Connexió local</a>
+      <ul class="other-section">
+         <li><a href="321__exemple.html" class="no-ch">3.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="active no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="321__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4 - Permanència en BD Orientades a Objectes</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_85" class="block iDevice_content">
+<p>En el Tema 6, segona part, hem vist una Base de Dades Orientada a Objectes, DB4O, a la qual era extremadament senzill guardar els objectes, per més complicats que siguen. Utilitzàvem la versió incrustada (<em>embedded</em>) de DB4O, amb la qual era suficient afegir unes llibreries al projecte de Java.</p>
+<p>Afortunadament, en Android serà igual de senzill. Haurem d'anar en compte d'incloure poques llibreries, ja que en els dispositius mòbils la grandària de l'aplicació és un punt crític. Intentarem incloure únicament un jar: <strong>db4o-8.0.276.16149-core-java5.jar</strong> (1,5 Mb) que com veiem és el cor. Si ens féra falta alguna utilitat no inclosa com podria ser per a fer una recerca, podríem intentar col·locar el jar que ho inclou tot, en compte de l'anterior: <strong>db4o-8.0.276.16149-all-java5.jar</strong> (2,5 Mb)</p>
+<p>Per a incloure el jar, el més senzill és copiar-lo dins de <strong>app -&gt; libs</strong> del projecte, i posteriorment apretar emb el botó de la dreta i triar <strong>Add as library</strong>.</p>
+<p>Ho comprovarem amb un exemple que guardarà dades de la classe <strong>Empleat</strong> ja utilitzada en el Tema 6, part 2. Recordem que en l'empleat, a banda de guardar dades normals com el nom, el nit, l'edat, ... també guardàvem la foto, un currículum, l'adreça (de tipus <strong>Adreca</strong>, que constava de carrer, codi postal i població), un llistat de correus electrònics i un llistat de telèfons (de tipus <strong>Telefon</strong>, que constava d'un booleà que marcava si el telèfon era mòbil o no, i el número de telèfon).</p>
+<p>Ho farem sobre un projecte nou, anomenat per exemple <strong>ConnexioDB4OJava</strong> i/o <strong>ConnexioDB4OKotlin</strong>.</p>
+<ul>
+<li>
+<p>Construïu un nou projecte anomenat <strong>ConnexioDB4OJava</strong> i/o <strong>ConnexioDB4OKotlin</strong> sobre el paquet <strong>com.example.connexiodb4ojava </strong>o <strong>com.example.connexiodb4okotlin</strong>, respectivament</p>
+</li>
+<li>
+<p>Incorporeu les classes <strong>Empleat.java</strong>, <strong>Adreca.java</strong> i <strong>Telefon.java</strong>, ja creades en el tema 6, part 2.</p>
+</li>
+<li>
+<p>Afegiu la llibreria <strong>db4o-8.0.276.16149-core-java5.jar</strong><strong></strong>. La manera més còmoda és copiar-la en <strong>app -&gt; libs</strong>, i posteriorment apretar emb el botó de la dreta i triar <strong>Add as library</strong>.</p>
+</li>
+<li>
+<p>Creeu el següent <strong>activity_main.xml</strong>:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #0000ff; font-weight: bold;">xml version</span><span style="color: #008000; font-weight: bold;">="1.0" </span><span style="color: #0000ff; font-weight: bold;">encoding</span><span style="color: #008000; font-weight: bold;">="utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/apk/res/android"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #008000; font-weight: bold;">="http://schemas.android.com/tools"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">:context</span><span style="color: #008000; font-weight: bold;">=".MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text</span><span style="color: #008000; font-weight: bold;">=""<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id</span><span style="color: #008000; font-weight: bold;">="@+id/text"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width</span><span style="color: #008000; font-weight: bold;">="match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height</span><span style="color: #008000; font-weight: bold;">="match_parent" </span>/&gt;<br /><br />&lt;/<span style="color: #000080; font-weight: bold;">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</pre>
+<p>Com podeu observar, tan sols hi ha un TextView per a poder visualitzar si connectem i observar algunes dades</p>
+</li>
+</ul>
+<p></p>
+<h2></h2>
+<h2>JAVA</h2>
+<ul>
+<li>
+<p>Creeu el següent programa principal:</p>
+</li>
+</ul>
+<div class="highlighted-code language-js">
+<div>
+<pre><code>package com.example.connexiodb4ojava;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+
+import java.io.File;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        TextView text = (TextView) findViewById(R.id.text);
+
+        File f = new File("/data/data/com.example.connexiodb4ojava/databases");
+
+        if ( ! f.exists()) {
+            f.mkdirs();
+            ObjectContainer bd = Db4oEmbedded.openFile("/data/data/com.example.connexiodb4ojava/databases/Empleats.db4o");
+            Empleat e1 = new Empleat("11111111a","Albert",10,40,1000,null,null,null,null,null);
+            //les dades més complicades les introduïm de forma especial
+            e1.setAdreca(new Adreca("C/ Major, 7","12001","Castelló"));
+            String[] corr = {"alu11111111a@ieselcaminas.org"};
+            e1.setCorreus_e(corr);
+            Telefon[] tels = {new Telefon(true,"666777888"),new Telefon(false,"964112233")};
+            e1.setTelefons(tels);
+            Empleat e2 = new Empleat("22222222b", "Berta", 10, 35, 1700, null, null, null, null, null);
+            Empleat e3 = new Empleat("33333333c", "Clàudia", 20, 37, 1500, null, null, null, null, null);
+            text.append("S'ha creat la Base de Dades Orientada a Objectes");
+            bd.store(e1);
+            bd.store(e2);
+            bd.store(e3);
+            bd.close();
+        }
+        else {
+            ObjectContainer bd1 = Db4oEmbedded.openFile("/data/data/com.example.connexiodb4ojava/databases/Empleats.db4o");
+            ObjectSet&lt;Empleat&gt; llista = bd1.queryByExample(new Empleat());
+            text.append("S'han trobat " + llista.size() + " empleats: \n");
+            for (Empleat e : llista) {
+                text.append("Nif: " + e.getNif() + ". Nom: " + e.getNom() + ". Departament: " + e.getDepartament() + "\n");
+                text.append("\tLlista de telèfons:\n");
+                if (e.getTelefons()!=null){
+                    for (Telefon t : e.getTelefons()){
+                        text.append("\t\t"+t.getNumero());
+                        if (t.isMobil())
+                            text.append("(mòbil)\n");
+                        else
+                            text.append("(fixe)\n");
+                    }
+                }
+            }
+            bd1.close();
+        }
+
+    }
+}</code></pre>
+</div>
+</div>
+<p></p>
+<p></p>
+<h2>KOTLIN</h2>
+<ul>
+<li>Creeu el següent programa principal:</li>
+</ul>
+<div class="highlighted-code language-js">
+<div>
+<pre><code>package com.example.connexiodb4okotlin
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.TextView
+import com.db4o.Db4oEmbedded
+import java.io.File
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val text = findViewById(R.id.text) as TextView
+
+        val f = File("/data/data/com.example.connexiodb4okotlin/databases")
+
+        if (!f.exists()) {
+            f.mkdirs()
+            val bd = Db4oEmbedded.openFile("/data/data/com.example.connexiodb4okotlin/databases/Empleats.db4o")
+            val e1 = Empleat("11111111a", "Albert", 10, 40, 1000.0, null, null, null, null, null)
+            //les dades més complicades les introduïm de forma especial
+            e1.setAdreca(Adreca("C/ Major, 7", "12001", "Castelló"))
+            val corr = arrayOf("alu11111111a@ieselcaminas.org")
+            e1.setCorreus_e(corr)
+            val tels = arrayOf&lt;Telefon&gt;(Telefon(true, "666777888"), Telefon(false, "964112233"))
+            e1.setTelefons(tels)
+            val e2 = Empleat("22222222b", "Berta", 10, 35, 1700.0, null, null, null, null, null)
+            val e3 = Empleat("33333333c", "Clàudia", 20, 37, 1500.0, null, null, null, null, null)
+            text.append("S'ha creat la Base de Dades Orientada a Objectes")
+            bd.store(e1)
+            bd.store(e2)
+            bd.store(e3)
+            bd.close()
+        } else {
+            val bd1 = Db4oEmbedded.openFile("/data/data/com.example.connexiodb4okotlin/databases/Empleats.db4o")
+            val llista = bd1.queryByExample&lt;Empleat&gt;(Empleat())
+            text.append("S'han trobat " + llista.size + " empleats: \n")
+            for (e in llista) {
+                text.append("Nif: " + e.getNif() + ". Nom: " + e.getNom() + ". Departament: " + e.getDepartament() + "\n")
+                text.append("\tLlista de telèfons:\n")
+                if (e.getTelefons() != null) {
+                    for (t in e.getTelefons()) {
+                        text.append("\t\t" + t.getNumero())
+                        if (t.isMobil())
+                            text.append("(mòbil)\n")
+                        else
+                            text.append("(fixe)\n")
+                    }
+                }
+            }
+            bd1.close()
+        }
+
+    }
+}
+</code></pre>
+</div>
+</div>
+<p>El programa és molt senzill. Si no existia el directori <strong>databases</strong> el crea (per evitar problemes) i construeix la Base de Dades. Si ja existia, assumeix que està creada la Base de Dades, i visualitza el seu contingut.</p>
+<p>La primera vegada que s'execute el programa visualitzarà que s'ha creat la Base de Dades. La segona, es visualitzaran algunes dades:</p>
+<table border="0">
+<tbody>
+<tr>
+<td><img src="Annex_Android_4_1.png" style="border: 1px solid black;" width="521" height="848" /></td>
+<td><img src="Annex_Android_4_2.png" style="border: 1px solid black;" width="518" height="847" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"></p>
+<p style="text-align: center;"></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="321__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

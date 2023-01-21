@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.2.4 Estructurat | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-24"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_objecterelacionals.html" class="current-page-parent daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul>
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li class="current-page-parent"><a href="23__manipulaci_de_dades.html" class="current-page-parent daddy">2.3 - Manipulació de dades</a>
+      <ul>
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li class="current-page-parent"><a href="232__accs_a_travs_de_jdbc.html" class="current-page-parent daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul>
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li id="active"><a href="2324_estructurat.html" class="active no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2323_arrays.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2325_exemple_de_tot_junt.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.2.4 Estructurat</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id31">
+<div class="iDevice emphasis0">
+<div id="ta31_85" class="block iDevice_content">
+<h3><span style="text-decoration: underline;">Estructurat</span></h3>
+<p>En el cas dels tipus definits per l'usuari en PosgreSQL, lamentablement les coses no funcionen tan bé. I és una pena, perquè si puguérem ens estalviaríem molta de la feina de mapatge fent la correspondència entre els tipus definits en PostgreSQL i classes definides en Java.</p>
+<p>Els mètodes que s'utilitzaran ara són <strong>getObject(index)</strong> del ResultSet, i per a poder guardar el <strong>setObject(index,objecte)</strong> del PreparedStatement.</p>
+<div class="codi">
+<div>import java.sql.Connection;</div>
+<div>import java.sql.DriverManager;</div>
+<div>import java.sql.ResultSet;</div>
+<div>import java.sql.SQLException;</div>
+<div> </div>
+<div>public class Prova7_1 {</div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws SQLException {</div>
+<div style="margin-left: 60px;">String url="jdbc:postgresql://89.36.214.106:5432/rxx";</div>
+<div> </div>
+<div style="margin-left: 60px;">Connection con = DriverManager.getConnection(url, "rxx", "rxx");</div>
+<div> </div>
+<div style="margin-left: 60px;">ResultSet rs = con.createStatement().executeQuery("SELECT nom,adreca FROM persona4 ORDER BY nom");</div>
+<div style="margin-left: 60px;">while (rs.next()){</div>
+<div style="margin-left: 90px;">System.out.println("Adreça de " + rs.getString(1) + ": ");</div>
+<div style="margin-left: 90px;">System.out.println(rs.getObject(2));</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+<div> </div>
+</div>
+<p>Podem accedir a l'adreça que és del tipus estructurat definit per nosaltres (amb carrer, codi postal i població).</p>
+<p>Per tant sembla que va bé la cosa, però no. El problema és accedir a les dades internes de l'objecte. Si puguérem fer una conversió entre el tipus de dades definit en PostgreSQL (<strong>t_adreca</strong>) i una classe definida en Java que continga 3 propietats per al carrer, el codi postal i la població, ja ho tindríem. Però hi ha documentació per Internet que diu que no es pot fer. És a dir, el següent programa (suposem que tenim una classe anomenada <strong>Adreca</strong> que consta de 3 strings) :</p>
+<p class="codi"><span style="color: #ff0000;">import java.sql.Connection;</span><br /><span style="color: #ff0000;">import java.sql.DriverManager;</span><br /><span style="color: #ff0000;">import java.sql.ResultSet;</span><br /><span style="color: #ff0000;">import java.sql.SQLException;</span><br /><br /><span style="color: #ff0000;">public class Prova7_2 {</span><br /><span style="color: #ff0000;">    public static void main(String[] args) throws SQLException {</span><br /><span style="color: #ff0000;">        String url = "jdbc:postgresql://89.36.214.106:5432/rxx";</span><br /><br /><span style="color: #ff0000;">        Connection con = DriverManager.getConnection(url, "rxx", "rxx");</span><br /><br /><span style="color: #ff0000;">        ResultSet rs = con.createStatement().executeQuery("SELECT nom,adreca FROM persona4 ORDER BY nom");</span><br /><span style="color: #ff0000;">        while (rs.next()) {</span><br /><span style="color: #ff0000;">            System.out.println("Adreça de " + rs.getString(1) + ": ");</span><br /><span style="color: #ff0000;">            Adreca adr = (Adreca) rs.getObject(2);</span><br /><span style="color: #ff0000;">            System.out.println(adr.getCarrer() + ". " + adr.getCodipostal() + " (" +adr.getPoblacio() + ")");</span><br /><span style="color: #ff0000;">        }</span><br /><span style="color: #ff0000;">        rs.close();</span><br /><span style="color: #ff0000;">        con.close();</span><br /><span style="color: #ff0000;">    }</span><br /><span style="color: #ff0000;">}</span></p>
+<p>dóna el següent error:</p>
+<p class="codi2">Exception in thread "main" java.lang.ClassCastException: org.postgresql.util.PGobject cannot be cast to Exemples.Adreca<br />    at Exemples.Prova7_2.main(Prova7_2.java:16)</p>
+<p>És a dir, no s'ha pogut convertir l'objecte agafat des de PostgreSQL a la classe definida en Java (recordeu que suposem que tenim una classe anomenada <strong>Adreca</strong> que consta de 3 strings).</p>
+<p>Es pot arreglar, però l'esforç segurament no valdrà la pena.</p>
+<div class="parrem">
+<p>La manera que he tingut de solucionar-lo ha estat buscar un altre driver JDBC que sí que ens permet fer una conversió entre els tipus que venen des de PostgreSQL. Aquest nou driver s'anomena<strong> pgjdbc-ng</strong> i el podeu trobar a la següent adreça:</p>
+<p><a href="https://impossibl.github.io/pgjdbc-ng">https://impossibl.github.io/pgjdbc-ng</a></p>
+El següent programa sí que funcionarà. Observeu com la manera de connectar és lleugerament diferent (mreu la URL). Hem utilitzat un objecte de tipus <strong>Struct</strong> per a poder arreplegar el resultat.
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />import java.sql.Struct;<br /><br /><br /><br />public class Prova7_3 {<br />    public static void main(String[] args) throws SQLException, ClassNotFoundException {<br />        String url = "jdbc:pgsql://89.36.214.106:5432/rxx";<br /><br />        Connection con = DriverManager.getConnection(url, "rxx", "rxx");<br /><br />        ResultSet rs = con.createStatement().executeQuery("SELECT nom,adreca FROM persona4 ORDER BY nom");<br />        while (rs.next()) {<br />            System.out.println("Adreça de " + rs.getString(1) + ": ");<br /><br />            Struct adr = (Struct)rs.getObject(2);<br />            if (adr != null) <br />                System.out.println(adr.getAttributes()[0] + ". " + adr.getAttributes()[1] + " (" + adr.getAttributes()[2] + ")");<br />        }<br />        rs.close();<br />        con.close();<br />    }<br />}</p>
+<p>I produiria el següent resultat:</p>
+<p class="codi2">Adreça de Albert: <br />C/Major, 7. 12001 (Castelló)<br />Adreça de Bernat: <br />null. null (Castelló)<br />Adreça de Clàudia: <br />null. null (Castelló)<br />Adreça de David: <br />Adreça de Eva: <br />Adreça de Ferran:</p>
+<p></p>
+<p>En aquest exemple fem la reconversió completa de <strong>t_adreca </strong>a <strong>Adreca</strong>. En aquesta classe, <strong>Adreca</strong>, implementem un constructor que agafa com a paràmetre un <strong>Struc</strong> (que ha estat la manera de salvar l'inconvenient en l'exemple anterior), i inicialitza les propietats a partir d'ell;</p>
+<p class="codi">import java.sql.SQLException;<br />import java.sql.Struct;<br /><br />public class Adreca {<br /><br />    private String carrer = null;<br />    private String codipostal = null;<br />    private String poblacio = null;<br /><br />    public Adreca() {<br />    }<br /><br />    public Adreca(String c, String cp, String p) {<br />        this.carrer = c;<br />        this.codipostal = cp;<br />        this.poblacio = p;<br />    }<br /><br />    public Adreca(Struct t_adr) throws SQLException {<br />        if (t_adr != null) {<br />            this.carrer = (String) t_adr.getAttributes()[0];<br />            this.codipostal = (String) t_adr.getAttributes()[1];<br />            this.poblacio = (String) t_adr.getAttributes()[2];<br />        }<br />    }<br /><br />    public String getCarrer() {<br />        return carrer;<br />    }<br /><br />    public void setCarrer(String carrer) {<br />        this.carrer = carrer;<br />    }<br /><br />    public String getCodipostal() {<br />        return codipostal;<br />    }<br /><br />    public void setCodipostal(String codipostal) {<br />        this.codipostal = codipostal;<br />    }<br /><br />    public String getPoblacio() {<br />        return poblacio;<br />    }<br /><br />    public void setPoblacio(String poblacio) {<br />        this.poblacio = poblacio;<br />    }<br />}</p>
+</div>
+<p>Això ens permet fer el següent programa que ara sí que ens funcionarà. En compte de fer un <strong>cast</strong> utilitzem el constructor, i igual queda còmode. Hem aprofitat per traure només aquells que tenen alguna cosa en l'adreça.</p>
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />import java.sql.Struct;<br /><br />public class Prova7_4 {<br />    public static void main(String[] args) throws SQLException, ClassNotFoundException {<br />        String url = "jdbc:pgsql://89.36.214.106:5432/rxx";<br /><br />        Connection con = DriverManager.getConnection(url, "rxx", "rxx");<br /><br />        ResultSet rs = con.createStatement().executeQuery("SELECT nom,adreca FROM persona4 ORDER BY nom");<br />        while (rs.next()) {<br />            if (rs.getObject(2) != null) {<br />                System.out.println("Adreça de " + rs.getString(1) + ": ");<br />                Adreca adr = new Adreca((Struct) rs.getObject(2));<br />                System.out.println(adr.getCarrer() + ". " + adr.getCodipostal() + " (" + adr.getPoblacio() + ")");<br />            }<br />        }<br />        rs.close();<br />        con.close();<br />    }<br />}</p>
+<p>Recordeu que heu d'incorporar el driver <strong>pgjdbc-ng</strong></p>
+<p>El que sí que podem fer sense problemes des del driver normal és accedir als camps del tipus estructurat des de SQL. Però açò ens obliga en certa manera a dur el mapatge manual.</p>
+<div class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br /><br />public class Prova7_5 {<br /><br />    public static void main(String[] args) throws SQLException {<br />        String url = "jdbc:postgresql://89.36.214.106:5432/rxx";<br /><br />        Connection con = DriverManager.getConnection(url, "rxx", "rxx");<br /><br />        ResultSet rs = con.createStatement().executeQuery(<br />                "SELECT nom,(adreca).carrer,(adreca).codipostal,(adreca).poblacio FROM persona4 ORDER BY nom");<br />        while (rs.next()) {<br />            System.out.println("Adreça de " + rs.getString(1) + ": ");<br />            System.out.println(rs.getString(2) + ". CP: " + rs.getString(3) + " (" + rs.getString(4) + ")");<br />        }<br />    }<br />}</div>
+<p> </p>
+<p>Mirem un altre exemple per a accedir als telèfons. Recordem que <strong>telefons</strong> és un array de <strong>t_telefon</strong>, per tant estem barrejant un array amb un tipus estructurat. Podem agafar bé l'array (col·loquem l'array en un ResultSet per mig de <strong>getResultSet</strong>, que ens dóna tants registres com elements de l'array. En cada registre tenim en el primer camp el número d'ordre, i en el segon el valor (que en el nostre cas és <strong>t_telefon</strong>)</p>
+<div class="codi">
+<div>import java.sql.Array;</div>
+<div>import java.sql.Connection;</div>
+<div>import java.sql.DriverManager;</div>
+<div>import java.sql.ResultSet;</div>
+<div>import java.sql.SQLException;</div>
+<div> </div>
+<div>public class Prova8 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws SQLException {</div>
+<div style="margin-left: 60px;">String url="jdbc:postgresql://89.36.214.106:5432/rxx";</div>
+<div> </div>
+<div style="margin-left: 60px;">Connection con = DriverManager.getConnection(url, "rxx", "rxx");</div>
+<div> </div>
+<div style="margin-left: 60px;">ResultSet rs = con.createStatement().executeQuery("SELECT nom,telefons FROM persona4 order by nom");</div>
+<div style="margin-left: 60px;">while (rs.next()) {</div>
+<div style="margin-left: 90px;">System.out.println("Telèfons de " + rs.getString(1));</div>
+<div style="margin-left: 90px;">Array tels = rs.getArray(2);</div>
+<div style="margin-left: 90px;">if (tels != null) {</div>
+<div style="margin-left: 120px;">ResultSet rs2 = tels.getResultSet();</div>
+<div style="margin-left: 120px;">while (rs2.next())</div>
+<div style="margin-left: 150px;">System.out.println(" " + rs2.getString(2));</div>
+<div style="margin-left: 90px;">}</div>
+<div style="margin-left: 90px;">else</div>
+<div style="margin-left: 120px;">System.out.println(" No en té");</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2323_arrays.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2325_exemple_de_tot_junt.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

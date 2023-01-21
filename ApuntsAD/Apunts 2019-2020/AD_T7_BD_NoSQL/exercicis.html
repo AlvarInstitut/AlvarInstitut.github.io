@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__firebase.html" class="daddy">2 - Firebase</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="44__connexi_des_de_java.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id152">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7.1 (Firebase)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta152_152_2" class="block iDevice_content">
+<p>Farem una aplicació per a crear un <strong>xat</strong> entre el grup de classe. Per a poder compartir les dades entre tots, accedirem a una altra Base de Dades d'un altre usuari, tots utilitzarem el mateix:</p>
+<ul>
+<li>Compte de Google: <strong>ieselcaminas.ad@gmail.com </strong></li>
+<li>Contrasenya: <strong>ad_ieselcaminas</strong></li>
+</ul>
+<p>En ell de moment només tenim la Base de Dades <strong>xat-ad</strong>, la referència de la qual és <strong>https://xat-ad.firebaseio.com/</strong></p>
+<p><strong>PODEU FER L'APLICACIÓ EN ECLIPSE O EN ANDROID</strong></p>
+<p class="titolet">Aplicació en Eclipse</p>
+<p>Podeu utilitzar el "esquelet" que hi ha a continuació. En ell tenim:</p>
+<ul>
+<li>Una etiqueta per a indicar nom d'usuari</li>
+<li>Un JTextField per a introduir el nom de l'usuari. Aquestes dues coses han d'anar dalt de tot, en la mateixa línia.</li>
+<li>Un JTextArea, per a anar mostrant el chat</li>
+<li>Un altre JTextField per a introduir el nou text de conversa.</li>
+<li>Un botó d'Enviar. Aquestes dues coses han d'anar baix de tot, en la mateixa línia.</li>
+</ul>
+<p>Haureu d'incorporar el fitxer json on està la configuració i la clau privada de la connexió. El fitxer s'anomena <strong>xat-ad-firebase-adminsdk-my2d0-8c69944b34.json</strong>, i el teniu com un recurs en l'aula virtual.</p>
+<p>L'aplicació ha de guardar el missatge en el moment d'apretar el botó en la llista <strong>xat</strong>. Un missatge consta del nom de la persona que l'escriu (l'agafem del EditText de dalt), el moment en que es fa (l'agarrem de la data del sistema) i el contingut del missatge. Per a que siguen compatibles totes les aplicacions, han de tenir el mateix format, que serà:</p>
+<ul>
+<li><strong>nom</strong> (string) contindrà el nom de la persona</li>
+<li><strong>data</strong> (long) contindrà la data-hora del missatge</li>
+<li><strong>contingut</strong> (string) el text del missatge</li>
+</ul>
+<p>S'han de mostrar tots els elements de la llista <strong>xat</strong>, que seran tots els missatges i actualitzat al moment en que es cree un nou missatge (un nou elements de la llista) amb aquest format:</p>
+<p style="padding-left: 60px;"><strong>Usuari (data): missatge</strong></p>
+<p>A continuació teniu l'esquelet del programa que podeu utilitzar:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class Pantalla_Exercici7_1 extends JFrame implements ActionListener {
+
+	private static final long serialVersionUID = 1L;
+	JLabel etiqueta = new JLabel("Missatges:");
+	JLabel et_usu = new JLabel("Nom d'usuari:");
+	JTextField usuari = new JTextField(15);
+	JTextArea area = new JTextArea();
+	JTextField missatge = new JTextField(15);
+	JButton enviar = new JButton("Enviar");
+
+	// en iniciar posem un contenidor per als elements anteriors
+	public void iniciar() throws IOException {
+		this.setBounds(100, 100, 450, 300);
+		this.setLayout(new BorderLayout());
+		// contenidor per als elements
+		JPanel panell1 = new JPanel(new FlowLayout());
+		panell1.add(et_usu);
+		panell1.add(usuari);
+		getContentPane().add(panell1, BorderLayout.NORTH);
+
+		JPanel panell2 = new JPanel(new BorderLayout());
+		panell2.add(etiqueta, BorderLayout.NORTH);
+		area.setForeground(Color.blue);
+		JScrollPane scroll = new JScrollPane(area);
+		panell2.add(scroll, BorderLayout.CENTER);
+		getContentPane().add(panell2, BorderLayout.CENTER);
+
+		JPanel panell3 = new JPanel(new FlowLayout());
+		panell3.add(missatge);
+		panell3.add(enviar);
+		getContentPane().add(panell3, BorderLayout.SOUTH);
+
+		setVisible(true);
+		enviar.addActionListener(this);
+
+		FileInputStream serviceAccount = new FileInputStream(
+				"xat-ad-firebase-adminsdk-my2d0-8c69944b34.json");
+
+		FirebaseOptions options = new FirebaseOptions.Builder()
+				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+				.setDatabaseUrl("https://xat-ad.firebaseio.com/").build();
+
+		FirebaseApp.initializeApp(options);
+
+		final DatabaseReference xat = FirebaseDatabase.getInstance().getReference("xat");
+
+		xat.addChildEventListener(new ChildEventListener() {
+			@Override
+			    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+				// Sentències per a carregar les dades del xat al JTextArea area
+				
+			}
+			@Override
+			    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+			}
+			@Override
+			    public void onChildRemoved(DataSnapshot dataSnapshot) {
+			}
+			@Override
+			    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+			}
+			@Override
+			    public void onCancelled(DatabaseError databaseError) {
+			}
+			});
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// Sntències per a guardar el missatge
+		
+	}
+
+
+}</code></pre>
+</div>
+</div>
+<p>I ara el programa principal:</p>
+<div class="highlighted-code language-java" style="font-weight: bold;">
+<div>
+<pre><code>import java.io.IOException;
+
+public class Exercici7_1 {
+
+    public static void main(String[] args) throws IOException {
+        final Pantalla_Exercici7_1 finestra = new Pantalla_Exercici7_1();
+        finestra.iniciar();
+    }
+
+}</code></pre>
+</div>
+</div>
+<p>I aquest seria el resultat:</p>
+<p><img src="T7_Ex1_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="450" height="300" /></p>
+<p class="titolet">Aplicació en Android</p>
+<ul>
+<li>Creeu-vos una nova aplicació d'Android anomenada <strong>Xat_AD</strong>. Podeu utilitzar el mateix domini que en l'altre projecte.</li>
+<li>Incorporeu en ella:
+<ul>
+<li>Una etiqueta per a indicar nom d'usuari</li>
+<li>Un EditText per a introduir el nom de l'usuari. Aquestes dues coses han d'anar dalt de tot, en la mateixa línia.</li>
+<li>Un TextView, per a anar mostrant el chat</li>
+<li>Un altre EditText per a introduir el nou text de conversa.</li>
+<li>Un botó d'Enviar. Aquestes dues coses han d'anar baix de tot, en la mateixa línia.</li>
+</ul>
+</li>
+<li>Connecteu a la Base de Dades Firebase abans esmentada</li>
+</ul>
+<p>L'aplicació ha de guardar el missatge en el moment d'apretar el botó en la llista <strong>xat</strong>. Un missatge consta del nom de la persona que l'escriu (l'agafem del EditText de dalt), el moment en que es fa (l'agarrem de la data del sistema) i el contingut del missatge. Per a que siguen compatibles totes les aplicacions, han de tenir el mateix format, que serà:</p>
+<ul>
+<li><strong>nom</strong> (string) contindrà el nom de la persona</li>
+<li><strong>data</strong> (long) contindrà la data-hora del missatge</li>
+<li><strong>contingut</strong> (string) el text del missatge</li>
+</ul>
+<p>S'han de mostrar tots els elements de la llista <strong>xat</strong>, que seran tots els missatges i actualitzat al moment en que es cree un nou missatge (un nou elements de la llista) amb aquest format:</p>
+<p style="padding-left: 60px;"><strong>Usuari (data): missatge</strong></p>
+<p>A continuació teniu un exemple de activity_main.xml que us podria servir:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #0000ff; font-weight: bold;">xml version=</span><span style="color: #008000; font-weight: bold;">"1.0" </span><span style="color: #0000ff; font-weight: bold;">encoding=</span><span style="color: #008000; font-weight: bold;">"utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #000080; font-weight: bold;">RelativeLayout </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">=</span><span style="color: #008000; font-weight: bold;">"http://schemas.android.com/apk/res/android"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">=</span><span style="color: #008000; font-weight: bold;">"http://schemas.android.com/tools"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/activity_main"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingBottom=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_vertical_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingLeft=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_horizontal_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingRight=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_horizontal_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingTop=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_vertical_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">:context=</span><span style="color: #008000; font-weight: bold;">"com.proves_alvar.xat_ad.MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text=</span><span style="color: #008000; font-weight: bold;">"Nom d'usuari:"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/eti"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentTop=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentLeft=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentStart=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_above=</span><span style="color: #008000; font-weight: bold;">"@+id/textView" </span>/&gt;<br />    &lt;<span style="color: #000080; font-weight: bold;">EditText<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/usuari"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_toRightOf=</span><span style="color: #008000; font-weight: bold;">"@+id/eti"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentTop=</span><span style="color: #008000; font-weight: bold;">"true" </span>/&gt;<br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text=</span><span style="color: #008000; font-weight: bold;">""<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/textView"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentEnd=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_below=</span><span style="color: #008000; font-weight: bold;">"@+id/usuari"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_above=</span><span style="color: #008000; font-weight: bold;">"@+id/missatge"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:scrollbars=</span><span style="color: #008000; font-weight: bold;">"vertical"</span>/&gt;<br />    &lt;<span style="color: #000080; font-weight: bold;">EditText<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/missatge"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentLeft=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentStart=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentBottom=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_toLeftOf=</span><span style="color: #008000; font-weight: bold;">"@+id/boto"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_toStartOf=</span><span style="color: #008000; font-weight: bold;">"@+id/boto" </span>/&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">Button<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text=</span><span style="color: #008000; font-weight: bold;">"Enviar"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/boto"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentEnd=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentBottom=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_below=</span><span style="color: #008000; font-weight: bold;">"@+id/textView" </span>/&gt;<br />&lt;/<span style="color: #000080; font-weight: bold;">RelativeLayout</span>&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id166">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7.2 (Firebase) (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta166_166_2" class="block iDevice_content">
+<p>Farem una aplicació en Android per a fer partides del Mastermind compartides. El joc consisteix a endevinar un número de 4 xifres no repetides. Quan es fa una tirada, l'aplicació contestarà quants xifres hi ha encertades i en el lloc corresponent, i quantes xifres encertades però fora del lloc.</p>
+<p>Per exemple: Suposem que el número a endevinar és el 7481. A mida que anem fent tirades hem d'anar endevinant quin és el número:</p>
+<ul>
+<li>1234 <span style="color: #ff0000;">0 2</span> (que indica que no hi ha cap xifra al seu lloc, i que hi ha 2 encertades fora del lloc)</li>
+<li>5678 <span style="color: #ff0000;">0 2</span></li>
+<li>1256 <span style="color: #ff0000;">0 1</span></li>
+<li>3487 <span style="color: #ff0000;">2 1<br /></span></li>
+<li>7482 <span style="color: #ff0000;">3 0</span></li>
+<li>7481 <span style="color: #ff0000;">4 0</span></li>
+</ul>
+<p>Els usuaris connectats a l'aplicació (amb un nom d'usuari, millor si és breu, per exemple 3 caràcters, a l'estil de J01, J02, ...) han de poder fer jugades, i l'aplicació ha de mostrar primer el nom del jugador, la tirada i el resultat.</p>
+<p>Per més simplicitat, només es guardarà una partida, però quan finalitze s'ha de poder començar una altra (esborrant les tirades de la partida anterior). Les dades que guardarem de la partida són:</p>
+<p><strong>Mastermind</strong> (serà la clau on ho guardarem tot)<strong> </strong></p>
+<ul>
+<li>Número secret a endevinar: <strong>numSecret</strong> (string)</li>
+<li>Partida en marxa o bé ja finalitzada: <strong>finalitzada</strong> (boolean)</li>
+<li>Llista de tirades: <strong>tirades</strong>. De cadascuna:
+<ul>
+<li>Jugador que l'ha feta: <strong>nom</strong> (string)</li>
+<li>Jugada feta: <strong>tirada</strong> (string)</li>
+<li>Encertades col·locades: <strong>colocades</strong> (String)</li>
+<li>Encertades no col·locades: <strong>desordenades</strong> (String)</li>
+</ul>
+</li>
+</ul>
+<p>Encara que possiblement podríem considerar <strong>colocades</strong> i <strong>desordenades</strong> com a números enters, per una altra banda les hem de mostrar per pantalla.</p>
+<p>Tindrem els mateixos elements que en l'exercici anterior:</p>
+<ul>
+<li>Una etiqueta per a indicar nom de jugador</li>
+<li>Un EditText per a introduir el nom del jugador. Aquestes dues coses han d'anar dalt de tot, en la mateixa línia.</li>
+<li>Un TextView, per a anar mostrant les tirades de la partida</li>
+<li>Un altre EditText per a introduir la nova tirada.</li>
+<li>Un botó d'Enviar. Aquestes dues coses han d'anar baix de tot, en la mateixa línia.</li>
+<li>Per últim també tindrem un botó que inicialment està ocult per a començar una nova partida. Quan es visualitza tapa l'EditText de la nova tirada i el botó d'enviar, amb la qual cosa no es poden fer més intents</li>
+</ul>
+<p>Inicialment s'ha de comprovar si la partida està en marxa. Si no ho està (o si no hi ha cap partida perquè és la primera vegada que s'executa):</p>
+<ul>
+<li>S'ha de generar un nou número secret i guardar-lo</li>
+<li>S'ha de marcar com a partida no finalitzada</li>
+</ul>
+<p>Si ja està en marxa, senzillament s'han de visualitzar les tirades existents, i esperar per si es fa una tirada.</p>
+<p>Quan es fa una tirada:</p>
+<ul>
+<li>S'ha de guardar el jugador, la tirada, el número de encertades col·locades i el número d'encertades no col·locades.</li>
+<li>Si s'ha encertat el número, s'ha de marcar com a finalitzada la partida, i s'ha de visualitzar el botó per a generar una nova partida</li>
+</ul>
+<p>L'aplicació s'ha de dir <strong>Mastermind_AD</strong>. Les dades de connexió són les mateixes que l'exercici anterior:</p>
+<ul>
+<li>Compte de Google: <strong>ieselcaminas.ad@gmail.com </strong></li>
+<li>Contrasenya: <strong>ad_ieselcaminas</strong></li>
+</ul>
+<p>Aquest seria el <strong>activity_main.xml</strong> amb els elements comentats abans:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="font-style: italic;">&lt;?</span><span style="color: #0000ff; font-weight: bold;">xml version=</span><span style="color: #008000; font-weight: bold;">"1.0" </span><span style="color: #0000ff; font-weight: bold;">encoding=</span><span style="color: #008000; font-weight: bold;">"utf-8"</span><span style="font-style: italic;">?&gt;<br /></span>&lt;<span style="color: #000080; font-weight: bold;">RelativeLayout </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">=</span><span style="color: #008000; font-weight: bold;">"http://schemas.android.com/apk/res/android"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #0000ff; font-weight: bold;">xmlns:</span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">=</span><span style="color: #008000; font-weight: bold;">"http://schemas.android.com/tools"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/activity_main"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingBottom=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_vertical_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingLeft=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_horizontal_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingRight=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_horizontal_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:paddingTop=</span><span style="color: #008000; font-weight: bold;">"@dimen/activity_vertical_margin"<br /></span><span style="color: #008000; font-weight: bold;">    </span><span style="color: #660e7a; font-weight: bold;">tools</span><span style="color: #0000ff; font-weight: bold;">:context=</span><span style="color: #008000; font-weight: bold;">"com.proves_alvar.mastermind_ad.MainActivity"</span>&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text=</span><span style="color: #008000; font-weight: bold;">"Nom del jugador (preferiblement 3 caràcters):"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/eti"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentTop=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentLeft=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentStart=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_above=</span><span style="color: #008000; font-weight: bold;">"@+id/textView" </span>/&gt;<br />    &lt;<span style="color: #000080; font-weight: bold;">EditText<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/jugador"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_toRightOf=</span><span style="color: #008000; font-weight: bold;">"@+id/eti"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentTop=</span><span style="color: #008000; font-weight: bold;">"true" </span>/&gt;<br />    &lt;<span style="color: #000080; font-weight: bold;">TextView<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text=</span><span style="color: #008000; font-weight: bold;">""<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/textView"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"match_parent"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentEnd=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_below=</span><span style="color: #008000; font-weight: bold;">"@+id/jugador"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_above=</span><span style="color: #008000; font-weight: bold;">"@+id/tirada"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:scrollbars=</span><span style="color: #008000; font-weight: bold;">"vertical"</span>/&gt;<br />    &lt;<span style="color: #000080; font-weight: bold;">EditText<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/tirada"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentLeft=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentStart=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentBottom=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_toLeftOf=</span><span style="color: #008000; font-weight: bold;">"@+id/boto"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_toStartOf=</span><span style="color: #008000; font-weight: bold;">"@+id/boto" </span>/&gt;<br /><br />    &lt;<span style="color: #000080; font-weight: bold;">Button<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text=</span><span style="color: #008000; font-weight: bold;">"Enviar"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/boto"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentEnd=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentBottom=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_below=</span><span style="color: #008000; font-weight: bold;">"@+id/textView" </span>/&gt;<br />    &lt;<span style="color: #000080; font-weight: bold;">Button<br /></span><span style="color: #000080; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_width=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_height=</span><span style="color: #008000; font-weight: bold;">"wrap_content"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:text=</span><span style="color: #008000; font-weight: bold;">"NOVA PARTIDA"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:id=</span><span style="color: #008000; font-weight: bold;">"@+id/botoNova"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentRight=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentEnd=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentBottom=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_below=</span><span style="color: #008000; font-weight: bold;">"@+id/textView"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentLeft=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:layout_alignParentStart=</span><span style="color: #008000; font-weight: bold;">"true"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #660e7a; font-weight: bold;">android</span><span style="color: #0000ff; font-weight: bold;">:visibility=</span><span style="color: #008000; font-weight: bold;">"invisible"</span>/&gt;<br /><br />&lt;/<span style="color: #000080; font-weight: bold;">RelativeLayout</span>&gt;</pre>
+<p>També us passe els mètodes <strong>genera()</strong>, que genera un número aleatori de 4 xifres no repetides, i <strong>comprova(String,String)</strong> que torna les xifres encertades col·locades i encertades no col·locades:</p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">protected </span>String genera(){<br />    <span style="color: #000080; font-weight: bold;">char</span>[] n = <span style="color: #000080; font-weight: bold;">new char</span>[<span style="color: #0000ff;">4</span>];<br />    n[<span style="color: #0000ff;">0</span>] = Integer.<span style="font-style: italic;">toString</span>(((<span style="color: #000080; font-weight: bold;">int</span>) (Math.<span style="font-style: italic;">random</span>() * <span style="color: #0000ff;">10</span>))).charAt(<span style="color: #0000ff;">0</span>);<br />    n[<span style="color: #0000ff;">1</span>] = Integer.<span style="font-style: italic;">toString</span>(((<span style="color: #000080; font-weight: bold;">int</span>) (Math.<span style="font-style: italic;">random</span>() * <span style="color: #0000ff;">10</span>))).charAt(<span style="color: #0000ff;">0</span>);<br />    <span style="color: #000080; font-weight: bold;">while </span>(n[<span style="color: #0000ff;">1</span>] == n[<span style="color: #0000ff;">0</span>])<br />        n[<span style="color: #0000ff;">1</span>] = Integer.<span style="font-style: italic;">toString</span>(((<span style="color: #000080; font-weight: bold;">int</span>) (Math.<span style="font-style: italic;">random</span>() * <span style="color: #0000ff;">10</span>))).charAt(<span style="color: #0000ff;">0</span>);<br />    n[<span style="color: #0000ff;">2</span>] = Integer.<span style="font-style: italic;">toString</span>(((<span style="color: #000080; font-weight: bold;">int</span>) (Math.<span style="font-style: italic;">random</span>() * <span style="color: #0000ff;">10</span>))).charAt(<span style="color: #0000ff;">0</span>);<br />    <span style="color: #000080; font-weight: bold;">while </span>(n[<span style="color: #0000ff;">2</span>] == n[<span style="color: #0000ff;">0</span>] || n[<span style="color: #0000ff;">2</span>] == n[<span style="color: #0000ff;">1</span>])<br />        n[<span style="color: #0000ff;">2</span>] = Integer.<span style="font-style: italic;">toString</span>(((<span style="color: #000080; font-weight: bold;">int</span>) (Math.<span style="font-style: italic;">random</span>() * <span style="color: #0000ff;">10</span>))).charAt(<span style="color: #0000ff;">0</span>);<br />    n[<span style="color: #0000ff;">3</span>] = Integer.<span style="font-style: italic;">toString</span>(((<span style="color: #000080; font-weight: bold;">int</span>) (Math.<span style="font-style: italic;">random</span>() * <span style="color: #0000ff;">10</span>))).charAt(<span style="color: #0000ff;">0</span>);<br />    <span style="color: #000080; font-weight: bold;">while </span>(n[<span style="color: #0000ff;">3</span>] == n[<span style="color: #0000ff;">0</span>] || n[<span style="color: #0000ff;">3</span>] == n[<span style="color: #0000ff;">1</span>] || n[<span style="color: #0000ff;">3</span>] == n[<span style="color: #0000ff;">2</span>])<br />        n[<span style="color: #0000ff;">3</span>] = Integer.<span style="font-style: italic;">toString</span>(((<span style="color: #000080; font-weight: bold;">int</span>) (Math.<span style="font-style: italic;">random</span>() * <span style="color: #0000ff;">10</span>))).charAt(<span style="color: #0000ff;">0</span>);<br />    String generat= <span style="color: #000080; font-weight: bold;">new </span>String(n);<br />    <span style="color: #000080; font-weight: bold;">return </span>generat;<br />}<br /><span style="color: #000080; font-weight: bold;">protected int</span>[] comprova(String num, String secret){<br />    <span style="color: #000080; font-weight: bold;">char</span>[] n = secret.toCharArray();<br />    <span style="color: #000080; font-weight: bold;">int </span>pos =<span style="color: #0000ff;">0</span>;<br />    <span style="color: #000080; font-weight: bold;">int </span>nopos=<span style="color: #0000ff;">0</span>;<br />    <span style="color: #000080; font-weight: bold;">for </span>(<span style="color: #000080; font-weight: bold;">int </span>i=<span style="color: #0000ff;">0</span>;i&lt;<span style="color: #0000ff;">4</span>;i++)<br />        <span style="color: #000080; font-weight: bold;">for </span>(<span style="color: #000080; font-weight: bold;">int </span>j=<span style="color: #0000ff;">0</span>; j&lt;<span style="color: #0000ff;">4</span>; j++)<br />            <span style="color: #000080; font-weight: bold;">if </span>(num.charAt(i)== n[j])<br />                <span style="color: #000080; font-weight: bold;">if </span>(i==j) pos++;<br />                <span style="color: #000080; font-weight: bold;">else </span>nopos++;<br />    <span style="color: #000080; font-weight: bold;">int</span>[] solucio = <span style="color: #000080; font-weight: bold;">new int</span>[<span style="color: #0000ff;">2</span>];<br />    solucio[<span style="color: #0000ff;">0</span>]=pos;<br />    solucio[<span style="color: #0000ff;">1</span>]=nopos;<br />    <span style="color: #000080; font-weight: bold;">return </span>solucio;<br />}</pre>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id74">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7.3 (Redis)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta74_42_2" class="block iDevice_content">
+<p>En un nou paquet anomenat <strong>Exercicis</strong> dins del projecte <strong>Tema7_1</strong>, crea la classe <strong>ConsultarClaus.java</strong>, amb <strong>main</strong>, que permeta consultar totes les claus guardades en el nostre servidor <strong>Redis</strong>.</p>
+<p>Ha de presentar totes les claus actuals en <strong>Redis</strong> i el seu tipus, però amb un número davant. Posteriorment ha de demanar un número per teclat, i presentar la clau i el valor corresponent al número introduït, fins introduir el 0. Observa que depenent del tipus de la clau s'haurà de fer d'una manera o una altra. En la imatge teniu un exemple de cada:</p>
+<p class="codi2">1.- clau_1 (string)<br />2.- mes2 (string)<br />3.- empleat_1 (hash)<br />4.- mes1 (string)<br />5.- saludar (string)<br />6.- empleat_2 (hash)<br />7.- mes6 (string)<br />8.- mes5 (string)<br />9.- mes4 (string)<br />10.- mes3 (string)<br />11.- colors (set)<br />12.- mes7 (string)<br />13.- llista1 (list)<br />14.- clau_Java (string)<br />15.- lista111 (list)<br />16.- colors1 (set)<br />17.- colors2 (set)<br />18.- colors3 (set)<br />19.- text (string)<br />20.- colors4 (set)<br />21.- clau_4 (string)<br />22.- clau_2 (string)<br />23.- puntuacions (zset)<br />24.- compt3 (string)<br />25.- compt2 (string)<br />26.- compt1 (string)<br />27.- quatre (string)<br />28.- pi (string)<br />Introdueix un número (0 per a eixir)<br />4<br />mes1: gener<br />Introdueix un número (0 per a eixir)<br />6<br />empleat_2<br />    sou --&gt; 1500.0<br />    nom --&gt; Berta<br />Introdueix un número (0 per a eixir)<br />13<br />llista1<br />    primera<br />    sisena<br />    cinquena<br />Introdueix un número (0 per a eixir)<br />11<br />colors<br />    roig<br />    verd<br />    blau<br />Introdueix un número (0 per a eixir)<br />23<br />puntuacions<br />    Nom5 --&gt; 2.75<br />    Nom2 --&gt; 3.5<br />    Nom3 --&gt; 5.0<br />Introdueix un número (0 per a eixir)<br />0</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id75">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7.4 (Redis)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta75_43_2" class="block iDevice_content">
+<p>Realitzar en el mateix paquet un altre programa, aquesta vegada gràfic, que ens diga el mateix, però d'una forma més atractiva.</p>
+<ul>
+<li>El programa principal s'ha de dir <strong>ConsultaClausGrafica</strong>.</li>
+<li>On estarà tot el programa s'ha de dir <strong>ConsultaClausGrafica_Pantalla</strong>.</li>
+<li>Contindrà un <strong>JList</strong> on han d'aparéixer totes les claus, millor si estan ordenades alfabèticament. Recordeu que el <strong>JList</strong> és un poc complicat, que es basa en un <strong>DefaultListModel</strong>, i és a aquest a qui heu d'afegir els elements.</li>
+<li>Al costat ha d'haver un <strong>JTextField</strong> que diga de quin tipus és quan se seleccione un element del JList</li>
+<li>I també un <strong>JTextArea</strong> amb el seu valor (siga del tipus que siga)</li>
+</ul>
+<p>Aquest seria l'esquelet:</p>
+<p class="codi">package Exercicis;<br /><br />import java.awt.Color;<br />import java.awt.FlowLayout;<br />import java.util.ArrayList;<br />import java.util.Collections;<br />import java.util.List;<br />import java.util.Set;<br /><br />import javax.swing.DefaultListModel;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JList;<br />import javax.swing.JScrollPane;<br />import javax.swing.JTextArea;<br />import javax.swing.JTextField;<br />import javax.swing.event.ListSelectionEvent;<br />import javax.swing.event.ListSelectionListener;<br /><br />import redis.clients.jedis.Jedis;<br /><br />public class ConsultaClausGrafica_Pantalla extends JFrame implements ListSelectionListener{<br />    <br />    JLabel etTipClau= new JLabel("Tipus:");<br />    JTextField tipClau= new JTextField(8);<br />    JTextArea contClau = new JTextArea(8,15);<br />    Jedis con = new Jedis("localhost");<br />    DefaultListModel listModel = new DefaultListModel();<br />    JList llClaus = new JList(listModel);<br /><br />    <br />    public void iniciar(){<br />        this.getContentPane().setLayout(new FlowLayout());<br />        <br />        llClaus.setForeground(Color.blue);<br />        JScrollPane scroll = new JScrollPane(llClaus);<br />        llClaus.setVisibleRowCount(20);<br />        <br />        JScrollPane scroll2 = new JScrollPane(contClau);<br />        <br />        this.add(scroll);<br />        this.add(etTipClau);<br />        this.add(tipClau);<br />        this.add(scroll2);<br />        <br />        this.setSize(600, 400);<br />        this.setVisible(true);<br />        <br />        inicialitzar();<br />        <br />        llClaus.addListSelectionListener(this);<br />        <br />    }<br />    private void inicialitzar(){<br />        <br />    }<br />    @Override<br />    public void valueChanged(ListSelectionEvent e) {<br />        <br />    }<br />}</p>
+<p>I aquest el seu aspecte</p>
+<p style="text-align: center;"><img src="T8_Ex2_1.png" height="428" width="600" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id78">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7.5 (Redis) (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta78_41_2" class="block iDevice_content">
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta77_42_2" class="block iDevice_content">
+<p>Realitzar un programa anomenat <strong>JocEndevinaNumero.java</strong> (amb <strong>main</strong>), que faça el joc d'endevinar un número del 1 al 100. Cada vegada que el jugador pose un número el programa ha de dir si el número a endevinar és major o menor que l'introduït, fins que es trobe.</p>
+<p>Posteriorment pregunta el nom i guarda'l amb la marca en un conjunt ordenat (<strong>Sorted Set</strong>) anomenat <strong>joc_marques</strong>, on utilitzarem com a valor el nom del jugador, i com a puntuació (<strong>score</strong>) que serveix per a ordenar, el temps. Com a complicació tindrem que en un conjunt ordenat (igual que en un conjunt) no es poden repetir els valors. Ha de ser de la següent manera:</p>
+<ul>
+<li>Medir el temps des de que comença la partida fins que es trobe el número. T'anirà bé la funció <strong>System.currentTimeMillis()</strong>, que dóna l'hora actual en milisegons. La diferència entre el primer moment i el segon, serà el número de milisegons que ha durat la partida.</li>
+<li>Primer guarda sense tenir en consideració que es puga repetir el nom del jugador.</li>
+<li><strong>(Voluntari)</strong> Després millora'l, per a que si es posa un nom que ja existeix, li afegisca un número: <strong>nom, nom_1, nom_2, ...</strong></li>
+<li><strong>(Voluntari)</strong> Finalment, limita la llista de puntuacions a les 10 millors.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id150">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7.6 (MongoDB)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta150_42_2" class="block iDevice_content">
+<p>Agafa l'estat actual de Bicicas de la següent adreça:</p>
+<p><a href="http://gestiona.bicicas.es/apps/apps.php" target="_blank">http://gestiona.bicicas.es/apps/apps.php</a></p>
+<p>En l'annex del WebService tens la manera d'accedir a un WebService.</p>
+<p>Estudia el format JSON, per a poder agafar bé la informació de cada estació.</p>
+<ul>
+<li>Fes un programa anomenat <strong>IntroduirBicicas</strong> (amb <strong>main</strong>) que introduesca en <strong>MongoDB</strong> cada estació com un document en una col·lecció anomenada <strong>bicicas</strong>.</li>
+<li>Fes un altre programa anomenat <strong>MostrarBicias</strong> que agafe tots els documents de la col·lecció <strong>bicicas </strong> de la Base de Dades de MongoDb, que són totes les estacions, i traga la seua informació amb aquest aspecte (només es mostren les 10 primeres)</li>
+</ul>
+<p class="codi2">00.- TALLER (0/1)<br />01.- UJI - FCHS (5/28)<br />02.- ESTACIÃ³N DE FERROCARRIL Y AUTOBUSES (12/28)<br />03.- PLAZA DE PESCADERÃ­A (14/28)<br />04.- PASEO BUENAVISTA-GRAO (6/14)<br />05.- HOSPITAL GENERAL (9/18)<br />06.- PLAZA DE LA LIBERTAD (5/14)<br />07.- PLAZA TEODORO IZQUIERDO (0/14)<br />08.- PLAZA PRIMER MOLÃ­ (2/14)<br />09.- PATRONAT DESPORTS (4/14)<br />10.- PLAZA DOCTOR MARAÃ±Ã³N (7/14)</p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id171">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 7.7 (Firebase) Voluntari</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta171_171_2" class="block iDevice_content">
+<p>Fer el joc del 3 en ratlla (TicTacToe) fet en PMDM, però per a 2 jugadors que juguen en terminals diferents. El primer que hauren de fer és connectar-se, i després començar a jugar. Ens guardarem en Firebase (dins de l'objecte <strong>TicTacToe</strong>) total la informació necessària:</p>
+<ul>
+<li>Ens guardarem l'estat de la partida en <strong>StateOfGame</strong>, que podrà tenir els valors Playing, Draw o Winner. Podria anar bé un nou estat anomenat <strong>Connecting</strong>.<strong> </strong>Inicialment podem considerar que l'estat és Draw.</li>
+<li>Ens guardarem la informació dels 2 jugadors: nom i símbol. Inicialment no tindran res. Quan el primer jugador es connecte s'inicialitzarà el <strong>jugador1</strong> (per exemple amb els valors 1 X), i el valor seria <strong>Connecting</strong>. Quan es connecte el segon s'inicialitzarà el <strong>jugador2</strong> (per exemple amb els valors 2 O). I l'estat passarà a ser <strong>Playing</strong>.</li>
+<li>En fer click a qualsevol botó, no s'ha de marcar encara amb el símbol del jugador (es farà després). S'ha de comprovar si és el torn del jugador (si no es el seu torn no es farà res). I en cas afirmatiu es guardarà la jugada, que constarà de: nom jugador, fila i columna. Observa com hauràs de poder identificar el botó (fila i columna) que s'ha apretat per poder guardar-lo. Les jugades s'aniran registrant com elements de l'array <strong>tirades </strong>(o <strong>moves</strong>)</li>
+<li>La jugada es marcarà en l'esdeveniment <strong>addChildEventListener()</strong> , tant si és pròpia com si és de l'altre jugador, utilitzant la fila, la columna i el nom per a marcar el botó correcte. Serà el moment de fer les comprovacions que ja teníeu en el joc.</li>
+<li>Quan finalitze la partida, a banda de marcar el guanyador o que no hi ha, s'ha de guardar el nou estat de la partida.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="44__connexi_des_de_java.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

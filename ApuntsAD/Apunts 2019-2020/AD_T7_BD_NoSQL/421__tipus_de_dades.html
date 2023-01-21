@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.1 - Tipus de dades | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__firebase.html" class="daddy">2 - Firebase</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__mongodb.html" class="current-page-parent daddy">4 - MongoDB</a>
+   <ul>
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li class="current-page-parent"><a href="42__utilitzaci_de_mongodb.html" class="current-page-parent daddy">4.2 - Utilització de MongoDB</a>
+      <ul>
+         <li id="active"><a href="421__tipus_de_dades.html" class="active no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="42__utilitzaci_de_mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="422__operacions_bsiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.1 - Tipus de dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id101">
+<div class="iDevice emphasis0">
+<div id="ta101_85" class="block iDevice_content">
+<p>Els valors dels elements, és a dir de les parelles clau valor, poden ser d'una amplia gama de tipus. Fem un ràpid repàs.</p>
+<p>En els exemples que van a continuació definim senzillament parelles clau-valor dels diferents tipus, o en tot cas ens ho guardem en variables, però no guardarem encara en la Base de Dades (ho farem en la següent pregunta).</p>
+<p>Quan guardem en una variable es mostrarà el prompt, la definició de la variable i després el resultat d'haver guardat la variable. Utilitzarem requadres blancs. Els requadres grocs són únicament de la definició d'una clau-valor d'un determinat tipus</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id96">
+<div class="iDevice emphasis0">
+<div id="ta96_85" class="block iDevice_content">
+<p class="titolet">NULL</p>
+<p>Més que un tipus de dades és un valor, millor dit, l'absència de valor</p>
+<p class="codi">{ "x" : null }</p>
+<p></p>
+<p class="titolet">BOOLEAN</p>
+<p>El tipus booleà, que pot agafar els valors true o false.</p>
+<p class="codi">{ "x" : true }</p>
+<p class="codi">{ "y" : false }</p>
+<p></p>
+<p class="titolet">NUMBER</p>
+<p>Per defecte, el tiups de dades numèrics serà el de coma flotant (<strong>float</strong>), simple precisió. Si volem un altre tiups (enter, doble precisió, ...) ho haurem d'indicar expressament. Així els dos següents valors són float:</p>
+<p class="codi">{ "x" : 3.14 }</p>
+<p class="codi">{ "y" : 3 }</p>
+<p>Si volem que siga estrictament enter, per exemple, haurem d'utilitzar una funció de conversió:</p>
+<p class="codi">{ "x" : NumberDouble("3.14") }</p>
+<p class="codi">{ "y" : NumberInt("3") }</p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id97">
+<div class="iDevice emphasis0">
+<div id="ta97_85" class="block iDevice_content">
+<p class="titolet">STRING</p>
+<p>Es pot guardar qualsevol cadena amb caràcters de la codificació UTF-8</p>
+<p class="codi">{  x : "Hola, què tal?"}</p>
+<p></p>
+<p class="titolet">DATE</p>
+<p>Es guarda data i hora, i internament es guarden en milisegons des de l'any inicial. No es guarda el <strong></strong><em>Time zone</em> , és a dir,<em> </em>la desviació respecte a l'hora internacional.</p>
+<p class="codi">{ x : ISODate("2016-02-24T11:15:27.471Z") }</p>
+<p>Normalment utilitzarem funcions de tractament de la data-hora. L'anterior era per a convertir el string en data-hora. La següent és per a obtenir la data-hora actual:</p>
+<p class="codi">{ x : new Date() }</p>
+<p>És a dir, que si no posem paràmetre, ens dóna la data-hora actual. Però li podem posar com a paràmetre la data-hora que volem que genere. En aquest exemple, només posem data, per tant l'ho serà les 00:00:</p>
+<p class="codi2">&gt; z = new Date("2016-08-01")<br />ISODate("2016-08-01T00:00:00Z")</p>
+<p>En aquest sí que posem una determinada hora, i observeu com hem deposar la T (Time) entre el dia i l'hora:</p>
+<p class="codi2">&gt; z = new Date("2016-08-01T10:00")<br />ISODate("2016-08-01T08:00:00Z")</p>
+<p>És molt important que posem sempre <strong>New Date()</strong> per a generar una data-hora. Si posem únicament <strong>Date()</strong>, el que estem generant és un string (segurament amb la data i hora actual, però un string):</p>
+<p class="codi2">&gt; z = Date("2016-08-01")<br />Fri Feb 26 2016 08:30:13 GMT+0100 (CET)</p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id98">
+<div class="iDevice emphasis0">
+<div id="ta98_85" class="block iDevice_content">
+<p class="titolet">ARRAY</p>
+<p>És un conjunt d'elements, cadascun de qualsevol tipus, encara que el més habitual és que siguen del mateix tipus. Van entre claudàtors (<strong> [ ] </strong>) i els elements separats per comes.</p>
+<p class="codi">{ x : [ 2 , 4 , 6 , 8 ] }</p>
+<p>Com comentàvem, cada element de l'array pot ser de qualsevol tipus:</p>
+<p class="codi">{ y : [ 2 , 3.14 , "Hola" , new Date() ] }</p>
+<p></p>
+<p>En MongoDB podrem treballar molt bé amb arrays, i tindrem operacions per a poder buscar dins de l'array, modificar un element, crear índex, ...</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id99">
+<div class="iDevice emphasis0">
+<div id="ta99_85" class="block iDevice_content">
+<p class="titolet">DOCUMENTS (OBJECTES)</p>
+<p>Els documents poden contenir com a elements uns altres documents (<strong>objectes</strong> en la terminologia JSON, però <strong>documents</strong> en la terminologia de MongoDB).</p>
+<p>Van entre claus ( <strong>{ }</strong> ), i els elements que contindran van separats per comes i seran parelles clau-valor de qualsevol tipus (fins i tot altres documents).</p>
+<p class="codi">{ x : { a : 1 , b : 2 } }</p>
+<p>Posar documents dins d'uns altres documents (el que s'anomena <em>embedded</em> <em>document</em>) ens permet guardar la informació d'una manera més real, no tan plana. Així per exemple, les dades d'una persona les podríem definir de la següent manera. Les posarem en una variable, per veure després com podem accedir als diferents elements, encara que el més normal serà guardar-lo en la Base de Dades (amb <strong>insert()</strong> o <strong>save() </strong>). Si copiem el que va a continuació al terminal de Mongo, ens apareixerà amb un format estrany. És perquè la sentència d'assignació a la variable ocupa més d'una línia, i apareixeran 3 punts al principi per a indicar que continua la sentència. Però funcionarà perfectament :</p>
+<p class="codi2">doc = {<br />    nom:"Joan Martí",<br />    adreça: {<br />        carrer:"Major",<br />        número:1,<br />        població:"Castelló"<br />    } ,<br />    telèfons : [964223344,678345123]<br />}</p>
+<p>Observeu com aquesta estructura que ha quedat tan clara, segurament en una Base de Dades Relacional ens hauria tocat guardar en 3 taules: la de persones, la d'adreces i la de telèfons.</p>
+<p>Per a accedir als elements d'un document posàvem el punt. Doncs el mateix per als elements d'un document dins d'un document. I també podem accedir als elements d'un array, posant l'índex entre claudàtors.</p>
+<p class="codi2">&gt; doc.nom<br />Joan Martí<br /><br />&gt; doc.adreça<br />{ "carrer" : "Major", "número" : 1, "població" : "Castelló" }<br /><br />&gt; doc.adreça.carrer<br />Major<br /><br />&gt; doc.telèfons<br />[ 964223344, 678345123 ]<br /><br />&gt; doc.telèfons[0]<br />964223344</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id100">
+<div class="iDevice emphasis0">
+<div id="ta100_85" class="block iDevice_content">
+<p class="titolet">OBJECT ID</p>
+<p>És un tipus que defineix MongoDB per a poder obtenir valors únics. És el valor per defecte de l'element <strong>_id </strong>, necessari en tot document (atenció: en un document, no en un element de tipus document que hem dit equivalent a l'objecte de JSON). És un número long, és a dir que utilitza 24 bytes.</p>
+<p>Farem proves de la seua utilització en la seüent pregunta, en el moment d'inserir diferents documents.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="42__utilitzaci_de_mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="422__operacions_bsiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

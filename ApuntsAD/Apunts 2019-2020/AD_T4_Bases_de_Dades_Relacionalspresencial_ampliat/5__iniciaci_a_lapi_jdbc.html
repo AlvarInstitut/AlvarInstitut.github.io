@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5 - Iniciació a l'API JDBC | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="no-ch">4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse</a></li>
+   <li id="active"><a href="5__iniciaci_a_lapi_jdbc.html" class="active daddy">5 - Iniciació a l'API JDBC</a>
+   <ul>
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="6__jdbc_avanat.html" class="daddy">6 - JDBC avançat</a>
+   <ul class="other-section">
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51__crrega_de_controladors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5 - Iniciació a l'API JDBC</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_1" class="block iDevice_content">
+<p>Ara veurem els elements bàsics de l’<acronym title="Application Programming Interface">API</acronym> JDBC que permeten a les aplicacions Java comunicar-se amb un SGBD fent servir el llenguatge <acronym title="Structured Query Language">SQL</acronym>. Cal que disposeu del connector <strong>JDBC</strong> dels 4 SGDB que anem a utilitzar: <strong>PostgreSQL</strong>, <strong>Oracle</strong>, <strong>MySQL</strong> i <strong>SQLite</strong>. I també que els afegiu a les biblioteques del vostre projecte. També serà necessari que habiliteu una connexió per consultar la Base de Dades des de la perspectiva <strong>Database</strong> <strong>Development</strong> (com les que hem creat en el punt anterior).</p>
+<p>Per tal de poder practicar la connexió i accedir a les dades, tenim una Bases de Dades de prova en cada SGBD:</p>
+<ul>
+<li>PosgreSQL: <strong>geo<strong>_ad</strong></strong> (contrasenya: <strong>geo<strong>_ad</strong></strong>)</li>
+<li>Oracle: <strong>scott</strong> (contrasenya: <strong>tiger</strong>)</li>
+<li>MySQL: <strong>factura</strong> (contrasenya: <strong>factura</strong>)</li>
+<li>SQLite: <strong>proveta.sqlite</strong>, però en realitat <strong></strong>crearem les Bases de Dades que ens facen falta</li>
+</ul>
+<p>Crearem un projecte nou anomenat <strong>Tema4</strong>, per exemple, i li afegirem els <strong>controladors JDBC</strong> de <strong>PostgesSQL</strong>, <strong>Oracle</strong>, <strong>MySQL</strong> i <strong>SQLite</strong> com a biblioteca del projecte. Per a separar les proves dels exercicis, ens creem un <strong>paquet</strong> anomenat <strong>Exemples</strong>.</p>
+<p>Els drivers o controladors us els podeu baixar sense problemes. Són fàcils de trobar, únicament amb un buscador posar <strong>jdbc</strong> i el Sistema Gestor de Bases de Dades (per exemple <strong>jdbc postgresql</strong>). De tota manera, per més comoditat, teniu <strong>una carpeta en el curs de Moodle amb tots els drivers</strong> que ens fan falta</p>
+<p>En la següent imatge es veu com hem incorporat els drivers al projecte (es fa en les <strong>propietats</strong> del projecte, secció <strong>Java Build Path</strong>, pestanya <strong>Libraries</strong>, amb el botó <strong>Add Extetrnals JARs...</strong>)</p>
+<p style="text-align: center;"><img src="T4_5_1.png" style="border: 1px solid black;" width="800" height="587" /></p>
+<p></p>
+<p>En els punts següents anem a comentar cada cosa per separat, pas a pas. De tota manera, posem la llista inicial de classes que utilitzarem per a poder connectar i accedir a la Base de Dades:</p>
+<table cellpadding="5" border="1">
+<tbody>
+<tr style="background-color: #adadad;">
+<td>Classe</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td><strong>Driver</strong></td>
+<td>Permet connectar a una Base de Dades </td>
+</tr>
+<tr>
+<td><strong>DriverManager</strong></td>
+<td>Permet gestionar tots els drivers instal·lats al sistema</td>
+</tr>
+<tr>
+<td><strong></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><strong>Connection</strong></strong></td>
+<td>Representa una connexió amb una BD. En una aplicació pot haver més d'una connexió</td>
+</tr>
+<tr>
+<td><strong>Statement</strong></td>
+<td>Permet executar sentències SQL sense paràmetres</td>
+</tr>
+<tr>
+<td><strong>PreparedStatement</strong></td>
+<td><span>Permet executar sentències SQL amb paràmetres</span></td>
+</tr>
+<tr>
+<td><strong>ResultSet</strong></td>
+<td>Conté les files resultants d'executar una sentència SELECT</td>
+</tr>
+<tr>
+<td><strong></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><strong>DatabaseMetadata</strong></strong></td>
+<td>Proporciona informació d'una BD, com per exemple les taules que conté</td>
+</tr>
+<tr>
+<td><strong><strong>ResultSetMetadata</strong></strong></td>
+<td>Proporciona informació sobre un ResultSet: número de columnes, noms de les columnes, tipus, ...</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51__crrega_de_controladors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

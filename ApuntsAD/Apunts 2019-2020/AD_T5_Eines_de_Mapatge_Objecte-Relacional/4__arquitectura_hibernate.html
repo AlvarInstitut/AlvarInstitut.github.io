@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4 - Arquitectura Hibernate | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li id="active"><a href="4__arquitectura_hibernate.html" class="active no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3__eines_de_mapatge.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_i_configuraci_dhibernate.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4 - Arquitectura Hibernate</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_1" class="block iDevice_content">
+<p>El producte que utilitzarem serà <strong>Hibernate</strong>. Aquesta eina ens permetrà fer el mapatge entre objectes i les taules d'una Base de Dades. Aquestos objectes seran senzills, d'aquells que només tenen les propietats, i mètodes <strong>get</strong> i <strong>set</strong> per a accedir a elles.</p>
+<p>Per a intercanviar la informació entre aquestos objectes i la Base de Dades, utilitzarem la classe <strong>Session</strong> (que seria l'equivalent de <strong>Connection</strong> de JDBC). Aquesta classe ens proporciona els mètodes:</p>
+<ul>
+<li><strong>save(<em>objecte</em>) </strong>, que guardarà l'objecte en la Base de Dades</li>
+<li><strong>createQuery(<em>consulta</em>) </strong>, que crearà una consulta</li>
+<li><strong>beginTransaction() </strong>, que començarà una transacció</li>
+<li><strong>close()</strong></li>
+<li>...</li>
+</ul>
+<p>Amb açò, interactuar amb la Base de Dades serà molt senzill, i no farà falta executar sentències SQL, tal i com ens passava en JDBC.</p>
+<p><strong>Session</strong> no consumeix molta memòria i la seua creació i destrucció és molt barata, cosa que ens pot animar a crear (i destruir) una sessió per a cada accés a la Base de Dades. Ho anirem veient.</p>
+<p>El context que ens fa falta per a una aplicació serà:</p>
+<ul>
+<li><strong>Configuration</strong>. S'utilitza per a configurar Hibernate. L'aplicació utilitza una instància de Configuration per a especificar la ubicació dels documents que descriuen el mapatge i també per a especificar propietats específiques d'Hibernate. A partir de Configuration es crearà el <strong>SessionFactory</strong></li>
+<li><strong>SessionFactory</strong>. Permet construir instàncies <strong>Session</strong>. Normalment utilitzarem només un SessionFactory en tota l'aplicació, i d'ell traurem totes les sessions que ens facen falta, a no ser que ens toque accedir a més d'una Base de Dades, on aleshores tindrem una SessionFactory per cada Base de Dades.</li>
+<li><strong>Session</strong>. Com ja hem comentat representa una connexió a la Base de Dades.</li>
+<li><strong>Query</strong>. Permet realitzar consultes a la Base de Dades. El llenguatge utilitzat serà <strong>HQL</strong> (Hibernate Query Language) o el SQL del SGBD, però preferiblement utilitzarem el primer. Es construeix a partir d'un <strong>Session</strong></li>
+<li><strong>Transaction</strong>. Permet assegurar que es fan totes les actualitzacions o cap d'elles. De pas ens assegura que en cas d'error en mig d'una transacció, no es faça cap de les operacions. També es construeix a partir d'un <strong>Session</strong></li>
+</ul>
+<p style="text-align: center;"><img src="T5_4_2.jpg" alt="T5_4_2" width="460" height="446" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3__eines_de_mapatge.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_i_configuraci_dhibernate.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

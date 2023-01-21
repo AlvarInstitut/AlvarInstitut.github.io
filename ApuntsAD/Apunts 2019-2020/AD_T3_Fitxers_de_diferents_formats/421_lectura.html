@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.1 Lectura | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-23"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 3: Fitxers de diferents formats</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_fitxers_binaris_amb_formats_especfics.html" class="no-ch">1.- Fitxers binaris amb formats específics</a></li>
+   <li><a href="2_accs_directe_a_fitxers.html" class="no-ch">2.- Accés directe a fitxers</a></li>
+   <li><a href="3_seriaci_dobjectes.html" class="no-ch">3.- Seriació d'objectes</a></li>
+   <li class="current-page-parent"><a href="4_documents_xml.html" class="current-page-parent daddy">4.- Documents XML</a>
+   <ul>
+      <li><a href="41__parser_o_analitzador_xml.html" class="no-ch">4.1 - Parser o analitzador XML</a></li>
+      <li class="current-page-parent"><a href="42__lestructura_dom.html" class="current-page-parent daddy">4.2 - L'estructura DOM</a>
+      <ul>
+         <li id="active"><a href="421_lectura.html" class="active no-ch">4.2.1 Lectura</a></li>
+         <li><a href="422_escriptura.html" class="no-ch">4.2.2 Escriptura</a></li>
+      </ul>
+      </li>
+      <li><a href="43__binding.html" class="no-ch">4.3 - Binding</a></li>
+   </ul>
+   </li>
+   <li><a href="5_documents_json.html" class="daddy">5.- Documents JSON</a>
+   <ul class="other-section">
+      <li><a href="51__estructura_json.html" class="no-ch">5.1 - Estructura JSON</a></li>
+      <li><a href="52__api_simple_json.html" class="no-ch">5.2 - API Simple JSON</a></li>
+      <li><a href="53__accs_complet_des_de_java.html" class="no-ch">5.3 - Accés complet des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="42__lestructura_dom.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="422_escriptura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.1 Lectura</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id32">
+<div class="iDevice emphasis0">
+<div id="ta32_85" class="block iDevice_content">
+<div>
+<p>Anem a fer proves per poder comprovar el funcionament. Ens basem en el document <strong>cotxes.xml</strong> esmentat en la pregunta 4.1</p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>Aneu amb compte, perquè en el document <strong>cotxes.xml</strong> davant de la primera etiqueta no pot haver ni retorn de carro ni un espai en blanc ni res</p>
+</div>
+<p></p>
+<div class="codi">
+<div>import java.io.FileNotFoundException;</div>
+<div>import java.io.IOException;</div>
+<div> </div>
+<div>import javax.xml.parsers.DocumentBuilderFactory;</div>
+<div>import javax.xml.parsers.ParserConfigurationException;</div>
+<div> </div>
+<div>import org.w3c.dom.Document;</div>
+<div>import org.w3c.dom.Element;</div>
+<div>import org.xml.sax.SAXException;</div>
+<div> </div>
+<div> </div>
+<div>public class MirarXML {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws ParserConfigurationException, FileNotFoundException, IOException, SAXException {</div>
+<blockquote style="margin-left: 30px;">
+<div style="margin-left: 30px;">Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml");</div>
+<div style="margin-left: 30px;">System.out.println(doc.getNodeName());     // torna el nom del document. No és l'element arrel. Ens dirà #document</div>
+<div style="margin-left: 30px;">Element arrel = doc.getDocumentElement();  // apuntarà a l'element arrel</div>
+<div style="margin-left: 30px;">System.out.println(arrel.getNodeName());   // torna el nom de l'element. Ens dirà oferta</div>
+</blockquote>
+<div style="margin-left: 30px;">
+<blockquote style="margin-left: 30px;">System.out.println(arrel.getNodeValue());  // torna el valor de l'element. Com és un element que conté altres elements, el valor és null</blockquote>
+</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<div>
+<p>Tal i com està documentat, aquesta serà l'eixida:</p>
+<p class="codi2">#document<br />oferta<br />null</p>
+<p>Anem a comprovar ara que el primer fill de <strong>oferta</strong> no és <strong>vehiculo</strong> sinó el retorn de carro. Els element <strong>vehiculo</strong> són el segon i el quart (índex 1 i 3).<strong><br /></strong></p>
+<div class="codi">import java.io.FileNotFoundException;<br />import java.io.IOException;<br /> <br />import javax.xml.parsers.DocumentBuilderFactory;<br />import javax.xml.parsers.ParserConfigurationException;<br /> <br />import org.w3c.dom.Document;<br />import org.w3c.dom.Element;<br />import org.w3c.dom.NodeList;<br />import org.xml.sax.SAXException;<br /> <br /> <br />public class MirarXML2 {<br /> <br />    public static void main(String[] args) throws ParserConfigurationException, FileNotFoundException, IOException, SAXException {<br />        Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml");<br />        Element arrel = doc.getDocumentElement();  // apuntarà a l'element arrel<br />        NodeList fills = arrel.getChildNodes();<br />        System.out.println(fills.item(0).getNodeName());   // el primer fill és el retorn de carro.<br />        System.out.println(fills.item(1).getNodeName());   // el segon fill sí que és vehiculo<br />        System.out.println(fills.item(2).getNodeName());   // el tercer fill és el retorn de carro.<br />        System.out.println(fills.item(3).getNodeName());   // el quart fill sí que és vehiculo<br />        System.out.println(fills.item(4).getNodeName());   // el cinquè fill és el retorn de carro.<br />        System.out.println(fills.item(5).getNodeName());   // no existeix el sisè fill. Donarà error<br />        }<br />}</div>
+<p>Observeu que en l'última sentència estem provocant un error:</p>
+<p class="codi2">#text<br />vehiculo<br />#text<br />vehiculo<br />#text<br /><span style="color: #ff0000;">Exception in thread "main" java.lang.NullPointerException</span><br /><span style="color: #ff0000;">    at Exemples.MirarXML2.main(MirarXML2.java:25)</span></p>
+<p>Per tant, hem d'anar molt en compte amb els <em><strong>retorns de carro</strong></em>.</p>
+<ul>
+<li>Per a poder esquivar els <em>retorn de carro</em> podríem mirar el tipus de cada node ( <strong>getNodeType()</strong> ), menysprear els els de tipus <em><strong>TEXT_NODE</strong></em> i considerar només els de tipus <em><strong>ELEMENT_NODE</strong></em>.</li>
+</ul>
+<ul>
+<li>Però normalment l'accés que farem serà un poc més directe i més fàcil. Agafarem la llista de tots els element que tinguen un determinat nom amb <strong>getElementsByTagName(<em>nom</em>)</strong> .<strong> </strong>Evidentment en la llista no estaran els retorns de carro<strong> </strong>i així no tindrem problemes amb ells.</li>
+</ul>
+<p>En el següent exemple recorrerem tots els element <strong>vehiculo</strong>. De cadascun agafarem el contingut dels elements <strong>marca</strong> i <strong>matricula</strong>. També agafem el contingut de l'atribut <strong>combustible</strong> de l'element <strong>motor</strong>:</p>
+<div class="codi">public class MirarXmlCotxes {<br /><br />    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {<br /><br />        Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()<br />                .parse(new FileInputStream("cotxes.xml"));<br />        Element arrel = (Element) doc.getChildNodes().item(0);<br />        NodeList llista = arrel.getElementsByTagName("vehiculo");<br /><br />        for (int i = 0; i &lt; llista.getLength(); i++) {<br />            Element el = (Element) llista.item(i);<br />            System.out.println(el.getNodeName() + " " + (i + 1));<br />            System.out.println("Marca: " + el.getElementsByTagName("marca").item(0).getChildNodes().item(0).getNodeValue());<br />            System.out.println("Matrícula: " + el.getElementsByTagName("matricula").item(0).getFirstChild().getNodeValue());<br />            System.out.println("Motor: " + el.getElementsByTagName("motor").item(0).getTextContent());<br />            System.out.println("Combustible: " + el.getElementsByTagName("motor").item(0).getAttributes().item(0).getNodeValue());<br />            Element m = (Element) el.getElementsByTagName("motor").item(0);<br />            System.out.println("Combustible: " + m.getAttribute("combustible"));<br />            System.out.println();<br />        }<br />        System.out.println(arrel.getTextContent());<br />    }<br />}</div>
+<p>És molt important observar que quan tenim un element que ja té contingut, la informació no és accessible, sinó que hem d'anar al primer fill, que aquest ja és de tips <em><strong>TEXT_NODE</strong></em>, per agafar el seu valor.</p>
+<p>En l'exemple:</p>
+<ul>
+<li>Per a <strong>marca</strong> hem agafat de tota la llista de fills el primer, per traure el seu valor.</li>
+<li>En <strong>matricula</strong> en compte d'agafar tota la llista de fills, només hem agafat el primer, i per tant és més ràpid.</li>
+<li>I per a <strong>motor</strong> utilitzem el mètode <strong>getTextContent</strong>, que agafa el congingut de text de l'element i de tots els seus descendents. Com és un node de text ja sabem a priori que ens anirà bé, i per tant <strong>és la forma més ràpida</strong>.</li>
+</ul>
+<p>L'atribut <strong>combustible</strong> de l'element <strong>motor</strong> l'hem tret de 2 maneres:</p>
+<ul>
+<li>La primera agafant la llista d'atributs, i després el primer d'aquesta llista.</li>
+<li>En la segona manera s'ha fet més elegant, anat a buscar la propietat en qüestió. Per això hem convertit el node en l'<strong>element</strong> <strong>m</strong>, per a poder utilitzar <strong>getAttribute</strong>.</li>
+</ul>
+<p>Al final fem el <strong>getTextContent()</strong> sobre l'arrel per a comprovar que trau el seu contingut i el de tots els seus fills, per això apareix la informació duplicada</p>
+<p>Aquest serà el resultat de l'exemple anterior:</p>
+<p class="codi2">vehiculo 1<br />Marca: ford<br />Matrícula: 1234AAA<br />Motor: duratorc 1.4<br />Combustible: gasolina<br />Combustible: gasolina<br /><br />vehiculo 2<br />Marca: ford<br />Matrícula: 1235AAA<br />Motor: duratorc 2.0<br />Combustible: diesel<br />Combustible: diesel<br /><br /><br />  <br />    ford<br />    focus<br />    duratorc 1.4<br />    1234AAA<br />    12500<br />    12000<br />    10000<br />    pintura metalizada<br />    llantas<br />    11325.jpg<br />    11326.jpg<br />  <br />  <br />    ford<br />    focus<br />    duratorc 2.0<br />    1235AAA<br />    125000<br />    10000<br />    9000<br />    pintura metalizada<br />    spoiler trasero<br />    climatizador<br />    11327.jpg<br />    11328.jpg<br />  <br /><br /></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="42__lestructura_dom.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="422_escriptura.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

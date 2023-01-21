@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.- JOptionPane | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Gràfics en Java. Llibreries AWT i Swing</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_classes_bsiques_de_swing.html" class="no-ch">2.- Classes bàsiques de swing</a></li>
+   <li><a href="3_contenidors.html" class="no-ch">3.- Contenidors</a></li>
+   <li><a href="4_components.html" class="daddy">4.- Components</a>
+   <ul class="other-section">
+      <li><a href="41_jpanel.html" class="no-ch">4.1.- JPanel</a></li>
+      <li><a href="42_jbutton.html" class="no-ch">4.2.- JButton</a></li>
+      <li><a href="43_jtextfield.html" class="no-ch">4.3.- JTextField</a></li>
+      <li><a href="44_jlabel.html" class="no-ch">4.4.- JLabel</a></li>
+      <li><a href="45_jtextarea.html" class="no-ch">4.5.- JTextArea</a></li>
+      <li><a href="46_jcombobox.html" class="no-ch">4.6.- JComboBox</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mens.html" class="no-ch">5.- Menús</a></li>
+   <li class="current-page-parent"><a href="6_dilegs.html" class="current-page-parent daddy">6.- Diàlegs</a>
+   <ul>
+      <li id="active"><a href="61_joptionpane.html" class="active no-ch">6.1.- JOptionPane</a></li>
+      <li><a href="62_jfilechooser.html" class="no-ch">6.2.- JFileChooser</a></li>
+   </ul>
+   </li>
+   <li><a href="7_windowbuilder.html" class="no-ch">7.- WindowBuilder</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6_dilegs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_jfilechooser.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1.- JOptionPane</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_85" class="block iDevice_content">
+<p>Swing ens proporciona una classe per a fer finestres de diàleg estàndar, sense haver de construir un JDialog. Es tracta de <strong>JOptionPane</strong>, que ens permet crear diàlegs senzills, com tantes i tantes vegades voldrem construir. Aquestos diàlegs seran modals, i podem fer-ne d'unes quantes maneres:</p>
+<p>Ho farem sempre sobre l'últim exemple, el del diàleg: un botó que quan l'apretem traurà un missatge. Tan sols modificarem la línia 32 i importarem el <strong>JOptionPane</strong> (i per tant la línia a modificar quedarà en la 33)</p>
+<p class="titolet">Diàlegs de Missatge</p>
+<p>Senzillament trauen un missatge i un botó per a tancar el diàleg.</p>
+<p class="codi">JOptionPane.showMessageDialog(this, "Hola");</p>
+<p style="text-align: center;"><img src="Ann_Swing_10_JOPtionPane_1.png" width="264" height="120" /></p>
+<p>Opcionalment podem posar també un títol i canviar el dibuixet, per a que en compte d'informació indique error, pregunta, ...</p>
+<p class="codi">JOptionPane.showMessageDialog(this, "Hola", "Diàleg",JOptionPane.ERROR_MESSAGE);</p>
+<p style="text-align: center;"><img src="Ann_Swing_11_JOptionPane_2.png" /></p>
+<p>Els valors per al símbol poden ser ERROR_MESSAGE, INFORMATION_MESSAGE, QUESTION_MESSAGE, ...</p>
+<p></p>
+<p class="titolet">Missatge de confimació; showConfirmDialog()</p>
+<p><strong>showConfirmDialog()</strong> ens permet mostrar un diàleg amb un comentari i uns botons de Sí, No , Cancel·lar. Aquest mètode torna un valor, que serà l'opció triada.</p>
+<p>En aquest exemple mostrem per l'eixida estàndar l'opció triada:</p>
+<p class="codi">    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource()==boto1){<br />            int opcio = JOptionPane.showConfirmDialog(this,"D'acord?");<br /><br />            if (opcio == JOptionPane.OK_OPTION)<br />               System.out.println("Sí");<br />            if (opcio == JOptionPane.NO_OPTION)<br />                   System.out.println("No");<br />            if (opcio == JOptionPane.CANCEL_OPTION)<br />                   System.out.println("Cancel·lat");        <br />        }<br />    }</p>
+<p style="text-align: center;"><img src="Ann_Swing_12_JOptionPane_3.png" width="264" height="120" /></p>
+<p>Els botons que volem que apareguen són configurables.</p>
+<p class="titolet">Diàleg d'entrada: showInputDialog()</p>
+<p>Per a poder introduir un text, amb dos botons, d'acceptació i cancel·lació. El mètode retornarà un string amb el text introduït (si s'ha apretat cancel·lar, aquest string serà nul).</p>
+<p class="codi">       String nom = JOptionPane.showInputDialog("Introdueix el teu nom");<br />       System.out.println("Hola, " + nom);</p>
+<p style="text-align: center;"><img src="Ann_Swing_13_OptionPane_4.png" width="293" height="123" /></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6_dilegs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_jfilechooser.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

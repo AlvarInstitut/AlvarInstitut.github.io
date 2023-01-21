@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 - MySQL | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Muntatge d'un WebService</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_instalaci_del_servidor_web_i_el_servidor_de_bases_de_dades.html" class="no-ch">2.- Instal·ació del Servidor Web i el Servidor de Bases de Dades</a></li>
+   <li class="current-page-parent"><a href="3_utilitzaci_de_xampp.html" class="current-page-parent daddy">3.- Utilització de XAMPP</a>
+   <ul>
+      <li id="active"><a href="31__mysql.html" class="active no-ch">3.1 - MySQL</a></li>
+      <li><a href="32__ftp.html" class="no-ch">3.2 - FTP</a></li>
+   </ul>
+   </li>
+   <li><a href="4_php_accs_a_les_dades.html" class="no-ch">4.- PHP: Accés a les dades</a></li>
+   <li><a href="5_json.html" class="no-ch">5.- JSON</a></li>
+   <li><a href="6_accs_des_de_java.html" class="no-ch">6.- Accés des de Java</a></li>
+   <li><a href="7_accs_des_dandroid.html" class="no-ch">7.- Accés des d'Android</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_utilitzaci_de_xampp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__ftp.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 - MySQL</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_85" class="block iDevice_content">
+<p>Per a utilitzar i administrar <strong>MySQL</strong> o <strong>MariaDB</strong>, XAMPP ens proporciona <strong>PhpMyAdmin</strong>, que és sense dubte el mètode més habitual per a utilitzar i administrar ambdós. Podem accedir des d'un navegador, a l'adreça <strong>http://localhost/phpmyadmin</strong></p>
+<p style="text-align: center;"><br /><img src="Annex_WebService_3_1_1.png" width="1391" height="743" /></p>
+<p>Introduirem unes dades, que seran les de sempre, les de les rutes: la taula RUTES i la taula PUNTS.</p>
+<p>Per a això:</p>
+<ul>
+<li>Creem una nova Base de Dades anomenada <strong>Rutes</strong> (<strong>Bases de dades --&gt; Crear base de dades</strong>)</li>
+<li>Ens situem dins de <strong></strong>la BD <strong>Rutes</strong> i anem a <strong>SQL</strong>, on copiem i executem les següents sentències (poden anar totes juntes)</li>
+</ul>
+<p class="codi2">CREATE TABLE RUTES ( num_r INTEGER PRIMARY KEY, nom_r TEXT, desn INTEGER, desn_acum INTEGER );<br />INSERT INTO RUTES VALUES(1,'Pujada a Penyagolosa',530,530);<br />INSERT INTO RUTES VALUES(2,'La Magdalena',51,84);<br />INSERT INTO RUTES VALUES(3,'Pelegrins de Les Useres',896,1738);</p>
+<p class="codi2">CREATE TABLE PUNTS ( num_r INTEGER REFERENCES RUTES(num_r), num_p INTEGER , nom_p TEXT, latitud REAL, longitud REAL ,PRIMARY KEY (num_r,num_p) );<br />INSERT INTO PUNTS VALUES(1,1,'Sant Joan',40.251036,-0.354223);<br />INSERT INTO PUNTS VALUES(1,2,'Encreuament',40.25156,-0.352507);<br />INSERT INTO PUNTS VALUES(1,3,'Barranc de la Pegunta',40.247318,-0.351713);<br />INSERT INTO PUNTS VALUES(1,4,'El Corralico',40.231708,-0.348859);<br />INSERT INTO PUNTS VALUES(1,5,'Penyagolosa',40.222632,-0.350339);<br />INSERT INTO PUNTS VALUES(2,1,'Primer Molí',39.99385,-0.032941);<br />INSERT INTO PUNTS VALUES(2,2,'Segon Molí',39.99628,-0.029427);<br />INSERT INTO PUNTS VALUES(2,3,'Caminàs',40.00513,-0.022569);<br />INSERT INTO PUNTS VALUES(2,4,'Riu Sec',40.006765,-0.02237);<br />INSERT INTO PUNTS VALUES(2,5,'Sant Roc',40.017906,-0.02289);<br />INSERT INTO PUNTS VALUES(2,6,'Explanada',40.034048,-0.00633);<br />INSERT INTO PUNTS VALUES(2,7,'La Magdalena',40.034519,-0.005856);<br />INSERT INTO PUNTS VALUES(3,1,'Les Useres',40.158126,-0.166962);<br />INSERT INTO PUNTS VALUES(3,2,'Les Torrocelles',40.196046,-0.227611);<br />INSERT INTO PUNTS VALUES(3,3,'Lloma Bernat',40.21921,-0.26356);<br />INSERT INTO PUNTS VALUES(3,4,'Xodos (Molí)',40.248003,-0.29669);<br />INSERT INTO PUNTS VALUES(3,5,'El Marinet',40.250977,-0.316947);<br />INSERT INTO PUNTS VALUES(3,6,'Sant Joan',40.251221,-0.354052);</p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_utilitzaci_de_xampp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__ftp.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

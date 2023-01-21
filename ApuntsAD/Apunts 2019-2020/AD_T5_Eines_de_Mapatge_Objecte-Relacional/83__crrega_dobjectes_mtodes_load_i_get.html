@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8.3 - Càrrega d'objectes: mètodes load() i get() | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li><a href="6__classes_generades.html" class="no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li class="current-page-parent"><a href="8__sessions_i_objectes_hibernate.html" class="current-page-parent daddy">8 - Sessions i objectes hibernate</a>
+   <ul>
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li id="active"><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="active no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="82__estats_dun_objecte_hibernate.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">8.3 - Càrrega d'objectes: mètodes load() i get()</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_1" class="block iDevice_content">
+<p>La càrrega d'objectes s'aconsegueix amb els mètodes <strong>load()</strong> i <strong>get()</strong>. Són similars excepte en una qüestió: el primer dóna un error si no es troba la fila, mentre que el segon contindrà null. Per tant, si no estem segurs de trobar la fila, hauríem d'utilitzar get, a no ser que vulguem provocar l'excepció, clar.</p>
+<p>Tant si utilitzem un com l'altre, haurem d'especificar 2 paràmetres: la <strong>classe</strong> que volem buscar, i el <strong>valor</strong> de la clau principal de qui volem trobar. Aquest valor s'ha de passar amb el mateix tipus que la propietat corresponent a la clau principal, i en moltes ocasions haurem de canviar de tipus (<strong>cast</strong>). En el següent exemple, ja utilitzat anteriorment, trobem la comarca <strong>Alt Maestrat</strong> (valor de <strong>nom_c</strong>, que correspon a la clau principal). En aquesta ocasió no cal canviar de tipus, ja que és string:</p>
+<div class="codi">
+<div> </div>
+<div><span>        SessionFactory sf = SessionFactoryUtil.getSessionFactory();</span></div>
+<div>        Session sessio = sf.openSession();</div>
+<div> </div>
+<div><span style="color: #ff0000;">        Comarca com = (Comarca) sessio.load(Comarca.class, "Alt Maestrat");</span></div>
+<div> </div>
+<div>        System.out.print("Comarca " + com.getNomC() + ": " + com.getProvincia());</div>
+<div>        sessio.close();</div>
+<div> </div>
+</div>
+<p>Com comentàvem, si no existira la comarca Alt Maestrat, donaria un error. Ací tenim el mateix exemple, però utilitzant el mètode <strong>get()</strong> i comprovant després si <strong>com </strong> és null, i així esquivem l'error:</p>
+<div class="codi">
+<div> </div>
+        SessionFactory sf = SessionFactoryUtil.getSessionFactory();<br />        Session sessio = sf.openSession();<br /><br />        <span style="color: #ff0000;">Comarca com = (Comarca) sessio.get(Comarca.class, "Maestrat mitjà");</span><br /><br />        if (com==null)<br />            System.out.print("No existeix la comarca");<br />        else <br />            System.out.print("Comarca " + com.getNomC() + ": " + com.getProvincia());<br />        sessio.close();<br />
+<div> </div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id22">
+<div class="iDevice emphasis0">
+<div id="ta22_1" class="block iDevice_content">
+<p>Anem a mirar la potencialitat que ens proporciona la manera que té Hibernate de construir les classes, amb el conjunt (o col·lecció) de poblacions que té un objecte de la classe Comarca.</p>
+<p>Els <strong>Set</strong> es poden recórrer de més d'una manera. Una molt estesa és utilitzar un <strong>iterator</strong>, utilitzant els mètodes <strong>hasNext()</strong> que ens diu si hi ha més elements en la col·lecció, i <strong>next()</strong> que torna el següent element de la col·lecció. En el següent programa anem a visualitzar informació de la comarca de l'<strong>Alcalatén</strong>, i també els seus pobles. En roig està marcada la utilització del <strong>Iterator</strong>:</p>
+<p class="codi">import java.util.Iterator;<br /><br />import org.hibernate.Session;<br />import org.hibernate.SessionFactory;<br /><br />import classes.Comarca;<br />import classes.Poblacio;<br />import classes.SessionFactoryUtil;<br /><br />public class TercerAcces {<br /><br />    public static void main(String[] args) {<br /><br />        SessionFactory sf = SessionFactoryUtil.getSessionFactory();<br />        Session sessio = sf.openSession();<br />        Comarca com = (Comarca) sessio.load(Comarca.class, "Alcalatén");<br />        System.out.print("Comarca " + com.getNomC() + ": ");<br />        System.out.print(com.getProvincia());<br />        System.out.println(" (" + com.getPoblacios().size() + " pobles)");<br />        System.out.println();<br />        System.out.println("Llista de pobles");<br />        System.out.println("-----------------");<br />        <br />        <span style="color: #ff0000;">Iterator&lt;Poblacio&gt; it = com.getPoblacios().iterator();</span><br /><span style="color: #ff0000;">        </span><br /><span style="color: #ff0000;">        while (it.hasNext()){</span><br /><span style="color: #ff0000;">            Poblacio p = it.next();</span><br /><span style="color: #ff0000;">            System.out.println(p.getNom()+ " (" + p.getPoblacio() + " habitants)");</span><br /><span style="color: #ff0000;">        }</span><br /><br />        sessio.close();<br />    }<br />}</p>
+<p>Però més senzilla encara és la utilització del bucle <strong>foreach</strong>, que fa el recorregut ell sol, tenint disponible cada element. La sintaxi en Java és <strong>for (<em>Classe</em></strong> <strong>e :</strong> <em><strong>conjunt</strong></em><strong>)</strong> i <strong>e</strong> anirà agafant tots els valors de la col·lecció.</p>
+<p>Així, en el programa anterior podem substituir la declaració del iterator i el bucle (és a dir, les marcades amb roig) pel següent:</p>
+<p class="codi"><br />        <span style="color: #ff0000;">for (Poblacio p : com.getPoblacios())<br />            System.out.println(p.getNom()+ " (" + p.getPoblacio() + " habitants)");</span><br /><br /></p>
+<p>I quedaria de la següent manera:</p>
+<p class="codi">import java.util.Iterator;<br /><br />import org.hibernate.Session;<br />import org.hibernate.SessionFactory;<br /><br />import classes.Comarca;<br />import classes.Poblacio;<br />import classes.SessionFactoryUtil;<br /><br />public class QuartAcces {<br /><br />    public static void main(String[] args) {<br /><br />        SessionFactory sf = SessionFactoryUtil.getSessionFactory();<br />        Session sessio = sf.openSession();<br />        Comarca com = (Comarca) sessio.load(Comarca.class, "Alcalatén");<br />        System.out.print("Comarca " + com.getNomC() + ": ");<br />        System.out.print(com.getProvincia());<br />        System.out.println(" (" + com.getPoblacios().size() + " pobles)");<br />        System.out.println();<br />        System.out.println("Llista de pobles");<br />        System.out.println("-----------------");<br />        <br />        for (Poblacio p : com.getPoblacios())<br />            System.out.println(p.getNom()+ " (" + p.getPoblacio() + " habitants)");<br /><br />        sessio.close();<br />    }<br />}</p>
+<p>En ambdós, tant en <strong>TercerAcces</strong> com en <strong>QuartAcces</strong> casos el resultat haurà estat:</p>
+<p class="codi2">Comarca Alcalatén: Castelló (9 pobles)<br /><br />Llista de pobles<br />-----------------<br />Atzeneta del Maestrat (1321 habitants)<br />Vistabella del Maestrat (384 habitants)<br />Figueroles (549 habitants)<br />Benafigos (156 habitants)<br />Costur (562 habitants)<br />Useres, les (992 habitants)<br />Xodos (126 habitants)<br />Llucena (1417 habitants)<br />Alcora, l' (10672 habitants)</p>
+<p>Com veieu apareixen tots els pobles de la comarca que hem llegit, però com és un conjunt (Set) no podem assegurar lordre. De fet, podria ser que a cadascú de nosaltres li apareguen els pobles en ordre distint.</p>
+<p>Estaria bé que aparegueren ordenats. Sempre ho podríem fer per mig d'una consulta i ordenar pel nom de la població com veurem més avant. Però si ens interessa que els pobles apareguen sempre ordenats, podem fer una altra cosa: modificant el fitxer de mapatge, li podem dir que ens apareguen sempre ordenats per un camp. Ho havíem comentat en la pregunta 7, i ara anem a aplicar-lo.</p>
+<p>Per mig d'una senzilla indicació en el fitxer de mapatge <strong>Comarca.hbm.xml</strong>, podem fer que les dades ens vinguen ordenades, és a dir, que les poblacions d'una comarca ens vinguen per ordre alfabètic. Senzillament serà posar <strong>order-by="nom"</strong> en la definició del <strong>set </strong><strong>poblacios</strong>.</p>
+<p>És a dir hauríem de substituir la línia</p>
+<p class="codi2">        &lt;set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="poblacios" optimistic-lock="true" sort="unsorted" table="poblacio"&gt;</p>
+<p>per</p>
+<p class="codi2">         &lt;set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="poblacios" optimistic-lock="true" sort="unsorted" table="poblacio" order-by="nom"&gt;</p>
+<p>I així li estem dient que les poblacions vinguen ordenades per nom, que és el camp de la taula <strong>POBLACIO</strong> pel qual ens interessa ordenar.</p>
+<p>Només fent aquesta modificació, el resultat tant del programa <strong>TercerAcces</strong> com el de <strong>QuartAccess</strong> serà:</p>
+<p class="codi2">Comarca Alcalatén: Castelló (9 pobles)<br /><br />Llista de pobles<br />-----------------<br />Alcora, l' (10672 habitants)<br />Atzeneta del Maestrat (1321 habitants)<br />Benafigos (156 habitants)<br />Costur (562 habitants)<br />Figueroles (549 habitants)<br />Llucena (1417 habitants)<br />Useres, les (992 habitants)<br />Vistabella del Maestrat (384 habitants)<br />Xodos (126 habitants)</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="82__estats_dun_objecte_hibernate.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

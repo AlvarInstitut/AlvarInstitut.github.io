@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1 - Accés a les Meta Dades | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="no-ch">4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse</a></li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6__jdbc_avanat.html" class="current-page-parent daddy">6 - JDBC avançat</a>
+   <ul>
+      <li id="active"><a href="61__accs_a_les_meta_dades.html" class="active no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6__jdbc_avanat.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1 - Accés a les Meta Dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id22">
+<div class="iDevice emphasis0">
+<div id="ta22_1" class="block iDevice_content">
+<p>Normalment quan accedim a una Base de Dades des d'un programa Java, coneixerem l'estructura d'aquesta Base de Dades, és a dir, les taules que té i cada taula quins camps i de quin tipus són. I fins i tot les claus externes entre les taules.</p>
+<p>Però podria passar que no coneguérem aquesta estructura. Això no hauria de ser un problema per accedir a la Base de Dades, ja que aquesta és autodescriptiva, és a dir, que hem de poder consultar a la Base de Dades per a que ens diga la seua estructura.</p>
+<p>L'objecte que ens dóna aquesta informació és el <strong>DatabaseMetaData</strong>. Disposa de molts mètodes que ens proporcionen gran quantitat d'informació.</p>
+<p>I també ens dóna informació un altre objecte, <strong>ResultSetMetaData</strong>, que obtindrà la informació a partir d'un <strong>ResultSet</strong>. Veurem els dos per separat.</p>
+<p class="titolet">DatabaseMetaData</p>
+<p>És l'adequat quan volem veure les taules i vistes que tenim en la Base de Dades, així com l'estructura de cadascuna d'elles.</p>
+<p>Mirem primer els mètodes més interessants que té:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Nom del mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getDatabaseProductName()</strong> </td>
+<td>Torna el nom del SGBD</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getDriverName()</strong></td>
+<td>Torna el driver JDBC utilitzat</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getURL()</strong></td>
+<td>Torna la URL de la connexió </td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getUserName()</strong></td>
+<td>Torna el nom de l'usuari que s'ha connectat </td>
+</tr>
+<tr>
+<td>ResultSet</td>
+<td><strong>getTables(cataleg, esquema, nom, tipus) </strong></td>
+<td>Torna informació de totes les taules que coincideixen amb els patrons o criteris.<br />Si posem null a tots els paràmetres ens tornarà totes les taules i vistes</td>
+</tr>
+<tr>
+<td>ResultSet</td>
+<td><strong>getColumns(<strong>cataleg, esquema, nom, nom_columna)</strong></strong> </td>
+<td>Torna informació de les columnes de la taula especificada en el tercer paràmetre<br /> (que està en el catàleg i en l'esquema, si els posem).<br /> El quart paràmetre servirà per a seleccionar les columnes  que coincidesquen amb el patró (null per a totes)</td>
+</tr>
+<tr>
+<td>ResultSet </td>
+<td><strong>getPrimaryKeys(cataleg, esquema, taula)</strong></td>
+<td>Torna la llista de camps que formen la clau principal </td>
+</tr>
+<tr>
+<td><span>ResultSet</span> </td>
+<td><strong>getImportedKeys(cataleg, esquema, taula)</strong> </td>
+<td>Torna una llista amb les claus externes definides en aquesta taula </td>
+</tr>
+<tr>
+<td><span>ResultSet</span> </td>
+<td><strong>getExportedKeys(cataleg, esquema, taula)</strong> </td>
+<td>Torna una llista amb les claus externes que apunten a aquesta taula </td>
+</tr>
+</tbody>
+</table>
+<p>Per poder comprovar tot l'anterior, farem un programa que ens done informació de la Base de Dades, una relació de les taules i vistes que té.</p>
+<p>Posteriorment acceptarà un número, i traurà la informació de la taula corresponent amb aquest format: columnes, tipus, clau principal, claus externes.</p>
+<div class="codi">import java.io.BufferedReader;<br />import java.io.IOException;<br />import java.io.InputStreamReader;<br />import java.sql.*;<br />import java.util.ArrayList;<br /><br />public class MetaData {<br /><br />    public static void main(String[] args)<br />            throws SQLException, ClassNotFoundException, NumberFormatException, IOException {<br />        Class.forName("org.postgresql.Driver");<br />        Connection con = DriverManager.getConnection("jdbc:postgresql://89.36.214.106:5432/geo_ad", "geo_ad", "geo_ad");<br /><br />        DatabaseMetaData dbmd = con.getMetaData();<br />        System.out.println("Informació general");<br />        System.out.println("------------------");<br />        System.out.println("SGBD: " + dbmd.getDatabaseProductName());<br />        System.out.println("Driver: " + dbmd.getDriverName());<br />        System.out.println("URL: " + dbmd.getURL());<br />        System.out.println("Usuari: " + dbmd.getUserName());<br />        System.out.println();<br />        System.out.println("Llistat de taules:");<br />        System.out.println(String.format("%-6s %-7s %-7s %-10s %-10s","Número","Catàleg","Esquema","Nom","Tipus"));<br />        System.out.println("---------------------------------------------");<br />        ResultSet ll = dbmd.getTables(null, "public", null, null);<br />        int compt = 1;<br />        ArrayList&lt;String&gt; taules = new ArrayList&lt;String&gt;();<br />        while (ll.next()) {<br />            System.out.println(String.format("%-6d %-7s %-7s %-10s %-10s",(compt++),ll.getString(1),ll.getString(2),ll.getString(3),ll.getString(4)));<br />            taules.add(ll.getString(3));<br />        }<br />        System.out.println();<br />        System.out.println("Introdueix un número per veure l'estructura de la taula (0 per acabar): ");<br />        BufferedReader ent = new BufferedReader(new InputStreamReader(System.in));<br />        int opcio = Integer.parseInt(ent.readLine());<br /><br />        while (opcio != 0) {<br />            if (opcio &lt; compt &amp;&amp; opcio &gt; 0) {<br />                ResultSet taula = dbmd.getTables(null, "public", taules.get(opcio - 1), null);<br />                if (taula.next()){<br />                    if (taula.getString(4).equals("TABLE")){<br />                        ResultSet rs = dbmd.getColumns(null, "public", taules.get(opcio - 1), null);<br />                        System.out.println("Estructura de la taula " + taules.get(opcio - 1));<br />                        System.out.println("----------------------------");<br />                        while (rs.next())<br />                            System.out.println(rs.getString(4) + " (" + rs.getString(6) + ")");<br />                        System.out.println("----------------------------");<br /><br />                        rs = dbmd.getPrimaryKeys(null, "public", taules.get(opcio - 1));<br />                        System.out.print("Clau principal: ");<br />                        while (rs.next())<br />                            System.out.print(rs.getString(4) + " ");<br />                        System.out.println();<br /><br />                        rs = dbmd.getImportedKeys(null, "public", taules.get(opcio - 1));<br />                        System.out.println("Claus externes: ");<br />                        while (rs.next()) {<br />                            System.out.println(rs.getString(8) + " apunta a " + rs.getString(3));<br />                        }<br />                        rs.close();<br />                    }<br />                }<br />                taula.close();<br /><br />            }<br />            System.out.println();<br />            System.out.println("Introdueix un número per veure l'estructura de la taula (0 per acabar): ");<br />            opcio = Integer.parseInt(ent.readLine());<br />        }<br />        ll.close();<br />        con.close();<br />    }<br />}</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id23">
+<div class="iDevice emphasis0">
+<div id="ta23_1" class="block iDevice_content">
+<p class="titolet">ResultSetMetaData</p>
+<p>Una vegada executada una sentència SELECT de SQL que ja tenim el resultat en un ResultSet, podem accedir també a meta dades d'aquest ResultSet, obtenint per exemple el número de columnes, o el tipus de les columnes. Ho obtenim per mig del <strong>ResulSetMetaData</strong>.</p>
+<p>Només veurem 3 mètodes</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Valor tornat</td>
+<td>Nom del mètode</td>
+<td>Descripció</td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong>getColumnCount()</strong> </td>
+<td>Torna el número de columnes del ResultSet</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getColumnName(index)</strong></td>
+<td>Torna el nom de la columna (la primera columna és la 1)</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getColumnTypeName(index)</strong></td>
+<td>Torna el tipus de la columna </td>
+</tr>
+</tbody>
+</table>
+<p>El següent exemple és una modificació del programa anterior, on ara traurem tot el contingut d'una taula per mig de la sentència <strong>SELECT * FROM <em>taula</em></strong>. Intentarem donar-li un aspecte tabular, però sense patir molt per l'aspecte.</p>
+<div class="codi">import java.io.BufferedReader;<br />import java.io.IOException;<br />import java.io.InputStreamReader;<br />import java.sql.Connection;<br />import java.sql.DatabaseMetaData;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />import java.util.ArrayList;<br /><br />public class ResultSetMetaData {<br />    public static void main(String[] args)<br />            throws SQLException, ClassNotFoundException, NumberFormatException, IOException {<br />        Class.forName("org.postgresql.Driver");<br />        Connection con = DriverManager.getConnection("jdbc:postgresql://89.36.214.106:5432/geo_ad", "geo_ad","geo_ad");<br /><br />        DatabaseMetaData dbmd = con.getMetaData();<br />        System.out.println("Llistat de taules:");<br />        System.out.println(String.format("%-6s %-7s %-7s %-10s %-10s", "Número", "Catàleg", "Esquema", "Nom", "Tipus"));<br />        System.out.println("---------------------------------------------");<br />        ResultSet ll = dbmd.getTables(null, "public", null, null);<br />        int compt = 1;<br />        ArrayList&lt;String&gt; taules = new ArrayList&lt;String&gt;();<br />        while (ll.next()) {<br />            System.out.println(String.format("%-6d %-7s %-7s %-10s %-10s", (compt++), ll.getString(1), ll.getString(2),ll.getString(3), ll.getString(4)));<br />            taules.add(ll.getString(3));<br />        }<br />        System.out.println();<br />        System.out.println("Introdueix un número per veure el contingut de la taula (0 per acabar): ");<br />        BufferedReader ent = new BufferedReader(new InputStreamReader(System.in));<br />        int opcio = Integer.parseInt(ent.readLine());<br /><br />        while (opcio != 0) {<br />            if (opcio &lt; compt &amp;&amp; opcio &gt; 0) {<br />                ResultSet taula = dbmd.getTables(null, "public", taules.get(opcio - 1), null);<br />                if (taula.next()) {<br />                    if (taula.getString(4).equals("TABLE")) {<br />                        ResultSet rs = con.createStatement().executeQuery("SELECT * FROM " + taules.get(opcio - 1));<br />                        System.out.println("Contingut de la taula " + taules.get(opcio - 1));<br />                        System.out.println("----------------------------");<br /><br />                        java.sql.ResultSetMetaData rsmd = rs.getMetaData();<br />                        for (int i = 1; i &lt;= rsmd.getColumnCount(); i++)<br />                            System.out.print(String.format("%-20.20s",rsmd.getColumnName(i)));<br />                        System.out.println();<br />                        System.out.println("------------------------------------------");<br /><br />                        while (rs.next()) {<br />                            for (int i = 1; i &lt;= rsmd.getColumnCount(); i++)<br />                                System.out.print(String.format("%-20.20s ",rs.getString(i)));<br />                            System.out.println();<br />                        }<br />                        rs.close();<br />                    }<br />                }<br />                taula.close();<br />            }<br />            System.out.println();<br />            System.out.println("Introdueix un número per veure el contingut de la taula (0 per acabar): ");<br />            opcio = Integer.parseInt(ent.readLine());<br />        }<br />        ll.close();<br />        con.close();<br />    }<br />}</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6__jdbc_avanat.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

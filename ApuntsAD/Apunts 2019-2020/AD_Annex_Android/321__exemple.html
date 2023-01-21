@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.1 - Exemple | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Permanència en ANDROID</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__permanncia_en_fitxers.html" class="daddy">2 - Permanència en fitxers</a>
+   <ul class="other-section">
+      <li><a href="21__exemple.html" class="no-ch">2.1 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__permanncia_en_bd_relacionals.html" class="current-page-parent daddy">3 - Permanència en BD Relacionals</a>
+   <ul>
+      <li><a href="31__connexi_remota.html" class="no-ch">3.1 - Connexió remota</a></li>
+      <li class="current-page-parent"><a href="32__connexi_local.html" class="current-page-parent daddy">3.2 - Connexió local</a>
+      <ul>
+         <li id="active"><a href="321__exemple.html" class="active no-ch">3.2.1 - Exemple</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="no-ch">4 - Permanència en BD Orientades a Objectes</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32__connexi_local.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.1 - Exemple</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_1" class="block iDevice_content">
+<p>Anem a modificar un exercici fet en el mòdul de <strong>DI</strong>, el de <strong>CoffeeShops</strong>, per a guardar les dades en una Base de Dades SQL. Concretament el que anem a guardar en la Base de Dades són les dades dels cafés i les imatges.</p>
+<div class="nota_blau">
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>Si no teniu aquesta aplicació, us la podeu baixar del Moodle, tant la versió original per a poder aplicar els canvis ací exposats, com la versió amb els canvis ja fets.</p>
+</div>
+<p>El primer que haurem de fer és dissenyar la Base de Dades, cosa senzilla, ja que només ens plantegem mostrar el nom del café, l'adreça, la puntuació si la tinguérem i una imatge. També guardarem un número del local, que el podem fer perfectament autoincrementat. Si pensem en afegir algun camp, ho podem fer a posteriori sense cap problema</p>
+<p class="codi2">LOCAL (<span style="text-decoration: underline;">num</span>, nom, adreca, punts, imatge)</p>
+<p>Com dèiem, el primer camp el farem enter autonumèric, el segon i tercer de text, i el quart també enter.</p>
+<p>Per a guardar la imatge, podríem fer referència únicament al seu nom (i en tot cas ruta), i per tant seria també de text. Aquesta és la manera més habitual de guardar les imatges. Però en aquest exemple, per a poder practicar un poc més, intentarem guardar la mateixa imatge en la Base de Dades. En aquest cas el tipus de dades apropiat és BLOB.</p>
+<p class="codi2">LOCAL (<span style="text-decoration: underline;">num</span>: integer, nom: text, adreca: text, punts: integer, imatge: Blob)</p>
+<p>No ens plantejarem crear la Base de Dades des de l'aplicació, ja que suposaria accedir als fitxers de les imatges i seria un procés més laboriós que no interessa en aquest moment. Ens ajudarem doncs d'alguna utilitat de SQLite, per exemple el <strong>SQLite Studio</strong>, que permet introduir camps normals i també fitxers sencers en un Blob incloent imatges des de la versió 3.2. Anomenarem a la Base de Dades <strong>CoffeeShops.sqlite</strong>. Si no us aclariu a crear la Base de Dades, la podeu demanar al professor.</p>
+<p>Del programa ja fet en l'altre mòdul (DI) no canviarem molta cosa, únicament la procedència de les dades, i l'estrictament necessari:</p>
+<h3>JAVA</h3>
+<ul>
+<li>
+<p>En <strong>Tarjeta</strong>, la propietat <strong>imag</strong> abans era un <strong>int</strong> perquè guardàvem la referència de la imatge, però ara guardarem la mateixa imatge, que la portarem des de la Base de Dades. Ens convé un array de bytes (<strong>byte[ ]</strong>), ja que podrem passar fàcilment les dades des de la BD, i damunt és serialitzable. Podríem haver utiltizat un <strong>Drawable</strong>, però aquest no és serialitzable mentre que l'array de bytes sí, i ens fa falta per a poder passar les dades al segon Activity. Haurem de canviar també el <strong>getImag</strong><strong></strong>, lògicament. Estan marcades en roig les coses que han canviat.</p>
+<div class="codi">
+<pre><code>public class Tarjeta {
+    <span style="color: #ff0000;">//private int imag;
+    //int logo;
+    // Ara logo serà byte[] per a contenir directament la imatge, no int com abans
+    byte[] imag;</span>
+    private String titulo;
+    private String subtitulo;
+
+        public Tarjeta(<span style="color: #ff0000;">byte[]</span> foto, String tit,  String subtit){
+            imag = foto;
+            titulo = tit;
+            subtitulo = subtit;
+        }
+
+        public <span style="color: #ff0000;">byte[]</span> getImag(){
+            return imag;
+        }
+        public String getTitulo(){ return titulo; }
+        public String getSubtit() { return subtitulo; }
+}</code></pre>
+</div>
+</li>
+<li>
+<p>En <strong>CardsAdapter</strong> canvia la manera de plasmar la imatge. Abans era un <strong>int</strong> que feia referència a un recurs (la imatge guardada en <strong>res.drawable</strong>). Ara tenim la pròpia imatge, en un <strong>byte[]</strong>. Una manera de passar-li'l al <strong>ImageView</strong> és convertir-la prèviament en un <strong>Bitmap</strong> (amb el mètode <strong>decodeByteArray</strong> de <strong>BitmapFactory</strong>).</p>
+<div class="codi">
+<pre><code><span style="color: #ff0000;">import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;</span>
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+public class CardsAdapter extends RecyclerView.Adapter&lt;CardsAdapter.TarjViewHolder&gt; {
+
+    private ArrayList&lt;Tarjeta&gt; items;
+
+    public CardsAdapter(ArrayList&lt;Tarjeta&gt; items) {
+        this.items = items;
+    }
+
+    public class TarjViewHolder extends RecyclerView.ViewHolder {
+        private ImageView imagen;
+        private TextView text;
+        private TextView text1;
+        private RatingBar barstars;
+        private TextView puntos;
+
+        public TarjViewHolder(View itemView) {
+            super(itemView);
+
+            imagen = itemView.findViewById(R.id.img1);
+            text = itemView.findViewById(R.id.textView);
+            text1 = itemView.findViewById(R.id.textView1);
+            puntos = itemView.findViewById(R.id.textView2);
+            barstars = itemView.findViewById(R.id.ratingBar);
+        }
+
+        public void bindTitular(final Tarjeta t) {
+            <span style="color: #ff0000;">//imagen.setImageResource(t.getImag());
+            // Ara és un byte[] no un int
+            byte [] img = t.getImag();
+            Bitmap imgBmp = BitmapFactory.decodeByteArray(img,0,img.length);
+            imagen.setImageBitmap(imgBmp);</span>
+            text.setText(t.getTitulo());
+            text1.setText(t.getSubtit());
+            barstars.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                @Override
+                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                    puntos.setText(String.valueOf(rating));
+                }
+            });
+        }
+    }
+
+    @Override
+    public TarjViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_cards, viewGroup, false);
+        TarjViewHolder tvh = new TarjViewHolder(itemView);
+        return tvh;
+    }
+
+    @Override
+    public void onBindViewHolder(final TarjViewHolder viewHolder, int pos) {
+        Tarjeta item = items.get(pos);
+        viewHolder.bindTitular(item);
+    }
+
+    @Override
+    public int getItemCount() {
+        return items.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+}
+</code></pre>
+</div>
+</li>
+<li>
+<p>Inicialment copiarem la Base de Dades ja dissenyada al lloc oportú del simulador de dispositiu, que serà <strong>/data/data/</strong><strong>com.example.alicia.myapplication/databases/<strong>CoffeShop.sqlite</strong>. </strong>Estaria bé copiar el fitxer de la Base de Dades la primera vegada que s'execute el programa, però ho deixarem per a un poc més avant. Per a comprovar que realment agafem les dades de la Base de Dades, incorporarem una nova fila que no estava abans.</p>
+</li>
+<li>
+<p>La classe que derivarà de <strong>SQLiteOpenHelper</strong>, serà inicialment molt senzilla: no tindrà res. Distint seria si vulguérem copiar el fitxer de la Base de Dades la primera vegada que s'executa, però ara no ens ho plantegem. Per tant inicialment aquesta classe, que anomenarem <strong>SQLiteGestor</strong> serà així (fins i tot podeu deixar que es genere automàticament amb l'ajuda de Android Studio, quan poseu que hereta de SQLiteOpenHelper):</p>
+<div class="codi">package com.example.alicia.myapplication;<br /><br />import android.content.Context;<br />import android.database.sqlite.SQLiteDatabase;<br />import android.database.sqlite.SQLiteOpenHelper;<br /><br /><br />public class SQLiteGestor extends SQLiteOpenHelper{<br />    public SQLiteGestor(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {<br />        super(context, name, factory, version);<br />    }<br /><br />    @Override<br />    public void onCreate(SQLiteDatabase sqLiteDatabase) {<br />    }<br /><br />    @Override<br />    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {<br />    }<br />}</div>
+</li>
+<li>
+<p>En el programa que utilitza tot l'anterior, que és <strong>Cards</strong>, l'únic que canviarà és que no crearem els objectes <strong>Tarjeta</strong> directament, sinó que agafarem les dades de la Base de Dades. Observeu que agafar la imatge és igual de fàcil que la resta de camps:</p>
+<div class="codi">
+<pre><code><span style="color: #ff0000;">import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;</span>
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import java.util.ArrayList;
+
+
+public class Cards extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cards);
+
+        final ArrayList&lt;Tarjeta&gt; items = new ArrayList&lt;Tarjeta&gt;();
+       <span style="color: #ff0000;"> // Ara no definim les dales directament i agafem les imatges des de res/drawable,
+        // sinó que ho agafem tot de la Base de Dades
+        // Aci van les sentencies d'agafar de la BD
+        /*items.add(new Tarjeta(R.drawable.images, "Antico Caffè Greco", "St. Italy, Rome"));
+        items.add(new Tarjeta(R.drawable.images1, "Coffee Room","St. Germany, Berlin "));
+        items.add(new Tarjeta(R.drawable.images2, "Coffee Ibiza","St. Colon, Madrid"));
+        items.add(new Tarjeta(R.drawable.images3, "Pudding Coffee Shop", "St. Diagonal, Barcelona"));
+        items.add(new Tarjeta(R.drawable.images4, "L'Express", "St. Picadilly Circus, London"));
+        items.add(new Tarjeta(R.drawable.images5, "Coffee Corner","St. Àngel Guimerà, Valencia"));
+        items.add(new Tarjeta(R.drawable.images6, "Sweet Cup","St.Kinkerstraat, Amsterdam"));*/
+        SQLiteGestor bdg = null;
+        try {
+            bdg = new SQLiteGestor(this,"CoffeeShops.sqlite",null,1);
+            SQLiteDatabase bd = bdg.getReadableDatabase();
+
+            Cursor rs = bd.rawQuery("SELECT * FROM LOCAL",null);
+
+            while (rs.moveToNext())
+                items.add(new Tarjeta(rs.getBlob(4),rs.getString(1), rs.getString(2)));;
+
+            rs.close();
+            bd.close();
+            bdg.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }</span>
+
+        Toolbar toolbar = findViewById(R.id.appbar);
+        setSupportActionBar(toolbar);
+
+        final RecyclerView recView = findViewById(R.id.RecView);
+        recView.setHasFixedSize(true);
+        final CardsAdapter adaptador = new CardsAdapter(items);
+
+        recView.setAdapter(adaptador);
+        recView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+}</code></pre>
+</div>
+</li>
+</ul>
+<p>Amb açò la nostra aplicació ja funcionarà. Al final de tot es veuria un local nou, amb la seua imatge, introduït només en la Base de Dades, senyal que les dades s'agafen de la Base de Dades</p>
+<h3>KOTLIN</h3>
+<ul>
+<li>
+<p>En <strong>Tarjeta</strong>, la propietat <strong>imag</strong> abans era un <strong>int</strong> perquè guardàvem la referència de la imatge, però ara guardarem la mateixa imatge, que la portarem des de la Base de Dades. Ens convé un array de bytes (<strong>ByteArray</strong>), ja que podrem passar fàcilment les dades des de la BD, i damunt és serialitzable. Podríem haver utiltizat un <strong>Drawable</strong>, però aquest no és serialitzable mentre que l'array de bytes sí, i ens fa falta per a poder passar les dades al segon Activity. Haurem de canviar també el <strong>getImag</strong><strong></strong>, lògicament. Estan marcades en roig les coses que han canviat.<code></code></p>
+</li>
+</ul>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; padding-left: 60px;"><span style="color: #000080; font-weight: bold;">class </span>Tarjeta(<span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">imag</span>: <span style="color: #ff0000;">ByteArray</span>, <span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">titulo</span>: String, <span style="color: #000080; font-weight: bold;">val </span><span style="color: #660e7a; font-weight: bold;">subtit</span>: String) <span style="color: #808080;">{}</span></pre>
+<p><code></code></p>
+<p><code></code></p>
+<p><code></code></p>
+<ul>
+<li>
+<p>En <strong>CardsAdapter</strong> canvia la manera de plasmar la imatge. Abans era un <strong>int</strong> que feia referència a un recurs (la imatge guardada en <strong>res.drawable</strong>). Ara tenim la pròpia imatge, en un <strong>ByteArray</strong>. Una manera de passar-li'l al <strong>ImageView</strong> és convertir-la prèviament en un <strong>Bitmap</strong> (amb el mètode <strong>decodeByteArray</strong> de <strong>BitmapFactory</strong>).</p>
+</li>
+</ul>
+<p><code></code></p>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>android.view.LayoutInflater<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.View<br /><span style="color: #000080; font-weight: bold;">import </span>android.view.ViewGroup<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.ImageView<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.RatingBar<br /><span style="color: #000080; font-weight: bold;">import </span>android.widget.TextView<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.RecyclerView<br /><span style="color: #ff0000;"><span style="font-weight: bold;">import </span>android.graphics.BitmapFactory</span><br /><br /><span style="color: #000080; font-weight: bold;">class </span>CardsAdapter(<span style="color: #000080; font-weight: bold;">private val </span><span style="color: #660e7a; font-weight: bold;">items</span>: ArrayList&lt;Tarjeta&gt;) : RecyclerView.Adapter&lt;CardsAdapter.TarjViewHolder&gt;() {<br /><br />    <span style="color: #000080; font-weight: bold;">inner class </span>TarjViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {<br />        <span style="color: #000080; font-weight: bold;">private val </span><span style="color: #660e7a; font-weight: bold;">imagen</span>: ImageView<br />        <span style="color: #000080; font-weight: bold;">private val </span><span style="color: #660e7a; font-weight: bold;">text</span>: TextView<br />        <span style="color: #000080; font-weight: bold;">private val </span><span style="color: #660e7a; font-weight: bold;">text1</span>: TextView<br />        <span style="color: #000080; font-weight: bold;">private val </span><span style="color: #660e7a; font-weight: bold;">barstars</span>: RatingBar<br />        <span style="color: #000080; font-weight: bold;">private val </span><span style="color: #660e7a; font-weight: bold;">puntos</span>: TextView<br /><br />        <span style="color: #000080; font-weight: bold;">init </span>{<br /><br />            <span style="color: #660e7a; font-weight: bold;">imagen </span>= itemView.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">img1</span>)<br />            <span style="color: #660e7a; font-weight: bold;">text </span>= itemView.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">textView</span>)<br />            <span style="color: #660e7a; font-weight: bold;">text1 </span>= itemView.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">textView1</span>)<br />            <span style="color: #660e7a; font-weight: bold;">puntos </span>= itemView.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">textView2</span>)<br />            <span style="color: #660e7a; font-weight: bold;">barstars </span>= itemView.findViewById(R.id.<span style="color: #660e7a; font-style: italic;">ratingBar</span>)<br />        }<br /><br />        <span style="color: #000080; font-weight: bold;">fun </span>bindCards(t: Tarjeta) {<br />            <span style="color: #ff0000;"><span style="font-style: italic;">//imagen.setImageResource(t.imag)<br /></span><span style="font-style: italic;">            </span><span style="font-weight: bold;">val </span>img = t.<span style="font-weight: bold;">imag<br /></span><span style="font-weight: bold;">            </span><span style="font-weight: bold;">val </span>imgBmp = BitmapFactory.decodeByteArray(img, 0, img.<span style="font-weight: bold;">size</span>)</span><br /><span style="color: #ff0000;">            <span style="font-weight: bold;">imagen</span>.setImageBitmap(imgBmp)</span><br />            <span style="color: #660e7a; font-weight: bold;">text</span>.<span style="color: #660e7a; font-style: italic;">text </span>= t.<span style="color: #660e7a; font-weight: bold;">titulo<br /></span><span style="color: #660e7a; font-weight: bold;">            text1</span>.<span style="color: #660e7a; font-style: italic;">text </span>= t.<span style="color: #660e7a; font-weight: bold;">subtit<br /></span><span style="color: #660e7a; font-weight: bold;">            barstars</span>.<span style="color: #660e7a; font-style: italic;">onRatingBarChangeListener </span>= RatingBar.OnRatingBarChangeListener <span style="font-weight: bold;">{ </span>ratingBar, rating, fromUser <span style="font-weight: bold;">-&gt;<br /></span><span style="font-weight: bold;">                    </span><span style="color: #660e7a; font-weight: bold;">puntos</span>.<span style="color: #660e7a; font-style: italic;">text </span>= rating.toString()<br />                <span style="font-weight: bold;">}<br /></span><span style="font-weight: bold;">        </span>}<br />    }<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TarjViewHolder {<br />        <span style="color: #000080; font-weight: bold;">val </span>itemView = LayoutInflater.from(viewGroup.<span style="color: #660e7a; font-style: italic;">context</span>).inflate(R.layout.<span style="color: #660e7a; font-style: italic;">item_cards</span>, viewGroup, <span style="color: #000080; font-weight: bold;">false</span>)<br />        <span style="color: #000080; font-weight: bold;">return </span>TarjViewHolder(itemView)<br />    }<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onBindViewHolder(viewHolder: TarjViewHolder, pos: Int) {<br />        <span style="color: #000080; font-weight: bold;">val </span>item = <span style="color: #660e7a; font-weight: bold;">items</span>[pos]<br />        viewHolder.bindCards(item)<br />    }<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>getItemCount(): Int {<br />        <span style="color: #000080; font-weight: bold;">return </span><span style="color: #660e7a; font-weight: bold;">items</span>.<span style="color: #660e7a; font-weight: bold;">size<br /></span><span style="color: #660e7a; font-weight: bold;">    </span>}<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>getItemViewType(position: Int): Int {<br />        <span style="color: #000080; font-weight: bold;">return </span>position<br />    }<br />}</pre>
+<p><code></code></p>
+<p><code>
+</code></p>
+<ul>
+<li>
+<p>Inicialment copiarem la Base de Dades ja dissenyada al lloc oportú del simulador de dispositiu, que serà <strong>/data/data/</strong><strong><em>nom_del_paquet</em>/databases/CoffeShop.sqlite. </strong>Estaria bé copiar el fitxer de la Base de Dades la primera vegada que s'execute el programa, però ho deixarem per a un poc més avant. Per a comprovar que realment agafem les dades de la Base de Dades, incorporarem una nova fila que no estava abans.</p>
+</li>
+<li>
+<p>La classe que derivarà de <strong>SQLiteOpenHelper</strong>, serà inicialment molt senzilla: no tindrà res. Distint seria si vulguérem copiar el fitxer de la Base de Dades la primera vegada que s'executa, però ara no ens ho plantegem. Per tant inicialment aquesta classe, que anomenarem <strong>SQLiteGestor</strong> serà així (fins i tot podeu deixar que es genere automàticament amb l'ajuda de Android Studio, quan poseu que hereta de SQLiteOpenHelper):</p>
+</li>
+</ul>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>android.content.Context<br /><span style="color: #000080; font-weight: bold;">import </span>android.database.sqlite.SQLiteDatabase<br /><span style="color: #000080; font-weight: bold;">import </span>android.database.sqlite.SQLiteOpenHelper<br /><br /><br /><span style="color: #000080; font-weight: bold;">class </span>SQLiteGestor(context: Context,name: String) : SQLiteOpenHelper(context, name,<span style="color: #000080; font-weight: bold;">null</span>,<span style="color: #0000ff;">1</span>) {<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreate(sqLiteDatabase: SQLiteDatabase) {}<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onUpgrade(sqLiteDatabase: SQLiteDatabase, i: Int, i2: Int) {}<br />}</pre>
+<ul>
+<li>
+<p>En el programa que utilitza tot l'anterior, que és <strong>CardsActivity</strong>, l'únic que canviarà és que no crearem els objectes <strong>Tarjeta</strong> directament, sinó que agafarem les dades de la Base de Dades. Observeu que agafar la imatge és igual de fàcil que la resta de camps:</p>
+</li>
+</ul>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>androidx.appcompat.app.AppCompatActivity<br /><span style="color: #000080; font-weight: bold;">import </span>android.os.Bundle<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.appcompat.widget.Toolbar<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.LinearLayoutManager<br /><span style="color: #000080; font-weight: bold;">import </span>androidx.recyclerview.widget.RecyclerView<br /><br /><span style="color: #000080; font-weight: bold;">class </span>CardsActivity : AppCompatActivity() {<br /><br />    <span style="color: #000080; font-weight: bold;">private var </span><span style="color: #660e7a; font-weight: bold;">items</span>: ArrayList&lt;Tarjeta&gt;? = <span style="color: #000080; font-weight: bold;">null<br /></span><span style="color: #000080; font-weight: bold;"><br /></span><span style="color: #000080; font-weight: bold;">    override fun </span>onCreate(savedInstanceState: Bundle?) {<br />        <span style="color: #000080; font-weight: bold;">super</span>.onCreate(savedInstanceState)<br />        setContentView(R.layout.<span style="color: #660e7a; font-style: italic;">activity_cards</span>)<br /><br />        <span style="color: #ff0000;"><span style="font-weight: bold;">items </span>= ArrayList&lt;Tarjeta&gt;()</span><br /><span style="color: #ff0000;">        <span style="font-style: italic;">/*items!!.add(Tarjeta(R.drawable.images, "Antico Caffè Greco", "St. Italy, Rome"))<br /></span><span style="font-style: italic;">        items!!.add(Tarjeta(R.drawable.images1, "Coffee Room","St. Germany, Berlin "))<br /></span><span style="font-style: italic;">        items!!.add(Tarjeta(R.drawable.images2, "Coffee Ibiza","St. Colon, Madrid"))<br /></span><span style="font-style: italic;">        items!!.add(Tarjeta(R.drawable.images3, "Pudding Coffee Shop", "St. Diagonal, Barcelona"))<br /></span><span style="font-style: italic;">        items!!.add(Tarjeta(R.drawable.images4, "L'Express", "St. Picadilly Circus, London"))<br /></span><span style="font-style: italic;">        items!!.add(Tarjeta(R.drawable.images5, "Coffee Corner","St. Àngel Guimerà, Valencia"))<br /></span><span style="font-style: italic;">        items!!.add(Tarjeta(R.drawable.images6, "Sweet Cup","St.Kinkerstraat, Amsterdam")) */<br /></span><span style="font-style: italic;"><br /></span><span style="font-style: italic;">        </span><span style="font-weight: bold;">var </span>bdg: SQLiteGestor? = <span style="font-weight: bold;">null<br /></span><span style="font-weight: bold;">        </span>bdg = SQLiteGestor(<span style="font-weight: bold;">this</span>, <span style="font-weight: bold;">"CoffeeShops.sqlite"</span>)</span><br /><span style="color: #ff0000;">        <span style="font-weight: bold;">val </span>bd = <span style="background-color: #dbffdb;">bdg</span>.<span style="font-style: italic;">readableDatabase<br /></span><span style="font-style: italic;"><br /></span><span style="font-style: italic;">        </span><span style="font-weight: bold;">val </span>rs = bd.rawQuery(<span style="font-weight: bold;">"SELECT * FROM LOCAL"</span>, <span style="font-weight: bold;">null</span>)</span><br /><br /><span style="color: #ff0000;">        <span style="font-weight: bold;">while </span>(rs.moveToNext())</span><br /><span style="color: #ff0000;">            <span style="font-weight: bold;">items</span>!!.add(Tarjeta(rs.getBlob(4), rs.getString(1), rs.getString(2)))</span><br /><br /><span style="color: #ff0000;">        rs.close()</span><br /><span style="color: #ff0000;">        bd.close()</span><br /><span style="color: #ff0000;">        <span style="background-color: #dbffdb;">bdg</span>.close()</span><br /><br /><br />        <span style="color: #000080; font-weight: bold;">val </span>toolbar = findViewById(R.id.<span style="color: #660e7a; font-style: italic;">toolbar</span>) <span style="color: #000080; font-weight: bold;">as </span>Toolbar<br />        setSupportActionBar(toolbar)<br /><br />        <span style="color: #000080; font-weight: bold;">val </span>recView = findViewById(R.id.<span style="color: #660e7a; font-style: italic;">recView</span>) <span style="color: #000080; font-weight: bold;">as </span>RecyclerView<br />        recView.setHasFixedSize(<span style="color: #000080; font-weight: bold;">true</span>)<br />        <span style="color: #000080; font-weight: bold;">val </span>adaptador = CardsAdapter(<span style="color: #660e7a; font-weight: bold;">items</span>!!)<br /><br />        recView.<span style="color: #660e7a; font-style: italic;">adapter </span>= adaptador<br />        recView.<span style="color: #660e7a; font-style: italic;">layoutManager </span>= LinearLayoutManager(<span style="color: #000080; font-weight: bold;">this</span>, LinearLayoutManager.<span style="color: #660e7a; font-style: italic;">VERTICAL</span>, <span style="color: #000080; font-weight: bold;">false</span>)<br />    }<br />}</pre>
+<p><code></code></p>
+<p>Amb açò la nostra aplicació ja funcionarà. Al final de tot es veuria un local nou, amb la seua imatge, introduït només en la Base de Dades, senyal que les dades s'agafen de la Base de Dades</p>
+<p></p>
+<p style="text-align: center;"><img src="Annex_Android_3_2_1.1.png" alt="" width="390" height="684" /></p>
+<p>Però com havia comentat abans, per acabar de deixar-la bé, hauríem de fer possible que la primera vegada es copiara d'alguna manera de Base de Dades, i no haver de copiar-la a mà dins del dispositiu.</p>
+<p>El lloc oportú, òbviament, és en <strong>SQLiteGestor</strong>, la classe que hereta de <strong>SQLiteOpenHelper</strong>. Havíem vist en una altra ocasió que existia el mètode <strong>onCreate</strong><strong>()</strong>. Però en aquest lloc col·locàvem les sentències SQL de creació de taula i d'inserció de dades. És a dir, aniran sentències SQL de quan ja està creada la Base de Dades, ja existeix la Base de Dades, perquè s'acaba de crear.</p>
+<p>En el nostre exemple no ens podem plantejar la sentència d'inserció, perquè hem d'inserir una imatge (en SQL !!!). El que més ens convé és copiar la Base de Dades des d'algun lloc, ja que la BD la hem creat des del SQLite Manager de forma còmoda i ens ha anat bé. Però en el <strong>onCreate()</strong> només podem fer sentències SQL.</p>
+<p>La solució serà copiar el fitxer de la Base de Dades en el <strong>constructor</strong> de <strong>SQLiteGestor</strong>. I copiarem byte a byte, per tant ens convé la parella <strong>InputStream</strong> - <strong>OutputStream</strong>. El fitxer de la Base de Dades el posarem dins de <strong>res</strong>, com altres recursos, però en una subcarpeta anomenada <strong>raw</strong>. Android ens obliga a que aquest fitxer estiga en minúscules, per tant l'anomenarem <strong>coffeeshops.sqlite</strong></p>
+<p>La lògica que utilitzarem en el constructor per a copiar serà:</p>
+<ul>
+<li>Si no existeix el subdirectori <strong>databases</strong>, el crearem.</li>
+<li>Si no existeix el fitxer <strong>CofeeShops.sqlite</strong> el copiarem</li>
+<li>Agafem el fitxer original amb <strong>context.getResources().openRawResource(R.raw.esports)</strong>.</li>
+<li>Millor copiar no byte a byte, sinó amb un array de bytes, per a optimitzar a questa còpia (com té imatges, el fitxer podria ser molt gran, i així optimitzarem el trasvàs d'informació). En aqest exemple s'ha fet de 1024 en 1024 bytes.</li>
+<li>Per aquesta lògica, si el fitxer ja existeix, no el copiarà. Per tant, si per les proves anteriors havíem copiat el fitxer directament (des del Android Device Monitor), l'haurem d'esborrar abans d'executar-lo la primera vegada.</li>
+</ul>
+<h2>JAVA</h2>
+<div class="codi">
+<pre><code>import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+
+public class SQLiteGestor extends SQLiteOpenHelper{
+    private static String PATH_BD = "";
+    private static String NOM_BD = "CoffeeShops.sqlite";
+    private Context myContext=null;
+
+    public SQLiteGestor(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+
+        PATH_BD =  "/data/data/" + context.getPackageName() + "/databases";
+        File dir = new File (PATH_BD);
+        if (! dir.exists())
+            dir.mkdir();
+        File f = new File(dir,NOM_BD);
+        if (! f.exists()) {
+            try {
+                FileOutputStream f_out = new FileOutputStream(f);
+                byte[] b = new byte[1024];
+                int length;
+                InputStream f_in = context.getResources().openRawResource(R.raw.coffeeshops);
+                while ((length = f_in.read(b)) &gt; 0) {
+                    f_out.write(b, 0, length);
+                }
+                f_in.close();
+                f_out.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    }
+}</code></pre>
+</div>
+<h2>KOTLIN</h2>
+<pre style="background-color: #ffffff; color: #000000; font-family: 'DejaVu Sans Mono'; font-size: 9,0pt;"><span style="color: #000080; font-weight: bold;">import </span>android.content.Context<br /><span style="color: #000080; font-weight: bold;">import </span>android.database.sqlite.SQLiteDatabase<br /><span style="color: #000080; font-weight: bold;">import </span>android.database.sqlite.SQLiteOpenHelper<br /><br /><span style="color: #000080; font-weight: bold;">import </span>java.io.File<br /><br /><br /><span style="color: #000080; font-weight: bold;">class </span>SQLiteGestor( context: Context, name: String) : SQLiteOpenHelper(context, name, <span style="color: #000080; font-weight: bold;">null</span>, <span style="color: #0000ff;">1</span>) {<br />    <span style="color: #000080; font-weight: bold;">private val </span><span style="color: #660e7a; font-weight: bold;">myContext</span>: Context? = <span style="color: #000080; font-weight: bold;">null<br /></span><span style="color: #000080; font-weight: bold;"><br /></span><span style="color: #000080; font-weight: bold;">    init </span>{<br /><br />        <span style="color: #000080; font-weight: bold;">val </span>PATH_BD = <span style="color: #008000; font-weight: bold;">"/data/data/" </span>+ context.<span style="color: #660e7a; font-style: italic;">packageName </span>+ <span style="color: #008000; font-weight: bold;">"/databases"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #000080; font-weight: bold;">val </span>NOM_BD = <span style="color: #008000; font-weight: bold;">"CoffeeShops.sqlite"<br /></span><span style="color: #008000; font-weight: bold;">        </span><span style="color: #000080; font-weight: bold;">val </span>dir = File(PATH_BD)<br />        <span style="color: #000080; font-weight: bold;">if </span>(!dir.exists())<br />            dir.mkdir()<br />        <span style="color: #000080; font-weight: bold;">val </span>f = File(dir, NOM_BD)<br />        <span style="color: #000080; font-weight: bold;">if </span>(!f.exists()) {<br />                <span style="color: #000080; font-weight: bold;">val </span>f_in = context.<span style="color: #660e7a; font-style: italic;">resources</span>.openRawResource(<span style="color: #0000ff;">0</span>)<br />                f.<span style="font-style: italic;">writeBytes</span>(f_in.<span style="font-style: italic;">readBytes</span>())<br />        }<br />    }<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onCreate(db: SQLiteDatabase) {}<br /><br />    <span style="color: #000080; font-weight: bold;">override fun </span>onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}<br /><br />}</pre>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32__connexi_local.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__permanncia_en_bd_orientades_a_objectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

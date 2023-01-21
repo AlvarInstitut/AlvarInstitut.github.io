@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2 - Decoradors de Reader i Writer | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li><a href="2__manipulaci_dels_fluxos_de_dades.html" class="daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul class="other-section">
+      <li><a href="21__fluxos_orientats_a_bytes.html" class="daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul class="other-section">
+         <li><a href="211__mtodes_del_inputstream.html" class="no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__fluxos_decoradors.html" class="current-page-parent daddy">3 - Fluxos decoradors</a>
+   <ul>
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li id="active"><a href="32__decoradors_de_reader_i_writer.html" class="active no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31__decoradors_de_inputstream_i_otputstream.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2 - Decoradors de Reader i Writer</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_1" class="block iDevice_content">
+<p>Mirem ara els decoradors de la jerarquia <strong>Reader</strong> i <strong>Writer</strong> . Tornen a ser els de color verd. Els de color gris <strong>InputStreamReader</strong> i <strong>OutputStreamWriter</strong> són conversors que permeten passar un <strong>InputStream</strong> a un <strong>Reader</strong> i un <strong>OutputStream</strong> a <strong>Writer</strong>. Els veurem en la següent pregunta.</p>
+<p style="text-align: center;"><img src="T2__2_2.png" alt="T2_2_2.png" height="961" width="800" /></p>
+<p> Fixem-nos primers en els decoradors de <strong>Reader</strong>:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FilterReader</strong> </td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem) </td>
+</tr>
+<tr>
+<td><strong>PushBackInputStream</strong></td>
+<td><span>Permet retrocedir un caràcter en la lectura, i per tant permet anar cap arrere (no la veurem) </span></td>
+</tr>
+<tr>
+<td><strong>Buffered<strong>Reader</strong></strong> </td>
+<td>Munta un buffer d'entrada, i permet entre altres coses llegir una línia sencera</td>
+</tr>
+<tr>
+<td><strong>LineNumber<strong>Reader</strong></strong> </td>
+<td><span>Afegeix el número de línia de cada línia del fitxer (no la veurem)</span></td>
+</tr>
+</tbody>
+</table>
+<p>I de forma quasi paral·lela tenim els decoradors de <strong>Writer</strong>:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Classe</td>
+<td>Explicació</td>
+</tr>
+<tr>
+<td><strong>FilterWriter</strong> </td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem) </td>
+</tr>
+<tr>
+<td><strong>Buffered<strong>Writer</strong></strong> </td>
+<td>Munta un buffer d'eixida, i permet entre altres coses escriure una línia sencera</td>
+</tr>
+<tr>
+<td><strong>Print<strong>Writer</strong></strong> </td>
+<td>Permet escriure dades de diferents tipus, i té també els mètodes <em>printf</em> i <em>println</em></td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>PrintWriter</strong> funciona quasi exactament igual que el <strong>PrintStream</strong>, i per a caràcters és més útil que l'altre (per ser <strong>Writer</strong>), per tant és el candidat a recordar.</p>
+<p>El <strong>BufferedReader</strong> sí que ens oferirà facilitats interessants, com llegir una línia sencera. En canvi el <strong>BufferedWriter</strong> no ens ofereix tantes facilitats com el <strong>PrintWriter</strong>, és un poc més incòmode.</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id20">
+<div class="iDevice emphasis0">
+<div id="ta20_85" class="block iDevice_content">
+<p class="titolet">BufferedReader i BufferedWriter. PrintWriter</p>
+<p>BufferedReader i BufferedWriter munten un buffer (d'entrada i d'eixida respectivament) de caràcters per a fer més eficient la transferència. A banda d'això tindran uns mètodes que ens seran molt útils.</p>
+<p><span style="text-decoration: underline;"><strong>BufferedReader</strong></span></p>
+<ul>
+<li>mètode <strong>readLine()</strong> que ens permet llegir una línia sencera del fitxer (fins al final de línia). Açò és de molta utilitat en els fitxers de text.</li>
+</ul>
+<p></p>
+<p><span style="text-decoration: underline;"><strong>BufferedWriter</strong></span></p>
+<ul>
+<li>mètode <strong>newLine()</strong> que permet introduir el caràcter de baixada de línia</li>
+<li>mètode <strong>write(String <em>cad</em>, int <em>com</em>, int <em>llarg</em>)</strong> que permet escriure tot un string, o una part d'ell, especificant on comença el que volem escriure i la llargària</li>
+</ul>
+<p></p>
+<p>Com veieu el <strong>BufferedReader</strong> sí que ens ofereix la possibilitat de llegir una línia sencera, però en canvi el <strong>BufferedWriter</strong> es queda un poc curt. Per això preferirem el <strong>PrintWriter</strong>.</p>
+<p></p>
+<p><span style="text-decoration: underline;"><strong>PrintWriter</strong></span></p>
+<ul>
+<li>mètodes <strong>print(<em>qualsevol_tipu</em><em>s</em>)</strong> , que permeten imprimir una dada de qualsevol tipus: booleà, char, tots els numèrics, string, ... Serà segurament el que més utilitzarem.</li>
+<li>mètodes <strong>println<strong>(<em>qualsevol_tipu</em><em>s</em>)</strong></strong> , a banda de tot el de <strong>print</strong>, baixen de línia</li>
+<li>mètode <strong>printf() </strong>, que permet donar un format</li>
+</ul>
+<p></p>
+<p style="text-align: justify;">Veiem un senzill exemple per a copiar el contingut d'un fitxer de text i modificar-lo lleugerament. El més còmode serà anar línia a línia. Per tant utilitzarem el <strong>BufferedReader</strong> per a llegir línies, i el <strong>PrintWriter</strong> per a escriure línies. La lleugera modificació consistirà en posar el número de línia davant</p>
+<div class="codi">
+<div>import java.io.BufferedReader;</div>
+<div>import java.io.FileReader;</div>
+<div>import java.io.FileWriter;</div>
+<div>import java.io.IOException;</div>
+<div>import java.io.PrintWriter;</div>
+<div> </div>
+<div> </div>
+<div>public class Exemple_2_51 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws IOException {</div>
+<div style="margin-left: 60px;">BufferedReader f_ent = new BufferedReader(new FileReader("f7_ent.txt"));</div>
+<div style="margin-left: 60px;">PrintWriter f_eix = new PrintWriter(new FileWriter("f7_eix.txt"));</div>
+<div style="margin-left: 60px;">String cad=f_ent.readLine();</div>
+<div style="margin-left: 60px;">int i=0;</div>
+<div style="margin-left: 60px;">while (cad != null){</div>
+<div style="margin-left: 90px;">i++;</div>
+<div style="margin-left: 90px;">f_eix.println(i + ".- " + cad);</div>
+<div style="margin-left: 90px;">cad=f_ent.readLine();</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">f_eix.close();f_ent.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p>Si en el fitxer d'entrada (<strong>f7_ent.txt</strong>) tenim guardada la següent informació (introduïda amb el notepad o gedit):</p>
+<div class="codi2">
+<div>Primera</div>
+<div>Segona</div>
+<div>Tercera</div>
+</div>
+<p> En el fitxer d'eixida (<strong>f7_eix.txt</strong>) tindrem:</p>
+<div class="codi2">
+<div>1.- Primera</div>
+<div>2.- Segona</div>
+<div>3.- Tercera</div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31__decoradors_de_inputstream_i_otputstream.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

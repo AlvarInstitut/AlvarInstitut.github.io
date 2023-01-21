@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2 - Establiment de la connexió | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="no-ch">4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse</a></li>
+   <li class="current-page-parent"><a href="5__iniciaci_a_lapi_jdbc.html" class="current-page-parent daddy">5 - Iniciació a l'API JDBC</a>
+   <ul>
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li id="active"><a href="52__establiment_de_la_connexi.html" class="active no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="6__jdbc_avanat.html" class="daddy">6 - JDBC avançat</a>
+   <ul class="other-section">
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="51__crrega_de_controladors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53__peticions_bsiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2 - Establiment de la connexió</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id14">
+<div class="iDevice emphasis0">
+<div id="ta14_1" class="block iDevice_content">
+<p>Un objecte de la classe <strong>Connection </strong>(de l'API JDBC) representarà una connexió a la Base de Dades d'un determinat SGBD. Haurem de tenir el controlador del SGBD inclós en el projecte (en el classpath), i millor si el tenim carregat en memòria amb la sentència <strong>Class.forName('<em>nom de la classe del</em></strong><strong><em> driver</em></strong><strong>')</strong>.</p>
+<p>L'objecte <strong>Connection</strong> l'obtindrem a partir del <strong>DriverManager</strong>, que havíem comentat que és capaç de gestionar tots els drivers carregats en memòria (i amb <strong>Class.forName</strong> ens asseguràvem que estaven en memòria). El mètode que utilitzarem del <strong>DriverManager</strong> és el <strong>getConnection(<em>url</em>,<em>usuari</em>,<em>password</em>)</strong>, on li passarem les dades de connexió a la Base de Dades d'aquesta manera:</p>
+<ul>
+<li><strong>URL</strong>: cadena de connexió seguint el protocol JDBC. Comença sempre per <strong>jdbc</strong>, el nom del SGBD (separat per dos punts), i la manera d'arribar a la BD, també separat per 2 punts. Aquesta manera d'arribar a la BD dependrà del controlador del SGBD, però d'alguna manera harem d'especificar el <em>servidor</em>, el <em>port</em> de connexió i el nom de la BD o esquema a connectar.</li>
+<li><strong>Usuari</strong> i <strong>contrasenya</strong>: encara que en alguns SGBD (com per exemple SQLite) no seran necessaris.</li>
+</ul>
+<p>Aquestes són les <strong><em>url</em></strong> que utilitzarem:</p>
+<ul>
+<li><strong>PostgreSQL</strong>: per connectar-nos al servidor situal a l'adreça <strong>89.36.214.106</strong>, que escolta el port per defecte (<strong>5432</strong>), i a la Base de Dades anomenada <strong>geo_ad</strong>, <strong></strong> la cadena serà: </li>
+</ul>
+<p class="codi">jdbc:postgresql://<strong>89.36.214.106</strong>:5432/geo<strong>_ad</strong></p>
+<ul>
+<li><strong>Oracle</strong>: el tenim en un altre servidor, en l'adreça <strong>94.177.240.173</strong>; el port per defecte d'Oracle és el <strong>1521</strong>, i hem d'especificar la instància (la macro Base de Dades d'Oracle) que es diu <strong>orcl</strong> ; observeu que en la cadena no especifiquem l'esquema, que seria l'equivalent a la mini Base de Dades on volem connectar (en Oracle un usuari es connecta sempre al seu esquema). La cadena de connexió serà:</li>
+</ul>
+<p class="codi">jdbc:oracle:thin:@94.177.240.173:1521:orcl</p>
+<ul>
+<li><strong>MySQL</strong>: el servidor és el mateix de PostgreSQL, el port per defecte és 3306, i si volem connectar a la Base de Dades <strong>geo</strong>:</li>
+</ul>
+<p class="codi">jdbc:mysql://<strong>89.36.214.106</strong>:3306/factura</p>
+<ul>
+<li><strong>SQLite</strong>: no haurem d'especificar ni servidor ni port (ni posteriorment usuarini contrasenya); únicament el nom del fitxer amb la ruta. Si volem connectar a la Base de Dades situada en el directori <strong>/home/usuari/BD_SQLite</strong>, i anomenada <strong>proveta.sqlite</strong>:</li>
+</ul>
+<p class="codi">jdbc:sqlite:/home/usuari/BD_SQLite/proveta.sqlite</p>
+<p><em> </em></p>
+<p>Mirem quatre exemple de connexió, un per a cada Base de Dades de prova que tenim en els diferents SGBD que ens hem plantejat connectar. Observeu com només hem canviat la classe que carreguem amb <strong>Class.forName</strong> i la <strong>url</strong>, a banda de l'usuari i contrasenya, clar (en SQLite no hi haurà). I el millor de tot és que una vegada feta la connexió,  farem el mateix tractament siga quin siga el SGBD al qual ens hem connectat, com veurem amb posterioritat.</p>
+<ul>
+<li><span style="font-size: large;"><strong>PostgreSQL</strong></span></li>
+</ul>
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br /><br />public class provaConnexioPostgreSQL {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url = "jdbc:postgresql://89.36.214.106:5432/geo_ad";<br />        String usuari = "geo_ad";<br />        String password = "geo_ad";<br /><br />        Class.forName("org.postgresql.Driver");<br /><br />        Connection con = DriverManager.getConnection(url, usuari, password);<br />        System.out.println("Connexió completada");<br />        con.close();<br />    }<br />}</p>
+<ul>
+<li><span style="font-size: large;"><strong>Oracle</strong></span></li>
+</ul>
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br /><br />public class provaConnexioOracle {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url = "jdbc:oracle:thin:@94.177.240.173:1521:orcl";<br />        String usuari = "scott";<br />        String password = "tiger";<br /><br />        Class.forName("oracle.jdbc.driver.OracleDriver");<br /><br />        Connection con = DriverManager.getConnection(url, usuari, password);<br />        System.out.println("Connexió completada");<br />        con.close();<br />    }<br />}</p>
+<ul>
+<li><span style="font-size: large;"><strong>MySQL</strong></span></li>
+</ul>
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br /><br />public class provaConnexioMySQL {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url = "jdbc:mysql://<strong>89.36.214.106</strong>:3306/factura";<br />        String usuari = "factura";<br />        String password = "factura";<br /><br />        Class.forName("com.mysql.jdbc.Driver");<br /><br />        Connection con = DriverManager.getConnection(url, usuari, password);<br />        System.out.println("Connexió completada");<br />        con.close();<br />    }<br />}</p>
+<ul>
+<li><span style="font-size: large;"><strong>SQLite</strong></span></li>
+</ul>
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br /><br />public class provaConnexioSQLite {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url = "jdbc:sqlite:proveta.sqlite";<br />        <br />        Class.forName("org.sqlite.JDBC");<br /><br />        Connection con = DriverManager.getConnection(url);<br />        System.out.println("Connexió completada");<br />        con.close();<br />    }<br />}</p>
+<p style="margin-left: 60px;">Com que no hem posat ruta, crearà el fitxer <strong>proveta.sqlite</strong> en el directori actiu, és a dir, en l'arrel del projecte. També podríem posar la ruta d'aquesta manera:</p>
+<p class="codi">String url = "jdbc:sqlite:/home/usuari/BD_SQLite/proveta.sqlite";</p>
+<p style="margin-left: 60px;">en aquest cas haureu de cuidar que existesca la ruta del fitxer, sinó es produirà una SQLException</p>
+<p>Observem les següents qüestions en els quatre programes equivalents anteriors:</p>
+<ul>
+<li>Com ja hem comentat alguna vegada, la sentència <strong>Class.forName() </strong>no seria necessària en moltes aplicacions. Però ens assegura que hem carregat el driver, i per tant el <strong>DriverManager</strong> el sabrà gestionar.</li>
+<li style="text-align: left;">El <strong>DriverManager</strong> és capaç de trobar el driver adequat a través de la <strong>url</strong> proporcionada (sobretot si el driver està carregat en memòria), i és qui ens proporciona l'objecte <strong>Connection</strong> per mig del mètode <strong>getConnection()</strong>. Hi ha una altra manera d'obtenir el <strong>Connection </strong>per mig de l'objecte <strong>Driver</strong>, com veurem al final d'aquest pregunta, però també serà passant indirectament pel <strong>DriverManager</strong>.</li>
+<li style="text-align: left;">Si no es troba la classe del driver (per no tenir-lo en les llibreries del projecte, o haver escrit malament el seu nom) es produirà l'excepció ClassNotFoundException. És convenient tractar-la amb <strong>try ... catch</strong>, encara que en els exemples anteriors s'ha optat per fer <strong>throws</strong> per a simplificar-los.</li>
+<li style="text-align: left;">Si no es pot establir la connexió per alguna raó es produirà l'excepció <strong>SQLException</strong>. Igual que en al cas anterior, és convenient tractar-la amb <strong>try ... catch</strong>.</li>
+<li style="text-align: left;">L'objecte Connection mantindrà una connexió amb la Base de Dades des del moment de la creació fins el moment de tancar-la amb <strong>close()</strong>. És molt important tancar la connexió, no solament per alliberar la memòria del nostre ordinador (que en tancar l'aplicació s'alliberaria), sinó sobretot per <strong>tancar la sessió oberta en el Servidor de Bases de Dades</strong>.</li>
+<li style="text-align: left;">En el cas de SQLite només s'ha d'especificar la <strong><em>url</em></strong>. No hem dit ni usuari ni contrasenya, que no tenen sentit en aquest SGBD monousuari.</li>
+</ul>
+<p><br /><strong></strong></p>
+<p>Una manera de connectar alternativa a les anteriors és utilitzant l'objecte <strong>Driver</strong>. La classe<strong> java.sql.Driver</strong> pertany a l'API <strong>JDBC</strong>, però no és instanciable, i tan sols és una interfície, per a que les classes <strong>Driver</strong> dels contenidors hereten d'ella i implementen la manera exacta d'accedir al SGBD corresponent. Com no és instanciable (no podem fer <strong>new Driver()</strong>) la manera de crear-lo és a través del métode <strong>getDriver()</strong> del <strong>DriverManager</strong>, que seleccionarà el driver adequat a partir de la <strong>url</strong>. Ja només restaran definir algunes <em>propietats, </em>com l'usuari i la contrasenya, i obtenir el <strong>Connection</strong> per mig del mètode <strong>connect()</strong></p>
+<p>La manera de connectar a través d'un objecte <strong>Driver</strong> és més llarga, però més completa ja que es podrien especificar més coses. I potser ajude a entendre el muntatge dels controladors dels diferents SGBD en Java.</p>
+<p class="codi">import java.sql.Connection;<br />import java.sql.Driver;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br />import java.util.Properties;<br /><br />public class provaConnexioPostgreSQLAmbDriver {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url="jdbc:postgresql://89.36.214.106:5432/geo_ad";<br />        String usuari="geo_ad";<br />        String password="geo_ad";<br /><br />        Driver driver = DriverManager.getDriver(url);<br /><br />        Properties properties = new Properties();<br />        properties.setProperty("user", usuari);<br />        properties.setProperty("password", password);<br /><br />        Connection con = driver.connect(url, properties);<br />        System.out.println("Connexió completada a través de Driver");<br />        con.close();<br />    }<br />}</p>
+<div>
+<p>En aquest exemple s'ha optat per no carregar el driver amb <strong>Class.forName()</strong>. Segurament la major part de vegades funcionarà, però podria ser que no funcionara en un moment determinat. Com ja hem comentat, el <strong>Class.forName()</strong> ens assegura que estarà carregat en memòria.</p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="51__crrega_de_controladors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53__peticions_bsiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.- Funcionalitat de la classe File | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 1: Gestió del Sistema de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1.- Introducció</a></li>
+   <li><a href="2_la_classe_file_generalitats.html" class="no-ch">2.- La classe File. Generalitats.</a></li>
+   <li id="active"><a href="3_funcionalitat_de_la_classe_file.html" class="active no-ch">3.- Funcionalitat de la classe File</a></li>
+   <li><a href="exercici.html" class="no-ch">Exercici</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_la_classe_file_generalitats.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercici.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.- Funcionalitat de la classe File</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_1" class="block iDevice_content">
+<p style="text-align: justify;">La classe <strong>File </strong>conté una sèrie de mètodes que ens permeten traure informació relativa al fitxer o directori al que apunta, així com poder navegar (obtenint el pare o accedint a algun dels directoris fills). També ens permetran manipular ambdues coses, modificant la informació i l'estructura de directoris (crear directoris nous, esborrar, canviar el nom, ...). Veurem alguns d'ells, agrupats per categories.</p>
+<p style="text-align: justify;">Per cert, com que ens interessa fer les aplicacions sense haver de dependre de la plataforma, ens serà molt útil poder situar-nos en l'arrel del dispositiu sense haver de posar-lo a mà. Això s'aconsegueix amb el mètode <em>static</em> de File anomenat <strong>listRoots()</strong>. En sistemes Linux tornarà un únic element, però en sistemes Windows tornarà l'arrel de cada unitat del sistema, per això és un array. Aquesta és una manera d'obtenir un File que apunta a l'arrel (i en el cas de Windows a l'arrel de C:):</p>
+<p class="codi">File f = File.listRoots()[0];</p>
+<p style="text-align: justify;"> Si en Windows vulguérem anar a l'arrel de <strong>D:</strong>, hauríem de posar <strong>File.listRoots()[1]</strong>, i així successivament.</p>
+<p style="text-align: justify;">Una altra cosa que pot dur a engany és que perfectament <strong>pot no existir</strong> el fitxer o directori especificat en la creació del File. Recordeu que no estem accedint encara al contingut dels fitxers. I perfectament podem crear un File d'un fitxer o directori que no existeix, justament per a crear-lo.</p>
+<p class="titolet">Mètodes per a obtenir el nom o la ruta</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>getName() </strong></td>
+<td>Torna el nom del fitxer o directori </td>
+</tr>
+<tr>
+<td><strong>getPath() </strong></td>
+<td>Torna la ruta (relativa) </td>
+</tr>
+<tr>
+<td><strong>getAbsolutePath() </strong></td>
+<td>Torna la ruta absoluta </td>
+</tr>
+<tr>
+<td><strong>getCanonicalPath()</strong></td>
+<td>Torna la ruta absoluta sense possibles redundàncies</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong>getPath()</strong> dóna la ruta fins arribar al fitxer, però relativa, tal i com s'especifica en el moment de crear el File.</p>
+<p style="text-align: justify;"><strong>getAbsolutePath()</strong> dóna la ruta absoluta, des de l'arrel. En determinades ocasions poden haver redundàncies en la ruta</p>
+<p style="text-align: justify;"><strong>getCanonicalPath()</strong> dóna la ruta absoluta, des de l'arrel, i sense redundàncies. Té com a inconvenient una utilització més complicada que getAbsolutePath.</p>
+<p style="text-align: justify;">En el següent exemple s'intenta mostrar això de les redundàncies, que <strong>getCanonicalPath()</strong> resol completament. Observeu com per a il·lustrar l'exemple fem referència a un fitxer d'una forma complicada. Suposem que el directori actiu és <strong>/home/usuari/workspace/Tema1</strong>, i volem fer referència a un fitxer situat en un subdirectori anomenat<strong> fitxers</strong></p>
+<div class="codi">
+<div>import java.io.File;</div>
+<div>import java.io.IOException;</div>
+<div> </div>
+<div>public class Exemple_1_3 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws IOException {</div>
+<div style="margin-left: 60px;">File f = new File ("fitxers/../fitxers/f1.txt");</div>
+<div style="margin-left: 60px;">System.out.println("Nom del fitxer: " + f.getName());</div>
+<div style="margin-left: 60px;">System.out.println("Ruta del fitxer: " + f.getPath());</div>
+<div style="margin-left: 60px;">System.out.println("Ruta absoluta del fitxer: " + f.getAbsolutePath());</div>
+<div style="margin-left: 60px;">System.out.println("Ruta canònica del fitxer: " + f.getCanonicalPath());</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p>Si suposem que el directori actiu és <strong>/home/usuari/eclipse-workspace/Tema1 </strong>(recordeu que per defecte el directori actiu és el directori on està el projecte), el resultat serà:</p>
+<div class="codi2">
+<div>Nom del fitxer: f1.txt</div>
+<div>Ruta del fitxer: fitxers/../fitxers/f1.txt</div>
+<div>Ruta absoluta del fitxer: /home/usuari/eclipse-workspace/Tema1/fitxers/../fitxers/f1.txt</div>
+<div>Ruta absoluta del fitxer: /home/usuari/eclipse-workspace/Tema1/fitxers/f1.txt</div>
+</div>
+<p> Recordeu que no cal que existesca el fitxer <strong>f1.txt</strong>, o el subdirectori <strong>fitxers</strong>.</p>
+<p class="titolet">Mètodes per a obtenir els fills o el pare</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>list()</strong></td>
+<td>Torna un <strong>array de Strings</strong> amb els noms de tots els elements continguts en el File </td>
+</tr>
+<tr>
+<td><strong>listFiles()</strong></td>
+<td>Torna un <strong>array de Files</strong> amb tots els elements continguts en el File</td>
+</tr>
+<tr>
+<td><strong>getParent() </strong></td>
+<td>Torna el <strong>nom</strong> (string) del pare (si no existeix per ser l'arrel, tornarà nul) </td>
+</tr>
+<tr>
+<td><strong>getParentFile()</strong></td>
+<td><span>Torna el <strong>pare com un File</strong> (si no existeix per ser l'arrel, tornarà nul) </span></td>
+</tr>
+</tbody>
+</table>
+<p>Ja hem vist la utilitat de <strong>list()</strong>, que torna un array de strings. En ocasions ens serà de moltíssima utilitat <strong>listFiles()</strong>, ja que torna un array de Files. Si a açò adjuntem els mètodes <strong>getParent()</strong> i <strong>getParentFile()</strong>, veiem que podrem navegar pel sistema de fitxers.</p>
+<p> </p>
+<p class="titolet">Mètodes per veure l'existència i característiques</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>exists() </strong></td>
+<td><span>Torna true si el fitxer o directori existeix </span></td>
+</tr>
+<tr>
+<td><strong>isDirectory() </strong></td>
+<td><span>Torna true si és un directori </span></td>
+</tr>
+<tr>
+<td><strong>isFile() </strong></td>
+<td><span>Torna true si és un fitxer </span></td>
+</tr>
+<tr>
+<td><strong>length() </strong></td>
+<td>Torna la grandària del fitxer en bytes </td>
+</tr>
+<tr>
+<td><strong>lastModified() </strong></td>
+<td>Torna la data de modificació del fitxer o directori</td>
+</tr>
+<tr>
+<td><strong>setLastModified()</strong></td>
+<td>Actualitza la data de modificació del fitxer o directori</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Com ja havíem comentat abans, en el moment de crear el File, pot ser existesca o no el fitxer o directori, és a dir, que potser es corresponga o no amb un fitxer real. Si volem comprovar l'existència podem utilitzar el mètode <strong>exists()</strong>.</p>
+<p style="text-align: justify;">Anem a modificar l'exemple 2, on tornàvem tots els fitxers i directoris d'un directori introduït per teclat. Primer ens assegurrem que existeix i és un directori. Després el millorarem tornant la grandària de cada fitxer si és un fitxer, i especificant que és un directori, si ho és. Ens convindrà <strong>listFiles()</strong> per a poder mirar si és un fitxer o directori, la grandària, ... També hem aprofitat per crear el mètode estàtic <strong>llistat(File)</strong>, que mostrarà el contingut del directori on apunta el File, i així estructurar-lo un poc millor:</p>
+<p class="codi">import java.io.BufferedReader;<br />import java.io.File;<br />import java.io.IOException;<br />import java.io.InputStreamReader;<br /><br />public class Exemple_1_4 {<br />    public static void main(String[] args) throws IOException {<br />        System.out.println("Introdueix un directori:");<br />        String ent = new BufferedReader(new InputStreamReader(System.in))<br />                .readLine();<br />        File f = new File(ent);<br />        if (f.exists()){<br />            if (f.isDirectory()){<br />                llistaDirectori(f);<br />            }<br />            else<br />                System.out.println("No és un directori");<br />        }<br />        else<br />            System.out.println("No existeix el directori");<br />    }<br />    <br />    private static void llistaDirectori(File f) throws IOException {<br />        System.out.println("Llista de fitxers i directoris del directori " + f.getCanonicalPath());<br />        System.out.println("---------------------------------------------------");<br />        for (File e : f.listFiles()) {<br />            if (e.isFile())<br />                System.out.println(e.getName() + " " + e.length());<br />            if (e.isDirectory())<br />                System.out.println(e.getName() + " &lt;Directori&gt;");<br />        }<br />        <br />    }<br /><br />}</p>
+<p> </p>
+<p class="titolet">Mètodes per als permisos</p>
+<p>Els següents mètodes ens permeten consultar i modificar els permisos del File, al més pur estil Linux</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>canRead() </strong></td>
+<td>Torna true si es té permís de lectura sobre el fitxer o directori </td>
+</tr>
+<tr>
+<td><strong>canWrite() </strong></td>
+<td><span>Torna true si <span>es té permís d'escriptura sobre</span> el fitxer o directori</span></td>
+</tr>
+<tr>
+<td><strong>canExecute()</strong></td>
+<td>Torna true si és executable</td>
+</tr>
+<tr>
+<td><strong>setReadable(Boolean,Boolean)</strong></td>
+<td>Dóna permís o no de lectura sobre el fitxer, segons el primer paràmetre. En el segon indiquem si afecta només al propietari (true) o a tot el món (false)</td>
+</tr>
+<tr>
+<td><strong>setWritable(Boolean,Boolean)</strong></td>
+<td>Dóna permís d'escriptura o no, segons el valor del primer paràmetre. El segon actua igual que abans</td>
+</tr>
+<tr>
+<td><strong>setExecutable(Boolean,Boolean)</strong></td>
+<td><span>Dóna permís d'execució, segons el valor del primer paràmetre. El segon actua igual que abans</span></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p class="titolet">Mètodes de creació i esborrat</p>
+<p>Ens permetran crear diectoris, fitxers buits i esborrar-los</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>createNewFile() </strong></td>
+<td>Crea un fitxer nou buit associat al File, sempre que no existesca ja un amb el mateix nom </td>
+</tr>
+<tr>
+<td><strong>delete() </strong></td>
+<td>Esborra el fitxer o directori </td>
+</tr>
+<tr>
+<td><strong>mkdir() </strong></td>
+<td>Crea un directori amb el nom indicat en la creació del File. Ha d'existir el directori pare</td>
+</tr>
+<tr>
+<td><strong>mkdirs()</strong></td>
+<td>Com l'anterior, però si cal crea tots els directoris de la ruta necessaris</td>
+</tr>
+<tr>
+<td><strong>renameTo(String nou_nom) </strong></td>
+<td>Canvia el nom del fitxer o directori </td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p class="titolet">Mètodes sobre l'espai del dispositiu</p>
+<p>També disposem de mètodes que ens diuen l'espai total i lliure del dispositiu on està situat el File</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>getFreeSpace()</strong></td>
+<td>Torna l'espai lliure del dispositiu on està situat el File</td>
+</tr>
+<tr>
+<td><strong>getUsableSpace()</strong></td>
+<td>Torna l'espai utilitzable per l'aplicació (menor que l'espai lliure)</td>
+</tr>
+<tr>
+<td><strong>getTotalSpace() </strong></td>
+<td>Torna l'espai total del dispositiu on està situat el File </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_la_classe_file_generalitats.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercici.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

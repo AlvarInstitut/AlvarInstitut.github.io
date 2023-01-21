@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3.1 - Paràmetres de les funcions find() i findOne() | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-30"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__firebase.html" class="daddy">2 - Firebase</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_clauvalor.html" class="daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li><a href="32__utilitzaci_de_redis.html" class="daddy">3.2 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="321__strings.html" class="no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__mongodb.html" class="current-page-parent daddy">4 - MongoDB</a>
+   <ul>
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="43__consulta_de_documents.html" class="current-page-parent daddy">4.3 - Consulta de documents</a>
+      <ul>
+         <li id="active"><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="active no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="43__consulta_de_documents.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="432__operadors_de_les_condicions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3.1 - Paràmetres de les funcions find() i findOne()</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id123">
+<div class="iDevice emphasis0">
+<div id="ta123_85" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id124">
+<div class="iDevice emphasis0">
+<div id="ta124_85" class="block iDevice_content">
+<p>Les funcions <strong>find()</strong> i <strong>findOne()</strong> són absolutament equivalents, amb l'úinca diferència que la primera torna tots els documents trobats, mentre que la segona només torna el primer document trobat.</p>
+<p>Per una millor comprensió, utilitzarem únicament <strong>find()</strong>, per veure tots els resultats obtinguts.</p>
+<p>La funció <strong>find()</strong> s'ha comparat tradicionalment amb la sentència SELECT de SQL. Sempre tornarà un conjunt de documents, que poden variar des de no tornar cap document, a tornar-los tots els de la col·lecció.</p>
+<p>La funció <strong>find()</strong> pot tenir uns quants paràmetres.</p>
+<ul>
+<li>
+<div>
+<p>El primer indica una condició o criteri, i tornarà aquells documents de la col·lecció que acomplesquen la condició o criteri. Aquesta condició ve donada en forma de document (o objecte) JSON, i és com l'havíem vist en la funció <strong>update()</strong>:</p>
+<p class="codi">db.col_leccio1.find( { clau1 : valor1 } )</p>
+<p>Tornarà tots els documents de la col·lecció <strong>col_leccio1</strong> que tinguen el camp <strong>clau1</strong> i que en ella tinguen el valor <strong>valor1</strong>. Aquest criteri pot ser el complicat que faça falta, formant-lo en JSON. En definitiva, tornarà aquells documents que facen <em>matching</em> amb el document del criteri, és a dir, funcionaria com un <strong>and</strong></p>
+<p class="codi">db.col_leccio1.find( { clau1 : valor1 , clau2 : valor2 } )</p>
+<p></p>
+<p>que tornaria aquells documents de la <strong>col_lecció1</strong> que tenen el camp <strong>clau1</strong> amb el valor <strong>valor1</strong> i que tenen el camp <strong>clau2</strong> amb el valor <strong>valor2</strong></p>
+<p>Si no volem posar cap criteri, per a que els torne tots, no posem res com a paràmetre, o encara millor, li passem un document (objecte) buit, de manera que tots els documents de la col·lecció faran <em>matching</em> amb ell.</p>
+<p class="codi">db.col_leccio1.find( { } )</p>
+<p>Tindrem açò present, sobretot quan ens toque utilitzar el segon paràmetre de <strong>find</strong>. Si no volem cap criteri, posarem el document buit com l'exemple anterior</p>
+</div>
+</li>
+<li>
+<div>
+<p>El segon paràmetre ens servirà per a delimitar els camps dels documents que es tornaran. També tindrà el format JSON d'un objecte al qual li posarem com a claus els diferents camps que volem que apareguen o no, i com a valor 1 per a que sí que apareguen i 0 per a que no apareguen.</p>
+<p>Si posem algun camp a que sí que aparega (és a dir, amb el valor 1), els únics que apareixeran seran aquestos, a més del<strong>_id</strong> que per defecte sempre apareix.</p>
+<p class="codi2">&gt; db.alumnes.find({},{nom:1})<br />{ "_id" : ObjectId("56debe3017bf4ed437dc77c8"), "nom" : "Abel" }<br />{ "_id" : ObjectId("56dfdbd136d8b095cb6bd57a"), "nom" : "Berta" }</p>
+<p>Per tant si no volem que aparega <strong>_id </strong>posarem:</p>
+<p class="codi2">&gt; db.alumnes.find({},{_id:0})<br />{ "nom" : "Abel", "cognoms" : "Bernat Cantera", "edat" : 22, "adreça" : { "carrer" : "Major", "numero" : 7, "cp" : "12502" }, "nota" : [ 9.5, 9 ] }<br />{ "nom" : "Berta", "cognoms" : "Bernat Cantero" }</p>
+<p>I si volem traure únicament el nom:</p>
+<p class="codi2">&gt; db.alumnes.find({},{nom:1,_id:0})<br />{ "nom" : "Abel" }<br />{ "nom" : "Berta" }</p>
+</div>
+</li>
+</ul>
+<p>Per últim, com que a partir d'ara utilitzarem documents més complicats, si volem que ens apareguen els camps que retornem d'una forma un poc més elegant o bonica (<em>pretty</em>), posarem aquesta funció al final: <strong>find().pretty()</strong></p>
+<p class="codi2">&gt; db.alumnes.find().pretty()<br />{<br />    "_id" : ObjectId("56debe3017bf4ed437dc77c8"),<br />    "nom" : "Abel",<br />    "cognoms" : "Bernat Cantera",<br />    "edat" : 22,<br />    "adreça" : {<br />        "carrer" : "Major",<br />        "numero" : 7,<br />        "cp" : "12502"<br />    },<br />    "nota" : [<br />        9.5,<br />        9<br />    ]<br />}<br />{<br />    "_id" : ObjectId("56dfdbd136d8b095cb6bd57a"),<br />    "nom" : "Berta",<br />    "cognoms" : "Bernat Cantero"<br />}</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="43__consulta_de_documents.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="432__operadors_de_les_condicions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

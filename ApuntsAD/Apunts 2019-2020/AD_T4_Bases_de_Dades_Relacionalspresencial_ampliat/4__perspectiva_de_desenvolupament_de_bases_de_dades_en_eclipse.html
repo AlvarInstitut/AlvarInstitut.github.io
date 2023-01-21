@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="active no-ch">4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse</a></li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="6__jdbc_avanat.html" class="daddy">6 - JDBC avançat</a>
+   <ul class="other-section">
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32__jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__iniciaci_a_lapi_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+<p>Abans de començar a treballar la persistència en diferents Bases de Dades Relacionals, ens configurarem Eclipse per a poder treballar còmodament amb elles.</p>
+<p>Des dels programes Java podríem connectar ja mateix amb les diferents BD amb els connectors JDBC, però abans ens muntarem una perspectiva per a poder treballar, veure les taules amb les dades i fins i tot administrar aquestes Bases de Dades. Utilitzarem els connectors (drivers) JDBC, però des d'un entorn, una perspectiva més còmoda. Si no tinguérem aquesta perspectiva que ens permet "veure i tocar" les taules, o bé ahuríem de saber perfectíssimament l'estructura de totes les taules de la Base de Dades, o tenir una eina pròpia del SGBD per poder veure les taules. Com que són molts els SGBD que anem a connectar ens convé la perspectiva</p>
+<p>La perspectiva és <strong>Desenvolupament de Bases de Dades </strong>(<strong>Database Development</strong>). Depenent de la instal·lació d'Eclipse que tinguem, aquesta perspectiva estaria ja disponible. En concret, en la que us vaig recomanar instal·lar (<strong id="yui_3_17_2_1_1476549318514_96">Eclipse IDE for Java EE Developers</strong><strong></strong>) ja està instal·lada. La manera d'accedir és:</p>
+<p style="margin-left: 30px;"><strong>Window  --&gt;  Perspective  --&gt;  Open Perspective  --&gt;  Other</strong></p>
+<p>I triem la perpectiva <strong>Database Development</strong>.</p>
+<p style="text-align: center;"><img src="T4_4_1.png" style="border: 1px solid black;" width="1227" height="709" /></p>
+<p></p>
+<p></p>
+<p>Si tinguérem una versió d'Eclipse que no té aquesta perspectiva, la podrem instal·lar. Millor dit, instal·laríem les eines (tools) que ens permeten tenir-la.</p>
+<p>El següent vídeo explica el procés d'instal·lació i canvi en la perspectiva (<span style="color: #ff0000;">recordeu que si ja teníeu la perspectiva no us cal fer açò</span>)</p>
+<p><object type="application/x-shockwave-flash" data="Video_T4_Database_Developer.swf" width="1024" height="788" style="display: block; margin-left: auto; margin-right: auto;"><param name="src" value="Video_T4_Database_Developer.swf" /></object></p>
+<p> </p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_85" class="block iDevice_content">
+<p class="titolet">Connexió a PostgreSQL</p>
+<p>Com a primer exemple de connexió, intentarem connectar a PostgreSQL. Farà falta especificar:</p>
+<ul>
+<li>Primer el controlador (driver) de PostgreSQL. Triarem un de tipus IV (en el vídeo es veu el procés de baixada del driver; l'enllaç és aquest <a href="https://jdbc.postgresql.org/download/postgresql-9.4.1211.jar">JDBC42 Postgresql Driver, Version 9.4.1211</a>), però recordeu que també teniu el driver més actual en el curs de Moodle)</li>
+<li>Després les dades de connexió, que seran:
+<ul>
+<li>Servidor: <strong>89.36.214.106</strong></li>
+<li>Base de dades: <strong>geo_ad</strong></li>
+<li>Usuari: <strong>geo_ad<strong></strong></strong></li>
+<li>Contrasenya: <strong>geo_ad<strong></strong></strong></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="T4_Perspectiva_PostgreSQL.swf" width="1024" height="800"><param name="src" value="T4_Perspectiva_PostgreSQL.swf" /></object></p>
+<p> </p>
+<p>De la configuració anterior podem observar la <strong>URL</strong> de connexió que va a continuació. És important, perquè després quan connectem des dels nostres programes Java, haurem d'especificar-la també. Haurem de substituir <em>servidor</em> per l'adreça IP o el nom del servidor, la <em>base_de_dades</em> per la base de dades a la qual ens volem connectar.</p>
+<p><strong>URL de PostgreSQL</strong></p>
+<p class="codi">jdbc:postgresql://<em>servidor</em>:5432/<em>base_de_dades</em></p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_1" class="block iDevice_content">
+<p class="titolet">Connexió a Oracle</p>
+<p>Per a poder connectar a Oracle, utilitzarem un usuari genèric que està en quasi totes les instàncies d'Oracle anomenat SCOTT. El servidor està en una altra màquina que la resta de SGBD, per tant pareu atenció a l'adreça del servidor. Farà falta especificar:</p>
+<ul>
+<li>Primer el controlador (driver) de Oracle (el podeu baixar des d'ací <a name="file137" id="file137" href="http://www.oracle.com/technetwork/apps-tech/jdbc-112010-090769.html">ojdbc6.jar</a>, però us faria falta donar-vos d'alta de forma gratuïta; per més comoditat el teniu a l'aula virtual)</li>
+<li>Després les dades de connexió, que seran:
+<ul>
+<li>Servidor: <strong>94.177.240.173</strong></li>
+<li>Instància: <strong>orcl</strong><strong><br /></strong></li>
+<li>Base de Dades:<strong> scott</strong></li>
+<li>Usuari: <strong>scott</strong></li>
+<li>Contrasenya: <strong>tiger</strong></li>
+</ul>
+</li>
+</ul>
+<p>Aquest vídeo comenta el procés (suposa que ja ens hem baixat el driver JDBC apropiat):</p>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="T4_Perspectiva_Oracle.swf" width="1024" height="800"><param name="src" value="T4_Perspectiva_Oracle.swf" /></object></p>
+<p>I la cadena de connexió que ens quedarà serà </p>
+<p><strong>URL d'Oracle</strong></p>
+<p class="codi">jdbc:oracle:thin:@<em>servidor</em>:1521:<em>instancia</em></p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id11">
+<div class="iDevice emphasis0">
+<div id="ta11_1" class="block iDevice_content">
+<p class="titolet">Connexió a MySQL</p>
+<p>Repetim el procés per a MySQL. El servidor està en la mateixa màquina que PostgreSQL (89.36.214.106). L'usuari amb que connectarem ara es diu <strong>factura</strong>. Haurem d'especificar:</p>
+<ul>
+<li>Primer el controlador (driver) de MySQL (el podeu baixar des d'ací <a href="https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.44.tar.gz">https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.44.tar.gz,</a> però per a més comoditat el teniu disponible a l'aula virtual)</li>
+<li>Després les dades de connexió, que seran:
+<ul>
+<li>Servidor: <strong>89.36.214.106</strong></li>
+<li>Base de Dades:<strong> factura</strong></li>
+<li>Usuari: <strong>factura</strong></li>
+<li>Contrasenya: <strong>factura</strong></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"> <object type="application/x-shockwave-flash" data="T4_Perspectiva_MySQL.swf" width="1024" height="800"><param name="src" value="T4_Perspectiva_MySQL.swf" /></object><br /><br /></p>
+<p> <strong>URL de MySQL</strong></p>
+<p class="codi">jdbc:mysql://<em>servidor</em>:3306/<em>base_de_dades</em></p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_1" class="block iDevice_content">
+<p class="titolet">Connexió a SQLite</p>
+<p>SQLite és un SGBD molt diferent als anteriors. En tots els anteriors s'utilitza l'arquitectura client-servidor. I per tant el servidor de Base de Dades no té per què estar en la mateixa màquina.</p>
+<p>Però en moltes ocasions ens pot venir bé un SGBD molt més xicotet i senzill que guarde la BD en la mateixa màquina, que siga monousuari i que pese molt poc.</p>
+<p>SQLite és un SGBD multiplataforma (podrem fer-lo rodar en qualsevol plataforma) que és molt lleuger.  Admet la major part de l'estàndar SQL-92. I guarda una Base de Dades en un únic fitxer. Una altra característica és que des de Java, amb el driver JDBC podrem accedir a les Bases de Dades SQLite sense que faça falta cap motor de Base de Dades. Per tant és ideal com a Base de Dades que puguem copiar a les nostres aplicacions.</p>
+<p>També intentarem connectar des de la perspectiva. Però ara no caldrà especificar on està el servidor ni quin usuari s'ha de connectar. Haurem de dir el fitxer amb la ruta on està (o estarà) la Base de Dades. Per tant només haurem d'especificar:</p>
+<ul>
+<li>Primer el controlador (driver) de SQLite (<a class="execute" href="https://bitbucket.org/xerial/sqlite-jdbc/downloads/sqlite-jdbc-3.14.2.1.jar">sqlite-jdbc-3.14.2.1.jar</a>)</li>
+<li>Després les dades del fitxer: ruta i nom. La ruta ha d'existir. Si el fitxer no existeix, el crearà.</li>
+</ul>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="T4_Perspectiva_SQLite.swf" width="1024" height="800"><param name="src" value="T4_Perspectiva_SQLite.swf" /></object></p>
+<p><strong>URL de SQLite</strong></p>
+<p class="codi">jdbc:sqlite:<em>ruta_del_fitxer_sqlite</em></p>
+<p><em> </em></p>
+<p>Com hem comentat, SQLite és més senzill que els altres SGBD. Concretament, els tipus de dades que utilitza són:</p>
+<ul>
+<li>
+<p><strong>INTEGER</strong>. El valor és un enter amb signe, que ocupa 1, 2, 3, 4, 6, o 8 bytes depenent de la grandària del valor.</p>
+</li>
+<li>
+<p><strong>REAL</strong>. El valor és un número real en coma flotant que ocupa 8 bytes (doble precisió).</p>
+</li>
+<li>
+<p><strong>TEXT</strong>. El valor és una cadena de caràcters que pot estar codificada en UTF-8, UTF-16BE o UTF-16LE, depenent de la codificació de la Base de Dades. No ens preocuparem de la codificació interna.</p>
+</li>
+<li>
+<p><strong>BLOB</strong>. Per a guardar dades binàries que es guardaran exactament com entren, sense mirar el format.</p>
+</li>
+</ul>
+<p>Des de la perspectiva de Bases de Dades podrem visualitzar les taules i fins i tot crear-les, amb SQL.</p>
+<p>Com que les Bases de Dades SQLite les haurem d'administrar del tot, si resulta un poc incòmoda l'administració des de la perspectiva d'Eclipse, podem utilitzar alguna eina que ens ho facilite. Segurament la més còmoda és un <strong>plugin</strong> per a <strong>Firefox</strong> anomenat <strong>SQLite Manager</strong>. És molt fàcil d'instal·lar (només heu de buscar <strong>Firefox SQLite Manager</strong>, i segur que la primera opció serà la d'instal·lar el plugin). Una vegada instal·lat segur que haureu de reiniciar Firefox si ja l'estàveu utilitzant. La seua utilització és intuïtiva. En aquesta imatge estem veient una BD ja creada, que crearem i utilitzarem més avant:</p>
+<p style="text-align: center;"><img src="T4_4_2.png" alt="" style="border-width: 1px;" width="1223" height="815" /></p>
+<p>Lamentablement, no funciona aquest plugin de moment en l'última versió de Firefox. Segurament ho arreglaran prompte.</p>
+<p>Hi ha una altra alternativa, que és la d'utilitzar el <strong>SQLiteStudio</strong>, un programa en versió portable que no cal instal·lar, únicament descomprimir siga quina siga la plataforma utilitzada. El podem baixar de la següent adreça:</p>
+<p><a href="https://sqlitestudio.pl/index.rvt">https://sqlitestudio.pl/index.rvt</a></p>
+<p>Aquest és el seu aspecte, que com veieu resulta molt còmode:</p>
+<p><img src="T4_4_3.png" alt="" width="1123" height="794" /></p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32__jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__iniciaci_a_lapi_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

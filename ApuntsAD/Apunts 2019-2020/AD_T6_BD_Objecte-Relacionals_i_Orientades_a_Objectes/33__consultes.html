@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3 - Consultes | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li><a href="2__bases_de_dades_objecterelacionals.html" class="daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul class="other-section">
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__bases_de_dades_orientades_a_objectes.html" class="current-page-parent daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul>
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li id="active"><a href="33__consultes.html" class="active no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32__funcionalitat_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3 - Consultes</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_1" class="block iDevice_content">
+<p>DB4O disposa de tres formes de realitzar consultes. Totes elles són de tipus NoSQL.</p>
+<p style="margin-left: 30px;"><strong><span style="text-decoration: underline;">Nota</span></strong></p>
+<p style="margin-left: 30px;">Per a poder tenir un poc més de joc, torneu a inserir les 2 empleades de la modificació de la classe <strong>Prova1</strong>, i així en tindrem un total de 3. Si havíeu fet tots els exemples anteriors, potser siga millor esborrar <strong>Empleats.db4o</strong> i tornar a executar <strong>Prova1</strong> i <strong>Prova1_1</strong> per a crear-les de nou.</p>
+<p> </p>
+<p class="titolet">Mètode <em>Query By Example</em></p>
+<p>La primera forma ja s’ha comentat, és la que s’anomena consulta basada en un exemple o “<strong>query by example</strong>”. Consisteix, com ja hem vist, en trobar totes les instàncies guardades que coincidesquen amb els valors no nuls i diferents de zero (en cas que siguen numèrics) d’un patró o exemple passat per paràmetre.</p>
+<p>Si, per exemple, volem traure els empleats del departament 10 que són de Castelló, n’hi hauria prou amb crear el patró següent:</p>
+<div class="codi">import com.db4o.Db4oEmbedded;<br />import com.db4o.ObjectContainer;<br />import com.db4o.ObjectSet;<br /><br />import classesEmpleat.Adreca;<br />import classesEmpleat.Empleat;<br /><br />public class Prova11 {<br /><br />    public static void main(String[] args) {<br />        ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");<br /><br />        Empleat f = new Empleat();<br />        f.setDepartament(10);<br />        f.setAdreca(new Adreca(null, null, "Castelló"));<br /><br />        ObjectSet&lt;Empleat&gt; llista = bd.queryByExample(f);<br />        for (Empleat e : llista) {<br />            System.out.println("Nif: " + e.getNif() + ". Nom: " + e.getNom() + ". Departament: " + e.getDepartament()<br />                    + ". Població: " + e.getAdreca().getPoblacio());<br />        }<br />        bd.close();<br />    }<br />}</div>
+<p>cosa que donarà com a resultat el següent, que es pot comprovar que són del departament 10 i de Castelló:</p>
+<p class="codi2">Nif: 11111111a. Nom: Albert. Departament: 10. Població: Castelló<br />Nif: 22222222b. Nom: Berta. Departament: 10. Població: Castelló</p>
+<p>Seguint aquest raonament, per obtenir tots els empleats de l’aplicació caldrà passar un patró empleat sense valors ( <strong>bd.queryByExample(new Empleat() )</strong> ), i si el que desitgem és obtenir tots els objectes emmagatzemats a la base de dades, el que haurem de passar com a paràmetre és un valor null ( <strong>bd.queryByExample(null)</strong> ).</p>
+<p>Com podeu veure, resulta un sistema molt simple. Ara bé, també té moltes limitacions en consultes més complexes, i fins i tot poden resultar impossibles. Posem alguns exemples en els quals no funciona aquest tipus de consulta:</p>
+<ul>
+<li>És impossible trobar tots els empleats que no tinguen algun camp assignat encara (és a dir, null) a causa del mecanisme utilitzat: només s’avaluen els camps no nulls.</li>
+<li>Tampoc podríem trobar aquells empleats que cobren més de 1300€ . En aquest tipus de consulta només podem buscar igualtats.</li>
+<li>Com es basa en la coincidència, no podrem fer consultes que puguen agafar un de dos o més valors determinats. Per exemple, agafar els empleats que són de Castelló o Borriana.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_1" class="block iDevice_content">
+<p class="titolet">Mètode <em>Native Queries</em></p>
+<p>DB4O disposa d’un sistema molt més potent anomenat <strong>Native Queries</strong>. És fàcil deduir que es tracta d’un sistema vinculat directament al mateix llenguatge de programació. De fet, es tracta de construir un procediment en el qual s'avaluen els objectes i es decideix quins objectes acompleixen la condició i quins no.</p>
+<p>Per a fer la consulta haurem de crear una classe que implemente una interfície anomenada <strong>Predicate</strong> . Aquesta interfície consta d'un únic mètode declarat anomenat <strong>match</strong>. La classe nostra que implementarà Predicate haurà de sobreescriure el mètode match(), i en aquest mètode podrem posar una sèrie de sentències Java i dir si cada objecte de la Base de Dades acompleix o no la condició tornant respectivament true o false.</p>
+<p>En el següent exemple creem una classe anomenada <strong>EmpleatsPerPoblacio</strong> (que implementa <strong>Predicate</strong>), a la qual se li pot passar en el constructor un vector de cadenes de caràcters amb els noms de les poblacions de les quals volem els empleats. En la implementació del mètode <strong>match</strong> tornarem cert si l'empleat és d'alguna de les poblacions, i fals en cas contrari. Com que utilitzem el mateix llenguatge de programació, la potència és molt elevada i la corba d’aprenentatge d’aquesta tècnica esdevé pràcticament nul·la.</p>
+<p> </p>
+<div class="codi">import com.db4o.Db4oEmbedded;<br />import com.db4o.ObjectContainer;<br />import com.db4o.ObjectSet;<br />import com.db4o.query.Predicate;<br /><br />import classesEmpleat.Empleat;<br /><br />public class Prova12 {<br /><br />    public static void main(String[] args) {<br />        ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");<br />        String[] pobl = { "Castelló", "Borriana" };<br /><br />        ObjectSet&lt;Empleat&gt; llista = bd.query(new EmpleatsPerPoblacio(pobl));<br /><br />        for (Empleat e : llista) {<br />            System.out.println(e.getNom() + " (" + e.getAdreca().getPoblacio() + ")");<br />        }<br />        bd.close();<br />    }<br /><br />    public static class EmpleatsPerPoblacio extends Predicate&lt;Empleat&gt; {<br />        String[] poblacions;<br /><br />        public EmpleatsPerPoblacio(String[] poblacions) {<br />            this.poblacions = poblacions;<br />        }<br /><br />        @Override<br />        public boolean match(Empleat emp) {<br />            boolean ret = false;<br />            for (int i = 0; !ret &amp;&amp; i &lt; poblacions.length; i++) {<br />                if (emp.getAdreca().getPoblacio().equalsIgnoreCase(poblacions[i]))<br />                    ret = true;<br />            }<br />            return ret;<br />        }<br />    }<br />}</div>
+<p>Observeu que una vegada definida la classe, podem fer-la servir en una <strong>Query</strong> per realitzar una consulta específica. En l'exemple, s'obtenen tots els empleats que són de Castelló o de Borriana. En variar la llista de poblacions obtindrem uns objectes empleat o uns altres. En el mètode match, que és qui diu si un element Empleat compleix la condició, es comprova si la població de l'empleat (que està dins d'adreça, i per tant s'accedeix amb <strong>emp.getAdreca().getPoblacio()</strong> ) és igual a alguna de les de l'array de poblacions. Per a fer-lo més general, es fa amb el mètode <strong>equalsIgnoreCase()</strong>, que no distingeix entre majúscules i minúscules. En quant es troba una població coincident, s'eixirà del bucle, ja que s'ha posat també com a condició del bucle <strong>!ret</strong> (que no s'ha trobat), a banda del comptador del bucle.</p>
+<p> </p>
+<p>Com que  es tracta d’una interfície amb un únic mètode a implementar, no caldrà que implementem sempre noves classes per a cada consulta diferent, sinó que podem fer servir <strong>classes anidades anònimes</strong> (anonimous nested class), per a fer-lo molt més curt. Recordeu que les classes anidades poden treballar directament amb tots els atributs (tinguen l’àmbit que tinguen) de la classe que les continga i que les classes anònimes es defineixen a l’interior d’un mètode qualsevol.</p>
+<p>Mirem-ho en un altre exemple, en el qual es buscaran els empleats que tinguen el sou entre dos valors determinats. Construïm la classe <strong>Predicate</strong> en el mateix lloc on s'utilitza, en el <strong>query()</strong>, i no abulta molt perquè només té el mètode <strong>match()</strong>. En el mètode <strong>match()</strong> és on es comprova la condició:</p>
+<div class="codi">import com.db4o.Db4oEmbedded;<br />import com.db4o.ObjectContainer;<br />import com.db4o.ObjectSet;<br />import com.db4o.query.Predicate;<br /><br />import classesEmpleat.Empleat;<br /><br />public class Prova13 {<br /><br />    public static void main(String[] args) {<br />        ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");<br />        final int max = 1500;<br />        final int min = 1000;<br />        ObjectSet&lt;Empleat&gt; llista = bd.query(new Predicate&lt;Empleat&gt;() {<br />            @Override<br />            public boolean match(Empleat emp) {<br />                if (emp.getSou() &lt;= max &amp;&amp; emp.getSou() &gt;= min)<br />                    return true;<br />                else<br />                    return false;<br />            }<br />        });<br /><br />        for (Empleat e : llista) {<br />            System.out.println(e.getNom() + " (" + e.getSou() + ")");<br />        }<br />        bd.close();<br />    }<br />}</div>
+<p>  </p>
+<div style="overflow: hidden; position: absolute; top: -5000px; height: 1px;">En tractar-se d’una interfície amb un únic mètode a implementar, no caldrà que implementem sempre noves classes per a cada consulta diferent, sinó que podem fer servir classes imbricades anònimes (<em>anonimous nested class</em>). Recordeu que les classes imbricades poden treballar directament amb tots els atributs (tinguin l’àmbit que tinguin) de la classe que les contingui i que les classes anònimes es defineixen a l’interior d’un mètode qualsevol.</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_1" class="block iDevice_content">
+<p class="titolet">Mètode SODA</p>
+<p>Existeix encara una altra forma de definir consultes. DB4O l’anomena <strong>SODA</strong> (<em>Simple Object Database Access</em>), i es pot considerar com la forma d’accedir a l’estructura interna de la base de dades a baix nivell per tal de seleccionar els nodes de dades que complesquen uns determinats requisits i que acabaran determinant el resultat de la consulta. De fet, segons indiquen els autors, és la forma de consulta més ràpida de les tres.</p>
+<p>La idea fonamental de SODA és construir les consultes com un recorregut d’una xarxa de nodes enllaçats. Els nodes de la consulta s’estructuren de forma semblant a les classes emmagatzemades a la base de dades, de manera que el camí seguit en avaluar la consulta, node a node, es repeteix en les instàncies emmagatzemades, la qual cosa permet accedir als valors per avaluar de forma ràpida.</p>
+<p>El camí s’especifica utilitzant el mètode <strong>descend()</strong> per mitjà del qual seleccionem la branca de l’estructura de classes que vulguem fer referència. Per exemple, si ens trobem en el node de la classe <strong>Empleat</strong> i volguérem fer referència al nom de la població que en l’estructura de classes es troba a <strong>empleat.getAdreca().getPoblacio()</strong>, hauríem de fer </p>
+<p><strong class="codi">node.descend("adreca").descend("poblacio")</strong></p>
+<p>El resultat de la sentència anterior és un node focalitzat a l’atribut població continguda a l’adreça de l'empleat.</p>
+<p>Cada node pot estar afectat per una restricció, per una ordenació i/o per una operació amb una altre node. Les restriccions permeten seleccionar o desestimar les instàncies que es vagen comprovant. Les ordenacions, com és natural, forcen l’ordre de les instàncies seleccionades d’acord amb els valors de l’atribut representat pel node afectat. Finalment, les operacions marquen quin serà el següent node a avaluar, el qual actuarà també com a filtre dels objectes de la selecció.</p>
+<p>Les restriccions es veuran afectades per una o més relacions que permetran modificar la comparació i sentenciar en favor o en contra de la selecció d’una instància. Per defecte, la relació avaluada és la d’igualtat. Per exemple, si partim d’un node que representa el NIF d’un empleat, podem definir la relació d’igualtat següent:</p>
+<p class="codi"> node.constrain("11111111a")</p>
+<p>Mirem com quedaria el programa que selecciona únicament l'empleat amb el nif anterior:</p>
+<div class="codi">
+<div>import com.db4o.Db4oEmbedded;</div>
+<div>import com.db4o.ObjectContainer;</div>
+<div>import com.db4o.ObjectSet;</div>
+<div>import com.db4o.query.Query;</div>
+<div> </div>
+<div>public class Prova14 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) {</div>
+<div style="margin-left: 60px;">ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");</div>
+<div style="margin-left: 60px;">Query q = bd.query();          //node arrel.</div>
+<div style="margin-left: 60px;">q.constrain(Empleat.class);    //limitem la cerca als Empleats (pot haver guardarda més d'una classe)</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">Query node = q.descend("nif"); //arribem a l'altura del nif, que és on posem la restricció</div>
+<div style="margin-left: 60px;">node.constrain("11111111a");</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">ObjectSet&lt;Empleat&gt; llista = q.execute();</div>
+<div> </div>
+<div style="margin-left: 60px;">for(Empleat e: llista){</div>
+<div style="margin-left: 60px;">    System.out.println("Nif: " + e.getNif() + ". Nom: " + e.getNom() + " (" + e.getSou() + ")");</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">bd.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p>Però si la relació ha de ser una comparació de tipus <strong>major que</strong> , <strong>menor o igual que</strong>, ... , caldrà especificar-les expressament. La manera serà especificant un mètode de la restricció. Les possibilitats seran:</p>
+<ul>
+<li>Major:<strong> greater()</strong><br />Si suposem que partim d’un node focalitzat al <strong>sou</strong> d’un empleat i volem la condició que el sou siga major estrictament que 1300. S’indicaria d'aquesta manera:
+<p class="codi">node.constrain(1300).greater();</p>
+</li>
+<li>Menor: <strong>smaller()</strong><br /> Si volem que el sou siga estrictament menor que 1500:
+<p class="codi">node.constrain(1500).smaller();</p>
+</li>
+<li>Major o igual, menor o igual:<strong> equal()</strong> (després del greater o smaller)<br />Si ara volem que el sou siga menor o igual que 1500:
+<p class="codi">node.constrain(1300).smaller().equal();</p>
+</li>
+<li>Que comence per: <strong>startsWith(boolean) </strong><br />Si partim d'un node focalitzat al <strong>nom</strong> de l'empleat i volem els que comencen per <strong>A</strong>:
+<p class="codi">node.constrain("A").startsWith(true);</p>
+<p>Si en el paràmetre booleà posem true, haurà de coincidir exactament el principi. Si posem false, no distingirà entre majúscules i minúscules.</p>
+</li>
+<li>Per a unir restriccions: <strong>or(restriccio)</strong> <strong>and(restriccio)</strong>. Per a negar <strong>not()</strong><br /> Per exemple, si partim d’un node focalitzat al <strong>nom</strong> de l'empleat, podem seleccionar tots els que comencen per <strong>A</strong> o per <strong>B</strong>, fent:
+<p class="codi">Constraint constr1 = node.constrain("A").startsWith();<br /> Constraint constr2 = node.constrain("B").startsWith();<br /> constr1.or(constr2);</p>
+</li>
+<li>
+<p>Si posem més d'una restricció (més d'un constrain), s'hauran de complir totes, i per tant actua com un <strong>and</strong></p>
+</li>
+</ul>
+<p>A banda de les restriccions, si volem ordenar de forma ascendent o descendent, ho indicarem amb els mètode <strong>orderAscending()</strong> o <strong>orderDescending()</strong> del node pel mig del qual volem ordenar .</p>
+<p>Mirem un parell d'exemples per veure com es posa tot en joc. Anem a construir la sentència que permeta seleccionar tots els empleats amb un sou que oscil·le entre un rang de valors definits (estrictament major que 1000, i menor o igual que 1500, per exemple) ordenats de forma descendent per sou:</p>
+<div class="codi">
+<div>import com.db4o.Db4oEmbedded;</div>
+<div>import com.db4o.ObjectContainer;</div>
+<div>import com.db4o.ObjectSet;</div>
+<div>import com.db4o.query.Query;</div>
+<div> </div>
+<div> </div>
+<div>public class Prova15 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) {</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">Query q = bd.query();           //node arrel.</div>
+<div style="margin-left: 60px;">q.constrain(Empleat.class);     //limitem la cerca als Empleats (pot haver guardarda més d'una classe)</div>
+<div style="margin-left: 60px;">Query node = q.descend("sou");  //arribem a l'altura del sou, que és on posem restriccions</div>
+<div style="margin-left: 60px;">node.constrain(1000).greater().and(node.constrain(1500).smaller().equal());</div>
+<div style="margin-left: 60px;">node.orderDescending();</div>
+<div> </div>
+<div style="margin-left: 60px;">ObjectSet&lt;Empleat&gt; llista = q.execute();</div>
+<div> </div>
+<div style="margin-left: 60px;">for(Empleat e: llista){</div>
+<div style="margin-left: 90px;">System.out.println(e.getNom() + " (" + e.getSou() + ")");</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">bd.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p> I ara els empleats del departament 10 que són de Castelló. Podem utilitzar el mateix objecte node per anar afegint restriccions, però haurem de cuidar de localitzar-lo al lloc oportú:</p>
+<div class="codi">
+<div>import com.db4o.Db4oEmbedded;</div>
+<div>import com.db4o.ObjectContainer;</div>
+<div>import com.db4o.ObjectSet;</div>
+<div>import com.db4o.query.Query;</div>
+<div> </div>
+<div> </div>
+<div>public class Prova16 {</div>
+<div> </div>
+<div style="margin-left: 30px;">public static void main(String[] args) {</div>
+<div style="margin-left: 30px;"> </div>
+<div style="margin-left: 60px;">ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");</div>
+<div style="margin-left: 60px;"> </div>
+<div style="margin-left: 60px;">Query q = bd.query();      </div>
+<div style="margin-left: 60px;">q.constrain(Empleat.class);</div>
+<div> </div>
+<div style="margin-left: 60px;">Query node = q.descend("departament");</div>
+<div style="margin-left: 60px;">node.constrain(10);</div>
+<div> </div>
+<div style="margin-left: 60px;">node = q.descend("adreca").descend("poblacio");</div>
+<div style="margin-left: 60px;">node.constrain("Castelló");</div>
+<div> </div>
+<div style="margin-left: 60px;">ObjectSet&lt;Empleat&gt; llista = q.execute();</div>
+<div> </div>
+<div style="margin-left: 60px;">for(Empleat e: llista){</div>
+<div style="margin-left: 90px;">System.out.println("Nom: " + e.getNom() + ". Població: " + e.getAdreca().getPoblacio() + ". Departament: " + e.getDepartament());</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">bd.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p>Tot i que cal reconèixer la potència del sistema, de moment encara no és capaç de tenir tota l’expressivitat d’un llenguatge com OQL. No disposa de funcions d’agregació (SUM, AVG, MAX, MIN, ...), ni es poden expressar relacions entre instàncies emmagatzemades. De moment és l’aplicació que haurà de fer-se responsable que això siga possible. Es tracta, però, d’una tècnica molt jove, que de ben segur anirà evolucionant. Caldrà estar atents per veure fins on arriba.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32__funcionalitat_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

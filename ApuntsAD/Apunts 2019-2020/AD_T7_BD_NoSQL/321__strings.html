@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.1 - Strings | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 7: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__firebase.html" class="daddy">2 - Firebase</a>
+   <ul class="other-section">
+      <li><a href="21_creaci_duna_aplicaci.html" class="no-ch">2.1 Creació d'una aplicació</a></li>
+      <li><a href="22_realtime_database_rd.html" class="daddy">2.2 Realtime Database (RD)</a>
+      <ul class="other-section">
+         <li><a href="221_rd_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.2.1 RD: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="222_rd_utilitzaci_des_de_java.html" class="daddy">2.2.2 RD: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2221_rdjava_connexi_des_de_java.html" class="no-ch">2.2.2.1 RD-Java: Connexió des de Java</a></li>
+            <li><a href="2222_rdjava_accs_a_les_dades.html" class="no-ch">2.2.2.2 RD-Java: Accés a les dades</a></li>
+            <li><a href="2223_rdjava_tot_lexemple.html" class="no-ch">2.2.2.3 RD-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="223_rd_utilitzaci_des_dandroid.html" class="daddy">2.2.3 RD: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2231_rdandroid_connexi_des_dandroid.html" class="no-ch">2.2.3.1 RD-Android: Connexió des d'Android</a></li>
+            <li><a href="2232_rdandroid_accs_a_les_dades.html" class="no-ch">2.2.3.2 RD-Android: Accés a les dades</a></li>
+            <li><a href="2233_rdandroid_tot_lexemple.html" class="no-ch">2.2.3.3 RD-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="23_cloud_firestore_cf.html" class="daddy">2.3 Cloud Firestore (CF)</a>
+      <ul class="other-section">
+         <li><a href="231_cf_utilitzaci_des_de_lentorn_de_firebase.html" class="no-ch">2.3.1 CF: Utilització des de l'entorn de Firebase</a></li>
+         <li><a href="232_cf_utilitzaci_des_de_java.html" class="daddy">2.3.2 CF: Utilització des de Java</a>
+         <ul class="other-section">
+            <li><a href="2321_cfjava_connexi_des_de_java.html" class="no-ch">2.3.2.1 CF-Java: Connexió des de Java</a></li>
+            <li><a href="2322_cfjava_accs_a_les_dades.html" class="no-ch">2.3.2.2 CF-Java: Accés a les dades</a></li>
+            <li><a href="2323_cfjava_tot_lexemple.html" class="no-ch">2.3.2.3 CF-Java: Tot l'exemple</a></li>
+         </ul>
+         </li>
+         <li><a href="233_cf_utilitzaci_des_dandroid.html" class="daddy">2.3.3 CF: Utilització des d'Android</a>
+         <ul class="other-section">
+            <li><a href="2331_cfandroid_connexi.html" class="no-ch">2.3.3.1 CF-Android: Connexió</a></li>
+            <li><a href="2332_cfandroid_accs_a_les_dades.html" class="no-ch">2.3.3.2 CF-Android: Accés a les dades</a></li>
+            <li><a href="2333_cfandroid_tot_lexemple.html" class="no-ch">2.3.3.3 CF-Android: Tot l'exemple</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3__bases_de_dades_clauvalor.html" class="current-page-parent daddy">3 - Bases de Dades Clau-Valor</a>
+   <ul>
+      <li><a href="31__installaci_de_redis.html" class="no-ch">3.1 - Instal·lació de Redis</a></li>
+      <li class="current-page-parent"><a href="32__utilitzaci_de_redis.html" class="current-page-parent daddy">3.2 - Utilització de Redis</a>
+      <ul>
+         <li id="active"><a href="321__strings.html" class="active no-ch">3.2.1 - Strings</a></li>
+         <li><a href="322__keys.html" class="no-ch">3.2.2 - Keys</a></li>
+         <li><a href="323__hash.html" class="no-ch">3.2.3 - Hash</a></li>
+         <li><a href="324__list.html" class="no-ch">3.2.4 - List</a></li>
+         <li><a href="325__set.html" class="no-ch">3.2.5 - Set</a></li>
+         <li><a href="326__set_ordenat.html" class="no-ch">3.2.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+      <li><a href="33__connexi_des_de_java.html" class="no-ch">3.3 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="4__mongodb.html" class="daddy">4 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_de_mongodb.html" class="no-ch">4.1 - Instal·lació de MongoDB</a></li>
+      <li><a href="42__utilitzaci_de_mongodb.html" class="daddy">4.2 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="421__tipus_de_dades.html" class="no-ch">4.2.1 - Tipus de dades</a></li>
+         <li><a href="422__operacions_bsiques.html" class="no-ch">4.2.2 - Operacions bàsiques</a></li>
+         <li><a href="423__operacions_dactualitzaci_avanada.html" class="daddy">4.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="4231__set.html" class="no-ch">4.2.3.1 - $set</a></li>
+            <li><a href="4232__unset.html" class="no-ch">4.2.3.2 - $unset</a></li>
+            <li><a href="4233__rename.html" class="no-ch">4.2.3.3 - $rename</a></li>
+            <li><a href="4234__inc.html" class="no-ch">4.2.3.4 - $inc</a></li>
+            <li><a href="4235__elements_dun_array.html" class="no-ch">4.2.3.5 - Elements d'un array</a></li>
+            <li><a href="4236__inserci_en_arrays_push.html" class="no-ch">4.2.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="4237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">4.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="4238__upsert.html" class="no-ch">4.2.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43__consulta_de_documents.html" class="daddy">4.3 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="431__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">4.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="432__operadors_de_les_condicions.html" class="no-ch">4.3.2 - Operadors de les condicions</a></li>
+         <li><a href="433__agregaci.html" class="no-ch">4.3.3 - Agregació</a></li>
+      </ul>
+      </li>
+      <li><a href="44__connexi_des_de_java.html" class="no-ch">4.4 - Connexió des de Java</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32__utilitzaci_de_redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322__keys.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.1 - Strings</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_85" class="block iDevice_content">
+<p>És el tipus de dades més senzill, més bàsic. Serà una cadena de caràcters de tipus <em><strong>binary</strong></em><strong> safe</strong> en la qual normalment guardarem les habituals cadenes de caràcters, però que també podríem guardar imatges o objectes serialitzats de Java. La grandària màxima és de 512Mb.</p>
+<p>Ara veurem els comandos més habituals que afecten a aquest tipus. Com a norma general, hem de ser conscients que els comandos no són sensibles a majúscules o minúscules, però les claus i els valors sí que ho són. És a dir, el comando <strong>get</strong> també es pot escriure <strong>GET</strong> o <strong>Get</strong>. Però la clau <strong>Hola</strong> és diferent de la clau <strong>hola</strong>.</p>
+<p class="titolet">GET</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">get clau</p>
+<p>Torna el valor de la clau especificada, sempre que siga de tipus <strong>String</strong>. Si la clau és d'un altre tipus, donarà error. I si la clau no existeix, tornarà el valor especial <strong><em>nil</em></strong> .</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; get clau_1<br />"primera"<br />127.0.0.1:6379&gt; get clau_2<br />(nil)</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_85" class="block iDevice_content">
+<p class="titolet">SET</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">set clau valor</p>
+<p>Assigna a la clau especificada com a primer paràmetre el valor especificat com a segon paràmetre. Si el valor consta de més d'una paraula, haurà d'anar entre cometes dobles.</p>
+<p>Redis sempre guardarà el valor com a string, encara que nosaltres pensem que li passam un valor enter o real.</p>
+<p>I una altra característica és que si la clau existeix ja, matxacarà el seu contingut, com era de esperar.</p>
+<p><span style="text-decoration: underline;">Exemples</span></p>
+<p class="codi2">127.0.0.1:6379&gt; set clau_2 segona<br />OK<br />127.0.0.1:6379&gt; set text "Un text amb més d'una paraula"<br />OK</p>
+<p class="codi2">127.0.0.1:6379&gt; set quatre 4<br />OK<br />127.0.0.1:6379&gt; get quatre<br />"4"<br />127.0.0.1:6379&gt; set pi 3.14159265359<br />OK<br />127.0.0.1:6379&gt; get pi<br />"3.14159265359"</p>
+<p></p>
+<p style="margin-left: 30px;"><span style="text-decoration: underline;"><em><strong>Nota</strong></em></span></p>
+<p style="margin-left: 30px;">Si poseu algun accent, en tornar el valor (fent get) us semblarà que no s'ha guardat bé. Sí que s'haurà guardat bé, el que passa és que posteriorment no es visualitza bé en fer el get. Es pot comprovar entrant en el client amb l'opció <em><strong>raw</strong></em> , és a dir <strong>redis-cli --raw</strong></p>
+<p>El comando <strong>SET</strong> té una opció molt interessant, que servirà per a donar un temps de vida a la clau, transcorregut el qual desapareix la clau (amb el seu valor clar). Açò s'anomena <em><strong>temps d'expiració</strong></em><strong> </strong>i s'aconsegueix amb el paràmetre<strong> EX</strong> del comando<strong> SET </strong>seguit del número de segons que volem que dure la clau.</p>
+<p><span style="text-decoration: underline;">Exemple</span></p>
+<p class="codi2">127.0.0.1:6379&gt; set clau_3 tercera ex 10<br />OK<br />127.0.0.1:6379&gt; get clau_3<br />"tercera"<br />127.0.0.1:6379&gt; get clau_3<br />(nil)</p>
+<p>Primer sí que existeix, però al cap de 10 segons ha deixat d'existir.</p>
+<p>De forma equivalent es pot expressar el temps en milisegons, amb el paràmetre <strong>PX</strong> en compte de <strong>EX</strong>.</p>
+<p></p>
+<p>Havíem comentat al principi, que si en el moment de fer el <strong>SET </strong>la clau ja existia, es reemplaçarà el seu contingut. Podem modificar aquest comportament amb el paràmetre <strong>NX</strong> (Not eXists): si no existia la clau, la crearà amb el valor, però si ja existia, la deixarà com estava. Ens ho indicarà dient OK en cas de crear-la i NIL en cas de no crear-la perquà ja existia.</p>
+<p class="codi2">127.0.0.1:6379&gt; set clau_4 quarta nx<br />OK<br />127.0.0.1:6379&gt; set clau_1 quarta nx<br />(nil)<br />127.0.0.1:6379&gt; get clau_4<br />"quarta"<br />127.0.0.1:6379&gt; get clau_1<br />"primera"</p>
+<p>I de forma inversa, si posem el paràmetre <strong>XX</strong>, si ja existeix la clau, reemplaçarà el valor, però si no existia, no farà res.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_85" class="block iDevice_content">
+<p class="titolet">SETEX</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">setex clau segons valor</p>
+<p>Funciona igual que el <strong>SET</strong> amb el paràmetre <strong>EX</strong>: crearà la clau amb el valor, però tindrà una existència dels segons indicats.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_85" class="block iDevice_content">
+<div id="ta9_85" class="block iDevice_content">
+<p class="titolet">PSETEX</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">psetex clau milisegons valor</p>
+<p>Funciona igual que l'anterior, però el que especifiquem són els milisegons d'existència.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id11">
+<div class="iDevice emphasis0">
+<div id="ta11_85" class="block iDevice_content">
+<p class="titolet">MGET</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">mget clau1 clau2 clauN</p>
+<p>Torna una llista de valors, els de les claus indicades.</p>
+<p>Exemple</p>
+<p class="codi2">127.0.0.1:6379&gt; set mes1 gener<br />OK<br />127.0.0.1:6379&gt; set mes2 febrer<br />OK<br />127.0.0.1:6379&gt; set mes3 març<br />OK<br />127.0.0.1:6379&gt; mget mes1 mes2 mes3<br />1) "gener"<br />2) "febrer"<br />3) "mar\xc3\xa7"</p>
+<p style="margin-left: 30px;"><strong><span style="text-decoration: underline;">Nota</span> </strong></p>
+<p style="margin-left: 30px;">Recordeu que els caràcters com vocals accentuades, ç, ñ, ... s'han introduït bé, però potser no es visualiten bé. Es pot evitar entrant en el client d'aquesta manera <strong>redis-cli --raw</strong></p>
+<p>Si alguna de les claus no exiteix, tornarà <strong>nil</strong> en el seu lloc</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_85" class="block iDevice_content">
+<p class="titolet">MSET</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">mset clau1 valor1 clau2 valor2 clauN valorN</p>
+<p>Assigna els valors corresponents a les claus. És una operació atòmica: es posen (o canvien) tots els valors a l'hora.</p>
+<p class="codi2">127.0.0.1:6379&gt; mset mes4 abril mes5 maig mes6 juny mes7 juliol<br />OK<br />127.0.0.1:6379&gt; mget mes1 mes2 mes3 mes4 mes5 mes6 mes7<br />1) "gener"<br />2) "febrer"<br />3) "mar\xc3\xa7"<br />4) "abril"<br />5) "maig"<br />6) "juny"<br />7) "juliol"</p>
+<p>Si no vulguérem reemplaçar valors, podríem utilitzar el comando <strong>MSETNX</strong>, totalment equivalent, però hauríem de tenir en compte que si alguna ja existeix i per tant no pot canviar el valor, no faria l'operació, és a dir, tampoc crearia les altres.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_85" class="block iDevice_content">
+<p class="titolet">APPEND</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">append clau1 valor1</p>
+<p>Si la clau no existeix la crea assignant-li el valor (com el <strong>SET</strong>), però si ja existeix, concatena el valor al final de la cadena que ja hi havia.</p>
+<p class="codi2">127.0.0.1:6379&gt; append salutacio Hola<br />(integer) 4<br />127.0.0.1:6379&gt; get salutacio<br />"Hola"<br />127.0.0.1:6379&gt; append salutacio ", com va?"<br />(integer) 13<br />127.0.0.1:6379&gt; get salutacio<br />"Hola, com va?"</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id14">
+<div class="iDevice emphasis0">
+<div id="ta14_85" class="block iDevice_content">
+<p class="titolet">STRLEN</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">strlen clau1</p>
+<p>Torna el número de caràcters que hi ha en el valor de la clau. Si la clau no existeix, tornarà 0. Si la clau és d'un altre tipus, tornarà error.</p>
+<p class="codi2">127.0.0.1:6379&gt; strlen salutacio<br />(integer) 13<br />127.0.0.1:6379&gt; strlen sal<br />(integer) 0</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_85" class="block iDevice_content">
+<p class="titolet">GETRANGE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">getrange clau1 inici final</p>
+<p>Extrau una subcadena del valor de la clau (ha de ser de tipus <strong>String</strong>) des del número de caràcter d'inici fins al número del final (ambdós inclosos). El primer caràcter és el 0. Si posem de final un número major que l'últim, igual ho traurà fins el final.</p>
+<p>Es poden posar també valor negatius que ens ajuden a agafar la cadena des del final. El -1 és l'últim caràcter, el -2 el penúltim, ... I es poden barrejar números positius i negatius. Així el rang 0 -1 és tota la cadena.</p>
+<p class="codi2">127.0.0.1:6379&gt; getrange salutacio 1 3<br />"ola"<br />127.0.0.1:6379&gt; getrange salutacio 6 50<br />"com va?"<br />127.0.0.1:6379&gt; getrange salutacio 6 -1<br />"com va?"<br />127.0.0.1:6379&gt; getrange salutacio -7 -5<br />"com"</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_85" class="block iDevice_content">
+<p class="titolet">SETRANGE</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">setrange clau1 desplaçament valor</p>
+<p>Substitueix part del valor de la cadena, a partir del desplaçament, amb el vaolr proporcionat. No s'admenten en desplaçament valors negatius.</p>
+<p class="codi2">127.0.0.1:6379&gt; get salutacio<br />"Hola, com va?"<br />127.0.0.1:6379&gt; setrange salutacio 4 ". C"<br />(integer) 13<br />127.0.0.1:6379&gt; get salutacio<br />"Hola. Com va?"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_85" class="block iDevice_content">
+<p class="titolet">INCR</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">incr clau1</p>
+<p>A pesar de que Redis guarda els strings com a tals, com a cadenes de caràcters, en algunes ocasions és capaç de transformar la cadena a un número. És el cas del comando <strong>INCR</strong>, que converteix la cadena en un enter (si pot) i incrementa aquest valor en una unitat.</p>
+<p>Si la clau no existeix la crea assumint que valia 0, i per tant després valdrà 1.</p>
+<p>Si el valor de la clau no era un número enter, donarà un error.</p>
+<p class="codi2">127.0.0.1:6379&gt; set compt1 20<br />OK<br />127.0.0.1:6379&gt; get compt1<br />"20"<br />127.0.0.1:6379&gt; incr compt1<br />(integer) 21<br />127.0.0.1:6379&gt; get compt1<br />"21"<br />127.0.0.1:6379&gt; incr compt2<br />(integer) 1<br />127.0.0.1:6379&gt; get compt2<br />"1"<br />127.0.0.1:6379&gt; incr clau_1<br />(error) ERR value is not an integer or out of range<br />127.0.0.1:6379&gt; set compt3 4.25<br />OK<br />127.0.0.1:6379&gt; incr compt3<br />(error) ERR value is not an integer or out of range</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id18">
+<div class="iDevice emphasis0">
+<div id="ta18_85" class="block iDevice_content">
+<p class="titolet">DECR</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">decr clau1</p>
+<p>Decrementa en una unitat el valor de la clau (senpre que siga un enter).</p>
+<p>Pot agafar valors negatius.</p>
+<p>Si la clau no existeix la crea assumint que valia 0, i per tant després valdrà -1.</p>
+<p class="codi2">127.0.0.1:6379&gt; decr compt2<br />(integer) 0<br />127.0.0.1:6379&gt; decr compt2<br />(integer) -1<br />127.0.0.1:6379&gt; get compt2<br />"-1"</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id20">
+<div class="iDevice emphasis0">
+<div id="ta20_85" class="block iDevice_content">
+<p class="titolet">INCRBY</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">incrby clau1 increment</p>
+<p>Incrementa el valor de la clau en el número d'unitats indicat en <strong>increment</strong> (el valor ha de ser enter). L'increment pot ser negatiu.</p>
+<p class="codi2">127.0.0.1:6379&gt; incrby compt1 10<br />(integer) 31<br />127.0.0.1:6379&gt; incrby compt1 -20<br />(integer) 11</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id21">
+<div class="iDevice emphasis0">
+<div id="ta21_85" class="block iDevice_content">
+<p class="titolet">DECRBY</p>
+<p><span style="text-decoration: underline;">Sintaxi</span></p>
+<p class="codi">decrby clau1 decrement</p>
+<p>Decrementa el valor de la clau el número d'unitat indicat en <strong>decrement</strong>.</p>
+<p class="codi2">127.0.0.1:6379&gt; decrby compt1 5<br />(integer) 6</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32__utilitzaci_de_redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322__keys.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

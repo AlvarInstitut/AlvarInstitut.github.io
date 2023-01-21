@@ -1,0 +1,167 @@
+/*
+eXe
+Copyright 2007-2008. eXelearning Project, http://eXeLearning.org/
+style sheet for default theme
+see: http://exelearning.org/Creating_a_new_Style for more info on how
+to modify this style for your needs.
+=================================
+Modified by eXeLearning.net
+*/
+html{padding:0}
+body{font:1em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:10px 20px 10px 20px;text-align:left;color:#444;background:#E0DFD8}
+a{color:#E65C00}
+a:hover,a:focus{color:#B34700}
+#header,#emptyHeader{text-align:left;height:3em;padding-left:15px;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #f9f9f9;border-bottom:2px solid #E5E4E0;border-top:2px solid #E5E4E0;color:#4D4D4D} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+div#nodeDecoration{text-align:left;padding:1em 20px;margin-bottom:2em;background:#D9D9CE;text-shadow:1px 1px 1px #f9f9f9;border-bottom:2px solid #E5E4E0;border-top:2px solid #E5E4E0;color:#4D4D4D}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #E5E4E0;margin-top:1em;text-align:right}
+#main h2{font-size:1.4em}
+#main h2.iDeviceTitle{display:inline}
+h3{font-size:1.25em;color:#666}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:2em 0;padding:10px;background:#fff;border-radius:5px}
+.emphasis0{padding:0;background:none}
+.iDevice_icon{width:32px;height:auto;margin-right:5px}
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#568D14;line-height:2em} 
+.iDevice_inner{background:#F2F2EF;border-radius:5px;padding:10px 20px}
+.emphasis0 .iDevice_inner{background:none;padding:0}
+#siteFooter{color:#555;font-size:.95em}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+#lbTopContainer, #lbBottomContainer{font-size:1em}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.feedbackbutton{background:#DBE992;margin-bottom:1em}
+
+.titolet {
+	font-size: 1.4em;
+	color: #8A0A0A;
+	text-decoration: underline;
+	
+}
+
+.titolet2 {
+	font-size: 1.4em;
+	color: #8A0A0A;
+	text-align:right;
+	border-bottom: 2px solid #8A0A0A;
+}
+
+/* per donar aspecte al que serà codi */
+  .codi { 
+	border: thin solid rgb(153, 153, 204);
+    font-size: 12pt;
+    line-height: 1em;
+    color: rgb(0, 0, 204);
+    font-style: normal;
+    background-color: rgb(255, 204, 51);
+    font-weight: bold;
+    font-family: Courier New,Courier,monospace;
+    margin-left: 0.5in;
+    margin-right:0.5in;
+    text-align:left;
+    }
+   .codi blockquote {
+	margin-top: 0px;
+	margin-bottom: 0px
+	}
+
+/* per donar aspecte al que serà resultat */
+  .codi2 { 
+	border: thin solid rgb(153, 153, 204);
+    font-size: 12pt;
+    line-height: 1em;
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family:  Courier New,Courier,monospace;
+    margin-left: 0.5in;
+    margin-right:0.5in;
+    text-align:left;
+    }
+   .codi2 blockquote {
+	margin-top: 0px;
+	margin-bottom: 0px
+	}
+
+/* per donar aspecte al que serà codi */
+  .codigran { 
+	border: thin solid rgb(153, 153, 204);
+    font-size: 12pt;
+    color: rgb(0, 0, 204);
+    font-style: normal;
+    background-color: rgb(255, 204, 51);
+    font-weight: bold;
+    font-family: Courier New,Courier,monospace;
+    }
+   .codigran blockquote {
+	margin-top: 0px;
+	margin-bottom: 0px
+	}
+/* per donar aspecte al que serà codi SQL, en que hi ha sangria francesa */
+  .codiSQL { 
+	border: thin solid rgb(153, 153, 204);
+    font-size: 12pt;
+    color: rgb(0, 0, 204);
+    font-style: normal;
+    background-color: rgb(255, 204, 51);
+    font-weight: bold;
+    font-family: Courier New,Courier,monospace;
+    margin-left: 0.5in;
+	padding-left:0.4in;
+	text-indent:-0.4in;
+    text-align:left; 
+    }
+   .codiSQL blockquote {
+	margin-top: 0px;
+	margin-bottom: 0px
+	}
+
+/* per donar aspecte al que serà codi SQL, en que hi ha sangria francesa , però deixant més lloc*/
+.codiSQLgran { 
+	border: thin solid rgb(153, 153, 204);
+    font-size: 12pt;
+    color: rgb(0, 0, 204);
+    font-style: normal;
+    background-color: rgb(255, 204, 51);
+    font-weight: bold;
+    font-family: Courier New,Courier,monospace;
+	padding-left:0.4in;
+	text-indent:-0.4in;
+    text-align:left;
+    }
+   .codiSQLgran blockquote {
+	margin-top: 0px;
+	margin-bottom: 0px
+	}
+
+/* per a compatibilitzar amb el del IOC*/
+.code {
+	font-weight: bold;
+}
+
+/* per a remarcar un paràgraf */
+  .access2007 { 
+    border: thin solid rgb(153, 153, 204);
+    font-size: 12pt;
+    font-style: normal;
+    background-color: rgb(200, 225, 225);
+    margin-left: 0.5in;
+    padding-left:0.4in;
+    padding-right:0.4in;
+    text-align:justify;
+    }
+   .access2007:before {
+	content: "Access 2007";
+	font-weight: bold;
+	text-decoration: underline;
+    }

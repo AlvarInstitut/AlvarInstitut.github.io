@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.4.2 - Herència | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_objecterelacionals.html" class="current-page-parent daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul>
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li><a href="23__manipulaci_de_dades.html" class="daddy">2.3 - Manipulació de dades</a>
+      <ul class="other-section">
+         <li><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="24__altres_aportacions.html" class="current-page-parent daddy">2.4 - Altres aportacions</a>
+      <ul>
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li id="active"><a href="242__herncia.html" class="active no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__bases_de_dades_orientades_a_objectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.4.2 - Herència</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id90">
+<div class="iDevice emphasis0">
+<div id="ta90_1" class="block iDevice_content">
+<p> </p>
+<p>És com en l'herència d'objectes. Permet heretar les propietats d'un tipus o taula en un altre tipus a una altra taula. El cas del tipus ja el coneixem de Java. El cas de la taula pot ser menys familiar.</p>
+<p>Quan una taula hereta d'una altra, contindrà tots els camps d'aquesta, a més de poder posar nous camps.</p>
+<p>Fins i tot podrem fer que les files que introduïm en les taules que han heretat, puguen aparèixer en la taula "principal".</p>
+<p> </p>
+<p>Si tenim una taula creada:</p>
+<div class="codiSQL">create table t1 (<br /> c1 int2 primary key,<br /> c2 text);</div>
+<p>Podem crear una altra que herete les característiques d'aquesta.</p>
+<div class="codiSQL">create table t2 (<br /> c3 text) INHERITS (t1);</div>
+<p>La taula t2 tindrà, a banda de l'atribut definit, en tindrà 2 més, c1 i c2, heretats de t1.</p>
+<p>Açò ho podem comprovar fàcilment si obrim ara el PgAdmin i mirem les definicions de les taules acabades de crear. Fins i tot podem comprovar que l'atribut c1 és no nul en t2.</p>
+<table align="center" border="1">
+<tbody>
+<tr>
+<td><img src="T7_10_1.1.png" width="549" height="244" /></td>
+<td align="center"><img src="T7_10_2.1.png" width="548" height="244" /></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>També ho podem comprovar si intentem inserir en <strong>t2</strong>:</p>
+<p class="codiSQL">insert into t2<br /> values (1,'Hola','Adéu');</p>
+<p>Lamentablement no conserva la clau primària, i si la volem també en <strong>t2</strong> haurem de modificar la taula per definir-la. Ho podem comprovar amb aquesta sentència:</p>
+<p class="codiSQL">insert into t2<br /> values (1,'Hola2','Adéu2');</p>
+<p>No dóna cap problema, perquè no hi ha clau primària. Observeu com fins i tot <strong>PgAdmin</strong> si anem a veure les dades (<strong><em>Vista de Dades</em></strong><span style="font-style: normal;">) avisa</span> que no hi ha clau principal i per tant no podrà editar-la, ja que no tindrà manera d'identificar la fila (distint seria si l'haguérem definida amb <strong>OIDs</strong> , <strong><em>object identifier</em></strong>, que posa una columna amb un número que identifica la fila).</p>
+<p>Ara fixem-nos en una altra cosa. Si ara volem veure el contingut de <strong>t1</strong> (on de moment no havíem introduït res), veurem que ja té dues files: <strong>(1,'Hola') </strong>i <strong>(1,'Hola2')</strong>. Bé realment aquestes dues files no estan introduïdes en <strong>t1</strong>, sinó que quan PostgreSQL trau el contingut d'una taula, trau també, per defecte, les seues descendents. La prova que realment no estan introduïdes en <strong>t1</strong> és que no ha donat problemes la clau primària (que en <strong>t1</strong> sí que està definida). I fins i tot una prova més concloent: anem a inserir en <strong>t1</strong>.</p>
+<p class="codiSQL">insert into t1<br /> values (1,'Hola3');</p>
+<p>No dóna cap problema, però si que el donaria si intentàrem:</p>
+<p class="codiSQL">insert into t1<br /> values (1,'Hola4');</p>
+<p>Si per alguna raó volem traure únicament aqulles files que realment pertanyen a <strong>t1</strong> posaríem l'atribut <strong>ONLY</strong> davant del nom de la taula</p>
+<p class="codiSQL">select * from only t1;</p>
+<p>Una característica molt interessant és que els possibles canvis en l'estructura de la taula inicial es veuran reflectits en les taules descendents.</p>
+<p>Així, sí afegim una columna o la suprimim, o la canviem de tipus, o fins i tot si la posem no nula, el mateix passarà amb les taules descendents.</p>
+<p class="codiSQL">alter table t1 add column c4 numeric(5,2);</p>
+<p align="center"><img src="T7_10_2_5.png" width="498" height="250" border="1" /></p>
+<blockquote>
+<p><span style="text-decoration: underline;"><strong>Nota</strong></span></p>
+<p>En PgAdmin haurem de “refrescar” les taules per poder comprovar que s'han afegit les modificacions.</p>
+</blockquote>
+<p>No s'hereten, en canvi, les claus principals, ni restriccions UNIQUE, ni claus externes, encara que aquestes últimes en versions anteriors sí que s'heretaven; ja veurem en versions posteriors...</p>
+<p>Fins i tot podem esborrar la taula i fer que s'esborren les descendents. Ho haurem de fer amb l'opció CASCADE:</p>
+<p class="codiSQL">drop table t1 cascade;</p>
+<p> </p>
+<p>Sembla que la utilitat més gran de l'herència, és quan partim d'una especialització des del Model Entitat-Relació. Ens basarem en un exemple que no siga massa complicat, però en el qual es puguen veure unes quantes especialitzacions, i a dos nivells.</p>
+<blockquote>
+<p><span style="text-decoration: underline;"><span style="font-weight: bold;">Nota</span></span></p>
+<p>Els següents exemples els farem sobre l'usuari i Base de Dades propi de cadascun <span style="font-weight: bold;">rxx</span><strong></strong>.</p>
+</blockquote>
+<p> </p>
+<p>Suposem que volem documentar els tallers d'informàtica d'un Institut. De tots els elements voldrem el nom, la descripció i el lloc (el taller) on estan. Els elements són de tres tipus: nodes (ordinadors, servidors d'impressió, routers), que tenen una adreça IP, repetidors (switch i hubs), i impressores. Lògicament ens guardarem coses diferents de cadascun. Dels nodes, en principi, només ens interessen els ordinadors.</p>
+<p>Aquest seria l'esquema Entitat-Relació:</p>
+<p style="margin-bottom: 0.21cm;" align="center"><img src="T7_10_3.png" width="381" height="192" /></p>
+<p>Aquest esquema ens donaria les següents taules:</p>
+<p align="center"><img src="T7_10_4.png" width="309" height="136" /></p>
+<p>Anem a crear les taules</p>
+<p class="codiSQL">create table elem (<br /> nom varchar(15) constraint cp_ele primary key,<br /> descripcio varchar(50),<br /> taller varchar(15));</p>
+<p class="codiSQL">create table repetidor () inherits (elem);</p>
+<p class="codiSQL">create table node (<br /> adreca inet) inherits (elem);</p>
+<p class="codiSQL">create table impressora (<br /> tipus varchar(15),<br /> velocitat varchar(15)) inherits (elem);</p>
+<p class="codiSQL">create table equip (<br /> cpu varchar(25),<br /> ram numeric(4,0),<br /> hd varchar(25)) inherits (node);</p>
+<p>Ara procedirem a crear les claus primàries de <strong>repetidor, node, impressora</strong> i <strong>equip</strong></p>
+<p class="codiSQL">alter table repetidor<br /> add constraint cp_rep primary key(nom);</p>
+<p class="codiSQL">alter table node<br /> add constraint cp_nod primary key(nom);</p>
+<p class="codiSQL">alter table impressora<br /> add constraint cp_imp primary key(nom);</p>
+<p class="codiSQL">alter table equip<br /> add constraint cp_equ primary key(nom);</p>
+<p>Introduïm algunes dades de mostra. Normalment introduirem en les taules descendents.</p>
+<p class="codiSQL">insert into repetidor<br /> values ('S-TI1','Switch del Taller 1','TI1');</p>
+<p class="codiSQL">insert into equip values <br /> ('TI1-01','Ord 1 Taller 1','TI1','192.168.201.101','AMD Athlon 64 X2',2048,'250 Gb'),<br /> ('TI1-02','Ord 2 Taller 1','TI1','192.168.201.102','AMD Athlon 64 X2',2048,'250 Gb'),<br /> ('TI1-03','Ord 3 Taller 1','TI1','192.168.201.103','AMD Athlon 64 X2',2048,'250 Gb'),<br /> ('TI4-01','Ord 1 Taller 4','TI4','192.168.204.101','Celeron',1024,'80 Gb');</p>
+<p>Si ara llistem <strong>ELEM</strong> veurem tots els element introduïts.</p>
+<p align="center"><img src="T7_10_5.png" width="927" height="626" /></p>
+<p> </p>
+<p>Les taules poden heretar els atributs de més d'una taula.</p>
+<p>Per a provar-lo anem a modificar el disseny anterior, suposant que tenim dues classes d'impressora, les que es connecten a la xarxa, i les que es connecten a un equip. Però la característica que volem de les que es connecten en xarxa és la de <strong>node</strong>. Per tant, per una banda volem les característiques de <strong>node</strong>, i per una altra les de <strong>impressora</strong>. Anem a veure com quedaria aquesta impressora en xarxa, deixant l'altra per després.</p>
+<p class="codiSQL">create table imp_x<br /> ( ) inherits (impressora, node);</p>
+<p>En el moment de crear la taula ens ha avisat que s'heretaven columnes amb el mateix nom, però no ha hagut cap problema. Només els col·loca una vegada, encara que en comprovar en l'estructura que ens mostra <strong>PgAdmin</strong> sembla que les columnes estiguen més d'una vegada:</p>
+<p align="center"><img src="T7_10_6.png" width="741" height="404" border="1" /></p>
+<p>Ho veurem clar en inserir una fila i visualitzar-la.</p>
+<p>Però si ens fixem, no tindrem clau primària. Haurem de modificar, tal i com vam fer amb les altres taules:</p>
+<p class="codiSQL">alter table imp_x<br /> add constraint cp_imp_x primary key(nom);</p>
+<p>Introduïm alguna dada per veure el resultat.</p>
+<p class="codiSQL">insert into imp_x<br /> values ('IMP-01','Imp 1 Taller 1','TI1','Laser','20 ppm','192.168.201.201');</p>
+<p>Podem comprovar que si llistem la taula <strong>IMPRESSORA</strong>, apareixerà, i si llistem la taula <strong>NODE</strong>, també eixirà acompanyada de tots els equips.</p>
+<table border="0">
+<tbody>
+<tr>
+<td><img src="T7_10_7.1.png" width="512" height="346" /></td>
+<td><img src="T7_10_7.2.png" width="512" height="346" /></td>
+</tr>
+</tbody>
+</table>
+<p>Per últim si llistem la pròpia taula <strong>IMP_X</strong>, veurem com els camps no estan repetits.</p>
+<p align="center"><img src="T7_10_7.3.png" width="927" height="626" /></p>
+<p> </p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__bases_de_dades_orientades_a_objectes.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

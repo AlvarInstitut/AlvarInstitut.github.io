@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1.1 - Mètodes del InputStream | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 2: Gestió del contingut de fitxers</a></li>
+   <li><a href="objectius.html" class="no-ch">Objectius</a></li>
+   <li><a href="1__magatzems_i_fluxos_de_dades.html" class="no-ch">1 - Magatzems i fluxos de dades</a></li>
+   <li class="current-page-parent"><a href="2__manipulaci_dels_fluxos_de_dades.html" class="current-page-parent daddy">2 - Manipulació dels fluxos de dades</a>
+   <ul>
+      <li class="current-page-parent"><a href="21__fluxos_orientats_a_bytes.html" class="current-page-parent daddy">2.1 - Fluxos orientats a bytes</a>
+      <ul>
+         <li id="active"><a href="211__mtodes_del_inputstream.html" class="active no-ch">2.1.1 - Mètodes del InputStream</a></li>
+         <li><a href="212__mtodes_del_outputstream.html" class="no-ch">2.1.2 - Mètodes del OutputStream</a></li>
+      </ul>
+      </li>
+      <li><a href="22__fluxos_orientats_a_carcters.html" class="daddy">2.2 - Fluxos orientats a caràcters</a>
+      <ul class="other-section">
+         <li><a href="221__mtodes_del_reader.html" class="no-ch">2.2.1 - Mètodes del Reader</a></li>
+         <li><a href="222__mtodes_del_writer.html" class="no-ch">2.2.2 - Mètodes del Writer</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__fluxos_decoradors.html" class="daddy">3 - Fluxos decoradors</a>
+   <ul class="other-section">
+      <li><a href="31__decoradors_de_inputstream_i_otputstream.html" class="no-ch">3.1 - Decoradors de InputStream i OtputStream</a></li>
+      <li><a href="32__decoradors_de_reader_i_writer.html" class="no-ch">3.2 - Decoradors de Reader i Writer</a></li>
+      <li><a href="33__conversors_inputstreamreader_i_outputstreamwriter.html" class="no-ch">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="21__fluxos_orientats_a_bytes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="212__mtodes_del_outputstream.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.1.1 - Mètodes del InputStream</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_1" class="block iDevice_content">
+<div class="nota_blau">
+<p><strong><span style="text-decoration: underline;">Nota</span></strong></p>
+<p>Per a fer els primers exemples, i únicament per comoditat, utilitzarem fitxers de text, encara que estiguem en fluxos orientats a byte. Açò no és l'adequat, ja que per a fitxer de text hauríem d'utilitzar fluxos orientats a caràcter. Però com dic és per comoditat, perquè serà molt fàcil crear fitxers des de qualsevol editor de textos, i que després utilitzarem des de Java. L'inconvenient serà que no tots els caràcters eixiran de forma correcta, justament per utilitzar els fluxos de dades orientats a byte.</p>
+</div>
+<p>El primer mètode que hem de veure del <strong>InputStream</strong> és aquell que ens permet una lectura senzilla:</p>
+<ul>
+<li>int <strong>read()</strong>: llig el següent byte del flux d'entrada i el retorna com un <strong>enter</strong>. Si no hi ha cap byte disponible perquè s’ha arribat al final de la seqüència de bytes, es retornarà -1. Si no es pot llegir el següent byte per alguna causa (per exemple si després d'arribar al final intentem llegir un altre byte, o perquè es produeix un error en llegir l'entrada) es llançarà una excepció del tipus <strong><em>IOException</em></strong>. Es tracta d’un mètode abstracte, que les classes especifiques sobreescriuran adaptant-lo a una font de dades concreta (un fitxer, un array de bytes, ...). I observeu com es tracta d'una lectura seqüencial. Comencem pel primer byte del fitxer, i a cada <strong>read</strong> llig el següent byte fins arribar al final. Els tractaments que veurem en aquest tema seran sempre seqüencials.</li>
+</ul>
+<p>Abans de veure altres mètodes, mirem un exemple. Per a aquest exemple fa falta un fitxer anomenat <strong>f1.txt</strong>, que pot ser un fitxer de text creat amb qualsevol editor senzillet, com per exemple <strong>gedit</strong> o el <strong>Bloc de notes</strong>. Ha d'estar en el directori del projecte (el projecte <strong>Tema2</strong>), i així no caldrà posar la ruta. Per exemple podríem posar el següent contingut:</p>
+<p class="codi2">Hola, què tal?</p>
+<p>El que farà el programa és traure per pantalla caràcter a caràcter (en línies diferents). Recordeu copiar l'exemple en un paquet anomenat <strong>Exemples</strong> en el projecte del Tema 2:</p>
+<div class="codi">
+<div>import java.io.FileInputStream;</div>
+<div>import java.io.IOException;</div>
+<div> </div>
+<div>public class Exemple_2_01 {</div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws IOException  {</div>
+<div style="margin-left: 30px;"> </div>
+<div style="margin-left: 60px;">FileInputStream f_in = new FileInputStream("f1.txt");</div>
+<div style="margin-left: 60px;">int c = f_in.read();</div>
+<div style="margin-left: 60px;">while (c!=-1) {</div>
+<div style="margin-left: 90px;">System.out.println((char)c);</div>
+<div style="margin-left: 90px;">c=f_in.read();</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">f_in.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p>El resultat en Ubuntu serà aquest:</p>
+<p class="codi2">H<br />o<br />l<br />a<br />,<br /> <br />q<br />u<br />Ã<br />¨<br /> <br />t<br />a<br />l<br />?<br /><br /></p>
+<p>Potser en Windows si que apareguen bé tots els caràcters, ja que utilitza per defecte una altra codificació. Però no li donarem ara importància al fet que no apareguen bé els caràcters especials. Observeu com estem utilitzant un <strong>InputStream</strong>, concretament un <strong>FileInputStream</strong>, per a llegir un fitxer de text. Açò no és el més apropiat, com ja havíem comentat abans, sinó que hauríem d'utilitzar algun flux orientat a caràcters, i no orientat a bytes. El programa funcionarà si utilitzem codificació ASCII (o ISO-8859) ja que cada caràcter es guarda en un byte. Si ens despistem i el fitxer el gaurdem en UTF-8, no eixiran bé els caràcters com ç, ñ o vocals accentuades (que es guarden en 2 bytes). I si el guardem en UTF-16, encara eixirà pitjor.</p>
+<p>Hem utilitzat el constructor que accepta un String com a paràmetre. Queda més curt, però seria totalment equivalent substituir la construcció anterior per aquestes dues línies</p>
+<div class="codi">
+<div style="margin-left: 60px;">File f = new File("f1.txt");</div>
+<div style="margin-left: 60px;">FileInputStream f_in = new FileInputStream(f);</div>
+</div>
+<p>Observeu també com obligatòriament hem de controlar l'excepció <strong>IOException</strong>, en aquest cas a través de <strong>throws</strong> (per a no gestionar-la). El <strong>read</strong> obté un enter, que després l'intentem convertir en caràcter. Finalitzem quan l'enter és -1.</p>
+<p>Aquest segon exemple té l'entrada no des d'un fitxer, sinó des d'un <strong>ByteArrayInputStream</strong>. A banda de que l'hem d'inicialitzar diferent, podem observar com el tractament posterior és idèntic:</p>
+<p class="codi">import java.io.ByteArrayInputStream;<br />import java.io.IOException;<br /><br />public class Exemple_2_02 {<br />    public static void main(String[] args) throws IOException {<br /><br />        String ent_1 = "Aquest és un byte array";<br />        byte[] ent = ent_1.getBytes();<br />        ByteArrayInputStream f_in = new ByteArrayInputStream(ent);<br />        int c = f_in.read();<br />        while (c != -1) {<br />            System.out.println((char) c);<br />            c = f_in.read();<br />        }<br />        f_in.close();<br />    }<br />}</p>
+<p>Una altra vegada els caràcters especial eixiran malament, ja que en compte de un  <strong>InputStream</strong> (en aquest cas <strong>ByteArrayInputStream</strong>) el més adequat seria un flux orientat a caràcters, però com a exemple sí que ens val.</p>
+<p>Mirem un tercer exemple, per veure el <strong>SequenceInputStream</strong>, on es poden enganxar de forma sequencial diferents InputStream. Després d'aquest exemple ja ens centrarem en els fitxers, que és el que ens interessa.</p>
+<div class="codi">
+<div>import java.io.ByteArrayInputStream;</div>
+<div>import java.io.FileInputStream;</div>
+<div>import java.io.IOException;</div>
+<div>import java.io.SequenceInputStream;</div>
+<div> </div>
+<div>public class Exemple_2_03 {</div>
+<div style="margin-left: 30px;">public static void main(String[] args) throws IOException {</div>
+<div> </div>
+<div style="margin-left: 60px;">FileInputStream f1 = new FileInputStream("f1.txt");</div>
+<div style="margin-left: 60px;">String ent_1 = "Aquest és un byte array";</div>
+<div style="margin-left: 60px;">ByteArrayInputStream f2 = new ByteArrayInputStream(ent_1.getBytes());</div>
+<div style="margin-left: 60px;">SequenceInputStream f_in = new SequenceInputStream(f1,f2);</div>
+<div style="margin-left: 60px;">int c = f_in.read();</div>
+<div style="margin-left: 60px;">while (c != -1) {</div>
+<div style="margin-left: 90px;">System.out.println((char) c);</div>
+<div style="margin-left: 90px;">c = f_in.read();</div>
+<div style="margin-left: 60px;">}</div>
+<div style="margin-left: 60px;">f_in.close();</div>
+<div style="margin-left: 60px;">f1.close();</div>
+<div style="margin-left: 60px;">f2.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>}</div>
+</div>
+<p> </p>
+<p>Altres mètodes del <strong>InputStream</strong> són:</p>
+<ul>
+<li>int <strong>read(byte[ ] <em>buffer</em>)</strong>: llig un número determinat de bytes de l'entrada, guardant-los en el paràmetre (que actuarà com un buffer). El número de bytes llegits serà com a màxim la grandària del buffer, encara que podria ser menor (si no hi ha prou bytes, per exemple). El mètode tornarà el número de bytes que realment s'han llegit com un enter. Si no hi haguera cap byte disponible, es retornarà -1.</li>
+<li>int <strong>available()</strong>: indica quants bytes hi ha disponibles per a la lectura. Sobretot serviria com a condició de final de bucle (si hi ha 0 bytes disponibles, és que ja hem acabat), encara que hi ha altres maneres de fer la condició de final de bucle.</li>
+<li>long <strong>skip(long <em>despl</em>)</strong>: salta, despreciant-los, tant bytes com indica el paràmetre. Podria ser que no puguera saltar el número de bytes especificat per diferents raons. Torna el número de bytes realment saltats.</li>
+<li>int <strong>close()</strong>: tanca el flux de dades.</li>
+</ul>
+<p>Mirem un altre exemple, utilitzant ara el buffer com a paràmetre del <strong>read</strong>. Fa falta que existesca un fitxer anomenat <strong>f2.txt</strong> en l'arrel del projecte, com es comenta després:</p>
+<p class="codi">import java.io.FileInputStream;<br />import java.io.IOException;<br /><br />public class Exemple_2_04 {<br />    public static void main(String[] args) throws IOException {<br /><br />        FileInputStream f_in = new FileInputStream("f2.txt");<br />        byte[] buffer = new byte[30];<br />        int n = f_in.read(buffer);<br />        while (n != -1) {<br />            for (int i=0;i&lt;n;i++)<br />                System.out.print((char)buffer[i]);<br />            System.out.println("");<br />            n = f_in.read(buffer);<br />        }<br />        f_in.close();<br />    }<br />}</p>
+<p>Es llegiran els caràcters de 30 en 30, ja que el buffer és d'aquesta grandària. Com que es guarda en un buffer de bytes (bytes, no caràcters), haurem de recórrer aquest buffer (fins el número de caràcters llegits, que és <strong>n</strong>) convertint cada byte en caràcter. Hem suposat que en el fitxer <strong>f2.txt</strong> tenim un text prou llarg com per a veure el funcionament. Si per exemple el contingut de <strong>f2.txt</strong> és aquest:</p>
+<p class="codi2">Hola. Aquest és un text més llarg, per veure com gestiona els bytes amb un buffer de 30 caràcters.<br />Com que ho llegim des d'un InputStream, els caràcters especials potser no isquen bé.</p>
+<p>Aquesta seria l'eixida:</p>
+<p class="codi2">Hola. Aquest ￃﾩs un text mￃﾩs <br />llarg, per veure com gestiona <br />els bytes amb un buffer de 30 <br />carￃﾠcters.<br />Com que ho llegim <br />des d'un InputStream, els carￃ<br />ﾠcters especials potser no isq<br />uen bￃﾩ.</p>
+<p>Recordeu que estem llegint un fitxer de text des d'un InputStream, cosa gens convenient ja que els caràcters com ç, ñ, o vocals accentuades difícilment podrem fer que apareguen bé. Ho arreglarem amb els fluxos orientats a caràcter.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="21__fluxos_orientats_a_bytes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="212__mtodes_del_outputstream.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

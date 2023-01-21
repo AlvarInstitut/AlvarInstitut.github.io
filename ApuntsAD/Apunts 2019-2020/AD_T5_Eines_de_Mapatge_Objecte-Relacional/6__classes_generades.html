@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6 - Classes generades | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 5: Eines de mapatge Objecte-Relacional (ORM)</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__concepte_de_mapatge_objecterelacional.html" class="no-ch">2 - Concepte de mapatge objecte-relacional</a></li>
+   <li><a href="3__eines_de_mapatge.html" class="no-ch">3 - Eines de mapatge</a></li>
+   <li><a href="4__arquitectura_hibernate.html" class="no-ch">4 - Arquitectura Hibernate</a></li>
+   <li><a href="5__installaci_i_configuraci_dhibernate.html" class="daddy">5 - Instal·lació i configuració d'Hibernate</a>
+   <ul class="other-section">
+      <li><a href="51__generar_les_classes_a_partir_de_la_base_de_dades.html" class="no-ch">5.1 - Generar les classes a partir de la Base de Dades</a></li>
+      <li><a href="52__perspectiva_dhibernate.html" class="no-ch">5.2 - Perspectiva d'Hibernate</a></li>
+      <li><a href="53__hql_consultes_senzilles.html" class="no-ch">5.3 - HQL: consultes senzilles</a></li>
+      <li><a href="54__comenant_a_programar.html" class="no-ch">5.4 - Començant a programar</a></li>
+      <li><a href="55__sessionfactory_nic_singleton.html" class="no-ch">5.5 - SessionFactory únic: Singleton</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="6__classes_generades.html" class="active no-ch">6 - Classes generades</a></li>
+   <li><a href="7__estructura_dels_fitxers_de_mapatge.html" class="no-ch">7 - Estructura dels fitxers de mapatge</a></li>
+   <li><a href="8__sessions_i_objectes_hibernate.html" class="daddy">8 - Sessions i objectes hibernate</a>
+   <ul class="other-section">
+      <li><a href="81__transaccions.html" class="no-ch">8.1 - Transaccions</a></li>
+      <li><a href="82__estats_dun_objecte_hibernate.html" class="no-ch">8.2 - Estats d'un objecte Hibernate</a></li>
+      <li><a href="83__crrega_dobjectes_mtodes_load_i_get.html" class="no-ch">8.3 - Càrrega d'objectes: mètodes load() i get()</a></li>
+      <li><a href="84__inserci_modificaci_i_esborrat_dobjectes.html" class="no-ch">8.4 - Inserció, modificació i esborrat d'objectes</a></li>
+   </ul>
+   </li>
+   <li><a href="9__consultes.html" class="daddy">9 - Consultes</a>
+   <ul class="other-section">
+      <li><a href="91__parmetres_en_les_consultes.html" class="no-ch">9.1 - Paràmetres en les consultes</a></li>
+      <li><a href="92__consultes_diferents_a_una_classe_ja_definida.html" class="no-ch">9.2 - Consultes diferents a una classe ja definida</a></li>
+   </ul>
+   </li>
+   <li><a href="10__consultes_dactualitzaci.html" class="no-ch">10 - Consultes d'actualització</a></li>
+   <li><a href="11__resum_del_llenguatge_hql.html" class="no-ch">11 - Resum del llenguatge HQL</a></li>
+   <li><a href="12_generaci_de_taules_a_partir_de_les_classes_voluntari.html" class="no-ch">12. Generació de taules a partir de les classes (voluntari)</a></li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="55__sessionfactory_nic_singleton.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7__estructura_dels_fitxers_de_mapatge.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6 - Classes generades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_1" class="block iDevice_content">
+<p>Comentem les classe que ha generat automàticament Hibernate. Posarà una propietat per cada camp de la taula, i alguna cosa més com veurem més endavant. També posarà un mètode <strong>get</strong> i un <strong>set</strong> per a cada propietat, ja que les propietats seran <strong>private</strong>.</p>
+<p>També posa tres constructors: un sense paràmetres, un altre només amb la clau principal (i segurament els camps no nuls), i un altre complet.</p>
+<p>A continuació mostrem 2 de les classes. En el cas de <strong>Poblacio</strong> no hem posat tots els mètodes <strong>get</strong> i <strong>set</strong>, ja que sempre són com cabria esperar. I en roig teniu el més destacable.</p>
+<table border="0">
+<tbody>
+<tr>
+<td style="text-align: center;"><span><strong>Comarca.java</strong></span></td>
+<td style="text-align: center;"><span><strong>Poblacio.java</strong></span></td>
+</tr>
+<tr>
+<td>
+<div class="codi2" style="margin-left: 0.05in; margin-right: 0.05in;">package classes;<br /><br />import java.util.HashSet;<br />import java.util.Set;<br /><br />public class Comarca implements java.io.Serializable {<br /><br />    private String nomC;<br />    private String provincia;<br />    <span style="color: #ff0000;">private Set&lt;Poblacio&gt; poblacios = new HashSet&lt;Poblacio&gt;(0);</span><br /><br />    public Comarca() {<br />    }<br /><br />    public Comarca(String nomC) {<br />        this.nomC = nomC;<br />    }<br /><br />    public Comarca(String nomC, String provincia, Set&lt;Poblacio&gt; poblacios) {<br />        this.nomC = nomC;<br />        this.provincia = provincia;<br />        this.poblacios = poblacios;<br />    }<br /><br />    public String getNomC() {<br />        return this.nomC;<br />    }<br /><br />    public void setNomC(String nomC) {<br />        this.nomC = nomC;<br />    }<br /><br />    public String getProvincia() {<br />        return this.provincia;<br />    }<br /><br />    public void setProvincia(String provincia) {<br />        this.provincia = provincia;<br />    }<br /><br />    <span style="color: #ff0000;">public Set&lt;Poblacio&gt; getPoblacios() {</span><br /><span style="color: #ff0000;">        return this.poblacios;</span><br /><span style="color: #ff0000;">    }</span><br /><br /><span style="color: #ff0000;">    public void setPoblacios(Set&lt;Poblacio&gt; poblacios) {</span><br /><span style="color: #ff0000;">        this.poblacios = poblacios;</span><br />    }<br /><br />}</div>
+</td>
+<td>
+<div class="codi2" style="margin-left: 0.05in; margin-right: 0.05in;">package classes;<br />// Generated 29/04/2018 13:28:33 by Hibernate Tools 5.2.5.Final<br /><br />import java.math.BigDecimal;<br />import java.util.HashSet;<br />import java.util.Set;<br /><br />/**<br /> * Poblacio generated by hbm2java<br /> */<br />public class Poblacio implements java.io.Serializable {<br /><br />    private int codM;<br />    private Comarca comarca;<br />    private String nom;<br />    private Integer poblacio;<br />    private BigDecimal extensio;<br />    private Short altura;<br />    private String longitud;<br />    private String latitud;<br />    private Character llengua;<br />    private Set&lt;Institut&gt; instituts = new HashSet&lt;Institut&gt;(0);<br /><br />    public Poblacio() {<br />    }<br /><br />    public Poblacio(int codM, String nom) {<br />        this.codM = codM;<br />        this.nom = nom;<br />    }<br /><br />    public Poblacio(int codM, Comarca comarca, String nom, Integer poblacio, BigDecimal extensio, Short altura,<br />            String longitud, String latitud, Character llengua, Set&lt;Institut&gt; instituts) {<br />        this.codM = codM;<br />        this.comarca = comarca;<br />        this.nom = nom;<br />        this.poblacio = poblacio;<br />        this.extensio = extensio;<br />        this.altura = altura;<br />        this.longitud = longitud;<br />        this.latitud = latitud;<br />        this.llengua = llengua;<br />        this.instituts = instituts;<br />    }<br /><br />    ...<br /><br />    public Comarca getComarca() {<br />        return this.comarca;<br />    }<br /><br />    public void setComarca(Comarca comarca) {<br />        this.comarca = comarca;<br />    }<br /><br />    ...<br /><br />    public Set&lt;Institut&gt; getInstituts() {<br />        return this.instituts;<br />    }<br /><br />    public void setInstituts(Set&lt;Institut&gt; instituts) {<br />        this.instituts = instituts;<br />    }<br /><br />}</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Observeu com els mètodes <strong>get</strong> i <strong>set</strong> sempre comencen per aquesta paraula seguida del nom de la propietat amb la inicial en majúscula. Per tant, Hibernate sabrà quin mètode gastar per a cada propietat</p>
+<p>Sens dubte, el més destacable de la classe <strong>Comarca</strong> és que en les propietats, posa també un <strong>conjunt d'objectes Poblacio</strong>. Açò ens permetrà accedir comodíssimament a les poblacions d'una determinada comarca. Aquest conjunt sempre l'anomena com la classe a què fa referència, però en plural (en el nostre cas <strong>poblacios</strong>). Un conjunt (<strong>Set</strong>) té un comportament relativament senzill per a accedir als seus elements.</p>
+<p>En la classe <strong>Poblacio</strong>, tindrem les propietats que cabria esperar. I la referència a la comarca és un objecte de la classe <strong>Comarca</strong>. També tindrà un conjunt d'objectes <strong>Institut</strong>.</p>
+<p>Per tant, i en resum, una cosa molt útil que fa Hibernate quan troba una clau externa, és posar en la classe corresponent a la taula on està la clau externa una propietat de la classe corresponent a la taula principal (cosa que en principi cabria esperar); però també en la classe corresponent a la taula principal, un conjunt d'objectes de la classe corresponent a l'altra taula, la qual cosa ens permetrà accedir fàcilment.</p>
+<p>No en tots els SGBD el comportament serà tan bo. Sí que ho farà en <strong>Oracle</strong>, en <strong>PostgreSQL</strong>, i segurament en <strong>MySQL</strong>. En canvi no ho podrà fer en <strong>SQLite</strong>, en els qual només hi haurà propietats de tipus senzills per cadascun dels camps, i prou. Però com de moment tampoc podrem connectar amb SQLite per mig d'Hibernate ...</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="55__sessionfactory_nic_singleton.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7__estructura_dels_fitxers_de_mapatge.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.4 - Convertir taules senceres a XML | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-34"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__estratgies_demmagatzematge_de_xml.html" class="no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li class="current-page-parent"><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="current-page-parent daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul>
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li><a href="33__funcions_que_produeixen_contingut_xml.html" class="no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li id="active"><a href="34__convertir_taules_senceres_a_xml.html" class="active no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li><a href="36__utilitzaci_des_de_java.html" class="no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml_natives.html" class="no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul class="other-section">
+      <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
+      <ul class="other-section">
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li><a href="614__funcions.html" class="no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33__funcions_que_produeixen_contingut_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="35__consultes_xpath.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.4 - Convertir taules senceres a XML</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id31">
+<div class="iDevice emphasis0">
+<div id="ta31_1" class="block iDevice_content">
+<p>En l'últim exemple de l'apartat anterior havíem aconseguit forma un document XML a pertir de la taula <strong>Comarques</strong> i inserir-lo en un camp XML (de la taula P_XML). Aquella manera ens permet confeccionar al nostre gust l'estructura del XML. Per contra, és un poc laboriós.</p>
+<p>Anem a veure ara dues funcions que ens permeten convertir una taula i una consulta, respectivament, a XML amb l'estructura que totes les columnes seran elements. No tindrem per tant tanta versatilitat com en l'apartat anterior. Però per contra la senzillesa és extrema.</p>
+<p class="titolet">TABLE_TO_XML</p>
+<p><em>Sintaxi</em>: <strong>table_to_xml(<em>taula</em>, <em>tract_nul</em>, <em>format</em>, <em>espai_noms</em>)</strong></p>
+<p><em>Descripció</em>: converteix una taula en un document XML. El primer paràmetre és la taula a convertir. El segon (booleà) indica si s'inclouen els valors nuls com element buits. El tercer (booleà) implica el format que tindran els elements. El quart serveix per definir l'espai de noms; el podem deixar com una cadena nula ('').</p>
+<p><em>Exemple:</em></p>
+<p>Anem a fixar-nos en el tercer paràmetre. Si està a <em>false</em>, el nom de la taula serà l'element arrel, i per a cada fila crearà un element anomenat row, que inclourà tots els camps:</p>
+<p class="codi2">SELECT table_to_xml('COMARQUES', false, false, '');</p>
+<p style="margin-left: 30px;">ens donarà aquesta eixida:</p>
+<div class="codi2">
+<div> </div>
+<div>&lt;comarques xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt; </div>
+<div style="margin-left: 30px;">&lt;row&gt;</div>
+<div style="margin-left: 30px;">  &lt;nom&gt;Safor&lt;/nom&gt;</div>
+<div style="margin-left: 30px;">  &lt;provincia&gt;València&lt;/provincia&gt;</div>
+<div style="margin-left: 30px;">&lt;/row&gt;</div>
+<div> </div>
+<div style="margin-left: 30px;">&lt;row&gt;</div>
+<div style="margin-left: 30px;">  &lt;nom&gt;Horta Sud&lt;/nom&gt;</div>
+<div style="margin-left: 30px;">  &lt;provincia&gt;València&lt;/provincia&gt;</div>
+<div style="margin-left: 30px;">&lt;/row&gt;</div>
+<div>  </div>
+<div>   ...</div>
+<div>&lt;/comarques&gt;</div>
+<div> </div>
+</div>
+<p style="margin-left: 30px;"> En canvi si el tercer paràmetre està a true, traurà una successió d'element amb el mateix nom que la taula, amb els camps com a elements:</p>
+<p class="codi2">SELECT table_to_xml('COMARQUES', false, true, '');</p>
+<p style="margin-left: 30px;">ara l'eixida serà:</p>
+<div class="codi2">
+<div> </div>
+<div>&lt;comarques xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt; </div>
+<div>  &lt;nom&gt;Safor&lt;/nom&gt;</div>
+<div>  &lt;provincia&gt;València&lt;/provincia&gt;</div>
+<div>&lt;/comarques&gt;</div>
+<div> </div>
+<div>
+<div>&lt;comarques xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt; </div>
+  &lt;nom&gt;Horta Sud&lt;/nom&gt;</div>
+<div>  &lt;provincia&gt;València&lt;/provincia&gt;</div>
+<div>&lt;/comarques&gt;</div>
+<div>  </div>
+<div>...</div>
+<div> </div>
+</div>
+<p style="margin-left: 30px;"> És a dir, de la primera manera el document està ben format, i de la segona és una successió d'elements.</p>
+<p style="margin-left: 30px;">Un exemple d'utilització (que aprofitarem per a introduir en la taula P_XML) seria intentar canviar el nom dels elements <em>row </em>per<em> comarca</em> . La solució podria ser utilitzar la funció <strong>replace()</strong> per a canviar el que volem. Només haurem d'anar en compte de convertir el document XML generat per TABLE_TO_XML a text, per poder utilitzar la funció replace, i després tornar a convertir-lo a XML. Introduirem també les taules POBLACIONS i INSTITUTS convertides en XML (substituint <em>row</em> per un més adequat)</p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">INSERT INTO P_XML </div>
+<div style="margin-left: 60px;"><span>SELECT</span> 4, replace(table_to_xml('COMARQUES',false,false,'')::text,'row','comarca')::xml;</div>
+<div> </div>
+</div>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">INSERT INTO P_XML </div>
+<div style="margin-left: 60px;">SELECT 5, replace(table_to_xml('POBLACIONS',false,false,'')::text,'row','poble')::xml;</div>
+<div> </div>
+</div>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">INSERT INTO P_XML </div>
+<div style="margin-left: 60px;">SELECT 6, replace(table_to_xml('INSTITUTS',false,false,'')::text,'row','institut')::xml;</div>
+<div> </div>
+</div>
+<p> En la següent imatge es mostra el contingut de la taula <strong>P_XML</strong>, on s'han ampliat les noves files per poder veure el contingut:</p>
+<p style="text-align: center;"><img src="T7_3_4_1.png" style="border: 1px solid black;" width="1278" height="775" /></p>
+<p class="titolet">QUERY_TO_XML</p>
+<p><em>Sintaxi</em>: <strong>query_to_xml(<em>sent_SQL</em>, <em>tract_nul</em>, <em>format</em>, <em>espai_noms</em>)</strong></p>
+<p><em>Descripció</em>: absolutament equivalent a l'anterior, però la font de les dades no serà una taula, sinó una sentència SQL.</p>
+<p><em>Exemple:</em></p>
+<p> </p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">SELECT query_to_xml('SELECT nom_c,COUNT(*) AS num_p, AVG(altura) AS alt_mitj</div>
+<div style="margin-left: 270px;">FROM POBLACIONS</div>
+<div style="margin-left: 270px;">GROUP BY nom_c</div>
+<div style="margin-left: 270px;">ORDER BY 3 DESC',</div>
+<div style="margin-left: 240px;">false,false,'');</div>
+<div> </div>
+</div>
+<p>I l'eixida seria aquesta:</p>
+<div class="codi2">
+<div style="margin-left: 30px;">&lt;table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;</div>
+<div> </div>
+<div style="margin-left: 60px;">&lt;row&gt;</div>
+<div style="margin-left: 60px;">  &lt;comarca&gt;Ports&lt;/comarca&gt;</div>
+<div style="margin-left: 60px;">  &lt;num_p&gt;13&lt;/num_p&gt;</div>
+<div style="margin-left: 60px;">  &lt;alt_mitj&gt;834.5384615384615385&lt;/alt_mitj&gt;</div>
+<div style="margin-left: 60px;">&lt;/row&gt;</div>
+<div> </div>
+<div style="margin-left: 60px;">...</div>
+<div style="margin-left: 30px;">&lt;/table&gt;</div>
+<div> </div>
+</div>
+<p> </p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33__funcions_que_produeixen_contingut_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="35__consultes_xpath.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

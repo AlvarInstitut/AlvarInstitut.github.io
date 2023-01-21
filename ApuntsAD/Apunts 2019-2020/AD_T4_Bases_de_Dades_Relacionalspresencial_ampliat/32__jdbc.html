@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2 - JDBC | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 4: Bases de Dades Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li class="current-page-parent"><a href="3__connexi_a_les_bd_connectors.html" class="current-page-parent daddy">3 - Connexió a les BD: Connectors</a>
+   <ul>
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li id="active"><a href="32__jdbc.html" class="active no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="no-ch">4 - Perspectiva de Desenvolupament de Bases de Dades en Eclipse</a></li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="6__jdbc_avanat.html" class="daddy">6 - JDBC avançat</a>
+   <ul class="other-section">
+      <li><a href="61__accs_a_les_meta_dades.html" class="no-ch">6.1 - Accés a les Meta Dades</a></li>
+      <li><a href="62__resultsets_que_poden_avanar_cap_avant_i_cap_arrere.html" class="no-ch">6.2 - ResultSets que poden avançar cap avant i cap arrere</a></li>
+      <li><a href="63__tractament_derrors_en_aplicacions_jdbc.html" class="no-ch">6.3 - Tractament d'errors en aplicacions JDBC</a></li>
+      <li><a href="64__transaccions.html" class="no-ch">6.4 - Transaccions</a></li>
+      <li><a href="65__millora_de_rendiment.html" class="no-ch">6.5 - Millora de rendiment</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31__odbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2 - JDBC</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_1" class="block iDevice_content">
+<p>Pràcticament de forma simultània a ODBC, l’empresa Sun Microsystems, l’any 1997 va treure a la llum <strong>JDBC</strong> (<em><strong>Java DataBase Connectivity</strong></em>), un <acronym title="Application Programming Interface">API</acronym> connector de bases de dades, implementat específicament per a utilitzar amb el llenguatge Java. Es tracta d’un <acronym title="Application Programming Interface">API</acronym> molt similar a ODBC quant a la manera de funcionar:</p>
+<ul>
+<li>Tindrem l'API JDBC que utilitzaran les aplicacions que vulguen connectar a les Bases de Dades, i que garatitza una uniformitat, siga quina siga la o les Bases de Dasdes a connectar</li>
+<li>Ens farà falta un <strong>controlador</strong> o <em><strong>driver</strong></em> per cada Base de Dades a la qual vulguem connectar</li>
+</ul>
+<p>Però com comentàvem, està adaptat específicament per a Java. És a dir, la funcionalitat es troba encapsulada en classes (ja que Java és un llenguatge totalment orientat a objectes) i a més, no depèn de cap plataforma especifica, d’acord amb la característica multiplataforma defensada per Java.</p>
+<p>Aquest connector serà l’<acronym title="Application Programming Interface">API</acronym> que estudiarem en detall en aquesta unitat, ja que Java no disposa de cap biblioteca específica ODBC. Les raons esgrimides per <em>Sun</em> són que ODBC no es pot fer servir directament en Java ja que està implementat en C i no és orientat a objectes.</p>
+<p>Però, per a no perdre la potencialitat de les connexions ODBC, que recordem que ens permetia connectar a qualsevol Base de Dades Relacional, Sun Microsystem ha optat per incorporar de sèrie un <em>driver</em> especial que actua d’adaptador entre l’especificació JDBC i l’especificació ODBC. Aquest controlador s’acostuma a anomenar també <strong>pont JDBC-ODBC</strong> (<em>bridge</em> en anglès). Utilitzant aquest <em>driver </em>podrem enllaçar qualsevol aplicació Java amb qualsevol connexió ODBC.</p>
+<p>Actualment, la gran majoria d’SGBD disposen de <em>drivers</em> JDBC, però en cas d’haver de treballar amb un sistema que no en tinga, si disposa de controlador ODBC, podrem fer servir el pont JDBC-ODBC per aconseguir la connexió des de Java.</p>
+<p class="titolet">Arquitectura JDBC</p>
+<ul>
+<li>La biblioteca estàndard <strong>JDBC</strong> conté un gran nombre d’interfícies <em>sense</em> les classes que les implementen.</li>
+<li>Els controladors o drivers dels SGBD concrets (i que els proporciona el fabricant del SGBD) són els que han d'implementar les interfícies anteriors i així accedir a les seues dades amb les particularitats que puga tenir el SGBD en concret.</li>
+</ul>
+<p>Des de les aplicacions s'utilitzaran les interfícies de JDBC, i d’aquesta manera, el controlador utilitzat serà totalment transparent a l’aplicació. </p>
+<p>D’aquesta manera s’aconsegueix independitzar l’aplicació dels controladors permetent la substitució del controlador original per qualsevol altre compatible JDBC sense pràcticament necessitat d’haver de modificar el codi de l’aplicació. </p>
+<p style="text-align: center;"><img src="u2_8.png" alt="Imatge 8" width="591" height="302" /></p>
+<p style="text-align: center; margin-left: 30px;"><span style="font-size: small;"><em>D'una banda trobem les interfícies definides a l'estàndard (les figures amb fons transparent). Es tracta de l'API amb el que l'aplicació treballarà de forma directa.</em></span></p>
+<p style="text-align: center; margin-left: 30px;"><span style="font-size: small;"><em>De l'altra banda trobem les classes específiques del controlador (driver) que interaccionen amb el SGBD i que implementen les interfícies de l'estàndard JDBC. Són les figures amb fons de diferents colors<br /></em></span></p>
+<p>És important destacar que JDBC no exigeix cap instal·lació, ni cap canvi substancial en el codi a l’hora de fer servir un o altre controlador. I fins i tot podrem utilitzar més d'un controlador per a poder connectar des de la mateixa aplicació a més d'un SGBD. Això és possible perquè:</p>
+<ul>
+<li>Java permet carregar en memòria qualsevol classe a partir del seu nom, i així carregar el o els controladors que necessitem. Es fa amb la sentència <strong>Class.forName</strong> (“nom_de_la_Classe”).</li>
+<li>La classe <strong>DriverManager</strong> (de l’<acronym title="Application Programming Interface">API</acronym> JDBC) és capaç de seleccionar el driver adequat d'entre tots els que estiguen carregats en memòria, sense necessitat d’indicar-li el <em>driver</em> específic que cal fer servir.</li>
+</ul>
+<p></p>
+<p class="titolet">Tipus de controladors</p>
+<p>JDBC distingeix quatre tipus de controladors:</p>
+<p><strong>1.</strong> <strong>Tipus I</strong>. Controladors <strong>pont</strong> (<em>bridge driver</em>) com JDBC-ODBC. Es caracteritzen per fer servir una tecnologia externa a JDBC i actuar d’adaptador entre les especificacions de l’<acronym title="Application Programming Interface">API</acronym> JDBC i la tecnologia concreta utilitzada. El més conegut és el controlador <strong>pont JDBC-ODBC</strong>, però n’hi ha d’altres, com JDBC-OLE DB. La seua principal raó de ser és la de permetre utilitzar l'atra tecnologia (ODBC) que està molt estesa i assegurar així la connexió amb pràcticament qualsevol font de dades. En cada client haurem de tenir:</p>
+<ul>
+<li>Haurà de tenir instal·lada una utilitat de gestió i configuració de fonts de dades ODBC (o de la tecnologia utilitzada)</li>
+<li>Haurà de tenir instal·lat el <em>driver</em> ODBC específic del’SGBD al qual es vol accedir</li>
+<li>A través de la primera utilitat crear un DSN (Data Source Name) que utilitze el driver del SGBD amb les dades de connexió al SGBD</li>
+</ul>
+<p>Com que la connexió és a través de ODBC (no directament) pot donar problemes de rendiment i, per tant, s’aconsella fer servir aquest tipus de controlador només com a última alternativa.</p>
+<p style="text-align: center;"><img src="u2_9.png" alt="JDBC Tipus I" width="591" height="302" /></p>
+<p><strong>2. Tipus II</strong>. Controladors de <strong>Java amb <acronym title="Application Programming Interface">API</acronym> parcialment nadiu</strong> (<em>Native-<acronym title="Application Programming Interface">API</acronym> partly Java driver</em>). S’anomenen també simplement <em>nadius</em>. Com el seu nom indica, estan formats d’una part codificada en Java i una altra part que usa biblioteques binàries instal·lades en el sistema operatiu. Aquest tipus de controladors existeixen perquè alguns Sistemes Gestors de Bases de Dades tenen entre les seues utilitats de sèrie connectors propis. Solen ser connectors propietaris que no segueixen cap estàndard, ja que acostumen a ser anteriors a ODBC o JDBC, però es mantenen perquè solen estar molt optimitzats i són molt eficients. Utilitzant una tecnologia Java anomenada JNI és possible implementar classes, els mètodes de les quals invoquen funcions de biblioteques binàries instal·lades en les sistema operatiu. Els controladors de tipus II utilitzen aquesta tecnologia per crear les classes implementadores de l’<acronym title="Application Programming Interface">API</acronym> JDBC. En alguns casos pot requerir una instal·lació extra de certes utilitats a la part client, exigides pel connector nadiu del sistema gestor.</p>
+<p style="text-align: center;"><img src="u2_10.png" alt="JDBC Tipus II" width="709" height="302" /></p>
+<p><strong>3. Tipus III</strong>. Controladors de <strong>Java via protocol de xarxa</strong>. Es tracta d’un controlador escrit totalment en Java que tradueix les cridades JDBC a un protocol de xarxa contra un servidor intermedi (anomenat normalment <em>Middleware</em>) que pot estar connectat a diversos SGBD. Aquest tipus de <em>driver</em> presenta l’avantatge que utilitza un protocol independent dels SGBD i, per tant, el canvi de font de dades es pot fer de manera totalment transparent als clients. Això el converteix en un sistema molt flexible, encara que per contra, es necessitarà instal·lar, en algun lloc accessible de la xarxa, un servidor intermedi connectat a tots els SGBD que calga. Aquest tipus de controladors són molt útils quan hi ha un número molt gran de clients, ja que els canvis d’SGBD no requeriran cap canvi en els clients, ni tan sols la incorporació d’una nova biblioteca.</p>
+<p style="text-align: center;"><img src="u2_11.png" alt="JDBC Tipus III" width="709" height="302" /></p>
+<p><strong>4. Tipus IV</strong>. Controladors de tipus <strong>Java pur </strong>o <strong>Java 100%</strong>. S’anomenen també controladors de <em>protocol nadiu</em>. Són controladors escrits totalment en Java. Les peticions al Sistema Gestor de Bases de Dades es fan sempre a través del protocol de xarxa que utilitza el propi SGBD i, per tant, no es necessita ni codi nadiu en el client (com en el cas del tipus II) ni servidor intermedi (com en el cas del tipus III) per connectar amb la font de dades. Es tracta, doncs, d’un <em>driver</em> que no requereix cap tipus d’instal·lació ni requeriment, la qual cosa el fa ser una alternativa molt ben considerada que en els últims temps ha acabat imposant-se. De fet, la majoria de fabricants han acabat creant un controlador de tipus IV, tot i que segueixen mantenint també els dels altres tipus.</p>
+<p style="text-align: center;"><img src="u2_12.png" alt="JDBC Tipus IV" width="709" height="302" /></p>
+<p style="text-align: justify;"> </p>
+<p style="text-align: justify;">Els tipus desitjables són el tipus III i sobretot el <strong>tipus IV</strong>, ja que d'aquesta manera no ens fa falta instal·lar res per a poder connectar.</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">En aquest tema intentarem connectar a 4 Sistemes Gestors de Bases de Dades diferents: <strong>PostgreSQL</strong>, <strong>Oracle</strong>, <strong>MySQL</strong> i <strong>SQLite</strong></p>
+<p style="text-align: justify;">Els drivers o controladors (tots de tiups IV) us els podeu baixar sense problemes. Són fàcils de trobar, únicament amb un buscador posar <strong>jdbc</strong> i el Sistema Gestor de Bases de Dades (per exemple <strong>jdbc postgresql</strong>). De tota manera, per més comoditat, teniu <strong>una carpeta en el curs de Moodle amb tots els drivers</strong> que ens fan falta.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31__odbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__perspectiva_de_desenvolupament_de_bases_de_dades_en_eclipse.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

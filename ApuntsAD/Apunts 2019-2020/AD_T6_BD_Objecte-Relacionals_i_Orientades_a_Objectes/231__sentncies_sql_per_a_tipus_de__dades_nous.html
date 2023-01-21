@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.1 - Sentències SQL per a tipus de  dades nous | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 6: Bases de Dades Objecte-Relacionals i Orientades a Objectes</a></li>
+   <li><a href="1_introducci.html" class="no-ch">1. Introducció</a></li>
+   <li class="current-page-parent"><a href="2__bases_de_dades_objecterelacionals.html" class="current-page-parent daddy">2 - Bases de Dades Objecte-Relacionals</a>
+   <ul>
+      <li><a href="21__caracterstiques.html" class="no-ch">2.1 - Característiques</a></li>
+      <li><a href="22__tipus_de_dades.html" class="no-ch">2.2 - Tipus de dades</a></li>
+      <li class="current-page-parent"><a href="23__manipulaci_de_dades.html" class="current-page-parent daddy">2.3 - Manipulació de dades</a>
+      <ul>
+         <li id="active"><a href="231__sentncies_sql_per_a_tipus_de__dades_nous.html" class="active no-ch">2.3.1 - Sentències SQL per a tipus de  dades nous</a></li>
+         <li><a href="232__accs_a_travs_de_jdbc.html" class="daddy">2.3.2 - Accés a través de JDBC</a>
+         <ul class="other-section">
+            <li><a href="2321_boolean.html" class="no-ch">2.3.2.1 Boolean</a></li>
+            <li><a href="2322_blob_i_clob.html" class="no-ch">2.3.2.2 BLOB i CLOB</a></li>
+            <li><a href="2323_arrays.html" class="no-ch">2.3.2.3 Arrays</a></li>
+            <li><a href="2324_estructurat.html" class="no-ch">2.3.2.4 Estructurat</a></li>
+            <li><a href="2325_exemple_de_tot_junt.html" class="no-ch">2.3.2.5 Exemple de tot junt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="24__altres_aportacions.html" class="daddy">2.4 - Altres aportacions</a>
+      <ul class="other-section">
+         <li><a href="241__polimorfisme_i_sobrecrrega_doperadors.html" class="no-ch">2.4.1 - Polimorfisme i sobrecàrrega d'operadors</a></li>
+         <li><a href="242__herncia.html" class="no-ch">2.4.2 - Herència</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__bases_de_dades_orientades_a_objectes.html" class="daddy">3 - Bases de Dades Orientades a Objectes</a>
+   <ul class="other-section">
+      <li><a href="31__installaci_de_db4o.html" class="no-ch">3.1 - Instal·lació de DB4O</a></li>
+      <li><a href="32__funcionalitat_bsica.html" class="no-ch">3.2 - Funcionalitat bàsica</a></li>
+      <li><a href="33__consultes.html" class="no-ch">3.3 - Consultes</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="23__manipulaci_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="232__accs_a_travs_de_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.1 - Sentències SQL per a tipus de  dades nous</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id25">
+<div class="iDevice emphasis0">
+<div id="ta25_85" class="block iDevice_content">
+<p>Anem a comentar breument com especificarem les dades per als tipus de dades nous, posant diferents exemples en cada cas. De moment ens deixem els tipus BLOB i CLOB (BYTEA i TEXT), perquè des de PgAdmin no podrem donar contingut. Ens els deixem per a accés des de JDBC.</p>
+<h3><span style="text-decoration: underline;"><strong>Boolean</strong></span></h3>
+<p>El millor és utilitzar els valors <strong>TRUE</strong> i <strong>FALSE</strong>, en majúscules o minúscules, i sense cometes.</p>
+<p class="codiSQL">INSERT INTO PERSONA4(nif,nom,major_edat)<br /> VALUES ('11111111a','Albert',TRUE);</p>
+<p>PostgreSQL pot fer conversions de text a boolean, i en aquest cas pot ser un text que siga igual a <strong>TRUE</strong> o <strong>FALSE</strong> o que comence per alguns d'aquestos caràcters. També valdria posar 1 o 0 entre cometes.</p>
+<p class="codiSQL">INSERT INTO PERSONA4(nif,nom,major_edat)<br /> VALUES ('22222222b','Bernat',false);</p>
+<p>Observeu com ara per a seleccionar els que són majors d'edat comparem amb '<strong>T</strong>'. Per tant fa una conversió de text a boolean. I val la inicial. Igual valdria en minúscula.</p>
+<p class="codiSQL">SELECT * FROM PERSONA4<br /> WHERE major_edat='T';</p>
+<p> Aquest seria el resultat:</p>
+<p style="text-align: center;"><img src="T6_2_3_1_1.png" style="border: 1px solid black;" width="892" height="69" /></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id32">
+<div class="iDevice emphasis0">
+<div id="ta32_85" class="block iDevice_content">
+<h3><span style="text-decoration: underline;">Array</span></h3>
+<p>Per a poder especificar el conjunt de valors, utilitzarem el constructor ARRAY, i posarem els diferents valors entre claudàtors ( <strong>[ ]</strong> )  i separats per comes.</p>
+<p class="codiSQL">INSERT INTO PERSONA4(nif,nom,major_edat,correus_e)<br /> VALUES ('33333333c','Clàudia',TRUE,ARRAY['alu33333333c@ieselcaminas.org','claudia@gmail.com']);</p>
+<p>En algunes ocasions és suficient amb posar-lo entre claus ( <strong>{ }</strong> ), sense haver d'utilitzar el constructor <strong>ARRAY</strong>. És com si indruduírem els valor directament en la taula, des del PgAdmin, sense utilitzar sentència <strong>INSERT</strong>, encara que en realitat <strong>PgAdmin</strong> el que fa és construir ell la sentència SQL.</p>
+<p>En les sentències SQL hem de posar-lo tot entre cometes simples. Com en el cas dels correus electrònics els elements són de text, haurem de jugar amb les cometes simples i dobles.</p>
+<p class="codiSQL">UPDATE PERSONA4<br /> SET correus_e = '{"alu22222222b@ieselcaminas.org"}'<br /> WHERE nom = 'Bernat';</p>
+<p>En aquest moment el contingut de la taula hauria de ser:</p>
+<p style="text-align: center;"><img src="T6_2_3_1_2.png" style="border: 1px solid black;" width="1140" height="141" /></p>
+<p>Per a fer referència a un determinat element de l'array (el primer, el segon, ...) posarem entre claudàtors l'índex, després del nom del camp. Aquest índex comença per 1.</p>
+<p class="codiSQL">SELECT nif,nom,major_edat,correus_e[1] <br />FROM PERSONA4;</p>
+<p style="text-align: center;"><img src="T6_2_3_1_3.png" style="border: 1px solid black;" width="764" height="115" /></p>
+<p>Per a poder buscar un element dins d'un array, no cal comparar amb cadascun dels elements, sinó que podem utilitzar <strong>ANY</strong>:</p>
+<p class="codiSQL">SELECT nif,nom,major_edat,correus_e<br />FROM PERSONA4<br /> WHERE 'claudia@gmail.com' = ANY (correus_e);</p>
+<p style="text-align: center;"><img src="T6_2_3_1_4.png" style="border: 1px solid black;" /></p>
+<p>Si volem afegir un element a un determinat array, des de SQL podem utilitzar funcions de manipulació d'arrays, com per exemple <strong>array_append(array,element)</strong>, que afegeix un element al final. En el següent exemple modifiquem els correus d'una persona, afegint-li un al final.</p>
+<p class="codiSQL">UPDATE PERSONA4<br />SET correus_e = array_append(correus_e,'bernat@gmail.com')<br />WHERE nom = 'Bernat';</p>
+<p>Ara el contingut de la taula ja contindrà aquest segon correu de Bernat:</p>
+<p style="text-align: center;"><img src="T6_2_3_1_5.png" style="border: 1px solid black;" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_85" class="block iDevice_content">
+<h3><span style="text-decoration: underline;"><strong>Estructurat</strong></span></h3>
+<p>Els valors es representaran entre parèntesis i separats per comes. En el nostre exemple tenim el tipus estructurat <strong>t_adreca</strong>, format per <strong>carrer</strong>, <strong>codi</strong><strong>postal</strong> i <strong>poblacio</strong>.</p>
+<p class="codiSQL">UPDATE PERSONA4<br />SET adreca=('C/Major, 7','12001','Castelló')<br />WHERE nif='11111111a';</p>
+<p>El contingut de la taula serà ara:</p>
+<p style="text-align: center;"><img src="T6_2_3_1_6.png" style="border: 1px solid black;" width="1480" height="138" /></p>
+<p>Per a accedir a un camp en concret del tipus estructurat, posarem el nom de la columna i després, separat per un punt, el nom del camp estructurat. Tindrem la dificultat, però, de que amb aquesta sintaxi, PostgreSQL es pensa que la columna ha de ser una taula. Per a que no es duga a engany, posarem el nom de la columna (que és de tipus estructurat) entre parèntesis:</p>
+<p class="codiSQL">SELECT nif, nom, (adreca).poblacio<br />FROM PERSONA4;</p>
+<p>Aquest serà el resultat de la sentència</p>
+<p style="text-align: center;"><img src="T6_2_3_1_7.png" style="border: 1px solid black;" width="524" height="116" /></p>
+<p>El problema anterior només el tenim en el SELECT, que és on pot haver confusió. En canvi en aquest cas no fa falta posar el nom de la columna entre parèntesis, perquè no hi ha confusió possible: adreca ha de ser un camp de la taula PERSONA4.</p>
+<p class="codiSQL">UPDATE PERSONA4<br />SET adreca.poblacio = 'Castelló';</p>
+<p> El contingut de la taula serà ara:</p>
+<p style="text-align: center;"><img src="T6_2_3_1_8.png" style="border: 1px solid black;" width="1480" height="141" /></p>
+<p>Mirem aquest últim exemple, on es barregen els arrays i tipus estructurats. És l'exemple dels telèfons, que és un <strong>array</strong> de <strong>t_telefon</strong>, el qual és un tipus estructurat amb els camps <strong>mobil</strong> (booleà) i <strong>número</strong> (de text).</p>
+<p class="codiSQL">INSERT INTO PERSONA4(nif,nom,telefons)<br />VALUES ('44444444d','David', CAST(ARRAY[(false,'964112233'),(true,'666777888')] AS t_telefon ARRAY) );</p>
+<p> Ens hem vist obligats a utilitzar la funció CAST per a dir a PostgreSQL que el tipus del que se li passa a continuació és un array de t_telefon: <strong> CAST ( .... AS t_telefon ARRAY)</strong></p>
+<p> El contingut de la taula serà ara:</p>
+<p style="text-align: center;"><img src="T6_2_3_1_9.png" style="border: 1px solid black;" width="1736" height="164" /></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="23__manipulaci_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="232__accs_a_travs_de_jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
