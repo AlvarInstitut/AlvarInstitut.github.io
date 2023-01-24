@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -89,21 +89,21 @@
 <div class="iDevice_wrapper FreeTextIdevice" id="id91">
 <div class="iDevice emphasis0">
 <div id="ta91_85" class="block iDevice_content">
-<p>Podrem instal·lar MongoDB en qualsevol plataforma. I fins i tot sense tenir permisos d'administrador, com veurem en el cas d'Ubuntu.</p>
-<p>També està la possibilitat de crear un servidor en el núvol, fins i tot gratuït. És l'opció que ens suggereix Mongo per defecte, però nosaltres no la utilitzarem.</p>
-<p class="titolet">Instal·lació en Linux</p>
-<p>Per a poder fer la instal·lació més bàsica, podrem fer-lo sense permisos d'administrador. Si els tenim tot és més còmode, però si no en tenim també ho podem fer, com veurem i remarcarem a continuació.</p>
-<p>De la pàgina de <strong>MongoDB</strong> (<strong><a href="https://www.mongodb.com/download-center#community">https://www.mongodb.com/download-center#community</a></strong>) ens baixem la versió apropiada per al nostre Sistema Operatiu. Observeu com en el cas de Linux hi ha moltes versions. En el cas d'<strong>Ubuntu 20.04 de 64 bits</strong>, aquest fitxer és: <strong><a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz</a></strong>. Però recordeu que us heu d'assegurar de la versió</p>
-<p>Senzillament descomprimirem aquest fitxer on vulguem, i ja estarà feta la instal·lació bàsica.</p>
-<p>Per defecte el directori de la Base de Dades és <strong>/data/db</strong></p>
-<p>L'únic problema que podríem tenir si no som administradors és que no tinguem permís per crear aquest directori. Aleshores crearem un altre directori i en el moment d'arrancar el servidor, li especificarem aquest lloc.</p>
-<p>La manera d'arrancar el servidor serà:</p>
-<p class="codi">&lt;directori arrel MongoDB&gt;/bin/mongod</p>
-<p>Opcionalment li podem dir on està la Base de Dades (si no ho especifiquem assumirà que està en <strong>/data/db</strong>):</p>
-<p class="codi">&lt;directori arrel MongoDB&gt;/bin/mongod --dbpath &lt;directori de la BD&gt;</p>
-<p></p>
-<p>Resumint, i estant situats al directori on hem descomprimit MongoDB:</p>
-<ul>
+<p style="text-align: justify;">Podrem instal·lar MongoDB en qualsevol plataforma. I fins i tot sense tenir permisos d'administrador, com veurem en el cas d'Ubuntu.</p>
+<p style="text-align: justify;">També està la possibilitat de crear un servidor en el núvol, fins i tot gratuït. És l'opció que ens suggereix Mongo per defecte, però nosaltres no la utilitzarem.</p>
+<p class="titolet" style="text-align: justify;">Instal·lació en Linux</p>
+<p style="text-align: justify;">Per a poder fer la instal·lació més bàsica, podrem fer-lo sense permisos d'administrador. Si els tenim tot és més còmode, però si no en tenim també ho podem fer, com veurem i remarcarem a continuació.</p>
+<p style="text-align: justify;">De la pàgina de <strong>MongoDB</strong> anem al menú <strong>Products -&gt; Comunity Edition -&gt; Comunity Server </strong>(<a href="https://www.mongodb.com/try/download/community">https://www.mongodb.com/try/download/community</a>) ens baixem la versió apropiada per al nostre Sistema Operatiu. Observeu com en el cas de Linux hi ha moltes versions, per a moltes distribucions. I millor triar en el paquet el <strong>tgz</strong>, ja que amb descomprimir el fitxer serà suficient. En el cas d'<strong>Ubuntu 20.04 de 64 bits</strong>, aquest fitxer és: <strong><a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz</a></strong>. Però recordeu que us heu d'assegurar de la versió.</p>
+<p style="text-align: justify;">Senzillament descomprimirem aquest fitxer on vulguem, i ja estarà feta la instal·lació bàsica.</p>
+<p style="text-align: justify;">Per defecte el directori de la Base de Dades és <strong>/data/db</strong></p>
+<p style="text-align: justify;">L'únic problema que podríem tenir si no som administradors és que no tinguem permís per crear aquest directori. Aleshores crearem un altre directori i en el moment d'arrancar el servidor, li especificarem aquest lloc.</p>
+<p style="text-align: justify;">La manera d'arrancar el servidor serà:</p>
+<p class="codi" style="text-align: justify;">&lt;directori arrel MongoDB&gt;/bin/mongod</p>
+<p style="text-align: justify;">Opcionalment li podem dir on està la Base de Dades (si no ho especifiquem assumirà que està en <strong>/data/db</strong>):</p>
+<p class="codi" style="text-align: justify;">&lt;directori arrel MongoDB&gt;/bin/mongod --dbpath &lt;directori de la BD&gt;</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Resumint, i estant situats al directori on hem descomprimit MongoDB:</p>
+<ul style="text-align: justify;">
 <li>Si som administradors:
 <ul>
 <li>
@@ -129,24 +129,24 @@
 </ul>
 </li>
 </ul>
-<p>La següent imatge il·lustra aquesta segona opció. Està per a una versió anterior de MongoDB, però és totalment equivalent:</p>
-<p style="text-align: center;"><img src="T8_3_1_1.png" /></p>
-<p>Una vegada en marxa el servidor, no hem de tancar aquesta terminal, ja que pararíem el servidor. Per a connectar un client, obrim una segona terminal i executem el client <strong>mongo</strong>:</p>
-<p class="codi">./bin/mongo</p>
-<p style="text-align: center;"><img src="T8_3_1_2.png" /></p>
-<p></p>
+<p style="text-align: justify;">La següent imatge il·lustra aquesta segona opció. Està per a una versió anterior de MongoDB, però és totalment equivalent:</p>
+<p><img src="T8_3_1_1.png" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">Una vegada en marxa el servidor, no hem de tancar aquesta terminal, ja que pararíem el servidor. Per a connectar un client, obrim una segona terminal i executem el client <strong>mongo</strong>:</p>
+<p class="codi" style="text-align: justify;">./bin/mongo</p>
+<p><img src="T8_3_1_2.png" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;"></p>
 <p style="text-align: justify;">Per a provar el seu funcionament, anem a fer un parell de comandos: un per a guardar un document i un altre per a recuperar-lo.</p>
 <p style="text-align: justify;">Per a qualsevol operació s'ha de posar <strong>db </strong>seguit del nom de la col·lecció, i després l'operació que volem fer. Amb el següent:</p>
 <p class="codi" style="text-align: justify;">&gt; db.exemple.save( {msg:"Hola, què tal?"} )</p>
-<p>Ens contestarà:</p>
-<p class="codi2">WriteResult({ "nInserted" : 1 })</p>
-<p>Indicant que ha inserit un document en la col·lecció <strong>exemple</strong> (si no estava creada, la crearà).</p>
-<p>I amb el següent comando recuperem la informació:</p>
-<p class="codi">&gt; db.exemple.findOne()</p>
-<p>Que ens tornarà:</p>
-<p class="codi2">{ "_id" : ObjectId("56cc130590d651d45ef3d3be"), "msg" : "Hola, què tal?" }</p>
+<p style="text-align: justify;">Ens contestarà:</p>
+<p class="codi2" style="text-align: justify;">WriteResult({ "nInserted" : 1 })</p>
+<p style="text-align: justify;">Indicant que ha inserit un document en la col·lecció <strong>exemple</strong> (si no estava creada, la crearà).</p>
+<p style="text-align: justify;">I amb el següent comando recuperem la informació:</p>
+<p class="codi" style="text-align: justify;">&gt; db.exemple.findOne()</p>
+<p style="text-align: justify;">Que ens tornarà:</p>
+<p class="codi2" style="text-align: justify;">{ "_id" : ObjectId("56cc130590d651d45ef3d3be"), "msg" : "Hola, què tal?" }</p>
 <p style="text-align: justify;">Tot ho fa en la mateixa terminal, i a cadascú de nosaltres ens donarà un número diferent en <strong>ObjectId</strong>. En la següent imatge es veuen les dues operacions:</p>
-<p style="text-align: center;"><img src="T8_3_1_3.png" width="1191" height="392" /></p>
+<p><img src="T8_3_1_3.png" style="display: block; margin-left: auto; margin-right: auto;" width="1191" height="392" /></p>
 <p style="text-align: justify;"></p>
 <p style="text-align: justify;">En realitat estem connectats a una Base de Dades anomenada <strong>test</strong>. Podem crear i utilitzar més d'una Base de Dades, però en aquest curs tindrém més que suficient amb aquesta Base de Dades. Per a comprovar-ho podem executar la següent sentència, que ens torna el nom de la Base de Dades:</p>
 <p class="codi2" style="text-align: justify;">&gt; db.getName()<br />test</p>

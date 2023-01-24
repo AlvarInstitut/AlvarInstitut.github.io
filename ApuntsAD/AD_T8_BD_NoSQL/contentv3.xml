@@ -154,7 +154,7 @@ text through the text editing buttons associated with the field."></unicode>
                <instance class="exe.engine.field.TextField">
                 <dictionary>
                  <string role="key" value="_id"></string>
-                 <int value="5746"></int>
+                 <int value="5837"></int>
                  <string role="key" value="_idevice"></string>
                  <none></none>
                  <string role="key" value="_instruc"></string>
@@ -168,7 +168,7 @@ text through the text editing buttons associated with the field."></unicode>
                 </dictionary>
                </instance>
                <string role="key" value="_id"></string>
-               <unicode value="4_85.162"></unicode>
+               <unicode value="4_85.166"></unicode>
                <string role="key" value="_imageResource"></string>
                <instance class="exe.engine.resource.Resource" reference="5">
                 <dictionary>
@@ -179,7 +179,7 @@ text through the text editing buttons associated with the field."></unicode>
                  <string role="key" value="_storageName"></string>
                  <string value="T8_Portada.png"></string>
                  <string role="key" value="_userName"></string>
-                 <string value="/tmp/tmpXF9WPe/T8_Portada.png"></string>
+                 <string value="/tmp/tmpZNUrwZ/T8_Portada.png"></string>
                  <string role="key" value="checksum"></string>
                  <string value="53289e58649f5b73fe75a5508173d758"></string>
                  <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -208,7 +208,7 @@ text through the text editing buttons associated with the field."></unicode>
           <string role="key" value="intlinks_to_anchors"></string>
           <dictionary></dictionary>
           <string role="key" value="nextImageId"></string>
-          <int value="163"></int>
+          <int value="167"></int>
           <string role="key" value="parentNode"></string>
           <reference key="4"></reference>
          </dictionary>
@@ -573,7 +573,7 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;p class=&quot;titolet&quot;&gt;Instal·lació en Linux&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;El lloc des d'on baixar-lo és la pàgina oficial:&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://redis.io&quot; rel=&quot;noopener&quot;&gt;http://redis.io&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;En el moment de fer aquestos apunts, l'última versió estable és la &lt;strong&gt;6.2.6&lt;/strong&gt;.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;En el moment de fer aquestos apunts, l'última versió estable és la &lt;strong&gt;7.0.8&lt;/strong&gt;.&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Ens baixem el fitxer, el descomprimim, i després des d'una terminal ens situem en el directori on s'ha descomprimit i fem &lt;strong&gt;make &lt;/strong&gt;per a generar els executables. Després de molts avisos, s'hauria d'haver instal·lat bé. Aquest seria el resum d'accions, fetes totes elles des d'una terminal (però no cal descomprimir des d'una terminal) i havent-nos situat prèviament en el lloc on està el fitxer baixat. També suposarem que el fitxer està col·locat en el lloc on volem que estiga instal·lat de forma definitiva. Recordeu que podeu descomprimir-lo de la manera que us resulte més còmoda:&lt;/p&gt;
 &lt;p class=&quot;codi&quot;&gt;tar xzf redis-4.0.6.tar.gz&lt;br /&gt;&lt;br /&gt;cd redis-4.0.6&lt;br /&gt;&lt;br /&gt;make&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Amb açò s'haurien d'haver generat els executables, i ja hauria de funcionar.&lt;/p&gt;
@@ -634,7 +634,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5737"></int>
+                       <int value="5827"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -648,7 +648,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1092"></unicode>
+                     <unicode value="3_85.1124"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="15">
                       <dictionary>
@@ -659,7 +659,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_5.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_5.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_5.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="af853a4c89b82f1e45b25af4c62b5af1"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -686,7 +686,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5743"></int>
+                       <int value="5833"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -700,7 +700,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1093"></unicode>
+                     <unicode value="3_85.1125"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="16">
                       <dictionary>
@@ -711,7 +711,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_2_1_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_2_1_2.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_2_1_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="806a46335058d67ac87abc19be6b6a4d"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -738,7 +738,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5745"></int>
+                       <int value="5836"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -752,7 +752,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1094"></unicode>
+                     <unicode value="3_85.1126"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="17">
                       <dictionary>
@@ -763,7 +763,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_2_1_5.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_2_1_5.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_2_1_5.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="cd450baf4061eb5d13b0640c8538b60f"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -790,7 +790,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5749"></int>
+                       <int value="5840"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -804,7 +804,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1095"></unicode>
+                     <unicode value="3_85.1127"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="18">
                       <dictionary>
@@ -815,7 +815,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_2_1_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_2_1_1.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_2_1_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="0e986fe0598132cc919076e837fbfae4"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -842,7 +842,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5751"></int>
+                       <int value="5842"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -856,7 +856,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1096"></unicode>
+                     <unicode value="3_85.1128"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="19">
                       <dictionary>
@@ -867,7 +867,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_2_1_3.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_2_1_3.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_2_1_3.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="4d3ca939d56543c32e2f841db8481efa"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -894,7 +894,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5752"></int>
+                       <int value="5843"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -908,7 +908,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1097"></unicode>
+                     <unicode value="3_85.1129"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="20">
                       <dictionary>
@@ -919,7 +919,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_6.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_6.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_6.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="0828819989fb581b259817a1fe1ead8c"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -946,7 +946,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5754"></int>
+                       <int value="5845"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -960,7 +960,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1098"></unicode>
+                     <unicode value="3_85.1130"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="21">
                       <dictionary>
@@ -971,7 +971,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_2_1_4.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_2_1_4.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_2_1_4.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="a22f2a50b16a867d24090181876b1c82"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -998,7 +998,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5755"></int>
+                       <int value="5846"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -1012,7 +1012,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="3_85.1099"></unicode>
+                     <unicode value="3_85.1131"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="22">
                       <dictionary>
@@ -1023,7 +1023,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_4.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_4.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_4.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="cad3faf79a8cd73da073f2ec3a88bc24"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -1052,7 +1052,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="1100"></int>
+                <int value="1132"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="14"></reference>
                </dictionary>
@@ -9078,7 +9078,7 @@ text through the text editing buttons associated with the field."></unicode>
              <string role="key" value="content_w_resourcePaths"></string>
              <unicode content="true" value="&lt;p style=&quot;text-align: justify;&quot;&gt;Segurament &lt;strong&gt;MongoDB&lt;/strong&gt; és el més famós dels Sistemes Gestors de Bases de Dades &lt;strong&gt;NoSQL&lt;/strong&gt;.&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;El nom de &lt;strong&gt;MongoDB&lt;/strong&gt; prové de la paraula anglesa &lt;em&gt;hu&lt;strong&gt;mongo&lt;/strong&gt;us&lt;/em&gt;, que significa enorme, que és el propòsit d'aquesta Base de Dades: guardar grans quantitats d'informació. És de codi obert i està programada en C++. El va crear l'empresa &lt;strong&gt;10gen&lt;/strong&gt; (actualment &lt;strong&gt;MongoDB Inc.&lt;/strong&gt;)&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;És una SGBD &lt;strong&gt;Documental&lt;/strong&gt;, és a dir, que servirà per a guardar documents. La manera interna de guardar-los és en format &lt;strong&gt;BSON&lt;/strong&gt; (Binary JSON) que en essència és una variant del JSON per a poder guardar físicament les dades d'una manera més eficient.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;És un SGBD &lt;strong&gt;Documental&lt;/strong&gt;, és a dir, que servirà per a guardar documents. La manera interna de guardar-los és en format &lt;strong&gt;BSON&lt;/strong&gt; (Binary JSON) que en essència és una variant del JSON per a poder guardar físicament les dades d'una manera més eficient.&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;En un servidor Mongo poden haver més d'una Base de Dades, encara que nosaltres només en gastarem una: &lt;strong&gt;test&lt;/strong&gt;.&lt;/p&gt;
 &lt;ul style=&quot;text-align: justify;&quot;&gt;
 &lt;li&gt;En cada Base de Dades la informació es guardarà en &lt;strong&gt;col·leccions&lt;/strong&gt;.&lt;/li&gt;
@@ -9208,21 +9208,21 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="buttonCaption"></string>
                 <string value=""></string>
                 <string role="key" value="content_w_resourcePaths"></string>
-                <unicode content="true" value="&lt;p&gt;Podrem instal·lar MongoDB en qualsevol plataforma. I fins i tot sense tenir permisos d'administrador, com veurem en el cas d'Ubuntu.&lt;/p&gt;
-&lt;p&gt;També està la possibilitat de crear un servidor en el núvol, fins i tot gratuït. És l'opció que ens suggereix Mongo per defecte, però nosaltres no la utilitzarem.&lt;/p&gt;
-&lt;p class=&quot;titolet&quot;&gt;Instal·lació en Linux&lt;/p&gt;
-&lt;p&gt;Per a poder fer la instal·lació més bàsica, podrem fer-lo sense permisos d'administrador. Si els tenim tot és més còmode, però si no en tenim també ho podem fer, com veurem i remarcarem a continuació.&lt;/p&gt;
-&lt;p&gt;De la pàgina de &lt;strong&gt;MongoDB&lt;/strong&gt; (&lt;strong&gt;&lt;a href=&quot;https://www.mongodb.com/download-center#community&quot;&gt;https://www.mongodb.com/download-center#community&lt;/a&gt;&lt;/strong&gt;) ens baixem la versió apropiada per al nostre Sistema Operatiu. Observeu com en el cas de Linux hi ha moltes versions. En el cas d'&lt;strong&gt;Ubuntu 20.04 de 64 bits&lt;/strong&gt;, aquest fitxer és: &lt;strong&gt;&lt;a href=&quot;https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz&quot;&gt;https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz&lt;/a&gt;&lt;/strong&gt;. Però recordeu que us heu d'assegurar de la versió&lt;/p&gt;
-&lt;p&gt;Senzillament descomprimirem aquest fitxer on vulguem, i ja estarà feta la instal·lació bàsica.&lt;/p&gt;
-&lt;p&gt;Per defecte el directori de la Base de Dades és &lt;strong&gt;/data/db&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;L'únic problema que podríem tenir si no som administradors és que no tinguem permís per crear aquest directori. Aleshores crearem un altre directori i en el moment d'arrancar el servidor, li especificarem aquest lloc.&lt;/p&gt;
-&lt;p&gt;La manera d'arrancar el servidor serà:&lt;/p&gt;
-&lt;p class=&quot;codi&quot;&gt;&amp;lt;directori arrel MongoDB&amp;gt;/bin/mongod&lt;/p&gt;
-&lt;p&gt;Opcionalment li podem dir on està la Base de Dades (si no ho especifiquem assumirà que està en &lt;strong&gt;/data/db&lt;/strong&gt;):&lt;/p&gt;
-&lt;p class=&quot;codi&quot;&gt;&amp;lt;directori arrel MongoDB&amp;gt;/bin/mongod --dbpath &amp;lt;directori de la BD&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Resumint, i estant situats al directori on hem descomprimit MongoDB:&lt;/p&gt;
-&lt;ul&gt;
+                <unicode content="true" value="&lt;p style=&quot;text-align: justify;&quot;&gt;Podrem instal·lar MongoDB en qualsevol plataforma. I fins i tot sense tenir permisos d'administrador, com veurem en el cas d'Ubuntu.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;També està la possibilitat de crear un servidor en el núvol, fins i tot gratuït. És l'opció que ens suggereix Mongo per defecte, però nosaltres no la utilitzarem.&lt;/p&gt;
+&lt;p class=&quot;titolet&quot; style=&quot;text-align: justify;&quot;&gt;Instal·lació en Linux&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Per a poder fer la instal·lació més bàsica, podrem fer-lo sense permisos d'administrador. Si els tenim tot és més còmode, però si no en tenim també ho podem fer, com veurem i remarcarem a continuació.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;De la pàgina de &lt;strong&gt;MongoDB&lt;/strong&gt; anem al menú &lt;strong&gt;Products -&amp;gt; Comunity Edition -&amp;gt; Comunity Server &lt;/strong&gt;(&lt;a href=&quot;https://www.mongodb.com/try/download/community&quot;&gt;https://www.mongodb.com/try/download/community&lt;/a&gt;) ens baixem la versió apropiada per al nostre Sistema Operatiu. Observeu com en el cas de Linux hi ha moltes versions, per a moltes distribucions. I millor triar en el paquet el &lt;strong&gt;tgz&lt;/strong&gt;, ja que amb descomprimir el fitxer serà suficient. En el cas d'&lt;strong&gt;Ubuntu 20.04 de 64 bits&lt;/strong&gt;, aquest fitxer és: &lt;strong&gt;&lt;a href=&quot;https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz&quot;&gt;https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.5.tgz&lt;/a&gt;&lt;/strong&gt;. Però recordeu que us heu d'assegurar de la versió.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Senzillament descomprimirem aquest fitxer on vulguem, i ja estarà feta la instal·lació bàsica.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Per defecte el directori de la Base de Dades és &lt;strong&gt;/data/db&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;L'únic problema que podríem tenir si no som administradors és que no tinguem permís per crear aquest directori. Aleshores crearem un altre directori i en el moment d'arrancar el servidor, li especificarem aquest lloc.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;La manera d'arrancar el servidor serà:&lt;/p&gt;
+&lt;p class=&quot;codi&quot; style=&quot;text-align: justify;&quot;&gt;&amp;lt;directori arrel MongoDB&amp;gt;/bin/mongod&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Opcionalment li podem dir on està la Base de Dades (si no ho especifiquem assumirà que està en &lt;strong&gt;/data/db&lt;/strong&gt;):&lt;/p&gt;
+&lt;p class=&quot;codi&quot; style=&quot;text-align: justify;&quot;&gt;&amp;lt;directori arrel MongoDB&amp;gt;/bin/mongod --dbpath &amp;lt;directori de la BD&amp;gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Resumint, i estant situats al directori on hem descomprimit MongoDB:&lt;/p&gt;
+&lt;ul style=&quot;text-align: justify;&quot;&gt;
 &lt;li&gt;Si som administradors:
 &lt;ul&gt;
 &lt;li&gt;
@@ -9248,24 +9248,24 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;La següent imatge il·lustra aquesta segona opció. Està per a una versió anterior de MongoDB, però és totalment equivalent:&lt;/p&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;resources/T8_3_1_1.png&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Una vegada en marxa el servidor, no hem de tancar aquesta terminal, ja que pararíem el servidor. Per a connectar un client, obrim una segona terminal i executem el client &lt;strong&gt;mongo&lt;/strong&gt;:&lt;/p&gt;
-&lt;p class=&quot;codi&quot;&gt;./bin/mongo&lt;/p&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;resources/T8_3_1_2.png&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;La següent imatge il·lustra aquesta segona opció. Està per a una versió anterior de MongoDB, però és totalment equivalent:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;resources/T8_3_1_1.png&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Una vegada en marxa el servidor, no hem de tancar aquesta terminal, ja que pararíem el servidor. Per a connectar un client, obrim una segona terminal i executem el client &lt;strong&gt;mongo&lt;/strong&gt;:&lt;/p&gt;
+&lt;p class=&quot;codi&quot; style=&quot;text-align: justify;&quot;&gt;./bin/mongo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;resources/T8_3_1_2.png&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Per a provar el seu funcionament, anem a fer un parell de comandos: un per a guardar un document i un altre per a recuperar-lo.&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Per a qualsevol operació s'ha de posar &lt;strong&gt;db &lt;/strong&gt;seguit del nom de la col·lecció, i després l'operació que volem fer. Amb el següent:&lt;/p&gt;
 &lt;p class=&quot;codi&quot; style=&quot;text-align: justify;&quot;&gt;&amp;gt; db.exemple.save( {msg:&quot;Hola, què tal?&quot;} )&lt;/p&gt;
-&lt;p&gt;Ens contestarà:&lt;/p&gt;
-&lt;p class=&quot;codi2&quot;&gt;WriteResult({ &quot;nInserted&quot; : 1 })&lt;/p&gt;
-&lt;p&gt;Indicant que ha inserit un document en la col·lecció &lt;strong&gt;exemple&lt;/strong&gt; (si no estava creada, la crearà).&lt;/p&gt;
-&lt;p&gt;I amb el següent comando recuperem la informació:&lt;/p&gt;
-&lt;p class=&quot;codi&quot;&gt;&amp;gt; db.exemple.findOne()&lt;/p&gt;
-&lt;p&gt;Que ens tornarà:&lt;/p&gt;
-&lt;p class=&quot;codi2&quot;&gt;{ &quot;_id&quot; : ObjectId(&quot;56cc130590d651d45ef3d3be&quot;), &quot;msg&quot; : &quot;Hola, què tal?&quot; }&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Ens contestarà:&lt;/p&gt;
+&lt;p class=&quot;codi2&quot; style=&quot;text-align: justify;&quot;&gt;WriteResult({ &quot;nInserted&quot; : 1 })&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Indicant que ha inserit un document en la col·lecció &lt;strong&gt;exemple&lt;/strong&gt; (si no estava creada, la crearà).&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;I amb el següent comando recuperem la informació:&lt;/p&gt;
+&lt;p class=&quot;codi&quot; style=&quot;text-align: justify;&quot;&gt;&amp;gt; db.exemple.findOne()&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Que ens tornarà:&lt;/p&gt;
+&lt;p class=&quot;codi2&quot; style=&quot;text-align: justify;&quot;&gt;{ &quot;_id&quot; : ObjectId(&quot;56cc130590d651d45ef3d3be&quot;), &quot;msg&quot; : &quot;Hola, què tal?&quot; }&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Tot ho fa en la mateixa terminal, i a cadascú de nosaltres ens donarà un número diferent en &lt;strong&gt;ObjectId&lt;/strong&gt;. En la següent imatge es veuen les dues operacions:&lt;/p&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;resources/T8_3_1_3.png&quot; width=&quot;1191&quot; height=&quot;392&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;resources/T8_3_1_3.png&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; width=&quot;1191&quot; height=&quot;392&quot; /&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;En realitat estem connectats a una Base de Dades anomenada &lt;strong&gt;test&lt;/strong&gt;. Podem crear i utilitzar més d'una Base de Dades, però en aquest curs tindrém més que suficient amb aquesta Base de Dades. Per a comprovar-ho podem executar la següent sentència, que ens torna el nom de la Base de Dades:&lt;/p&gt;
 &lt;p class=&quot;codi2&quot; style=&quot;text-align: justify;&quot;&gt;&amp;gt; db.getName()&lt;br /&gt;test&lt;/p&gt;
@@ -9289,7 +9289,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5740"></int>
+                       <int value="5830"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -9303,7 +9303,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="91_85.401"></unicode>
+                     <unicode value="91_85.413"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="191">
                       <dictionary>
@@ -9314,7 +9314,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_1_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_1_1.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_1_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="8dd6223993b24665d2ae69ba6d58271e"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -9341,7 +9341,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5742"></int>
+                       <int value="5832"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -9355,7 +9355,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="91_85.402"></unicode>
+                     <unicode value="91_85.414"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="192">
                       <dictionary>
@@ -9366,7 +9366,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_1_3.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_1_3.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_1_3.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="b2adba8acecd22655f6f7211ea454bb1"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -9393,7 +9393,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5747"></int>
+                       <int value="5838"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -9407,7 +9407,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="91_85.403"></unicode>
+                     <unicode value="91_85.415"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="193">
                       <dictionary>
@@ -9418,7 +9418,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_1_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_1_2.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_1_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="6bf4a4047651637e2aade4442a5c87ee"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -9447,7 +9447,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="404"></int>
+                <int value="416"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="190"></reference>
                </dictionary>
@@ -9567,7 +9567,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5738"></int>
+                       <int value="5828"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -9581,7 +9581,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="93_85.399"></unicode>
+                     <unicode value="93_85.411"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="196">
                       <dictionary>
@@ -9592,7 +9592,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_1_11.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_1_11.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_1_11.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="8bee6db26f7b160b951c96e2cf2c8965"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -9619,7 +9619,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5741"></int>
+                       <int value="5831"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -9633,7 +9633,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="93_85.400"></unicode>
+                     <unicode value="93_85.412"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="197">
                       <dictionary>
@@ -9644,7 +9644,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_1_12.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_1_12.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_1_12.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="ac0d668783f221db8da10a4660c6914e"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -9671,7 +9671,7 @@ text through the text editing buttons associated with the field."></unicode>
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5744"></int>
+                       <int value="5835"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -9685,7 +9685,7 @@ text through the text editing buttons associated with the field."></unicode>
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="93_85.401"></unicode>
+                     <unicode value="93_85.413"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="198">
                       <dictionary>
@@ -9696,7 +9696,7 @@ text through the text editing buttons associated with the field."></unicode>
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_1_13.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_1_13.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_1_13.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="20da4f3dbebc3088a502e2186981835f"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -9725,7 +9725,7 @@ text through the text editing buttons associated with the field."></unicode>
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="402"></int>
+                <int value="414"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="190"></reference>
                </dictionary>
@@ -9860,25 +9860,27 @@ text through the text editing buttons associated with the field."></unicode>
                     <string value=""></string>
                     <string role="key" value="anchor_names"></string>
                     <list></list>
+                    <string role="key" value="anchors_linked_from_fields"></string>
+                    <dictionary></dictionary>
                     <string role="key" value="content_w_resourcePaths"></string>
-                    <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p&gt;Quan hem utilitzat el client, hem executat el programa &lt;strong&gt;mongo&lt;/strong&gt; sense posar-li res més. Per defecte s'ha connectat al servidor que tenim en la mateixa màquina.&lt;/p&gt;
-&lt;p&gt;Però en realitat li podem especificar l'adreça on està el servidor al qual volem connectar. En concret, l'adreça del servidor de dades de l'Institut en el qual també tenim instal·lat MongoDB:&lt;/p&gt;
-&lt;div class=&quot;highlighted-code language-java&quot;&gt;
+                    <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;Quan hem utilitzat el client, hem executat el programa &lt;strong&gt;mongo&lt;/strong&gt; sense posar-li res més. Per defecte s'ha connectat al servidor que tenim en la mateixa màquina.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Però en realitat li podem especificar l'adreça on està el servidor al qual volem connectar. En concret, l'adreça del servidor de dades de l'Institut en el qual també tenim instal·lat MongoDB:&lt;/p&gt;
+&lt;div class=&quot;highlighted-code language-java&quot; style=&quot;text-align: justify;&quot;&gt;
 &lt;div&gt;
 &lt;pre&gt;&lt;code&gt;mongo  89.36.214.106&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Podem connectar, però no podrem fer cap operació, perquè està habilitada l'autenticació per a previndre atacs, cosa que no tenim en el servidor que hem instal·lat cadascú en la seua màquina.&lt;/p&gt;
-&lt;p&gt;Aleshores, si intentem fer qualsevol operació, ens donarà error perquè no estem autenticats:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;resources/T8_3_1_1_1.png&quot; alt=&quot;&quot; width=&quot;1364&quot; height=&quot;348&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;La manera d'autenticar serà utilitzant el comando &lt;strong&gt;db.auth(&quot;&lt;em&gt;usuari&quot;&lt;/em&gt;, &quot;&lt;em&gt;contrasenya&quot;&lt;/em&gt;)&lt;/strong&gt;. I en connectarem a un usuari que té permís per a utilitzar la BD test:&lt;/p&gt;
-&lt;ul&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Podem connectar, però no podrem fer cap operació, perquè està habilitada l'autenticació per a previndre atacs, cosa que no tenim en el servidor que hem instal·lat cadascú en la seua màquina.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Aleshores, si intentem fer qualsevol operació, ens donarà error perquè no estem autenticats:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;resources/T8_3_1_1_1.png&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; width=&quot;1364&quot; height=&quot;348&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;La manera d'autenticar serà utilitzant el comando &lt;strong&gt;db.auth(&quot;&lt;em&gt;usuari&quot;&lt;/em&gt;, &quot;&lt;em&gt;contrasenya&quot;&lt;/em&gt;)&lt;/strong&gt;. I en connectarem a un usuari que té permís per a utilitzar la BD test:&lt;/p&gt;
+&lt;ul style=&quot;text-align: justify;&quot;&gt;
 &lt;li&gt;Usuari: &lt;strong&gt;ad&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Contrasenya: &lt;strong&gt;ieselcaminas&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;A partir d'eixe moment ja podrem utilitzar-lo sense problemes:&lt;/p&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;resources/T8_3_1_1_2.png&quot; alt=&quot;&quot; width=&quot;1364&quot; height=&quot;709&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/div&gt;"></unicode>
+&lt;p style=&quot;text-align: justify;&quot;&gt;A partir d'eixe moment ja podrem utilitzar-lo sense problemes:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;resources/T8_3_1_1_2.png&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; width=&quot;1364&quot; height=&quot;709&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;/p&gt;&lt;/div&gt;"></unicode>
                     <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
                     <int value="4"></int>
                     <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -9898,7 +9900,7 @@ text through the text editing buttons associated with the field."></unicode>
                          <instance class="exe.engine.field.TextField">
                           <dictionary>
                            <string role="key" value="_id"></string>
-                           <int value="5757"></int>
+                           <int value="5826"></int>
                            <string role="key" value="_idevice"></string>
                            <none></none>
                            <string role="key" value="_instruc"></string>
@@ -9912,7 +9914,7 @@ text through the text editing buttons associated with the field."></unicode>
                           </dictionary>
                          </instance>
                          <string role="key" value="_id"></string>
-                         <unicode value="229_229_2.0"></unicode>
+                         <unicode value="229_229_2.8"></unicode>
                          <string role="key" value="_imageResource"></string>
                          <instance class="exe.engine.resource.Resource" reference="202">
                           <dictionary>
@@ -9921,11 +9923,11 @@ text through the text editing buttons associated with the field."></unicode>
                            <string role="key" value="_package"></string>
                            <reference key="2"></reference>
                            <string role="key" value="_storageName"></string>
-                           <string value="T8_3_1_1_1.png"></string>
+                           <string value="T8_3_1_1_2.png"></string>
                            <string role="key" value="_userName"></string>
-                           <string value="/tmp/tmpz7DKCQ.eXe/previews/allyourbase/T8_3_1_1_1.png"></string>
+                           <string value="/tmp/tmpZNUrwZ/T8_3_1_1_2.png"></string>
                            <string role="key" value="checksum"></string>
-                           <string value="bc538630e864cbd2caf121844fb97f2b"></string>
+                           <string value="44f6ce5f8cec07c28eff28f3b26f6ada"></string>
                            <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                            <int value="2"></int>
                            <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -9950,7 +9952,7 @@ text through the text editing buttons associated with the field."></unicode>
                          <instance class="exe.engine.field.TextField">
                           <dictionary>
                            <string role="key" value="_id"></string>
-                           <int value="5758"></int>
+                           <int value="5847"></int>
                            <string role="key" value="_idevice"></string>
                            <none></none>
                            <string role="key" value="_instruc"></string>
@@ -9964,7 +9966,7 @@ text through the text editing buttons associated with the field."></unicode>
                           </dictionary>
                          </instance>
                          <string role="key" value="_id"></string>
-                         <unicode value="229_229_2.1"></unicode>
+                         <unicode value="229_229_2.9"></unicode>
                          <string role="key" value="_imageResource"></string>
                          <instance class="exe.engine.resource.Resource" reference="203">
                           <dictionary>
@@ -9973,11 +9975,11 @@ text through the text editing buttons associated with the field."></unicode>
                            <string role="key" value="_package"></string>
                            <reference key="2"></reference>
                            <string role="key" value="_storageName"></string>
-                           <string value="T8_3_1_1_2.png"></string>
+                           <string value="T8_3_1_1_1.png"></string>
                            <string role="key" value="_userName"></string>
-                           <string value="/tmp/tmpz7DKCQ.eXe/previews/allyourbase/T8_3_1_1_2.png"></string>
+                           <string value="/tmp/tmpZNUrwZ/T8_3_1_1_1.png"></string>
                            <string role="key" value="checksum"></string>
-                           <string value="44f6ce5f8cec07c28eff28f3b26f6ada"></string>
+                           <string value="bc538630e864cbd2caf121844fb97f2b"></string>
                            <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
                            <int value="2"></int>
                            <string role="key" value="exe.engine.resource._Resource.persistenceVersion"></string>
@@ -10004,7 +10006,7 @@ text through the text editing buttons associated with the field."></unicode>
                     <string role="key" value="intlinks_to_anchors"></string>
                     <dictionary></dictionary>
                     <string role="key" value="nextImageId"></string>
-                    <int value="2"></int>
+                    <int value="10"></int>
                     <string role="key" value="parentNode"></string>
                     <reference key="201"></reference>
                    </dictionary>
@@ -10125,7 +10127,7 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;li&gt;El document (que moltes vegades l'associarem a objecte de JSON) va entre claus ( &lt;strong&gt;{ }&lt;/strong&gt; )&lt;/li&gt;
 &lt;li&gt;Els elements d'un objecte van separats per comes, i són parelles clau-valor.&lt;/li&gt;
 &lt;li&gt;La clau no pot ser nula, ni repetir-se en el mateix objecte (sí en diferents objectes, clar)&lt;/li&gt;
-&lt;li&gt;Els valors són dels tipus que veurem en la pregunta 3.2.2&lt;/li&gt;
+&lt;li&gt;Els valors són dels tipus que veurem en la pregunta 3.2.1&lt;/li&gt;
 &lt;li&gt;Un document guardat ha de contenir obligatòriament un camp anomenat &lt;strong&gt;_id&lt;/strong&gt;, i que contindrà un valor únic en la col·lecció i servirà per a identificar-lo. Si en guardar un document no li hem posat camp &lt;strong&gt;_id&lt;/strong&gt;, el generarà automàticament MongoDB.&lt;/li&gt;
 &lt;/ul&gt;"></unicode>
                 <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
@@ -10868,7 +10870,7 @@ text through the text editing buttons associated with the field."></unicode>
                    <string role="key" value="content_w_resourcePaths"></string>
                    <unicode content="true" value="&lt;p style=&quot;text-align: justify;&quot;&gt;En aquest punt anem a veure les operacions més bàsiques, per a poder treballar sobre exemples pràctics, i així disposar ja d'unes dades inicials per a practicar.&lt;/p&gt;
 &lt;p class=&quot;titolet&quot;&gt;Inserció elemental&lt;/p&gt;
-&lt;p style=&quot;text-align: justify;&quot;&gt;La funció &lt;strong&gt;insert&lt;/strong&gt; afegirà documents a una col·lecció. En el paràmetre posem el document directament, o una variable que continga el document. Si la col·lecció no existia, la crearà i després afegirà el document. En la següent sentència estem treballant sobre la col·lecció &lt;strong&gt;exemple&lt;/strong&gt;, que segurament ja existirà de quan vam la pregunta 3.1 d'instal·lació de MongoDB, que per a provar vam inserir un document. Però si no existia, la crearà sense problemes.&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;La funció &lt;strong&gt;insert&lt;/strong&gt; afegirà documents a una col·lecció. En el paràmetre posem el document directament, o una variable que continga el document. Si la col·lecció no existia, la crearà i després afegirà el document. En la següent sentència estem treballant sobre la col·lecció &lt;strong&gt;exemple&lt;/strong&gt;, que segurament ja existirà de quan vam fer la pregunta 3.1 d'instal·lació de MongoDB, que per a provar vam inserir un document. Però si no existia, la crearà sense problemes.&lt;/p&gt;
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.exemple.insert({ msg2 : &quot;Com va la cosa?&quot;})&lt;br /&gt;WriteResult({ &quot;nInserted&quot; : 1 })&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;Acabem d'inserir un nou document, i així ens ho avisa ( &lt;strong&gt;{ &quot;nInserted&quot; : 1 }&lt;/strong&gt; , s'ha inserit un document). Automàticament haurà creat un element &lt;strong&gt;_id&lt;/strong&gt; de tipus &lt;strong&gt;ObjectId&lt;/strong&gt;, ja que li fa falta per a identificar el document entre tots els altres de la col·lecció.&lt;/p&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;I en aquest exemple ens guardem el document en la variable &lt;strong&gt;doc&lt;/strong&gt;, i després l'inserim&lt;/p&gt;
@@ -11477,7 +11479,7 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; doc1&lt;br /&gt;{&lt;br /&gt;    &quot;_id&quot; : ObjectId(&quot;56ce310bc61e04ba81def50b&quot;),&lt;br /&gt;    &quot;msg&quot; : &quot;Hola, què tal?&quot;,&lt;br /&gt;    &quot;titol&quot; : &quot;Missatge 1&quot;,&lt;br /&gt;    &quot;destinatari&quot; : &quot;Ferran&quot;&lt;br /&gt;}&lt;/p&gt;
 &lt;p&gt;Anem a guardar-lo amb &lt;strong&gt;save()&lt;/strong&gt;:&lt;/p&gt;
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.exemple.save(doc1)&lt;br /&gt;WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })&lt;/p&gt;
-&lt;p&gt;Ja ens avisa qiue com ha trobat el document (&lt;strong&gt;&quot;nMatched : 1&quot;&lt;/strong&gt;) ha modificat un. Efectivament, mirem com ha modificat el document existent:&lt;/p&gt;
+&lt;p&gt;Ja ens avisa que com ha trobat el document (&lt;strong&gt;&quot;nMatched : 1&quot;&lt;/strong&gt;) ha modificat un. Efectivament, mirem com ha modificat el document existent:&lt;/p&gt;
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.exemple.find()&lt;br /&gt;{ &quot;_id&quot; : ObjectId(&quot;56ce310bc61e04ba81def50b&quot;), &quot;msg&quot; : &quot;Hola, què tal?&quot;, &quot;titol&quot; : &quot;Missatge 1&quot;, &quot;destinatari&quot; : &quot;Ferran&quot; }&lt;br /&gt;{ &quot;_id&quot; : ObjectId(&quot;56ce31f6c61e04ba81def50c&quot;), &quot;msg2&quot; : &quot;Què? Com va la cosa?&quot; }&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;Anem a fer ara una modificació del camp &lt;strong&gt;_id&lt;/strong&gt;. A tots els efectes serà un document nou, ja que la manera d'identificar un document és per aquest camp:&lt;/p&gt;
@@ -12636,11 +12638,11 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.alumnes.update( {nom:&quot;Abel&quot;} , { $push : { nota : 7 } } )&lt;br /&gt;WriteResult({ &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 })&lt;/p&gt;
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.alumnes.findOne()&lt;br /&gt;{&lt;br /&gt;    &quot;_id&quot; : ObjectId(&quot;56df11d778549bdfbf2125e3&quot;),&lt;br /&gt;    &quot;nom&quot; : &quot;Abel&quot;,&lt;br /&gt;    &quot;cognoms&quot; : &quot;Bernat Carrera&quot;,&lt;br /&gt;    &quot;edat&quot; : 22,&lt;br /&gt;    &quot;adreça&quot; : {&lt;br /&gt;        &quot;carrer&quot; : &quot;Major&quot;,&lt;br /&gt;        &quot;numero&quot; : 7,&lt;br /&gt;        &quot;cp&quot; : &quot;12502&quot;&lt;br /&gt;    },&lt;br /&gt;    &quot;nota&quot; : [&lt;br /&gt;        9.5,&lt;br /&gt;        7.5,&lt;br /&gt;        9,&lt;br /&gt;        7&lt;br /&gt;    ]&lt;br /&gt;}&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Tambe hi ha manera d'introduir un element en una determinada posició que no siga al final, però es complica prou la cosa, ja que hem d'utilitzar per una banda el modificador &lt;strong&gt;$position&lt;/strong&gt; per a dir on s'ha d'inserir, i per una altra banda el modificador &lt;strong&gt;$each&lt;/strong&gt; per a poder especificar el o els valors que es volen inserir. Es posa a continuació únicament de forma il·lustrativa.&lt;/p&gt;
+&lt;p&gt;També hi ha manera d'introduir un element en una determinada posició que no siga al final, però es complica prou la cosa, ja que hem d'utilitzar per una banda el modificador &lt;strong&gt;$position&lt;/strong&gt; per a dir on s'ha d'inserir, i per una altra banda el modificador &lt;strong&gt;$each&lt;/strong&gt; per a poder especificar el o els valors que es volen inserir. Es posa a continuació únicament de forma il·lustrativa.&lt;/p&gt;
 &lt;div class=&quot;nota_blau&quot;&gt;
 &lt;p&gt;Per a inserir en una determinada posició hem d'utilitzar obligatòriament 2 modificadors més:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;$position&lt;/strong&gt; indicarà a partir de quina posició es farà l'acció (normalment d'inserir en l'array, és a dir, &lt;strong&gt;$push &lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$position&lt;/strong&gt; indicarà a partir de quina posició es farà l'acció (normalment d'inserir en l'array, és a dir, &lt;strong&gt;$push&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;$each&lt;/strong&gt; ens permet especificar una sèrie de valors com un array, i vol dir que es farà l'operació per a cada valor de l'array&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Els dos modificadors seguiran la sintaxi de sempre, de clau valor, per tant el conjunt de la sintaxi és:&lt;/p&gt;
@@ -13011,7 +13013,7 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.alumnes.update( { nom:&quot;Berta&quot; } , { $set : { cognoms : &quot;Bernat Cantero&quot; } } , true )&lt;br /&gt;WriteResult({&lt;br /&gt;    &quot;nMatched&quot; : 0,&lt;br /&gt;    &quot;nUpserted&quot; : 1,&lt;br /&gt;    &quot;nModified&quot; : 0,&lt;br /&gt;    &quot;_id&quot; : ObjectId(&quot;56dfdbd136d8b095cb6bd57a&quot;)&lt;br /&gt;})&lt;/p&gt;
 &lt;p&gt;Ja ens avisa que no ha fet cap &lt;em&gt;matching&lt;/em&gt;, i ha fet un &lt;strong&gt;Upsert&lt;/strong&gt;. Ho podem comprovar mirant tots els document de la col·lecció:&lt;/p&gt;
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.alumnes.find()&lt;br /&gt;{ &quot;_id&quot; : ObjectId(&quot;56debe3017bf4ed437dc77c8&quot;), &quot;nom&quot; : &quot;Abel&quot;, &quot;cognoms&quot; : &quot;Bernat Cantera&quot;, &quot;edat&quot; : 22, &quot;adreça&quot; : { &quot;carrer&quot; : &quot;Major&quot;, &quot;numero&quot; : 7, &quot;cp&quot; : &quot;12502&quot; }, &quot;nota&quot; : [ 9.5, 9 ] }&lt;br /&gt;{ &quot;_id&quot; : ObjectId(&quot;56dfdbd136d8b095cb6bd57a&quot;), &quot;nom&quot; : &quot;Berta&quot;, &quot;cognoms&quot; : &quot;Bernat Cantero&quot; }&lt;br /&gt;&amp;gt;&lt;/p&gt;
-&lt;p&gt;El nou documenttindrà els camps:&lt;/p&gt;
+&lt;p&gt;El nou document tindrà els camps:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;_id &lt;/strong&gt;, amb el que ens havia avisat que generaria&lt;/li&gt;
 &lt;li&gt;Els camps de la condició, que en el nostre exemple és &lt;strong&gt;{ nom:&quot;Berta&quot; }&lt;/strong&gt;&lt;/li&gt;
@@ -13353,7 +13355,7 @@ text through the text editing buttons associated with the field."></unicode>
                    <string role="key" value="buttonCaption"></string>
                    <string value=""></string>
                    <string role="key" value="content_w_resourcePaths"></string>
-                   <unicode content="true" value="&lt;p&gt;Les funcions &lt;strong&gt;find()&lt;/strong&gt; i &lt;strong&gt;findOne()&lt;/strong&gt; són absolutament equivalents, amb l'úinca diferència que la primera torna tots els documents trobats, mentre que la segona només torna el primer document trobat.&lt;/p&gt;
+                   <unicode content="true" value="&lt;p&gt;Les funcions &lt;strong&gt;find()&lt;/strong&gt; i &lt;strong&gt;findOne()&lt;/strong&gt; són absolutament equivalents, amb l'única diferència que la primera torna tots els documents trobats, mentre que la segona només torna el primer document trobat.&lt;/p&gt;
 &lt;p&gt;Per una millor comprensió, utilitzarem únicament &lt;strong&gt;find()&lt;/strong&gt;, per veure tots els resultats obtinguts.&lt;/p&gt;
 &lt;p&gt;La funció &lt;strong&gt;find()&lt;/strong&gt; s'ha comparat tradicionalment amb la sentència SELECT de SQL. Sempre tornarà un conjunt de documents, que poden variar des de no tornar cap document, a tornar-los tots els de la col·lecció.&lt;/p&gt;
 &lt;p&gt;La funció &lt;strong&gt;find()&lt;/strong&gt; pot tenir uns quants paràmetres.&lt;/p&gt;
@@ -13362,13 +13364,13 @@ text through the text editing buttons associated with the field."></unicode>
 &lt;div&gt;
 &lt;p&gt;El primer indica una condició o criteri, i tornarà aquells documents de la col·lecció que acomplesquen la condició o criteri. Aquesta condició ve donada en forma de document (o objecte) JSON, i és com l'havíem vist en la funció &lt;strong&gt;update()&lt;/strong&gt;:&lt;/p&gt;
 &lt;p class=&quot;codi&quot;&gt;db.col_leccio1.find( { clau1 : valor1 } )&lt;/p&gt;
-&lt;p&gt;Tornarà tots els documents de la col·lecció &lt;strong&gt;col_leccio1&lt;/strong&gt; que tinguen el camp &lt;strong&gt;clau1&lt;/strong&gt; i que en ella tinguen el valor &lt;strong&gt;valor1&lt;/strong&gt;. Aquest criteri pot ser el complicat que faça falta, formant-lo en JSON. En definitiva, tornarà aquells documents que facen &lt;em&gt;matching&lt;/em&gt; amb el document del criteri, és a dir, funcionaria com un &lt;strong&gt;and&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Tornarà tots els documents de la col·lecció &lt;strong&gt;col_leccio1&lt;/strong&gt; que tinguen el camp &lt;strong&gt;clau1&lt;/strong&gt; i que en ell tinguen el valor &lt;strong&gt;valor1&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Aquest criteri pot ser el complicat que faça falta, formant-lo en JSON. Pot tenir més d'un membre. En definitiva, tornarà aquells documents que facen &lt;em&gt;matching&lt;/em&gt; amb el document del criteri, és a dir, funcionaria com un &lt;strong&gt;and&lt;/strong&gt; en cas que tinga més d'un membre en la condició&lt;/p&gt;
 &lt;p class=&quot;codi&quot;&gt;db.col_leccio1.find( { clau1 : valor1 , clau2 : valor2 } )&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;que tornaria aquells documents de la &lt;strong&gt;col_lecció1&lt;/strong&gt; que tenen el camp &lt;strong&gt;clau1&lt;/strong&gt; amb el valor &lt;strong&gt;valor1&lt;/strong&gt; i que tenen el camp &lt;strong&gt;clau2&lt;/strong&gt; amb el valor &lt;strong&gt;valor2&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Si no volem posar cap criteri, per a que els torne tots, no posem res com a paràmetre, o encara millor, li passem un document (objecte) buit, de manera que tots els documents de la col·lecció faran &lt;em&gt;matching&lt;/em&gt; amb ell.&lt;/p&gt;
 &lt;p class=&quot;codi&quot;&gt;db.col_leccio1.find( { } )&lt;/p&gt;
-&lt;p&gt;Tindrem açò present, sobretot quan ens toque utilitzar el segon paràmetre de &lt;strong&gt;find&lt;/strong&gt;. Si no volem cap criteri, posarem el document buit com l'exemple anterior&lt;/p&gt;
+&lt;p&gt;Tindrem açò present, sobretot quan ens toque utilitzar el segon paràmetre de &lt;strong&gt;find&lt;/strong&gt;. Si no volem cap criteri, posarem el document buit com l'exemple anterior.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -14462,7 +14464,7 @@ text through the text editing buttons associated with the field."></unicode>
                    <string value=""></string>
                    <string role="key" value="content_w_resourcePaths"></string>
                    <unicode content="true" value="&lt;p class=&quot;titolet&quot;&gt;Recerques en objectes&lt;/p&gt;
-&lt;p&gt;Per a fer recerques en camps que a la seua vegada són objectes (o documents dins de documents, en la terminologia de Mongo), només hem de posar la ruta de les claus separant per mig de punts, i cuider de posar-les entre cometes.&lt;/p&gt;
+&lt;p&gt;Per a fer recerques en camps que a la seua vegada són objectes (o documents dins de documents, en la terminologia de Mongo), només hem de posar la ruta de les claus separant per mig de punts, i cuidar de posar-la entre cometes.&lt;/p&gt;
 &lt;p&gt;Així, per exemple, anem a fer una consulta sobre la col·lecció d'alumnes, que eren uns documents en els quals hi havia algun camp de tipus objecte.&lt;/p&gt;
 &lt;p class=&quot;codi2&quot;&gt;&amp;gt; db.alumnes.find().pretty()&lt;br /&gt;{&lt;br /&gt;    &quot;_id&quot; : ObjectId(&quot;56debe3017bf4ed437dc77c8&quot;),&lt;br /&gt;    &quot;nom&quot; : &quot;Abel&quot;,&lt;br /&gt;    &quot;cognoms&quot; : &quot;Bernat Cantera&quot;,&lt;br /&gt;    &quot;edat&quot; : 22,&lt;br /&gt;    &quot;adreça&quot; : {&lt;br /&gt;        &quot;carrer&quot; : &quot;Major&quot;,&lt;br /&gt;        &quot;numero&quot; : 7,&lt;br /&gt;        &quot;cp&quot; : &quot;12502&quot;&lt;br /&gt;    },&lt;br /&gt;    &quot;nota&quot; : [&lt;br /&gt;        9.5,&lt;br /&gt;        9&lt;br /&gt;    ]&lt;br /&gt;}&lt;br /&gt;{&lt;br /&gt;    &quot;_id&quot; : ObjectId(&quot;56dfdbd136d8b095cb6bd57a&quot;),&lt;br /&gt;    &quot;nom&quot; : &quot;Berta&quot;,&lt;br /&gt;    &quot;cognoms&quot; : &quot;Bernat Cantero&quot;&lt;br /&gt;}&lt;/p&gt;
 &lt;p&gt;Es podrien traure els documents (els alumnes) que viuen en el codi postal 12502. Ens ha d'eixir l'únic alumne del qual tenim l'adreça, que justament té aquest codi postal. Recordeu que en la clau (realment clau.subclau), ha d'anar entre cometes. Hem posat al final &lt;strong&gt;pretty()&lt;/strong&gt; per a una millor lectura, però evidentment no és necessari.&lt;/p&gt;
@@ -15724,7 +15726,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5753"></int>
+                       <int value="5844"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -15738,7 +15740,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="147_85.108"></unicode>
+                     <unicode value="147_85.112"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="323">
                       <dictionary>
@@ -15749,7 +15751,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_4_1.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_4_1.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_4_1.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="356bbf3e3063526a936848373f84248d"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -15778,7 +15780,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="109"></int>
+                <int value="113"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="318"></reference>
                </dictionary>
@@ -15948,7 +15950,7 @@ fun main(){
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5748"></int>
+                       <int value="5839"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -15962,7 +15964,7 @@ fun main(){
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="148_85.8"></unicode>
+                     <unicode value="148_85.16"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="326">
                       <dictionary>
@@ -15973,7 +15975,7 @@ fun main(){
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_4_3.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_4_3.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_4_3.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="d2f7a5b17135db2d25f9ef95bfd0df7c"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -16000,7 +16002,7 @@ fun main(){
                      <instance class="exe.engine.field.TextField">
                       <dictionary>
                        <string role="key" value="_id"></string>
-                       <int value="5750"></int>
+                       <int value="5841"></int>
                        <string role="key" value="_idevice"></string>
                        <none></none>
                        <string role="key" value="_instruc"></string>
@@ -16014,7 +16016,7 @@ fun main(){
                       </dictionary>
                      </instance>
                      <string role="key" value="_id"></string>
-                     <unicode value="148_85.9"></unicode>
+                     <unicode value="148_85.17"></unicode>
                      <string role="key" value="_imageResource"></string>
                      <instance class="exe.engine.resource.Resource" reference="327">
                       <dictionary>
@@ -16025,7 +16027,7 @@ fun main(){
                        <string role="key" value="_storageName"></string>
                        <string value="T8_3_4_2.png"></string>
                        <string role="key" value="_userName"></string>
-                       <string value="/tmp/tmpXF9WPe/T8_3_4_2.png"></string>
+                       <string value="/tmp/tmpZNUrwZ/T8_3_4_2.png"></string>
                        <string role="key" value="checksum"></string>
                        <string value="1e099c34fcc08fce16426cda584cacbb"></string>
                        <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -16054,7 +16056,7 @@ fun main(){
                 <string role="key" value="intlinks_to_anchors"></string>
                 <dictionary></dictionary>
                 <string role="key" value="nextImageId"></string>
-                <int value="10"></int>
+                <int value="18"></int>
                 <string role="key" value="parentNode"></string>
                 <reference key="318"></reference>
                </dictionary>
@@ -16266,7 +16268,7 @@ fun main(){
                       <instance class="exe.engine.field.TextField">
                        <dictionary>
                         <string role="key" value="_id"></string>
-                        <int value="5759"></int>
+                        <int value="5834"></int>
                         <string role="key" value="_idevice"></string>
                         <none></none>
                         <string role="key" value="_instruc"></string>
@@ -16280,7 +16282,7 @@ fun main(){
                        </dictionary>
                       </instance>
                       <string role="key" value="_id"></string>
-                      <unicode value="226_226_2.0"></unicode>
+                      <unicode value="226_226_2.4"></unicode>
                       <string role="key" value="_imageResource"></string>
                       <instance class="exe.engine.resource.Resource" reference="331">
                        <dictionary>
@@ -16291,7 +16293,7 @@ fun main(){
                         <string role="key" value="_storageName"></string>
                         <string value="T8_3_5_2.png"></string>
                         <string role="key" value="_userName"></string>
-                        <string value="/tmp/tmpz7DKCQ.eXe/previews/allyourbase/T8_3_5_2.png"></string>
+                        <string value="/tmp/tmpZNUrwZ/T8_3_5_2.png"></string>
                         <string role="key" value="checksum"></string>
                         <string value="60ce160d8f16476d66cc4108b6a20c8e"></string>
                         <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -16320,7 +16322,7 @@ fun main(){
                  <string role="key" value="intlinks_to_anchors"></string>
                  <dictionary></dictionary>
                  <string role="key" value="nextImageId"></string>
-                 <int value="1"></int>
+                 <int value="5"></int>
                  <string role="key" value="parentNode"></string>
                  <reference key="330"></reference>
                 </dictionary>
@@ -16607,7 +16609,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                    <instance class="exe.engine.field.TextField">
                     <dictionary>
                      <string role="key" value="_id"></string>
-                     <int value="5739"></int>
+                     <int value="5829"></int>
                      <string role="key" value="_idevice"></string>
                      <none></none>
                      <string role="key" value="_instruc"></string>
@@ -16621,7 +16623,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                     </dictionary>
                    </instance>
                    <string role="key" value="_id"></string>
-                   <unicode value="75_43_2.144"></unicode>
+                   <unicode value="75_43_2.148"></unicode>
                    <string role="key" value="_imageResource"></string>
                    <instance class="exe.engine.resource.Resource" reference="337">
                     <dictionary>
@@ -16632,7 +16634,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
                      <string role="key" value="_storageName"></string>
                      <string value="T8_Ex2_1.png"></string>
                      <string role="key" value="_userName"></string>
-                     <string value="/tmp/tmpXF9WPe/T8_Ex2_1.png"></string>
+                     <string value="/tmp/tmpZNUrwZ/T8_Ex2_1.png"></string>
                      <string role="key" value="checksum"></string>
                      <string value="6efa24a37ac07a6e62069b3caad7dccf"></string>
                      <string role="key" value="exe.engine.resource.Resource.persistenceVersion"></string>
@@ -16661,7 +16663,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {
               <string role="key" value="intlinks_to_anchors"></string>
               <dictionary></dictionary>
               <string role="key" value="nextImageId"></string>
-              <int value="145"></int>
+              <int value="149"></int>
               <string role="key" value="parentNode"></string>
               <reference key="334"></reference>
              </dictionary>
@@ -17005,7 +17007,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="334"></reference>
+  <reference key="57"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
@@ -18170,7 +18172,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
   <string role="key" value="mxmlwidth"></string>
   <string value=""></string>
   <string role="key" value="release"></string>
-  <string value="2.6"></string>
+  <string value="2.7"></string>
   <string role="key" value="resources"></string>
   <dictionary>
    <string role="key" value="0828819989fb581b259817a1fe1ead8c"></string>
@@ -18195,7 +18197,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
    </list>
    <string role="key" value="44f6ce5f8cec07c28eff28f3b26f6ada"></string>
    <list>
-    <reference key="203"></reference>
+    <reference key="202"></reference>
    </list>
    <string role="key" value="4d3ca939d56543c32e2f841db8481efa"></string>
    <list>
@@ -18247,7 +18249,7 @@ that may help or hinder the learner in the performance of the task."></unicode>
    </list>
    <string role="key" value="bc538630e864cbd2caf121844fb97f2b"></string>
    <list>
-    <reference key="202"></reference>
+    <reference key="203"></reference>
    </list>
    <string role="key" value="cad3faf79a8cd73da073f2ec3a88bc24"></string>
    <list>

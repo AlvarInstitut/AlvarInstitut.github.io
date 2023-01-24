@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -104,11 +104,11 @@
 <p class="codi2">&gt; db.alumnes.update( {nom:"Abel"} , { $push : { nota : 7 } } )<br />WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })</p>
 <p class="codi2">&gt; db.alumnes.findOne()<br />{<br />    "_id" : ObjectId("56df11d778549bdfbf2125e3"),<br />    "nom" : "Abel",<br />    "cognoms" : "Bernat Carrera",<br />    "edat" : 22,<br />    "adreça" : {<br />        "carrer" : "Major",<br />        "numero" : 7,<br />        "cp" : "12502"<br />    },<br />    "nota" : [<br />        9.5,<br />        7.5,<br />        9,<br />        7<br />    ]<br />}</p>
 <p></p>
-<p>Tambe hi ha manera d'introduir un element en una determinada posició que no siga al final, però es complica prou la cosa, ja que hem d'utilitzar per una banda el modificador <strong>$position</strong> per a dir on s'ha d'inserir, i per una altra banda el modificador <strong>$each</strong> per a poder especificar el o els valors que es volen inserir. Es posa a continuació únicament de forma il·lustrativa.</p>
+<p>També hi ha manera d'introduir un element en una determinada posició que no siga al final, però es complica prou la cosa, ja que hem d'utilitzar per una banda el modificador <strong>$position</strong> per a dir on s'ha d'inserir, i per una altra banda el modificador <strong>$each</strong> per a poder especificar el o els valors que es volen inserir. Es posa a continuació únicament de forma il·lustrativa.</p>
 <div class="nota_blau">
 <p>Per a inserir en una determinada posició hem d'utilitzar obligatòriament 2 modificadors més:</p>
 <ul>
-<li><strong>$position</strong> indicarà a partir de quina posició es farà l'acció (normalment d'inserir en l'array, és a dir, <strong>$push </strong></li>
+<li><strong>$position</strong> indicarà a partir de quina posició es farà l'acció (normalment d'inserir en l'array, és a dir, <strong>$push</strong>)</li>
 <li><strong>$each</strong> ens permet especificar una sèrie de valors com un array, i vol dir que es farà l'operació per a cada valor de l'array</li>
 </ul>
 <p>Els dos modificadors seguiran la sintaxi de sempre, de clau valor, per tant el conjunt de la sintaxi és:</p>

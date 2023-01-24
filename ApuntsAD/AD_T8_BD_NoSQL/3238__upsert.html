@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -109,7 +109,7 @@
 <p class="codi2">&gt; db.alumnes.update( { nom:"Berta" } , { $set : { cognoms : "Bernat Cantero" } } , true )<br />WriteResult({<br />    "nMatched" : 0,<br />    "nUpserted" : 1,<br />    "nModified" : 0,<br />    "_id" : ObjectId("56dfdbd136d8b095cb6bd57a")<br />})</p>
 <p>Ja ens avisa que no ha fet cap <em>matching</em>, i ha fet un <strong>Upsert</strong>. Ho podem comprovar mirant tots els document de la col·lecció:</p>
 <p class="codi2">&gt; db.alumnes.find()<br />{ "_id" : ObjectId("56debe3017bf4ed437dc77c8"), "nom" : "Abel", "cognoms" : "Bernat Cantera", "edat" : 22, "adreça" : { "carrer" : "Major", "numero" : 7, "cp" : "12502" }, "nota" : [ 9.5, 9 ] }<br />{ "_id" : ObjectId("56dfdbd136d8b095cb6bd57a"), "nom" : "Berta", "cognoms" : "Bernat Cantero" }<br />&gt;</p>
-<p>El nou documenttindrà els camps:</p>
+<p>El nou document tindrà els camps:</p>
 <ul>
 <li><strong>_id </strong>, amb el que ens havia avisat que generaria</li>
 <li>Els camps de la condició, que en el nostre exemple és <strong>{ nom:"Berta" }</strong></li>

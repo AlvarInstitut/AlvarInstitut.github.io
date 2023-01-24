@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -96,7 +96,7 @@
 <div class="iDevice_wrapper FreeTextIdevice" id="id124">
 <div class="iDevice emphasis0">
 <div id="ta124_85" class="block iDevice_content">
-<p>Les funcions <strong>find()</strong> i <strong>findOne()</strong> són absolutament equivalents, amb l'úinca diferència que la primera torna tots els documents trobats, mentre que la segona només torna el primer document trobat.</p>
+<p>Les funcions <strong>find()</strong> i <strong>findOne()</strong> són absolutament equivalents, amb l'única diferència que la primera torna tots els documents trobats, mentre que la segona només torna el primer document trobat.</p>
 <p>Per una millor comprensió, utilitzarem únicament <strong>find()</strong>, per veure tots els resultats obtinguts.</p>
 <p>La funció <strong>find()</strong> s'ha comparat tradicionalment amb la sentència SELECT de SQL. Sempre tornarà un conjunt de documents, que poden variar des de no tornar cap document, a tornar-los tots els de la col·lecció.</p>
 <p>La funció <strong>find()</strong> pot tenir uns quants paràmetres.</p>
@@ -105,13 +105,13 @@
 <div>
 <p>El primer indica una condició o criteri, i tornarà aquells documents de la col·lecció que acomplesquen la condició o criteri. Aquesta condició ve donada en forma de document (o objecte) JSON, i és com l'havíem vist en la funció <strong>update()</strong>:</p>
 <p class="codi">db.col_leccio1.find( { clau1 : valor1 } )</p>
-<p>Tornarà tots els documents de la col·lecció <strong>col_leccio1</strong> que tinguen el camp <strong>clau1</strong> i que en ella tinguen el valor <strong>valor1</strong>. Aquest criteri pot ser el complicat que faça falta, formant-lo en JSON. En definitiva, tornarà aquells documents que facen <em>matching</em> amb el document del criteri, és a dir, funcionaria com un <strong>and</strong></p>
+<p>Tornarà tots els documents de la col·lecció <strong>col_leccio1</strong> que tinguen el camp <strong>clau1</strong> i que en ell tinguen el valor <strong>valor1</strong>.</p>
+<p>Aquest criteri pot ser el complicat que faça falta, formant-lo en JSON. Pot tenir més d'un membre. En definitiva, tornarà aquells documents que facen <em>matching</em> amb el document del criteri, és a dir, funcionaria com un <strong>and</strong> en cas que tinga més d'un membre en la condició</p>
 <p class="codi">db.col_leccio1.find( { clau1 : valor1 , clau2 : valor2 } )</p>
-<p></p>
 <p>que tornaria aquells documents de la <strong>col_lecció1</strong> que tenen el camp <strong>clau1</strong> amb el valor <strong>valor1</strong> i que tenen el camp <strong>clau2</strong> amb el valor <strong>valor2</strong></p>
 <p>Si no volem posar cap criteri, per a que els torne tots, no posem res com a paràmetre, o encara millor, li passem un document (objecte) buit, de manera que tots els documents de la col·lecció faran <em>matching</em> amb ell.</p>
 <p class="codi">db.col_leccio1.find( { } )</p>
-<p>Tindrem açò present, sobretot quan ens toque utilitzar el segon paràmetre de <strong>find</strong>. Si no volem cap criteri, posarem el document buit com l'exemple anterior</p>
+<p>Tindrem açò present, sobretot quan ens toque utilitzar el segon paràmetre de <strong>find</strong>. Si no volem cap criteri, posarem el document buit com l'exemple anterior.</p>
 </div>
 </li>
 <li>

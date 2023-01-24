@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -91,7 +91,7 @@
 <div id="ta95_85" class="block iDevice_content">
 <p style="text-align: justify;">En aquest punt anem a veure les operacions més bàsiques, per a poder treballar sobre exemples pràctics, i així disposar ja d'unes dades inicials per a practicar.</p>
 <p class="titolet">Inserció elemental</p>
-<p style="text-align: justify;">La funció <strong>insert</strong> afegirà documents a una col·lecció. En el paràmetre posem el document directament, o una variable que continga el document. Si la col·lecció no existia, la crearà i després afegirà el document. En la següent sentència estem treballant sobre la col·lecció <strong>exemple</strong>, que segurament ja existirà de quan vam la pregunta 3.1 d'instal·lació de MongoDB, que per a provar vam inserir un document. Però si no existia, la crearà sense problemes.</p>
+<p style="text-align: justify;">La funció <strong>insert</strong> afegirà documents a una col·lecció. En el paràmetre posem el document directament, o una variable que continga el document. Si la col·lecció no existia, la crearà i després afegirà el document. En la següent sentència estem treballant sobre la col·lecció <strong>exemple</strong>, que segurament ja existirà de quan vam fer la pregunta 3.1 d'instal·lació de MongoDB, que per a provar vam inserir un document. Però si no existia, la crearà sense problemes.</p>
 <p class="codi2">&gt; db.exemple.insert({ msg2 : "Com va la cosa?"})<br />WriteResult({ "nInserted" : 1 })</p>
 <p style="text-align: justify;">Acabem d'inserir un nou document, i així ens ho avisa ( <strong>{ "nInserted" : 1 }</strong> , s'ha inserit un document). Automàticament haurà creat un element <strong>_id</strong> de tipus <strong>ObjectId</strong>, ja que li fa falta per a identificar el document entre tots els altres de la col·lecció.</p>
 <p style="text-align: justify;">I en aquest exemple ens guardem el document en la variable <strong>doc</strong>, i després l'inserim</p>
@@ -196,7 +196,7 @@
 <p class="codi2">&gt; doc1<br />{<br />    "_id" : ObjectId("56ce310bc61e04ba81def50b"),<br />    "msg" : "Hola, què tal?",<br />    "titol" : "Missatge 1",<br />    "destinatari" : "Ferran"<br />}</p>
 <p>Anem a guardar-lo amb <strong>save()</strong>:</p>
 <p class="codi2">&gt; db.exemple.save(doc1)<br />WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })</p>
-<p>Ja ens avisa qiue com ha trobat el document (<strong>"nMatched : 1"</strong>) ha modificat un. Efectivament, mirem com ha modificat el document existent:</p>
+<p>Ja ens avisa que com ha trobat el document (<strong>"nMatched : 1"</strong>) ha modificat un. Efectivament, mirem com ha modificat el document existent:</p>
 <p class="codi2">&gt; db.exemple.find()<br />{ "_id" : ObjectId("56ce310bc61e04ba81def50b"), "msg" : "Hola, què tal?", "titol" : "Missatge 1", "destinatari" : "Ferran" }<br />{ "_id" : ObjectId("56ce31f6c61e04ba81def50c"), "msg2" : "Què? Com va la cosa?" }</p>
 <p></p>
 <p>Anem a fer ara una modificació del camp <strong>_id</strong>. A tots els efectes serà un document nou, ja que la manera d'identificar un document és per aquest camp:</p>

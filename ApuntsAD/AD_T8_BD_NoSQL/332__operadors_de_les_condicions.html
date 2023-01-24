@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -293,7 +293,7 @@
 <div class="iDevice emphasis0">
 <div id="ta135_85" class="block iDevice_content">
 <p class="titolet">Recerques en objectes</p>
-<p>Per a fer recerques en camps que a la seua vegada són objectes (o documents dins de documents, en la terminologia de Mongo), només hem de posar la ruta de les claus separant per mig de punts, i cuider de posar-les entre cometes.</p>
+<p>Per a fer recerques en camps que a la seua vegada són objectes (o documents dins de documents, en la terminologia de Mongo), només hem de posar la ruta de les claus separant per mig de punts, i cuidar de posar-la entre cometes.</p>
 <p>Així, per exemple, anem a fer una consulta sobre la col·lecció d'alumnes, que eren uns documents en els quals hi havia algun camp de tipus objecte.</p>
 <p class="codi2">&gt; db.alumnes.find().pretty()<br />{<br />    "_id" : ObjectId("56debe3017bf4ed437dc77c8"),<br />    "nom" : "Abel",<br />    "cognoms" : "Bernat Cantera",<br />    "edat" : 22,<br />    "adreça" : {<br />        "carrer" : "Major",<br />        "numero" : 7,<br />        "cp" : "12502"<br />    },<br />    "nota" : [<br />        9.5,<br />        9<br />    ]<br />}<br />{<br />    "_id" : ObjectId("56dfdbd136d8b095cb6bd57a"),<br />    "nom" : "Berta",<br />    "cognoms" : "Bernat Cantero"<br />}</p>
 <p>Es podrien traure els documents (els alumnes) que viuen en el codi postal 12502. Ens ha d'eixir l'únic alumne del qual tenim l'adreça, que justament té aquest codi postal. Recordeu que en la clau (realment clau.subclau), ha d'anar entre cometes. Hem posat al final <strong>pretty()</strong> per a una millor lectura, però evidentment no és necessari.</p>
