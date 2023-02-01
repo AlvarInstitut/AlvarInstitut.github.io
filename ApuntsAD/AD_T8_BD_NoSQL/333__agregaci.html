@@ -192,11 +192,13 @@
 <li><strong>$first : exp</strong> : agafarà el primer valor de l'expressió del grup, ignorant les altres del grup</li>
 <li><strong>$last : exp</strong> : agafarà l'últim</li>
 </ul>
+<p>La documentació diu que també existeix l'operador <strong>$count</strong>, però a partir d'una determinada versió. Es pot substituir la seua utilització per l'operador <strong>$sum</strong>, sumant la quantitat 1.</p>
 <p>Per exemple, la suma dels preus dels llibres de cada editorial:</p>
 <p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : "$editorial" , "suma_preus" : { $sum : "$precio"} } } )<br />{ "_id" : "Debolsillo", "suma_preus" : 9.45 }<br />{ "_id" : null, "suma_preus" : 15.9 }<br />{ "_id" : "Gigamesh", "suma_preus" : 9.5 }<br />{ "_id" : "Embolsillo", "suma_preus" : 11 }<br />{ "_id" : "Plaza &amp; Janes", "suma_preus" : 21.75 }<br />{ "_id" : "Planeta", "suma_preus" : 38.980000000000004 }</p>
 <p>O la mitjana dels preus de cada any:</p>
 <p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : { "any" : { $year : "$fecha" } } , "mitjana preus" : { $avg : "$precio" } } } )<br />{ "_id" : { "any" : 2012 }, "mitjana preus" : 11 }<br />{ "_id" : { "any" : 2009 }, "mitjana preus" : 9.45 }<br />{ "_id" : { "any" : 2011 }, "mitjana preus" : 9.5 }<br />{ "_id" : { "any" : 2014 }, "mitjana preus" : 18.825 }<br />{ "_id" : { "any" : 2013 }, "mitjana preus" : 19.490000000000002 }</p>
-<p></p>
+<p>I ara intentem comptar la quantitat de llibres de cada editorial:</p>
+<p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : "$editorial" , "quants" : { $sum : 1} } } ) <br />{ "_id" : "Debolsillo", "quants" : 1 } <br />{ "_id" : null, "quants" : 1 } <br />{ "_id" : "Gigamesh", "quants" : 1 } <br />{ "_id" : "Embolsillo", "quants" : 1 } <br />{ "_id" : "Plaza &amp; Janes", "quants" : 1 } <br />{ "_id" : "Planeta", "quants" : 2 }</p>
 <p></p>
 <p></p>
 </div>

@@ -232,7 +232,61 @@ fun main(){
 </div>
 </div>
 <p>I el resultat ara serà:</p>
-<p style="text-align: center;"><img src="T8_3_4_3.png" alt="" style="float: left;" width="514" height="159" /></p>
+<p><img src="T8_3_4_3.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="514" height="159" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id230">
+<div class="iDevice emphasis0" >
+<div id="ta230_230_2" class="block iDevice_content">
+<div class="exe-text"><p class="titolet">Agregació</p>
+<p>Per a poder utilitzar la funció d'agregació, que té tanta potència, ens ho hem de muntar d'aquesta manera:</p>
+<ul>
+<li>Sobre la col·lecció utilitzar el mètode <strong>aggregate()</strong></li>
+<li>Com a paràmetres, afegirem un <strong>MutableList</strong>. Cada element d'ell serà una opció d'aggregate</li>
+<li>Per a cada opció ($match, $project...), utilitzarem el mètode d'<strong> Aggregates </strong>(una classe del driver de Mongo) amb el mateix nom:
+<ul>
+<li>Per a <strong>$match</strong>: <strong>Aggregates.match()</strong></li>
+<li>Per a <strong>$project: Aggregates.project()</strong></li>
+<li>...</li>
+</ul>
+</li>
+<li>Dins de cadascun d'aquestos mètodes posarem un document BSon amb les especificacions que necessitem</li>
+</ul>
+<p>En aquest exemple farem la selecció (match) dels llibres de l'editorial Planeta, agafant (project) únicament el títol i l'editorial. Guardeu-lo en en fitxer Kotlin anomenat <strong>Prova_Aggregate_1</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.mongodb.MongoClient
+import com.mongodb.client.model.Aggregates
+import org.bson.Document
+import java.util.logging.Level
+import java.util.logging.LogManager
+
+fun main(){
+    LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
+    val con = MongoClient("localhost", 27017)
+    val bd = con.getDatabase("test")
+
+    val seleccionar = Document()
+    seleccionar.put("editorial", "Planeta")
+
+    val projeccio = Document()
+    projeccio.put("titulo",1)
+    projeccio.put("editorial",1)
+
+    val llibres = bd.getCollection("libro").aggregate(mutableListOf(Aggregates.match(seleccionar),Aggregates.project(projeccio)))
+
+
+
+    for (llibre in llibres) System.out.println(
+        "Títol: " + llibre.get("titulo").toString() + ".   Editorial: " + llibre.get("editorial").toString()
+    )
+
+    con.close()
+}</code></pre>
+</div>
+</div>
+<p></p></div>
 </div>
 </div>
 </div>
