@@ -253,7 +253,10 @@ fun main(){
 </li>
 <li>Dins de cadascun d'aquestos mètodes posarem un document BSon amb les especificacions que necessitem</li>
 </ul>
-<p>En aquest exemple farem la selecció (match) dels llibres de l'editorial Planeta, agafant (project) únicament el títol i l'editorial. Guardeu-lo en en fitxer Kotlin anomenat <strong>Prova_Aggregate_1</strong>:</p>
+<p>En aquest exemple farem la selecció (match) dels llibres de l'editorial Planeta, agafant (project) únicament el títol i l'editorial.</p>
+<p>La sentència en la consola la faríem així:</p>
+<p class="codi2">&gt; db.libro.aggregate({$match:{editorial:"Planeta"}},{$project:{titulo:1, editorial:1}})<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "editorial" : "Planeta" }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "editorial" : "Planeta" }</p>
+<p>El programa ens quedaria així. Guardeu-lo en en fitxer Kotlin anomenat <strong>Prova_Aggregate_1.kt</strong>:</p>
 <div class="highlighted-code language-java">
 <div>
 <pre><code>import com.mongodb.MongoClient
@@ -276,17 +279,52 @@ fun main(){
 
     val llibres = bd.getCollection("libro").aggregate(mutableListOf(Aggregates.match(seleccionar),Aggregates.project(projeccio)))
 
-
-
-    for (llibre in llibres) System.out.println(
-        "Títol: " + llibre.get("titulo").toString() + ".   Editorial: " + llibre.get("editorial").toString()
+    for (llibre in llibres)
+        println("Títol: " + llibre.get("titulo").toString() + ".   Editorial: " + llibre.get("editorial").toString()
     )
 
     con.close()
 }</code></pre>
 </div>
 </div>
-<p></p></div>
+<p>Mirem un altre exemple. Traure el llibre més barat de cada any.</p>
+<p>La consulta en Mongo que faríem en la consola de Mongo seria:</p>
+<p class="codi2">&gt; db.libro.aggregate(<br />    {$group : { <br />       "_id" : { "any" : { $year : "$fecha" } } , <br />       "minim":{$min: "$precio"}}<br />    }, <br />    {$sort:{"_id":1}} <br /> )<br />{ "_id" : { "any" : 2009 }, "minim" : 9.45 }<br />{ "_id" : { "any" : 2011 }, "minim" : 9.5 }<br />{ "_id" : { "any" : 2012 }, "minim" : 11 }<br />{ "_id" : { "any" : 2013 }, "minim" : 17.23 }<br />{ "_id" : { "any" : 2014 }, "minim" : 15.9 }</p>
+<p></p>
+<p>Ara col·locarem aquesta sentència en un programa Kotlin. Guardeu el següent codi com el fitxer Kotlin <strong>Prova_Aggregate_2.kt</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.mongodb.MongoClient
+import com.mongodb.client.model.Aggregates
+import org.bson.Document
+import java.util.logging.Level
+import java.util.logging.LogManager
+
+fun main(){
+    LogManager.getLogManager().getLogger("").setLevel(Level.SEVERE)
+    val con = MongoClient("localhost", 27017)
+    val bd = con.getDatabase("test")
+
+    val grup = Document()
+    grup.put("_id", Document("any",Document("\$year","\$fecha")))
+    grup.put("minim",Document("\$min","\$precio"))
+
+    val ordenar = Document()
+    ordenar.put("_id",1)
+
+    val llibres = bd.getCollection("libro").aggregate(mutableListOf(Aggregates.group(grup),Aggregates.sort(ordenar)))
+
+    for (llibre in llibres){
+        val d = llibre.get("_id") as Document
+        println("Any: " + (d.get("_id") as Document).getInteger("any")+ ".   Mínim: " + d.getDouble("minim"))
+    }
+
+    con.close()
+}</code></pre>
+</div>
+</div>
+<p>Hem tingut la complicació que el resultat és més complicat, té un document dins d'una altre document (com es veu en el resultat de la sentència executada en la consola). Aquest serà el resultat:</p>
+<p><img src="T8_3_4_1.1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="451" height="221" /></p></div>
 </div>
 </div>
 </div>
