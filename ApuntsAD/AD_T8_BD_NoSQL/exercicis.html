@@ -238,6 +238,127 @@ fun main(args: Array&lt;String&gt;) {
 </div>
 </div>
 </div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id231">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.5 (voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta231_231_2" class="block iDevice_content">
+<div class="pbl-task-description"><p>Fes un programa <strong>T8Ex5.kt</strong> que per mig d'una interfície gràfica agafe els documents de Bicicas de l'exercici anterior:</p>
+<ul>
+<li>Que acomplisquen la condició configurada amb el l'operador de comparació seleccionat en el JList anomenat <strong>comparacio </strong>i el valor numèric introduït en el JTextField anomenat <strong>quantitat</strong>. Si aquest últim està en blanc, no ha d'haver cap criteri de selecció (s'han d'agafar tots els documents)</li>
+<li>Que estiguen ordenats pel camp seleccionat en el JList <strong>ordenació</strong> i amb el criteri ascendent o descendent triat en el JList <strong>ascDesc</strong></li>
+</ul>
+<p>Pots intentar-lo amb els mètodes <strong>find()</strong> i <strong>sort()</strong>, o amb el mètode <strong>aggregate()</strong>. </p>
+<p>Aquest seria l'esquelet del programa:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import com.mongodb.MongoClient
+import org.bson.Document
+import java.awt.*
+import javax.swing.*
+
+class ConsultaAvançadaBicicas : JFrame() {
+
+    val comparacio = JList(arrayOf("&lt;=","=","&gt;="))
+    val quantitat = JTextField(10)
+    val ordenacio = JList(arrayOf("id","ocupados"))
+    val ascDesc = JList(arrayOf("Ascendent","Descentent"))
+
+    val llEstacions = JTextArea()
+
+    val con = MongoClient("localhost" , 27017)
+    val bd = con.getDatabase("test")
+
+    init {
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        setBounds(100, 100, 350, 350)
+        setLayout(GridLayout(1,2))
+
+        val panell1 = JPanel(GridLayout(2,1))
+        val panell1_1 = JPanel()
+        panell1_1.layout=BoxLayout(panell1_1,BoxLayout.Y_AXIS)
+        panell1_1.add(JLabel("       Comparació dels llocs ocupats"))
+        val panell1_1_1 = JPanel(FlowLayout())
+        panell1_1.add(panell1_1_1)
+
+        val panell1_2 = JPanel()
+        panell1_2.layout=BoxLayout(panell1_2,BoxLayout.Y_AXIS)
+        panell1_2.add(JLabel("              Ordenació"))
+        val panell1_2_1 = JPanel(FlowLayout())
+        panell1_2.add(panell1_2_1)
+
+        add(panell1)
+        panell1.add(panell1_1)
+        panell1.add(panell1_2)
+
+        val panell2 = JPanel(BorderLayout())
+        add(panell2)
+
+        comparacio.fixedCellWidth=100
+        val renderer = comparacio.getCellRenderer() as DefaultListCellRenderer
+        renderer.horizontalAlignment = JLabel.CENTER
+        val scrollComp = JScrollPane(comparacio)
+
+        panell1_1_1.add(scrollComp)
+        comparacio.selectedIndex=0
+        panell1_1_1.add(quantitat)
+
+        ordenacio.fixedCellWidth=100
+        val renderer1 = ordenacio.getCellRenderer() as DefaultListCellRenderer
+        renderer1.horizontalAlignment = JLabel.CENTER
+        val scrollOrd = JScrollPane(ordenacio)
+        panell1_2_1.add(scrollOrd)
+        ordenacio.selectedIndex=0
+
+        ascDesc.fixedCellWidth=100
+        val renderer2 = ascDesc.getCellRenderer() as DefaultListCellRenderer
+        renderer2.horizontalAlignment = JLabel.CENTER
+        val scrollAscDesc = JScrollPane(ascDesc)
+        panell1_2_1.add(scrollAscDesc)
+
+        llEstacions.setForeground(Color.blue)
+        val scroll = JScrollPane(llEstacions)
+        panell2.add(scroll)
+
+        setSize(600, 400)
+        setVisible(true)
+
+        // Quan canvien comparacio, quantitat, ordenacio i/o ascDesc és quan bisquem
+        comparacio.addListSelectionListener{ valorCanviat()}
+        quantitat.addActionListener(){ valorCanviat()}
+        ordenacio.addListSelectionListener{ valorCanviat()}
+        ascDesc.addListSelectionListener{ valorCanviat()}
+        ascDesc.selectedIndex=0
+
+    }
+
+    fun valorCanviat() {
+        // Ací és on heu de posar el codi per a seleccionar de MongoDB les estacions que acompleixen la condició i amb l'ordenació indicada
+        // Les heu de col·locar en el JTextArea llEstacions
+        // Els components que heu de comprovar són:
+        //   - comparació (el JList amb l'operacdor de comparació seleccionat
+        //   - quantitat (el JTextField amb la quantitat que s'ha de comparar amb l'operador
+        //   - ordenacio (el JList amb el camp pel qual s'ha d'ordenar)
+        //   - ascDesc (El JList amb el criteri d'ordenacoó, ascendent o descendent)
+        // Si no s'ha posat res en el JTextField quantitat, no ha d'haver condició de selecció, és a dir, s'han de seleccionar totes les estacions
+
+    }
+}
+
+fun main(args: Array&lt;String&gt;) {
+    EventQueue.invokeLater {
+        ConsultaAvançadaBicicas().isVisible = true
+    }
+}</code></pre>
+</div>
+</div>
+<p>I aquest seria un exemple d'execució, en el qual s'han triat els documents amb 2 o menys llocs ocupats, i ordenats pel número de llocs ocupats de forma descendent</p>
+<p><img src="T8_Ex5_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="716" height="418" /></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
 <a href="35__connexi_des_de_kotlin_al_servidor_de_linstitut.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
