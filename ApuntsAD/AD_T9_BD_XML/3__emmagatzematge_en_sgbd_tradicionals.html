@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3 - Emmagatzematge en SGBD tradicionals | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-28"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 9: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__estratgies_demmagatzematge_de_xml.html" class="no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li id="active"><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="active daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul>
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li><a href="33__funcions_que_produeixen_contingut_xml.html" class="no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li><a href="34__convertir_taules_senceres_a_xml.html" class="no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li><a href="36__utilitzaci_des_de_java.html" class="no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml.html" class="no-ch">5 - Instal·lació de BD-XML</a></li>
+   <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul class="other-section">
+      <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
+      <ul class="other-section">
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li><a href="614__funcions.html" class="no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+         <li><a href="627__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">6.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+         <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2__estratgies_demmagatzematge_de_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__tipus_de_dades_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3 - Emmagatzematge en SGBD tradicionals</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id25">
+<div class="iDevice emphasis0">
+<div id="ta25_1" class="block iDevice_content">
+<p style="text-align: center;"><span style="color: #ff0000;"><strong>( VOLUNTARI )</strong></span></p>
+<p>Per a il·lustrar l'emmagatzematge en SGBD tradicionals, ens centrarem en un SGBD Relacional, concretament en <strong>PostgreSQL</strong>, que ja l'havíem utilitzat amb anterioritat.</p>
+<p>Tenim 3 possibilitats bàsiques de guardar informació XML en un SGBD Relacional:</p>
+<ul>
+<li>Guardar el document XML en un camp BLOB o CLOB (que en PostgreSQL és <strong>TEXT</strong>). Evidentment podrem guardar el document, però realment el SGBD no ens està oferint cap utilitat. La utilització posterior serà molt pesada: no es pot fer cap tipus de consulta dins del document XML, i per tant estaríem obligats a fer tota la feina en el programa que accedesca al document (el programa  Java).</li>
+</ul>
+<p> </p>
+<ul>
+<li>
+<div> Transformació (mapatge) de l’estructura de dades del document <acronym title="Extensible Markup Language">XML</acronym> cap al model relacional, per guardar les dades en taules. La idea principal d’aquesta opció és observar l’estructura del document <acronym title="Extensible Markup Language">XML</acronym>, amb els elements i atributs que apareixen i efectuar la conversió al model relacional. Ens donarà molta feina per a fer el mapatge, encara que després es podran fer consultes molt elaborades. Mirem un exemple, on en principi sembla prou fàcil passar de l'estructura jeràrquica del document XML a taules del model relacional</div>
+</li>
+</ul>
+<div class="codi2">
+<div>    &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</div>
+<div>    &lt;ComandesVenda&gt;</div>
+<div style="margin-left: 30px;">    &lt;ComandaVenda&gt;</div>
+<div style="margin-left: 60px;">    &lt;Número&gt;1234&lt;/Número&gt;</div>
+<div style="margin-left: 60px;">    &lt;Client&gt;Indústries Fèrriques&lt;/Client&gt;</div>
+<div style="margin-left: 60px;">    &lt;Data&gt;29/10/2011&lt;/Data&gt;</div>
+<div style="margin-left: 60px;">    &lt;Línia Número="1"&gt;</div>
+<div style="margin-left: 90px;">    &lt;Article&gt;PIL001&lt;/Article&gt;</div>
+<div style="margin-left: 90px;">    &lt;Quantitat&gt;12&lt;/Quantitat&gt;</div>
+<div style="margin-left: 90px;">    &lt;Preu&gt;12.85&lt;/Preu&gt;</div>
+<div style="margin-left: 60px;">    &lt;/Línia&gt;</div>
+<div style="margin-left: 60px;">    &lt;Línia Número="2"&gt;</div>
+<div style="margin-left: 90px;">    &lt;Article&gt;CAT010&lt;/Article&gt;</div>
+<div style="margin-left: 90px;">    &lt;Quantitat&gt;30&lt;/Quantitat&gt;</div>
+<div style="margin-left: 90px;">    &lt;Preu&gt;5.25&lt;/Preu&gt;</div>
+<div style="margin-left: 60px;">    &lt;/Línia&gt;</div>
+<div style="margin-left: 30px;">    &lt;/ComandaVenda&gt;</div>
+<div style="margin-left: 30px;">    &lt;ComandaVenda&gt;</div>
+<div style="margin-left: 60px;">    &lt;Número&gt;1235&lt;/Número&gt;</div>
+<div style="margin-left: 60px;">    &lt;Client&gt;Eines del Berguedà&lt;/Client&gt;</div>
+<div style="margin-left: 60px;">    &lt;Data&gt;30/10/2011&lt;/Data&gt;</div>
+<div style="margin-left: 60px;">    &lt;Línia Número="1"&gt;</div>
+<div style="margin-left: 90px;">    &lt;Article&gt;XQT301&lt;/Article&gt;</div>
+<div style="margin-left: 90px;">    &lt;Quantitat&gt;14&lt;/Quantitat&gt;</div>
+<div style="margin-left: 90px;">    &lt;Preu&gt;23.2&lt;/Preu&gt;</div>
+<div style="margin-left: 60px;">    &lt;/Línia&gt;</div>
+<div style="margin-left: 30px;">    &lt;/ComandaVenda&gt;</div>
+<div>    &lt;/ComandesVenda&gt;</div>
+</div>
+<p style="margin-left: 30px;"> Les taules que quedarien en el Model Relacional serien:</p>
+<div class="codi2">
+<div> </div>
+<div style="margin-left: 30px;">Comanda (<span style="text-decoration: underline;">numero</span>, client, data)</div>
+<div> </div>
+<div style="margin-left: 30px;">Linia_Comanda (<span style="text-decoration: underline;"><strong>num_com, num_linia</strong></span>, article, quantitat, preu)</div>
+<div> </div>
+</div>
+<p style="margin-left: 30px;">Com comentàvem, la informació quedarà ben guardada i consultar les dades serà fàcil i potent (amb SQL), però duu l'inconvenient d'una gestió del mapatge total. I encara que el mecanisme sembla simple, no sempre és senzill fer aquesta conversió, ja que el model relacional i el <acronym title="Extensible Markup Language">XML</acronym> parteixen de conceptes molt diferents:</p>
+<div>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li class="level1">
+<div class="li">El model relacional està basat en dades bidimensionals sense jerarquia ni ordre, mentre que el model <acronym title="Extensible Markup Language">XML</acronym> està basat en arbres jeràrquics on l’ordre és rellevant.</div>
+</li>
+<li class="level1">
+<div class="li">En un document <acronym title="Extensible Markup Language">XML</acronym> poden haver dades repetides, mentre el model relacional fuig de les repeticions.</div>
+</li>
+<li class="level1">
+<div class="li">Les relacions i les estructures dins dels documents <acronym title="Extensible Markup Language">XML</acronym> no sempre són òbvies.</div>
+</li>
+<li class="level1">
+<div class="li">I, a més, què passa si necessitem tenir el document <acronym title="Extensible Markup Language">XML</acronym> de nou? Fer el procés invers no sempre és trivial. Un dels conceptes difícils és determinar quines dades eren atributs i quines eren elements.</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p></p>
+<ul>
+<li>Utilitzar eines específiques per al tractament de la informació XML. Només es podrà fer en SGBD XML habilitats. Aquest serà el punt que tractarem.</li>
+</ul>
+<p></p>
+<p></p>
+<p>En els següents subapartats farem un resum de les possibilitats que ens ofereix <strong>PostgreSQL</strong> com a <strong>XML habilitat</strong>.</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2__estratgies_demmagatzematge_de_xml.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__tipus_de_dades_xml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.4 - Funcions | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-42"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 9: Bases de Dades XML</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__estratgies_demmagatzematge_de_xml.html" class="no-ch">2 - Estratègies d'emmagatzematge de XML</a></li>
+   <li><a href="3__emmagatzematge_en_sgbd_tradicionals.html" class="daddy">3 - Emmagatzematge en SGBD tradicionals</a>
+   <ul class="other-section">
+      <li><a href="31__tipus_de_dades_xml.html" class="no-ch">3.1 - Tipus de dades XML</a></li>
+      <li><a href="32__funcions_de_conversi.html" class="no-ch">3.2 - Funcions de conversió</a></li>
+      <li><a href="33__funcions_que_produeixen_contingut_xml.html" class="no-ch">3.3 - Funcions que produeixen contingut XML</a></li>
+      <li><a href="34__convertir_taules_senceres_a_xml.html" class="no-ch">3.4 - Convertir taules senceres a XML</a></li>
+      <li><a href="35__consultes_xpath.html" class="no-ch">3.5 - Consultes XPATH</a></li>
+      <li><a href="36__utilitzaci_des_de_java.html" class="no-ch">3.6 - Utilització des de Java</a></li>
+      <li><a href="37__ampliaci.html" class="no-ch">3.7 - Ampliació</a></li>
+   </ul>
+   </li>
+   <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml.html" class="no-ch">5 - Instal·lació de BD-XML</a></li>
+   <li class="current-page-parent"><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="current-page-parent daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
+   <ul>
+      <li class="current-page-parent"><a href="61__xpath.html" class="current-page-parent daddy">6.1 - XPATH</a>
+      <ul>
+         <li><a href="611__vista_darbre.html" class="no-ch">6.1.1 - Vista d'arbre</a></li>
+         <li><a href="612__navegaci.html" class="no-ch">6.1.2 - Navegació</a></li>
+         <li><a href="613__seqncies.html" class="no-ch">6.1.3 - Seqüències</a></li>
+         <li id="active"><a href="614__funcions.html" class="active no-ch">6.1.4 - Funcions</a></li>
+      </ul>
+      </li>
+      <li><a href="62__xquery.html" class="daddy">6.2 - XQUERY</a>
+      <ul class="other-section">
+         <li><a href="621__consultes_xquery.html" class="no-ch">6.2.1 - Consultes XQuery</a></li>
+         <li><a href="622__variables.html" class="no-ch">6.2.2 - Variables</a></li>
+         <li><a href="623__expressions_avaluables.html" class="no-ch">6.2.3 - Expressions avaluables</a></li>
+         <li><a href="624__expressions_flwor.html" class="no-ch">6.2.4 - Expressions FLWOR</a></li>
+         <li><a href="625__alternatives.html" class="no-ch">6.2.5 - Alternatives</a></li>
+         <li><a href="626__exemple_de_consulta_elaborada.html" class="no-ch">6.2.6 - Exemple de consulta "elaborada"</a></li>
+         <li><a href="627__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">6.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7__api_java_estndards_per_a_bdxml_natives.html" class="daddy">7 - API Java estàndards per a BD-XML natives</a>
+   <ul class="other-section">
+      <li><a href="71__api_xqj.html" class="daddy">7.1 - API XQJ</a>
+      <ul class="other-section">
+         <li><a href="711__descrrega.html" class="no-ch">7.1.1 - Descàrrega</a></li>
+         <li><a href="712__connexi.html" class="no-ch">7.1.2 - Connexió</a></li>
+         <li><a href="713__resultats_de_sentncies_xquery.html" class="no-ch">7.1.3 - Resultats de sentències XQuery</a></li>
+         <li><a href="714__processar_el_resultat.html" class="no-ch">7.1.4 - Processar el resultat</a></li>
+         <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="613__seqncies.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62__xquery.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1.4 - Funcions</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id48">
+<div class="iDevice emphasis0">
+<div id="ta48_1" class="block iDevice_content">
+<p>XPath ofereix una gran quantitat de funcions destinades a manipular els resultats obtinguts.</p>
+<p>Aquestes funcions es classifiquen en diferents grups:</p>
+<ul>
+<li class="level1">
+<div class="li"><strong>Per manipular conjunts de nodes</strong>: es pot obtenir el nom dels nodes, treballar amb les posicions, comptar-los, etc.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Per treballar amb cadenes de caràcters</strong>: permeten extreure caràcters, concatenar, comparar… les cadenes de caràcters.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Per fer operacions numèriques</strong>: es poden convertir els resultats a valors numèrics, comptar els nodes, fer operacions, etc.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Funcions booleanes</strong>: permeten fer operacions booleanes amb els nodes.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Funcions per dates</strong>: permeten fer operacions diverses amb dates i hores.</div>
+</li>
+</ul>
+<p>És impossible especificar-les totes en aquestos apunts, de manera que el millor és consultar l’especificació XPath (<a class="urlextern" title="http://www.w3.org/TR/xpath-functions/" href="http://www.w3.org/TR/xpath-functions/" rel="nofollow">http://www.w3.org/TR/xpath-functions</a>) per veure quines funcions es poden fer servir.</p>
+<p>Entre totes les funcions podem destacar les de la següent taula:</p>
+<table border="1">
+<tbody>
+<tr class="row0 borderth">
+<th class="col0 leftalign" style="text-align: center;">Funció</th>
+<th class="col1 leftalign" style="text-align: center;">Explicació</th>
+</tr>
+<tr class="row1">
+<td class="col0 leftalign"><strong>name()</strong></td>
+<td class="col1 leftalign">Retorna el nom del node</td>
+</tr>
+<tr class="row2">
+<td class="col0 leftalign"><strong>sum()</strong></td>
+<td class="col1 leftalign">Retorna la suma d’una seqüència de nodes o de valors</td>
+</tr>
+<tr class="row3">
+<td class="col0 leftalign"><strong>count()</strong></td>
+<td class="col1 leftalign">Retorna el nombre de nodes que hi ha en una seqüència</td>
+</tr>
+<tr class="row4">
+<td class="col0 leftalign"><strong>avg()</strong></td>
+<td class="col1 leftalign">Fa la mitjana dels valors de la seqüència</td>
+</tr>
+<tr class="row5">
+<td class="col0 leftalign"><strong>max()</strong></td>
+<td class="col1 leftalign">Retorna el valor màxim de la seqüència</td>
+</tr>
+<tr class="row6">
+<td class="col0 leftalign"><strong>min()</strong></td>
+<td class="col1 leftalign">Dóna el valor mínim de la seqüència</td>
+</tr>
+<tr class="row7">
+<td class="col0 leftalign"><strong>position()</strong></td>
+<td class="col1 leftalign">Diu en quina posició es troba el node actual</td>
+</tr>
+<tr class="row8">
+<td class="col0 leftalign"><strong>last()</strong></td>
+<td class="col1 leftalign">Retorna si el node actual és l’últim</td>
+</tr>
+<tr class="row9">
+<td class="col0"><strong>distinct-values()</strong></td>
+<td class="col1 leftalign">Retorna els elements de la seqüència sense duplicats</td>
+</tr>
+<tr class="row10">
+<td class="col0 leftalign"><strong>concat()</strong></td>
+<td class="col1 leftalign">Uneix dues cadenes de caràcters</td>
+</tr>
+<tr class="row11">
+<td class="col0 leftalign"><strong>starts-with()</strong></td>
+<td class="col1">Retorna si la cadena comença amb els caràcters marcats</td>
+</tr>
+<tr class="row12">
+<td class="col0 leftalign"><strong>contains()</strong></td>
+<td class="col1 leftalign">Ens diu si el resultat conté el valor</td>
+</tr>
+<tr class="row13">
+<td class="col0 leftalign"><strong>string-length()</strong></td>
+<td class="col1 leftalign">Retorna la llargària de la cadena</td>
+</tr>
+<tr class="row14">
+<td class="col0 leftalign"><strong>substring()</strong></td>
+<td class="col1 leftalign">Permet extraure una subcadena del resultat</td>
+</tr>
+<tr class="row15">
+<td class="col0 leftalign"><strong>string-join()</strong></td>
+<td class="col1 leftalign">Uneix la seqüència amb el separador especificat</td>
+</tr>
+<tr class="row16">
+<td class="col0 leftalign"><strong>current-date()</strong></td>
+<td class="col1 leftalign">Ens retornarà l’hora actual</td>
+</tr>
+<tr class="row17">
+<td class="col0 leftalign"><strong>not()</strong></td>
+<td class="col1 leftalign">Inverteix el valors booleans</td>
+</tr>
+</tbody>
+</table>
+<p>Amb les funcions es podran fer peticions que retornen valors numèrics. Per exemple, “quants alumnes tenim?”: </p>
+<div class="codi">count(/classe/alumnes/alumne)</div>
+<p>que tornarà el nombre d'alumnes del fitxer </p>
+<div class="codi2">3</div>
+<p>O bé retornar cadenes de caràcters. Per exemple, unir tots els noms, separant-los per una coma: </p>
+<div class="codi">string-join(/classe//nom,",")</div>
+<p>que tornarà en un únic resultat els noms separats per una coma: </p>
+<div class="codi2">"Joan,Albert,Bernat,Joan"</div>
+<p>També es poden posar les funcions en les condicions. Per exemple, aquesta expressió ens tornarà els alumnes amb el cognom que comence per B: </p>
+<div class="codi">/classe/alumnes/alumne[starts-with(cognoms,"B")]</div>
+<div class="codi2">&lt;alumne aprovat="no"&gt;<br />&lt;nom&gt;Bernat&lt;/nom&gt;<br />&lt;cognoms&gt;Balaguer&lt;/cognoms&gt;<br />&lt;nota&gt;3&lt;/nota&gt;<br />&lt;/alumne&gt;</div>
+<p>En aquesta expressió volem obtenir el tercer alumne de la llista: </p>
+<div class="codi">/classe/alumnes/alumne[position()=3]</div>
+<div class="codi2">&lt;alumne delegat="si" aprovat="si"&gt;<br />&lt;nom&gt;Joan&lt;/nom&gt;<br />&lt;cognoms&gt;Centelles&lt;/cognoms&gt;<br />&lt;nota&gt;8&lt;/nota&gt;<br />&lt;/alumne&gt;</div>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="613__seqncies.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62__xquery.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
