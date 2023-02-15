@@ -95,7 +95,7 @@
 <p><a href="https://exist-db.org/exist/apps/doc/devguide_xmldb">https://exist-db.org/exist/apps/doc/devguide_xmldb</a></p>
 <p>Per tant sembla que estan apostant per aquesta via. De tota manera, com comprovarem, resulta un poc incòmoda, per això no insistirem i posarem només alguns exemples.</p>
 <p>En compte de buscar el driver jar d'aquesta API, construirem un projecte Maven, i posarem les dependències que ens diu aquesta pàgina per a que es decarregue Maven tot el necessari.</p>
-<p>Per tant, construïm un nou projecte, per exemple amb el nom <strong>Tema9_Maven</strong>, i en el fitxer <strong>pom.xml</strong> afegim aquestes dependències:</p>
+<p>Per tant, construïm un nou projecte, per exemple amb el nom <strong>Tema9_Maven</strong>, i en el fitxer <strong>pom.xml</strong> afegim aquestes dependències en la secció de <strong>&lt;dependencies&gt;</strong>:</p>
 <div class="highlighted-code language-markup">
 <div>
 <pre><code>        &lt;dependency&gt;
@@ -139,6 +139,13 @@ fun main(args: Array&lt;String&gt;) {
         println(res.content)
 }</code></pre>
 </div>
+</div>
+<div class="nota_blau">
+<p><strong><u>Nota</u></strong></p>
+<p>Podria donar-se el cas que el projecte Maven no estiga ben configurat i que done error en algunes classes de les importades per Maven:</p>
+<p><img src="T9_7_2_1.png" alt="" width="962" height="439" /></p>
+<p>Es pot solucionar fàcilment anant a <strong>Project structure</strong>, buscar la llibreria de <strong>eXist-db</strong> importada i assegurar-nos que està amb l'opció <strong>Compile </strong>(si està en <strong>Runtime</strong> és quan no ho troba):</p>
+<p><img src="T9_7_2_2.png" alt="" width="1044" height="870" /></p>
 </div>
 <p class="titolet">Executar una sentència XQuery</p>
 <p>Per a executar una sentència XQuery, en aquesta ocasió hem d'utilitzar un objecte <strong>XQueryService</strong> a partir de la col·lecció, en el qual compilarem i executarem la sentència.</p>
