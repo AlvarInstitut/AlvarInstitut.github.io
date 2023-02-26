@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.1 - Càrrega de controladors | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-28"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__iniciaci_a_lapi_jdbc.html" class="current-page-parent daddy">5 - Iniciació a l'API JDBC</a>
+   <ul>
+      <li id="active"><a href="51__crrega_de_controladors.html" class="active no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5__iniciaci_a_lapi_jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52__establiment_de_la_connexi.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.1 - Càrrega de controladors</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id120">
+<div class="iDevice emphasis0">
+<div id="ta120_1" class="block iDevice_content">
+<p>Generalment, en una aplicació es pot tenir un número tan elevat de classes que la màquina virtual no pot tenir-les carregades totes en memòria. A mida que va sent necessari, la màquina virtual s’encarregarà de carregar en memòria les classes que es necessiten. Normalment, la màquina virtual descobreix la localització exacta de la ruta on es troba la classe a carregar analitzant les sentències <strong><em>import</em></strong>. En general és una forma molt útil i eficient de detectar la ubicació de les classes d’una aplicació.</p>
+<p>El problema que tenim ara és que per poder utilitzar l'<em>import</em> <strong>necessitem conèixer a priori la classe que farem servir</strong>. A més, una vegada escrita la sentencia <em>import</em>, si algun dia necessitem reanomenar la classe o decidim utilitzar una classe equivalent d’un altre paquet, necessitarem reescriure el codi canviant la sentència <strong>import</strong> i recompilant-lo de nou per fer efectius els canvis.</p>
+<p>Afortunadament, Java disposa d’una altra sentència per localitzar els fitxers compilats en el moment de la càrrega. Es el mètode <strong>Class.forName</strong>, que accepta com a paràmetre una cadena de text amb el nom complet de la classe a carregar (paquet i nom de classe). Qualsevol controlador JDBC disposa d’una classe especial anomenada generalment <strong>Driver</strong>, encarregada d’establir la connexió amb el nostre SGBD. En realitat el nom i el paquet de la classe depenen de cada fabricant i, per tant, caldrà consultar la documentació per conèixer el nom de la classe.  </p>
+<p>En el cas de <strong>PostgreSQL</strong>, per indicar la classe a carregar, escriurem<strong>:</strong></p>
+<p class="codi">Class.forName("org.postgresql.Driver");</p>
+<p>Per a <strong>MySQL</strong>:</p>
+<p class="codi">Class.forName("com.mysql.jdbc.Driver")</p>
+<p>I per a <strong>SQLite</strong>:</p>
+<p class="codi">Class.forName("org.sqlite.JDBC");</p>
+<p> </p>
+<div>
+<p><strong>Encara que no sempre és necessari posar aquesta sentència, ens anirà bé per assegurar-nos que accedim al driver</strong>. En cas de posar-la, cal escriure-la sempre abans de començar a utilitzar l’<acronym title="Application Programming Interface">API</acronym> JDBC.</p>
+<p>El mètode <strong>forName</strong> de la classe <strong>Class</strong> pot llençar una excepció en cas que no es trobe la classe. En aquest exemple hem fet <em><strong>throws</strong></em> sobre l'error, però una altra possibilitat seria capturar l’error (amb <strong>try ... catch </strong>) per saber si s’ha escrit el nom correctament o que ens hem oblidat d’afegir el controlador al projecte.</p>
+</div>
+<p class="codi">public class carregaControladors {<br /><br />    public static void main(String[] args) throws ClassNotFoundException {<br />                Class.forName("org.postgresql.Driver");<br />                System.out.println("Ja s'ha carregat el controlador");<br />    }<br />}</p>
+<p></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5__iniciaci_a_lapi_jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52__establiment_de_la_connexi.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

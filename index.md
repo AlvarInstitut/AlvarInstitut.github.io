@@ -66,5 +66,7 @@
 
 [Tema 8: BD NoSQL](https://alvarinstitut.github.io/ApuntsBD/BD-T08_BD_NoSQL/index.html)
 
+--------
 
+[Annex: Accés des de Java a BD RelacionalsNoSQL](https://alvarinstitut.github.io/ApuntsBD/Annex_Accs_des_de_Java_a_BD_Relacionals/index.html)
 

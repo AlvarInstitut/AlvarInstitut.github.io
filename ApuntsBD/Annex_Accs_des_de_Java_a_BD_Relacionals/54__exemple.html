@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.4 - Exemple | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-31"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__iniciaci_a_lapi_jdbc.html" class="current-page-parent daddy">5 - Iniciació a l'API JDBC</a>
+   <ul>
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li id="active"><a href="54__exemple.html" class="active no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="53__peticions_bsiques.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.4 - Exemple</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id126">
+<div class="iDevice emphasis0">
+<div id="ta126_1" class="block iDevice_content">
+<p>A continuació posarem un exemple molt senzill, el dels empleats, en el qual primer crearem la taula per a guardar les dades, després introduirem les dades, les modificarem, i per últim les consultarem. D'aquesta manera podrem veure tots els exemples de sentències SQL.</p>
+<p>Les dades són les mateixes que en altres ocasions:</p>
+<table align="center" border="1">
+<tbody>
+<tr>
+<td><strong>Num</strong></td>
+<td><strong>Nom </strong></td>
+<td><strong>Depart<br /></strong></td>
+<td><strong>Edat<br /></strong></td>
+<td><strong>Sou<br /></strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Andreu</td>
+<td>10</td>
+<td>32</td>
+<td>1000.00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bernat</td>
+<td>20</td>
+<td>28</td>
+<td>1200.00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Claudia</td>
+<td>10</td>
+<td>26</td>
+<td>1100.00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Damià</td>
+<td>10</td>
+<td>40</td>
+<td>1500.00</td>
+</tr>
+</tbody>
+</table>
+<p>La clau principal serà el camp num de tipus enter. El nom serà de text, el departament i l'edat també enters, mentre que el sou serà real.</p>
+<p>Per a no interferir entre tots, utilitzarem la Base de Dades SQLite, on cadascú guardarà en un fitxer seu les dades. Haureu de cuidar la ruta, que siga on voleu guardar la vostra Base de Dades. Si no poseu res en la ruta, es guardarà en el directori actiu, que és l'arrel del projecte.</p>
+<p></p>
+<p class="titolet">Creació de la taula</p>
+<p>La sentència SQL que crea la taula en una Base de Dades SQLite serà així:</p>
+<div class="codi2">
+<div>CREATE TABLE EMPLEATS (</div>
+<div style="margin-left: 30px;">num INTEGER <span>CONSTRAINT cp_emp PRIMARY KEY</span>,</div>
+<div style="margin-left: 30px;">nom TEXT,</div>
+<div style="margin-left: 30px;">depart INTEGER,</div>
+<div style="margin-left: 30px;">edat INTEGER,</div>
+<div style="margin-left: 30px;">sou REAL );</div>
+</div>
+<p>Hem d'observar que el mètode del <strong>Statement</strong> a utilitzar és <strong>executeUpdate()</strong>, ja que la sentència de creació no torna res (no és un SELECT)</p>
+<div class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br />import java.sql.Statement;<br /><br />public class exempleEmpleatsCrearTaula {<br /><br />    public static void main(String[] args) {<br />        Connection con = null;<br />        Statement st = null;<br />        String sentSQL = null;<br /><br />        try {<br />            Class.forName("org.sqlite.JDBC");<br /><br />            String url = "jdbc:sqlite:Empleats.sqlite";<br />            con = DriverManager.getConnection(url);<br /><br />            st = con.createStatement();<br /><br />            sentSQL = "CREATE TABLE EMPLEAT(" + <br />                    "num INTEGER CONSTRAINT cp_emp PRIMARY KEY, " + <br />                    "nom TEXT, " + <br />                    "depart INTEGER, " + <br />                    "edat INTEGER, " + <br />                    "sou REAL " + <br />                ")";<br /><br />            st.executeUpdate(sentSQL);<br />            st.close();<br /><br />        } catch (SQLException ex) {<br />            System.out.println("Error " + ex.getMessage());<br />        } catch (ClassNotFoundException ex) {<br />            System.out.println("No s'ha trobat el controlador JDBC (" + ex.getMessage() + ")");<br />        } finally {<br />            try {<br />                if (st != null &amp;&amp; !st.isClosed()) {<br />                    st.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Statement per alguna raó");<br />            }<br />            try {<br />                if (con != null &amp;&amp; !con.isClosed()) {<br />                    con.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Connection per alguna raó");<br />            }<br />        }<br />    }<br /><br />}</div>
+<p></p>
+<p>Si voleu veure el resultat, podeu anar a la perspectiva Database Development, però recordeu que heu de desconnectar després, per no interferir.<br style="text-decoration: underline;" /> </p>
+<div>
+<div>
+<p class="titolet">Inserció de dades</p>
+També volem introduir les dades que es poden veure a la taula anterior. Crearem un <b>Statetement </b>que reutilitzarem per anar escrivint totes les sentències <b>INSERT</b>. Recordeu que no és problema la reutilització si gastem el <strong>executeUpdate()</strong>. <strong></strong></div>
+<div> </div>
+<div class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br />import java.sql.Statement;<br /><br />public class exempleEmpleatsInserirTaula {<br /><br />    public static void main(String[] args) {<br />        Connection con = null;<br />        Statement st = null;<br />        String sentSQL = null;<br /><br />        try {<br />            Class.forName("org.sqlite.JDBC");<br /><br />            String url = "jdbc:sqlite:Empleats.sqlite";<br />            con = DriverManager.getConnection(url);<br /><br />            st = con.createStatement();<br /><br />            sentSQL = "INSERT INTO EMPLEAT VALUES (1,'Andreu',10,32,1000.0)";<br />            st.executeUpdate(sentSQL);<br /><br />            sentSQL = "INSERT INTO EMPLEAT VALUES (2,'Bernat',20,28,1200.0)";<br />            st.executeUpdate(sentSQL);<br /><br />            sentSQL = "INSERT INTO EMPLEAT VALUES (3,'Clàudia',10,26,1100.0)";<br />            st.executeUpdate(sentSQL);<br /><br />            sentSQL = "INSERT INTO EMPLEAT VALUES (4,'Damià',10,40,1500.0)";<br />            st.executeUpdate(sentSQL);<br /><br />        } catch (SQLException ex) {<br />            System.out.println("Error " + ex.getMessage());<br />        } catch (ClassNotFoundException ex) {<br />            System.out.println("No s'ha trobat el controlador JDBC (" + ex.getMessage() + ")");<br /><br />        } finally {<br />            try {<br />                if (st != null &amp;&amp; !st.isClosed()) {<br />                    st.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Statement per alguna raó");<br />            }<br />            try {<br />                if (con != null &amp;&amp; !con.isClosed()) {<br />                    con.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Connection per alguna raó");<br />            }<br />        }<br />    }<br />}</div>
+</div>
+<p>Ara sí que és un bon moment per a consultar la taula des de la perspectiva Database Development. Recordeu que heu de desconnectar després de consultar la taula.</p>
+<p> </p>
+<p><span class="titolet">Modificació de dades</span></p>
+<p>Ara modificarem les dades. Senzillament augmentem el sou de tots els empleats en un 5%. I també modifiquem el departament de l'empleat 3, posant-li el departament 20.</p>
+<div class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br />import java.sql.Statement;<br /><br />public class exempleEmpleatsModificarTaula {<br /><br />    public static void main(String[] args) {<br />        Connection con = null;<br />        Statement st = null;<br />        String sentSQL = null;<br /><br />        try {<br />            Class.forName("org.sqlite.JDBC");<br /><br />            String url = "jdbc:sqlite:Empleats.sqlite";<br />            con = DriverManager.getConnection(url);<br /><br />            st = con.createStatement();<br /><br />            sentSQL = "UPDATE EMPLEAT SET sou = sou * 1.05";<br />            st.executeUpdate(sentSQL);<br /><br />            sentSQL = "UPDATE EMPLEAT SET depart=20 WHERE num = 3";<br />            st.executeUpdate(sentSQL);<br /><br />        } catch (SQLException ex) {<br />            System.out.println("Error " + ex.getMessage());<br />        } catch (ClassNotFoundException ex) {<br />            System.out.println("No s'ha trobat el controlador JDBC (" + ex.getMessage() + ")");<br /><br />        } finally {<br />            try {<br />                if (st != null &amp;&amp; !st.isClosed()) {<br />                    st.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Statement per alguna raó");<br />            }<br />            try {<br />                if (con != null &amp;&amp; !con.isClosed()) {<br />                    con.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Connection per alguna raó");<br />            }<br />        }<br />    }<br />}</div>
+<p> </p>
+<p class="titolet">Consultar les dades</p>
+<div>
+<p>Vegem de quina manera podem mostrar per pantalla tots els empleats del que cobren més de 1.100€. Ara el mètode que utilitzarem és <strong>executeQuery()</strong>, ja que aquesta consulta sí que torna dades.</p>
+<div class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />import java.sql.Statement;<br /><br />public class exempleEmpleatsConsultarTaula {<br /><br />    public static void main(String[] args) {<br />        Connection con = null;<br />        Statement st = null;<br />        String sentenciaSQL = null;<br />        ResultSet rs = null;<br /><br />        try {<br />            Class.forName("org.sqlite.JDBC");<br /><br />            String url = "jdbc:sqlite:Empleats.sqlite";<br />            con = DriverManager.getConnection(url);<br /><br />            st = con.createStatement();<br /><br />            sentenciaSQL = "SELECT * FROM EMPLEAT WHERE sou &gt; 1100";<br />            rs = st.executeQuery(sentenciaSQL);<br /><br />            System.out.println("Núm. \tNom \tDep \tEdat \tSou");<br />            System.out.println("-----------------------------------------");<br /><br />            while (rs.next()) {<br />                System.out.print(rs.getInt(1) + "\t");<br />                System.out.print(rs.getString(2) + "\t");<br />                System.out.print(rs.getInt(3) + "\t");<br />                System.out.print(rs.getInt(4) + "\t");<br />                System.out.println(rs.getDouble(5));<br />            }<br /><br />        } catch (SQLException ex) {<br />            System.out.println("Error " + ex.getMessage());<br />        } catch (ClassNotFoundException ex) {<br />            System.out.println("No s'ha trobat el controlador JDBC (" + ex.getMessage() + ")");<br /><br />        } finally {<br />            try {<br />                if(rs!=null &amp;&amp; !rs.isClosed()){<br />                    rs.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el ResultSet per alguna raó");<br />            }<br />            try {<br />                if (st != null &amp;&amp; !st.isClosed()) {<br />                    st.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Statement per alguna raó");<br />            }<br />            try {<br />                if (con != null &amp;&amp; !con.isClosed()) {<br />                    con.close();<br />                }<br />            } catch (SQLException ex) {<br />                System.out.println("No s'ha pogut tancar el Connection per alguna raó");<br />            }<br />        }<br />    }<br />}</div>
+<p> </p>
+<div>
+<p>Podeu observar com es pot utilitzar un bucle <b>while</b> per obtenir el valor de totes les files retornades. També podeu veure els diferents mètodes que retornen les dades de cada columna en funció del tipus: <strong>getInt()</strong>, <strong>getString()</strong>, <strong>getDouble()</strong>, ...</p>
+<p>Finalment, cal indicar que els objectes <b>ResultSet</b> també s’han de tancar de la mateixa manera que els <b>Statements</b> o les connexions. Els <b>ResultSet</b> són els primers que caldrà tancar.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="53__peticions_bsiques.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

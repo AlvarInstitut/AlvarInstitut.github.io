@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 - ODBC | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li class="current-page-parent"><a href="3__connexi_a_les_bd_connectors.html" class="current-page-parent daddy">3 - Connexió a les BD: Connectors</a>
+   <ul>
+      <li id="active"><a href="31__odbc.html" class="active no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3__connexi_a_les_bd_connectors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 - ODBC</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_1" class="block iDevice_content">
+<p style="text-align: justify;">A mida que les teories de dades relacionals anaven agafant força i les xarxes guanyaven adeptes gràcies a l’increment de l’eficiència a preus realment competitius, van començar a implementar-se uns Sistemes Gestors de Bases de Dades basats en la tecnologia client-servidor, que van triomfar. </p>
+<div style="text-align: center;"><img src="u2_4.png" alt="Model Client-Servidor" width="709" height="361" /></div>
+<p style="text-align: justify;">La tecnologia client-servidor va permetre aïllar les dades i els programes específics d’accés a aquestes dades, del desenvolupament de l’aplicació. La raó principal d’aquesta divisió va ser segurament possibilitar l’accés remot a les dades de qualsevol ordinador connectat a la xarxa. El cert, però, és que aquest fet va empènyer els Sistemes de Bases de Dades a desenvolupar-se d’una forma aïllada i a crear protocols i llenguatges específics per poder-se comunicar remotament amb les aplicacions que corrien en els clients. Per dir-lo d'alguna manera, havien de desenvolupar els servidors i també els clients, per a poder connectar-se amb el servidor.</p>
+<p style="text-align: justify;">A poc a poc, el software al voltant de les bases de dades va créixer espectacularment intentant donar resposta a un màxim de demandes a través de sistemes altament configurables. És el que avui dia es coneix com a <em>middleware</em> o capa intermèdia de persistència. És a dir, el conjunt d’aplicacions, utilitats, biblioteques, protocols i llenguatges, situats tant a la part servidor com a la part client, que permeten connectar-se remotament a una base de dades per configurar-la o explotar-ne les seues dades.</p>
+<p class="titolet">L'arribada dels estàndards</p>
+<p style="text-align: justify;">Inicialment, cada empresa desenvolupadora d’un SGBD implementava les seues solucions específiques per al seu sistema, però prompte es van donar compte que col·laborant conjuntament podien treure’n major rendiment i avançar molt més ràpidament.</p>
+<p style="text-align: justify;">Sostenint-se en el Model Relacional i en algunes implementacions primerenques de les empreses IBM i Oracle, es va desenvolupar el llenguatge de consulta de dades anomenat <strong><acronym title="Structured Query Language">SQL </acronym></strong>(<em><strong>Structured Query Language</strong></em>). Va ser un gran pas endavant, perquè s'uniformava la manera d'accedir a la BD, però les aplicacions necessitaven <acronym title="Application Programming Interface">API</acronym> amb funcions que permeteren fer crides des del llenguatge de desenvolupament per enviar les consultes <acronym title="Structured Query Language">SQL</acronym>. </p>
+<p style="text-align: center;"><img src="u2_5.png" alt="Imatge 5" width="591" height="384" /></p>
+<p style="text-align: center;"><span style="font-size: small;">Cada SGBD té la seua pròpia connexió i el seu propi <acronym title="Application Programming Interface">API</acronym>.</span></p>
+<p style="text-align: justify;">El grup anomenat <em><acronym title="Structured Query Language">SQL</acronym> Access Group</em>, en el qual participaven prestigioses empreses del sector com Oracle, Informix, Ingres, DEC, Sun o HP, va definir un <acronym title="Application Programming Interface">API</acronym> universal amb independència del llenguatge de desenvolupament i la Base de Dades a connectar.</p>
+<p style="text-align: center;"><img src="u2_6.png" alt="Imatge 6" width="591" height="384" /></p>
+<p></p>
+<p style="text-align: justify;">El 1992, Microsoft i Simba implementen l’<strong>ODBC</strong> (<em><strong>Open Data Base Connectivity</strong></em>), un <acronym title="Application Programming Interface">API</acronym> basat en la definició del <em><acronym title="Structured Query Language">SQL</acronym> Acces Group</em>, que s’integra en el sistema operatiu de Windows i que permet afegir múltiples <strong>connectors</strong> (o <strong>controladors</strong> o <em><strong>Drivers</strong></em>) a diverses Bases de Dades Relacionals (que utilitzen <acronym title="Structured Query Language">SQL)</acronym> de forma molt senzilla i transparent, ja que els connectors són autoinstal·lables i totalment configurables des de les mateixes eines del Sistema Operatiu. D'aquesta manera, tenint instal·lat ODBC (i en Windows acabarà venint instal·lat per defecte), les aplicacions es connectaran a través d'ODBC a qualsevol dels SGBD del qual tinguem instal·lat el connector. Per a connectar a una Base de Dades o una altra, només hem de canviar de controlador, sense haver de canviar la pròpia aplicació.</p>
+<div style="text-align: center;"><img src="u2_7.png" alt="Imatge 7" width="591" height="424" /></div>
+<p style="text-align: justify;">L’arribada de l’<acronym title="Open Data Base Connectivity">ODBC</acronym> va representar un pas sense precedents en el camí cap a la interoperabilitat entre bases de dades i llenguatges de programació. La majoria d’empreses desenvolupadores de Sistemes Gestors de Bases de Dades van proporcionar els <em>drivers</em> de connectivitat,  i els llenguatges de programació més importants van desenvolupar biblioteques específiques per suportar l’<acronym title="Application Programming Interface">API</acronym> <acronym title="Open Data Base Connectivity">ODBC</acronym>.</p>
+<p class="titolet">La situació actual</p>
+<p style="text-align: justify;">Actualment, ODBC continua sent una adequada manera de connectar als SGDB Relacionals. El seu desenvolupament segueix liderat per Microsoft, però existeixen versions per a altres Sistemes Operatius com UNIX/LINUX o MAC. Els llenguatges més populars de desenvolupament mantenen actualitzades les biblioteques de comunicació amb les successives versions que han anat apareixent i la majoria de SGBD disposen d’un controlador ODBC bàsic. I per tant la connexió queda garantida.</p>
+<p style="text-align: justify;">Actualment, l’ODBC s’estructura en tres nivells. El primer, anomenat <em>core <acronym title="Application Programming Interface">API</acronym></em>, és el nivell més bàsic corresponent a l’especificació original (basada en el <em><acronym title="Structured Query Language">SQL</acronym> Access Group</em>). El <em>Level 1 <acronym title="Application Programming Interface">API</acronym></em> i el <em>Level 2 <acronym title="Application Programming Interface">API</acronym></em> afegeixen funcionalitats avançades, com cridades a procediments guardats en el Sistema Gestor de Bases de Dades, aspectes de seguretat d’accés, definició de tipus estructurats, etc.</p>
+<p style="text-align: justify;">En realitat, l’ODBC és una especificació de baix nivell, és a dir, de funcions bàsiques que possibiliten la connexió, que asseguren l’atomicitat de les peticions, el retorn d’informació, el capsulament del llenguatge de consulta <acronym title="Structured Query Language">SQL</acronym> o l’obtenció de dades aconseguides en resposta a un petició.</p>
+<p style="text-align: justify;">La funcionalitat de baix nivell fa que es puga adaptar a moltes aplicacions; això sí, a costa d’un considerable nombre de línies de codi necessàries per adaptar-se a la lògica de cada aplicació. És per això que sobre la base de l’ODBC han sorgit altres alternatives de persistència de més alt nivell. Per exemple, Microsoft ha desenvolupat OLE DB o ADO.NET. Aquest últim possibilita ja els objectes per a qualsevol tipus d’aplicació basada en la plataforma .NET. </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3__connexi_a_les_bd_connectors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32__jdbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

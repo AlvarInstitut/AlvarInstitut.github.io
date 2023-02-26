@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1 - Des de IntelliJ | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4__tocar_les_dades.html" class="current-page-parent daddy">4 - "Tocar" les dades</a>
+   <ul>
+      <li id="active"><a href="41__des_de_intellij.html" class="active no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4__tocar_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42__dbeaver.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.1 - Des de IntelliJ</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_1" class="block iDevice_content">
+<p style="text-align: justify;">Des dels programes Java o Kotlin podríem connectar ja mateix a les diferents BD amb els connectors JDBC, però abans ens faria falta poder veure les taules amb les dades i fins i tot administrar aquestes Bases de Dades.</p>
+<p style="text-align: justify;">Això es pot fer des d'IntelliJ sense molt fàcilment, ja que en la nostra versió ho tenim integrat per defecte. Utilitzarem els connectors (drivers) JDBC, per a connectar a les Bases de Dades, però d'una forma independent dels projectes. La manera d'accedir és:</p>
+<p style="margin-left: 30px;"><strong>Wiew  --&gt;  Tool Windows  --&gt;  Database</strong></p>
+<p>i se'ns obrirà una subfinestra a la dreta per a poder "treballar" amb les Bases de Dades</p>
+<p style="text-align: center;"><img src="T4_4_1_1.png" alt="" width="1254" height="754" /></p>
+<p>Des d'aquesta finestra podrem controlar les connexions a Bases de Dades i també els Drivers JDBC que ens permeten connectar. Com hem comentat serà independent dels projectes Java o Kotlin</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_85" class="block iDevice_content">
+<p class="titolet">Connexió a PostgreSQL</p>
+<p>Com a primer exemple de connexió, intentarem connectar a PostgreSQL. Farà falta especificar:</p>
+<ul>
+<li style="text-align: justify;">Les dades de connexió, que seran:
+<ul>
+<li>Servidor (host): <strong>89.36.214.106</strong></li>
+<li>Port: <strong>5432</strong> (és el port per defecte)</li>
+<li>Usuari: <strong>geo<strong></strong></strong></li>
+<li>Contrasenya: <strong>geo<strong></strong></strong></li>
+<li>Base de dades: <strong>geo</strong></li>
+</ul>
+</li>
+<li>En el moment que demana pel controlador (driver) de PostgreSQL, apretar a baixar. Serà un de tipus IV. Açò només serà necessari la primera vegada que connectem a PostgreSQL</li>
+</ul>
+<p style="text-align: center;"><iframe width="912" height="548" src="https://slides.com/alvarinstitut/ad_t4_connexipostgresql/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: justify;">De la configuració anterior podem observar la <strong>URL</strong> de connexió que va a continuació. És important, perquè després quan connectem des dels nostres programes Java, haurem d'especificar-la també. Haurem de substituir <em>servidor</em> per l'adreça IP o el nom del servidor, la <em>base_de_dades</em> per la base de dades a la qual ens volem connectar.</p>
+<p><strong>URL de PostgreSQL</strong></p>
+<p class="codi">jdbc:postgresql://<em>servidor</em>:5432/<em>base_de_dades</em></p>
+<p style="padding-left: 30px;"> que en el nostre exemple ha quedat:</p>
+<p class="codi">jdbc:postgresql://89.36.214.106:5432/geo</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id11">
+<div class="iDevice emphasis0">
+<div id="ta11_1" class="block iDevice_content">
+<p class="titolet">Connexió a MySQL</p>
+<p style="text-align: justify;">Repetim el procés per a MySQL. El servidor està en la mateixa màquina que PostgreSQL (89.36.214.106). L'usuari amb que connectarem ara es diu <strong>factura</strong>. Haurem d'especificar:</p>
+<ul>
+<li style="text-align: justify;">Les dades de connexió, que seran:
+<ul>
+<li>Servidor: <strong>89.36.214.106</strong></li>
+<li>Port: <strong>3306</strong></li>
+<li>Usuari:<strong> factura</strong></li>
+<li>Contrasenya: <strong>factura</strong></li>
+<li>Base de dades: <strong>factura</strong></li>
+</ul>
+</li>
+<li>Quan demane pel controlador (driver) de MySQL, haurem d'apretar a baixar. Açò només serà necessari la primera vegada que connectem a MySQL</li>
+</ul>
+<p style="text-align: center;"><iframe width="912" height="548" src="https://slides.com/alvarinstitut/ad_t4_connexiomysql/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p> <strong>URL de MySQL</strong></p>
+<p class="codi">jdbc:mysql://<em>servidor</em>:3306/<em>base_de_dades</em></p>
+<p style="padding-left: 30px;">que en el nostre exemple queda:</p>
+<p class="codi">jdbc:mysql://89.36.214.106:3306/factura</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_1" class="block iDevice_content">
+<p class="titolet">Connexió a SQLite</p>
+<p style="text-align: justify;">SQLite és un SGBD molt diferent als anteriors. En tots els anteriors s'utilitza l'arquitectura client-servidor. I per tant el servidor de Base de Dades no té per què estar en la mateixa màquina.</p>
+<p style="text-align: justify;">Però en moltes ocasions ens pot venir bé un SGBD molt més xicotet i senzill que guarde la BD en la mateixa màquina, que siga monousuari i que pese molt poc.</p>
+<p style="text-align: justify;">SQLite és un SGBD multiplataforma (podrem fer-lo rodar en qualsevol plataforma) que és molt lleuger.  Admet la major part de l'estàndar SQL-92. I guarda una Base de Dades en un únic fitxer. Una altra característica és que des de Java o Kotlin, amb el driver JDBC podrem accedir a les Bases de Dades SQLite sense que faça falta cap motor de Base de Dades. Per tant és ideal com a Base de Dades que puguem copiar a les nostres aplicacions.</p>
+<p style="text-align: justify;">Quan connectem des de IntelliJ ara no caldrà especificar on està el servidor ni quin usuari s'ha de connectar. Haurem de dir el fitxer amb la ruta on està (o estarà) la Base de Dades. Per tant només haurem d'especificar:</p>
+<ul>
+<li>Les dades del fitxer: ruta i nom. La ruta ha d'existir. Si el fitxer no existeix, el crearà.</li>
+<li>Quan ens diga baixarem el Driver. Això només ens caldrà la primera vegada que connectem amb SQLite</li>
+</ul>
+<p style="text-align: center;"><iframe width="912" height="548" src="https://slides.com/alvarinstitut/t4_connexiosqlite/embed?style=light" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
+<p><strong>URL de SQLite</strong></p>
+<p class="codi">jdbc:sqlite:<em>ruta_del_fitxer_sqlite</em></p>
+<p><em> </em></p>
+<p>Com hem comentat, SQLite és més senzill que els altres SGBD. Concretament, els tipus de dades que utilitza són:</p>
+<ul>
+<li>
+<p><strong>INTEGER</strong>. El valor és un enter amb signe, que ocupa 1, 2, 3, 4, 6, o 8 bytes depenent de la grandària del valor.</p>
+</li>
+<li>
+<p><strong>REAL</strong>. El valor és un número real en coma flotant que ocupa 8 bytes (doble precisió).</p>
+</li>
+<li>
+<p><strong>TEXT</strong>. El valor és una cadena de caràcters que pot estar codificada en UTF-8, UTF-16BE o UTF-16LE, depenent de la codificació de la Base de Dades. No ens preocuparem de la codificació interna.</p>
+</li>
+<li>
+<p><strong>BLOB</strong>. Per a guardar dades binàries que es guardaran exactament com entren, sense mirar el format.</p>
+</li>
+</ul>
+<p>Des de l'entorn d'IntelliJ podrem visualitzar les taules i fins i tot crear-les, amb SQL.</p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4__tocar_les_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42__dbeaver.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
