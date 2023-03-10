@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -36,7 +36,7 @@
    </ul>
    </li>
    <li id="active"><a href="4__emmagatzematge_en_bdxml_natives.html" class="active no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
-   <li><a href="5__installaci_de_bdxml_natives.html" class="no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li><a href="5__installaci_de_bdxml.html" class="no-ch">5 - Instal·lació de BD-XML</a></li>
    <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
    <ul class="other-section">
       <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
@@ -71,6 +71,7 @@
          <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
       </ul>
       </li>
+      <li><a href="72__api_xmldb.html" class="no-ch">7.2 - API XML:DB</a></li>
    </ul>
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
@@ -78,7 +79,7 @@
 </div>
 <div id='topPagination'>
 <div class="pagination noprt">
-<a href="37__ampliaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_de_bdxml_natives.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="37__ampliaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_de_bdxml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="main-wrapper">
@@ -88,7 +89,7 @@
 <div class="iDevice emphasis0">
 <div id="ta42_1" class="block iDevice_content">
 <p>En les<strong> Bases de Dades XML natives</strong>, a diferència de tots els SGBD anteriors (centrats en les dades), no existeixen camps ni guarden dades en tipus de dades senzills. Sempre guarden documents XML i són Bases de Dades centrades en els documents. La unitat mínima d'emmagatzematge és el document XML.</p>
-<p>Podríem definir <strong>SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives</strong> com un sistema de gestió de la informació que ha de:</p>
+<p>Podríem definir <strong>SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives</strong> (o senzillament un <strong>SGBD-XML</strong>) com un sistema de gestió de la informació que ha de:</p>
 <ul>
 <li>Definir un model lògic per a un document XML (en contraposició als SGBD habilitats que defineixen el model per les dades) i enregistrar i recuperar els documents segons aquest model. Com a mínim, el model ha d’incloure elements, atributs, PCDATA i l’ordre del document.</li>
 <li>Mantenir una relació transparent amb el mecanisme subjacent d’emmagatzematge, incorporant les característiques ACID de qualsevol SGBD (<em>Atomicity, Consistency, Isolation and Durability</em>).</li>
@@ -96,15 +97,15 @@
 <li>Permetre les tecnologies de consulta i transformació pròpies d’<acronym title="Extensible Markup Language">XML</acronym>: <strong>XPath</strong>, <acronym title="Extensible Stylesheet Language Transformations">XSLT</acronym>, XQL, <strong>XQuery</strong>, etc.</li>
 <li>Permetre la introducció d’informació <em>data-centric</em>, <em>document-centric</em> i mixta.</li>
 </ul>
-<p>El segon punt de la definició porta implícita la idea que un SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives no té per què tenir cap model físic d’emmagatzematge subjacent específic, sinó que es podria construir damunt un SGBDR, un SGBDOO, ..., o un sistema propi d’emmagatzematge. Això sembla contradictori amb els problemes i crítiques que presenten per a la gestió de documents <acronym title="Extensible Markup Language">XML</acronym> els SGBD predecessors dels SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives. </p>
+<p>El segon punt de la definició porta implícita la idea que un SGBD-<acronym title="Extensible Markup Language">XML</acronym> no té per què tenir cap model físic d’emmagatzematge subjacent específic, sinó que es podria construir per damunt d'un SGBD Relacional, un SGBD Orientat a Objectes, ..., o un sistema propi d’emmagatzematge. Això sembla contradictori amb els problemes i crítiques que presenten per a la gestió de documents <acronym title="Extensible Markup Language">XML</acronym> els SGBD predecessors dels SGBD-<acronym title="Extensible Markup Language">XML</acronym>. </p>
 <div>
-<p>Avantatges de les BD-<acronym title="Extensible Markup Language">XML</acronym> natives, en comparació a les BD no <acronym title="Extensible Markup Language">XML</acronym>:</p>
+<p>Avantatges de les BD-<acronym title="Extensible Markup Language">XML</acronym>, en comparació a les BD no <acronym title="Extensible Markup Language">XML</acronym>:</p>
 <ul>
 <li class="level1">
 <div class="li">Faciliten accés i emmagatzematge d’informació en format <acronym title="Extensible Markup Language">XML</acronym> sense necessitat de codi addicional ni cap tipus de mapatge.</div>
 </li>
 <li class="level1">
-<div class="li">La majoria d’SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives incorporen un motor de recerca d’alt rendiment.</div>
+<div class="li">La majoria d’SGBD-<acronym title="Extensible Markup Language">XML</acronym> incorporen un motor de recerca d’alt rendiment.</div>
 </li>
 <li class="level1">
 <div class="li">És molt senzill afegir nous documents <acronym title="Extensible Markup Language">XML</acronym>.</div>
@@ -116,13 +117,13 @@
 <div class="li">Conserven la integritat dels documents (es poden recuperar en el seu estat inicial).</div>
 </li>
 </ul>
-<p>Per contra, els inconvenients que tenen normalment els SGBD-<acronym title="Extensible Markup Language">XML</acronym> natives són aquestos:</p>
+<p>Per contra, els inconvenients que tenen normalment els SGBD-<acronym title="Extensible Markup Language">XML</acronym> són aquestos:</p>
 <ul>
 <li class="level1">
-<div class="li">La gran quantitat d’espai necessari per emmagatzemar el mateix document <acronym title="Extensible Markup Language">XML</acronym> com a format de representació de la informació, a causa del fet que les etiquetes poden suposar el 75% de la informació d’un document <acronym title="Extensible Markup Language">XML</acronym>. I això és, sense cap mena de dubte, innecessari en guardar molts documents validats per un mateix <acronym title="XML (Extensible Markup Language) Schema Definition">XSD</acronym> o <acronym title="Document Type Definition">DTD</acronym>.</div>
+<div class="li">La gran quantitat d’espai necessari per emmagatzemar el mateix document <acronym title="Extensible Markup Language">XML</acronym> com a format de representació de la informació, a causa del fet que les etiquetes poden suposar el 50% 0 el 75% de la informació d’un document <acronym title="Extensible Markup Language">XML</acronym>. I això és, sense cap mena de dubte, innecessari en guardar molts documents validats per un mateix <acronym title="XML (Extensible Markup Language) Schema Definition">XSD</acronym> o <acronym title="Document Type Definition">DTD</acronym>.</div>
 </li>
 <li class="level1">
-<div class="li">El fet que les BD-<acronym title="Extensible Markup Language">XML</acronym> natives només puguen guardar i retornar dades en format <acronym title="Extensible Markup Language">XML</acronym>.</div>
+<div class="li">El fet que les BD-<acronym title="Extensible Markup Language">XML</acronym> només puguen guardar i retornar dades en format <acronym title="Extensible Markup Language">XML</acronym>.</div>
 </li>
 <li class="level1">
 <div class="li">En emmagatzemar la informació en format <acronym title="Extensible Markup Language">XML</acronym> es fa molt complicat poder generar noves estructures a partir de la informació existent com, per exemple, aconseguir càlculs estadístics.</div>
@@ -141,7 +142,7 @@
 </div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
-<a href="37__ampliaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_de_bdxml_natives.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="37__ampliaci.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5__installaci_de_bdxml.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="packageLicense" class="cc cc-by-nc-sa">

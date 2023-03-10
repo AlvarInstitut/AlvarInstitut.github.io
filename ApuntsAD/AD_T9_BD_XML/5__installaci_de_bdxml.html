@@ -5,12 +5,12 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>5 - Instal·lació de BD-XML Natives | Accés a Dades </title>
+<title>5 - Instal·lació de BD-XML | Accés a Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -36,7 +36,7 @@
    </ul>
    </li>
    <li><a href="4__emmagatzematge_en_bdxml_natives.html" class="no-ch">4 - Emmagatzematge en BD-XML Natives</a></li>
-   <li id="active"><a href="5__installaci_de_bdxml_natives.html" class="active no-ch">5 - Instal·lació de BD-XML Natives</a></li>
+   <li id="active"><a href="5__installaci_de_bdxml.html" class="active no-ch">5 - Instal·lació de BD-XML</a></li>
    <li><a href="6__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">6 - Llenguatges de consultes XPATH i XQUERY</a>
    <ul class="other-section">
       <li><a href="61__xpath.html" class="daddy">6.1 - XPATH</a>
@@ -71,6 +71,7 @@
          <li><a href="715__modificar_la_base_de_dades.html" class="no-ch">7.1.5 - Modificar la Base de Dades</a></li>
       </ul>
       </li>
+      <li><a href="72__api_xmldb.html" class="no-ch">7.2 - API XML:DB</a></li>
    </ul>
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
@@ -83,19 +84,19 @@
 </div>
 <div id="main-wrapper">
 <div id="main"><a name="main"></a>
-<div id="nodeDecoration"><h1 id="nodeTitle">5 - Instal·lació de BD-XML Natives</h1></div>
+<div id="nodeDecoration"><h1 id="nodeTitle">5 - Instal·lació de BD-XML</h1></div>
 <div class="iDevice_wrapper FreeTextIdevice" id="id41">
 <div class="iDevice emphasis0">
 <div id="ta41_1" class="block iDevice_content">
-<p>Triarem el Sistema Gestor de Bases de Dades XML Natives  <strong>eXist-db</strong>. Com veurem és molt potent i còmode d'utilitzar. A més és Open-Source. Està escrit completament en Java i suporta els estàndards de consulta <strong>XPATH</strong>, <strong>XQuery</strong> i <strong>XSLT</strong>. </p>
+<p>Triarem el Sistema Gestor de Bases de Dades XML  <strong>eXist-db</strong>. Com veurem és molt potent i còmode d'utilitzar. A més és Open-Source. Està escrit completament en Java i suporta els estàndards de consulta <strong>XPATH</strong>, <strong>XQuery</strong> i <strong>XSLT</strong>. </p>
 <p>Això sí, és un servidor, per tant l'haurem d'instal·lar, posar-lo en marxa quan l'utilitzem, i fer un poc d'administradors.</p>
 <p>Afortunadament està construït en Java, i per tant no hem de tenir cap problema per a instal·lar-lo. Ens el podem baixar sense dificultat de la pàgina oficial: <a href="http://exist-db.org">exist-db.org</a></p>
-<p>El següent vídeo mostra tot el procés d'instal·lació i arrancada inicial. És per a la versió 5.2.0 que és l'estable en el moment de fer aquestos apunts, només us heu de preocupar de baixar-vos el fitxer d'instal·lació <strong>.jar</strong> per a fer-la totsigual, siga quin siga el S.O.</p>
+<p>El següent vídeo mostra tot el procés d'instal·lació i arrancada inicial. És per a la versió 5.2.0, encara que en el moment de fer aquestos apunts l'última versió estable és la 6.2.0, però és totalment equivalent. Només us heu de preocupar de baixar-vos el fitxer d'instal·lació <strong>.jar</strong> per a fer-la tots igual, siga quin siga el S.O. També tenim la possibilitat de baixar-nos una imatge de docker.</p>
 <p style="text-align: center;"><iframe width="945" height="605" src="https://slides.com/alvarinstitut/deck-67bcaf/embed" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
 <p>Els documents es guarden en col·leccions, les quals es poden crear unes dins d'unes altres.</p>
 <p>Anem a veure uns exemples d'utilització. Crearem una col·lecció, i en ella inclourem algun document XML. Posteriorment farem alguna consulta senzilla, a veure com es comporta. Per a poder començar a utilitzar-lo és suficient amb obrir <strong>localhost:8080</strong> des de qualsevol navegador</p>
 <p style="text-align: center;"><iframe width="1172" height="605" src="https://slides.com/alvarinstitut/deck-d16fcc/embed" scrolling="no" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p>
-<p>Recordeu que els resultats per defecte es veuen de 10 en 10, és a dir, que poden haver més resultats dels mostrats en principi.</p>
+<p><strong>Observeu que els resultats per defecte es veuen de 10 en 10</strong>, és a dir, que poden haver més resultats dels mostrats en principi.</p>
 <p></p>
 <div class="nota_blau">
 <p><b><u>Nota important</u></b></p>

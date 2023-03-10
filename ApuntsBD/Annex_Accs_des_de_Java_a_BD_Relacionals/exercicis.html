@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Exercicis | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="exercicis.html" class="active no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="54__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Exercicis</h1></div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id147">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 1</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta147_41_2" class="block iDevice_content">
+<p>Crea un classe anomenada <strong>Vis_Rutes_SQLite</strong>, que mostre les rutes amb el següent aspecte accedint a les dades guardades en <strong>Rutes.sqlite</strong>:</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="m1_T4_Ex3_1.png" /></p>
+<p>Podríem mantenir la connexió fins que s'aprete el botó d'<strong>Eixir</strong>, que és quan la tancaríem.</p>
+<p>Ací teniu l'esquelet dels programes.</p>
+<p class="codi">import java.awt.BorderLayout;<br />import java.awt.FlowLayout;<br />import java.awt.event.ActionEvent;<br />import java.awt.event.ActionListener;<br />import java.sql.Connection;<br />import java.util.ArrayList;<br /><br />import javax.swing.JButton;<br />import javax.swing.JComboBox;<br />import javax.swing.JFrame;<br />import javax.swing.JLabel;<br />import javax.swing.JPanel;<br />import javax.swing.JTextArea;<br /><br /><br />public class Vis_Rutes_SQLite_Pantalla extends JFrame implements ActionListener{<br />    <br />    JComboBox combo;<br />    JButton eixir = new JButton("Eixir");<br />    JTextArea area = new JTextArea();<br />    Connection con;<br />    <br />    public void iniciar(){<br />        // sentències per a fer la connexió<br />        <br />        <br />        this.setBounds(100, 100, 450, 300);<br />        this.setLayout(new BorderLayout());<br />        <br />        JPanel panell1 = new JPanel(new FlowLayout());<br />        JPanel panell2 = new JPanel(new BorderLayout());<br />        this.add(panell1,BorderLayout.NORTH);<br />        this.add(panell2,BorderLayout.CENTER);<br />        <br />        ArrayList&lt;String&gt; llista_rutes = new ArrayList&lt;String&gt;();<br />        // sentències per a omplir l'ArrayList amb el nom de les rutes<br />        <br />        <br />        combo = new JComboBox(llista_rutes.toArray());<br />        <br />        panell1.add(combo);<br />        panell1.add(eixir);<br />        <br />        panell2.add(new JLabel("LLista de punts de la ruta:"),BorderLayout.NORTH);<br />        panell2.add(area,BorderLayout.CENTER);<br />        <br />        this.setVisible(true);<br />        combo.addActionListener(this);<br />        eixir.addActionListener(this);<br />        <br />        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />        <br />    }<br /><br />    @Override<br />    public void actionPerformed(ActionEvent e) {<br />        if (e.getSource() == combo){<br />            //accions quan s'ha seleccionat un element del combobox, i que han de consistir en omplir el JTextArea<br />            <br />        }<br /><br />        if (e.getSource() == eixir){<br />            //accions quan s'ha apretat el botó d'eixir<br />            <br />        }<br />    }<br />}</p>
+<p class="codi">public class Vis_Rutes_SQLite {<br /><br />    public static void main(String[] args) {<br />        Vis_Rutes_SQLite_Pantalla finestra = new Vis_Rutes_SQLite_Pantalla();<br />        finestra.iniciar();<br />    }<br />}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id58">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 2</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta58_148_2" class="block iDevice_content">
+<div class="pbl-task-description"><p>Anem a fer un programa també gràfic que accedisca a la Base de Dades <strong>geo</strong> (usuari <strong>geo</strong>, contrasenya <strong>geo</strong>) per a poder visualitzar les comarques, dins de la comarca les poblacions, i fins i tot per a una població saber el número d'instituts que té.</p>
+<p>Al final tens l'esquelet del programa, tant del principal com el que implementa JFrame i que equival a la finestra.</p>
+<p>Tindrem:</p>
+<ul>
+<li>Un JComboBox anomenat <strong>combo</strong> on voldrem visualitzar les comarques.</li>
+<li>Un botó anomenat <strong>eixir</strong> per a tancar la connexió i tancar el programa.</li>
+<li>Un JList anomenat <strong>list</strong> on visualitzarem els pobles de la comarca seleccionada (millor si és per ordre alfabètic)</li>
+<li>Un JTextField anomenat <strong>peu</strong> on visualitzarem el número d'instituts del poble seleccionat.</li>
+</ul>
+<p>Aquestos components ja estan enllaçats, i tu només hauràs de posar les sentències en els mètodes del final que són:</p>
+<ul>
+<li><strong>connexio()</strong>: instruccions per a inicialitzar l'objecte <strong>con</strong>, que és un objecte Connection, i ha de connectar a la Base de Dades PostgreSQL <strong>geo</strong>, amb l'usuari <strong>geo</strong> i contrasenya <strong>geo</strong>.</li>
+<li><strong>eixir()</strong>: instruccions per a tancar la connexió i eixir del programa</li>
+<li><strong>agafarComarques()</strong>: instruccions per a agafar el nom de les comarques per ordre alfabètic i col·locar-les en el JComboBox <strong>combo</strong>. Recorda que per a inserir en un  JComboBox ja creat pos utilitzar el mètode <strong>combo.addItem(string)</strong>.</li>
+<li><strong>visualitzaCom(String comarca)</strong>: instruccions per a posar en el <strong>JList </strong>anomenat <strong>list</strong> els pobles de la comarca que arriba com a paràmetre. Per a introduir elements en un JList és millor utilitzar l <strong>DefaultListModel</strong> associat a ell, que s'anomena <strong>listModel</strong> concretament amb el mètode <strong>listModel.addElement(string)</strong>. Podem tenir la complicació que en el nom de la comarca tinguem una cometa (p.e. <strong>Vall d'Albaida</strong>), i podria fer que la sentència SQL siga errònia. Ho podem solucionar amb el mètode replaceAll() de la classe String, substituint tota cometa simple per dues cometes simples. Si per exemple tenim el nom de la comarca en el String <strong>comarca</strong>, faríem: <strong>comarca.replaceAll("'","''")</strong> </li>
+<li><strong>visualitzaInstituts(String poble)</strong>: instruccions per a comptar el número d'instituts del poble passat com a paràmetre i posar-lo en el JTextField anomenat <strong>peu</strong>. Pots mostrar-ho per exemple amb aquest format: <strong>Castelló de la Plana: 14 instituts </strong>. Podem tenir la mateixa complicació que abans, és a dir, que en el nom del poble tinguem una cometa (p.e. <strong>Alcora, l'</strong> ), i podria fer que la sentència SQL siga errònia. Ho podem solucionar amb el mètode replaceAll() de la classe String, substituint tota cometa simple per dues cometes simples. Si per exemple tenim el nom del poble String <strong>poble</strong>, faríem:<strong> poble.replaceAll("'","''")</strong> </li>
+</ul>
+<p>Aquest seria un exemple d'execució:</p>
+<p style="text-align: center;"><img src="AnnexBD-Ex2_1.png" alt="" width="470" height="318" /></p>
+<p>L'esquelet quedarà ara d'aquesta manera:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package Exercici;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+public class Pantalla_Veure_Pobles_Comarca_Combo_List extends JFrame implements ActionListener, ListSelectionListener {
+
+    private static final long serialVersionUID = 1L;
+    JLabel etiqueta = new JLabel("Comarca:");
+    JLabel et_ini = new JLabel("Introdueix la comarca:");
+    JComboBox combo = new JComboBox();
+    JButton eixir = new JButton("Eixir");
+    DefaultListModel listModel = new DefaultListModel();
+    JList list = new JList(listModel);
+    JTextField peu = new JTextField();
+
+    Connection con = null;
+    
+    // en iniciar posem un contenidor per als elements anteriors
+    public void iniciar() {
+        this.setBounds(100, 100, 450, 300);
+        this.setLayout(new BorderLayout());
+        setTitle("Comarques, pobles i instituts");
+        // contenidor per als elements
+        JPanel panell1 = new JPanel(new FlowLayout());
+        panell1.add(et_ini);
+        panell1.add(combo);
+        panell1.add(eixir);
+        getContentPane().add(panell1,BorderLayout.NORTH);
+        
+        JPanel panell2 = new JPanel(new BorderLayout());
+        panell2.add(etiqueta,BorderLayout.NORTH);
+        list.setForeground(Color.blue);
+        JScrollPane scroll = new JScrollPane(list);
+        panell2.add(scroll,BorderLayout.CENTER);
+        getContentPane().add(panell2,BorderLayout.CENTER);
+        getContentPane().add(peu,BorderLayout.SOUTH);
+
+        connexio();
+
+        agafarComarques();
+
+        setVisible(true);
+        
+        combo.addActionListener(this);
+        list.addListSelectionListener(this);
+        eixir.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == combo) {
+            etiqueta.setText("Llista de pobles de la comarca: " + combo.getSelectedItem());
+            visualitzaCom(combo.getSelectedItem().toString());
+        }
+        if (e.getSource() == eixir){
+            eixir();
+        }
+    }
+    
+    @Override
+    public void valueChanged(ListSelectionEvent e){
+        JList l = (JList) e.getSource();
+        if (l.getSelectedIndex()&gt;=0){
+            visualitzaInstituts(l.getSelectedValue().toString());
+        }
+    }
+
+    private void connexio(){
+        // Instruccions per a establir la connexió (inicialitzar con)
+
+    }
+
+    private void eixir(){
+        // Instruccions per a tancar la connexió i eixir del programa
+
+    }
+
+    private void agafarComarques(){
+        // Instruccions per a posar en el ComboBox el nom de totes les comarques, millor si és per ordre alfabètic
+        // Pots utilitzar el mètode de JComboBox addItem(string)
+
+    }
+
+    private void visualitzaCom(String comarca) {
+
+        // Instruccions per a llegir els pobles de la comarca que arriba com a paràmetre,
+        // i introduir-los en el JList
+        // La manera d'anar introduint informació en el JList és a través del DefaultListModel: 
+        // listModel.addElement("Linia que es vol introduir ")
+        // Una manera de solucionar el problema de la cometa simple és utilitzar comarca.replaceAll("'","''").
+        
+    }
+
+    private void visualitzaInstituts(String poble){
+        // Instruccions per a mostrar el número d'Instituts del poble seleccionat en el JTextField peu
+        // Una manera de solucionar el problema de la cometa simple és utilitzar poble.replaceAll("'","''").
+        
+    }
+
+}</code></pre>
+</div>
+</div>
+<p>I aquest és el programa principal que crida l'anterior:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package Exercici;
+
+public class Veure_Pobles_Comarca {
+
+    public static void main(String[] args) {
+        final Pantalla_Veure_Pobles_Comarca_Combo_List finestra = new Pantalla_Veure_Pobles_Comarca_Combo_List();
+        finestra.iniciar();
+    }
+
+}</code></pre>
+</div>
+</div>
+<p></p>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="54__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

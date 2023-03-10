@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.3 - Peticions bàsiques | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__iniciaci_a_lapi_jdbc.html" class="current-page-parent daddy">5 - Iniciació a l'API JDBC</a>
+   <ul>
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li id="active"><a href="53__peticions_bsiques.html" class="active no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="52__establiment_de_la_connexi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="54__exemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.3 - Peticions bàsiques</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_1" class="block iDevice_content">
+<div>
+<div class="level3">
+<p style="text-align: justify;">Per escriure sentències <acronym title="Structured Query Language">SQL</acronym>, JDBC disposa dels objectes <b>Statement</b>. Es tracta d’objectes que s'han de crear a partir de <strong><em>Connection</em></strong>, els quals poden enviar sentències <acronym title="Structured Query Language">SQL</acronym> al SGBD connectat per a que s'executen amb el mètode <b>executeQuery</b> o <b>executeUpdate</b>.</p>
+<p style="text-align: justify;">Hi ha una variant del <strong>Statement</strong>, anomenada <strong>PreparedStatement</strong> que ens dóna més versatilitat per a posar paràmetres i executar la sentència d'una altra manera. El veurem en la pregunta 6.5.</p>
+<p>La diferència entre els dos mètodes que executen sentències SQL és:</p>
+<ul>
+<li style="text-align: justify;">El mètode <b>executeQuery</b> serveix per executar sentències de les quals s’espera <strong>que tornen dades</strong>, és a dir, són consultes <strong>SELECT</strong>.</li>
+<li style="text-align: justify;">En canvi, el mètode <b>executeUpdate</b> serveix específicament per a sentències que no retornen dades. Serviran per a modificar la Base de Dades connectada (<strong>INSERT</strong>, <strong>DELETE</strong>, <strong>UPDATE</strong>, fins i tot <strong>CREATE TABLE</strong>) .</li>
+</ul>
+</div>
+<p class="titolet">Sentències que no retornen dades</p>
+<div class="level4">
+<p style="text-align: justify;">Les executem amb el mètode <strong>executeUpdate</strong>. Seran <strong>totes</strong> les sentències SQL <strong>excepte el SELECT</strong>, que és la de consulta. És a dir, ens servirà per les següents sentències:</p>
+<ul>
+<li style="text-align: justify;">Sentències que canvien les estructures internes de la BD on es guarden les dades (instruccions conegudes amb les sigles <strong>DDL</strong>, de l’anglès <em>Data Definition Language</em>), com per exemple <strong>CREATE TABLE</strong>, <strong>CREATE VIEW</strong>, <strong>ALTER TABLE</strong>, <strong>DROP TABLE</strong>, ...,</li>
+<li style="text-align: justify;">Sentències per atorgar permisos als usuaris existents o crear-ne de nous (subgrup d’instruccions conegudes com a <strong>DCL</strong> o <em>Data Control Language</em>), com per exemple <strong>GRANT</strong>.</li>
+<li style="text-align: justify;">I també les sentències per a modificar les dades guardades fent servir les instruccions <strong>INSERT</strong>, <strong>UPDATE</strong> i <strong>DELETE</strong>.</li>
+</ul>
+<p style="text-align: justify;">Encara que es tracta de sentències molt dispars, des del punt de vista de la comunicació amb el SGBD es comporten de manera molt similar, seguint el patró següent:</p>
+<ol>
+<li class="level1">
+<div class="li">Instanciació del <strong>Statement </strong>a partir d’una connexió activa.</div>
+</li>
+<li class="level1">
+<div class="li">Execució d’una sentència <acronym title="Structured Query Language">SQL</acronym> passada per paràmetre al mètode <b>executeUpdate</b>.</div>
+</li>
+<li class="level1">
+<div class="li">Tancament de l’objecte <b>Statement</b> instanciat.</div>
+</li>
+</ol>
+<p>Mirem aquest exemple, en qual crearem una taula molt senzilla en la Base de Dades SQLite <strong>proveta.sqlite</strong>.</p>
+<div class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br />import java.sql.Statement;<br /><br />public class provaSQLiteCreacioTaula {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url = "jdbc:sqlite:proveta.sqlite";<br />       <br />        Class.forName("org.sqlite.JDBC");<br /><br />        Connection con = DriverManager.getConnection(url);<br />        <br />        Statement st = con.createStatement();<br />        st.executeUpdate("CREATE TABLE T1 (c1 TEXT)");<br />        st.close();<br />        <br />        con.close();<br />    }<br />}</div>
+</div>
+</div>
+<div>
+<p>Des de la perspectiva de Bases de Dades (esquerra) podrem comprovar que ara ja existeix la taula, igual que des del DBeaver (dreta):</p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 44.1826%;"><img src="T4_5_2_1.png" alt="" width="583" height="396" /></td>
+<td style="width: 55.8174%;"><img src="T4_5_2_2.png" alt="" width="1053" height="676" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id123">
+<div class="iDevice emphasis0">
+<div id="ta123_85" class="block iDevice_content">
+<p class="titolet">Sentències que retornen dades</p>
+<p>Les executem amb el mètode <strong>executeQuery</strong>. Servirà per a la sentència <strong>SELECT</strong>, que és la de consulta.</p>
+<div>Les dades que ens torne aquesta sentència les haurem de guardar en un objecte de la classe <strong>ResultSet</strong>, és a dir conjunt de resultat. Per tant, l’execució de les consultes tindrà un forma semblant a la següent: 
+<p class="codi">ResultSet rs = st.executeQuery(sentenciaSQL);</p>
+<div>
+<p>L’objecte <b>ResultSet</b> conté el resultat de la consulta organitzat per files, de manera que en cada moment es pot consultar <strong>una fila</strong>. Per a anar visitant totes les files d’una a una, anirem cridant el mètode <b>next() </b>de l'objecte <strong>ResultSet</strong>, ja que cada vegada que s'execute <b>next</b> s’avançarà a la següent fila. Immediatament després d’una execució, el <b>ResultSet</b> es troba posicionat just abans de la primera fila, per tant per accedir a la primera fila caldrà executar <b>next</b> una vegada. Quan les files s’acaben, el mètode <b>next</b> retornarà fals.</p>
+<p>Des de cada fila es podrà accedir al valor de les seues columnes fent servir uns quants mètodes <strong>get </strong>disponibles segons el tipus de dades a retornar i passant per paràmetre el número de columna que desitgem obtenir. El nom dels mètodes comença per <strong>get </strong>seguit del <strong>nom del tipus de dades</strong>. Així, si volem recuperar la segona columna, sabent que és una dada de tipus String caldrà executar: </p>
+</div>
+<p class="codi">rs.getString(2);</p>
+<p>Les columnes es comencen a comptar a partir del valor <strong>1</strong> (<strong>no zero</strong>). La major part dels SGDB suporten la possibilitat de passar per paràmetre el nom de la columna, però no tots, així que normalment s'opta pel paràmetre numèric.</p>
+<p>En el següent exemple, mostrem el contingut de les dues primeres columnes de la taula <strong>INSTITUT </strong>de la Base de Dades <strong>geo</strong> de <strong>PostgreSQL</strong>, que resulten ser el codi numèric de l'Institut i el seu nom:</p>
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br />import java.sql.Statement;<br />import java.sql.ResultSet;<br /><br />public class consultaPostgreSQL {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url = "jdbc:postgresql://89.36.214.106:5432/geo";<br />        String usuari = "geo";<br />        String password = "geo";<br /><br />        Connection con = DriverManager.getConnection(url, usuari, password);<br />        <br />        Statement st = con.createStatement();<br />        ResultSet rs = st.executeQuery("SELECT * FROM institut");<br />        while (rs.next()){<br />            System.out.print(rs.getInt(1) + "\t");<br />            System.out.println(rs.getString(2));<br />        }<br />        st.close();<br />    <br />        con.close();<br />    }<br />}</p>
+<p>En aquest exemple, on accedim a <strong>MySQL</strong>, accedirem a una altra taula:</p>
+<p class="codi">import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.ResultSet;<br />import java.sql.SQLException;<br />import java.sql.Statement;<br /><br />public class consultaMySQL {<br /><br />    public static void main(String[] args) throws ClassNotFoundException, SQLException  {<br />        String url = "jdbc:mysql://89.36.214.106:3306/factura";<br />        String usuari = "factura";<br />        String password = "factura";<br /><br />        Connection con = DriverManager.getConnection(url, usuari, password);<br />        <br />        Statement st = con.createStatement();<br />        ResultSet rs = st.executeQuery("SELECT * FROM poble");<br />        while (rs.next()){<br />            System.out.print(rs.getInt(1) + "\t");<br />            System.out.println(rs.getString(2));<br />        }<br />        st.close();<br />        <br />        con.close();<br />    }<br />}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id124">
+<div class="iDevice emphasis0">
+<div id="ta124_85" class="block iDevice_content">
+<p class="titolet">No reutilització de Statement ni ResultSet</p>
+<p>És un error prou habitual per inesperat el fet d'intentar reutilitzar un mateix <strong>ResultSet</strong> per a arreplegar més d'una consulta. . I el mateix amb el <strong>Statement</strong>. Bé siga per una mala implementació o un bug o el que siga, el comportament pot ser imprevisible. I per tant no val la pena arriscar-se.</p>
+<p>Us aconselle que si en una aplicació teniu més d'una consulta de les que retornen dades, <strong>utilitzeu un Statement i un ResultSet diferents per a cadascuna</strong>.</p>
+<p>No hi ha problema en utilitzar el mateix Statement per a moltes consultes de les que no retornen dades.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id125">
+<div class="iDevice emphasis0">
+<div id="ta125_85" class="block iDevice_content">
+<p class="titolet">Assegurar l'alliberament de recursos</p>
+<div class="level4">Les instàncies de <b>Connection</b> i les de <b>Statement</b> guarden, en memòria, molta informació relacionada amb les execucions realitzades. A més, mentre continuen actives mantenen en el SGBD una sessió oberta, que suposarà un conjunt important de recursos oberts, destinats a servir de forma eficient les peticions dels clients. És important tancar aquestos objectes per a alliberar recursos tant del client com del servidor.
+<p>Si en un mateix mètode hem de tancar un objecte <b>Statement</b> i el <strong>Connection </strong>a partir del qual l'hem creat, s'haurà de tancar primer el <b>Statement</b> i després el <b>Connection</b>. Si ho fem al revés, quan intentem tancar el <b>Statement</b> ens saltarà una excepció de tipus <strong>SQLException</strong>, ja que el tancament de la connexió l’hauria deixat inaccessible. </p>
+</div>
+<p>A més de respectar l’orde, caldrà assegurar l’alliberament dels recursos situant les operacions de tancament dins un bloc <strong><em>finally</em></strong>. D’aquesta manera, encara que es produesquen errors, no es deixaran d’executar les instruccions de tancament.</p>
+<p>Cal tenir en compte encara un detall més quan siga necessari realitzar el tancament de diversos objectes a la vegada. En aquest cas, encara que les situàrem una darrera l’altra, totes les instruccions de tancament dins el bloc <em>finally</em>, no seria prou garantia per assegurar l’execució de tots els tancaments, ja que, si mentre es produeix el tancament d’un dels objectes es llança una excepció, els objectes invocats en una posició posterior a la del que s’ha produït l’error no es tancaran.</p>
+<p>La solució d’aquest problema passa per evitar el llançament de qualsevol excepció durant el procés de tancament. Una possible forma és encapsular cada tancament entre sentències <strong><em>try-catch </em></strong>dins del<em><strong> finally</strong><br /></em></p>
+<div class="codi">
+<div>try{</div>
+<div style="margin-left: 30px;">//<em>sentències que poden llançar una excepció</em></div>
+<div style="margin-left: 30px;">...</div>
+<div>} catch (SQLException ex) {</div>
+<div style="margin-left: 30px;">// <em>captura i tractament de l'excepció</em></div>
+<div style="margin-left: 30px;">...</div>
+<div>}finally{</div>
+<div style="margin-left: 30px;">try {</div>
+<div style="margin-left: 60px;">stm1.close();</div>
+<div style="margin-left: 30px;">} catch (SQLException ex) {...}</div>
+<div> </div>
+<div style="margin-left: 30px;">try {</div>
+<div style="margin-left: 60px;">stm2.close();</div>
+<div style="margin-left: 30px;">} catch (SQLException ex) {...}</div>
+<div> </div>
+<div style="margin-left: 30px;">...</div>
+<div> </div>
+<div style="margin-left: 30px;">try {</div>
+<div style="margin-left: 60px;">con.close();</div>
+<div style="margin-left: 30px;">} catch (SQLException ex) {...}</div>
+<div>}</div>
+</div>
+<p>De vegades, l’error en un tancament es produeix perquè l’objecte mai ha arribat a instanciar-se i, per tant, la variable presenta un valor <em>null</em>, o perquè ja ha estat tancat amb anterioritat. Ambdós casos són previsibles, i es pot evitar l'error fent servir una instrucció condicional que evite tancar-lo quan ja estava tancat. </p>
+<div class="codi">
+<div>...</div>
+<div>try {</div>
+<div style="margin-left: 30px;">//<em> Assegurem que la connexió està instanciada i oberta</em></div>
+<div style="margin-left: 30px;">if (con!=nul &amp;&amp; !con.isClosed() {</div>
+<div style="margin-left: 60px;">// <em>tanquem la connexió</em></div>
+<div style="margin-left: 60px;">con.close();</div>
+<div style="margin-left: 30px;">}</div>
+<div>} catch (SQLException ex) { ... } </div>
+</div>
+<p> </p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="52__establiment_de_la_connexi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="54__exemple.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

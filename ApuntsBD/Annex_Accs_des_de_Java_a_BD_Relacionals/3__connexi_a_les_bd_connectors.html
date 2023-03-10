@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3 - Connexió a les BD: Connectors | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li id="active"><a href="3__connexi_a_les_bd_connectors.html" class="active daddy">3 - Connexió a les BD: Connectors</a>
+   <ul>
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2__el_desfasament_objecterelacional.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__odbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3 - Connexió a les BD: Connectors</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_1" class="block iDevice_content">
+<div>
+<p style="text-align: justify;">Deixem de banda de moment el desfasament Objecte-Relacional i centrem-nos ara en l'accés a Base de Dades Relacionals des dels llenguatges de programació. Ho raonarem en general i ho aplicarem a Java-Kotlin.</p>
+<p style="text-align: justify;">Des de la dècada dels 80 que existeixen a ple rendiment les Bases de Dades Relacionals. Quasi tots els Sistemes Gestors de Bases de Dades (excepte els més xicotets com Access, Base de LibreOffice o SQLite) utilitzen l'arquitectura client-servidor. Això vol dir que hi ha un ordinador central on està instal·lat el Sistema Gestor de Bases de Dades Relacional que actua com a servidor, i hi haurà molts clients que es connectaran al servidor fent peticions sobre la Base de Dades.</p>
+<p style="text-align: justify;">Els Sistemes Gestors de Bases de Dades inicialment disposaven de llenguatges de programació propis per a poder fer els accesos des dels clients. Era molt consistent, però a base de ser molt poc operatiu:</p>
+<ul>
+<li style="text-align: justify;">L'empresa desenvolupadora del SGBD havia de mantenir un llenguatge de programació, que resultava necessàriament molt costós, si no volien que quedara desfasat.</li>
+<li style="text-align: justify;">Les empreses usuàries del SGBD, que es connectaven com a clients, es trobaven molt lligades al servidor per haver d'utilitzar el llenguatge de programació per accedir al servidor, cosa que no sempre s'ajustava a les seues necessitats. A més, el plantejar-se canviar de servidor, volia dir que s'havien de re-fer tots els programes, i per tant una tasca de moltíssima envergadura.</li>
+</ul>
+<p style="text-align: justify;">Per a poder ser més operatius, calia desvincular els llenguatges de programació dels Sistemes Gestors de Bases de Dades utilitzant uns estàndars de connexió.</p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2__el_desfasament_objecterelacional.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31__odbc.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
