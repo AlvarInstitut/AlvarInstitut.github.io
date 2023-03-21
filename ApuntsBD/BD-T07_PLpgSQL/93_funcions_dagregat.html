@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -127,6 +127,13 @@ LANGUAGE plpgsql;</code></pre>
 	ORDER BY MAX(latitud) DESC;</code></pre>
 </div>
 </div>
+<p>Com sempre, la sentència d'esborrar és més senzilla. Per a esborrar una funció d'agregat, hem d'especificar el nom de la funció d'agregat i entre parèntesis el tipus implicat:</p>
+<div class="highlighted-code language-processing">
+<div>
+<pre><code>DROP AGGREGATE MAX (lat);</code></pre>
+</div>
+</div>
+<p></p>
 </div>
 </div>
 </div>

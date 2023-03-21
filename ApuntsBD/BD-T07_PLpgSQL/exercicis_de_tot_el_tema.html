@@ -10,7 +10,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -108,6 +108,25 @@
 </ul>
 <p style="text-align: left;">7.16.- Crear els dos <b>operadors de comparació</b> que quedaven per al tipus <b>lat</b>: <b>&lt; </b>i <b>&lt;=</b></p>
 <p style="text-align: left;">7.17.- Crear la funció d'agregat <b>MIN </b>per al tipus de dades <b>lat</b>.</p>
+<p style="text-align: left;">7.18.- <strong>VOLUNTARI</strong>. Fes una funció en PL/pgSQL anomenada <strong>DENSITAT_CENTRES</strong> que donat el nom d'una comarca ens torne la quantitat de centres que té per unitat de superfície.</p>
+<p style="text-align: center;"><img src="T7_Ex_18.png" alt="" width="409" height="180" /></p>
+<p style="text-align: left;">7.19.- <strong>VOLUNTARI</strong>. Fes una funció anomenada <strong>introduir_institut(varchar,varchar,varchar,varchar,numeric,numeric)</strong>, que accepte els paràmetres indicats, un per cada camp de la taula INSTITUTS, que comprove:</p>
+<ul>
+<li style="text-align: left;">Que el primer paràmetre, el codi de l’institut, tinga exactament 8 caràcters i que comence per 03, 12 o 46 (els codis de província)</li>
+<li style="text-align: left;">Que el codi postal estiga entre 3001 i 3999, 12001 i 12999 o 46001 i 46999</li>
+<li style="text-align: left;">Observa que el cod_m no caldrà comprovar-lo, ja que és clau externa i saltaria l’error si no és un codi de municipi existent</li>
+</ul>
+<p style="padding-left: 30px;">En cas que tot siga correcte, s’ha d’introduir el nou institut. En cas contrari ha de saltar un error</p>
+<p>7.20.- <strong>VOLUNTARI</strong>. Fes un trigger per a portar una auditoria de la taula <strong>INSTITUTS</strong> per a controlar totes les modificacions que es fan en la taula INSTITUTS. Per a això per cada actualització feta, introduirem una fila en la taula nova anomenada<strong> AUDIT_INSTITUT</strong> (creant-la prèviament si no existeix) amb la següent informació:</p>
+<ul>
+<li><strong>num_a</strong>: és la clau principal de la taula, que serà un autonumèric (SERIAL)</li>
+<li><strong>operacio</strong>: contindrà el tipus d’operació d’actualització realitzada en la taula INSTITUTS, que podrà ser: INSERT, DELETE o UPDATE</li>
+<li><strong>codi_institut</strong>: codi del institut afectat per l’operació d’actualització</li>
+<li><strong>usuari</strong>: usuari que ha realitzat l’operació d’actualització; es pot obtenir amb <strong>current_user</strong>;<br />podríem pensar que sempre serà el mateix usuari qui fa l’operació, però en realitat ho pot fer tot usuari que tinga permís d’accés a la Base de Dades. En la imatge es pot observar com l’usuari <strong>postgres</strong> també ha fet una operació d’actualització</li>
+<li><strong>data_op</strong>: data-hora (timestamp) de l’actualització; es pot obtenir amb la funció <strong>now()</strong></li>
+</ul>
+<p style="padding-left: 30px;">En la imatge s’observa com s’han fet 3 actualitzacions des del moment de creació del trigger, l’ultima d’elles realitzada per l’usuari <strong>postgres</strong>. Evidentment, la manera de comprovar-lo vosaltres és fer operacions d'actualització i el resultat ha de ser obligatòriament deferent:</p>
+<p style="text-align: center;"><img src="T7_Ex_20.png" alt="" width="730" height="121" /></p>
 <p style="text-align: left;"></p>
 </div>
 </div>

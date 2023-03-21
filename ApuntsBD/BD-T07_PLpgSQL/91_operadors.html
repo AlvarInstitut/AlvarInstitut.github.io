@@ -11,7 +11,7 @@
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
-<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_highlighter.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -84,7 +84,7 @@
 <ul style="text-align: justify;">
 <li>En el nom de l'operador posarem un o més d'un caràcters de la següent llista:</li>
 </ul>
-<div align="center" style="text-align: justify;"><b> + - * / &lt; &gt; = ~ ! @ # % ^ &amp; | ` ?</b></div>
+<div style="text-align: justify;" align="center"><b> + - * / &lt; &gt; = ~ ! @ # % ^ &amp; | ` ?</b></div>
 <p style="margin-left: 60px; text-align: justify;">Hi ha algunes limitacions, que podem veure en la documentació.</p>
 <ul style="text-align: justify;">
 <li>Sempre hem de posar la funció que implementa l'operador.</li>
@@ -102,10 +102,10 @@
 <div class="highlighted-code language-processing" style="text-align: justify;">
 <div>
 <pre><code>CREATE OPERATOR /| (
-	PROCEDURE = MAX2, LEFTARG = numeric, RIGHTARG = numeric);</code></pre>
+	PROCEDURE = MAX2, LEFTARG = numeric, RIGHTARG = numeric);</code><code></code></pre>
 </div>
 </div>
-<p style="text-align: justify;"><br /><br /></p>
+<p style="text-align: justify;"></p>
 <p style="text-align: justify;">Podem comprovar el seu funcionament amb la sentència:</p>
 <div class="highlighted-code language-processing" style="text-align: justify;">
 <div>
@@ -115,6 +115,13 @@
 <p style="text-align: justify;">Recordem que els operadors estan definits per a determinats operands. Així, per exemple, la següent sentència no funcionarà perquè no tenim definit l'operador per a operands de text:</p>
 <div class="codi" style="text-align: justify;"><span style="color: #ff0000;">SELECT 'Alfa' /| 'Beta';</span></div>
 <p style="text-align: justify;"> </p>
+<p style="text-align: justify;"><br />Per a esborrar un operador utilitzarem la sentència <strong>DROP OPERATOR</strong>, al qual únicament li haurem d'especificar l'operador a esborrar i entre parèntesis els tipus implicats</p>
+<div class="highlighted-code language-processing" style="text-align: justify;">
+<div>
+<pre><code>DROP OPERATOR /| (numeric, numeric);</code></pre>
+</div>
+</div>
+<p style="text-align: justify;"></p>
 <p style="text-align: justify;">Tampoc tenim definits els operands de comparació per al tipus <b>lat</b>, que havíem creat. I per tant coses com aquesta no funcionen:</p>
 <p class="codiSQL" style="text-align: justify;"><span style="color: #ff0000;">SELECT * FROM POBLACIONS3 <br />WHERE latitud &gt; '(N,40,0,0)';</span></p>
 <p style="text-align: justify;">I si li posem el tipus del qual es tracta:</p>
@@ -144,7 +151,7 @@
 </div>
 </div>
 <p style="text-align: justify;">ara ja es veu que va malament:</p>
-<p><img src="T7_9_1_2.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" height="384" width="491" /></p>
+<p><img src="T7_9_1_2.png" style="border: 1px solid black; display: block; margin-left: auto; margin-right: auto;" width="491" height="384" /></p>
 <p style="text-align: justify;"></p>
 <p style="text-align: justify;">Anem a intentar crear tots els operadors de comparació del tipus <b>lat </b></p>
 <p style="text-align: justify;">Començarem per les funcions. No considerem quan un operand és nul, per fer-los més senzills. La d'igualtat és fàcil, ja que dos latituds són iguals si ho són tots els membres. Observeu que no hi ha problema per fer la comparació <b>$1.h=$2.h</b>, ja que són del domini <b>hemi_lat</b> basat en el tipus caràcter:</p>
