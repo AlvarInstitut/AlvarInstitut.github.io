@@ -58,7 +58,7 @@
 <div class="iDevice_wrapper FreeTextIdevice" id="id121">
 <div class="iDevice emphasis0">
 <div id="ta121_1" class="block iDevice_content">
-<p>Un objecte de la classe <strong>Connection </strong>(de l'API JDBC) representarà una connexió a la Base de Dades d'un determinat SGBD. Haurem de tenir el controlador del SGBD inclós en el projecte (en el classpath), i millor si el tenim carregat en memòria amb la sentència <strong>Class.forName('<em>nom de la classe del</em></strong><strong><em> driver</em></strong><strong>')</strong>.</p>
+<p>Un objecte de la classe <strong>Connection </strong>(de l'API JDBC) representarà una connexió a la Base de Dades d'un determinat SGBD. Haurem de tenir el controlador del SGBD inclós en el projecte (en el <em><strong>Project Structure -&gt; Modules</strong></em>), i millor si el tenim carregat en memòria amb la sentència <strong>Class.forName('<em>nom de la classe del</em></strong><strong><em> driver</em></strong><strong>')</strong>.</p>
 <p>L'objecte <strong>Connection</strong> l'obtindrem a partir del <strong>DriverManager</strong>, que havíem comentat que és capaç de gestionar tots els drivers carregats en memòria (i amb <strong>Class.forName</strong> ens asseguràvem que estaven en memòria). El mètode que utilitzarem del <strong>DriverManager</strong> és el <strong>getConnection(<em>url</em>,<em>usuari</em>,<em>password</em>)</strong>, on li passarem les dades de connexió a la Base de Dades d'aquesta manera:</p>
 <ul>
 <li><strong>URL</strong>: cadena de connexió seguint el protocol JDBC. Comença sempre per <strong>jdbc</strong>, el nom del SGBD (separat per dos punts), i la manera d'arribar a la BD, també separat per 2 punts. Aquesta manera d'arribar a la BD dependrà del controlador del SGBD, però d'alguna manera harem d'especificar el <em>servidor</em>, el <em>port</em> de connexió i el nom de la BD o esquema a connectar.</li>
@@ -69,12 +69,9 @@
 <li><strong>PostgreSQL</strong>: per connectar-nos al servidor situal a l'adreça <strong>89.36.214.106</strong>, que escolta el port per defecte (<strong>5432</strong>), i a la Base de Dades anomenada <strong>geo</strong>, <strong></strong> la cadena serà: </li>
 </ul>
 <p class="codi">jdbc:postgresql://<strong>89.36.214.106</strong>:5432/geo</p>
+<ul></ul>
 <ul>
-<li><strong>Oracle</strong>: el tenim en un altre servidor, en l'adreça <strong>94.177.240.173</strong>; el port per defecte d'Oracle és el <strong>1521</strong>, i hem d'especificar la instància (la macro Base de Dades d'Oracle) que es diu <strong>orcl</strong> ; observeu que en la cadena no especifiquem l'esquema, que seria l'equivalent a la mini Base de Dades on volem connectar (en Oracle un usuari es connecta sempre al seu esquema). La cadena de connexió serà:</li>
-</ul>
-<p class="codi">jdbc:oracle:thin:@94.177.240.173:1521:orcl</p>
-<ul>
-<li><strong>MySQL</strong>: el servidor és el mateix de PostgreSQL, el port per defecte és 3306, i si volem connectar a la Base de Dades <strong>geo</strong>:</li>
+<li><strong>MySQL</strong>: el servidor és el mateix de PostgreSQL, el port per defecte és <strong>3306</strong>, i si volem connectar a la Base de Dades <strong>factura</strong>:</li>
 </ul>
 <p class="codi">jdbc:mysql://<strong>89.36.214.106</strong>:3306/factura</p>
 <ul>
@@ -82,7 +79,7 @@
 </ul>
 <p class="codi">jdbc:sqlite:/home/usuari/BD_SQLite/proveta.sqlite</p>
 <p><em> </em></p>
-<p>Mirem quatre exemple de connexió, un per a cada Base de Dades de prova que tenim en els diferents SGBD que ens hem plantejat connectar. Observeu com només hem canviat la classe que carreguem amb <strong>Class.forName</strong> i la <strong>url</strong>, a banda de l'usuari i contrasenya, clar (en SQLite no hi haurà). I el millor de tot és que una vegada feta la connexió,  farem el mateix tractament siga quin siga el SGBD al qual ens hem connectat, com veurem amb posterioritat.</p>
+<p>Mirem quatre exemple de connexió, un per a cada Base de Dades de prova que tenim en els diferents SGBD que ens hem plantejat connectar. Observeu com només hem canviat la classe que carreguem amb <strong>Class.forName</strong> i la <strong>url</strong>, a banda de l'usuari i contrasenya, clar (en SQLite no hi haurà). I el millor de tot és que una vegada feta la connexió, farem el mateix tractament siga quin siga el SGBD al qual ens hem connectat, com veurem amb posterioritat.</p>
 <ul>
 <li><span style="font-size: large;"><strong>PostgreSQL</strong></span></li>
 </ul>
@@ -102,7 +99,7 @@
 <p>Observem les següents qüestions en els quatre programes equivalents anteriors:</p>
 <ul>
 <li>Com ja hem comentat alguna vegada, la sentència <strong>Class.forName() </strong>no seria necessària en moltes aplicacions. Però ens assegura que hem carregat el driver, i per tant el <strong>DriverManager</strong> el sabrà gestionar.</li>
-<li style="text-align: left;">El <strong>DriverManager</strong> és capaç de trobar el driver adequat a través de la <strong>url</strong> proporcionada (sobretot si el driver està carregat en memòria), i és qui ens proporciona l'objecte <strong>Connection</strong> per mig del mètode <strong>getConnection()</strong>. Hi ha una altra manera d'obtenir el <strong>Connection </strong>per mig de l'objecte <strong>Driver</strong>, com veurem al final d'aquest pregunta, però també serà passant indirectament pel <strong>DriverManager</strong>.</li>
+<li style="text-align: left;">El <strong>DriverManager</strong> és capaç de trobar el driver adequat a través de la <strong>url</strong> proporcionada (sobretot si el driver està carregat en memòria), i és qui ens proporciona l'objecte <strong>Connection</strong> per mig del mètode <strong>getConnection()</strong>. Hi ha una altra manera d'obtenir el <strong>Connection </strong>per mig de l'objecte <strong>Driver</strong>, però com que el que fa és passar indirectament pel <strong>DriverManager</strong>, doncs ja ho tenim bé utilitzant aquest.</li>
 <li style="text-align: left;">Si no es troba la classe del driver (per no tenir-lo en les llibreries del projecte, o haver escrit malament el seu nom) es produirà l'excepció ClassNotFoundException. És convenient tractar-la amb <strong>try ... catch</strong>, encara que en els exemples anteriors s'ha optat per fer <strong>throws</strong> per a simplificar-los.</li>
 <li style="text-align: left;">Si no es pot establir la connexió per alguna raó es produirà l'excepció <strong>SQLException</strong>. Igual que en al cas anterior, és convenient tractar-la amb <strong>try ... catch</strong>.</li>
 <li style="text-align: left;">L'objecte Connection mantindrà una connexió amb la Base de Dades des del moment de la creació fins el moment de tancar-la amb <strong>close()</strong>. És molt important tancar la connexió, no solament per alliberar la memòria del nostre ordinador (que en tancar l'aplicació s'alliberaria), sinó sobretot per <strong>tancar la sessió oberta en el Servidor de Bases de Dades</strong>.</li>
