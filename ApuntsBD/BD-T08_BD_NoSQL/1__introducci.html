@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="ca">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>1 - Introducció | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<div id="header" ><div id="headerContent">Bases de Dades</div></div>
-<div id="siteNav">
+<header id="header" ><div id="headerContent">Bases de Dades</div></header>
+<nav id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li id="active"><a href="1__introducci.html" class="active no-ch">1 - Introducció</a></li>
@@ -40,34 +40,35 @@
    </li>
    <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
    <ul class="other-section">
-      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <li><a href="31__estructura_json.html" class="no-ch">3.1 - Estructura JSON</a></li>
+      <li><a href="32__installaci_de_mongodb.html" class="daddy">3.2 - Instal·lació de MongoDB</a>
       <ul class="other-section">
-         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+         <li><a href="321__connexi_al_servidor_de_linstitut.html" class="no-ch">3.2.1 - Connexió al servidor de l'Institut</a></li>
       </ul>
       </li>
-      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <li><a href="33__utilitzaci_de_mongodb.html" class="daddy">3.3 - Utilització de MongoDB</a>
       <ul class="other-section">
-         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
-         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="331__tipus_de_dades.html" class="no-ch">3.3.1 - Tipus de dades</a></li>
+         <li><a href="332__operacions_bsiques.html" class="no-ch">3.3.2 - Operacions bàsiques</a></li>
          <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
          <ul class="other-section">
-            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
-            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
-            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
-            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
-            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
-            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
-            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
-            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+            <li><a href="3331__set.html" class="no-ch">3.3.3.1 - $set</a></li>
+            <li><a href="3332__unset.html" class="no-ch">3.3.3.2 - $unset</a></li>
+            <li><a href="3333__rename.html" class="no-ch">3.3.3.3 - $rename</a></li>
+            <li><a href="3334__inc.html" class="no-ch">3.3.3.4 - $inc</a></li>
+            <li><a href="3335__elements_dun_array.html" class="no-ch">3.3.3.5 - Elements d'un array</a></li>
+            <li><a href="3336__inserci_en_arrays_push.html" class="no-ch">3.3.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3337__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.3.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3338__upsert.html" class="no-ch">3.3.3.8 - Upsert</a></li>
          </ul>
          </li>
       </ul>
       </li>
-      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <li><a href="34__consulta_de_documents.html" class="daddy">3.4 - Consulta de documents</a>
       <ul class="other-section">
-         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
-         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
-         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+         <li><a href="341__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.4.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="342__operadors_de_les_condicions.html" class="no-ch">3.4.2 - Operadors de les condicions</a></li>
+         <li><a href="343__agregaci.html" class="no-ch">3.4.3 - Agregació</a></li>
       </ul>
       </li>
    </ul>
@@ -102,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</div>
+</nav>
 <div id='topPagination'>
-<div class="pagination noprt">
+<nav class="pagination noprt">
 <a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2__bd_clauvalor_redis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</div>
+</nav>
 </div>
 <div id="main-wrapper">
-<div id="main"><a name="main"></a>
-<div id="nodeDecoration"><h1 id="nodeTitle">1 - Introducció</h1></div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id0">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1 - Introducció</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id0">
 <div class="iDevice emphasis0">
 <div id="ta0_85" class="block iDevice_content">
 <p style="text-align: justify;">En els últims anys estan eixint noves Bases de Dades que estan fugint del que ells anomenen "rigidesa" de les Bases de Dades Relacionals, on les dades estan molt estructurades: taules amb camps perfectament definits, i amb les restriccions que hem vist que es poden crear.</p>
@@ -129,13 +130,13 @@
 <p style="text-align: justify;">En aquest tema només veurem una Base de Dades<strong> Clau-Valor</strong>, <strong>Redis</strong>, per la seua senzillesa; i dues Bases de Dades documentals, <strong>MongoDB</strong>, per la seua utilització actual, i eXist-db, que guarda documents XML.</p>
 </div>
 </div>
-</div>
+</article>
 <div id='bottomPagination'>
-<div class="pagination noprt">
+<nav class="pagination noprt">
 <a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2__bd_clauvalor_redis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
 </div>
-</div>
-</div>
+</section>
 </div>
 </div>
 </body></html>

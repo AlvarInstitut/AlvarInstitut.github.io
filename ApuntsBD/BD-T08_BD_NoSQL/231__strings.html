@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="ca">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>2.3.1 - Strings | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<div id="header" ><div id="headerContent">Bases de Dades</div></div>
-<div id="siteNav">
+<header id="header" ><div id="headerContent">Bases de Dades</div></header>
+<nav id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
@@ -40,34 +40,35 @@
    </li>
    <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
    <ul class="other-section">
-      <li><a href="31__installaci_de_mongodb.html" class="daddy">3.1 - Instal·lació de MongoDB</a>
+      <li><a href="31__estructura_json.html" class="no-ch">3.1 - Estructura JSON</a></li>
+      <li><a href="32__installaci_de_mongodb.html" class="daddy">3.2 - Instal·lació de MongoDB</a>
       <ul class="other-section">
-         <li><a href="311__connexi_al_servidor_de_linstitut.html" class="no-ch">3.1.1 - Connexió al servidor de l'Institut</a></li>
+         <li><a href="321__connexi_al_servidor_de_linstitut.html" class="no-ch">3.2.1 - Connexió al servidor de l'Institut</a></li>
       </ul>
       </li>
-      <li><a href="32__utilitzaci_de_mongodb.html" class="daddy">3.2 - Utilització de MongoDB</a>
+      <li><a href="33__utilitzaci_de_mongodb.html" class="daddy">3.3 - Utilització de MongoDB</a>
       <ul class="other-section">
-         <li><a href="321__tipus_de_dades.html" class="no-ch">3.2.1 - Tipus de dades</a></li>
-         <li><a href="322__operacions_bsiques.html" class="no-ch">3.2.2 - Operacions bàsiques</a></li>
+         <li><a href="331__tipus_de_dades.html" class="no-ch">3.3.1 - Tipus de dades</a></li>
+         <li><a href="332__operacions_bsiques.html" class="no-ch">3.3.2 - Operacions bàsiques</a></li>
          <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
          <ul class="other-section">
-            <li><a href="3231__set.html" class="no-ch">3.2.3.1 - $set</a></li>
-            <li><a href="3232__unset.html" class="no-ch">3.2.3.2 - $unset</a></li>
-            <li><a href="3233__rename.html" class="no-ch">3.2.3.3 - $rename</a></li>
-            <li><a href="3234__inc.html" class="no-ch">3.2.3.4 - $inc</a></li>
-            <li><a href="3235__elements_dun_array.html" class="no-ch">3.2.3.5 - Elements d'un array</a></li>
-            <li><a href="3236__inserci_en_arrays_push.html" class="no-ch">3.2.3.6 - Inserció en Arrays: $push</a></li>
-            <li><a href="3237__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.2.3.7 - Eliminació en arrays: $pop i $pull</a></li>
-            <li><a href="3238__upsert.html" class="no-ch">3.2.3.8 - Upsert</a></li>
+            <li><a href="3331__set.html" class="no-ch">3.3.3.1 - $set</a></li>
+            <li><a href="3332__unset.html" class="no-ch">3.3.3.2 - $unset</a></li>
+            <li><a href="3333__rename.html" class="no-ch">3.3.3.3 - $rename</a></li>
+            <li><a href="3334__inc.html" class="no-ch">3.3.3.4 - $inc</a></li>
+            <li><a href="3335__elements_dun_array.html" class="no-ch">3.3.3.5 - Elements d'un array</a></li>
+            <li><a href="3336__inserci_en_arrays_push.html" class="no-ch">3.3.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3337__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.3.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3338__upsert.html" class="no-ch">3.3.3.8 - Upsert</a></li>
          </ul>
          </li>
       </ul>
       </li>
-      <li><a href="33__consulta_de_documents.html" class="daddy">3.3 - Consulta de documents</a>
+      <li><a href="34__consulta_de_documents.html" class="daddy">3.4 - Consulta de documents</a>
       <ul class="other-section">
-         <li><a href="331__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.3.1 - Paràmetres de les funcions find() i findOne()</a></li>
-         <li><a href="332__operadors_de_les_condicions.html" class="no-ch">3.3.2 - Operadors de les condicions</a></li>
-         <li><a href="333__agregaci.html" class="no-ch">3.3.3 - Agregació</a></li>
+         <li><a href="341__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.4.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="342__operadors_de_les_condicions.html" class="no-ch">3.4.2 - Operadors de les condicions</a></li>
+         <li><a href="343__agregaci.html" class="no-ch">3.4.3 - Agregació</a></li>
       </ul>
       </li>
    </ul>
@@ -102,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</div>
+</nav>
 <div id='topPagination'>
-<div class="pagination noprt">
+<nav class="pagination noprt">
 <a href="23__utilitzaci_de_redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="232__keys.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</div>
+</nav>
 </div>
 <div id="main-wrapper">
-<div id="main"><a name="main"></a>
-<div id="nodeDecoration"><h1 id="nodeTitle">2.3.1 - Strings</h1></div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id7">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.3.1 - Strings</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id7">
 <div class="iDevice emphasis0">
 <div id="ta7_85" class="block iDevice_content">
 <p>És el tipus de dades més senzill, més bàsic. Serà una cadena de caràcters de tipus <em><strong>binary</strong></em><strong> safe</strong> en la qual normalment guardarem les habituals cadenes de caràcters, però que també podríem guardar imatges o objectes serialitzats de Java. La grandària màxima és de 512Mb.</p>
@@ -127,8 +128,8 @@
 <p></p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id8">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id8">
 <div class="iDevice emphasis0">
 <div id="ta8_85" class="block iDevice_content">
 <p class="titolet"><a id="set"></a>SET</p>
@@ -155,8 +156,8 @@
 <p></p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id9">
 <div class="iDevice emphasis0">
 <div id="ta9_85" class="block iDevice_content">
 <p class="titolet"><a id="setex"></a>SETEX</p>
@@ -165,8 +166,8 @@
 <p>Funciona igual que el <strong>SET</strong> amb el paràmetre <strong>EX</strong>: crearà la clau amb el valor, però tindrà una existència dels segons indicats.</p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id10">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id10">
 <div class="iDevice emphasis0">
 <div id="ta10_85" class="block iDevice_content">
 <div id="ta9_85" class="block iDevice_content">
@@ -177,8 +178,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id11">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id11">
 <div class="iDevice emphasis0">
 <div id="ta11_85" class="block iDevice_content">
 <p class="titolet"><a id="mget"></a>MGET</p>
@@ -192,8 +193,8 @@
 <p>Si alguna de les claus no exiteix, tornarà <strong>nil</strong> en el seu lloc</p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id12">
 <div class="iDevice emphasis0">
 <div id="ta12_85" class="block iDevice_content">
 <p class="titolet"><a id="mset"></a>MSET</p>
@@ -204,8 +205,8 @@
 <p>Si no vulguérem reemplaçar valors, podríem utilitzar el comando <strong>MSETNX</strong>, totalment equivalent, però hauríem de tenir en compte que si alguna ja existeix i per tant no pot canviar el valor, no faria l'operació, és a dir, tampoc crearia les altres.</p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id13">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id13">
 <div class="iDevice emphasis0">
 <div id="ta13_85" class="block iDevice_content">
 <p class="titolet"><a id="append"></a>APPEND</p>
@@ -216,8 +217,8 @@
 <p></p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id14">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id14">
 <div class="iDevice emphasis0">
 <div id="ta14_85" class="block iDevice_content">
 <p class="titolet"><a id="strlen"></a>STRLEN</p>
@@ -228,8 +229,8 @@
 <p></p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id15">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id15">
 <div class="iDevice emphasis0">
 <div id="ta15_85" class="block iDevice_content">
 <p class="titolet"><a id="getrange"></a>GETRANGE</p>
@@ -241,8 +242,8 @@
 <p></p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id16">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id16">
 <div class="iDevice emphasis0">
 <div id="ta16_85" class="block iDevice_content">
 <p class="titolet"><a id="setrange"></a>SETRANGE</p>
@@ -252,8 +253,8 @@
 <p class="codi2">127.0.0.1:6379&gt; get salutacio<br />"Hola, com va?"<br />127.0.0.1:6379&gt; setrange salutacio 4 ". C"<br />(integer) 13<br />127.0.0.1:6379&gt; get salutacio<br />"Hola. Com va?"</p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id17">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id17">
 <div class="iDevice emphasis0">
 <div id="ta17_85" class="block iDevice_content">
 <p class="titolet"><a id="incr"></a>INCR</p>
@@ -265,8 +266,8 @@
 <p class="codi2">127.0.0.1:6379&gt; set compt1 20<br />OK<br />127.0.0.1:6379&gt; get compt1<br />"20"<br />127.0.0.1:6379&gt; incr compt1<br />(integer) 21<br />127.0.0.1:6379&gt; get compt1<br />"21"<br />127.0.0.1:6379&gt; incr compt2<br />(integer) 1<br />127.0.0.1:6379&gt; get compt2<br />"1"<br />127.0.0.1:6379&gt; incr clau_1<br />(error) ERR value is not an integer or out of range<br />127.0.0.1:6379&gt; set compt3 4.25<br />OK<br />127.0.0.1:6379&gt; incr compt3<br />(error) ERR value is not an integer or out of range</p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id18">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id18">
 <div class="iDevice emphasis0">
 <div id="ta18_85" class="block iDevice_content">
 <p class="titolet"><a id="decr"></a>DECR</p>
@@ -278,8 +279,8 @@
 <p class="codi2">127.0.0.1:6379&gt; decr compt2<br />(integer) 0<br />127.0.0.1:6379&gt; decr compt2<br />(integer) -1<br />127.0.0.1:6379&gt; get compt2<br />"-1"</p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id20">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id20">
 <div class="iDevice emphasis0">
 <div id="ta20_85" class="block iDevice_content">
 <p class="titolet"><a id="incrby"></a>INCRBY</p>
@@ -289,8 +290,8 @@
 <p class="codi2">127.0.0.1:6379&gt; incrby compt1 10<br />(integer) 31<br />127.0.0.1:6379&gt; incrby compt1 -20<br />(integer) 11</p>
 </div>
 </div>
-</div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id21">
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id21">
 <div class="iDevice emphasis0">
 <div id="ta21_85" class="block iDevice_content">
 <p class="titolet"><a id="decrby"></a>DECRBY</p>
@@ -300,13 +301,13 @@
 <p class="codi2">127.0.0.1:6379&gt; decrby compt1 5<br />(integer) 6</p>
 </div>
 </div>
-</div>
+</article>
 <div id='bottomPagination'>
-<div class="pagination noprt">
+<nav class="pagination noprt">
 <a href="23__utilitzaci_de_redis.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="232__keys.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
 </div>
-</div>
-</div>
+</section>
 </div>
 </div>
 </body></html>
