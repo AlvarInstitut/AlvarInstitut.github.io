@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ca">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>2.3.6 - Set ordenat | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
-<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<header id="header" ><div id="headerContent">Bases de Dades</div></header>
-<nav id="siteNav">
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
@@ -103,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</nav>
+</div>
 <div id='topPagination'>
-<nav class="pagination noprt">
+<div class="pagination noprt">
 <a href="235__set.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__mongodb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
+</div>
 </div>
 <div id="main-wrapper">
-<section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">2.3.6 - Set ordenat</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id79">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.6 - Set ordenat</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id79">
 <div class="iDevice emphasis0">
 <div id="ta79_85" class="block iDevice_content">
 <p>Els <strong>Sets Ordenats</strong> (<strong>Sorted Set</strong>) de <strong>Redis</strong> són Sets que a més de guardar els valors, guarden també una <strong>puntuació</strong> (<strong>score</strong>) per a cada valor, i <strong>Redis</strong> mantindrà el conjunt <strong>ordenat</strong> per aquesta puntuació.</p>
@@ -123,8 +123,8 @@
 <p style="margin-left: 30px;"></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id80">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id80">
 <div class="iDevice emphasis0">
 <div id="ta80_85" class="block iDevice_content">
 <div class="iDevice emphasis0">
@@ -141,8 +141,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id81">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id81">
 <div class="iDevice emphasis0">
 <div id="ta81_85" class="block iDevice_content">
 <div id="ta59_85" class="block iDevice_content">
@@ -159,8 +159,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id82">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id82">
 <div class="iDevice emphasis0">
 <div id="ta82_85" class="block iDevice_content">
 <div id="ta81_85" class="block iDevice_content">
@@ -180,8 +180,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id83">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id83">
 <div class="iDevice emphasis0">
 <div id="ta83_85" class="block iDevice_content">
 <div id="ta82_85" class="block iDevice_content">
@@ -202,8 +202,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id84">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id84">
 <div class="iDevice emphasis0">
 <div id="ta84_85" class="block iDevice_content">
 <p class="titolet"><a id="zrange"></a>ZRANGE</p>
@@ -218,8 +218,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id85">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id85">
 <div class="iDevice emphasis0">
 <div id="ta85_85" class="block iDevice_content">
 <p class="titolet"><a id="zrangebyscore"></a>ZRANGEBYSCORE</p>
@@ -235,8 +235,8 @@
 <p class="codi2">127.0.0.1:6379&gt; zrevrangebyscore puntuacions 5 2 withscores<br />1) "Nom3"<br />2) "5"<br />3) "Nom4"<br />4) "4"<br />5) "Nom2"<br />6) "2"</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id86">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id86">
 <div class="iDevice emphasis0">
 <div id="ta86_85" class="block iDevice_content">
 <p class="titolet"><a id="zrank"></a>ZRANK</p>
@@ -252,8 +252,8 @@
 <p class="codi2">127.0.0.1:6379&gt; zrevrank puntuacions Nom4<br />(integer) 1</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id87">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id87">
 <div class="iDevice emphasis0">
 <div id="ta87_85" class="block iDevice_content">
 <p class="titolet"><a id="zrem"></a>ZREM</p>
@@ -265,8 +265,8 @@
 <p class="codi2">127.0.0.1:6379&gt; zrange puntuacions 0 -1 withscores<br />1) "Nom2"<br />2) "2"<br />3) "Nom4"<br />4) "4"<br />5) "Nom3"<br />6) "5"</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id88">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id88">
 <div class="iDevice emphasis0">
 <div id="ta88_85" class="block iDevice_content">
 <div id="ta87_85" class="block iDevice_content">
@@ -280,8 +280,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id89">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id89">
 <div class="iDevice emphasis0">
 <div id="ta89_85" class="block iDevice_content">
 <p class="titolet"><a id="zincrby"></a>ZINCRBY</p>
@@ -294,13 +294,13 @@
 <p class="codi2">127.0.0.1:6379&gt; zrange puntuacions 0 -1 withscores<br />1) "Nom5"<br />2) "2.75"<br />3) "Nom2"<br />4) "3.5"<br />5) "Nom3"<br />6) "5"</p>
 </div>
 </div>
-</article>
-<div id='bottomPagination'>
-<nav class="pagination noprt">
-<a href="235__set.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__mongodb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
 </div>
-</section>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="235__set.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3__mongodb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body></html>

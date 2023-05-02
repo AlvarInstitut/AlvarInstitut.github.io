@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ca">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>3.3.1 - Tipus de dades | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
-<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<header id="header" ><div id="headerContent">Bases de Dades</div></header>
-<nav id="siteNav">
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
@@ -103,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</nav>
+</div>
 <div id='topPagination'>
-<nav class="pagination noprt">
+<div class="pagination noprt">
 <a href="33__utilitzaci_de_mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="332__operacions_bsiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
+</div>
 </div>
 <div id="main-wrapper">
-<section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">3.3.1 - Tipus de dades</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id101">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.1 - Tipus de dades</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id101">
 <div class="iDevice emphasis0">
 <div id="ta101_85" class="block iDevice_content">
 <p>Els valors dels elements, és a dir de les parelles clau valor, poden ser d'una amplia gama de tipus. Fem un ràpid repàs.</p>
@@ -120,8 +120,8 @@
 <p>Quan guardem en una variable es mostrarà el prompt, la definició de la variable i després el resultat d'haver guardat la variable. Utilitzarem requadres blancs. Els requadres grocs són únicament de la definició d'una clau-valor d'un determinat tipus</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id96">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id96">
 <div class="iDevice emphasis0">
 <div id="ta96_85" class="block iDevice_content">
 <p class="titolet">NULL</p>
@@ -144,8 +144,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id97">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id97">
 <div class="iDevice emphasis0">
 <div id="ta97_85" class="block iDevice_content">
 <p class="titolet">STRING</p>
@@ -168,8 +168,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id98">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id98">
 <div class="iDevice emphasis0">
 <div id="ta98_85" class="block iDevice_content">
 <p class="titolet">ARRAY</p>
@@ -181,8 +181,8 @@
 <p>En MongoDB podrem treballar molt bé amb arrays, i tindrem operacions per a poder buscar dins de l'array, modificar un element, crear índex, ...</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id99">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id99">
 <div class="iDevice emphasis0">
 <div id="ta99_85" class="block iDevice_content">
 <p class="titolet">DOCUMENTS (OBJECTES)</p>
@@ -197,8 +197,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id100">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id100">
 <div class="iDevice emphasis0">
 <div id="ta100_85" class="block iDevice_content">
 <p class="titolet">OBJECT ID</p>
@@ -206,13 +206,13 @@
 <p>Farem proves de la seua utilització en la seüent pregunta, en el moment d'inserir diferents documents.</p>
 </div>
 </div>
-</article>
-<div id='bottomPagination'>
-<nav class="pagination noprt">
-<a href="33__utilitzaci_de_mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="332__operacions_bsiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
 </div>
-</section>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33__utilitzaci_de_mongodb.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="332__operacions_bsiques.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body></html>

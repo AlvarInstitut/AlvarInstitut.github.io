@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ca">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>3.3.2 - Operacions bàsiques | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
-<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<header id="header" ><div id="headerContent">Bases de Dades</div></header>
-<nav id="siteNav">
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
@@ -103,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</nav>
+</div>
 <div id='topPagination'>
-<nav class="pagination noprt">
+<div class="pagination noprt">
 <a href="331__tipus_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323__operacions_dactualitzaci_avanada.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
+</div>
 </div>
 <div id="main-wrapper">
-<section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">3.3.2 - Operacions bàsiques</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id95">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.2 - Operacions bàsiques</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id95">
 <div class="iDevice emphasis0">
 <div id="ta95_85" class="block iDevice_content">
 <p>En aquest punt anem a veure les operacions més bàsiques, per a poder treballar sobre exemples pràctics, i així disposar ja d'unes dades inicials per a practicar.</p>
@@ -125,8 +125,8 @@
 <p>També ens indica que ha inserit un document. I haurà creat també el camp <strong>_id</strong> com veurem en el següent punt</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id102">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id102">
 <div class="iDevice emphasis0">
 <div id="ta102_85" class="block iDevice_content">
 <p class="titolet">Lectura</p>
@@ -143,8 +143,8 @@
 <p>En tots els casos podem comprovar que és cert el que veníem afirmant, que ha creat automàticament l'element <strong>_id</strong> per a cada document guardat. Evidentment, cadascú de nosaltres tindrà una valors diferents.</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id106">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id106">
 <div class="iDevice emphasis0">
 <div id="ta106_85" class="block iDevice_content">
 <p class="titolet">Inserció especificant el id</p>
@@ -160,8 +160,8 @@
 <p>Ens avisa que estem duplicant la <em>clau</em> <em>principal </em>, és a dir l'identificador.</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id107">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id107">
 <div class="iDevice emphasis0">
 <div id="ta107_85" class="block iDevice_content">
 <p class="titolet">Inserció múltiple: insertMany()</p>
@@ -171,8 +171,8 @@
 <p class="codi2">&gt; db.nombresprimers.find()<br />{ "_id" : 2 }<br />{ "_id" : 3 }<br />{ "_id" : 5 }<br />{ "_id" : 7 }<br />{ "_id" : 11 }<br />{ "_id" : 13 }<br />{ "_id" : 17 }<br />{ "_id" : 19 }<br />&gt;</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id104">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id104">
 <div class="iDevice emphasis0">
 <div id="ta104_85" class="block iDevice_content">
 <p class="titolet">Esborrat</p>
@@ -186,8 +186,8 @@
 <p class="codi2">&gt; db.nombresprimers.drop()<br />true<br />&gt;</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id103">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id103">
 <div class="iDevice emphasis0">
 <div id="ta103_85" class="block iDevice_content">
 <p class="titolet">Actualització: update() i updateMany()</p>
@@ -220,8 +220,8 @@
 <p>També està marcat en roig perquè segurament no tindrem 2 documents amb aquesta condició.</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id119">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id119">
 <div class="iDevice emphasis0">
 <div id="ta119_85" class="block iDevice_content">
 <p class="titolet">Funció Save</p>
@@ -245,13 +245,13 @@
 <p>Efectivament s'ha guardat com un nou document</p>
 </div>
 </div>
-</article>
-<div id='bottomPagination'>
-<nav class="pagination noprt">
-<a href="331__tipus_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323__operacions_dactualitzaci_avanada.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
 </div>
-</section>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="331__tipus_de_dades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323__operacions_dactualitzaci_avanada.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body></html>

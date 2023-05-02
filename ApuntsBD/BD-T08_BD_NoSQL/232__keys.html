@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ca">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>2.3.2 - Keys | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
-<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<header id="header" ><div id="headerContent">Bases de Dades</div></header>
-<nav id="siteNav">
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
@@ -103,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</nav>
+</div>
 <div id='topPagination'>
-<nav class="pagination noprt">
+<div class="pagination noprt">
 <a href="231__strings.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="233__hash.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
+</div>
 </div>
 <div id="main-wrapper">
-<section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">2.3.2 - Keys</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id22">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.2 - Keys</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id22">
 <div class="iDevice emphasis0">
 <div id="ta22_85" class="block iDevice_content">
 <p>Ara anem a veure comandos que ens permeten treballar amb les claus, per a buscar-les, veure si existeixen, etc. No importarà el tipus de les claus (de moment només hem treballat amb claus de tipus <strong>String</strong>, però si ja en tinguérem dels altres tipus també es veurien afectades). En cap cas d'aquestos comandos accedirem al valor de les claus.</p>
@@ -122,8 +122,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id24">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id24">
 <div class="iDevice emphasis0">
 <div id="ta24_85" class="block iDevice_content">
 <p class="titolet"><a id="keys"></a>KEYS</p>
@@ -144,8 +144,8 @@
 <p><strong></strong>L'ordre en el qual es mostraran les claus no té per què ser igual per a tots nosaltres. Él més normal és que cadascú de nosaltres tinga un ordre diferent. Açò té a veure amb els conjunts (<strong>set</strong>), un tipus de dades que veurem més avant.</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id23">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id23">
 <div class="iDevice emphasis0">
 <div id="ta23_85" class="block iDevice_content">
 <p class="titolet"><a id="exists"></a>EXISTS</p>
@@ -155,8 +155,8 @@
 <p class="codi2">127.0.0.1:6379&gt; exists clau_1<br />(integer) 1<br />127.0.0.1:6379&gt; exists clau_25<br />(integer) 0</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id25">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id25">
 <div class="iDevice emphasis0">
 <div id="ta25_85" class="block iDevice_content">
 <p class="titolet"><a id="del"></a>DEL</p>
@@ -167,8 +167,8 @@
 <p>Observeu que ens indica quantes claus ha esborrat. En el primer exemple ha esborrat la clau especificada, i en el segon diu que ha esborrat 2, que seran <strong>mes6</strong> i <strong>mes7</strong>, ja que <strong>mes8</strong> i <strong>mes9</strong> no existien.</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id26">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id26">
 <div class="iDevice emphasis0">
 <div id="ta26_85" class="block iDevice_content">
 <p class="titolet"><a id="type"></a>TYPE</p>
@@ -186,8 +186,8 @@
 <p class="codi2">127.0.0.1:6379&gt; type clau_1<br />string<span style="text-decoration: underline;"><br /></span></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id27">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id27">
 <div class="iDevice emphasis0">
 <div id="ta27_85" class="block iDevice_content">
 <p class="titolet"><a id="rename"></a>RENAME</p>
@@ -200,8 +200,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id28">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id28">
 <div class="iDevice emphasis0">
 <div id="ta28_85" class="block iDevice_content">
 <p class="titolet"><a id="renamenx"></a>RENAMENX</p>
@@ -213,8 +213,8 @@
 <p>Estem suposant que la clau <strong>compt3</strong> ja existeix</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id29">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id29">
 <div class="iDevice emphasis0">
 <div id="ta29_85" class="block iDevice_content">
 <p class="titolet"><a id="expire"></a>EXPIRE</p>
@@ -224,8 +224,8 @@
 <p>En cas que a una clau amb temps d'expiració li canviem el nom amb <strong>RENAME</strong>, continuarà amb temps d'expiració que li quedava.</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id30">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id30">
 <div class="iDevice emphasis0">
 <div id="ta30_85" class="block iDevice_content">
 <div id="ta29_85" class="block iDevice_content">
@@ -236,8 +236,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id31">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id31">
 <div class="iDevice emphasis0">
 <div id="ta31_85" class="block iDevice_content">
 <div id="ta30_85" class="block iDevice_content">
@@ -252,8 +252,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id32">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id32">
 <div class="iDevice emphasis0">
 <div id="ta32_85" class="block iDevice_content">
 <p class="titolet"><a id="pttl"></a>PTTL</p>
@@ -262,8 +262,8 @@
 <p>Igual que l'anterior, però ens torna el temps en milisegons.</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id33">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id33">
 <div class="iDevice emphasis0">
 <div id="ta33_85" class="block iDevice_content">
 <div id="ta31_85" class="block iDevice_content">
@@ -281,13 +281,13 @@
 <p></p>
 </div>
 </div>
-</article>
-<div id='bottomPagination'>
-<nav class="pagination noprt">
-<a href="231__strings.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="233__hash.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
 </div>
-</section>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="231__strings.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="233__hash.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body></html>

@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ca">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>3.4.3 - Agregació | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
-<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-34"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<header id="header" ><div id="headerContent">Bases de Dades</div></header>
-<nav id="siteNav">
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
@@ -103,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</nav>
+</div>
 <div id='topPagination'>
-<nav class="pagination noprt">
+<div class="pagination noprt">
 <a href="342__operadors_de_les_condicions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__bd_xml_existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
+</div>
 </div>
 <div id="main-wrapper">
-<section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">3.4.3 - Agregació</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id137">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.4.3 - Agregació</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id137">
 <div class="iDevice emphasis0">
 <div id="ta137_85" class="block iDevice_content">
 <p>L'agregació ens permetrà fer consultes molt avançades. És un procés un poc complicat però molt potent. Ens donarà una potència quasi com la del SQL quan comencem a utilitzar el GROUP BY i HAVING.</p>
@@ -128,8 +128,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id138">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id138">
 <div class="iDevice emphasis0">
 <div id="ta138_85" class="block iDevice_content">
 <p class="titolet">Operador $match</p>
@@ -141,8 +141,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id139">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id139">
 <div class="iDevice emphasis0">
 <div id="ta139_85" class="block iDevice_content">
 <p class="titolet">Operador $project</p>
@@ -192,8 +192,8 @@
 </ul>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id140">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id140">
 <div class="iDevice emphasis0">
 <div id="ta140_85" class="block iDevice_content">
 <p class="titolet">Operador $group</p>
@@ -227,15 +227,15 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id141">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id141">
 <div class="iDevice emphasis0">
 <div id="ta141_85" class="block iDevice_content">
 
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id142">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id142">
 <div class="iDevice emphasis0">
 <div id="ta142_85" class="block iDevice_content">
 <p class="titolet">Operador $sort</p>
@@ -246,8 +246,8 @@
 <p class="codi2">&gt; db.libro.aggregate( { $group : { "_id" : {"any":{$year:"$fecha"}} , "mitjana preus":{$avg:"$precio"} } } , {$sort:{"mitjana preus":-1}})<br />{ "_id" : { "any" : 2013 }, "mitjana preus" : 19.490000000000002 }<br />{ "_id" : { "any" : 2014 }, "mitjana preus" : 18.825 }<br />{ "_id" : { "any" : 2012 }, "mitjana preus" : 11 }<br />{ "_id" : { "any" : 2011 }, "mitjana preus" : 9.5 }<br />{ "_id" : { "any" : 2009 }, "mitjana preus" : 9.45 }</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id143">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id143">
 <div class="iDevice emphasis0">
 <div id="ta143_85" class="block iDevice_content">
 <p class="titolet">Operador $limit</p>
@@ -257,8 +257,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id144">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id144">
 <div class="iDevice emphasis0">
 <div id="ta144_85" class="block iDevice_content">
 <p class="titolet">Operador $skip</p>
@@ -267,13 +267,13 @@
 <p class="codi2">&gt; db.libro.aggregate({$group:{"_id":{"any":{$year:"$fecha"}},"mitjana preus":{$avg:"$precio"}}} , {$sort:{"mitjana preus":-1}} , {$skip:3})<br />{ "_id" : { "any" : 2011 }, "mitjana preus" : 9.5 }<br />{ "_id" : { "any" : 2009 }, "mitjana preus" : 9.45 }</p>
 </div>
 </div>
-</article>
-<div id='bottomPagination'>
-<nav class="pagination noprt">
-<a href="342__operadors_de_les_condicions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__bd_xml_existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
 </div>
-</section>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="342__operadors_de_les_condicions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__bd_xml_existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body></html>

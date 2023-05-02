@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ca">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
@@ -7,9 +7,9 @@
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
 <title>2.3.3 - Hash | Bases de Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
 <meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
-<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -17,8 +17,8 @@
 <body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
-<header id="header" ><div id="headerContent">Bases de Dades</div></header>
-<nav id="siteNav">
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
    <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
@@ -103,16 +103,16 @@
    </li>
    <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
 </ul>
-</nav>
+</div>
 <div id='topPagination'>
-<nav class="pagination noprt">
+<div class="pagination noprt">
 <a href="232__keys.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="234__list.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
+</div>
 </div>
 <div id="main-wrapper">
-<section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">2.3.3 - Hash</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id34">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.3.3 - Hash</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id34">
 <div class="iDevice emphasis0">
 <div id="ta34_85" class="block iDevice_content">
 <p>Ja havíem comentat que el tipus <strong>Hash</strong> és una espècie de registre, amb subcamps (en realitat hauríem de dir sub-claus). Pot tenir qualsevol número de subcamps que seran de tipus String.</p>
@@ -123,8 +123,8 @@
 <p></p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id35">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id35">
 <div class="iDevice emphasis0">
 <div id="ta35_85" class="block iDevice_content">
 <p class="titolet"><a id="hset"></a>HSET</p>
@@ -138,8 +138,8 @@
 <p class="codi2">127.0.0.1:6379&gt; hset empleat_2 nom Berta<br />(integer) 1<br />127.0.0.1:6379&gt; hset empleat_2 sou 1500.0<br />(integer) 1</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id36">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id36">
 <div class="iDevice emphasis0">
 <div id="ta36_85" class="block iDevice_content">
 <p class="titolet"><a id="hget"></a>HGET</p>
@@ -150,8 +150,8 @@
 <p class="codi2">127.0.0.1:6379&gt; hget empleat_1 nom<br />"Andreu"<br />127.0.0.1:6379&gt; hget empleat_1 departament<br />"10"<br />127.0.0.1:6379&gt; hget empleat_2 nom<br />"Berta"<br />127.0.0.1:6379&gt; hget empleat_2 departament<br />(nil)</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id37">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id37">
 <div class="iDevice emphasis0">
 <div id="ta37_85" class="block iDevice_content">
 <p class="titolet"><a id="hgetall"></a>HGETALL</p>
@@ -162,8 +162,8 @@
 <p class="codi2">127.0.0.1:6379&gt; hgetall empleat_1<br />1) "nom"<br />2) "Andreu"<br />3) "departament"<br />4) "10"<br />5) "sou"<br />6) "1000.0"</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id39">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id39">
 <div class="iDevice emphasis0">
 <div id="ta39_85" class="block iDevice_content">
 <p class="titolet"><a id="hdel"></a>HDEL</p>
@@ -174,8 +174,8 @@
 <p class="codi2">127.0.0.1:6379&gt; hdel empleat_1 departament<br />(integer) 1<br />127.0.0.1:6379&gt; hgetall empleat_1<br />1) "nom"<br />2) "Andreu"<br />3) "sou"<br />4) "1000.0"</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id40">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id40">
 <div class="iDevice emphasis0">
 <div id="ta40_85" class="block iDevice_content">
 <div id="ta37_85" class="block iDevice_content">
@@ -188,8 +188,8 @@
 </div>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id41">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id41">
 <div class="iDevice emphasis0">
 <div id="ta41_85" class="block iDevice_content">
 <p class="titolet"><a id="hvals"></a>HVALS</p>
@@ -200,8 +200,8 @@
 <p class="codi2">127.0.0.1:6379&gt; hvals empleat_1<br />1) "Andreu"<br />2) "1000.0"</p>
 </div>
 </div>
-</article>
-<article class="iDevice_wrapper FreeTextIdevice" id="id42">
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id42">
 <div class="iDevice emphasis0">
 <div id="ta42_85" class="block iDevice_content">
 <p class="titolet">Altres Comandos</p>
@@ -215,13 +215,13 @@
 </ul>
 </div>
 </div>
-</article>
-<div id='bottomPagination'>
-<nav class="pagination noprt">
-<a href="232__keys.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="234__list.html" class="next"><span>Següent<span> &raquo;</span></span></a>
-</nav>
 </div>
-</section>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="232__keys.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="234__list.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body></html>
