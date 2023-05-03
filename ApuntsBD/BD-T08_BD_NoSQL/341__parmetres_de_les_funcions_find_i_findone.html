@@ -9,7 +9,8 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
-<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nd/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 Portable - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -124,7 +125,7 @@
 <div id="ta124_85" class="block iDevice_content">
 <p>Les funcions <strong>find()</strong> i <strong>findOne()</strong> són absolutament equivalents, amb l'úinca diferència que la primera torna tots els documents trobats, mentre que la segona només torna el primer document trobat.</p>
 <p>Per una millor comprensió, utilitzarem únicament <strong>find()</strong>, per veure tots els resultats obtinguts.</p>
-<p>La funció <strong>find()</strong> s'ha comparat tradicionalment amb la sentència SELECT de SQL. Sempre tornarà un conjunt de documents, que poden variar des de no tornar cap document, a tornar-los tots els de la col·lecció.</p>
+<p>La funció <strong>find()</strong> s'ha comparat tradicionalment amb la sentència SELECT de SQL. Sempre tornarà un conjunt de documents, que poden variar des de no tornar cap document, a tornar tots els de la col·lecció.</p>
 <p>La funció <strong>find()</strong> pot tenir uns quants paràmetres.</p>
 <ul>
 <li>
@@ -133,7 +134,6 @@
 <p class="codi">db.col_leccio1.find( { clau1 : valor1 } )</p>
 <p>Tornarà tots els documents de la col·lecció <strong>col_leccio1</strong> que tinguen el camp <strong>clau1</strong> i que en ella tinguen el valor <strong>valor1</strong>. Aquest criteri pot ser el complicat que faça falta, formant-lo en JSON. En definitiva, tornarà aquells documents que facen <em>matching</em> amb el document del criteri, és a dir, funcionaria com un <strong>and</strong></p>
 <p class="codi">db.col_leccio1.find( { clau1 : valor1 , clau2 : valor2 } )</p>
-<p></p>
 <p>que tornaria aquells documents de la <strong>col_lecció1</strong> que tenen el camp <strong>clau1</strong> amb el valor <strong>valor1</strong> i que tenen el camp <strong>clau2</strong> amb el valor <strong>valor2</strong></p>
 <p>Si no volem posar cap criteri, per a que els torne tots, no posem res com a paràmetre, o encara millor, li passem un document (objecte) buit, de manera que tots els documents de la col·lecció faran <em>matching</em> amb ell.</p>
 <p class="codi">db.col_leccio1.find( { } )</p>
@@ -142,7 +142,7 @@
 </li>
 <li>
 <div>
-<p>El segon paràmetre ens servirà per a delimitar els camps dels documents que es tornaran. També tindrà el format JSON d'un objecte al qual li posarem com a claus els diferents camps que volem que apareguen o no, i com a valor 1 per a que sí que apareguen i 0 per a que no apareguen.</p>
+<p>El segon paràmetre ens servirà per a delimitar els camps dels documents que es visualitzaran. També tindrà el format JSON d'un objecte al qual li posarem com a claus els diferents camps que volem que apareguen o no, i com a valor 1 per a que sí que apareguen i 0 per a que no apareguen.</p>
 <p>Si posem algun camp a que sí que aparega (és a dir, amb el valor 1), els únics que apareixeran seran aquestos, a més del<strong>_id</strong> que per defecte sempre apareix.</p>
 <p class="codi2">&gt; db.alumnes.find({},{nom:1})<br />{ "_id" : ObjectId("56debe3017bf4ed437dc77c8"), "nom" : "Abel" }<br />{ "_id" : ObjectId("56dfdbd136d8b095cb6bd57a"), "nom" : "Berta" }</p>
 <p>Per tant si no volem que aparega <strong>_id </strong>posarem:</p>
@@ -162,7 +162,10 @@
 <a href="34__consulta_de_documents.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="342__operadors_de_les_condicions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
+<div id="packageLicense" class="cc cc-by-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Llicència Creative Commons Reconeixement SenseObraDerivada 4.0</a></p>
 </div>
 </div>
 </div>
-</body></html>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creat amb eXeLearning<span> (Finestra nova)</span></span></a></p></body></html>

@@ -9,7 +9,8 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
-<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nd/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 Portable - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
@@ -116,15 +117,12 @@
 <div class="iDevice emphasis0">
 <div id="ta137_85" class="block iDevice_content">
 <p>L'agregació ens permetrà fer consultes molt avançades. És un procés un poc complicat però molt potent. Ens donarà una potència quasi com la del SQL quan comencem a utilitzar el GROUP BY i HAVING.</p>
-<p>La tècnica que s'utilitza és la del <em><strong>pipeline</strong></em>, és a dir fer una s`erie de comandos, cadascun agafa les dades que proporciona l'anterior i a la seua vegada proporciona les dades al següent comando. D'aquesta manera es tractarà un conjunt de documents i es faran "operacions" sobre ells seqüencialment en blocs: filtrat, projecció, agrupacions, ordenació, limitació i <em>skipping</em> (saltar alguns).</p>
+<p>La tècnica que s'utilitza és la del <em><strong>pipeline</strong></em>, és a dir fer una sèrie de comandos, cadascun agafa les dades que proporciona l'anterior i a la seua vegada proporciona les dades al següent comando. D'aquesta manera es tractarà un conjunt de documents i es faran "operacions" sobre ells seqüencialment en blocs: filtrat, projecció, agrupacions, ordenació, limitació i <em>skipping</em> (saltar alguns).</p>
 <p>La sintaxi serà:</p>
 <p class="codi">db.col_leccio1.aggregate ( <em>operador $matc</em>h , <em>operador $projec</em>t , <em>operador $group</em> , <em>operador $sort</em> , <em>operador $limit</em> , <em>operador $skip</em> )</p>
 <p>L'ordre dels operadors pot canviar, però hem de tenir en compte que els comandos s'executen en el ordre en què els posem (d'esquerra a dreta). Així, per exemple, pot ser molt convenient posar el primer operador el $match, que és el de seleccionar documents, així les altres operacions es faran sobre menys documents i aniran més ràpides.</p>
 <p>Cada paràmetre del aggregate, és a dir, cada operador tindrà format JSON, i per tant sempre serà de l'estil:</p>
 <p class="codi">{ $operador : { clau:valor , ... } }</p>
-<p>Abans de veure els comandos d'agrupació, mirem un exemple per a poder adonar-nos de la potència</p>
-<p></p>
-<p></p>
 <p></p>
 </div>
 </div>
@@ -158,7 +156,7 @@
 <p class="codi2">&gt; db.libro.aggregate({$project:{titulo:1 , disponible:"$enstock"}})<br />{ "_id" : "9788408117117", "titulo" : "Circo Máximo", "disponible" : true }<br />{ "_id" : "9788401342158", "titulo" : "El juego de Ripper", "disponible" : true }<br />{ "_id" : "9788496208919", "titulo" : "Juego de tronos: Canción de hielo y fuego 1", "disponible" : true }<br />{ "_id" : "9788499088075", "titulo" : "La ladrona de libros", "disponible" : false }<br />{ "_id" : "9788415140054", "titulo" : "La princesa de hielo", "disponible" : true }<br />{ "_id" : "9788408113331", "titulo" : "Las carreras de Escorpio", "disponible" : false }<br />{ "_id" : "9788468738895", "titulo" : "Las reglas del juego", "disponible" : true }</p>
 <p></p>
 <p><span style="text-decoration: underline; font-size: large;"><strong>Camps calculats</strong></span></p>
-<p>Amb aquest nom genèric ens referirem a tots els càlculs, expressions i més coses que podrem posar per a trasnsformar el que ja tenim. Com veiem, açò és molt més potent que la projecció normal.</p>
+<p>Amb aquest nom genèric ens referirem a tots els càlculs, expressions i més coses que podrem posar per a transformar el que ja tenim. Com veiem, açò és molt més potent que la projecció normal.</p>
 <ul>
 <li>
 <div>
@@ -273,7 +271,10 @@
 <a href="342__operadors_de_les_condicions.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4__bd_xml_existdb.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
+<div id="packageLicense" class="cc cc-by-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Llicència Creative Commons Reconeixement SenseObraDerivada 4.0</a></p>
 </div>
 </div>
 </div>
-</body></html>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creat amb eXeLearning<span> (Finestra nova)</span></span></a></p></body></html>
