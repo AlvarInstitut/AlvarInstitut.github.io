@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>4 - "Tocar" les dades | Accés a Dades </title>
+<title>6 - Comunicació amb PL/pgSQL | Accés a Dades </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="ca" />
 <meta name="author" content="Àlvar Serrano Calduch" />
@@ -15,7 +15,7 @@
 <script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
 </head>
-<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<body class="exe-web-site" id="exe-node-34"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
 <div id="header" ><div id="headerContent">Accés a Dades</div></div>
@@ -30,8 +30,8 @@
       <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
    </ul>
    </li>
-   <li id="active"><a href="4__tocar_les_dades.html" class="active daddy">4 - "Tocar" les dades</a>
-   <ul>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
       <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
       <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
    </ul>
@@ -44,8 +44,8 @@
       <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
    </ul>
    </li>
-   <li><a href="6__comunicaci_amb_plpgsql.html" class="daddy">6 - Comunicació amb PL/pgSQL</a>
-   <ul class="other-section">
+   <li id="active"><a href="6__comunicaci_amb_plpgsql.html" class="active daddy">6 - Comunicació amb PL/pgSQL</a>
+   <ul>
       <li><a href="61__captura_derrors.html" class="no-ch">6.1 - Captura d'errors</a></li>
       <li><a href="62__execuci_de_funcions.html" class="no-ch">6.2 - Execució de funcions</a></li>
    </ul>
@@ -55,38 +55,24 @@
 </div>
 <div id='topPagination'>
 <div class="pagination noprt">
-<a href="32__jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41__des_de_intellij.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="54__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61__captura_derrors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="main-wrapper">
 <div id="main"><a name="main"></a>
-<div id="nodeDecoration"><h1 id="nodeTitle">4 - "Tocar" les dades</h1></div>
-<div class="iDevice_wrapper textIdevice" id="id43">
+<div id="nodeDecoration"><h1 id="nodeTitle">6 - Comunicació amb PL/pgSQL</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id60">
 <div class="iDevice emphasis0" >
-<div id="ta43_108_2" class="block iDevice_content">
-
-</div>
-</div>
-</div>
-<div class="iDevice_wrapper textIdevice" id="id44">
-<div class="iDevice emphasis0" >
-<div id="ta44_109_2" class="block iDevice_content">
-<div class="exe-text"><p style="text-align: justify;">Abans de començar a treballar la persistència en diferents Bases de Dades Relacionals, ens convindrà accedir al Sistema Gestor de Base de Dades per a poder veure les dades, treballar amb elles.</p>
-<p>Bàsicament voldrem:</p>
-<ul>
-<li>Poder veure les taules de la Base de Dades</li>
-<li>Poder veure l'estructura de cada taula: camps, tipus dels camps, clau principal, ...</li>
-<li>Poder veure les dades d'una taula, fins i tot poder indroduir noves files, esborrar o modificar de forma còmoda</li>
-<li>Poder editar i executar sentències SQL de forma còmoda</li>
-</ul>
-<p style="text-align: justify;">L'entorn d'IntelliJ ens proporciona una eina ja instal·lada, <strong>Database</strong>, a la qual es pot accedir des de <strong>View -&gt; Tool windows -&gt; Database</strong>. És una bona manera de poder connectar i "tocar" les dades sense tenir un client específic del Sistema Gestor de Base de Dades al qual volem accedir.</p>
-<p style="text-align: justify;">Però està clar que si disposem d'un client específic del SGBD, serà més còmode que amb la perspectiva anterior. Per això veurem una eina que ens permet connectar a quasi tots els Sistemes Gestors de Bases de Dades Relacionals, i per tant amb una única eina podem connectar on vulguem. És el <strong>DBeaver</strong>.</p></div>
+<div id="ta60_148_2" class="block iDevice_content">
+<div class="exe-text"><p>Hem vist com connectar amb una Base de Dades relacional i com executar sentències SQL, de diferents tipus.</p>
+<p>Però recordem que en el Tema 7 hem vist la programació en un SGBD com és PostgreSQL, concretament amb el llenguatge PL/pgSQL. Caldria que ens plantejàrem com interactuar amb les funcions creades, i també com capturar els errors que hem provocat amb un trigger, per exemple.</p>
+<p>Anem a tractar-ho en aquest punt</p></div>
 </div>
 </div>
 </div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
-<a href="32__jdbc.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41__des_de_intellij.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+<a href="54__exemple.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61__captura_derrors.html" class="next"><span>Següent<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="packageLicense" class="cc cc-by-sa">

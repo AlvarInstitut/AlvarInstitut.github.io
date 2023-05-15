@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1 - Captura d'errors | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-35"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6__comunicaci_amb_plpgsql.html" class="current-page-parent daddy">6 - Comunicació amb PL/pgSQL</a>
+   <ul>
+      <li id="active"><a href="61__captura_derrors.html" class="active no-ch">6.1 - Captura d'errors</a></li>
+      <li><a href="62__execuci_de_funcions.html" class="no-ch">6.2 - Execució de funcions</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6__comunicaci_amb_plpgsql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62__execuci_de_funcions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1 - Captura d'errors</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id61">
+<div class="iDevice emphasis0" >
+<div id="ta61_149_2" class="block iDevice_content">
+<div class="exe-text"><p>En els nostres programes escrits en Java, hauríem de controlar els errors, per a que no es trenque de forma incontrolada la seua execució.</p>
+<p>En concret, en l'accés a BD Relacionals hauríem de capturar els possibles errors que ens dóna el SGBD. Els errors són per múltiples causes: error en la connexió, sentència SQL errònia... I també els que provoquem nosaltres amb un trigger fent RAISE EXCEPTION.</p>
+<p>Per a capturar un error, ja sabem que en Java s'utilitza l'estructura <strong>try ... catch</strong>. Concretament, els errors que ens torna PostgreSQL són del tipus <strong>PSQLException</strong>. En l'excepció podrem obtenir el tipus d'error amb un codi, i el missatge que dóna el SGBD</p>
+<p>Per tant el més habitual serà capturar l'error i en el tractament mirar quin tipus d'error ha donat, per poder realitzar unes accions o unes altres. Els tipus d'error tornats per PostgreSQL es poden consultar en aquesta pàgina: <a href="https://www.postgresql.org/docs/current/errcodes-appendix.html">https://www.postgresql.org/docs/current/errcodes-appendix.html</a></p>
+<p>Concretament podrien ser interessants els que tenen els següents codis d'error:</p>
+<ul>
+<li>42601: Erro de sintaxi (la sentència SQL és incorrecta)</li>
+<li>42P01: Taula inexistent</li>
+<li>...</li>
+<li>P0001: Error de RAISE EXCEPTION (que són els provocats per nosaltres)</li>
+</ul>
+<p>En el següent exemple, intentem actualitzar els número d'habitants de Castelló. Com que teníem un trigger que impedia l'actualització quan la diferència entre la població antiga i la nova era de més de 50.000 persones, i com que la població que tenim és de 173.841, si posem una nova població de 750.000 ho ha d'impedir. Capturem l'error i mirem si el codi de l'error és el P0001, i aleshores traem un missatge particularitzat. Si no, únicament mostrem el missatge que ens ve des del SGBD.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class Exemple_6_1_Trigger {
+
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String url = "jdbc:postgresql://89.36.214.106:5432/geo_1cfsy_0000x";
+        String usuari = "geo_1cfsy_0000x";
+        String password = "geo_1cfsy_0000x";
+
+        Connection con = DriverManager.getConnection(url, usuari, password);
+
+        try {
+            Statement st = con.createStatement();
+            st.executeUpdate("UPDATE POBLACIONS SET poblacio=750000 WHERE nom='Castelló de la Plana'");
+            st.close();
+        }
+        catch (PSQLException ex) {
+            System.out.println("Ha hagut un " + ex.getMessage());
+            System.out.println("Codi de l'error: " + ex.getSQLState());
+            if (ex.getSQLState().equals("P0001"))
+                System.out.println("Evita introduir una diferència de més de 50.000 habitants");
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<p>L'eixida del programa serà aquesta:</p>
+<p><img src="AnnexBD_6_1_1.png" alt="" width="510" height="81" /></p>
+<p>Mentre que si canviem la sentència i posem UDATE en compte de UPDATE, l'error serà diferent:</p>
+<p><img src="AnnexBD_6_1_2.png" alt="" width="445" height="71" /></p>
+<p></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6__comunicaci_amb_plpgsql.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62__execuci_de_funcions.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

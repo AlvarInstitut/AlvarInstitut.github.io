@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.2 - Execució de funcions | Accés a Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.5/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-36"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Accés a Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Annex: Accés des de Java a BD Relacionals</a></li>
+   <li><a href="1__les_bases_de_dades_relacionals.html" class="no-ch">1 - Les Bases de Dades Relacionals</a></li>
+   <li><a href="2__el_desfasament_objecterelacional.html" class="no-ch">2 - El desfasament Objecte-Relacional</a></li>
+   <li><a href="3__connexi_a_les_bd_connectors.html" class="daddy">3 - Connexió a les BD: Connectors</a>
+   <ul class="other-section">
+      <li><a href="31__odbc.html" class="no-ch">3.1 - ODBC</a></li>
+      <li><a href="32__jdbc.html" class="no-ch">3.2 - JDBC</a></li>
+   </ul>
+   </li>
+   <li><a href="4__tocar_les_dades.html" class="daddy">4 - "Tocar" les dades</a>
+   <ul class="other-section">
+      <li><a href="41__des_de_intellij.html" class="no-ch">4.1 - Des de IntelliJ</a></li>
+      <li><a href="42__dbeaver.html" class="no-ch">4.2 - DBeaver</a></li>
+   </ul>
+   </li>
+   <li><a href="5__iniciaci_a_lapi_jdbc.html" class="daddy">5 - Iniciació a l'API JDBC</a>
+   <ul class="other-section">
+      <li><a href="51__crrega_de_controladors.html" class="no-ch">5.1 - Càrrega de controladors</a></li>
+      <li><a href="52__establiment_de_la_connexi.html" class="no-ch">5.2 - Establiment de la connexió</a></li>
+      <li><a href="53__peticions_bsiques.html" class="no-ch">5.3 - Peticions bàsiques</a></li>
+      <li><a href="54__exemple.html" class="no-ch">5.4 - Exemple</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6__comunicaci_amb_plpgsql.html" class="current-page-parent daddy">6 - Comunicació amb PL/pgSQL</a>
+   <ul>
+      <li><a href="61__captura_derrors.html" class="no-ch">6.1 - Captura d'errors</a></li>
+      <li id="active"><a href="62__execuci_de_funcions.html" class="active no-ch">6.2 - Execució de funcions</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="61__captura_derrors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.2 - Execució de funcions</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id62">
+<div class="iDevice emphasis0" >
+<div id="ta62_150_2" class="block iDevice_content">
+<div class="exe-text"><p>Considerarem alguns casos diferents, depenent del comportament de la funció a la qual cridem.</p>
+<p class="titolet">Funció que torna un únic resultat</p>
+<p>És el cas més habitual. I el més senzill de tractar, ja que no hi haurà cap diferència amb el que hem vist fins el moment: executem una sentència que torna valors, per tant <strong>executeQuery()</strong>, i en la sentència SQL cridem la funció. El següent exemple crida a la funció <strong>MEDIANA()</strong>, feta en el Tema 7, pregunta 6, i que calculava la mediana de les altures de les poblacions. El resultat és 230:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.sql.*;
+
+public class Exemple_6_2_1 {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String url = "jdbc:postgresql://89.36.214.106:5432/geo_1cfsy_0000x";
+        String usuari = "geo_1cfsy_0000x";
+        String password = "geo_1cfsy_0000x";
+
+        Connection con = DriverManager.getConnection(url, usuari, password);
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("SELECT MEDIANA()");
+        while (rs.next()) {
+            System.out.println("" + rs.getDouble(1));
+        }
+        st.close();
+        con.close();
+    }
+}</code></pre>
+</div>
+</div>
+<p class="titolet">Funció que torna més d'un resultat</p>
+<p>També és molt fàcil d'utilitzar, ja que no canvia res en el tractament des de Java.</p>
+<p>El que és més complicat és muntar la funció en PL/pgSQL ja que ara no torna un únic resultat. La manera és dir que torne un <strong>SETOF</strong> és a dir, un conjunt de resultats. També canviarà la manera de fer el RETURN, ja que ara no torna un únic valor. La manera d'arreglar-ho en PL/pgSQL és amb RETURN NEXT, és a dir, que torne el següent valor.</p>
+<p>En aquesta funció creada sobre la Base de Dades <strong>geo_1cfsy_0000x</strong> (podeu substituir pel vostre dni, i així crear la funció en la vostra Base de Dades), tornem el nom de les comarques d'una província passada com a paràmetre:</p>
+<div class="highlighted-code language-sql">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION public.torna_comarques(varchar) RETURNS SETOF varchar AS $cos$
+declare
+	f record;
+begin
+	for f in select * from COMARQUES where PROVINCIA = $1 loop 
+		return next f.nom_c;
+	end loop;
+end;
+$cos$ LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p>Com comentàvem, la utilització és exactament igual que abans:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.sql.*;
+
+public class Exemple_6_2_2 {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String url = "jdbc:postgresql://89.36.214.106:5432/geo_1cfsy_0000x";
+        String usuari = "geo_1cfsy_0000x";
+        String password = "geo_1cfsy_0000x";
+
+        Connection con = DriverManager.getConnection(url, usuari, password);
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("select * from torna_comarques('Castelló')");
+        while (rs.next()) {
+            System.out.println(rs.getString(1));
+        }
+        st.close();
+        con.close();
+    }
+}</code></pre>
+</div>
+</div>
+<p>Si intentem traure un resultat més complicat, amb més d'una columna, se'ns complica un poc. Ara el SETOF no pot ser d'un tipus senzill (en l'exemple anterior era un SETOF VARCHAR). Podem posar <strong>SETOF RECORD</strong>.</p>
+<p>Només tindrem el problema que quan cridem la funció, hem d'especificar quina estructura té el que es torna.</p>
+<p>Mirem un exemple, en el qual ens creem una funció que torna el nom de les comarques i total de població de la comarca, d'una província introduïda com a paràmetre:</p>
+<div class="highlighted-code language-sql">
+<div>
+<pre><code>CREATE OR REPLACE FUNCTION torna_comarques2(varchar) RETURNS SETOF RECORD AS $cos$
+declare
+	f record;
+begin
+	for f in select COMARQUES.nom_c, SUM(poblacio) 
+					from COMARQUES inner join POBLACIONS using(nom_c) 
+					where PROVINCIA = $1 
+					group by 1
+					loop 
+		return next f;
+	end loop;
+end;
+$cos$ LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p>I ara per a accedir des de Java, com comentàvem, especifiquem l'estructura del que es torna:</p>
+<div class="highlighted-code language-sql">
+<div>
+<pre><code>import java.sql.*;
+
+public class Exemple_6_2_2 {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String url = "jdbc:postgresql://89.36.214.106:5432/geo_1cfsy_0000x";
+        String usuari = "geo_1cfsy_0000x";
+        String password = "geo_1cfsy_0000x";
+
+        Connection con = DriverManager.getConnection(url, usuari, password);
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("select * from torna_comarques2('Castelló') as (nom varchar, num_habs numeric)");
+        while (rs.next()) {
+            System.out.println(rs.getString(1) + ": " + rs.getInt(2) + " habitants");
+        }
+        st.close();
+        con.close();
+    }
+}</code></pre>
+</div>
+</div>
+<p class="titolet">Funció que torna per l'eixida estàndar</p>
+<p>Si la nostra funció és de les que torna per l'eixida estàndar (<strong>RAISE NOTICE</strong>), el que hem de fer és agafar tots els missatges que ens venen amb <strong>rs.getStatement().getWarnings()</strong>.</p>
+<p>Ho farem sobre una funció ja creada en el tema 7 pregunta 6, anomenada <strong>pobl_com_2(varchar)</strong>, que tornava amb RAISE NOTICE totes les poblacions de la comarca passada com a paràmetre, en ordre ascendent. Us pose ací la funció, però segurament ja la tindreu creada:</p>
+<div class="highlighted-code language-sql">
+<div>
+<pre><code>CREATE FUNCTION pobl_com_2(text) RETURNS void AS $cos$
+DECLARE
+    f RECORD;
+BEGIN
+    FOR f IN SELECT nom FROM POBLACIONS
+                WHERE nom_c = $1
+                ORDER BY nom
+    LOOP
+        RAISE NOTICE '%',f.nom;
+    END LOOP;
+END;
+$cos$ LANGUAGE plpgsql;</code></pre>
+</div>
+</div>
+<p>I ara el programa en Java</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.sql.*;
+
+public class Exemple_6_2_3 {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String url = "jdbc:postgresql://89.36.214.106:5432/geo_1cfsy_0000x";
+        String usuari = "geo_1cfsy_0000x";
+        String password = "geo_1cfsy_0000x";
+
+        Connection con = DriverManager.getConnection(url, usuari, password);
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("select pobl_com_2('Plana Alta')");
+        for (Throwable m : rs.getStatement().getWarnings()) {
+            System.out.println(m.getMessage());
+        }
+        st.close();
+        con.close();
+    }
+}
+</code></pre>
+</div>
+</div>
+<p><br /><br /></p>
+<p></p></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="61__captura_derrors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">Llicència Creative Commons Reconeixement CompartirIgual 2.5</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
