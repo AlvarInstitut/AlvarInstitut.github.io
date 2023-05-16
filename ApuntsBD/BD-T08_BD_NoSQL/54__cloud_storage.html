@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.4 - Cloud Storage | Bases de Dades </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="ca" />
+<meta name="author" content="Àlvar Serrano Calduch" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nd/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body class="exe-web-site" id="exe-node-100"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<div id="header" ><div id="headerContent">Bases de Dades</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tema 8: Bases de Dades NoSQL</a></li>
+   <li><a href="1__introducci.html" class="no-ch">1 - Introducció</a></li>
+   <li><a href="2__bd_clauvalor_redis.html" class="daddy">2 - BD Clau-Valor: Redis</a>
+   <ul class="other-section">
+      <li><a href="21__installaci_de_redis.html" class="no-ch">2.1 - Instal·lació de Redis</a></li>
+      <li><a href="22__entron_grfic_redis_desktop_manager.html" class="no-ch">2.2 - Entron gràfic: Redis Desktop Manager</a></li>
+      <li><a href="23__utilitzaci_de_redis.html" class="daddy">2.3 - Utilització de Redis</a>
+      <ul class="other-section">
+         <li><a href="231__strings.html" class="no-ch">2.3.1 - Strings</a></li>
+         <li><a href="232__keys.html" class="no-ch">2.3.2 - Keys</a></li>
+         <li><a href="233__hash.html" class="no-ch">2.3.3 - Hash</a></li>
+         <li><a href="234__list.html" class="no-ch">2.3.4 - List</a></li>
+         <li><a href="235__set.html" class="no-ch">2.3.5 - Set</a></li>
+         <li><a href="236__set_ordenat.html" class="no-ch">2.3.6 - Set ordenat</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3__mongodb.html" class="daddy">3 - MongoDB</a>
+   <ul class="other-section">
+      <li><a href="31__estructura_json.html" class="no-ch">3.1 - Estructura JSON</a></li>
+      <li><a href="32__installaci_de_mongodb.html" class="daddy">3.2 - Instal·lació de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="321__connexi_al_servidor_de_linstitut.html" class="no-ch">3.2.1 - Connexió al servidor de l'Institut</a></li>
+      </ul>
+      </li>
+      <li><a href="33__utilitzaci_de_mongodb.html" class="daddy">3.3 - Utilització de MongoDB</a>
+      <ul class="other-section">
+         <li><a href="331__tipus_de_dades.html" class="no-ch">3.3.1 - Tipus de dades</a></li>
+         <li><a href="332__operacions_bsiques.html" class="no-ch">3.3.2 - Operacions bàsiques</a></li>
+         <li><a href="323__operacions_dactualitzaci_avanada.html" class="daddy">3.2.3 - Operacions d'actualització avançada</a>
+         <ul class="other-section">
+            <li><a href="3331__set.html" class="no-ch">3.3.3.1 - $set</a></li>
+            <li><a href="3332__unset.html" class="no-ch">3.3.3.2 - $unset</a></li>
+            <li><a href="3333__rename.html" class="no-ch">3.3.3.3 - $rename</a></li>
+            <li><a href="3334__inc.html" class="no-ch">3.3.3.4 - $inc</a></li>
+            <li><a href="3335__elements_dun_array.html" class="no-ch">3.3.3.5 - Elements d'un array</a></li>
+            <li><a href="3336__inserci_en_arrays_push.html" class="no-ch">3.3.3.6 - Inserció en Arrays: $push</a></li>
+            <li><a href="3337__eliminaci_en_arrays_pop_i_pull.html" class="no-ch">3.3.3.7 - Eliminació en arrays: $pop i $pull</a></li>
+            <li><a href="3338__upsert.html" class="no-ch">3.3.3.8 - Upsert</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="34__consulta_de_documents.html" class="daddy">3.4 - Consulta de documents</a>
+      <ul class="other-section">
+         <li><a href="341__parmetres_de_les_funcions_find_i_findone.html" class="no-ch">3.4.1 - Paràmetres de les funcions find() i findOne()</a></li>
+         <li><a href="342__operadors_de_les_condicions.html" class="no-ch">3.4.2 - Operadors de les condicions</a></li>
+         <li><a href="343__agregaci.html" class="no-ch">3.4.3 - Agregació</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4__bd_xml_existdb.html" class="daddy">4 - BD XML: eXist-db</a>
+   <ul class="other-section">
+      <li><a href="41__installaci_dexistdb.html" class="no-ch">4.1 - Instal·lació d'eXist-db</a></li>
+      <li><a href="42__llenguatges_de_consultes_xpath_i_xquery.html" class="daddy">4.2 - Llenguatges de consultes XPATH i XQUERY</a>
+      <ul class="other-section">
+         <li><a href="421__xpath.html" class="daddy">4.2.1 - XPATH</a>
+         <ul class="other-section">
+            <li><a href="4211__vista_darbre.html" class="no-ch">4.2.1.1 - Vista d'arbre</a></li>
+            <li><a href="4212__navegaci.html" class="no-ch">4.2.1.2 - Navegació</a></li>
+            <li><a href="4213__seqncies.html" class="no-ch">4.2.1.3 - Seqüències</a></li>
+            <li><a href="4214__funcions.html" class="no-ch">4.2.1.4 - Funcions</a></li>
+         </ul>
+         </li>
+         <li><a href="422__xquery.html" class="daddy">4.2.2 - XQUERY</a>
+         <ul class="other-section">
+            <li><a href="4221__consultes_xquery.html" class="no-ch">4.2.2.1 - Consultes XQuery</a></li>
+            <li><a href="4222__variables.html" class="no-ch">4.2.2.2 - Variables</a></li>
+            <li><a href="4223__expressions_avaluables.html" class="no-ch">4.2.2.3 - Expressions avaluables</a></li>
+            <li><a href="4224__expressions_flwor.html" class="no-ch">4.2.2.4 - Expressions FLWOR</a></li>
+            <li><a href="4225__alternatives.html" class="no-ch">4.2.2.5 - Alternatives</a></li>
+            <li><a href="4226__exemple_de_consulta_elaborada.html" class="no-ch">4.2.2.6 - Exemple de consulta "elaborada"</a></li>
+            <li><a href="4227__funcions_de_existdb_de_manipulaci_de_bd.html" class="no-ch">4.2.2.7 - Funcions de eXist-db de manipulació de BD</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5__firebase_voluntari.html" class="current-page-parent daddy">5 - FIREBASE (voluntari)</a>
+   <ul>
+      <li><a href="51__creaci_duna_aplicaci.html" class="no-ch">5.1 - Creació d'una aplicació</a></li>
+      <li><a href="52__realtime_database_rd.html" class="no-ch">5.2 - Realtime Database (RD)</a></li>
+      <li><a href="53__cloud_firestore_cf.html" class="no-ch">5.3 - Cloud Firestore (CF)</a></li>
+      <li id="active"><a href="54__cloud_storage.html" class="active no-ch">5.4 - Cloud Storage</a></li>
+   </ul>
+   </li>
+   <li><a href="exercicis.html" class="no-ch">Exercicis</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="53__cloud_firestore_cf.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.4 - Cloud Storage</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id362">
+<div class="iDevice emphasis0" >
+<div id="ta362_223_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Cloud Storage ens permet guardar fitxers còmodament: fotos, vídeos, audios, ...</p>
+<p style="text-align: justify;">Combinat amb Reltime Database o Cloud Firestore ens permet guardar les nostres dedes de forma eficient, ja que podem guardar en les primeres les referències als fitxers que pugem al Storage.</p></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id334">
+<div class="iDevice emphasis0" >
+<div id="ta334_224_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">L'entorn que ens ofereix Firebase per a gestionar Cloud Storage és molt senzill i no té cap secret, ja que ens permetrà pujar els fitxers, organitzant-los en subdirectoris, i també esborrar-los. En principi no necessitem més.</p>
+<p style="text-align: center;"><img src="T7_5_1_1.png" alt="" width="1095" height="453" /></p>
+<p style="text-align: justify;">Si punxem en un fitxer podrem veure les seues característiques, i si el seleccionem podrem esborrar-lo o obrir-lo en una altra finestra.</p>
+<p style="text-align: center;"><img src="T7_5_1_2.png" alt="" width="1084" height="579" /></p>
+<p style="text-align: justify;">Aquest entorn, de tan senzill, fins i tot es queda un poc curt, ja que no ens permetrà canviar el nom d'un fitxer, o moure'l a una carpeta, ...</p>
+<p style="text-align: justify;">Si vulguérem fer algun canvi d'aquestos, canviar el nom o canviar de carpeta, ho hauríem de fer des d'un altre lloc, un altre navegador del Google Cloud Storage (<a href="https://console.cloud.google.com/storage/browser">https://console.cloud.google.com/storage/browser</a>):</p>
+<p style="text-align: center;"><img src="T7_5_1_3.png" alt="" width="1153" height="545" /></p>
+<p style="text-align: justify;">on es pot observar com en els 3 puntets de la dreta d'un fitxer ens apareixen moltes opcions com copiar, menejar, renomenar, ...</p>
+<p style="text-align: justify;">Però nosaltres en principi tindrem prou amb la primera consola. Anem alerta de col·locar les coses al lloc, i si no estan, esborrem i col·loquem al lloc correcte.</p>
+<p style="text-align: justify;">Ja que estem en la consola, controlem els permisos (<strong>Rules</strong>) en la pestanya corresponent de la consola:</p>
+<p style="text-align: center;"><img src="T7_5_1_4.png" alt="" width="1100" height="509" /></p>
+<p style="text-align: justify;">En aquesta imatge s'aprecia que no hi haurà permís per a llegir ni escriure fora de la consola. Com que el que volem és accedir des de les aplicacions d'Eclipse i d'Android, substituirem el permís per aquest:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>allow read, write: if request.time &lt; timestamp.date(2023, 6, 30);</code></pre>
+</div>
+</div>
+<p style="text-align: center;"><img src="T7_5_1_1.1.png" alt="" width="1259" height="661" /></p>
+<p style="text-align: justify;">amb una data en la qual no ens pillem els dits.</p>
+<p style="text-align: justify;"></p>
+<div class="nota_blau">
+<p style="text-align: justify;"><strong><u>Nota</u></strong></p>
+<p style="text-align: justify;">Observeu com tant en la consola senzilla com en la del browser de GoogleCloud, ens posa una adreça, que en el meu cas és: <strong>gs://acces-a-dades-6e5a6.appspot.com</strong>. Es tracta de l'adreça del <strong>bucket</strong> (poal, contenidor) on estan col·locats els fitxers. Podem crear més <strong>buckets</strong>, però no ho complicarem. Haurem de tenir clara la referència a aquest bucket per defecte.</p>
+</div></div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="53__cloud_firestore_cf.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="exercicis.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nd">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Llicència Creative Commons Reconeixement SenseObraDerivada 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+</body></html>
