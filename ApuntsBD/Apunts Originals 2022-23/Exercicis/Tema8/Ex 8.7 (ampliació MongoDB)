@@ -1,8 +1,8 @@
 8.7.1
-db.categoria.insert({_id:"BjcOlimpia",descricio:"Components Bjc Seria Olimpia"})
-db.categoria.insert({_id:"Legrand",descricio:"Components marca Legrand"})
-db.categoria.insert({_id:"IntMagn",descricio:"Interruptor Magnetotérmico"})
-db.categoria.insert({_id:"Niessen",descricio:"Components Niesen Serie Lisa"})
+db.categoria.insert({_id:"BjcOlimpia",descripcio:"Components Bjc Seria Olimpia"})
+db.categoria.insert({_id:"Legrand",descripcio:"Components marca Legrand"})
+db.categoria.insert({_id:"IntMagn",descripcio:"Interruptor Magnetotérmico"})
+db.categoria.insert({_id:"Niessen",descripcio:"Components Niesen Serie Lisa"})
 
 8.7.2
 db.article.insert({_id:"B10028B",descrip:"Cruzamiento  Bjc Serie Olimpia",preu:4.38,stock:2,stock_min:1,cod_cat:"BjcOlimpia"})
