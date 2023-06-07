@@ -381,6 +381,38 @@ synopsis : Bilbo y compañía se ven obligados a participar en una guerra contra
 </div>
 </div>
 </div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id169">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_activity.gif" /><h2 class="iDeviceTitle">Exercici 8.7 (mongoDB)(voluntari)</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta169_363_2" class="block iDevice_content">
+<div class="pbl-task-description"><p>Intenta implementar en MongoDB part de la Base de Dades relacional implementada en els exercicis del Tema 6.3, el de les factures.</p>
+<p>Concretament, comença per les taules CATEGORIA i ARTICLE, que les hauràs de representar com a documents de 2 col·leccions anomenades de la mateixa manera. En els documents de la col·lecció ARTICLE, el codi de categoria serà el <strong>_id</strong>, mentre que en els documents de la col·lecció ARTICLE, el codi de l'article serà el <strong>_id</strong>.</p>
+<ul>
+<li>Insereix els documents corresponents a les categories de l'exercici 6.93</li>
+<li>Insereix els documents corresponents als articles de l'exercici 6.94</li>
+<li>Fes una consulta en què apareguen tots els articles amb la seua descripció i també la descripció de la seua categoria</li>
+<li>Modifica l'anterior per a que apareguen només les descripcions de l'article i de la categoria
+<ul>
+<li>Com que les dades del document reunit, que en aquest cas és categoria, podem utilitzar <strong>$unwind</strong> per a "desconstruir" aquest array</li>
+<li>Una vegada desconstruït l'array és quan podrem projectar sobre la descripció de l'article (directament) i sobre la descripció de la categoria reanomenant el camp i subcamp</li>
+</ul>
+</li>
+<li>Fes una consulta on aparega la descripció de cada categoria, amb el número d'articles de cada categoria i el preu mitjà.</li>
+<li>Insereix els documents corresponents als clients de l'exercici 6.95. No ens importarà el codi de població</li>
+<li>Insereix les factures corresponents als exercicis 6.96 i 6.97. Observa que la millor manera d'introduir les línies de factura és dins de la mateixa factura, en un array.</li>
+<li>Fes una consulta per a traure el número de factura i el seu total</li>
+</ul>
+<p><img src="T8_Exer_8_1.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="315" height="41" /></p>
+<ul>
+<li>Modifica l'anterior per a traure també el nom del client de la factura</li>
+</ul>
+<p><img src="T8_Exer_8_2.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="816" height="39" /></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id='bottomPagination'>
 <div class="pagination noprt">
 <a href="54__cloud_storage.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
