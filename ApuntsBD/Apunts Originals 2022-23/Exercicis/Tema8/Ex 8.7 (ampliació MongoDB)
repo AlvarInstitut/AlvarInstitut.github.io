@@ -1,8 +1,8 @@
 8.7.1
-db.categoria.insert({_id:"BjcOlimpia",descricio:"Components Bjc Seria Olimpia"})
-db.categoria.insert({_id:"Legrand",descricio:"Components marca Legrand"})
-db.categoria.insert({_id:"IntMagn",descricio:"Interruptor Magnetotérmico"})
-db.categoria.insert({_id:"Niessen",descricio:"Components Niesen Serie Lisa"})
+db.categoria.insert({_id:"BjcOlimpia",descripcio:"Components Bjc Seria Olimpia"})
+db.categoria.insert({_id:"Legrand",descripcio:"Components marca Legrand"})
+db.categoria.insert({_id:"IntMagn",descripcio:"Interruptor Magnetotérmico"})
+db.categoria.insert({_id:"Niessen",descripcio:"Components Niesen Serie Lisa"})
 
 8.7.2
 db.article.insert({_id:"B10028B",descrip:"Cruzamiento  Bjc Serie Olimpia",preu:4.38,stock:2,stock_min:1,cod_cat:"BjcOlimpia"})
@@ -17,11 +17,11 @@ db.article.insert({_id:"IM2P10L",descrip:"Interruptor Magnetotermico  2p, 4",pre
  
 
 8.7.4
- db.article.aggregate({$lookup: { from: "categoria", localField: "cod_cat", foreignField: "_id", as: "prod_cat" } },{$unwind:"$prod_cat"},{$project:{descrip:1,descrip_cat:"$prod_cat.descricio"}})
+ db.article.aggregate({$lookup: { from: "categoria", localField: "cod_cat", foreignField: "_id", as: "prod_cat" } },{$unwind:"$prod_cat"},{$project:{descrip:1,descrip_cat:"$prod_cat.descripcio"}})
 
  
  8.7.5
- db.article.aggregate({$lookup: { from: "categoria", localField: "cod_cat", foreignField: "_id", as: "prod_cat" } },{$unwind:"$prod_cat"},{$project:{descrip:1,descrip_cat:"$prod_cat.descricio",preu:1}},{$group:{"_id":"$descrip_cat","quants":{$sum:1},"preu_mitja":{$avg:"$preu"}}})
+ db.article.aggregate({$lookup: { from: "categoria", localField: "cod_cat", foreignField: "_id", as: "prod_cat" } },{$unwind:"$prod_cat"},{$project:{descrip:1,descrip_cat:"$prod_cat.descripcio",preu:1}},{$group:{"_id":"$descrip_cat","quants":{$sum:1},"preu_mitja":{$avg:"$preu"}}})
  
  
  8.7.6
@@ -29,7 +29,15 @@ db.article.insert({_id:"IM2P10L",descrip:"Interruptor Magnetotermico  2p, 4",pre
  db.client.insert({_id:306, nom:"SAMPEDRO SIMO, MARIA MERCEDES", adreca:"FINELLO, 161", cp:12217})
  db.client.insert({_id:387, nom:"TUR MARTIN, MANUEL FRANCISCO", adreca:"CALLE PEDRO VIRUELA, 108-8", cp:12008})
  
+
  8.7.7
  db.factura.insert({_id:6535, data:"2015-01-01", cod_cli:306, iva:21, dte:10, linies: [{num_l:1, cod_art:"L16555", quant:2, preu:5.89, dte:25}]})
  db.factura.insert({_id:6559, data:"2015-02-01", cod_cli:387, iva:10, dte:10, linies: [{num_l:1, cod_art:"IM2P10L", quant:3, preu:14.84},{num_l:2, cod_art:"N8008BA", quant:6, preu:4.38, dte:20}]})
+
  
+ 8.7.8
+ db.factura.aggregate({$unwind:"$linies"},{$project:{total_linia:{$multiply:["$linies.quant","$linies.preu"]}}},{$group:{_id:"$_id",total:{$sum:"$total_linia"}}},{$sort:{_id:1}})
+ 
+
+8.7.9
+db.factura.aggregate({$lookup:{from:"client", localField:"cod_cli", foreignField:"_id", as:"client"}},{$unwind:"$linies"},{$unwind:"$client"},{$project:{client:"$client.nom",total_linia:{$multiply:["$linies.quant","$linies.preu"]}}},{$group:{_id:{_id:"$_id","client":"$client"},total:{$sum:"$total_linia"}}},{$sort:{_id:1}})
