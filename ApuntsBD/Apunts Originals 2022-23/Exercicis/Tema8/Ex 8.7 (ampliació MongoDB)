@@ -41,3 +41,7 @@ db.article.insert({_id:"IM2P10L",descrip:"Interruptor Magnetotermico  2p, 4",pre
 
 8.7.9
 db.factura.aggregate({$lookup:{from:"client", localField:"cod_cli", foreignField:"_id", as:"client"}},{$unwind:"$linies"},{$unwind:"$client"},{$project:{client:"$client.nom",total_linia:{$multiply:["$linies.quant","$linies.preu"]}}},{$group:{_id:{_id:"$_id","client":"$client"},total:{$sum:"$total_linia"}}},{$sort:{_id:1}})
+
+
+8.7.10
+db.client.aggregate({$lookup:{from:"factura", localField:"_id", foreignField:"cod_cli", as:"fact"}}, {$unwind:"$fact"},{$unwind:"$fact.linies"}, {$project:{nom:1,num_fact:"$fact._id",cod_art:"$fact.linies.cod_art"}}, {$lookup:{from:"article", localField:"cod_art", foreignField:"_id", as:"article"}},{$unwind:"$article"},{$project:{nom:1,num_fact:1,cod_art:1,desc_art:"$article.descrip"}})
